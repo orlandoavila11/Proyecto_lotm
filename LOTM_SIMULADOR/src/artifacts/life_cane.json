@@ -1,0 +1,19 @@
+{
+  "id": "LC",
+  "name": "Life's Cane",
+  "grade": 2,
+
+  "abilities": [
+    "Healing",
+    "Vitality Enhancement",
+    "Life Stimulation"
+  ],
+
+  "negativeEffects": [
+    "Life imbalance"
+  ],
+
+  "appearance": "Wooden cane",
+
+  "status": "ACTIVE"
+}

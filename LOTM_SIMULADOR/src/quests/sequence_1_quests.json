@@ -1,0 +1,78 @@
+{
+  "sequence": 1,
+
+  "quests": [
+
+    {
+      "id": "SQ1_001",
+      "title": "Challenge a True God",
+      "difficulty": "KING_OF_ANGELS",
+      "objective": "Disrupt the plans of a Sequence 0 deity.",
+      "location": "DIVINE_DOMAIN",
+      "tags": ["DEITY"]
+    },
+
+    {
+      "id": "SQ1_002",
+      "title": "Claim a Uniqueness",
+      "difficulty": "KING_OF_ANGELS",
+      "objective": "Acquire control of a pathway Uniqueness.",
+      "location": "UNKNOWN",
+      "tags": ["UNIQUENESS"]
+    },
+
+    {
+      "id": "SQ1_003",
+      "title": "Found a Religion",
+      "difficulty": "KING_OF_ANGELS",
+      "objective": "Gather believers and establish worship.",
+      "location": "MULTIPLE",
+      "tags": ["FAITH"]
+    },
+
+    {
+      "id": "SQ1_004",
+      "title": "Legend of the Epoch",
+      "difficulty": "KING_OF_ANGELS",
+      "objective": "Become a legend known throughout the world.",
+      "location": "WORLD",
+      "tags": ["REPUTATION"]
+    },
+
+    {
+      "id": "SQ1_005",
+      "title": "Second Authority",
+      "difficulty": "KING_OF_ANGELS",
+      "objective": "Acquire influence over a neighboring pathway.",
+      "location": "UNKNOWN",
+      "tags": ["AUTHORITY"]
+    },
+
+    {
+      "id": "SQ1_006",
+      "title": "Sefirah Invasion",
+      "difficulty": "KING_OF_ANGELS",
+      "objective": "Enter a Sefirah and survive.",
+      "location": "SEFIRAH",
+      "tags": ["SEFIRAH"]
+    },
+
+    {
+      "id": "SQ1_007",
+      "title": "Angelic Rival",
+      "difficulty": "KING_OF_ANGELS",
+      "objective": "Defeat another Sequence 1 Beyonder.",
+      "location": "UNKNOWN",
+      "tags": ["DUEL"]
+    },
+
+    {
+      "id": "SQ1_008",
+      "title": "Prepare Apotheosis",
+      "difficulty": "KING_OF_ANGELS",
+      "objective": "Complete all preparations for godhood.",
+      "location": "MULTIPLE",
+      "tags": ["APOTHEOSIS"]
+    }
+  ]
+}

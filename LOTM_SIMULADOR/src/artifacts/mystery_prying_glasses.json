@@ -1,0 +1,25 @@
+{
+  "id": "MPG",
+  "name": "Mystery Prying Glasses",
+  "grade": 2,
+
+  "origin": {
+    "pathway": "WHITE_TOWER",
+    "sequence": "UNKNOWN",
+    "source": "Knowledge-gathering artifact."
+  },
+
+  "appearance": "Pair of spectacles.",
+
+  "abilities": [
+    "Observation Enhancement",
+    "Mystical Identification",
+    "Information Discovery"
+  ],
+
+  "negativeEffects": [
+    "Compulsive curiosity"
+  ],
+
+  "status": "ACTIVE"
+}

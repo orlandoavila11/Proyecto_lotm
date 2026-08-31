@@ -1,0 +1,27 @@
+{
+  "id": "2-166",
+  "name": "Arrodes",
+  "grade": 2,
+
+  "origin": {
+    "pathway": "WHITE_TOWER",
+    "sequence": "UNKNOWN",
+    "source": "Sentient sealed artifact connected to knowledge and information."
+  },
+
+  "appearance": "A silver mirror.",
+
+  "abilities": [
+    "Remote Observation",
+    "Information Gathering",
+    "Question and Answer",
+    "Mystical Investigation"
+  ],
+
+  "negativeEffects": [
+    "Demands answers from users",
+    "Can become uncooperative if ignored"
+  ],
+
+  "status": "ACTIVE"
+}

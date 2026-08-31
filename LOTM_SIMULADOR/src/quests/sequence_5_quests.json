@@ -1,0 +1,78 @@
+{
+  "sequence": 5,
+
+  "quests": [
+
+    {
+      "id": "SQ5_001",
+      "title": "Challenge a Demigod",
+      "difficulty": "SAINT_LEVEL",
+      "objective": "Confront a Sequence 4 opponent.",
+      "location": "UNKNOWN",
+      "tags": ["BOSS"]
+    },
+
+    {
+      "id": "SQ5_002",
+      "title": "Sequence 4 Advancement Material",
+      "difficulty": "SAINT_LEVEL",
+      "objective": "Acquire a Sequence 4 ingredient.",
+      "location": "HIGH_RISK",
+      "tags": ["ADVANCEMENT"]
+    },
+
+    {
+      "id": "SQ5_003",
+      "title": "Influence a City",
+      "difficulty": "SAINT_LEVEL",
+      "objective": "Shape the fate of an entire city.",
+      "location": "CITY",
+      "tags": ["INFLUENCE"]
+    },
+
+    {
+      "id": "SQ5_004",
+      "title": "Prevent a Catastrophe",
+      "difficulty": "SAINT_LEVEL",
+      "objective": "Stop a regional disaster.",
+      "location": "REGION",
+      "tags": ["DISASTER"]
+    },
+
+    {
+      "id": "SQ5_005",
+      "title": "Grade 1 Artifact",
+      "difficulty": "SAINT_LEVEL",
+      "objective": "Secure a Grade 1 Sealed Artifact.",
+      "location": "RUINS",
+      "tags": ["ARTIFACT"]
+    },
+
+    {
+      "id": "SQ5_006",
+      "title": "Angelic Incident",
+      "difficulty": "SAINT_LEVEL",
+      "objective": "Investigate signs of angelic activity.",
+      "location": "UNKNOWN",
+      "tags": ["ANGEL"]
+    },
+
+    {
+      "id": "SQ5_007",
+      "title": "Historical Trace",
+      "difficulty": "SAINT_LEVEL",
+      "objective": "Recover information from a lost epoch.",
+      "location": "HISTORICAL_SITE",
+      "tags": ["HISTORY"]
+    },
+
+    {
+      "id": "SQ5_008",
+      "title": "Regional Legend",
+      "difficulty": "SAINT_LEVEL",
+      "objective": "Become widely known across a region.",
+      "location": "REGION",
+      "tags": ["REPUTATION"]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "0-08",
+  "name": "Quill of Alzuhod",
+  "grade": 0,
+
+  "origin": {
+    "pathway": "VISIONARY",
+    "sequence": 1,
+    "source": "Derived from an Author characteristic."
+  },
+
+  "appearance": "Ordinary fountain pen.",
+
+  "abilities": [
+    "Reality Manipulation",
+    "Event Writing",
+    "Causality Alteration",
+    "Fate Manipulation"
+  ],
+
+  "negativeEffects": [
+    "Acts independently",
+    "Manipulates holders",
+    "Engineers tragic outcomes"
+  ],
+
+  "status": "ACTIVE"
+}

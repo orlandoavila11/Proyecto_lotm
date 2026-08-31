@@ -1,0 +1,78 @@
+{
+  "sequence": 4,
+
+  "quests": [
+
+    {
+      "id": "SQ4_001",
+      "title": "Saint Hunt",
+      "difficulty": "DEMIGOD",
+      "objective": "Track and neutralize a hostile Saint.",
+      "location": "MULTIPLE",
+      "tags": ["COMBAT","BEYONDER"]
+    },
+
+    {
+      "id": "SQ4_002",
+      "title": "Recover Grade 1 Artifact",
+      "difficulty": "DEMIGOD",
+      "objective": "Recover a Grade 1 Sealed Artifact before another faction claims it.",
+      "location": "RUINS",
+      "tags": ["ARTIFACT"]
+    },
+
+    {
+      "id": "SQ4_003",
+      "title": "Cult Purge",
+      "difficulty": "DEMIGOD",
+      "objective": "Destroy a large hidden cult.",
+      "location": "CITY",
+      "tags": ["CULT"]
+    },
+
+    {
+      "id": "SQ4_004",
+      "title": "Influence a Great City",
+      "difficulty": "DEMIGOD",
+      "objective": "Change the fate of an entire city.",
+      "location": "CAPITAL",
+      "tags": ["INFLUENCE"]
+    },
+
+    {
+      "id": "SQ4_005",
+      "title": "Demigod Formula",
+      "difficulty": "DEMIGOD",
+      "objective": "Acquire a Sequence 3 advancement formula.",
+      "location": "SECRET_ARCHIVE",
+      "tags": ["ADVANCEMENT"]
+    },
+
+    {
+      "id": "SQ4_006",
+      "title": "Shadow Conflict",
+      "difficulty": "DEMIGOD",
+      "objective": "Win a covert war between two Beyonder factions.",
+      "location": "REGION",
+      "tags": ["FACTION"]
+    },
+
+    {
+      "id": "SQ4_007",
+      "title": "Forbidden Zone",
+      "difficulty": "DEMIGOD",
+      "objective": "Explore a sealed mystical region.",
+      "location": "SEALED_AREA",
+      "tags": ["EXPLORATION"]
+    },
+
+    {
+      "id": "SQ4_008",
+      "title": "Ancient Creature",
+      "difficulty": "DEMIGOD",
+      "objective": "Slay or seal an ancient mythical creature.",
+      "location": "WILDERNESS",
+      "tags": ["BOSS"]
+    }
+  ]
+}

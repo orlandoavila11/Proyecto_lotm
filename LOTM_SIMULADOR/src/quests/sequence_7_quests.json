@@ -1,0 +1,78 @@
+{
+  "sequence": 7,
+
+  "quests": [
+
+    {
+      "id": "SQ7_001",
+      "title": "Beyonder Murder",
+      "difficulty": "NORMAL",
+      "objective": "Investigate a Beyonder homicide.",
+      "location": "CITY",
+      "tags": ["BEYONDER"]
+    },
+
+    {
+      "id": "SQ7_002",
+      "title": "Cult Hideout",
+      "difficulty": "NORMAL",
+      "objective": "Destroy a hidden cult base.",
+      "location": "UNDERGROUND",
+      "tags": ["CULT"]
+    },
+
+    {
+      "id": "SQ7_003",
+      "title": "Retrieve a Sealed Artifact",
+      "difficulty": "HARD",
+      "objective": "Recover a dangerous artifact.",
+      "location": "RUINS",
+      "tags": ["ARTIFACT"]
+    },
+
+    {
+      "id": "SQ7_004",
+      "title": "Rogue Beyonder",
+      "difficulty": "HARD",
+      "objective": "Track and capture a rogue Beyonder.",
+      "location": "MULTIPLE",
+      "tags": ["HUNT"]
+    },
+
+    {
+      "id": "SQ7_005",
+      "title": "Guard the Ritual",
+      "difficulty": "NORMAL",
+      "objective": "Protect a mystical ritual.",
+      "location": "RITUAL_SITE",
+      "tags": ["RITUAL"]
+    },
+
+    {
+      "id": "SQ7_006",
+      "title": "Deep Cover",
+      "difficulty": "HARD",
+      "objective": "Infiltrate a hostile organization.",
+      "location": "ENEMY_FACTION",
+      "tags": ["INFILTRATION"]
+    },
+
+    {
+      "id": "SQ7_007",
+      "title": "Stop the Sacrifice",
+      "difficulty": "NORMAL",
+      "objective": "Prevent a sacrificial ceremony.",
+      "location": "SECRET_LOCATION",
+      "tags": ["CULT"]
+    },
+
+    {
+      "id": "SQ7_008",
+      "title": "Rare Ingredients",
+      "difficulty": "NORMAL",
+      "objective": "Acquire rare mystical ingredients.",
+      "location": "WILDERNESS",
+      "tags": ["INGREDIENTS"]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "sequence": 6,
+
+  "quests": [
+
+    {
+      "id": "SQ6_001",
+      "title": "Beyonder Hunt",
+      "difficulty": "HARD",
+      "objective": "Defeat a Sequence 7 Beyonder.",
+      "location": "UNKNOWN",
+      "tags": ["COMBAT"]
+    },
+
+    {
+      "id": "SQ6_002",
+      "title": "Spirit World Expedition",
+      "difficulty": "HARD",
+      "objective": "Explore the Spirit World.",
+      "location": "SPIRIT_WORLD",
+      "tags": ["EXPLORATION"]
+    },
+
+    {
+      "id": "SQ6_003",
+      "title": "Break the Curse",
+      "difficulty": "HARD",
+      "objective": "Remove a powerful curse.",
+      "location": "CITY",
+      "tags": ["CURSE"]
+    },
+
+    {
+      "id": "SQ6_004",
+      "title": "Exposed Conspiracy",
+      "difficulty": "HARD",
+      "objective": "Expose a hidden conspiracy.",
+      "location": "CITY",
+      "tags": ["INVESTIGATION"]
+    },
+
+    {
+      "id": "SQ6_005",
+      "title": "Church Archives",
+      "difficulty": "HARD",
+      "objective": "Acquire restricted church records.",
+      "location": "CHURCH",
+      "tags": ["KNOWLEDGE"]
+    },
+
+    {
+      "id": "SQ6_006",
+      "title": "Demigod Relic",
+      "difficulty": "HARD",
+      "objective": "Investigate a relic left by a demigod.",
+      "location": "RUINS",
+      "tags": ["RELIC"]
+    },
+
+    {
+      "id": "SQ6_007",
+      "title": "Capture a Cult Leader",
+      "difficulty": "HARD",
+      "objective": "Bring in a cult leader alive.",
+      "location": "CITY",
+      "tags": ["CULT"]
+    },
+
+    {
+      "id": "SQ6_008",
+      "title": "Spirit Storm",
+      "difficulty": "HARD",
+      "objective": "Survive a Spirit World storm.",
+      "location": "SPIRIT_WORLD",
+      "tags": ["SURVIVAL"]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "sequence": 3,
+
+  "quests": [
+
+    {
+      "id": "SQ3_001",
+      "title": "Historical Influence",
+      "difficulty": "SAINT",
+      "objective": "Alter the outcome of a major historical event.",
+      "location": "HISTORICAL_SITE",
+      "tags": ["HISTORY"]
+    },
+
+    {
+      "id": "SQ3_002",
+      "title": "Regional Dominion",
+      "difficulty": "SAINT",
+      "objective": "Establish influence across an entire region.",
+      "location": "REGION",
+      "tags": ["INFLUENCE"]
+    },
+
+    {
+      "id": "SQ3_003",
+      "title": "Astral Expedition",
+      "difficulty": "SAINT",
+      "objective": "Travel into the Astral World and return safely.",
+      "location": "ASTRAL_WORLD",
+      "tags": ["EXPLORATION"]
+    },
+
+    {
+      "id": "SQ3_004",
+      "title": "Challenge an Angel",
+      "difficulty": "SAINT",
+      "objective": "Confront an angelic entity and survive.",
+      "location": "UNKNOWN",
+      "tags": ["ANGEL"]
+    },
+
+    {
+      "id": "SQ3_005",
+      "title": "Ancient Knowledge",
+      "difficulty": "SAINT",
+      "objective": "Recover knowledge from a lost epoch.",
+      "location": "RUINS",
+      "tags": ["KNOWLEDGE"]
+    },
+
+    {
+      "id": "SQ3_006",
+      "title": "Catastrophe Prevention",
+      "difficulty": "SAINT",
+      "objective": "Prevent a continent-scale disaster.",
+      "location": "CONTINENT",
+      "tags": ["DISASTER"]
+    },
+
+    {
+      "id": "SQ3_007",
+      "title": "Build an Organization",
+      "difficulty": "SAINT",
+      "objective": "Create a powerful Beyonder organization.",
+      "location": "MULTIPLE",
+      "tags": ["FACTION"]
+    },
+
+    {
+      "id": "SQ3_008",
+      "title": "Divine Kingdom Entry",
+      "difficulty": "SAINT",
+      "objective": "Enter and exit a Divine Kingdom intact.",
+      "location": "DIVINE_KINGDOM",
+      "tags": ["DIVINE"]
+    }
+  ]
+}

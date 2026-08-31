@@ -1,0 +1,19 @@
+{
+  "id": "2-081",
+  "name": "All Black Eye",
+  "grade": 2,
+
+  "abilities": [
+    "Danger Perception",
+    "Observation",
+    "Enhanced Awareness"
+  ],
+
+  "negativeEffects": [
+    "Psychological strain"
+  ],
+
+  "appearance": "Completely black",
+  
+    "status": "ACTIVE"
+}

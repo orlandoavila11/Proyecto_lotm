@@ -1,0 +1,20 @@
+{
+  "id": "ANT-NB",
+  "name": "Antigonus Family Notebook",
+  "grade": 2,
+
+  "abilities": [
+    "Mysticism Knowledge",
+    "Historical Information",
+    "Secret Recording"
+  ],
+
+  "negativeEffects": [
+    "Corruption",
+    "Madness Induction"
+  ],
+
+  "appearance": "Ancient notebook",
+
+  "status": "ACTIVE"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "MK",
+  "name": "Master Key",
+  "grade": 2,
+
+  "origin": {
+    "pathway": "DOOR",
+    "sequence": 9,
+    "source": "Door pathway derived item."
+  },
+
+  "appearance": "Ancient bronze key.",
+
+  "abilities": [
+    "Unlocking",
+    "Barrier Circumvention",
+    "Access Manipulation"
+  ],
+
+  "negativeEffects": [
+    "Unpredictable teleportation",
+    "Random transportation events"
+  ],
+
+  "status": "ACTIVE"
+}

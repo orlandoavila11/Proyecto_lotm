@@ -1,0 +1,26 @@
+{
+  "id": "BVT",
+  "name": "Blood Vessel Thief",
+  "grade": 2,
+
+  "origin": {
+    "pathway": "ERROR",
+    "sequence": 6,
+    "source": "Prometheus pathway abilities."
+  },
+
+  "appearance": "Dark red tube-like object.",
+
+  "abilities": [
+    "Theft",
+    "Extraction",
+    "Resource Drain"
+  ],
+
+  "negativeEffects": [
+    "Parasitic behavior",
+    "Potential harm to user"
+  ],
+
+  "status": "ACTIVE"
+}

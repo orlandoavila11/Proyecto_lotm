@@ -1,0 +1,78 @@
+{
+  "sequence": 2,
+
+  "quests": [
+
+    {
+      "id": "SQ2_001",
+      "title": "Destroy an Angel",
+      "difficulty": "ANGEL",
+      "objective": "Defeat a hostile angel.",
+      "location": "UNKNOWN",
+      "tags": ["ANGEL"]
+    },
+
+    {
+      "id": "SQ2_002",
+      "title": "Sefirah Relic",
+      "difficulty": "ANGEL",
+      "objective": "Claim a relic connected to a Sefirah.",
+      "location": "MYSTICAL_REALM",
+      "tags": ["SEFIRAH"]
+    },
+
+    {
+      "id": "SQ2_003",
+      "title": "National Fate",
+      "difficulty": "ANGEL",
+      "objective": "Influence the future of an entire nation.",
+      "location": "COUNTRY",
+      "tags": ["DESTINY"]
+    },
+
+    {
+      "id": "SQ2_004",
+      "title": "Divine Pursuit",
+      "difficulty": "ANGEL",
+      "objective": "Escape intervention from a deity.",
+      "location": "MULTIPLE",
+      "tags": ["DIVINE"]
+    },
+
+    {
+      "id": "SQ2_005",
+      "title": "Angel Characteristic",
+      "difficulty": "ANGEL",
+      "objective": "Acquire a Sequence 1 characteristic.",
+      "location": "UNKNOWN",
+      "tags": ["ADVANCEMENT"]
+    },
+
+    {
+      "id": "SQ2_006",
+      "title": "Sacred Domain",
+      "difficulty": "ANGEL",
+      "objective": "Claim control of a sacred territory.",
+      "location": "DIVINE_KINGDOM",
+      "tags": ["TERRITORY"]
+    },
+
+    {
+      "id": "SQ2_007",
+      "title": "Shape an Era",
+      "difficulty": "ANGEL",
+      "objective": "Create an event remembered for centuries.",
+      "location": "CONTINENT",
+      "tags": ["HISTORY"]
+    },
+
+    {
+      "id": "SQ2_008",
+      "title": "King of Angels",
+      "difficulty": "ANGEL",
+      "objective": "Force a King of Angels to retreat.",
+      "location": "UNKNOWN",
+      "tags": ["KING_OF_ANGELS"]
+    }
+  ]
+}

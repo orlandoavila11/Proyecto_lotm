@@ -1,0 +1,247 @@
+{
+  "version": "1.0",
+
+  "cities": [
+
+    {
+      "id": "backlund",
+
+      "name": "Backlund",
+
+      "country": "loen_kingdom",
+
+      "type": "CAPITAL",
+
+      "populationClass": "MEGACITY",
+
+      "importantLocations": [
+        "Cherwood District",
+        "Empress Borough",
+        "Hillston Borough",
+        "East Borough",
+        "Saint Samuel Cathedral",
+        "Blackthorn Security Company Branch",
+        "Backlund Bridge Area"
+      ],
+
+      "majorOrganizations": [
+        "church_of_evernight",
+        "church_of_storms",
+        "church_of_steam_and_machinery",
+        "tarot_club",
+        "psychology_alchemists"
+      ],
+
+      "description": "Capital of Loen Kingdom. Known as the City of Fogs and the political center of the Northern Continent."
+    },
+
+    {
+      "id": "tingen",
+
+      "name": "Tingen",
+
+      "country": "loen_kingdom",
+
+      "type": "CITY",
+
+      "populationClass": "MEDIUM",
+
+      "importantLocations": [
+        "Blackthorn Security Company",
+        "Saint Selena Cathedral",
+        "Khoy University"
+      ],
+
+      "majorOrganizations": [
+        "church_of_evernight",
+        "nighthawks"
+      ],
+
+      "description": "The city where Klein Moretti began his journey."
+    },
+
+    {
+      "id": "constant_city",
+
+      "name": "Constant City",
+
+      "country": "loen_kingdom",
+
+      "type": "CITY",
+
+      "populationClass": "LARGE",
+
+      "importantLocations": [
+        "Church of Evernight Headquarters",
+        "Cathedral of Serenity"
+      ],
+
+      "majorOrganizations": [
+        "church_of_evernight"
+      ],
+
+      "description": "One of the most important religious centers of Loen."
+    },
+
+    {
+      "id": "trier",
+
+      "name": "Trier",
+
+      "country": "intis_republic",
+
+      "type": "CAPITAL",
+
+      "populationClass": "MEGACITY",
+
+      "importantLocations": [
+        "Underground Trier",
+        "Republic Parliament",
+        "Cathedral of the Eternal Blazing Sun"
+      ],
+
+      "majorOrganizations": [
+        "church_of_eternal_blazing_sun",
+        "demoness_sect"
+      ],
+
+      "description": "Capital of Intis. Ancient city with strong historical and mystical significance."
+    },
+
+    {
+      "id": "bayam",
+
+      "name": "Bayam",
+
+      "country": "rorsted_archipelago",
+
+      "type": "PORT_CITY",
+
+      "populationClass": "LARGE",
+
+      "importantLocations": [
+        "Governor's Mansion",
+        "Sea God Cathedral",
+        "Harbor District"
+      ],
+
+      "majorOrganizations": [
+        "church_of_storms"
+      ],
+
+      "description": "Largest city in the Rorsted Archipelago and major maritime hub."
+    },
+
+    {
+      "id": "city_of_silver",
+
+      "name": "City of Silver",
+
+      "country": "forsaken_land_of_the_gods",
+
+      "type": "ISOLATED_SETTLEMENT",
+
+      "populationClass": "SMALL",
+
+      "importantLocations": [
+        "Twin Towers",
+        "Council Hall",
+        "Outer Defense Wall"
+      ],
+
+      "majorOrganizations": [
+        "city_of_silver_council"
+      ],
+
+      "description": "Ancient human settlement surviving in the darkness of the Forsaken Land of the Gods."
+    },
+
+    {
+      "id": "moon_city",
+
+      "name": "Moon City",
+
+      "country": "forsaken_land_of_the_gods",
+
+      "type": "ISOLATED_SETTLEMENT",
+
+      "populationClass": "SMALL",
+
+      "importantLocations": [
+        "Moon City Temple",
+        "Outer Shelter"
+      ],
+
+      "description": "One of the surviving settlements in the Forsaken Land of the Gods."
+    },
+
+    {
+      "id": "awwa",
+
+      "name": "Awwa",
+
+      "country": "feysac_empire",
+
+      "type": "CAPITAL",
+
+      "populationClass": "LARGE",
+
+      "importantLocations": [
+        "Imperial Palace",
+        "Church of the God of Combat Headquarters"
+      ],
+
+      "majorOrganizations": [
+        "church_of_god_of_combat"
+      ],
+
+      "description": "Imperial capital of Feysac."
+    },
+
+    {
+      "id": "lenburg_city",
+
+      "name": "Lenburg City",
+
+      "country": "lenburg",
+
+      "type": "CAPITAL",
+
+      "populationClass": "MEDIUM",
+
+      "importantLocations": [
+        "White Tower Church Headquarters",
+        "Royal Academy"
+      ],
+
+      "majorOrganizations": [
+        "church_of_knowledge_and_wisdom"
+      ],
+
+      "description": "Capital city of Lenburg and center of scholarship."
+    },
+
+    {
+      "id": "durmur",
+
+      "name": "Durmur",
+
+      "country": "feynapotter_kingdom",
+
+      "type": "CAPITAL",
+
+      "populationClass": "MEDIUM",
+
+      "importantLocations": [
+        "Earth Mother Cathedral",
+        "Royal Gardens"
+      ],
+
+      "majorOrganizations": [
+        "church_of_earth_mother"
+      ],
+
+      "description": "Capital of Feynapotter and center of agricultural trade."
+    }
+  ]
+}

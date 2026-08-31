@@ -1,0 +1,234 @@
+{
+  "version": "1.0",
+
+  "churches": [
+
+    {
+      "id": "church_of_evernight",
+
+      "name": "Church of the Evernight Goddess",
+
+      "deity": "Evernight Goddess",
+
+      "classification": "ORTHODOX",
+
+      "headquarters": "Cathedral of Serenity",
+
+      "primaryCountries": [
+        "Loen Kingdom"
+      ],
+
+      "primaryPathways": [
+        "SLEEPLESS",
+        "CORPSE_COLLECTOR",
+        "WARRIOR"
+      ],
+
+      "officialOrganization": "Nighthawks",
+
+      "highLevelMembers": [
+        "Evernight Goddess",
+        "Arianna",
+        "Crestet Cesmire"
+      ],
+
+      "symbol": "Crimson Moon",
+
+      "domains": [
+        "Darkness",
+        "Dreams",
+        "Concealment",
+        "Misfortune",
+        "Death",
+        "Night"
+      ],
+
+      "description": "One of the Seven Orthodox Churches. It presides over darkness, dreams, concealment and death."
+    },
+
+    {
+      "id": "church_of_storms",
+
+      "name": "Church of the Lord of Storms",
+
+      "deity": "Lord of Storms",
+
+      "classification": "ORTHODOX",
+
+      "primaryCountries": [
+        "Loen Kingdom",
+        "Rorsted Archipelago"
+      ],
+
+      "primaryPathways": [
+        "SAILOR"
+      ],
+
+      "officialOrganization": "Mandated Punishers",
+
+      "symbol": "Lightning and Storm",
+
+      "domains": [
+        "Storms",
+        "Lightning",
+        "Sea",
+        "Authority",
+        "Disaster"
+      ],
+
+      "description": "An Orthodox Church centered around storms, oceans and divine authority."
+    },
+
+    {
+      "id": "church_of_eternal_blazing_sun",
+
+      "name": "Church of the Eternal Blazing Sun",
+
+      "deity": "Eternal Blazing Sun",
+
+      "classification": "ORTHODOX",
+
+      "primaryCountries": [
+        "Intis Republic"
+      ],
+
+      "primaryPathways": [
+        "SUN"
+      ],
+
+      "symbol": "Golden Sun",
+
+      "domains": [
+        "Sunlight",
+        "Purification",
+        "Holiness",
+        "Light",
+        "Justice"
+      ],
+
+      "description": "An Orthodox Church devoted to sunlight, holiness, purification and righteousness."
+    },
+
+    {
+      "id": "church_of_knowledge_and_wisdom",
+
+      "name": "Church of the God of Knowledge and Wisdom",
+
+      "deity": "God of Knowledge and Wisdom",
+
+      "classification": "ORTHODOX",
+
+      "primaryCountries": [
+        "Lenburg"
+      ],
+
+      "primaryPathways": [
+        "WHITE_TOWER"
+      ],
+
+      "symbol": "White Tower",
+
+      "domains": [
+        "Knowledge",
+        "Learning",
+        "Wisdom",
+        "Education",
+        "Prophecy"
+      ],
+
+      "description": "Church dedicated to knowledge, wisdom and mystical understanding."
+    },
+
+    {
+      "id": "church_of_earth_mother",
+
+      "name": "Church of the Earth Mother",
+
+      "deity": "Earth Mother",
+
+      "classification": "ORTHODOX",
+
+      "primaryCountries": [
+        "Feynapotter"
+      ],
+
+      "primaryPathways": [
+        "MOTHER",
+        "MOON"
+      ],
+
+      "symbol": "Tree of Life",
+
+      "domains": [
+        "Life",
+        "Fertility",
+        "Nature",
+        "Healing",
+        "Harvest"
+      ],
+
+      "description": "Church devoted to life, nature, fertility and healing."
+    },
+
+    {
+      "id": "church_of_steam_and_machinery",
+
+      "name": "Church of Steam and Machinery",
+
+      "deity": "God of Steam and Machinery",
+
+      "classification": "ORTHODOX",
+
+      "primaryCountries": [
+        "Loen Kingdom",
+        "Intis Republic"
+      ],
+
+      "primaryPathways": [
+        "PARAGON"
+      ],
+
+      "officialOrganization": "Machinery Hivemind",
+
+      "symbol": "Gear and Steam",
+
+      "domains": [
+        "Machinery",
+        "Technology",
+        "Craftsmanship",
+        "Innovation"
+      ],
+
+      "description": "Church focused on invention, machinery, industry and technological progress."
+    },
+
+    {
+      "id": "church_of_god_of_combat",
+
+      "name": "Church of the God of Combat",
+
+      "deity": "God of Combat",
+
+      "classification": "ORTHODOX",
+
+      "primaryCountries": [
+        "Feysac Empire"
+      ],
+
+      "primaryPathways": [
+        "WARRIOR"
+      ],
+
+      "symbol": "Sword and Shield",
+
+      "domains": [
+        "War",
+        "Combat",
+        "Strength",
+        "Discipline"
+      ],
+
+      "description": "Church focused on warfare, military discipline and martial strength."
+    }
+  ]
+}

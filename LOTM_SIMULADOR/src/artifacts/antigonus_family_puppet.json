@@ -1,0 +1,25 @@
+{
+  "id": "AFP",
+  "name": "Antigonus Family Puppet",
+  "grade": 2,
+
+  "origin": {
+    "pathway": "FOOL",
+    "sequence": 5,
+    "source": "Spirit Body Thread and Marionettist related powers."
+  },
+
+  "appearance": "Strange antique puppet.",
+
+  "abilities": [
+    "Puppet Manipulation",
+    "Spirit Influence",
+    "Autonomous Behavior"
+  ],
+
+  "negativeEffects": [
+    "May act independently"
+  ],
+
+  "status": "ACTIVE"
+}

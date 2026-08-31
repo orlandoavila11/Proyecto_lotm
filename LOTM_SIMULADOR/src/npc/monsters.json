@@ -1,0 +1,356 @@
+{
+  "version": "1.0",
+
+  "monsters": [
+
+    {
+      "id": "fog_wolf",
+
+      "name": "Fog Wolf",
+
+      "pathwayRelated": "FOOL",
+
+      "threatLevel": "HIGH",
+
+      "recommendedSequence": 4,
+
+      "dropItems": [
+        "Heart of a Fog Wolf"
+      ],
+
+      "locations": [
+        "SPIRIT_WORLD",
+        "ANCIENT_RUINS"
+      ],
+
+      "bossType": "MONSTER"
+    },
+
+    {
+      "id": "chrono_snake",
+
+      "name": "Chrono Snake",
+
+      "pathwayRelated": "FOOL",
+
+      "threatLevel": "HIGH",
+
+      "recommendedSequence": 4,
+
+      "dropItems": [
+        "Eye of a Chrono Snake"
+      ],
+
+      "locations": [
+        "SPIRIT_WORLD"
+      ],
+
+      "bossType": "MONSTER"
+    },
+
+    {
+      "id": "spirit_thread_carcass",
+
+      "name": "Spirit Thread Carcass",
+
+      "pathwayRelated": "FOOL",
+
+      "recommendedSequence": 5,
+
+      "dropItems": [
+        "Core of a Spirit Thread Carcass"
+      ],
+
+      "locations": [
+        "SPIRIT_WORLD"
+      ]
+    },
+
+    {
+      "id": "wraith",
+
+      "name": "Wraith",
+
+      "pathwayRelated": "FOOL",
+
+      "recommendedSequence": 5,
+
+      "dropItems": [
+        "Dust of a Wraith"
+      ],
+
+      "locations": [
+        "CEMETERY",
+        "SPIRIT_WORLD"
+      ]
+    },
+
+    {
+      "id": "dreamcatcher",
+
+      "name": "Dreamcatcher",
+
+      "pathwayRelated": "VISIONARY",
+
+      "recommendedSequence": 5,
+
+      "dropItems": [
+        "Dreamcatcher Heart"
+      ],
+
+      "locations": [
+        "DREAM_WORLD"
+      ]
+    },
+
+    {
+      "id": "psychic_phantom",
+
+      "name": "Psychic Phantom",
+
+      "pathwayRelated": "VISIONARY",
+
+      "recommendedSequence": 5,
+
+      "dropItems": [
+        "Psychic Phantom Crystal"
+      ],
+
+      "locations": [
+        "DREAM_WORLD",
+        "SPIRIT_WORLD"
+      ]
+    },
+
+    {
+      "id": "mist_watcher",
+
+      "name": "Mist Watcher",
+
+      "pathwayRelated": "DOOR",
+
+      "recommendedSequence": 3,
+
+      "dropItems": [
+        "Mist Watcher's Crystal",
+        "Mist Watcher's Eyelid"
+      ],
+
+      "locations": [
+        "ASTRAL_WORLD"
+      ]
+    },
+
+    {
+      "id": "wandering_skin",
+
+      "name": "Wandering Skin",
+
+      "pathwayRelated": "DOOR",
+
+      "recommendedSequence": 3,
+
+      "dropItems": [
+        "Wandering Skin",
+        "Wandering Skin Pus"
+      ],
+
+      "locations": [
+        "SPIRIT_WORLD"
+      ]
+    },
+
+    {
+      "id": "shadowless_demon_wolf",
+
+      "name": "Shadowless Demon Wolf",
+
+      "pathwayRelated": "DOOR",
+
+      "recommendedSequence": 5,
+
+      "dropItems": [
+        "Shadowless Demon Wolf Heart",
+        "Shadowless Demon Wolf Blood"
+      ],
+
+      "locations": [
+        "SPIRIT_WORLD",
+        "ANCIENT_RUINS"
+      ]
+    },
+
+    {
+      "id": "xiscorn_demon_worm",
+
+      "name": "Xiscorn Demon Worm",
+
+      "pathwayRelated": "DOOR",
+
+      "recommendedSequence": 5,
+
+      "dropItems": [
+        "Xiscorn Demon Worm"
+      ],
+
+      "locations": [
+        "SPIRIT_WORLD"
+      ]
+    },
+
+    {
+      "id": "soul_confusing_swarm",
+
+      "name": "Soul Confusing Insect Swarm",
+
+      "pathwayRelated": "ERROR",
+
+      "recommendedSequence": 7,
+
+      "dropItems": [
+        "Soul Confusing Insect Larvae",
+        "Soul Confusing Insect Mucus"
+      ],
+
+      "locations": [
+        "SWAMP",
+        "FOREST"
+      ]
+    },
+
+    {
+      "id": "sphinx",
+
+      "name": "Sphinx",
+
+      "pathwayRelated": "ERROR",
+
+      "recommendedSequence": 7,
+
+      "dropItems": [
+        "Sphinx Brain",
+        "Sphinx Blood"
+      ],
+
+      "locations": [
+        "DESERT",
+        "ANCIENT_RUINS"
+      ]
+    },
+
+    {
+      "id": "succubus",
+
+      "name": "Succubus",
+
+      "pathwayRelated": "DEMONESS",
+
+      "recommendedSequence": 6,
+
+      "dropItems": [
+        "Succubus Eyes",
+        "Succubus Hair"
+      ],
+
+      "locations": [
+        "DREAM_WORLD",
+        "ABYSS"
+      ]
+    },
+
+    {
+      "id": "gorgon",
+
+      "name": "Gorgon",
+
+      "pathwayRelated": "DEMONESS",
+
+      "recommendedSequence": 3,
+
+      "dropItems": [
+        "Gorgon Eyes",
+        "Gorgon Blood"
+      ],
+
+      "locations": [
+        "RUINS"
+      ]
+    },
+
+    {
+      "id": "sun_divine_bird",
+
+      "name": "Sun Divine Bird",
+
+      "pathwayRelated": "SUN",
+
+      "recommendedSequence": 4,
+
+      "dropItems": [
+        "Sun Divine Bird Blood",
+        "Sun Divine Bird Tail Feather"
+      ],
+
+      "locations": [
+        "ASTRAL_WORLD"
+      ]
+    },
+
+    {
+      "id": "blazing_giant",
+
+      "name": "Blazing Giant",
+
+      "pathwayRelated": "SUN",
+
+      "recommendedSequence": 2,
+
+      "dropItems": [
+        "Blazing Giant Head",
+        "Blazing Giant Blood"
+      ],
+
+      "locations": [
+        "FORSAKEN_LAND_OF_THE_GODS"
+      ]
+    },
+
+    {
+      "id": "deep_sea_python",
+
+      "name": "Deep Sea Python",
+
+      "pathwayRelated": "SAILOR",
+
+      "recommendedSequence": 3,
+
+      "dropItems": [
+        "Deep Sea Python Skull",
+        "Deep Sea Python Fang"
+      ],
+
+      "locations": [
+        "SEA_OF_RUINS"
+      ]
+    },
+
+    {
+      "id": "king_of_green_wings",
+
+      "name": "King of Green Wings",
+
+      "pathwayRelated": "SAILOR",
+
+      "recommendedSequence": 3,
+
+      "dropItems": [
+        "King of Green Wings Eye",
+        "King of Green Wings Blood"
+      ],
+
+      "locations": [
+        "SEA_OF_RUINS"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "EOT",
+  "name": "Eye of Truth",
+  "grade": 2,
+
+  "origin": {
+    "pathway": "WHITE_TOWER",
+    "sequence": "UNKNOWN",
+    "source": "Knowledge and truth related artifact."
+  },
+
+  "appearance": "Golden eye.",
+
+  "abilities": [
+    "Truth Revelation",
+    "Lie Detection",
+    "Information Exposure"
+  ],
+
+  "negativeEffects": [
+    "Constant perception of hidden truths"
+  ],
+
+  "status": "ACTIVE"
+}

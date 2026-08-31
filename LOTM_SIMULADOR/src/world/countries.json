@@ -1,0 +1,99 @@
+{
+  "version": "1.0",
+
+  "countries": [
+
+    {
+      "id": "loen_kingdom",
+      "name": "Loen Kingdom",
+      "government": "Monarchy",
+      "capital": "Backlund",
+      "currency": "Pound",
+      "region": "northern_continent",
+
+      "majorChurches": [
+        "church_of_evernight",
+        "church_of_storms",
+        "church_of_steam_and_machinery"
+      ]
+    },
+
+    {
+      "id": "intis_republic",
+      "name": "Intis Republic",
+      "government": "Republic",
+      "capital": "Trier",
+      "currency": "Ver d'Or",
+      "region": "northern_continent",
+
+      "majorChurches": [
+        "church_of_eternal_blazing_sun"
+      ]
+    },
+
+    {
+      "id": "feysac_empire",
+      "name": "Feysac Empire",
+      "government": "Empire",
+      "capital": "Awwa",
+      "currency": "Gold Mark",
+      "region": "northern_continent",
+
+      "majorChurches": [
+        "church_of_god_of_combat"
+      ]
+    },
+
+    {
+      "id": "feynapotter_kingdom",
+      "name": "Feynapotter Kingdom",
+      "government": "Monarchy",
+      "capital": "Durmur",
+      "region": "northern_continent",
+
+      "majorChurches": [
+        "church_of_earth_mother"
+      ]
+    },
+
+    {
+      "id": "lenburg",
+      "name": "Lenburg",
+      "government": "Monarchy",
+      "capital": "Lenburg City",
+      "region": "northern_continent",
+
+      "majorChurches": [
+        "church_of_knowledge_and_wisdom"
+      ]
+    },
+
+    {
+      "id": "masin",
+      "name": "Masin Kingdom",
+      "government": "Monarchy",
+      "capital": "Masin City",
+      "region": "northern_continent"
+    },
+
+    {
+      "id": "segar",
+      "name": "Segar",
+      "government": "Monarchy",
+      "capital": "Segar City",
+      "region": "northern_continent"
+    },
+
+    {
+      "id": "rorsted_archipelago",
+      "name": "Rorsted Archipelago",
+      "government": "Colonial Administration",
+      "capital": "Bayam",
+      "region": "sonia_sea",
+
+      "majorChurches": [
+        "church_of_storms"
+      ]
+    }
+  ]
+}

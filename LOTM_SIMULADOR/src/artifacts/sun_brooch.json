@@ -1,0 +1,25 @@
+{
+  "id": "SB",
+  "name": "Sun Brooch",
+  "grade": 3,
+
+  "origin": {
+    "pathway": "SUN",
+    "sequence": "LOW_SEQUENCE",
+    "source": "Sun pathway derived artifact."
+  },
+
+  "appearance": "Golden sun-shaped brooch.",
+
+  "abilities": [
+    "Sunlight Generation",
+    "Purification",
+    "Undead Suppression"
+  ],
+
+  "negativeEffects": [
+    "Continuous heat generation"
+  ],
+
+  "status": "ACTIVE"
+}
