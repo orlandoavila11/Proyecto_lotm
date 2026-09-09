@@ -4,14 +4,18 @@ import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { CanonicalDataLoader } from '../../infra/data/CanonicalDataLoader.js';
 import { TacticalCombatEngine, CombatActor } from '../../core/combat/TacticalCombatEngine.js';
 import { CanonicalPathwayId } from '../../core/types/pathway.js';
+import { EntityNotFoundError, ValidationDomainError } from '../../core/errors/DomainError.js';
 
 const CombatActionSchema = z.object({
   characterId: z.string(),
   skillId: z.string().optional()
 });
 
-// Sesiones de combate en memoria temporal de combate activo
-const activeBattles: Map<string, { player: CombatActor; enemy: CombatActor; turnCount: number }> = new Map();
+export interface BattleState {
+  player: CombatActor;
+  enemy: CombatActor;
+  turnCount: number;
+}
 
 export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: CanonicalDataLoader }> = async (
   fastify: FastifyInstance,
@@ -24,7 +28,7 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
     const { characterId } = req.params as { characterId: string };
     const char = db.getCharacter(characterId);
     if (!char) {
-      return reply.status(404).send({ error: 'Personaje no encontrado' });
+      throw new EntityNotFoundError('Personaje no encontrado');
     }
 
     const skills = TacticalCombatEngine.getSkillsForPathway(char.pathway as CanonicalPathwayId, char.sequence);
@@ -35,16 +39,46 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
     });
   });
 
+  // GET /api/combat/active/:characterId
+  fastify.get('/active/:characterId', async (req, reply) => {
+    const { characterId } = req.params as { characterId: string };
+    const battleRow = db.getActiveBattle(characterId);
+    if (!battleRow) {
+      throw new EntityNotFoundError('No hay combate activo para este personaje.');
+    }
+
+    const battleState: BattleState = JSON.parse(battleRow.state_json);
+    const char = db.getCharacter(characterId);
+    const skills = char
+      ? TacticalCombatEngine.getSkillsForPathway(char.pathway as CanonicalPathwayId, char.sequence)
+      : [];
+
+    return reply.send({
+      battleId: battleRow.id,
+      status: battleRow.status,
+      player: battleState.player,
+      enemy: battleState.enemy,
+      turnCount: battleState.turnCount,
+      availableSkills: skills
+    });
+  });
+
   // POST /api/combat/start
   fastify.post('/start', async (req, reply) => {
     const body = req.body as { characterId: string; enemyName?: string; enemyHp?: number };
     if (!body?.characterId) {
-      return reply.status(400).send({ error: 'characterId requerido' });
+      throw new ValidationDomainError('characterId requerido');
     }
 
     const char = db.getCharacter(body.characterId);
     if (!char) {
-      return reply.status(404).send({ error: 'Personaje no encontrado' });
+      throw new EntityNotFoundError('Personaje no encontrado');
+    }
+
+    // Si ya existe un combate previo activo, finalizarlo como abandonado
+    const existingBattle = db.getActiveBattle(char.id);
+    if (existingBattle) {
+      db.finishBattle(existingBattle.id, 'FLED');
     }
 
     const playerActor: CombatActor = {
@@ -73,16 +107,20 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
       maxSpirituality: 50
     };
 
-    activeBattles.set(char.id, {
+    const initialState: BattleState = {
       player: playerActor,
       enemy: enemyActor,
       turnCount: 1
-    });
+    };
+
+    // Persistencia transaccional directa en SQLite
+    const battleRow = db.createBattle(char.id, initialState);
 
     const skills = TacticalCombatEngine.getSkillsForPathway(char.pathway as CanonicalPathwayId, char.sequence);
 
     return reply.send({
       success: true,
+      battleId: battleRow.id,
       message: `¡Ha comenzado una confrontación mística contra [${enemyName}]!`,
       player: playerActor,
       enemy: enemyActor,
@@ -94,15 +132,16 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
   fastify.post('/action', async (req, reply) => {
     const parseRes = CombatActionSchema.safeParse(req.body);
     if (!parseRes.success) {
-      return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
+      throw new ValidationDomainError('Datos de combate inválidos', parseRes.error.format());
     }
 
     const { characterId, skillId } = parseRes.data;
-    const battle = activeBattles.get(characterId);
-    if (!battle) {
-      return reply.status(400).send({ error: 'No hay combate activo para este personaje.' });
+    const battleRow = db.getActiveBattle(characterId);
+    if (!battleRow) {
+      throw new EntityNotFoundError('No hay combate activo para este personaje.');
     }
 
+    const battle: BattleState = JSON.parse(battleRow.state_json);
     const { player, enemy } = battle;
 
     // 1. Turno del Jugador
@@ -110,12 +149,11 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
 
     // Si el enemigo fue derrotado
     if (playerResult.isTargetDefeated) {
-      activeBattles.delete(characterId);
+      db.updateBattle(battleRow.id, battle, 'VICTORY');
       db.updateCharacterSomatics(characterId, {
         health: player.currentHp,
         spirituality: player.currentSpirituality
       });
-      // Recompensa en libras
       db.updateCharacterWealth(characterId, 120);
 
       return reply.send({
@@ -162,9 +200,9 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
 
     battle.turnCount++;
 
-    // Actualizar estado en base de datos si el jugador es derrotado
+    // Si el jugador es derrotado
     if (enemyResult.isTargetDefeated) {
-      activeBattles.delete(characterId);
+      db.updateBattle(battleRow.id, battle, 'DEFEAT');
       db.updateCharacterSomatics(characterId, {
         health: 0,
         sanity: 0
@@ -180,7 +218,10 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
       });
     }
 
-    // Persistir HP y espiritualidad actualizados del jugador
+    // Persistir estado de combate actualizado en SQLite (CERO estado en memoria volátil)
+    db.updateBattle(battleRow.id, battle, 'ONGOING');
+
+    // Persistir HP y espiritualidad actualizados del jugador en tabla characters
     db.updateCharacterSomatics(characterId, {
       health: player.currentHp,
       spirituality: player.currentSpirituality
@@ -229,4 +270,3 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
     });
   });
 };
-

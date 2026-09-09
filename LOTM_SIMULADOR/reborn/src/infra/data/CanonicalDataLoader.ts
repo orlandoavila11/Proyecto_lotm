@@ -1,5 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { CanonicalPathwayId, PathwayCompendium, SequenceData } from '../../core/types/pathway.js';
 
 export class CanonicalDataLoader {
@@ -62,10 +63,10 @@ export class CanonicalDataLoader {
   private loadPathways(customPath?: string): void {
     let dir = customPath;
     if (!dir) {
+      const packageRoot = fileURLToPath(new URL('../../..', import.meta.url));
       const candidates = [
-        path.resolve('data/canonical/pathways'),
-        path.resolve('reborn/data/canonical/pathways'),
-        path.join(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([a-zA-Z]:)/, '$1')), '../../../data/canonical/pathways')
+        path.join(packageRoot, 'data', 'canonical', 'pathways'),
+        path.join(packageRoot, 'data', 'content', 'pathways')
       ];
       for (const c of candidates) {
         if (fs.existsSync(c)) {

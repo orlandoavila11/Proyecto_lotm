@@ -1,6 +1,16 @@
 import { DatabaseSync } from 'node:sqlite';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { MigrationRunner } from './MigrationRunner.js';
+
+export interface BattleRow {
+  id: string;
+  character_id: string;
+  state_json: string;
+  status: 'ONGOING' | 'VICTORY' | 'DEFEAT' | 'FLED';
+  created_at: string;
+  updated_at: string;
+}
 
 export interface CharacterRow {
   id: string;
@@ -71,22 +81,18 @@ export class DatabaseClient {
       }
     }
     this.db = new DatabaseSync(dbPath);
+    this.db.exec('PRAGMA foreign_keys = ON;');
+    if (!this.isMemory) {
+      this.db.exec('PRAGMA journal_mode = WAL;');
+      this.db.exec('PRAGMA synchronous = NORMAL;');
+    }
     this.initSchema();
   }
 
   private initSchema(): void {
-    // Leer schema.sql relativo a este módulo
-    const schemaPath = path.join(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([a-zA-Z]:)/, '$1')), 'schema.sql');
-    if (fs.existsSync(schemaPath)) {
-      const schemaSql = fs.readFileSync(schemaPath, 'utf-8');
-      this.db.exec(schemaSql);
-    } else {
-      // Fallback si corre compilado
-      const fallbackPath = path.resolve('src/infra/database/schema.sql');
-      if (fs.existsSync(fallbackPath)) {
-        this.db.exec(fs.readFileSync(fallbackPath, 'utf-8'));
-      }
-    }
+    // Ejecutar migraciones versionadas e idempotentes
+    const runner = new MigrationRunner(this.db);
+    runner.run();
 
     // Inicializar distritos si la tabla está vacía
     const countDistricts = (this.db.prepare('SELECT COUNT(*) as count FROM districts').get() as any)?.count || 0;
@@ -330,6 +336,50 @@ export class DatabaseClient {
 
   public discoverClue(clueId: string): void {
     this.db.prepare('UPDATE investigation_clues SET is_discovered = 1 WHERE id = ?').run(clueId);
+  }
+
+  // --- MÉTODOS DE BATALLA Y COMBATE ---
+  public createBattle(characterId: string, state: any): BattleRow {
+    const battleId = `battle_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+    const stateJson = JSON.stringify(state);
+    const stmt = this.db.prepare(`
+      INSERT INTO battles (id, character_id, state_json, status, created_at, updated_at)
+      VALUES (?, ?, ?, 'ONGOING', datetime('now'), datetime('now'))
+    `);
+    stmt.run(battleId, characterId, stateJson);
+    return this.getBattleById(battleId)!;
+  }
+
+  public getActiveBattle(characterId: string): BattleRow | null {
+    const row = this.db.prepare(`
+      SELECT * FROM battles
+      WHERE character_id = ? AND status = 'ONGOING'
+      ORDER BY created_at DESC
+      LIMIT 1
+    `).get(characterId);
+    return (row as unknown as BattleRow) || null;
+  }
+
+  public getBattleById(battleId: string): BattleRow | null {
+    const row = this.db.prepare('SELECT * FROM battles WHERE id = ?').get(battleId);
+    return (row as unknown as BattleRow) || null;
+  }
+
+  public updateBattle(battleId: string, state: any, status: 'ONGOING' | 'VICTORY' | 'DEFEAT' | 'FLED' = 'ONGOING'): void {
+    const stateJson = JSON.stringify(state);
+    this.db.prepare(`
+      UPDATE battles
+      SET state_json = ?, status = ?, updated_at = datetime('now')
+      WHERE id = ?
+    `).run(stateJson, status, battleId);
+  }
+
+  public finishBattle(battleId: string, status: 'VICTORY' | 'DEFEAT' | 'FLED'): void {
+    this.db.prepare(`
+      UPDATE battles
+      SET status = ?, updated_at = datetime('now')
+      WHERE id = ?
+    `).run(status, battleId);
   }
 
   public close(): void {

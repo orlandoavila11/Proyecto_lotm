@@ -1,4 +1,5 @@
 import { CanonicalPathwayId } from '../types/pathway.js';
+import { SeededRNG } from '../rng/SeededRNG.js';
 
 export interface CombatSkill {
   id: string;
@@ -155,7 +156,8 @@ export class TacticalCombatEngine {
   public static executeAction(
     actor: CombatActor,
     target: CombatActor,
-    skillId?: string
+    skillId?: string,
+    rng?: SeededRNG
   ): CombatTurnResult {
     let damage = 12; // Ataque básico de puño / estilete
     let healing = 0;
@@ -176,7 +178,8 @@ export class TacticalCombatEngine {
         spiritualitySpent: 0,
         message: `¡${target.name} se desvaneció a través del espacio! El ataque de ${actor.name} atravesó el vacío.`,
         targetCurrentHp: target.currentHp,
-        isTargetDefeated: false
+        isTargetDefeated: false,
+        effectTriggered: 'DODGE'
       };
     }
 
@@ -243,6 +246,16 @@ export class TacticalCombatEngine {
       }
     }
 
+    // Variación determinista de daño con SeededRNG si está presente
+    if (rng && damage > 0) {
+      const variance = rng.nextInt(-2, 2);
+      damage = Math.max(1, damage + variance);
+      if (rng.checkChance(15)) {
+        damage = Math.floor(damage * 1.5);
+        message += ' ¡Impacto Crítico Espiritual!';
+      }
+    }
+
     // Modificador de defensa baja
     if (target.defenseDownTurns && target.defenseDownTurns > 0) {
       damage = Math.floor(damage * 1.3);
@@ -263,6 +276,101 @@ export class TacticalCombatEngine {
       targetCurrentHp: target.currentHp,
       isTargetDefeated: isDefeated,
       effectTriggered
+    };
+  }
+
+  /**
+   * Simulación completa determinista de combate por turnos utilizando SeededRNG.
+   * Con la misma semilla, el resultado es 100% idéntico e inmutable.
+   */
+  public static simulateDeterministicCombat(
+    player: CombatActor,
+    enemy: CombatActor,
+    seed: number | string,
+    maxTurns: number = 30
+  ): {
+    victory: boolean;
+    turnsCount: number;
+    playerFinalHp: number;
+    enemyFinalHp: number;
+    turnLog: CombatTurnResult[];
+  } {
+    const rng = new SeededRNG(seed);
+    const turnLog: CombatTurnResult[] = [];
+    let turn = 1;
+    let victory = false;
+
+    // Clonar actores para no mutar los originales
+    const p: CombatActor = { ...player };
+    const e: CombatActor = { ...enemy };
+
+    const playerSkills = p.pathway ? this.getSkillsForPathway(p.pathway, p.sequence) : [];
+
+    while (turn <= maxTurns && p.currentHp > 0 && e.currentHp > 0) {
+      // 1. Turno de jugador
+      let chosenSkillId: string | undefined = undefined;
+      const affordableSkills = playerSkills.filter(s => p.currentSpirituality >= s.spiritualityCost);
+      if (affordableSkills.length > 0 && rng.checkChance(70)) {
+        const idx = rng.nextInt(0, affordableSkills.length - 1);
+        chosenSkillId = affordableSkills[idx].id;
+      }
+
+      const pResult = this.executeAction(p, e, chosenSkillId, rng);
+      pResult.turnNumber = turn;
+      turnLog.push(pResult);
+
+      if (e.currentHp <= 0) {
+        victory = true;
+        break;
+      }
+
+      // 2. Turno del enemigo
+      if (e.isStunned) {
+        e.isStunned = false;
+        turnLog.push({
+          turnNumber: turn,
+          actorName: e.name,
+          actionName: 'Aturdido',
+          damageDealt: 0,
+          healingDone: 0,
+          spiritualitySpent: 0,
+          message: `${e.name} está aturdido.`,
+          targetCurrentHp: p.currentHp,
+          isTargetDefeated: false
+        });
+      } else if (e.isAsleep) {
+        e.isAsleep = false;
+        turnLog.push({
+          turnNumber: turn,
+          actorName: e.name,
+          actionName: 'Dormido',
+          damageDealt: 0,
+          healingDone: 0,
+          spiritualitySpent: 0,
+          message: `${e.name} está dormido.`,
+          targetCurrentHp: p.currentHp,
+          isTargetDefeated: false
+        });
+      } else {
+        const eResult = this.executeAction(e, p, undefined, rng);
+        eResult.turnNumber = turn;
+        turnLog.push(eResult);
+      }
+
+      if (p.currentHp <= 0) {
+        victory = false;
+        break;
+      }
+
+      turn++;
+    }
+
+    return {
+      victory,
+      turnsCount: turnLog.length,
+      playerFinalHp: p.currentHp,
+      enemyFinalHp: e.currentHp,
+      turnLog
     };
   }
 }
