@@ -1,0 +1,4638 @@
+[
+  {
+    "id": "BOOK_001",
+    "metadata": {
+      "title": "Tratado de Astrología y Simbolismo Místico",
+      "author": "Desconocido",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_BASIC_ASTROLOGY",
+      "KNOW_SYMBOLIC_CORRESPONDENCES"
+    ],
+    "knowledge_categories": [
+      "ASTROLOGY",
+      "MYSTICISM"
+    ],
+    "pathway_affinities": [
+      "MYSTERY_PRYER",
+      "SEER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_011"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_002",
+    "metadata": {
+      "title": "El Grimorio de las Sombras de Hornis",
+      "author": "Hornis",
+      "historical_era": "Fourth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 7,
+      "required_knowledge": [
+        "KNOW_SYMBOLIC_CORRESPONDENCES"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 2.0,
+        "forced_corruption_gain": 5
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SPIRIT_WORLD_SHADOWS",
+      "KNOW_PATHWAY_ERROR_TIME_LOOPS"
+    ],
+    "knowledge_categories": [
+      "SPIRIT_WORLD",
+      "COSMOLOGY"
+    ],
+    "pathway_affinities": [
+      "NIGHT",
+      "ERROR"
+    ],
+    "reading_effects": {
+      "sanity_cost": 15,
+      "corruption_yield": 2
+    },
+    "side_effects": [
+      "MUTTERING_SUSURRUS"
+    ],
+    "unlocks": {
+      "events": [],
+      "investigations": [
+        "INV_CASE_012"
+      ],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_003",
+    "metadata": {
+      "title": "Manuscrito de Hermes sobre la Alquimia de la Carne",
+      "author": "Hermes",
+      "historical_era": "Multiple Epochs"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 4,
+      "required_knowledge": [
+        "KNOW_DANGEROUS_MIND_CATACOMBS"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.5,
+        "forced_corruption_gain": 20
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_DANGEROUS_MIND_CATACOMBS",
+      "KNOW_PSYCHOLOGY_ALCHEMISTS_DREAM_WEAVING"
+    ],
+    "knowledge_categories": [
+      "PSYCHOLOGY",
+      "OCCULTISM"
+    ],
+    "pathway_affinities": [
+      "SPECTATOR"
+    ],
+    "reading_effects": {
+      "sanity_cost": 45,
+      "corruption_yield": 15
+    },
+    "side_effects": [
+      "MIND_MAZE",
+      "COGNITIVE_SHATTER"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_018"
+      ],
+      "investigations": [
+        "INV_CASE_039"
+      ],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_004",
+    "metadata": {
+      "title": "Anales de la Marina Real de Loen",
+      "author": "Almirantazgo de Loen",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SAFE_PORT_ROUTES",
+      "KNOW_MILITARY_HISTORY"
+    ],
+    "knowledge_categories": [
+      "MILITARY_HISTORY"
+    ],
+    "pathway_affinities": [
+      "SAILOR",
+      "ARBITER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 1,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_014"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_005",
+    "metadata": {
+      "title": "Secretos de la Cuarta Época: La Caída de los Solomon",
+      "author": "Zaratustra",
+      "historical_era": "Fourth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 5,
+      "required_knowledge": [
+        "KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 2.5,
+        "forced_corruption_gain": 8
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SAFE_FOURTH_EPOCH_HISTORY",
+      "KNOW_FOURTH_EPOCH_WARS"
+    ],
+    "knowledge_categories": [
+      "FOURTH_EPOCH_HISTORY"
+    ],
+    "pathway_affinities": [
+      "SEER",
+      "ERROR"
+    ],
+    "reading_effects": {
+      "sanity_cost": 20,
+      "corruption_yield": 5
+    },
+    "side_effects": [
+      "TEMPORAL_BLUR"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_013"
+      ],
+      "investigations": [
+        "INV_CASE_049"
+      ],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_006",
+    "metadata": {
+      "title": "El Códice de Oro de Roselle",
+      "author": "Roselle Gustav",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 6,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.8,
+        "forced_corruption_gain": 4
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_ALCHEMICAL_FOUNDATIONS",
+      "KNOW_INTIS_ESPIONAGE_NETWORKS"
+    ],
+    "knowledge_categories": [
+      "ALCHEMICAL_FOUNDATIONS",
+      "INTIS_ESPIONAGE_NETWORKS"
+    ],
+    "pathway_affinities": [
+      "SAVANT",
+      "LAWYER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 10,
+      "corruption_yield": 1
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_012"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_007",
+    "metadata": {
+      "title": "Las Leyendas Marinas del Continente Sur",
+      "author": "Bernadette Gustav",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 8,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.2,
+        "forced_corruption_gain": 1
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SEA_LEGENDS",
+      "KNOW_SAFE_PORT_ROUTES"
+    ],
+    "knowledge_categories": [
+      "SEA_LEGENDS"
+    ],
+    "pathway_affinities": [
+      "SAILOR",
+      "MYSTERY_PRYER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 4,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_006"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_008",
+    "metadata": {
+      "title": "Teorías Fundamentales del Orden y el Rigor",
+      "author": "Tribunales de Cherwood",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_LAW_AND_ORDER_MYSTICISM"
+    ],
+    "knowledge_categories": [
+      "LAW_AND_ORDER_MYSTICISM"
+    ],
+    "pathway_affinities": [
+      "ARBITER",
+      "LAWYER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 1,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_016"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_009",
+    "metadata": {
+      "title": "Las Puertas del Inframundo",
+      "author": "Gregory",
+      "historical_era": "Fourth Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "ANCIENT"
+    },
+    "reading_requirements": {
+      "required_sequence": 3,
+      "required_knowledge": [
+        "KNOW_SPIRIT_WORLD_SHADOWS"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 4.0,
+        "forced_corruption_gain": 25
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_DANGEROUS_UNDERWORLD_GATES",
+      "KNOW_SPIRIT_WORLD_SHADOWS"
+    ],
+    "knowledge_categories": [
+      "SPIRIT_WORLD",
+      "UNDERWORLD"
+    ],
+    "pathway_affinities": [
+      "DEATH",
+      "NIGHT"
+    ],
+    "reading_effects": {
+      "sanity_cost": 50,
+      "corruption_yield": 20
+    },
+    "side_effects": [
+      "MUTTERING_SUSURRUS"
+    ],
+    "unlocks": {
+      "events": [],
+      "investigations": [
+        "INV_CASE_050"
+      ],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_010",
+    "metadata": {
+      "title": "Tratado Farmacéutico del Distrito Este",
+      "author": "Timothy",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_MYSTICAL_ANATOMY"
+    ],
+    "knowledge_categories": [
+      "MYSTICAL_ANATOMY"
+    ],
+    "pathway_affinities": [
+      "APOTHECARY"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+"side_effects": [],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_010"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_011",
+"metadata": {
+"title": "Alineación Astral y Fluctuaciones de Suerte",
+"author": "Life School of Thought",
+"historical_era": "Multiple Epochs"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 7,
+"required_knowledge": [
+"KNOW_BASIC_ASTROLOGY"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 6
+}
+},
+"knowledge_rewards": [
+"KNOW_FATE_AND_PROBABILITY",
+"KNOW_SPIRIT_WORLD_WISP_ANOMALIES"
+],
+"knowledge_categories": [
+"ASTROLOGY",
+"FATE"
+],
+"pathway_affinities": [
+"MONSTER"
+],
+"reading_effects": {
+"sanity_cost": 12,
+"corruption_yield": 3
+},
+"side_effects": [
+"TEMPORAL_BLUR"
+],
+"unlocks": {
+"events": [
+"EVT_020"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_012",
+"metadata": {
+"name": "Registros Policiales de Incendios en Backlund",
+"author": "Guardia Civil de Loen",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_PATHWAY_HUNTER_PYROMANIAC"
+],
+"knowledge_categories": [
+"OCCULTISM"
+],
+"pathway_affinities": [
+"HUNTER"
+],
+"reading_effects": {
+"sanity_cost": 2,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_004"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_013",
+"metadata": {
+"title": "Hilos Invisibles y Control de Marionetas",
+"author": "Secret Order",
+"historical_era": "Fourth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "RARE"
+},
+"reading_requirements": {
+"required_sequence": 5,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.2,
+"forced_corruption_gain": 10
+}
+},
+"knowledge_rewards": [
+"KNOW_PATHWAY_SEER_THREAD_CONTROL",
+"KNOW_SPACE_TIME_MECHANICS"
+],
+"knowledge_categories": [
+"OCCULTISM"
+],
+"pathway_affinities": [
+"SEER"
+],
+"reading_effects": {
+"sanity_cost": 25,
+"corruption_yield": 4
+},
+"side_effects": [
+"MUTTERING_SUSURRUS"
+],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_013"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_014",
+"metadata": {
+"title": "Evidencia Macabra del Culto del Ojo Invertido",
+"author": "Nighthawks Archives",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 7,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 7
+}
+},
+"knowledge_rewards": [
+"KNOW_ORGANIZATION_AURORA_ORDER_FLESH",
+"KNOW_ORGANIZATION_DEMONESS_NETWORKS"
+],
+"knowledge_categories": [
+"OCCULTISM",
+"ORGANIZATIONS"
+],
+"pathway_affinities": [
+"NIGHT",
+"SPECTATOR"
+],
+"reading_effects": {
+"sanity_cost": 18,
+"corruption_yield": 3
+},
+"side_effects": [
+"MIND_MAZE"
+],
+"unlocks": {
+"events": [
+"EVT_019"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_015",
+"metadata": {
+"title": "La Geometría Astral de la Familia Tamara",
+"author": "Tamara Remnants",
+"historical_era": "Fourth Epoch"
+},
+"classification": {
+"risk_level": "FORBIDDEN",
+"rarity": "ANCIENT"
+},
+"reading_requirements": {
+"required_sequence": 4,
+"required_knowledge": [
+"KNOW_SPACE_TIME_MECHANICS"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 3.0,
+"forced_corruption_gain": 18
+}
+},
+"knowledge_rewards": [
+"KNOW_SPACE_TIME_MECHANICS",
+"KNOW_PATHWAY_APPRENTICE_TRAVELLER"
+],
+"knowledge_categories": [
+"COSMOLOGY",
+"SPACE_TIME_MECHANICS"
+],
+"pathway_affinities": [
+"APPRENTICE",
+"ARBITER"
+],
+"reading_effects": {
+"sanity_cost": 40,
+"corruption_yield": 12
+},
+"side_effects": [
+"TEMPORAL_BLUR"
+],
+"unlocks": {
+"events": [
+"EVT_017"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "BOOK_016",
+"metadata": {
+"title": "Análisis de Infiltración Diplomática en Intis",
+"author": "Lenburg Intelligence",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 8,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_INTIS_ESPIONAGE_NETWORKS"
+],
+"knowledge_categories": [
+"INTIS_ESPIONAGE_NETWORKS"
+],
+"pathway_affinities": [
+"READER",
+"LAWYER"
+],
+"reading_effects": {
+"sanity_cost": 3,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_011"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_017",
+"metadata": {
+"title": "Estudio Psicológico sobre Enjambres Mentales",
+"author": "Psychology Alchemists",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 5
+}
+},
+"knowledge_rewards": [
+"KNOW_DANGEROUS_MIND_CATACOMBS",
+"KNOW_PATHWAY_SPECTATOR_HYPNOSIS"
+],
+"knowledge_categories": [
+"PSYCHOLOGY"
+],
+"pathway_affinities": [
+"SPECTATOR"
+],
+"reading_effects": {
+"sanity_cost": 15,
+"corruption_yield": 2
+},
+"side_effects": [
+"MIND_MAZE"
+],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_018"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_018",
+"metadata": {
+"title": "El Himno Oculto de la Diosa de Evernight",
+"author": "Arzobispado de Loen",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+],
+"knowledge_categories": [
+"OCCULTISM"
+],
+"pathway_affinities": [
+"NIGHT"
+],
+"reading_effects": {
+"sanity_cost": 2,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_005"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_019",
+"metadata": {
+"title": "Transcripción del Árbol del Deseo Absoluto",
+"author": "Rose School of Thought",
+"historical_era": "Pre-Epoch"
+},
+"classification": {
+"risk_level": "FORBIDDEN",
+"rarity": "ANCIENT"
+},
+"reading_requirements": {
+"required_sequence": 4,
+"required_knowledge": [
+"KNOW_DANGEROUS_BLOOD_RITUALS"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 3.8,
+"forced_corruption_gain": 22
+}
+},
+"knowledge_rewards": [
+"KNOW_FORBIDDEN_OUTER_DEITY_TREE_DESIRE",
+"KNOW_DANGEROUS_BLOOD_RITUALS"
+],
+"knowledge_categories": [
+"OCCULTISM",
+"OUTER_DEITIES"
+],
+"pathway_affinities": [
+"PRISONER"
+],
+"reading_effects": {
+"sanity_cost": 48,
+"corruption_yield": 18
+},
+"side_effects": [
+"MUTTERING_SUSURRUS"
+],
+"unlocks": {
+"events": [
+"EVT_003"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "BOOK_020",
+"metadata": {
+"title": "Criptografía Avanzada de Lenburg",
+"author": "Herabergen Advisor",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 8,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+],
+"knowledge_categories": [
+"FOURTH_EPOCH_HISTORY"
+],
+"pathway_affinities": [
+"READER"
+],
+"reading_effects": {
+"sanity_cost": 3,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_023"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "COMMON"
+},
+  {
+    "id": "BOOK_021",
+    "metadata": {
+      "title": "Manual de Confección de Pociones Elementales",
+      "author": "Gremio de Boticarios de Backlund",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_MYSTICAL_ANATOMY",
+      "KNOW_SYMBOLIC_CORRESPONDENCES"
+    ],
+    "knowledge_categories": [
+      "MYSTICAL_ANATOMY",
+      "MYSTICISM"
+    ],
+    "pathway_affinities": [
+      "APOTHECARY",
+      "SAVANT"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_027"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_022",
+    "metadata": {
+      "title": "Tratado del Ojo Invertido y la Carne Flagelada",
+      "author": "Oráculo de la Orden de la Aurora",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 4,
+      "required_knowledge": [
+        "KNOW_ORGANIZATION_AURORA_ORDER_FLESH"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.0,
+        "forced_corruption_gain": 15
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_ORGANIZATION_AURORA_ORDER_FLESH",
+      "KNOW_AURORA_ORDER_FLESH_TITANS"
+    ],
+    "knowledge_categories": [
+      "OCCULTISM",
+      "OUTER_DEITIES"
+    ],
+    "pathway_affinities": [
+      "HANGED_MAN"
+    ],
+    "reading_effects": {
+      "sanity_cost": 40,
+      "corruption_yield": 12
+    },
+    "side_effects": [
+      "MUTTERING_SUSURRUS",
+      "COGNITIVE_SHATTER"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_019"
+      ],
+      "investigations": [
+        "INV_CASE_031"
+      ],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_023",
+    "metadata": {
+      "title": "Principios Básicos de la Provocación y el Conflicto",
+      "author": "Cazadores del Sindicato de Hierro",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_PATHWAY_HUNTER_PYROMANIAC"
+    ],
+    "knowledge_categories": [
+      "OCCULTISM"
+    ],
+    "pathway_affinities": [
+      "HUNTER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_014",
+        "EVT_039"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_024",
+    "metadata": {
+      "title": "Las Crónicas de la Corona de Hierro de Feysac",
+      "author": "Comandante Korhonen",
+      "historical_era": "Fourth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 6,
+      "required_knowledge": [
+        "KNOW_MILITARY_HISTORY"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 2.0,
+        "forced_corruption_gain": 5
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_MILITARY_HISTORY",
+      "KNOW_FOURTH_EPOCH_WARS"
+    ],
+    "knowledge_categories": [
+      "MILITARY_HISTORY",
+      "FOURTH_EPOCH_HISTORY"
+    ],
+    "pathway_affinities": [
+      "COMBAT"
+    ],
+    "reading_effects": {
+      "sanity_cost": 15,
+      "corruption_yield": 2
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [],
+      "investigations": [
+        "INV_CASE_062"
+      ],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_025",
+    "metadata": {
+      "title": "Teoremas de Desfase Espacial No Euclidiano",
+      "author": "Familia Abraham",
+      "historical_era": "Fourth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 5,
+      "required_knowledge": [
+        "KNOW_SPACE_TIME_MECHANICS"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 2.5,
+        "forced_corruption_gain": 8
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SPACE_TIME_MECHANICS",
+      "KNOW_PATHWAY_APPRENTICE_TRAVELLER"
+    ],
+    "knowledge_categories": [
+      "SPACE_TIME_MECHANICS",
+      "COSMOLOGY"
+    ],
+    "pathway_affinities": [
+      "APPRENTICE"
+    ],
+    "reading_effects": {
+      "sanity_cost": 22,
+      "corruption_yield": 4
+    },
+    "side_effects": [
+      "TEMPORAL_BLUR"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_017"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_026",
+    "metadata": {
+      "title": "La Ley del Castigo y la Supresión Judicial",
+      "author": "Magistratura Real de Loen",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_LAW_AND_ORDER_MYSTICISM"
+    ],
+    "knowledge_categories": [
+      "LAW_AND_ORDER_MYSTICISM"
+    ],
+    "pathway_affinities": [
+      "ARBITER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_022"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_027",
+    "metadata": {
+      "title": "Tratado de Danzas Rituales de la Inevitabilidad",
+      "author": "Secta de los Danzantes del Destino",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 4,
+      "required_knowledge": [
+        "KNOW_FATE_AND_PROBABILITY"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.5,
+        "forced_corruption_gain": 18
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_FORBIDDEN_COSMIC_INEVITABILITY",
+      "KNOW_FATE_AND_PROBABILITY"
+    ],
+    "knowledge_categories": [
+      "OUTER_DEITIES",
+      "FATE"
+    ],
+    "pathway_affinities": [],
+    "reading_effects": {
+      "sanity_cost": 45,
+      "corruption_yield": 15
+    },
+    "side_effects": [
+      "TEMPORAL_BLUR",
+      "MIND_MAZE"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_015"
+      ],
+      "investigations": [
+        "INV_CASE_044"
+      ],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_028",
+    "metadata": {
+      "title": "Registros de Deudas y Contratos Distorsionados",
+      "author": "Sindicato Comercial de Intis",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 6,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.8,
+        "forced_corruption_gain": 4
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_LAW_AND_ORDER_MYSTICISM",
+      "KNOW_INTIS_ESPIONAGE_NETWORKS"
+    ],
+    "knowledge_categories": [
+      "LAW_AND_ORDER_MYSTICISM",
+      "INTIS_ESPIONAGE_NETWORKS"
+    ],
+    "pathway_affinities": [
+      "LAWYER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 12,
+      "corruption_yield": 2
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_024"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_029",
+    "metadata": {
+      "title": "Anotaciones sobre la Corrupción del plano Lunar",
+      "author": "Facción de la Templanza",
+      "historical_era": "Multiple Epochs"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 5,
+      "required_knowledge": [
+        "KNOW_MYSTICAL_ANATOMY"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 2.2,
+        "forced_corruption_gain": 8
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_OUTER_DEITIES_PRIMITIVE_MOON",
+      "KNOW_MYSTICAL_ANATOMY"
+    ],
+    "knowledge_categories": [
+      "OUTER_DEITIES",
+      "MYSTICAL_ANATOMY"
+    ],
+    "pathway_affinities": [
+      "APOTHECARY",
+      "PRISONER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 20,
+      "corruption_yield": 4
+    },
+    "side_effects": [
+      "MUTTERING_SUSURRUS"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_027"
+      ],
+      "investigations": [
+        "INV_CASE_022"
+      ],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_030",
+    "metadata": {
+      "title": "Principios Deductivos Avanzados",
+      "author": "Academia de Ciencias de Lenburg",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 8,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+],
+"knowledge_categories": [
+"FOURTH_EPOCH_HISTORY"
+],
+"pathway_affinities": [
+"READER"
+],
+"reading_effects": {
+"sanity_cost": 4,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_023"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_031",
+"metadata": {
+"title": "El Ritual de Ascenso del Recolector de Almas",
+"author": "Episcopado Numis herético",
+"historical_era": "Fourth Epoch"
+},
+"classification": {
+"risk_level": "FORBIDDEN",
+"rarity": "RARE"
+},
+"reading_requirements": {
+"required_sequence": 4,
+"required_knowledge": [
+"KNOW_DANGEROUS_UNDERWORLD_GATES"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 3.2,
+"forced_corruption_gain": 16
+}
+},
+"knowledge_rewards": [
+"KNOW_DANGEROUS_UNDERWORLD_GATES",
+"KNOW_SPIRIT_WORLD_SHADOWS"
+],
+"knowledge_categories": [
+"UNDERWORLD",
+"SPIRIT_WORLD"
+],
+"pathway_affinities": [
+"DEATH"
+],
+"reading_effects": {
+"sanity_cost": 38,
+"corruption_yield": 10
+},
+"side_effects": [
+"MUTTERING_SUSURRUS"
+],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_061",
+"INV_CASE_067"
+],
+"rumors": []
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "BOOK_032",
+"metadata": {
+"title": "El Espejo de Cera de la Plaga",
+"author": "Secta de las Demonisas",
+"historical_era": "Multiple Epochs"
+},
+"classification": {
+"risk_level": "FORBIDDEN",
+"rarity": "RARE"
+},
+"reading_requirements": {
+"required_sequence": 4,
+"required_knowledge": [
+"KNOW_ORGANIZATION_DEMONESS_NETWORKS"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 3.5,
+"forced_corruption_gain": 20
+}
+},
+"knowledge_rewards": [
+"KNOW_ORGANIZATION_DEMONESS_NETWORKS",
+"KNOW_PATHWAY_DEMONESS_PLEASURE"
+],
+"knowledge_categories": [
+"ORGANIZATIONS",
+"OCCULTISM"
+],
+"pathway_affinities": [
+"ASSASSIN"
+],
+"reading_effects": {
+"sanity_cost": 42,
+"corruption_yield": 14
+},
+"side_effects": [
+"MIND_MAZE",
+"COGNITIVE_SHATTER"
+],
+"unlocks": {
+"events": [
+"EVT_026"
+],
+"investigations": [
+"INV_CASE_026"
+],
+"rumors": []
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "BOOK_033",
+"metadata": {
+"title": "El Sendero del Sabio Ermitaño",
+"author": "Orden Ascética de Moisés",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [
+"KNOW_DANGEROUS_MOSES_TRANSCRIPTION"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 6
+}
+},
+"knowledge_rewards": [
+"KNOW_DANGEROUS_MOSES_TRANSCRIPTION",
+"KNOW_ORGANIZATION_MOSES_ASCETIC_CONSPIRACY"
+],
+"knowledge_categories": [
+"ORGANIZATIONS",
+"OCCULTISM"
+],
+"pathway_affinities": [
+"MYSTERY_PRYER"
+],
+"reading_effects": {
+"sanity_cost": 18,
+"corruption_yield": 3
+},
+"side_effects": [
+"MUTTERING_SUSURRUS"
+],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_021"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_034",
+"metadata": {
+"title": "Estudios sobre los Rezagos de la Dinastía Solomon",
+"author": " Harrison Vance",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 7,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+],
+"knowledge_categories": [
+"FOURTH_EPOCH_HISTORY"
+],
+"pathway_affinities": [
+"MYSTERY_PRYER",
+"SEER"
+],
+"reading_effects": {
+"sanity_cost": 4,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_001"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_035",
+"metadata": {
+"title": "Hipnosis de Masas en el Distrito Financiero",
+"author": "Gaston de Laurent",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.8,
+"forced_corruption_gain": 5
+}
+},
+"knowledge_rewards": [
+"KNOW_PATHWAY_SPECTATOR_HYPNOSIS",
+"KNOW_ORGANIZATION_PSYCHOLOGY_ALCHEMISTS"
+],
+"knowledge_categories": [
+"PSYCHOLOGY"
+],
+"pathway_affinities": [
+"SPECTATOR"
+],
+"reading_effects": {
+"sanity_cost": 15,
+"corruption_yield": 2
+},
+"side_effects": [
+"MIND_MAZE"
+],
+"unlocks": {
+"events": [
+"EVT_025"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_036",
+"metadata": {
+"title": "La Bitácora del Capitán Ikout",
+"author": "Capitán Ikout",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SAFE_PORT_ROUTES",
+"KNOW_SEA_LEGENDS"
+],
+"knowledge_categories": [
+"SEA_LEGENDS"
+],
+"pathway_affinities": [
+"SAILOR"
+],
+"reading_effects": {
+"sanity_cost": 2,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_007"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_037",
+"metadata": {
+"title": "Runas y Péndulos de la Cuarta Época",
+"author": "Old Neil",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 8,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SYMBOLIC_CORRESPONDENCES"
+],
+"knowledge_categories": [
+"MYSTICISM"
+],
+"pathway_affinities": [
+"MYSTERY_PRYER",
+"SEER"
+],
+"reading_effects": {
+"sanity_cost": 4,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_009"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_038",
+"metadata": {
+"title": "La Transmutación de Metales Inestables",
+"author": "Alquimista Caelen",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 5
+}
+},
+"knowledge_rewards": [
+"KNOW_PATHVIEW_SAVANT_TRANSMUTATION",
+"KNOW_ALCHEMICAL_FOUNDATIONS"
+],
+"knowledge_categories": [
+"ALCHEMICAL_FOUNDATIONS"
+],
+"pathway_affinities": [
+"SAVANT"
+],
+"reading_effects": {
+"sanity_cost": 14,
+"corruption_yield": 1
+},
+"side_effects": [],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_046"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_039",
+"metadata": {
+"title": "Salmos Ocultos del Velo Nocturno",
+"author": "Arzobispo Anthony",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+],
+"knowledge_categories": [
+"OCCULTISM"
+],
+"pathway_affinities": [
+"NIGHT"
+],
+"reading_effects": {
+"sanity_cost": 2,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_005"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_040",
+"metadata": {
+"title": "El Manuscrito Inextinguible de la Locura",
+"author": "Secta de los Delirios Cósmicos",
+"historical_era": "Pre-Epoch"
+},
+"classification": {
+"risk_level": "FORBIDDEN",
+"rarity": "ANCIENT"
+},
+"reading_requirements": {
+"required_sequence": 4,
+"required_knowledge": []
+},
+"knowledge_rewards": [
+"KNOW_COSMIC_SUSURRUS"
+],
+"knowledge_categories": [
+"OUTER_DEITIES"
+],
+"pathway_affinities": [
+"MYSTERY_PRYER"
+],
+"reading_effects": {
+"sanity_cost": 50,
+"corruption_yield": 20
+},
+"side_effects": [
+"MUTTERING_SUSURRUS",
+"COGNITIVE_SHATTER"
+],
+"unlocks": {
+"events": [
+"EVT_029",
+"EVT_030"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "LEGENDARY"
+},
+  {
+    "id": "BOOK_041",
+    "metadata": {
+      "title": "Manual del Poeta de Medianoche",
+      "author": "Catedral de la Serenidad",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 8,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+    ],
+    "knowledge_categories": [
+      "MYSTICISM"
+    ],
+    "pathway_affinities": [
+      "NIGHT"
+    ],
+    "reading_effects": {
+      "sanity_cost": 3,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_031"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_042",
+    "metadata": {
+      "title": "La Nation of Disorder y las Leyes del Caos",
+      "author": "El Hijo del Caos (Will Residual)",
+      "historical_era": "Pre-Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "ANCIENT"
+    },
+    "reading_requirements": {
+      "required_sequence": 2,
+      "required_knowledge": [
+        "KNOW_LAW_AND_ORDER_MYSTICISM"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 4.0,
+        "forced_corruption_gain": 25
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_LAW_AND_ORDER_MYSTICISM",
+      "KNOW_ARBITER_PATHWAY",
+      "KNOW_LAWYER_PATHWAY"
+    ],
+    "knowledge_categories": [
+      "COSMOLOGY",
+      "OUTER_DEITIES"
+    ],
+    "pathway_affinities": [
+      "ARBITER",
+      "LAWYER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 50,
+      "corruption_yield": 20
+    },
+    "side_effects": [
+      "RULE_EVICTION",
+      "MIND_MAZE"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_038"
+      ],
+      "investigations": [
+        "INV_CASE_031",
+        "INV_CASE_050"
+      ],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_043",
+    "metadata": {
+      "title": "Guía de Tácticas del Alguacil Urbano",
+      "author": "Guarnición Militar de Backlund",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 8,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_LAW_AND_ORDER_MYSTICISM"
+    ],
+    "knowledge_categories": [
+      "LAW_AND_ORDER_MYSTICISM"
+    ],
+    "pathway_affinities": [
+      "ARBITER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_032",
+        "EVT_042"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_044",
+    "metadata": {
+      "title": "Grimorio de Maldiciones e Hilos de la Marioneta",
+      "author": "Eldridge el Desollador",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 5,
+      "required_knowledge": [
+        "KNOW_PATHWAY_SEER_THREAD_CONTROL"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 2.2,
+        "forced_corruption_gain": 8
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_PATHWAY_SEER_THREAD_CONTROL",
+      "KNOW_SPACE_TIME_MECHANICS"
+    ],
+    "knowledge_categories": [
+      "OCCULTISM"
+    ],
+    "pathway_affinities": [
+      "SEER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 20,
+      "corruption_yield": 3
+    },
+    "side_effects": [
+      "MUTTERING_SUSURRUS"
+    ],
+    "unlocks": {
+      "events": [],
+      "investigations": [
+        "INV_CASE_013"
+      ],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_045",
+    "metadata": {
+      "title": "Tratado Cosmológico del Hambre Absoluta",
+      "author": "Culto del Devorador",
+      "historical_era": "Pre-Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 4,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.5,
+        "forced_corruption_gain": 18
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_COSMIC_HUNGER",
+      "KNOW_MYSTICAL_ANATOMY"
+    ],
+    "knowledge_categories": [
+      "OUTER_DEITIES"
+    ],
+    "pathway_affinities": [],
+    "reading_effects": {
+      "sanity_cost": 45,
+      "corruption_yield": 14
+    },
+    "side_effects": [
+      "CONCEPTUAL_PARASITISM",
+      "COGNITIVE_SHATTER"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_054"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_046",
+    "metadata": {
+      "title": "Principios Elementales del Sahuat e Ilusión",
+      "author": "Klaus el Cambiaformas",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_PATHWAY_SEER_THREAD_CONTROL"
+    ],
+    "knowledge_categories": [
+      "OCCULTISM"
+    ],
+    "pathway_affinities": [
+      "SEER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_091"
+      ],
+      "investigations": [
+        "INV_CASE_023"
+      ],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_047",
+    "metadata": {
+      "title": "El Telar del Destino de Alta Dimensión",
+      "author": "Secta de la Proyección Tridimensional",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 4,
+      "required_knowledge": [
+        "KNOW_DANGEROUS_MOSES_TRANSCRIPTION"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.8,
+        "forced_corruption_gain": 20
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_HIGH_DIMENSIONAL_MYSTERIES",
+      "KNOW_DANGEROUS_MOSES_TRANSCRIPTION"
+    ],
+    "knowledge_categories": [
+      "OUTER_DEITIES",
+      "OCCULTISM"
+    ],
+    "pathway_affinities": [
+      "MYSTERY_PRYER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 48,
+      "corruption_yield": 16
+    },
+    "side_effects": [
+      "REALITY_PROJECTION",
+      "TEMPORAL_BLUR"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_007",
+        "EVT_065"
+      ],
+      "investigations": [
+        "INV_CASE_049"
+      ],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_048",
+    "metadata": {
+      "title": "Anatomía Oculta y Fetiches de Madera",
+      "author": "Boticaria Elena",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 6,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.8,
+        "forced_corruption_gain": 5
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_MYSTICAL_ANATOMY",
+      "KNOW_OUTER_DEITIES_PRIMITIVE_MOON"
+    ],
+    "knowledge_categories": [
+      "MYSTICAL_ANATOMY"
+    ],
+    "pathway_affinities": [
+      "APOTHECARY"
+    ],
+    "reading_effects": {
+      "sanity_cost": 12,
+      "corruption_yield": 2
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [],
+      "investigations": [
+        "INV_CASE_080"
+      ],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_049",
+    "metadata": {
+      "title": "Compendio de Criptografía Diplomática",
+      "author": "Oficina de Descifrado de Lenburg",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 7,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SAFE_FOURTH_EPOCH_HISTORY",
+      "KNOW_LAW_AND_ORDER_MYSTICISM"
+    ],
+    "knowledge_categories": [
+      "FOURTH_EPOCH_HISTORY"
+    ],
+    "pathway_affinities": [
+      "READER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 3,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_030",
+        "EVT_070"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_050",
+    "metadata": {
+      "title": "La Radiación Estelar de la Supernova",
+      "author": "Secta de la Llama Estelar",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 4,
+      "required_knowledge": [
+        "KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.6,
+        "forced_corruption_gain": 18
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_CHURCH_SUN_HERETICAL_TEXTS",
+      "KNOW_STELLAR_OCCULTISM"
+    ],
+    "knowledge_categories": [
+      "OUTER_DEITIES",
+      "OCCULTISM"
+    ],
+"pathway_affinities": [
+"SUN"
+],
+"reading_effects": {
+"sanity_cost": 44,
+"corruption_yield": 14
+},
+"side_effects": [
+"COSMIC_FLARE",
+"COGNITIVE_SHATTER"
+],
+"unlocks": {
+"events": [
+"EVT_040",
+"EVT_058",
+"EVT_069",
+"EVT_079"
+],
+"investigations": [
+"INV_CASE_040"
+],
+"rumors": []
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "BOOK_051",
+"metadata": {
+"title": "Las Estafas Conceptuales de los Relojes",
+"author": "Hanz el Estafador",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 6
+}
+},
+"knowledge_rewards": [
+"KNOW_PATHWAY_ERROR_TIME_LOOPS",
+"KNOW_SPACE_TIME_MECHANICS"
+],
+"knowledge_categories": [
+"SPACE_TIME_MECHANICS"
+],
+"pathway_affinities": [
+"ERROR"
+],
+"reading_effects": {
+"sanity_cost": 16,
+"corruption_yield": 3
+},
+"side_effects": [
+"TEMPORAL_BLUR"
+],
+"unlocks": {
+"events": [
+"EVT_015"
+],
+"investigations": [
+"INV_CASE_064",
+"INV_CASE_097"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_052",
+"metadata": {
+"title": "Decretos Imperiales y Distorsiones Fiscales",
+"author": "Abogado Laurent",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_LAW_AND_ORDER_MYSTICISM",
+"KNOW_INTIS_ESPIONAGE_NETWORKS"
+],
+"knowledge_categories": [
+"LAW_AND_ORDER_MYSTICISM"
+],
+"pathway_affinities": [
+"LAWYER"
+],
+"reading_effects": {
+"sanity_cost": 3,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_044",
+"INV_CASE_065",
+"INV_CASE_085"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_053",
+"metadata": {
+"title": "El Sínodo Oculto de la Psicología Colectiva",
+"author": "Dr. Miller",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 5
+}
+},
+"knowledge_rewards": [
+"KNOW_ORGANIZATION_PSYCHOLOGY_ALCHEMISTS",
+"KNOW_PSYCHOLOGY_ALCHEMISTS_DREAM_WEAVING"
+],
+"knowledge_categories": [
+"PSYCHOLOGY"
+],
+"pathway_affinities": [
+"SPECTATOR"
+],
+"reading_effects": {
+"sanity_cost": 15,
+"corruption_yield": 2
+},
+"side_effects": [
+"MIND_MAZE"
+],
+"unlocks": {
+"events": [
+"EVT_018",
+"EVT_053"
+],
+"investigations": [
+"INV_CASE_058"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_054",
+"metadata": {
+"title": "Las Facturas y Suministros del Almacén Oficial",
+"author": "Old Neil (Scholar Retainer)",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SYMBOLIC_CORRESPONDENCES"
+],
+"knowledge_categories": [
+"MYSTICISM"
+],
+"pathway_affinities": [
+"MYSTERY_PRYER",
+"SEER"
+],
+"reading_effects": {
+"sanity_cost": 1,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_009"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_055",
+"metadata": {
+"title": "La Transmutación Alquímica de Crisoles Portátiles",
+"author": "Alquimista Ken",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.9,
+"forced_corruption_gain": 4
+}
+},
+"knowledge_rewards": [
+"KNOW_PATHVIEW_SAVANT_TRANSMUTATION",
+"KNOW_SPACE_TIME_MECHANICS"
+],
+"knowledge_categories": [
+"ALCHEMICAL_FOUNDATIONS"
+],
+"pathway_affinities": [
+"SAVANT"
+],
+"reading_effects": {
+"sanity_cost": 12,
+"corruption_yield": 1
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_012",
+"EVT_045"
+],
+"investigations": [
+"INV_CASE_055"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_056",
+"metadata": {
+"title": "Los Salmos Ocultos del Velo Absoluto",
+"author": "Guardián Gerald",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS",
+"KNOW_SPIRIT_WORLD"
+],
+"knowledge_categories": [
+"OCCULTISM"
+],
+"pathway_affinities": [
+"NIGHT"
+],
+"reading_effects": {
+"sanity_cost": 2,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_018",
+"EVT_068",
+"EVT_078"
+],
+"investigations": [
+"INV_CASE_074",
+"INV_CASE_087"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_057",
+"metadata": {
+"title": "Mapeo Probabilístico de los Dados de Falange",
+"author": "Damon el Cuervo Black",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 7,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 5
+}
+},
+"knowledge_rewards": [
+"KNOW_SPIRIT_WORLD_WISP_ANOMALIES",
+"KNOW_PATHWAY_MONSTER_WINNER"
+],
+"knowledge_categories": [
+"FATE"
+],
+"pathway_affinities": [
+"MONSTER"
+],
+"reading_effects": {
+"sanity_cost": 14,
+"corruption_yield": 2
+},
+"side_effects": [
+"TEMPORAL_BLUR"
+],
+"unlocks": {
+"events": [
+"EVT_020"
+],
+"investigations": [
+"INV_CASE_032",
+"INV_CASE_060"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_058",
+"metadata": {
+"title": "El Traje de Carne y la Invocación de la Aurora",
+"author": "Sastre de Almas",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "FORBIDDEN",
+"rarity": "RARE"
+},
+"reading_requirements": {
+"required_sequence": 5,
+"required_knowledge": [
+"KNOW_ORGANIZATION_AURORA_ORDER_FLESH"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 3.0,
+"forced_corruption_gain": 12
+}
+},
+"knowledge_rewards": [
+"KNOW_ORGANIZATION_AURORA_ORDER_FLESH",
+"KNOW_PATHWAY_SEER_THREAD_CONTROL"
+],
+"knowledge_categories": [
+"OCCULTISM",
+"ORGANIZATIONS"
+],
+"pathway_affinities": [
+"SEER",
+"HANGED_MAN"
+],
+"reading_effects": {
+"sanity_cost": 36,
+"corruption_yield": 10
+},
+"side_effects": [
+"MUTTERING_SUSURRUS",
+"COGNITIVE_SHATTER"
+],
+"unlocks": {
+"events": [
+"EVT_019"
+],
+"investigations": [
+"INV_CASE_031",
+"INV_CASE_059"
+],
+"rumors": []
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "BOOK_059",
+"metadata": {
+"title": "Estudios sobre los Sabios de la Cuarta Época",
+"author": "Justin (Lenburg Agent)",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY",
+"KNOW_ORGANIZATION_MOSES_ASCETIC_CONSPIRACY"
+],
+"knowledge_categories": [
+"FOURTH_EPOCH_HISTORY"
+],
+"pathway_affinities": [
+"READER",
+"MYSTERY_PRYER"
+],
+"reading_effects": {
+"sanity_cost": 2,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_063"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_060",
+"metadata": {
+"title": "La Invocación Definitiva de los Delirios Estelares",
+"author": "Oráculo de la Masa de Ondas Cósmicas",
+"historical_era": "Pre-Epoch"
+},
+"classification": {
+"risk_level": "FORBIDDEN",
+"rarity": "ANCIENT"
+},
+"reading_requirements": {
+"required_sequence": 3,
+"required_knowledge": []
+},
+"knowledge_rewards": [
+"KNOW_COSMIC_SUSURRUS",
+"KNOW_FORBIDDEN_GOD_ALMIGHTY_SEFIROT"
+],
+"knowledge_categories": [
+"OUTER_DEITIES"
+],
+"pathway_affinities": [
+"MYSTERY_PRYER"
+],
+"reading_effects": {
+"sanity_cost": 50,
+"corruption_yield": 20
+},
+"side_effects": [
+"MUTTERING_SUSURRUS",
+"FORCED_MADNESS_WAVE"
+],
+"unlocks": {
+"events": [
+"EVT_060"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "LEGENDARY"
+},
+  {
+    "id": "BOOK_061",
+    "metadata": {
+      "title": "Grimorio de las Sombras Fundacionales",
+      "author": "Moritz el Sepulturero",
+      "historical_era": "Fourth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 7,
+      "required_knowledge": [
+        "KNOW_SPIRIT_WORLD_SHADOWS"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 2.0,
+        "forced_corruption_gain": 5
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SPIRIT_WORLD_SHADOWS",
+      "KNOW_DANGEROUS_UNDERWORLD_GATES"
+    ],
+    "knowledge_categories": [
+      "SPIRIT_WORLD",
+      "UNDERWORLD"
+    ],
+    "pathway_affinities": [
+      "DEATH"
+    ],
+    "reading_effects": {
+      "sanity_cost": 15,
+      "corruption_yield": 3
+    },
+    "side_effects": [
+      "MUTTERING_SUSURRUS"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_037"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_062",
+    "metadata": {
+      "title": "Tratado Táctico de Fortificaciones Continentales",
+      "author": "Comandante Hektor",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 8,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_MILITARY_HISTORY"
+    ],
+    "knowledge_categories": [
+      "MILITARY_HISTORY"
+    ],
+    "pathway_affinities": [
+      "COMBAT",
+      "HUNTER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 3,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [],
+      "investigations": [
+        "INV_CASE_072",
+        "INV_CASE_079"
+      ],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_063",
+    "metadata": {
+      "title": "Manuscrito de Leyes Comparadas de Loen e Intis",
+      "author": "Juez Morstan",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_LAW_AND_ORDER_MYSTICISM"
+    ],
+    "knowledge_categories": [
+      "LAW_AND_ORDER_MYSTICISM"
+    ],
+    "pathway_affinities": [
+      "ARBITER",
+      "LAWYER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_016",
+        "EVT_036"
+      ],
+      "investigations": [
+        "INV_CASE_037"
+      ],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_064",
+    "metadata": {
+      "title": "La Bitácora Clandestina de Pier 9",
+      "author": "Gideon el Tuerto",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SAFE_PORT_ROUTES",
+      "KNOW_SEA_LEGENDS"
+    ],
+    "knowledge_categories": [
+      "SEA_LEGENDS"
+    ],
+    "pathway_affinities": [
+      "SAILOR"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_033",
+        "EVT_041"
+      ],
+      "investigations": [
+        "INV_CASE_025"
+      ],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_065",
+    "metadata": {
+      "title": "Grimorio Exótico de las Fibras de Carne",
+      "author": "Sastre de la Noche",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 5,
+      "required_knowledge": [
+        "KNOW_ORGANIZATION_AURORA_ORDER_FLESH"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.0,
+        "forced_corruption_gain": 15
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_ORGANIZATION_AURORA_ORDER_FLESH",
+      "KNOW_PATHWAY_SEER_THREAD_CONTROL"
+    ],
+    "knowledge_categories": [
+      "OCCULTISM",
+      "ORGANIZATIONS"
+    ],
+    "pathway_affinities": [
+      "SEER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 32,
+      "corruption_yield": 8
+    },
+    "side_effects": [
+      "MUTTERING_SUSURRUS"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_019",
+        "EVT_031"
+      ],
+      "investigations": [
+        "INV_CASE_031"
+      ],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_066",
+    "metadata": {
+      "title": "Anotaciones Teóricas del Ojo Invertido",
+      "author": "Padre Charles Vance",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 6,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 2.0,
+        "forced_corruption_gain": 6
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_ORGANIZATION_AURORA_ORDER_FLESH",
+      "KNOW_PATHWAY_SEER_THREAD_CONTROL"
+    ],
+    "knowledge_categories": [
+      "OCCULTISM"
+    ],
+    "pathway_affinities": [
+      "SEER",
+      "HANGED_MAN"
+    ],
+    "reading_effects": {
+      "sanity_cost": 22,
+      "corruption_yield": 4
+    },
+    "side_effects": [
+      "MUTTERING_SUSURRUS"
+    ],
+    "unlocks": {
+      "events": [],
+      "investigations": [
+        "INV_CASE_016"
+      ],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_067",
+    "metadata": {
+      "title": "Alineaciones de Probabilidad Cuántica y el Ouroboros",
+      "author": "Vander el Tuerto",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 7,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 2.2,
+        "forced_corruption_gain": 6
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_PATHWAY_MONSTER_WINNER",
+      "KNOW_SPIRIT_WORLD_WISP_ANOMALIES"
+    ],
+    "knowledge_categories": [
+      "FATE"
+    ],
+    "pathway_affinities": [
+      "MONSTER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 16,
+      "corruption_yield": 3
+    },
+    "side_effects": [
+      "TEMPORAL_BLUR"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_020"
+      ],
+      "investigations": [
+        "INV_CASE_014"
+      ],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_068",
+    "metadata": {
+      "title": "El Grimorio Reflejado de las Brujas",
+      "author": "Madame Corinne de Lys",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 5,
+      "required_knowledge": [
+        "KNOW_ORGANIZATION_DEMONESS_NETWORKS"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.2,
+        "forced_corruption_gain": 18
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_ORGANIZATION_DEMONESS_NETWORKS",
+      "KNOW_PATHWAY_DEMONESS_PLEASURE"
+    ],
+    "knowledge_categories": [
+      "ORGANIZATIONS",
+      "OCCULTISM"
+    ],
+    "pathway_affinities": [
+      "ASSASSIN"
+    ],
+    "reading_effects": {
+      "sanity_cost": 40,
+      "corruption_yield": 12
+    },
+    "side_effects": [
+      "MIND_MAZE",
+      "COGNITIVE_SHATTER"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_034"
+      ],
+      "investigations": [
+        "INV_CASE_019"
+      ],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_069",
+    "metadata": {
+      "title": "Transcripción Cruda del Árbol de la Indulgencia",
+      "author": "Lady Melissa Ostrov",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 5,
+      "required_knowledge": [
+        "KNOW_DANGEROUS_BLOOD_RITUALS"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.5,
+        "forced_corruption_gain": 20
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_FORBIDDEN_OUTER_DEITY_TREE_DESIRE",
+      "KNOW_DANGEROUS_BLOOD_RITUALS"
+    ],
+    "knowledge_categories": [
+      "OCCULTISM",
+      "OUTER_DEITIES"
+    ],
+    "pathway_affinities": [
+      "PRISONER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 46,
+      "corruption_yield": 16
+    },
+    "side_effects": [
+      "MUTTERING_SUSURRUS"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_003"
+      ],
+      "investigations": [
+        "INV_CASE_002"
+      ],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_070",
+    "metadata": {
+      "title": "Estudios Básicos de Hermes sobre Sugestión Colectiva",
+      "author": "Barón de Tres Dedos (Informant Logs)",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },"knowledge_rewards": [
+"KNOW_BASIC_ASTROLOGY"
+],
+"knowledge_categories": [
+"ASTROLOGY"
+],
+"pathway_affinities": [
+"SPECTATOR",
+"HUNTER"
+],
+"reading_effects": {
+"sanity_cost": 2,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_011"
+],
+"investigations": [
+"INV_CASE_003"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_071",
+"metadata": {
+"title": "Estudios Geométricos de las Fisuras Abiertas",
+"author": "Ulysses el Astrólogo",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 6
+}
+},
+"knowledge_rewards": [
+"KNOW_SPACE_TIME_MECHANICS",
+"KNOW_PATHWAY_APPRENTICE_TRAVELLER"
+],
+"knowledge_categories": [
+"SPACE_TIME_MECHANICS",
+"COSMOLOGY"
+],
+"pathway_affinities": [
+"APPRENTICE"
+],
+"reading_effects": {
+"sanity_cost": 18,
+"corruption_yield": 2
+},
+"side_effects": [
+"TEMPORAL_BLUR"
+],
+"unlocks": {
+"events": [
+"EVT_017"
+],
+"investigations": [
+"INV_CASE_029"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_072",
+"metadata": {
+"title": "La Transmutación Siderúrgica de Alta Presión",
+"author": "Madame Teresa Lemaire",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "RARE"
+},
+"reading_requirements": {
+"required_sequence": 5,
+"required_knowledge": [
+"KNOW_ALCHEMICAL_FOUNDATIONS"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.2,
+"forced_corruption_gain": 8
+}
+},
+"knowledge_rewards": [
+"KNOW_PATHVIEW_SAVANT_TRANSMUTATION",
+"KNOW_ALCHEMICAL_FOUNDATIONS"
+],
+"knowledge_categories": [
+"ALCHEMICAL_FOUNDATIONS"
+],
+"pathway_affinities": [
+"SAVANT"
+],
+"reading_effects": {
+"sanity_cost": 22,
+"corruption_yield": 3
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_012"
+],
+"investigations": [
+"INV_CASE_015"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_073",
+"metadata": {
+"title": "Registros de Contratos y Acuerdos Fraudulentos Extranjeros",
+"author": "Barón d'Aramis",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_LAW_AND_ORDER_MYSTICISM",
+"KNOW_INTIS_ESPIONAGE_NETWORKS"
+],
+"knowledge_categories": [
+"LAW_AND_ORDER_MYSTICISM"
+],
+"pathway_affinities": [
+"LAWYER"
+],
+"reading_effects": {
+"sanity_cost": 4,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_024"
+],
+"investigations": [
+"INV_CASE_011"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_074",
+"metadata": {
+"title": "Análisis Deductivo sobre Textos de la Cuarta Época",
+"author": "Ezekiel el Sabio",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 8,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+],
+"knowledge_categories": [
+"FOURTH_EPOCH_HISTORY"
+],
+"pathway_affinities": [
+"READER",
+"SAVANT"
+],
+"reading_effects": {
+"sanity_cost": 3,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_023"
+],
+"investigations": [
+"INV_CASE_035"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_075",
+"metadata": {
+"title": "Manuscrito Rúnico de la Llama Inquisitorial",
+"author": "Padre Jethro",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 5
+}
+},
+"knowledge_rewards": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS",
+"KNOW_DANGEROUS_BLOOD_RITUALS"
+],
+"knowledge_categories": [
+"OCCULTISM"
+],
+"pathway_affinities": [
+"SUN"
+],
+"reading_effects": {
+"sanity_cost": 16,
+"corruption_yield": 2
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_040"
+],
+"investigations": [
+"INV_CASE_012"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_076",
+"metadata": {
+"title": "Anotaciones sobre Provocación y Tácticas de Asalto Urbano",
+"author": "Alister Crowe",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_PATHWAY_HUNTER_PYROMANIAC"
+],
+"knowledge_categories": [
+"OCCULTISM"
+],
+"pathway_affinities": [
+"HUNTER"
+],
+"reading_effects": {
+"sanity_cost": 2,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_014",
+"EVT_039"
+],
+"investigations": [
+"INV_CASE_036"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_077",
+"metadata": {
+"title": "Anotaciones Clínicas sobre Enjambres e Hipnosis Colectiva",
+"author": "Dr. Ronald Magee",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.8,
+"forced_corruption_gain": 4
+}
+},
+"knowledge_rewards": [
+"KNOW_ORGANIZATION_PSYCHOLOGY_ALCHEMISTS",
+"KNOW_PSYCHOLOGY_ALCHEMISTS_DREAM_WEAVING"
+],
+"knowledge_categories": [
+"PSYCHOLOGY"
+],
+"pathway_affinities": [
+"SPECTATOR"
+],
+"reading_effects": {
+"sanity_cost": 14,
+"corruption_yield": 2
+},
+"side_effects": [
+"MIND_MAZE"
+],
+"unlocks": {
+"events": [
+"EVT_018",
+"EVT_053"
+],
+"investigations": [
+"INV_CASE_039"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_078",
+"metadata": {
+"title": "Salmos Ocultos del Confinamiento Nocturno",
+"author": "Capitana Valeria Sterling",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS",
+"KNOW_DANGEROUS_UNDERWORLD_GATES"
+],
+"knowledge_categories": [
+"OCCULTISM"
+],
+"pathway_affinities": [
+"NIGHT"
+],
+"reading_effects": {
+"sanity_cost": 2,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_018",
+"EVT_068"
+],
+"investigations": [
+"INV_CASE_017"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_079",
+"metadata": {
+"title": "El Grimorio Reflejado de los Espejos Compactos",
+"author": "Katarina de la Niebla",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "FORBIDDEN",
+"rarity": "RARE"
+},
+"reading_requirements": {
+"required_sequence": 5,
+"required_knowledge": [
+"KNOW_ORGANIZATION_DEMONESS_NETWORKS"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 3.0,
+"forced_corruption_gain": 14
+}
+},
+"knowledge_rewards": [
+"KNOW_ORGANIZATION_DEMONESS_NETWORKS",
+"KNOW_PATHWAY_DEMONESS_PLEASURE"
+],
+"knowledge_categories": [
+"ORGANIZATIONS",
+"OCCULTISM"
+],
+"pathway_affinities": [
+"ASSASSIN"
+],
+"reading_effects": {
+"sanity_cost": 38,
+"corruption_yield": 12
+},
+"side_effects": [
+"MIND_MAZE",
+"COGNITIVE_SHATTER"
+],
+"unlocks": {
+"events": [
+"EVT_026"
+],
+"investigations": [
+"INV_CASE_034"
+],
+"rumors": []
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "BOOK_080",
+"metadata": {
+"title": "Transcripción del Ojo Invertido y las Monedas de Cera",
+"author": "Mago Mr. X",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "FORBIDDEN",
+"rarity": "RARE"
+},
+"reading_requirements": {
+"required_sequence": 5,
+"required_knowledge": [
+"KNOW_ORGANIZATION_AURORA_ORDER_FLESH"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 3.2,
+"forced_corruption_gain": 16
+}
+},
+"knowledge_rewards": [
+"KNOW_ORGANIZATION_AURORA_ORDER_FLESH",
+"KNOW_ORGANIZATION_AURORA_ORDER_COINS"
+],
+"knowledge_categories": [
+"OCCULTISM",
+"ORGANIZATIONS"
+],
+"pathway_affinities": [
+"SEER",
+"HANGED_MAN"
+],
+"reading_effects": {
+"sanity_cost": 42,
+"corruption_yield": 14
+},
+"side_effects": [
+"MUTTERING_SUSURRUS",
+"COGNITIVE_SHATTER"
+],
+"unlocks": {
+"events": [
+"EVT_019"
+],
+"investigations": [
+"INV_CASE_008"
+],
+"rumors": []
+},
+"importance": "LEGENDARY"
+},
+  {
+    "id": "BOOK_081",
+    "metadata": {
+      "title": "Anotaciones sobre los Rituales de Reembolso Místico",
+      "author": "Old Neil",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 7,
+      "required_knowledge": [
+        "KNOW_SYMBOLIC_CORRESPONDENCES"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.8,
+        "forced_corruption_gain": 4
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SYMBOLIC_CORRESPONDENCES",
+      "KNOW_PATHWAY_ERROR_TIME_LOOPS"
+    ],
+    "knowledge_categories": [
+      "MYSTICISM"
+    ],
+    "pathway_affinities": [
+      "MYSTERY_PRYER",
+      "ERROR"
+    ],
+    "reading_effects": {
+      "sanity_cost": 10,
+      "corruption_yield": 1
+    },
+    "side_effects": [
+      "TEMPORAL_BLUR"
+    ],
+    "unlocks": {
+      "events": [],
+      "investigations": [
+        "INV_CASE_009"
+      ],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_082",
+    "metadata": {
+      "title": "La Bitácora del Capitán de la Escuadra Backlund",
+      "author": "Capitán Ikout",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SAFE_PORT_ROUTES",
+      "KNOW_SEA_LEGENDS"
+    ],
+    "knowledge_categories": [
+      "SEA_LEGENDS"
+    ],
+    "pathway_affinities": [
+      "SAILOR"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_006"
+      ],
+      "investigations": [
+        "INV_CASE_007"
+      ],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_083",
+    "metadata": {
+      "title": "Tratado Táctico del Verdugo de la Corona",
+      "author": "Inspector Henderson",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 8,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_LAW_AND_ORDER_MYSTICISM"
+    ],
+    "knowledge_categories": [
+      "LAW_AND_ORDER_MYSTICISM"
+    ],
+    "pathway_affinities": [
+      "ARBITER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_016",
+        "EVT_052"
+      ],
+      "investigations": [
+        "INV_CASE_028"
+      ],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_084",
+    "metadata": {
+      "title": "Análisis Criptográfico del Sello Confidencial",
+      "author": "Bibliotecario Justin",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SAFE_FOURTH_EPOCH_HISTORY",
+      "KNOW_ORGANIZATION_MOSES_ASCETIC_CONSPIRACY"
+    ],
+    "knowledge_categories": [
+      "FOURTH_EPOCH_HISTORY"
+    ],
+    "pathway_affinities": [
+      "READER",
+      "MYSTERY_PRYER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 3,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_030"
+      ],
+      "investigations": [
+        "INV_CASE_063"
+      ],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_085",
+    "metadata": {
+      "title": "Grimorio de Convocación de Almas de la Dinastía Solomon",
+      "author": "El Coleccionista de Huesos",
+      "historical_era": "Fourth Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 4,
+      "required_knowledge": [
+        "KNOW_DANGEROUS_UNDERWORLD_GATES"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.4,
+        "forced_corruption_gain": 18
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_DANGEROUS_UNDERWORLD_GATES",
+      "KNOW_FOURTH_EPOCH_WARS"
+    ],
+    "knowledge_categories": [
+      "UNDERWORLD",
+      "FOURTH_EPOCH_HISTORY"
+    ],
+    "pathway_affinities": [
+      "DEATH"
+    ],
+    "reading_effects": {
+      "sanity_cost": 44,
+      "corruption_yield": 12
+    },
+    "side_effects": [
+      "MUTTERING_SUSURRUS"
+    ],
+    "unlocks": {
+      "events": [],
+      "investigations": [
+        "INV_CASE_067"
+      ],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_086",
+    "metadata": {
+      "title": "Notas de Combate y Calibración de Escudos Mecánicos",
+      "author": "Gladiador Brutus",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 9,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_MILITARY_HISTORY"
+    ],
+    "knowledge_categories": [
+      "MILITARY_HISTORY"
+    ],
+    "pathway_affinities": [
+      "COMBAT",
+      "SAVANT"
+    ],
+    "reading_effects": {
+      "sanity_cost": 2,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_014"
+      ],
+      "investigations": [
+        "INV_CASE_068"
+      ],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_087",
+    "metadata": {
+      "title": "Transcripción Crítica de las Marcas Probabilísticas",
+      "author": "Sabio Ermitaño Colin",
+      "historical_era": "Fourth Epoch"
+    },
+    "classification": {
+      "risk_level": "DANGEROUS",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 5,
+      "required_knowledge": [
+        "KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 2.2,
+        "forced_corruption_gain": 6
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SAFE_FOURTH_EPOCH_HISTORY",
+      "KNOW_LAW_AND_ORDER_MYSTICISM"
+    ],
+    "knowledge_categories": [
+      "FOURTH_EPOCH_HISTORY"
+    ],
+    "pathway_affinities": [
+      "READER",
+      "MYSTERY_PRYER"
+    ],
+    "reading_effects": {
+      "sanity_cost": 18,
+      "corruption_yield": 2
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_023"
+      ],
+      "investigations": [
+        "INV_CASE_069"
+      ],
+      "rumors": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "BOOK_088",
+    "metadata": {
+      "title": "Cuentos de Hadas Ocultos y Reliquias del Mar",
+      "author": "Bernadette Gustav",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "UNCOMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 8,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_SEA_LEGENDS",
+      "KNOW_DANGEROUS_MOSES_TRANSCRIPTION"
+    ],
+    "knowledge_categories": [
+      "SEA_LEGENDS"
+    ],
+    "pathway_affinities": [
+      "MYSTERY_PRYER",
+      "APPRENTICE"
+    ],
+    "reading_effects": {
+      "sanity_cost": 5,
+      "corruption_yield": 0
+    },
+    "side_effects": [],
+    "unlocks": {
+      "events": [
+        "EVT_007"
+      ],
+      "investigations": [
+        "ANGEL_BERNADETTE_GUSTAV"
+      ],
+      "rumors": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "BOOK_089",
+    "metadata": {
+      "title": "El Grimorio de las Velas de Grasa de Bruja",
+      "author": "Madame Teresa de Lys",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 4,
+      "required_knowledge": [
+        "KNOW_ORGANIZATION_DEMONESS_NETWORKS"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.5,
+        "forced_corruption_gain": 18
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_ORGANIZATION_DEMONESS_NETWORKS",
+      "KNOW_PATHWAY_DEMONESS_PLEASURE"
+    ],
+    "knowledge_categories": [
+      "ORGANIZATIONS",
+      "OCCULTISM"
+    ],
+    "pathway_affinities": [
+      "ASSASSIN"
+    ],
+    "reading_effects": {
+      "sanity_cost": 46,
+      "corruption_yield": 15
+    },
+    "side_effects": [
+      "MIND_MAZE",
+      "COGNITIVE_SHATTER"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_014",
+        "EVT_034"
+      ],
+      "investigations": [],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "BOOK_090",
+    "metadata": {
+      "title": "Teoremas Avanzados del Motor de Radiadores",
+      "author": "Ingenieros Gremiales de Steam",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "SAFE",
+      "rarity": "COMMON"
+    },
+    "reading_requirements": {
+      "required_sequence": 8,
+      "required_knowledge": [],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 1.0,
+        "forced_corruption_gain": 0
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_PATHVIEW_SAVANT_TRANSMUTATION",
+"KNOW_SPACE_TIME_MECHANICS"
+],
+"knowledge_categories": [
+"ALCHEMICAL_FOUNDATIONS"
+],
+"pathway_affinities": [
+"SAVANT"
+],
+"reading_effects": {
+"sanity_cost": 4,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_012",
+"EVT_045"
+],
+"investigations": [],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_091",
+"metadata": {
+"title": "Anotaciones sobre Sugestión Hipnótica Colectiva",
+"author": "Profesor Lothar",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.8,
+"forced_corruption_gain": 4
+}
+},
+"knowledge_rewards": [
+"KNOW_DANGEROUS_MOSES_TRANSCRIPTION",
+"KNOW_ORGANIZATION_MOSES_ASCETIC_CONSPIRACY"
+],
+"knowledge_categories": [
+"OCCULTISM"
+],
+"pathway_affinities": [
+"MYSTERY_PRYER",
+"SPECTATOR"
+],
+"reading_effects": {
+"sanity_cost": 12,
+"corruption_yield": 2
+},
+"side_effects": [
+"MIND_MAZE"
+],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_021"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_092",
+"metadata": {
+"title": "Tratado de Sanación Herbal Avanzada",
+"author": "Dr. Jean-Louis",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 7,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 5
+}
+},
+"knowledge_rewards": [
+"KNOW_OUTER_DEITIES_PRIMITIVE_MOON",
+"KNOW_MYSTICAL_ANATOMY"
+],
+"knowledge_categories": [
+"MYSTICAL_ANATOMY"
+],
+"pathway_affinities": [
+"APOTHECARY"
+],
+"reading_effects": {
+"sanity_cost": 15,
+"corruption_yield": 3
+},
+"side_effects": [
+"MUTTERING_SUSURRUS"
+],
+"unlocks": {
+"events": [],
+"investigations": [
+"INV_CASE_022"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_093",
+"metadata": {
+"title": "La Cera Pineal de las Face-Changer",
+"author": "Klaus el Cambiaformas",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_ORGANIZATION_SECRET_ORDER"
+],
+"knowledge_categories": [
+"ORGANIZATIONS"
+],
+"pathway_affinities": [
+"SEER"
+],
+"reading_effects": {
+"sanity_cost": 2,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_091"
+],
+"investigations": [
+"INV_CASE_023"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_094",
+"metadata": {
+"title": "Los Goliaths de Carne del Ojo Invertido",
+"author": "Padre Jairo",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "FORBIDDEN",
+"rarity": "RARE"
+},
+"reading_requirements": {
+"required_sequence": 4,
+"required_knowledge": [
+"KNOW_ORGANIZATION_AURORA_ORDER_FLESH"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 3.4,
+"forced_corruption_gain": 16
+}
+},
+"knowledge_rewards": [
+"KNOW_ORGANIZATION_AURORA_ORDER_FLESH",
+"KNOW_AURORA_ORDER_FLESH_TITANS"
+],
+"knowledge_categories": [
+"OCCULTISM",
+"OUTER_DEITIES"
+],
+"pathway_affinities": [
+"HANGED_MAN"
+],
+"reading_effects": {
+"sanity_cost": 42,
+"corruption_yield": 14
+},
+"side_effects": [
+"MUTTERING_SUSURRUS",
+"COGNITIVE_SHATTER"
+],
+"unlocks": {
+"events": [
+"EVT_019"
+],
+"investigations": [
+"INV_CASE_024"
+],
+"rumors": []
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "BOOK_095",
+"metadata": {
+"title": "Cartografía Básica de Mareas y Sobornos Portuarios",
+"author": "Gideon el Tuerto",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 9,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_SAFE_PORT_ROUTES",
+"KNOW_SEA_LEGENDS"
+],
+"knowledge_categories": [
+"SEA_LEGENDS"
+],
+"pathway_affinities": [
+"SAILOR"
+],
+"reading_effects": {
+"sanity_cost": 1,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_014"
+],
+"investigations": [
+"INV_CASE_025"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_096",
+"metadata": {
+"title": "Las Partituras Rúnicas tras las Cortinas de la Ópera",
+"author": "Vivian de Lys",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 7,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 6
+}
+},
+"knowledge_rewards": [
+"KNOW_ORGANIZATION_DEMONESS_NETWORKS",
+"KNOW_PATHWAY_DEMONESS_WITCH"
+],
+"knowledge_categories": [
+"OCCULTISM"
+],
+"pathway_affinities": [
+"ASSASSIN"
+],
+"reading_effects": {
+"sanity_cost": 16,
+"corruption_yield": 3
+},
+"side_effects": [
+"MIND_MAZE"
+],
+"unlocks": {
+"events": [
+"EVT_008"
+],
+"investigations": [
+"INV_CASE_026"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_097",
+"metadata": {
+"title": "Las Corazas de Hierro y las Armaduras de Combate Solomon",
+"author": "Mikhail Sauron",
+"historical_era": "Fourth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.8,
+"forced_corruption_gain": 4
+}
+},
+"knowledge_rewards": [
+"KNOW_FOURTH_EPOCH_WARS",
+"KNOW_FAMILY_SAURON_HERESY"
+],
+"knowledge_categories": [
+"FOURTH_EPOCH_HISTORY"
+],
+"pathway_affinities": [
+"HUNTER",
+"COMBAT"
+],
+"reading_effects": {
+"sanity_cost": 12,
+"corruption_yield": 2
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_004"
+],
+"investigations": [
+"INV_CASE_027"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+{
+"id": "BOOK_098",
+"metadata": {
+"title": "Edictos Confidenciales y el Verdugo Real Fantasma",
+"author": "Inspector Henderson",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "SAFE",
+"rarity": "COMMON"
+},
+"reading_requirements": {
+"required_sequence": 8,
+"required_knowledge": [],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 1.0,
+"forced_corruption_gain": 0
+}
+},
+"knowledge_rewards": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+],
+"knowledge_categories": [
+"LAW_AND_ORDER_MYSTICISM"
+],
+"pathway_affinities": [
+"ARBITER"
+],
+"reading_effects": {
+"sanity_cost": 2,
+"corruption_yield": 0
+},
+"side_effects": [],
+"unlocks": {
+"events": [
+"EVT_016",
+"EVT_052"
+],
+"investigations": [
+"INV_CASE_028"
+],
+"rumors": []
+},
+"importance": "COMMON"
+},
+{
+"id": "BOOK_099",
+"metadata": {
+"title": "Linternas Ferroviarias y Bucles Espaciales Abiertos",
+"author": "Ulysses el Astrólogo",
+"historical_era": "Fifth Epoch"
+},
+"classification": {
+"risk_level": "DANGEROUS",
+"rarity": "UNCOMMON"
+},
+"reading_requirements": {
+"required_sequence": 6,
+"required_knowledge": [
+"KNOW_SPACE_TIME_MECHANICS"
+],
+"under_sequence_penalty": {
+"sanity_damage_multiplier": 2.0,
+"forced_corruption_gain": 6
+}
+},
+"knowledge_rewards": [
+"KNOW_SPACE_TIME_MECHANICS",
+"KNOW_PATHWAY_APPRENTICE_TRAVELLER"
+],
+"knowledge_categories": [
+"SPACE_TIME_MECHANICS"
+],
+"pathway_affinities": [
+"APPRENTICE"
+],
+"reading_effects": {
+"sanity_cost": 16,
+"corruption_yield": 3
+},
+"side_effects": [
+"TEMPORAL_BLUR"
+],
+"unlocks": {
+"events": [
+"EVT_017"
+],
+"investigations": [
+"INV_CASE_029"
+],
+"rumors": []
+},
+"importance": "ELITE"
+},
+  {
+    "id": "BOOK_100",
+    "metadata": {
+      "title": "La Corona de Dominación y el Sueño de los Orfebres",
+      "author": "Padre Thomas",
+      "historical_era": "Fifth Epoch"
+    },
+    "classification": {
+      "risk_level": "FORBIDDEN",
+      "rarity": "RARE"
+    },
+    "reading_requirements": {
+      "required_sequence": 4,
+      "required_knowledge": [
+        "KNOW_ORGANIZATION_PSYCHOLOGY_ALCHEMISTS"
+      ],
+      "under_sequence_penalty": {
+        "sanity_damage_multiplier": 3.2,
+        "forced_corruption_gain": 14
+      }
+    },
+    "knowledge_rewards": [
+      "KNOW_ORGANIZATION_PSYCHOLOGY_ALCHEMISTS",
+      "KNOW_PSYCHOLOGY_ALCHEMISTS_DREAM_WEAVING"
+    ],
+    "knowledge_categories": [
+      "PSYCHOLOGY",
+      "OCCULTISM"
+    ],
+    "pathway_affinities": [
+      "SPECTATOR"
+    ],
+    "reading_effects": {
+      "sanity_cost": 45,
+      "corruption_yield": 12
+    },
+    "side_effects": [
+      "MIND_MAZE",
+      "COGNITIVE_SHATTER"
+    ],
+    "unlocks": {
+      "events": [
+        "EVT_018",
+        "EVT_053"
+      ],
+      "investigations": [
+        "INV_CASE_030"
+      ],
+      "rumors": []
+    },
+    "importance": "LEGENDARY"
+  }
+]
+

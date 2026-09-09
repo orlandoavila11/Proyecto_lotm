@@ -1,0 +1,560 @@
+  [
+  {
+    "id": "ART_3_ALCOHOL_NEMESIS",
+    "metadata": {
+      "name": "Alcohol Nemesis",
+      "sealed_grade": "GRADE_3",
+      "pathway_affinity": "APOTHECARY",
+      "derived_sequence": 9
+    },
+    "current_state": {
+      "status": "ROAMING",
+      "current_holder_id": "NONE",
+      "last_known_location_id": "REG_BACKLUND_EAST"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 0,
+      "corruption_yield_multiplier": 1.00,
+      "divination_distortion_bonus": 0,
+      "reality_instability_rating": 5
+    },
+    "containment_protocol": {
+      "requires_active_containment": false,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 0,
+      "breach_event_id": "NONE"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [],
+      "active_combat_skill_id": "SKL_INTOXICATION_NEUTRALIZATION",
+      "passive_world_flag_injected": "NONE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": false,
+      "linked_events_pool": [],
+      "linked_investigations_pool": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "ART_3_BROKEN_FINGER",
+    "metadata": {
+      "name": "Broken Finger",
+      "sealed_grade": "GRADE_3",
+      "pathway_affinity": "ERROR",
+      "derived_sequence": 9
+    },
+    "current_state": {
+      "status": "ROAMING",
+      "current_holder_id": "NONE",
+      "last_known_location_id": "REG_BACKLUND_EAST"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 1,
+      "corruption_yield_multiplier": 1.05,
+      "divination_distortion_bonus": 20,
+      "reality_instability_rating": 15
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 72,
+      "breach_event_id": "EVT_005"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [],
+      "active_combat_skill_id": "SKL_MINOR_STEAL",
+      "passive_world_flag_injected": "NONE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_005"
+      ],
+      "linked_investigations_pool": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "ART_3_CIRCUS",
+    "metadata": {
+      "name": "Circus",
+      "sealed_grade": "GRADE_3",
+      "pathway_affinity": "FOOL",
+      "derived_sequence": 8
+    },
+    "current_state": {
+      "status": "CONTAINED",
+      "current_holder_id": "CHURCH_EVERNIGHT",
+      "last_known_location_id": "LOC_NIGHTHAWK_HQ_BASEMENT"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 1,
+      "corruption_yield_multiplier": 1.10,
+      "divination_distortion_bonus": 40,
+      "reality_instability_rating": 35
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 48,
+      "breach_event_id": "EVT_033"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [],
+      "active_combat_skill_id": "SKL_STAGE_ILLUSION_DISTORTION",
+      "passive_world_flag_injected": "NONE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_033"
+      ],
+      "linked_investigations_pool": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "ART_3_1328",
+    "metadata": {
+      "name": "Artifact 3-1328",
+      "sealed_grade": "GRADE_3",
+      "pathway_affinity": "SAVANT",
+      "derived_sequence": 8
+    },
+    "current_state": {
+      "status": "CONTAINED",
+      "current_holder_id": "CHURCH_STEAM",
+      "last_known_location_id": "LOC_MACHINERY_CATHEDRAL"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 0,
+      "corruption_yield_multiplier": 1.00,
+      "divination_distortion_bonus": 10,
+      "reality_instability_rating": 10
+    },
+    "containment_protocol": {
+      "requires_active_containment": false,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 0,
+      "breach_event_id": "NONE"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_SPIRIT_WORLD_SHADOWS"
+      ],
+      "active_combat_skill_id": "SKL_SPIRIT_VISION_MONOCLE",
+      "passive_world_flag_injected": "NONE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": false,
+      "linked_events_pool": [],
+      "linked_investigations_pool": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "ART_3_EYE_OF_TRUTH",
+    "metadata": {
+      "name": "Eye of Truth (Corrupted)",
+      "sealed_grade": "GRADE_3",
+      "pathway_affinity": "READER",
+      "derived_sequence": 8
+    },
+    "current_state": {
+      "status": "ROAMING",
+      "current_holder_id": "NONE",
+      "last_known_location_id": "REG_TRIER_CENTRAL"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 1,
+      "corruption_yield_multiplier": 1.20,
+      "divination_distortion_bonus": 50,
+      "reality_instability_rating": 30
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 36,
+      "breach_event_id": "EVT_091"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+      ],
+      "active_combat_skill_id": "SKL_SPIRITUALITY_DISCERNMENT",
+      "passive_world_flag_injected": "MUTTERING_SUSURRUS"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_091"
+      ],
+      "linked_investigations_pool": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "ART_3_MASTER_KEY",
+    "metadata": {
+      "name": "Master Key (Minor)",
+      "sealed_grade": "GRADE_3",
+      "pathway_affinity": "DOOR",
+      "derived_sequence": 9
+    },
+    "current_state": {
+      "status": "ROAMING",
+      "current_holder_id": "NONE",
+      "last_known_location_id": "REG_BACKLUND_EAST"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 1,
+      "corruption_yield_multiplier": 1.10,
+      "divination_distortion_bonus": 30,
+      "reality_instability_rating": 40
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 96,
+      "breach_event_id": "EVT_007"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [],
+      "active_combat_skill_id": "SKL_ORDINARY_LOCK_BYPASS",
+      "passive_world_flag_injected": "TEMPORAL_BLUR"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_007"
+      ],
+      "linked_investigations_pool": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "ART_3_0625",
+    "metadata": {
+      "name": "Artifact 3-0625",
+      "sealed_grade": "GRADE_3",
+      "pathway_affinity": "MONSTER",
+      "derived_sequence": 7
+    },
+    "current_state": {
+      "status": "CONTAINED",
+      "current_holder_id": "CHURCH_EVERNIGHT",
+      "last_known_location_id": "LOC_NIGHTHAWK_HQ_BASEMENT"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 2,
+      "corruption_yield_multiplier": 1.25,
+      "divination_distortion_bonus": 40,
+      "reality_instability_rating": 50
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 24,
+      "breach_event_id": "EVT_023"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_FATE_AND_PROBABILITY"
+      ],
+      "active_combat_skill_id": "SKL_PASSIVE_MISFORTUNE_RADIATION",
+      "passive_world_flag_injected": "NONE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_023"
+      ],
+      "linked_investigations_pool": []
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "ART_3_MURLOC_CUFFLINK",
+    "metadata": {
+      "name": "Murloc Cufflink",
+      "sealed_grade": "GRADE_3",
+      "pathway_affinity": "SAILOR",
+      "derived_sequence": 9
+    },
+    "current_state": {
+      "status": "ROAMING",
+      "current_holder_id": "NONE",
+      "last_known_location_id": "REG_BACKLUND_PORT"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 0,
+      "corruption_yield_multiplier": 1.00,
+      "divination_distortion_bonus": 10,
+      "reality_instability_rating": 10
+    },
+    "containment_protocol": {
+      "requires_active_containment": false,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 0,
+      "breach_event_id": "NONE"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_SAFE_PORT_ROUTES"
+      ],
+      "active_combat_skill_id": "SKL_UNDERWATER_BREATHING",
+      "passive_world_flag_injected": "NONE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": false,
+      "linked_events_pool": [],
+      "linked_investigations_pool": []
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "ART_3_0782",
+    "metadata": {
+      "name": "Artifact 3-0782",
+      "sealed_grade": "GRADE_3",
+      "pathway_affinity": "SUN",
+      "derived_sequence": 7
+    },
+    "current_state": {
+      "status": "CONTAINED",
+      "current_holder_id": "CHURCH_EVERNIGHT",
+      "last_known_location_id": "LOC_NIGHTHAWK_HQ_BASEMENT"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 2,
+      "corruption_yield_multiplier": 1.15,
+      "divination_distortion_bonus": 30,
+      "reality_instability_rating": 25
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 48,
+      "breach_event_id": "EVT_040"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+      ],
+"active_combat_skill_id": "SKL_MINOR_RADIUS_PURIFICATION",
+"passive_world_flag_injected": "NONE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_040"
+],
+"linked_investigations_pool": []
+},
+"importance": "ELITE"
+},
+{
+"id": "ART_3_MYSTERY_PRYING_GLASSES",
+"metadata": {
+"name": "Mystery Prying Glasses",
+"sealed_grade": "GRADE_3",
+"pathway_affinity": "LAWYER",
+"derived_sequence": 8
+},
+"current_state": {
+"status": "EQUIPPED",
+"current_holder_id": "NPC_LUMIAN_LEE",
+"last_known_location_id": "REG_TRIER_CENTRAL"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 1,
+"corruption_yield_multiplier": 1.10,
+"divination_distortion_bonus": 45,
+"reality_instability_rating": 35
+},
+"containment_protocol": {
+"requires_active_containment": false,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 0,
+"breach_event_id": "NONE"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+],
+"active_combat_skill_id": "SKL_COVERT_SPYING_GLASS",
+"passive_world_flag_injected": "NONE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": false,
+"linked_events_pool": [],
+"linked_investigations_pool": []
+},
+"importance": "ELITE"
+},
+{
+"id": "ART_3_0611",
+"metadata": {
+"name": "Artifact 3-0611",
+"sealed_grade": "GRADE_3",
+"pathway_affinity": "NIGHT",
+"derived_sequence": 8
+},
+"current_state": {
+"status": "CONTAINED",
+"current_holder_id": "CHURCH_EVERNIGHT",
+"last_known_location_id": "LOC_SERENITY_CATHEDRAL_CORES"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 1,
+"corruption_yield_multiplier": 1.05,
+"divination_distortion_bonus": 55,
+"reality_instability_rating": 15
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 120,
+"breach_event_id": "EVT_018"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+],
+"active_combat_skill_id": "SKL_WILL_SUPPRESSION_HAIR",
+"passive_world_flag_injected": "NONE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": false,
+"linked_events_pool": [
+"EVT_018"
+],
+"linked_investigations_pool": []
+},
+"importance": "COMMON"
+},
+{
+"id": "ART_3_SHERMANE_BOX",
+"metadata": {
+"name": "Shermane Box",
+"sealed_grade": "GRADE_3",
+"pathway_affinity": "ASSASSIN",
+"derived_sequence": 7
+},
+"current_state": {
+"status": "ROAMING",
+"current_holder_id": "NONE",
+"last_known_location_id": "REG_TRIER_CENTRAL"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 2,
+"corruption_yield_multiplier": 1.30,
+"divination_distortion_bonus": 40,
+"reality_instability_rating": 60
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 24,
+"breach_event_id": "EVT_026"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_ORGANIZATION_DEMONESS_NETWORKS"
+],
+"active_combat_skill_id": "SKL_WITCH_ATTRACTION_AURA",
+"passive_world_flag_injected": "MIND_MAZE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_026"
+],
+"linked_investigations_pool": []
+},
+"importance": "ELITE"
+},
+{
+"id": "ART_3_SILVER_BELLS",
+"metadata": {
+"name": "Silver Bells",
+"sealed_grade": "GRADE_3",
+"pathway_affinity": "MONSTER",
+"derived_sequence": 8
+},
+"current_state": {
+"status": "CONTAINED",
+"current_holder_id": "ORG_MI9",
+"last_known_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 1,
+"corruption_yield_multiplier": 1.10,
+"divination_distortion_bonus": 65,
+"reality_instability_rating": 45
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 60,
+"breach_event_id": "EVT_052"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_FATE_AND_PROBABILITY"
+],
+"active_combat_skill_id": "SKL_ADIVINATION_ALERT_BELLS",
+"passive_world_flag_injected": "NONE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": false,
+"linked_events_pool": [
+"EVT_052"
+],
+"linked_investigations_pool": []
+},
+"importance": "COMMON"
+},
+{
+"id": "ART_3_0217",
+"metadata": {
+"name": "Artifact 3-0217",
+"sealed_grade": "GRADE_3",
+"pathway_affinity": "DEATH",
+"derived_sequence": 7
+},
+"current_state": {
+"status": "CONTAINED",
+"current_holder_id": "CHURCH_EVERNIGHT",
+"last_known_location_id": "LOC_NIGHTHAWK_HQ_BASEMENT"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 2,
+"corruption_yield_multiplier": 1.20,
+"divination_distortion_bonus": 70,
+"reality_instability_rating": 65
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 36,
+"breach_event_id": "EVT_041"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_SPIRIT_WORLD_SHADOWS"
+],
+"active_combat_skill_id": "SKL_HOSTILE_REFLECTION_MANIFEST",
+"passive_world_flag_injected": "NONE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_041"
+],
+"linked_investigations_pool": []
+},
+"importance": "ELITE"
+}
+]

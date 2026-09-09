@@ -1,0 +1,2083 @@
+{
+  "timestamp": "2026-09-09T19:44:11.489Z",
+  "totalFilesExported": 67,
+  "totalBytesExported": 3252491,
+  "categories": {
+    "artifacts": {
+      "description": "Artefactos Sellados (Grados 3, 2, 1, 0), características expandidas, Singularidades y Sefirot.",
+      "fileCount": 7,
+      "totalBytes": 287995,
+      "files": [
+        {
+          "fileName": "sefirot.json",
+          "sourcePath": "src/advancement/sefirot.json",
+          "destinationPath": "reborn/data/content/artifacts/sefirot.json",
+          "sizeBytes": 10309,
+          "sizeKb": 10.07,
+          "rootType": "array",
+          "itemCount": 9,
+          "schema": {
+            "id": "string",
+            "identity": {
+              "name": "string",
+              "ats_group": "string"
+            },
+            "pathway_group": "array<string>",
+            "current_state": {
+              "status": "string",
+              "current_owner_id": "string",
+              "access_level": "number",
+              "planetary_shield_barrier": "boolean"
+            },
+            "authority": {
+              "authority_domains": "array<string>"
+            },
+            "ats_progression": {
+              "target_goo_id": "string",
+              "uniqueness_ids_required": "array<string>",
+              "required_sequence_1_characteristics": "array<[object Object]>"
+            },
+            "neighboring_outer_deities": "array<string>",
+            "world_influence": {
+              "corruption_rating": "number",
+              "cosmic_attraction_score": "number",
+              "global_sanity_drain_modifier": "number"
+            },
+            "importance": "string"
+          },
+          "sha256": "936681e85864009d2a2984a92e706dd782040d893447e50e0d784bbbccd904bb",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "uniqueness.json",
+          "sourcePath": "src/advancement/uniqueness.json",
+          "destinationPath": "reborn/data/content/artifacts/uniqueness.json",
+          "sizeBytes": 21087,
+          "sizeKb": 20.59,
+          "rootType": "array",
+          "itemCount": 22,
+          "schema": {
+            "id": "string",
+            "identity": {
+              "name": "string",
+              "pathway": "string"
+            },
+            "current_state": {
+              "status": "string",
+              "current_holder_id": "string",
+              "ownership_type": "string",
+              "last_known_location_id": "string"
+            },
+            "acquisition_conditions": {
+              "minimum_sequence": "number",
+              "requires_ritual": "boolean"
+            },
+            "authority": {
+              "authority_domains": "array<string>"
+            },
+            "world_effects": {
+              "corruption_rating": "number",
+              "divination_distortion": "number",
+              "reality_instability": "number",
+              "convergence_risk_multiplier": "number",
+              "global_sanity_drain_modifier": "number"
+            },
+            "ownership_history": "array<string>",
+            "advancement_links": {
+              "required_for_sequence_0": "boolean",
+              "required_for_ats": "boolean",
+              "linked_sephirot_id": "string"
+            },
+            "importance": "string"
+          },
+          "sha256": "a792de2452f2e4d800499b4939dd8da5ccd92bc166b9205194fdcb235027f082",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "grade_0.json",
+          "sourcePath": "src/artifacts/grade_0.json",
+          "destinationPath": "reborn/data/content/artifacts/grade_0.json",
+          "sizeBytes": 26357,
+          "sizeKb": 25.74,
+          "rootType": "array",
+          "itemCount": 23,
+          "schema": {
+            "id": "string",
+            "metadata": {
+              "name": "string",
+              "sealed_grade": "string",
+              "pathway_affinity": "string",
+              "derived_sequence": "number"
+            },
+            "current_state": {
+              "status": "string",
+              "current_holder_id": "string",
+              "last_known_location_id": "string"
+            },
+            "engine_modifiers": {
+              "sanity_drain_per_tick": "number",
+              "corruption_yield_multiplier": "number",
+              "divination_distortion_bonus": "number",
+              "reality_instability_rating": "number"
+            },
+            "containment_protocol": {
+              "requires_active_containment": "boolean",
+              "containment_item_id_required": "string",
+              "ticks_before_breach_if_uncontained": "number",
+              "breach_event_id": "string"
+            },
+            "combat_and_utility_hooks": {
+              "granted_knowledge_keys": "array<string>",
+              "active_combat_skill_id": "string",
+              "passive_world_flag_injected": "string"
+            },
+            "lifecycle_hooks": {
+              "can_spawn_world_incidents": "boolean",
+              "linked_events_pool": "array<string>",
+              "linked_investigations_pool": "array<string>"
+            },
+            "importance": "string"
+          },
+          "sha256": "1875852a6b94305c20e58f5d64568142f8ecdb762cabee8331848be3f45f9b44",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "grade_1.json",
+          "sourcePath": "src/artifacts/grade_1.json",
+          "destinationPath": "reborn/data/content/artifacts/grade_1.json",
+          "sizeBytes": 45729,
+          "sizeKb": 44.66,
+          "rootType": "array",
+          "itemCount": 37,
+          "schema": {
+            "id": "string",
+            "metadata": {
+              "name": "string",
+              "sealed_grade": "string",
+              "pathway_affinity": "string",
+              "derived_sequence": "number"
+            },
+            "current_state": {
+              "status": "string",
+              "current_holder_id": "string",
+              "last_known_location_id": "string"
+            },
+            "engine_modifiers": {
+              "sanity_drain_per_tick": "number",
+              "corruption_yield_multiplier": "number",
+              "divination_distortion_bonus": "number",
+              "reality_instability_rating": "number"
+            },
+            "containment_protocol": {
+              "requires_active_containment": "boolean",
+              "containment_item_id_required": "string",
+              "ticks_before_breach_if_uncontained": "number",
+              "breach_event_id": "string"
+            },
+            "combat_and_utility_hooks": {
+              "granted_knowledge_keys": "array<string>",
+              "active_combat_skill_id": "string",
+              "passive_world_flag_injected": "string"
+            },
+            "lifecycle_hooks": {
+              "can_spawn_world_incidents": "boolean",
+              "linked_events_pool": "array<string>",
+              "linked_investigations_pool": "array<string>"
+            },
+            "importance": "string"
+          },
+          "sha256": "104efe93056ec92abf21c6246e7d431a64032f6542eec2c68ace1d3d7a30fda8",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "grade_2.json",
+          "sourcePath": "src/artifacts/grade_2.json",
+          "destinationPath": "reborn/data/content/artifacts/grade_2.json",
+          "sizeBytes": 57348,
+          "sizeKb": 56,
+          "rootType": "array",
+          "itemCount": 51,
+          "schema": {
+            "id": "string",
+            "metadata": {
+              "name": "string",
+              "sealed_grade": "string",
+              "pathway_affinity": "string",
+              "derived_sequence": "number"
+            },
+            "current_state": {
+              "status": "string",
+              "current_holder_id": "string",
+              "last_known_location_id": "string"
+            },
+            "engine_modifiers": {
+              "sanity_drain_per_tick": "number",
+              "corruption_yield_multiplier": "number",
+              "divination_distortion_bonus": "number",
+              "reality_instability_rating": "number"
+            },
+            "containment_protocol": {
+              "requires_active_containment": "boolean",
+              "containment_item_id_required": "string",
+              "ticks_before_breach_if_uncontained": "number",
+              "breach_event_id": "string"
+            },
+            "combat_and_utility_hooks": {
+              "granted_knowledge_keys": "array<string>",
+              "active_combat_skill_id": "string",
+              "passive_world_flag_injected": "string"
+            },
+            "lifecycle_hooks": {
+              "can_spawn_world_incidents": "boolean",
+              "linked_events_pool": "array<string>",
+              "linked_investigations_pool": "array<string>"
+            },
+            "importance": "string"
+          },
+          "sha256": "f10159700087d84b9de832e570253f97c6d2f6c763fb21f17cb7a334c1aa8b1b",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "grade_3.json",
+          "sourcePath": "src/artifacts/grade_3.json",
+          "destinationPath": "reborn/data/content/artifacts/grade_3.json",
+          "sizeBytes": 15602,
+          "sizeKb": 15.24,
+          "rootType": "array",
+          "itemCount": 14,
+          "schema": {
+            "id": "string",
+            "metadata": {
+              "name": "string",
+              "sealed_grade": "string",
+              "pathway_affinity": "string",
+              "derived_sequence": "number"
+            },
+            "current_state": {
+              "status": "string",
+              "current_holder_id": "string",
+              "last_known_location_id": "string"
+            },
+            "engine_modifiers": {
+              "sanity_drain_per_tick": "number",
+              "corruption_yield_multiplier": "number",
+              "divination_distortion_bonus": "number",
+              "reality_instability_rating": "number"
+            },
+            "containment_protocol": {
+              "requires_active_containment": "boolean",
+              "containment_item_id_required": "string",
+              "ticks_before_breach_if_uncontained": "number",
+              "breach_event_id": "string"
+            },
+            "combat_and_utility_hooks": {
+              "granted_knowledge_keys": "array<unknown>",
+              "active_combat_skill_id": "string",
+              "passive_world_flag_injected": "string"
+            },
+            "lifecycle_hooks": {
+              "can_spawn_world_incidents": "boolean",
+              "linked_events_pool": "array<unknown>",
+              "linked_investigations_pool": "array<unknown>"
+            },
+            "importance": "string"
+          },
+          "sha256": "9e3b610846d7698a76d6b6df713031d97e804dd30df4a32cba1e347b9d0c0514",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "sealed_artifacts_expanded.json",
+          "sourcePath": "src/data/sealed_artifacts_expanded.json",
+          "destinationPath": "reborn/data/content/artifacts/sealed_artifacts_expanded.json",
+          "sizeBytes": 111563,
+          "sizeKb": 108.95,
+          "rootType": "array",
+          "itemCount": 124,
+          "schema": {
+            "id": "string",
+            "name": "string",
+            "grade": "number",
+            "isCanonical": "boolean",
+            "originPathway": "string",
+            "appearance": "string",
+            "activePowers": "array<string>",
+            "contraindication": {
+              "tabooName": "string",
+              "triggerCondition": "string",
+              "behavioralDescription": "string",
+              "sanityDrainPerTrigger": "number",
+              "corruptionRiskPercent": "number",
+              "containmentProtocol": "string"
+            }
+          },
+          "sha256": "96381bf1ca9582c814bcffe8b00e6dd7d0073666c59ac817b827cc5293eae03c",
+          "anchor": "disk-at-freeze"
+        }
+      ]
+    },
+    "lore_knowledge": {
+      "description": "Grimorios antiguos, conocimientos blasfemos, rumores victorianos y tablas de nombres honoríficos.",
+      "fileCount": 4,
+      "totalBytes": 309390,
+      "files": [
+        {
+          "fileName": "books.json",
+          "sourcePath": "src/books/books.json",
+          "destinationPath": "reborn/data/content/lore_knowledge/books.json",
+          "sizeBytes": 95794,
+          "sizeKb": 93.55,
+          "rootType": "array",
+          "itemCount": 100,
+          "schema": {
+            "id": "string",
+            "metadata": {
+              "title": "string",
+              "author": "string",
+              "historical_era": "string"
+            },
+            "classification": {
+              "risk_level": "string",
+              "rarity": "string"
+            },
+            "reading_requirements": {
+              "required_sequence": "number",
+              "required_knowledge": "array<unknown>",
+              "under_sequence_penalty": {
+                "sanity_damage_multiplier": "number",
+                "forced_corruption_gain": "number"
+              }
+            },
+            "knowledge_rewards": "array<string>",
+            "knowledge_categories": "array<string>",
+            "pathway_affinities": "array<string>",
+            "reading_effects": {
+              "sanity_cost": "number",
+              "corruption_yield": "number"
+            },
+            "side_effects": "array<unknown>",
+            "unlocks": {
+              "events": "array<string>",
+              "investigations": "array<unknown>",
+              "rumors": "array<unknown>"
+            },
+            "importance": "string"
+          },
+          "sha256": "2ab4c8df3fa6cbf877e7ea086e9df76dc0559e8b032fd360ec98ee0bb9b4938e",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "forbidden_knowledge.json",
+          "sourcePath": "src/data/forbidden_knowledge.json",
+          "destinationPath": "reborn/data/content/lore_knowledge/forbidden_knowledge.json",
+          "sizeBytes": 61576,
+          "sizeKb": 60.13,
+          "rootType": "array",
+          "itemCount": 104,
+          "schema": {
+            "id": "string",
+            "title": "string",
+            "classification": "string",
+            "mentalStrainWeight": "number",
+            "associatedEntity": "string",
+            "dangerRank": "string",
+            "secretContent": "string",
+            "corruptionRisk": "number",
+            "containmentProtocol": "string"
+          },
+          "sha256": "a0ec31b088ae9ddfe14594768c29c265f8d5e57f01b0ed0fbfa751da3812acc6",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "honorific_names_tables.json",
+          "sourcePath": "src/data/honorific_names_tables.json",
+          "destinationPath": "reborn/data/content/lore_knowledge/honorific_names_tables.json",
+          "sizeBytes": 16562,
+          "sizeKb": 16.17,
+          "rootType": "object",
+          "itemCount": 22,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "FOOL",
+            "sampleValueSchema": {
+              "pathway": "string",
+              "line1Authorities": "array<string>",
+              "line2CosmicSymbols": "array<string>",
+              "line3Mysteries": "array<string>",
+              "line4Titles": "array<string>"
+            }
+          },
+          "sha256": "850834a79404394b20bf7a60f6f9fa57f919669bb5c7772e11e14179e5835af5",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "rumors.json",
+          "sourcePath": "src/knowledge/rumors.json",
+          "destinationPath": "reborn/data/content/lore_knowledge/rumors.json",
+          "sizeBytes": 135458,
+          "sizeKb": 132.28,
+          "rootType": "array",
+          "itemCount": 100,
+          "schema": {
+            "id": "string",
+            "metadata": {
+              "title": "string",
+              "historical_era": "string",
+              "spawn_weight": "number",
+              "buying_cost_copper": "number"
+            },
+            "narrative": {
+              "description": "string",
+              "veracity": "string",
+              "revealed_truth_flag": "string"
+            },
+            "trigger_conditions": {
+              "min_global_corruption_index": "number",
+              "global_flags_required": "array<unknown>",
+              "required_sequence_max": "number"
+            },
+            "regional_scope": {
+              "origin_region_id": "string",
+              "heard_at_location_id": "string"
+            },
+            "source_entities": "array<string>",
+            "knowledge_links": {
+              "required_knowledge_to_understand": "array<unknown>",
+              "knowledge_granted_on_hearing": "array<string>"
+            },
+            "investigation_hooks": {
+              "can_trigger_investigation": "boolean",
+              "linked_investigation_id": "string"
+            },
+            "book_unlocks": "array<string>",
+            "world_effects": {
+              "sanity_loss_on_hearing": "number",
+              "local_panic_increment": "number"
+            },
+            "propagation": {
+              "spread_rate": "number",
+              "max_regions": "number"
+            },
+            "lifecycle": {
+              "ticks_to_expire": "number",
+              "is_repeatable": "boolean"
+            },
+            "importance": "string"
+          },
+          "sha256": "e4aabbd9c6951aed7b19981ef3d2fb5e741bdef7b5deda363eebac673cbc2aa0",
+          "anchor": "disk-at-freeze"
+        }
+      ]
+    },
+    "investigations": {
+      "description": "Dossiers de investigación criminal/mística y grafo de conspiraciones de Backlund.",
+      "fileCount": 2,
+      "totalBytes": 368261,
+      "files": [
+        {
+          "fileName": "conspiracies.json",
+          "sourcePath": "src/data/conspiracies.json",
+          "destinationPath": "reborn/data/content/investigations/conspiracies.json",
+          "sizeBytes": 249328,
+          "sizeKb": 243.48,
+          "rootType": "array",
+          "itemCount": 210,
+          "schema": {
+            "id": "string",
+            "category": "string",
+            "title": "string",
+            "actors": {
+              "instigator": "string",
+              "puppetOrAccomplice": "string",
+              "opposingFaction": "string"
+            },
+            "objective": "string",
+            "secret": "string",
+            "escalationPhases": "array<string>",
+            "systemicConsequences": {
+              "tensionIncrease": "number",
+              "occultDensityDelta": "number",
+              "involvedChurchSuspicion": "number",
+              "affectedDistricts": "array<string>",
+              "potentialWorldEventKey": "string"
+            }
+          },
+          "sha256": "198b3ab1a673f17c6ad4ff1910011ac8c8bdc2500401083f74d17a15e2e9c30a",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "investigations_data.json",
+          "sourcePath": "src/investigation/investigations_data.json",
+          "destinationPath": "reborn/data/content/investigations/investigations_data.json",
+          "sizeBytes": 118933,
+          "sizeKb": 116.15,
+          "rootType": "array",
+          "itemCount": 50,
+          "schema": {
+            "id": "string",
+            "name": "string",
+            "danger_level": "string",
+            "difficulty": {
+              "rating": "string",
+              "required_exploration_tier": "number",
+              "base_success_chance": "number"
+            },
+            "world_system_context": {
+              "region_id": "string",
+              "sub_location_id": "string",
+              "required_weather": "array<string>",
+              "time_restrictions": {
+                "start_hour": "number",
+                "end_hour": "number"
+              }
+            },
+            "world_state_manager_requirements": {
+              "global_flags_required": {},
+              "min_global_corruption_index": "number"
+            },
+            "trigger_context": {
+              "rumor_id": "string",
+              "text": "string"
+            },
+            "adventure_engine_mechanics": {
+              "sanity_drain_per_tick": "number",
+              "danger_encounter_rate_modifier": "number",
+              "investigation_steps_required": "number",
+              "evidence_pool": "array<string>"
+            },
+            "deduction_requirements": {
+              "min_knowledge_points": {
+                "secret_organizations": "number"
+              },
+              "allowed_pathways": "array<string>",
+              "minimum_sequence_required": "number",
+              "requires_spirit_vision": "boolean"
+            },
+            "rewards": {
+              "items": "array<string>",
+              "knowledge_keys": "array<string>",
+              "faction_reputation": {
+                "church_of_evernight": "number"
+              }
+            },
+            "on_success_effects": {
+              "log_message": "string",
+              "world_state_flags_to_add": {
+                "hillside_sewers_cleansed": "boolean"
+              },
+              "world_state_flags_to_remove": {},
+              "player_stat_modifiers": {
+                "sanity_restore": "number"
+              }
+            },
+            "on_failure_effects": {
+              "log_message": "string",
+              "world_state_flags_to_add": {
+                "hillside_sewers_corrupted": "boolean",
+                "backlund_plague_alert": "boolean"
+              },
+              "player_stat_modifiers": {
+                "permanent_corruption_gain": "number",
+                "sanity_damage": "number"
+              }
+            }
+          },
+          "sha256": "5860ecd80c10215512e4a68dcbf18b64fb2a6edfe24f5d383925857c97600f49",
+          "anchor": "disk-at-freeze"
+        }
+      ]
+    },
+    "events": {
+      "description": "Eventos mundiales, convergencia astral, dilemas de identidad civil y arcos de vida por vía.",
+      "fileCount": 5,
+      "totalBytes": 1343253,
+      "files": [
+        {
+          "fileName": "destiny_events.json",
+          "sourcePath": "src/data/destiny_events.json",
+          "destinationPath": "reborn/data/content/events/destiny_events.json",
+          "sizeBytes": 118484,
+          "sizeKb": 115.71,
+          "rootType": "array",
+          "itemCount": 154,
+          "schema": {
+            "id": "string",
+            "category": "string",
+            "title": "string",
+            "description": "string",
+            "karmaThreshold": "number",
+            "targetDayRange": {
+              "minDay": "number",
+              "maxDay": "number"
+            },
+            "consequences": {
+              "karmaDelta": "number",
+              "sanityDelta": "number",
+              "corruptionDelta": "number",
+              "poundsDelta": "number",
+              "anchorsDelta": "number",
+              "worldTensionDelta": "number"
+            },
+            "inevitabilityScore": "number",
+            "flavorLore": "string"
+          },
+          "sha256": "f0374abb939a1c61108599cde442bbe526ef6936a3aea5fc3b71f235614f4198",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "identity_events.json",
+          "sourcePath": "src/data/identity_events.json",
+          "destinationPath": "reborn/data/content/events/identity_events.json",
+          "sizeBytes": 230766,
+          "sizeKb": 225.36,
+          "rootType": "array",
+          "itemCount": 108,
+          "schema": {
+            "id": "string",
+            "category": "string",
+            "title": "string",
+            "description": "string",
+            "targetSocialClass": "string",
+            "riskLevel": "string",
+            "consequences": {
+              "suspicionIncrease": "number",
+              "financialCostPounds": "number",
+              "sanityImpact": "number",
+              "anchorImpact": "number",
+              "forcesRelocation": "boolean"
+            },
+            "options": "array<[object Object]>"
+          },
+          "sha256": "cf56e831ca0ea575759c1961556d38de0c36a5bf00bc4d4b36fc20f7d952535d",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "pathway_events.json",
+          "sourcePath": "src/data/pathway_events.json",
+          "destinationPath": "reborn/data/content/events/pathway_events.json",
+          "sizeBytes": 712645,
+          "sizeKb": 695.94,
+          "rootType": "array",
+          "itemCount": 462,
+          "schema": {
+            "id": "string",
+            "pathway": "string",
+            "category": "string",
+            "title": "string",
+            "description": "string",
+            "conditions": {
+              "minSequence": "number",
+              "maxSequence": "number",
+              "minSanity": "number",
+              "maxCorruption": "number"
+            },
+            "outcomes": "array<[object Object]>",
+            "systemicImpact": "string"
+          },
+          "sha256": "f5cc78435cd0e40d606bf9ce922a8ca337f1dd0fbb8d2e4efc8f6ae6ee16402c",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "pathway_life_stories.json",
+          "sourcePath": "src/data/pathway_life_stories.json",
+          "destinationPath": "reborn/data/content/events/pathway_life_stories.json",
+          "sizeBytes": 60591,
+          "sizeKb": 59.17,
+          "rootType": "array",
+          "itemCount": 22,
+          "schema": {
+            "pathway": "string",
+            "novelTitle": "string",
+            "protagonistArchetype": "string",
+            "coreTragedyTheme": "string",
+            "majorActs": "array<[object Object]>",
+            "recurringEnemies": "array<string>",
+            "rivalOrganizations": "array<string>",
+            "apotheosisClimax": "string"
+          },
+          "sha256": "7ad2a3c44e7a99d9d7049edcf003ea8fd194066e33278e48a977dd96174ea34d",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "events.json",
+          "sourcePath": "src/events/events.json",
+          "destinationPath": "reborn/data/content/events/events.json",
+          "sizeBytes": 220767,
+          "sizeKb": 215.59,
+          "rootType": "array",
+          "itemCount": 110,
+          "schema": {
+            "id": "string",
+            "metadata": {
+              "name": "string",
+              "category": "string",
+              "urgency_level": "string"
+            },
+            "narrative": {
+              "description": "string",
+              "related_entities": "array<string>"
+            },
+            "trigger_conditions": {
+              "global_flags_required": {
+                "AMON_AVATARS_SPAWNING": "boolean",
+                "TIME_LOOP_RISK_HIGH": "boolean"
+              },
+              "min_global_corruption_index": "number",
+              "time_restrictions": {
+                "start_hour": "number",
+                "end_hour": "number"
+              }
+            },
+            "regional_scope": {
+              "target_region_id": "string",
+              "affected_sub_locations": "array<string>"
+            },
+            "engine_modifiers": {
+              "sanity_drain_per_tick_modifier": "number",
+              "divination_misdirection_chance_bonus": "number",
+              "corruption_gain_rate_multiplier": "number",
+              "danger_encounter_rate_modifier": "number"
+            },
+            "world_state_mutations": {
+              "flags_to_add": {
+                "MONOCLE_EFFECT_ACTIVE": "boolean",
+                "DIVINATION_BLOCKED_BY_COSMIC": "boolean"
+              },
+              "flags_to_remove": {
+                "ROYAL_LAW_ENFORCED": "boolean"
+              },
+              "region_stat_overrides": {
+                "REG_BACKLUND_NORTH": {
+                  "base_luck_index_bonus": "any",
+                  "black_market_price_modifier": "any"
+                }
+              }
+            },
+            "interaction_hooks": {
+              "can_trigger_investigation": "boolean",
+              "linked_investigation_id": "string",
+              "required_npc_involvement_ids": "array<string>"
+            },
+            "event_progression": {
+              "current_phase": "number",
+              "ticks_until_escalation": "number",
+              "resolution_conditions": {
+                "INVESTIGATION_COMPLETED": "boolean"
+              }
+            },
+            "failure_conditions": {
+              "ticks_elapsed": "number"
+            },
+            "resolution_effects": {
+              "flags_to_add": {
+                "AMON_AVATARS_REPELLED": "boolean"
+              },
+              "knowledge_rewards": "array<string>",
+              "reputation_changes": {
+                "ZOROAST_FAMILY": "number",
+                "CHURCH_OF_EVERNIGHT": "number"
+              }
+            },
+            "event_chain": {
+              "is_chained": "boolean",
+              "next_event_id": "string"
+            },
+            "spawn_weight": "number",
+            "repeatable": "boolean",
+            "importance": "string"
+          },
+          "sha256": "ee93205a5739dac1af2ac74180ba902d5536bf495e4e590b407d56348e2d8416",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        }
+      ]
+    },
+    "world": {
+      "description": "Geografía de Loen, iglesias ortodoxas, organizaciones secretas, deidades, Grandes Antiguos y Club del Tarot.",
+      "fileCount": 12,
+      "totalBytes": 242891,
+      "files": [
+        {
+          "fileName": "organizations_expanded.json",
+          "sourcePath": "src/data/organizations_expanded.json",
+          "destinationPath": "reborn/data/content/world/organizations_expanded.json",
+          "sizeBytes": 84609,
+          "sizeKb": 82.63,
+          "rootType": "array",
+          "itemCount": 10,
+          "schema": {
+            "id": "string",
+            "name": "string",
+            "category": "string",
+            "doctrine": "string",
+            "headquarters": "string",
+            "patronEntity": "string",
+            "associatedPathways": "array<string>",
+            "ranks": "array<[object Object]>",
+            "missions": "array<[object Object]>",
+            "loyaltyDilemmas": "array<[object Object]>",
+            "membershipBenefits": {
+              "potionFormulasProvided": "array<string>",
+              "sacredSanctuaryProtectionLevel": "number",
+              "monthlyArtifactAccessGrade": "number",
+              "exclusiveKnowledgeArchives": "array<string>"
+            }
+          },
+          "sha256": "3fa945888dc5177543828fca053cd0835121c7d146902e6541a73d4b8a04cc8d",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "tarot_club_members.json",
+          "sourcePath": "src/tarot/tarot_club_members.json",
+          "destinationPath": "reborn/data/content/world/tarot_club_members.json",
+          "sizeBytes": 17577,
+          "sizeKb": 17.17,
+          "rootType": "array",
+          "itemCount": 10,
+          "schema": {
+            "id": "string",
+            "identity": {
+              "name": "string",
+              "tarot_title": "string",
+              "pathway": "string",
+              "current_sequence": "number",
+              "highest_sequence_reached": "number",
+              "status": "string"
+            },
+            "club_profile": {
+              "member_rank": "string",
+              "join_epoch": "string",
+              "loyalty_to_fool": "number",
+              "contribution_score": "number"
+            },
+            "authority_profile": {
+              "authority_domains": "array<string>",
+              "mythical_creature_status": "boolean",
+              "angelic_status": "boolean",
+              "divine_status": "boolean"
+            },
+            "knowledge_profile": {
+              "accessible_knowledge_categories": "array<string>",
+              "secret_knowledge_categories": "array<string>",
+              "knowledge_sharing_level": "number"
+            },
+            "gathering_behavior": {
+              "attendance_rate": "number",
+              "can_provide_reports": "boolean",
+              "can_request_help": "boolean",
+              "can_assign_missions": "boolean"
+            },
+            "relationship_links": "array<[object Object]>",
+            "investigation_hooks": {
+              "can_generate_investigations": "boolean",
+              "linked_investigations": "array<string>"
+            },
+            "quest_hooks": {
+              "can_generate_quests": "boolean",
+              "linked_quests": "array<unknown>"
+            },
+            "information_network": {
+              "known_organizations": "array<string>",
+              "known_entities": "array<string>",
+              "known_regions": "array<string>"
+            },
+            "activity_profile": {
+              "world_presence": "number",
+              "meeting_activity": "number",
+              "can_spawn_rumors": "boolean",
+              "can_spawn_events": "boolean"
+            },
+            "active_regions": "array<string>",
+            "importance": "string"
+          },
+          "sha256": "517be0b4e558662f0dcbf50092d687b4a9d57b0f3bdf6995a71d6854302daa6a",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "angels.json",
+          "sourcePath": "src/world/angels.json",
+          "destinationPath": "reborn/data/content/world/angels.json",
+          "sizeBytes": 26848,
+          "sizeKb": 26.22,
+          "rootType": "array",
+          "itemCount": 15,
+          "schema": {
+            "id": "string",
+            "identity": {
+              "name": "string",
+              "pathway": "string",
+              "sequence": "number",
+              "historical_era": "string",
+              "primary_faction": "string",
+              "covert_affiliation": "string"
+            },
+            "classification": {
+              "tier": "string"
+            },
+            "authority": {
+              "has_uniqueness": "boolean",
+              "sephirot_resonance_id": "string",
+              "conceptual_control_rating": "number",
+              "authority_domains": "array<string>"
+            },
+            "current_status": {
+              "vitality_state": "string",
+              "sanity_index": "number",
+              "is_sealed": "boolean",
+              "current_anchor_count": "number"
+            },
+            "activity_profile": {
+              "world_presence": "number",
+              "world_activity_rating": "number",
+              "can_spawn_events": "boolean",
+              "can_spawn_rumors": "boolean",
+              "can_spawn_investigations": "boolean"
+            },
+            "world_influence": {
+              "divination_sanity_drain": "number",
+              "divination_misdirection_chance": "number",
+              "corruption_leak_multiplier": "number"
+            },
+            "knowledge_inventory": "array<string>",
+            "relationship_links": "array<[object Object]>",
+            "active_regions": "array<string>",
+            "interaction_hooks": {
+              "interaction_allowed": "boolean",
+              "knowledge_threshold_required": "number",
+              "quest_trigger_id": "string"
+            },
+            "world_state_modifiers": {
+              "global_flags_to_inject": {
+                "WORM_OF_TIME_DETECTION_ACTIVE": "boolean"
+              },
+              "region_stat_overrides": {
+                "REG_BACKLUND_NORTH": {
+                  "divination_speed_modifier": "any"
+                }
+              }
+            },
+            "importance": "string",
+            "influence_score": "number"
+          },
+          "sha256": "15422cbdd5599d543de3e61edc784c62d77e8b9b7ef1d043e62734d761bebd54",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "churches.json",
+          "sourcePath": "src/world/churches.json",
+          "destinationPath": "reborn/data/content/world/churches.json",
+          "sizeBytes": 11777,
+          "sizeKb": 11.5,
+          "rootType": "array",
+          "itemCount": 7,
+          "schema": {
+            "id": "string",
+            "metadata": {
+              "name": "string",
+              "classification": "string",
+              "founded_epoch": "string",
+              "main_deity_id": "string"
+            },
+            "anchor_profile": {
+              "influence_score": "number",
+              "pop_belief_percentage": "number",
+              "anchor_stability_contribution": "number",
+              "hq_location_id": "string"
+            },
+            "holy_order_profile": {
+              "order_name": "string",
+              "deployment_aggression_rating": "number",
+              "average_captain_sequence": "number",
+              "max_active_squads": "number"
+            },
+            "pathway_alignment": {
+              "controlled_pathways": "array<string>",
+              "monopolized_uniqueness_ids": "array<string>"
+            },
+            "geopolitical_influence": {
+              "aligned_nations": "array<string>",
+              "political_leverage_score": "number",
+              "black_market_suppression_multiplier": "number"
+            },
+            "engine_modifiers": {
+              "regional_sanity_regen_bonus": "number",
+              "regional_corruption_suppression_rating": "number",
+              "spirit_world_distortion_buffer": "number"
+            },
+            "faction_relations": "array<[object Object]>",
+            "lifecycle_hooks": {
+              "can_trigger_inquisition_events": "boolean",
+              "linked_investigations_pool": "array<string>"
+            },
+            "importance": "string"
+          },
+          "sha256": "36555bf52f6f8b86611393122915d1a89d9f7cf6954e780560cd0b82590a996d",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "cities.json",
+          "sourcePath": "src/world/cities.json",
+          "destinationPath": "reborn/data/content/world/cities.json",
+          "sizeBytes": 4981,
+          "sizeKb": 4.86,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "version",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "681b3f4d93145ce483680382917b36c11a16f6a7a1d87947793fda4fe2b551fa",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "countries.json",
+          "sourcePath": "src/world/countries.json",
+          "destinationPath": "reborn/data/content/world/countries.json",
+          "sizeBytes": 6698,
+          "sizeKb": 6.54,
+          "rootType": "array",
+          "itemCount": 5,
+          "schema": {
+            "id": "string",
+            "metadata": {
+              "name": "string",
+              "government_type": "string",
+              "capital_city_id": "string",
+              "continental_region": "string"
+            },
+            "economy_profile": {
+              "currency_name": "string",
+              "base_inflation_modifier": "number",
+              "black_market_activity_index": "number"
+            },
+            "geopolitical_stability": {
+              "stability_index": "number",
+              "conscription_active": "boolean",
+              "border_tension_score": "number"
+            },
+            "religious_influence": {
+              "dominant_orthodox_church_ids": "array<string>",
+              "state_suppression_of_heresy_rating": "number"
+            },
+            "intelligence_and_shadows": {
+              "native_secret_service_ids": "array<string>",
+              "infiltrated_cult_ids": "array<string>"
+            },
+            "engine_modifiers": {
+              "global_sanity_drain_multiplier": "number",
+              "crime_encounter_rate_modifier": "number",
+              "divination_interference_index": "number"
+            },
+            "diplomatic_matrix": "array<[object Object]>",
+            "importance": "string"
+          },
+          "sha256": "b050c6604906848df2e6aa7bdadf5495c99ae5e58aa664a8517c019f85278b49",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "gods.json",
+          "sourcePath": "src/world/gods.json",
+          "destinationPath": "reborn/data/content/world/gods.json",
+          "sizeBytes": 25891,
+          "sizeKb": 25.28,
+          "rootType": "array",
+          "itemCount": 12,
+          "schema": {
+            "id": "string",
+            "identity": {
+              "name": "string",
+              "true_name": "string",
+              "pathway": "string",
+              "sequence": "number",
+              "historical_era": "string",
+              "primary_faction": "string",
+              "covert_affiliation": "string"
+            },
+            "classification": {
+              "tier": "string"
+            },
+            "authority": {
+              "has_uniqueness": "boolean",
+              "sephirot_resonance_id": "string",
+              "conceptual_control_rating": "number",
+              "authority_domains": "array<string>"
+            },
+            "current_status": {
+              "vitality_state": "string",
+              "sanity_index": "number",
+              "is_sealed": "boolean"
+            },
+            "god_properties": {
+              "church_controlled": "boolean",
+              "anchor_population_scale": "string",
+              "pillar_candidate": "boolean"
+            },
+            "pillar_progress": {
+              "is_pillar": "boolean",
+              "pillar_path": "string",
+              "completion_percentage": "number"
+            },
+            "activity_profile": {
+              "world_presence": "number",
+              "world_activity_rating": "number",
+              "can_spawn_events": "boolean",
+              "can_spawn_rumors": "boolean",
+              "can_spawn_investigations": "boolean"
+            },
+            "world_influence": {
+              "divination_sanity_drain": "number",
+              "divination_misdirection_chance": "number",
+              "corruption_leak_multiplier": "number"
+            },
+            "knowledge_tier": "string",
+            "accessible_knowledge_categories": "array<string>",
+            "relationship_links": "array<[object Object]>",
+            "active_regions": "array<string>",
+            "interaction_hooks": {
+              "interaction_allowed": "boolean",
+              "knowledge_threshold_required": "number",
+              "quest_trigger_id": "string"
+            },
+            "world_state_modifiers": {
+              "global_flags_to_inject": {
+                "CONCEALMENT_BARRIER_REINFORCED": "boolean",
+                "EVERNIGHT_BLESSING_ACTIVE": "boolean",
+                "DEATH_PATHWAY_SUPRESSED": "boolean",
+                "TWILIGHT_PATHWAY_SUPRESSED": "boolean"
+              },
+              "region_stat_overrides": {
+                "REG_BACKLUND_WEST": {
+                  "corruption_gain_rate_multiplier": "any",
+                  "player_sanity_regen_rate": "any"
+                }
+              }
+            },
+            "importance": "string",
+            "influence_score": "number"
+          },
+          "sha256": "5dc10a5ac949fd3cc3be58fd67d6a60d53d4c45fb8ed700cca2c87e4b6d16832",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "governments.json",
+          "sourcePath": "src/world/governments.json",
+          "destinationPath": "reborn/data/content/world/governments.json",
+          "sizeBytes": 3789,
+          "sizeKb": 3.7,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "version",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "b95cff715df7b7284f5b156a9a6d346c331996486d61f7565e675a1a5f579b21",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "great_old_ones.json",
+          "sourcePath": "src/world/great_old_ones.json",
+          "destinationPath": "reborn/data/content/world/great_old_ones.json",
+          "sizeBytes": 18699,
+          "sizeKb": 18.26,
+          "rootType": "array",
+          "itemCount": 8,
+          "schema": {
+            "id": "string",
+            "identity": {
+              "name": "string",
+              "true_name": "string",
+              "associated_pathways": "array<string>",
+              "historical_era": "string",
+              "primary_faction": "string",
+              "covert_affiliation": "string"
+            },
+            "goo_properties": {
+              "is_pillar": "boolean",
+              "pillar_path": "string",
+              "completion_percentage": "number",
+              "requires_sephirot": "string",
+              "scale_of_influence": "string"
+            },
+            "authority": {
+              "has_uniqueness": "boolean",
+              "sephirot_resonance_id": "string",
+              "conceptual_control_rating": "number",
+              "authority_domains": "array<string>"
+            },
+            "current_status": {
+              "vitality_state": "string",
+              "sanity_index": "number",
+              "is_sealed": "boolean",
+              "anchor_stability_index": "number"
+            },
+            "activity_profile": {
+              "world_presence": "number",
+              "world_activity_rating": "number",
+              "can_spawn_events": "boolean",
+              "can_spawn_rumors": "boolean",
+              "can_spawn_investigations": "boolean"
+            },
+            "world_influence": {
+              "divination_sanity_drain": "number",
+              "divination_misdirection_chance": "number",
+              "corruption_leak_multiplier": "number"
+            },
+            "accessible_knowledge_categories": "array<string>",
+            "relationship_links": "array<[object Object]>",
+            "influence_regions": "array<string>",
+            "interaction_hooks": {
+              "interaction_allowed": "boolean",
+              "knowledge_threshold_required": "number",
+              "quest_trigger_id": "string"
+            },
+            "world_state_modifiers": {
+              "global_flags_to_inject": {
+                "SPIRIT_WORLD_DOMINANCE_ACTIVE": "boolean",
+                "COSMIC_DOOR_SEAL_REINFORCED": "boolean"
+              },
+              "region_stat_overrides": {
+                "REG_SPIRIT_WORLD": {
+                  "exploration_sanity_cost_multiplier": "any",
+                  "divination_speed_modifier": "any"
+                }
+              }
+            },
+            "importance": "string",
+            "influence_score": "number"
+          },
+          "sha256": "7e5e1a21ee4c73ba72d2cdb54f12ae097239b9b48e43ee536b044ab59ecb466f",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "kings_of_angels.json",
+          "sourcePath": "src/world/kings_of_angels.json",
+          "destinationPath": "reborn/data/content/world/kings_of_angels.json",
+          "sizeBytes": 11572,
+          "sizeKb": 11.3,
+          "rootType": "array",
+          "itemCount": 6,
+          "schema": {
+            "id": "string",
+            "identity": {
+              "name": "string",
+              "pathway": "string",
+              "sequence": "number",
+              "historical_era": "string",
+              "primary_faction": "string",
+              "covert_affiliation": "string"
+            },
+            "classification": {
+              "tier": "string"
+            },
+            "authority": {
+              "has_uniqueness": "boolean",
+              "sephirot_resonance_id": "string",
+              "conceptual_control_rating": "number",
+              "authority_domains": "array<string>"
+            },
+            "current_status": {
+              "vitality_state": "string",
+              "sanity_index": "number",
+              "is_sealed": "boolean",
+              "current_anchor_count": "number"
+            },
+            "activity_profile": {
+              "world_presence": "number",
+              "world_activity_rating": "number",
+              "can_spawn_events": "boolean",
+              "can_spawn_rumors": "boolean",
+              "can_spawn_investigations": "boolean"
+            },
+            "world_influence": {
+              "divination_sanity_drain": "number",
+              "divination_misdirection_chance": "number",
+              "corruption_leak_multiplier": "number"
+            },
+            "knowledge_inventory": "array<string>",
+            "relationship_links": "array<[object Object]>",
+            "active_regions": "array<string>",
+            "interaction_hooks": {
+              "interaction_allowed": "boolean",
+              "knowledge_threshold_required": "number",
+              "quest_trigger_id": "string"
+            },
+            "world_state_modifiers": {
+              "global_flags_to_inject": {
+                "AMON_AVATARS_SPAWNING": "boolean",
+                "TIME_LOOP_RISK_HIGH": "boolean"
+              },
+              "region_stat_overrides": {
+                "REG_BACKLUND_NORTH": {
+                  "divination_misdirection_chance_modifier": "any"
+                },
+                "REG_SPIRIT_WORLD": {
+                  "sanity_drain_per_tick_modifier": "any"
+                }
+              }
+            },
+            "importance": "string",
+            "influence_score": "number"
+          },
+          "sha256": "959d1906f81d5345b12193ca6aa1e854a5993113c0bf734877832fa0d3c48a11",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "regions.json",
+          "sourcePath": "src/world/regions.json",
+          "destinationPath": "reborn/data/content/world/regions.json",
+          "sizeBytes": 2127,
+          "sizeKb": 2.08,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "version",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "edf8932943cc47c8389abeb1a751dd89172e1fb68a3724006b16adfc794123f8",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "secret_organizations.json",
+          "sourcePath": "src/world/secret_organizations.json",
+          "destinationPath": "reborn/data/content/world/secret_organizations.json",
+          "sizeBytes": 28323,
+          "sizeKb": 27.66,
+          "rootType": "array",
+          "itemCount": 20,
+          "schema": {
+            "id": "string",
+            "metadata": {
+              "name": "string",
+              "classification": "string",
+              "operating_since_epoch": "string",
+              "latently_aligned_deity_id": "string"
+            },
+            "subversion_profile": {
+              "clandestine_influence_score": "number",
+              "infiltration_level_loen": "number",
+              "infiltration_level_intis": "number",
+              "black_market_revenue_share": "number"
+            },
+            "cell_structure": {
+              "network_style": "string",
+              "covert_operations_aggression": "number",
+              "average_agent_sequence": "number"
+            },
+            "pathway_monopolies": {
+              "favored_pathways": "array<string>",
+              "hoarded_uniqueness_ids": "array<unknown>"
+            },
+            "operations_profile": {
+              "primary_activities": "array<string>",
+              "covert_headquarters_region_id": "string",
+              "preferred_rumor_injection_locations": "array<string>"
+            },
+            "faction_relations": "array<[object Object]>",
+            "lifecycle_hooks": {
+              "can_spawn_world_incidents": "boolean",
+              "linked_investigations_pool": "array<string>",
+              "linked_events_pool": "array<string>"
+            },
+            "importance": "string"
+          },
+          "sha256": "8ff3fca4e08d90259996074b5d51570eb8d79c5b856f3cafdc3f54f15e7b9c2b",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        }
+      ]
+    },
+    "bestiary_npcs": {
+      "description": "Monstruos ordinarios, criaturas de élite, seres del mundo espiritual y NPCs con trasfondo.",
+      "fileCount": 4,
+      "totalBytes": 336012,
+      "files": [
+        {
+          "fileName": "elite_monsters.json",
+          "sourcePath": "src/npc/elite_monsters.json",
+          "destinationPath": "reborn/data/content/bestiary_npcs/elite_monsters.json",
+          "sizeBytes": 6537,
+          "sizeKb": 6.38,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "version",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "dc98641a7eb81692fa082ba43bc558fe40a5f4b0cb461aad4c910f5caa2555da",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "low_level_monsters.json",
+          "sourcePath": "src/npc/low_level_monsters.json",
+          "destinationPath": "reborn/data/content/bestiary_npcs/low_level_monsters.json",
+          "sizeBytes": 7107,
+          "sizeKb": 6.94,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "version",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "abcc5cf850cbd9d0be0e675e17f35d7a1bf7daebbb958801f2dd239d7c150325",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "monsters.json",
+          "sourcePath": "src/npc/monsters.json",
+          "destinationPath": "reborn/data/content/bestiary_npcs/monsters.json",
+          "sizeBytes": 121175,
+          "sizeKb": 118.33,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "version",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "774766179073df9b881e24482cbbc701962f5d51da35e834fd3e7f8af0590f1f",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "npc.json",
+          "sourcePath": "src/npc/npc.json",
+          "destinationPath": "reborn/data/content/bestiary_npcs/npc.json",
+          "sizeBytes": 201193,
+          "sizeKb": 196.48,
+          "rootType": "array",
+          "itemCount": 100,
+          "schema": {
+            "id": "string",
+            "identity": {
+              "name": "string",
+              "pathway": "string",
+              "sequence": "number",
+              "primary_faction": "string",
+              "covert_affiliation": "string"
+            },
+            "simulation_stats": {
+              "base_relationship": "number",
+              "hostility_rating": "string",
+              "sanity_stability": "number",
+              "corruption_tolerance": "number"
+            },
+            "world_clock_routine": "array<[object Object]>",
+            "agenda": {
+              "current_objective": "string",
+              "target_npc_rival_id": "string",
+              "triggered_event_flag": "string"
+            },
+            "interaction_hooks": {
+              "knowledge_threshold_required": "number",
+              "can_trade_items": "boolean",
+              "trade_pool": "array<string>",
+              "quest_trigger_id": "string",
+              "combat_tier": "string"
+            },
+            "knowledge_inventory": "array<string>",
+            "relationship_links": "array<[object Object]>",
+            "current_status": "string",
+            "importance": "string",
+            "influence_score": "number"
+          },
+          "sha256": "40c250bb77eca2a0ede6ea82469234e2a812a47189a2d4ea0b93e3b113b23ed9",
+          "anchor": "disk-at-freeze"
+        }
+      ]
+    },
+    "pathways": {
+      "description": "Compendios canónicos completos de las 22 vías de la divinidad (S9 a S0).",
+      "fileCount": 22,
+      "totalBytes": 275281,
+      "files": [
+        {
+          "fileName": "apothecary.json",
+          "sourcePath": "src/pathways/apothecary.json",
+          "destinationPath": "reborn/data/content/pathways/apothecary.json",
+          "sizeBytes": 13619,
+          "sizeKb": 13.3,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "5b0f68a777f098aab2f2ed603f3520f0e53b0bd9edc3225ab4238839c2c3a140",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "apprentice.json",
+          "sourcePath": "src/pathways/apprentice.json",
+          "destinationPath": "reborn/data/content/pathways/apprentice.json",
+          "sizeBytes": 11826,
+          "sizeKb": 11.55,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "fbda4a9d732657cda0c890ed00d96db9e64e33be5a7ca5793f6817a40832e15a",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "arbiter.json",
+          "sourcePath": "src/pathways/arbiter.json",
+          "destinationPath": "reborn/data/content/pathways/arbiter.json",
+          "sizeBytes": 13518,
+          "sizeKb": 13.2,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "e0c6e66c70076e00433448b709de02cbbf41afa68a4fcf4edf69f9260b6e3cba",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "assassin.json",
+          "sourcePath": "src/pathways/assassin.json",
+          "destinationPath": "reborn/data/content/pathways/assassin.json",
+          "sizeBytes": 10945,
+          "sizeKb": 10.69,
+          "rootType": "object",
+          "itemCount": 3,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "032db1baac69d58ed2db3e7ef760616e457885751b0a9ffa408bb2356b2c3e5b",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "bard.json",
+          "sourcePath": "src/pathways/bard.json",
+          "destinationPath": "reborn/data/content/pathways/bard.json",
+          "sizeBytes": 10823,
+          "sizeKb": 10.57,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "a2e129abc61cdb8acf46a58c93bb2d3fd780c13f4fea53bc6ef45f4d95bac0ff",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "corpse_collector.json",
+          "sourcePath": "src/pathways/corpse_collector.json",
+          "destinationPath": "reborn/data/content/pathways/corpse_collector.json",
+          "sizeBytes": 13465,
+          "sizeKb": 13.15,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "24584378f2dca9490dfffbae27583e11aefbf808f802d5dbf67d37ce631edd17",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "criminal.json",
+          "sourcePath": "src/pathways/criminal.json",
+          "destinationPath": "reborn/data/content/pathways/criminal.json",
+          "sizeBytes": 13614,
+          "sizeKb": 13.29,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "929a1f764e4c0f7e2322301a2a86502f9a3c8351a524ef5c1fe5179c5d597be1",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "hunter.json",
+          "sourcePath": "src/pathways/hunter.json",
+          "destinationPath": "reborn/data/content/pathways/hunter.json",
+          "sizeBytes": 13288,
+          "sizeKb": 12.98,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "e6dbc55ef3cbac84646d3ab346c10b672a44572f0a4cba2b5f06360bc7a116cf",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "lawyer.json",
+          "sourcePath": "src/pathways/lawyer.json",
+          "destinationPath": "reborn/data/content/pathways/lawyer.json",
+          "sizeBytes": 13470,
+          "sizeKb": 13.15,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "2303b0b5d8de572b78b2af18161f17a208b09893286e17e67e74fd17449a0e89",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "marauder.json",
+          "sourcePath": "src/pathways/marauder.json",
+          "destinationPath": "reborn/data/content/pathways/marauder.json",
+          "sizeBytes": 13192,
+          "sizeKb": 12.88,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "e73a4b043fb5ac4eaa2c1e7030ef28c8c05415a906a05caff0f5969e5a8bb305",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "monster.json",
+          "sourcePath": "src/pathways/monster.json",
+          "destinationPath": "reborn/data/content/pathways/monster.json",
+          "sizeBytes": 13390,
+          "sizeKb": 13.08,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "d33744c99aa0723d657a3ac59bccaef026815adf40b92a48db37c79768dee42f",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "mystery_pryer.json",
+          "sourcePath": "src/pathways/mystery_pryer.json",
+          "destinationPath": "reborn/data/content/pathways/mystery_pryer.json",
+          "sizeBytes": 13368,
+          "sizeKb": 13.05,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "68cb14d2c09d6fa7011e4912d03604784380dbf8625788b06cd01bfe562e88cf",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "planter.json",
+          "sourcePath": "src/pathways/planter.json",
+          "destinationPath": "reborn/data/content/pathways/planter.json",
+          "sizeBytes": 12328,
+          "sizeKb": 12.04,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "31b3ac564b6bd6afe73cf05c6af33932b92715ea7e77c1110541c8a8022df96f",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "prisoner.json",
+          "sourcePath": "src/pathways/prisoner.json",
+          "destinationPath": "reborn/data/content/pathways/prisoner.json",
+          "sizeBytes": 12844,
+          "sizeKb": 12.54,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "1d27723327506d5b74c658996840cb543551c7773cb1f8891ae152eb7e1daf1c",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "reader.json",
+          "sourcePath": "src/pathways/reader.json",
+          "destinationPath": "reborn/data/content/pathways/reader.json",
+          "sizeBytes": 11403,
+          "sizeKb": 11.14,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "e44d7807c62e18a81434adf94711fa42e9b47f49d7a795e1ed4ce28d0dc6eb93",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "sailor.json",
+          "sourcePath": "src/pathways/sailor.json",
+          "destinationPath": "reborn/data/content/pathways/sailor.json",
+          "sizeBytes": 11549,
+          "sizeKb": 11.28,
+          "rootType": "object",
+          "itemCount": 5,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "aec20b4494ce5d1fdd4ed20b3b9f7af013fa4d4759f99484f4aad69913a47789",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "savant.json",
+          "sourcePath": "src/pathways/savant.json",
+          "destinationPath": "reborn/data/content/pathways/savant.json",
+          "sizeBytes": 13118,
+          "sizeKb": 12.81,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "8610c1bd1fa185bc5ebeba1871b6ae7966d64ebff756185104078434786ac349",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "secrets_suppliant.json",
+          "sourcePath": "src/pathways/secrets_suppliant.json",
+          "destinationPath": "reborn/data/content/pathways/secrets_suppliant.json",
+          "sizeBytes": 10319,
+          "sizeKb": 10.08,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "518ede62f97bd2c0724ecf9add203108bb05bf5336873c2654a9f976dbf4283c",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "seer.json",
+          "sourcePath": "src/pathways/seer.json",
+          "destinationPath": "reborn/data/content/pathways/seer.json",
+          "sizeBytes": 11501,
+          "sizeKb": 11.23,
+          "rootType": "object",
+          "itemCount": 5,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "5e26820ceeba9abe5928a2db9468adecbe542b84f9846bbe2ab4ffd4af44ee12",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "sleepless.json",
+          "sourcePath": "src/pathways/sleepless.json",
+          "destinationPath": "reborn/data/content/pathways/sleepless.json",
+          "sizeBytes": 13101,
+          "sizeKb": 12.79,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "79b1e3ca2216e7a5d6abf366f4cf3d0a5b9968c622dcc1b72c70261819cac2cf",
+          "anchor": "disk-at-freeze"
+        },
+        {
+          "fileName": "spectator.json",
+          "sourcePath": "src/pathways/spectator.json",
+          "destinationPath": "reborn/data/content/pathways/spectator.json",
+          "sizeBytes": 11200,
+          "sizeKb": 10.94,
+          "rootType": "object",
+          "itemCount": 5,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "f30aa35768634b2e77c8c287cd79df6c84b253cb3b5157014bc0367192ed3304",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "warrior.json",
+          "sourcePath": "src/pathways/warrior.json",
+          "destinationPath": "reborn/data/content/pathways/warrior.json",
+          "sizeBytes": 13400,
+          "sizeKb": 13.09,
+          "rootType": "object",
+          "itemCount": 4,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "pathway",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "45ae3d9c33ada68ae6bc8e6fd9c6ab136ec98068bb2b9dbb6bfd8059cfad5ba9",
+          "anchor": "disk-at-freeze"
+        }
+      ]
+    },
+    "quests": {
+      "description": "Misiones canónicas y pruebas de avance de Secuencia 9 a Secuencia 0.",
+      "fileCount": 10,
+      "totalBytes": 18686,
+      "files": [
+        {
+          "fileName": "sequence_0_quests.json",
+          "sourcePath": "src/quests/sequence_0_quests.json",
+          "destinationPath": "reborn/data/content/quests/sequence_0_quests.json",
+          "sizeBytes": 1839,
+          "sizeKb": 1.8,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "sequence",
+            "sampleValueSchema": "number"
+          },
+          "sha256": "7cefb880d9e720657f4e34d5368cbded59bcdf3c364c2944047cd090471fb9c8",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "sequence_1_quests.json",
+          "sourcePath": "src/quests/sequence_1_quests.json",
+          "destinationPath": "reborn/data/content/quests/sequence_1_quests.json",
+          "sizeBytes": 1945,
+          "sizeKb": 1.9,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "sequence",
+            "sampleValueSchema": "number"
+          },
+          "sha256": "492a6002a83cb1f1e5b16dd8e3f2eaa6bf146b228269b320b2fee2ed9c2f083a",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "sequence_2_quests.json",
+          "sourcePath": "src/quests/sequence_2_quests.json",
+          "destinationPath": "reborn/data/content/quests/sequence_2_quests.json",
+          "sizeBytes": 1842,
+          "sizeKb": 1.8,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "sequence",
+            "sampleValueSchema": "number"
+          },
+          "sha256": "6f3c8ad5147c0e1d2b1daebe6206385c92eb03cffeb19369142c537ab3a1709a",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "sequence_3_quests.json",
+          "sourcePath": "src/quests/sequence_3_quests.json",
+          "destinationPath": "reborn/data/content/quests/sequence_3_quests.json",
+          "sizeBytes": 1923,
+          "sizeKb": 1.88,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "sequence",
+            "sampleValueSchema": "number"
+          },
+          "sha256": "15420face8b0f90bd16c1ec5289ce9f8677a54fe1e83abab3f85a6ee9ad07ff8",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "sequence_4_quests.json",
+          "sourcePath": "src/quests/sequence_4_quests.json",
+          "destinationPath": "reborn/data/content/quests/sequence_4_quests.json",
+          "sizeBytes": 1914,
+          "sizeKb": 1.87,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "sequence",
+            "sampleValueSchema": "number"
+          },
+          "sha256": "c36b1ea1971ec9f82bac40830ac6fae2d947cc14df41913dfdcdc592578357c6",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "sequence_5_quests.json",
+          "sourcePath": "src/quests/sequence_5_quests.json",
+          "destinationPath": "reborn/data/content/quests/sequence_5_quests.json",
+          "sizeBytes": 1892,
+          "sizeKb": 1.85,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "sequence",
+            "sampleValueSchema": "number"
+          },
+          "sha256": "4ee6280a2311de56a73447b67fa39c12e5cf4593dfce803c0192f3f1e6b59720",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "sequence_6_quests.json",
+          "sourcePath": "src/quests/sequence_6_quests.json",
+          "destinationPath": "reborn/data/content/quests/sequence_6_quests.json",
+          "sizeBytes": 1779,
+          "sizeKb": 1.74,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "sequence",
+            "sampleValueSchema": "number"
+          },
+          "sha256": "adf592fda0e92eb1b662fb8a057b31d404b71dd0153b2ee09d67b5f98d3fd7d0",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "sequence_7_quests.json",
+          "sourcePath": "src/quests/sequence_7_quests.json",
+          "destinationPath": "reborn/data/content/quests/sequence_7_quests.json",
+          "sizeBytes": 1818,
+          "sizeKb": 1.78,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "sequence",
+            "sampleValueSchema": "number"
+          },
+          "sha256": "aaf25e02716479ac47a99ecf910aee6e79e69ad10650fa479d2324c81b4d6626",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "sequence_8_quests.json",
+          "sourcePath": "src/quests/sequence_8_quests.json",
+          "destinationPath": "reborn/data/content/quests/sequence_8_quests.json",
+          "sizeBytes": 1855,
+          "sizeKb": 1.81,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "sequence",
+            "sampleValueSchema": "number"
+          },
+          "sha256": "8391630091d94cef388585bb259bb9f57c0f22d1813337d1974c24d90d0dcb72",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        },
+        {
+          "fileName": "sequence_9_quests.json",
+          "sourcePath": "src/quests/sequence_9_quests.json",
+          "destinationPath": "reborn/data/content/quests/sequence_9_quests.json",
+          "sizeBytes": 1879,
+          "sizeKb": 1.83,
+          "rootType": "object",
+          "itemCount": 2,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "sequence",
+            "sampleValueSchema": "number"
+          },
+          "sha256": "b2cdd8c548f74b6b9ffd6f80e4bbc85ccfc9f52ea9278c719d6bb21ac3029260",
+          "anchor": "disk-at-freeze",
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+        }
+      ]
+    },
+    "samples": {
+      "description": "Archivos de guardado y telemetría de prueba archivados.",
+      "fileCount": 1,
+      "totalBytes": 70722,
+      "files": [
+        {
+          "fileName": "test_integrated_save.json",
+          "sourcePath": "src/save/test_integrated_save.json",
+          "destinationPath": "reborn/data/content/samples/test_integrated_save.json",
+          "sizeBytes": 70722,
+          "sizeKb": 69.06,
+          "rootType": "object",
+          "itemCount": 15,
+          "schema": {
+            "containerType": "dictionary/key-value",
+            "sampleKey": "version",
+            "sampleValueSchema": "string"
+          },
+          "sha256": "706a8e7706799641c90e48cd7a980f7c8e6e8f55886ddb965a5d3c310a06d98d",
+          "anchor": "disk-at-freeze"
+        }
+      ]
+    }
+  },
+  "manifestVersion": "1.1",
+  "frozenAt": "2026-09-09T23:29:39.857Z",
+  "verification": {
+    "method": "disk-freeze",
+    "provenance": "export-in-memory (srcHash===destHash) + sizeMatch 67/67 + jsonValid 67/67 + confirmación del Director",
+    "diskFrozen": 67,
+    "historicalVersionsPreserved": 33,
+    "gitAnchored": 0,
+    "gitTagCommit": "92415a203ea3325f261875ecfce66368dac10510",
+    "note": "archive/pre-purga es un misnomer: contiene el commit embrionario del 31-ago-2026, no el estado pre-purga. El estado final de src/ jamás fue commiteado. Esta biblioteca es la única instancia superviviente y queda congelada como autoridad canónica de Tier L."
+  }
+}

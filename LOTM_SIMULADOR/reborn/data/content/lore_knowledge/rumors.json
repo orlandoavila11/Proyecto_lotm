@@ -1,0 +1,5409 @@
+[
+  {
+    "id": "RUMOR_001",
+    "metadata": {
+      "title": "Las cartas marcadas de Dye Alley",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 90,
+      "buying_cost_copper": 12
+    },
+    "narrative": {
+      "description": "Se dice que un adivino callejero en los suburbios del este predice muertes exactas usando un mazo de tarot con bordes quemados.",
+      "veracity": "PARTIAL",
+      "revealed_truth_flag": "STREET_SEERS_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 0,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_EAST",
+      "heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+    },
+    "source_entities": [
+      "NPC_059"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_BASIC_ASTROLOGY"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_008"
+    },
+    "book_unlocks": [
+      "BOOK_001"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 2
+    },
+    "propagation": {
+      "spread_rate": 25,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_002",
+    "metadata": {
+      "title": "El contrabando de relámpagos en el muelle 9",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 85,
+      "buying_cost_copper": 24
+    },
+    "narrative": {
+      "description": "Los estibadores susurran que ciertos cargamentos de pescado de la Marina vienen sellados con runas que causan descargas eléctricas al tacto.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "STORM_FORCE_MAXIMUM"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 5,
+      "time_restrictions": {},
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_PORT",
+      "heard_at_location_id": "LOC_TAVERN_DOCKS"
+    },
+    "source_entities": [],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_SAFE_PORT_ROUTES"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_001"
+    },
+    "book_unlocks": [
+      "BOOK_004"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 5
+    },
+    "propagation": {
+      "spread_rate": 15,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 72,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_003",
+    "metadata": {
+      "title": "La parálisis artesanal del barrio de joyería",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 60,
+      "buying_cost_copper": 60
+    },
+    "narrative": {
+      "description": "Tres maestros joyeros en Backlund Oeste entraron en coma simultáneo; todos soñaban que forjaban una corona idéntica antes de caer inconscientes.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "MIND_CATACOMBS_RESONANCE_HIGH"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 20,
+      "global_flags_required": [],
+      "required_sequence_max": 6
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_WEST",
+      "heard_at_location_id": "LOC_HIGH_SOCIETY_SALON"
+    },
+    "source_entities": [
+      "NPC_039"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [
+        "KNOW_DANGEROUS_MIND_CATACOMBS"
+      ],
+      "knowledge_granted_on_hearing": [
+        "KNOW_PATHWAY_SPECTATOR_HYPNOSIS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_039"
+    },
+    "book_unlocks": [
+      "BOOK_003",
+      "BOOK_017"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 5,
+      "local_panic_increment": 12
+    },
+    "propagation": {
+      "spread_rate": 10,
+      "max_regions": 4
+    },
+    "lifecycle": {
+      "ticks_to_expire": 96,
+      "is_repeatable": false
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "RUMOR_004",
+    "metadata": {
+      "title": "El carnicero de los ojos cosidos",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 75,
+      "buying_cost_copper": 30
+    },
+    "narrative": {
+      "description": "Habitantes de Cherwood juran que el matadero municipal despacha carne bendecida por monjes heréticos con túnicas ensangrentadas.",
+      "veracity": "PARTIAL",
+      "revealed_truth_flag": "TRUE_CREATOR_WHISPER_RESONANCE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 15,
+      "global_flags_required": [],
+      "required_sequence_max": 8
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_EAST",
+      "heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+    },
+    "source_entities": [],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_ORGANIZATION_AURIDA_ORDER_FLESH"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_031"
+    },
+    "book_unlocks": [
+      "BOOK_014"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 2,
+      "local_panic_increment": 15
+    },
+    "propagation": {
+      "spread_rate": 20,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 60,
+      "is_repeatable": true
+    },
+    "importance": "STANDARD"
+  },
+  {
+    "id": "RUMOR_005",
+    "metadata": {
+      "title": "Las ratas muertas del reloj de Odel",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 80,
+      "buying_cost_copper": 15
+    },
+    "narrative": {
+      "description": "Los relojeros de Cherwood afirman que los engranajes principales de la torre se detienen exactamente tres minutos cada medianoche sin causa física.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "RULE_DISTORTION_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 10,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "target_region_id": "REG_BACKLUND_CHERWOOD",
+      "heard_at_location_id": "LOC_LAW_COURTS_CHERWOOD"
+    },
+    "source_entities": [
+      "NPC_070"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_PATHWAY_ERROR_TIME_LOOPS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_044"
+    },
+    "book_unlocks": [
+      "BOOK_013"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 1,
+      "local_panic_increment": 4
+    },
+    "propagation": {
+      "spread_rate": 15,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_006",
+    "metadata": {
+      "title": "El brote de miasma en la granja norte",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 80,
+      "buying_cost_copper": 20
+    },
+    "narrative": {
+      "description": "Los campesinos de la periferia dicen que una planta de raíces negras brotó de la noche a la mañana, induciendo sueño perpetuo a quienes respiran sus esporas.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "HARVEST_SPORES_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 5,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_OUTSKIRTS",
+      "heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+    },
+    "source_entities": [
+      "NPC_086"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_MYSTICAL_ANATOMY"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_010"
+    },
+    "book_unlocks": [
+      "BOOK_010"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 8
+    },
+    "propagation": {
+      "spread_rate": 18,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 72,
+      "is_repeatable": true
+    },
+    "importance": "STANDARD"
+  },
+  {
+    "id": "RUMOR_007",
+    "metadata": {
+      "title": "Las luces verdes en las vías del norte",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 70,
+      "buying_cost_copper": 40
+    },
+    "narrative": {
+      "description": "Los guardavías del ferrocarril periférico informan sobre señales luminosas fantasmas que desvían trenes hacia tramos de vía inexistentes.",
+      "veracity": "PARTIAL",
+      "revealed_truth_flag": "SPATIAL_DISTORTION_LATENT"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 15,
+      "global_flags_required": [],
+      "required_sequence_max": 8
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_OUTSKIRTS",
+      "heard_at_location_id": "LOC_TAVERN_DOCKS"
+    },
+    "source_entities": [
+      "NPC_051"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_SPACE_TIME_MECHANICS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_038"
+    },
+    "book_unlocks": [
+      "BOOK_015"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 1,
+      "local_panic_increment": 10
+    },
+    "propagation": {
+      "spread_rate": 12,
+      "max_regions": 4
+    },
+    "lifecycle": {
+      "ticks_to_expire": 96,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_008",
+"metadata": {
+"title": "El fraude del Inspector Judicial",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 85,
+"buying_cost_copper": 18
+},
+"narrative": {
+"description": "Se rumorea en los salones del Distrito Norte que ciertos mandatos aduaneros recientes fueron redactados bajo coacción de un abogado de Intis.",
+"veracity": "TRUE",
+"revealed_truth_flag": "INSPECTOR_GRID_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"source_entities": [
+"NPC_037"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": false,
+"linked_investigation_id": "NONE"
+},
+"book_unlocks": [
+"BOOK_008"
+],
+"world_effects": {
+"sanity_cost": 0,
+"local_panic_increment": 5
+},
+"propagation": {
+"spread_rate": 20,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_009",
+"metadata": {
+"title": "Los susurros de las gárgolas de San Beuve",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 55,
+"buying_cost_copper": 90
+},
+"narrative": {
+"description": "Un monje fugitivo asegura que las estatuas de la abadía repiten plegarias prohibidas que inducen locura cuántica al ser descifradas.",
+"veracity": "TRUE",
+"revealed_truth_flag": "DANCER_CONTAMINATION_SPREADING"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 35,
+"global_flags_required": [
+"COSMIC_CONTAMINATION_RISK"
+],
+"required_sequence_max": 5
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_SUBURBS",
+"heard_at_location_id": "LOC_HIGH_SOCIETY_SALON"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_FATE_AND_PROBABILITY"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_FORBIDDEN_COSMIC_INEVITABILITY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_044"
+},
+"book_unlocks": [
+"BOOK_027"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 12,
+"local_panic_increment": 25
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 120,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_010",
+"metadata": {
+"title": "El sabotaje del crisol industrial",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 75,
+"buying_cost_copper": 36
+},
+"narrative": {
+"description": "Se dice en la fundición este que las calderas de alta presión fallaron debido a una alteración intencional en los planos rúnicos de vapor.",
+"veracity": "TRUE",
+"revealed_truth_flag": "STEAM_INFRASTRUCTURE_CRISIS"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 10,
+"global_flags_required": [],
+"required_sequence_max": 7
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+},
+"source_entities": [
+"NPC_046"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_ALCHEMICAL_FOUNDATIONS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_035"
+},
+"book_unlocks": [
+"BOOK_006",
+"BOOK_038"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 8
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 60,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_011",
+"metadata": {
+"title": "La desaparición de los vagones blindados",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 70,
+"buying_cost_copper": 50
+},
+"narrative": {
+"description": "Dos vagones cargados de lingotes para el Banco de Loen se esfumaron al cruzar el puente de hierro; no hay registros de descarrilamiento.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SPATIAL_DISTORTION_LATENT"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 20,
+"global_flags_required": [],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_OUTSKIRTS",
+"heard_at_location_id": "LOC_BLACK_MARKET_DOCKS"
+},
+"source_entities": [
+"NPC_049"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SPACE_TIME_MECHANICS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_038"
+},
+"book_unlocks": [
+"BOOK_025"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 2,
+"local_panic_increment": 18
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 84,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_012",
+"metadata": {
+"title": "El cifrado corrupto del Ministerio de Finanzas",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 65,
+"buying_cost_copper": 55
+},
+"narrative": {
+"description": "Los descifradores de la corona descubrieron una secuencia matemática rúnica anómala que altera los montos de recaudación aduanera.",
+"veracity": "TRUE",
+"revealed_truth_flag": "LOEN_STATE_SECRETS_LEAKED"
+},
+"trigger_conditions": {
+"global_flags_required": [],
+"min_global_corruption_index": 25,
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"source_entities": [
+"NPC_083",
+"NPC_091"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_049",
+"BOOK_074"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 14
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 96,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_013",
+"metadata": {
+"title": "Las huellas de cera en la Catedral de la Serenidad",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 90,
+"buying_cost_copper": 10
+},
+"narrative": {
+"description": "Los monaguillos susurran que se hallaron marcas de manos quemadas con cera en la entrada de las bóvedas subterráneas sagradas.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "SACRED_VAULT_DISTURBED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_WEST",
+"heard_at_location_id": "LOC_CATHEDRAL_SERENITY"
+},
+"source_entities": [
+"NPC_017"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_004"
+},
+"book_unlocks": [
+"BOOK_018",
+"BOOK_056"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 3
+},
+"propagation": {
+"spread_rate": 30,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_014",
+"metadata": {
+"title": "La niebla judicial de la corte",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 75,
+"buying_cost_copper": 45
+},
+"narrative": {
+"description": "Abogados de Cherwood afirman que una neblina densa disuelve los textos escritos de los expedientes criminales en plena audiencia.",
+"veracity": "TRUE",
+"revealed_truth_flag": "UNCERTAIN_MIST_OVER_REGIONS"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 40,
+"global_flags_required": [
+"RULE_DISTORTION_ACTIVE"
+],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_CHERWOOD",
+"heard_at_location_id": "LOC_LAW_COURTS_CHERWOOD"
+},
+"source_entities": [
+"NPC_045"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_031"
+},
+"book_unlocks": [
+"BOOK_042"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 8,
+"local_panic_increment": 20
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_015",
+"metadata": {
+"title": "El brote de insomnio obrero",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 85,
+"buying_cost_copper": 15
+},
+"narrative": {
+"description": "Toda una barriada de Dye Alley lleva cuatro noches sin dormir; alegan escuchar rimas poéticas susurradas desde las alcantarillas.",
+"veracity": "TRUE",
+"revealed_truth_flag": "MIDNIGHT_POETRY_RESONANCE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 5,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_DYE_ALLEY"
+},
+"source_entities": [
+"NPC_074"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_004"
+},
+"book_unlocks": [
+"BOOK_041"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 7
+},
+"propagation": {
+"spread_rate": 22,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_016",
+"metadata": {
+"title": "Las raíces mutadas de Rothwell",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 60,
+"buying_cost_copper": 70
+},
+"narrative": {
+"description": "Leñadores de los suburbios juran que los árboles sangran un fluido lunar espeso que deforma la fauna de los alrededores.",
+"veracity": "TRUE",
+"revealed_truth_flag": "COSMIC_MOON_CONTAMINATION_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 30,
+"global_flags_required": [],
+"required_sequence_max": 5
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_SUBURBS",
+"heard_at_location_id": "LOC_ROTHWELL_WOODS"
+},
+"source_entities": [
+"NPC_086"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_OUTER_DEITIES_PRIMITIVE_MOON_BLOOD"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_010"
+},
+"book_unlocks": [
+"BOOK_034",
+"BOOK_048"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 10,
+"local_panic_increment": 22
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 96,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_017",
+"metadata": {
+"title": "La anomalía alquímica del crisol este",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 70,
+"buying_cost_copper": 35
+},
+"narrative": {
+"description": "Los fundidores informan sobre una condensación ácida mística que corroe el acero común pero respeta las aleaciones rúnicas.",
+"veracity": "TRUE",
+"revealed_truth_flag": "ALCHEMICAL_GAS_OUTBREAK"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 15,
+"global_flags_required": [],
+"required_sequence_max": 7
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_SIDERURGICA_CENTRAL"
+},
+"source_entities": [
+"NPC_055"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_ALCHEMICAL_FOUNDATIONS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_035"
+},
+"book_unlocks": [
+"BOOK_035"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 6
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 60,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_018",
+"metadata": {
+"title": "El monopolio clandestino del puerto",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 80,
+"buying_cost_copper": 28
+},
+"narrative": {
+"description": "Se susurra entre los capitanes que el contrabando de oro falso está amparado por lagunas legales inyectadas en las actas reales.",
+"veracity": "TRUE",
+"revealed_truth_flag": "PORT_MONOPOLY_ESTABLISHED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 10,
+"global_flags_required": [
+"SHERIFF_LOCKDOWN_ACTIVE"
+],
+"required_sequence_max": 8
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_PORT",
+"heard_at_location_id": "LOC_BLACK_MARKET_DOCKS"
+},
+"source_entities": [
+"NPC_045",
+"NPC_093"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_031"
+},
+"book_unlocks": [
+"BOOK_036"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 9
+},
+"propagation": {
+"spread_rate": 12,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_019",
+"metadata": {
+"title": "La infiltración rúnica en la correspondencia",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 65,
+"buying_cost_copper": 45
+},
+"narrative": {
+"description": "Los inspectores de correos detectaron que ciertos despachos diplomáticos reales contienen runas hipnóticas pasivas en los sellos.",
+"veracity": "TRUE",
+"revealed_truth_flag": "POSTAL_DREAM_INTERCEPT"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 20,
+"global_flags_required": [],
+"required_sequence_max": 7
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"source_entities": [
+"NPC_083",
+"NPC_100"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_049"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 2,
+"local_panic_increment": 11
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 84,
+"is_repeatable": false
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_020",
+"metadata": {
+"title": "La desincronización de la bóveda mística",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 50,
+"buying_cost_copper": 120
+},
+"narrative": {
+"description": "Un agente independiente afirma que la boveda de seguridad real está filtrando distorsiones procedentes de la lámpara mística del Hijo del Caos.",
+"veracity": "TRUE",
+"revealed_truth_flag": "THE_ANARCHY_WAVE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 45,
+"global_flags_required": [
+"LAMP_PARTIALLY_ACTIVE"
+],
+"required_sequence_max": 4
+},
+"regional_scope": {
+"origin_region_id": "REG_SPIRIT_WORLD",
+"heard_at_location_id": "LOC_MIRROR_PLANE_BACKLUND"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_WISHING_LAMP_CURSE"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_050"
+},
+"book_unlocks": [
+"BOOK_042"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 15,
+"local_panic_increment": 30
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+  {
+    "id": "RUMOR_021",
+    "metadata": {
+      "title": "Los contratos borrados de los muelles",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 85,
+      "buying_cost_copper": 16
+    },
+    "narrative": {
+      "description": "Comerciantes independientes juran que los registros de aduana impresos en tinta común se desvanecen si se guardan cerca de cargamentos provenientes de Intis.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "PORT_CONTRACT_FRAUD_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 5,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_PORT",
+      "heard_at_location_id": "LOC_BLACK_MARKET_DOCKS"
+    },
+    "source_entities": [],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_LAW_AND_ORDER_MYSTICISM"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_031"
+    },
+    "book_unlocks": [
+      "BOOK_008",
+      "BOOK_028"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 4
+    },
+    "propagation": {
+      "spread_rate": 20,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_022",
+    "metadata": {
+      "title": "La purga solar de las catacumbas",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 55,
+      "buying_cost_copper": 100
+    },
+    "narrative": {
+      "description": "Se susurra en los círculos ocultos del Distrito Norte que una llamarada de radiación estelar descendió directamente sobre el cementerio, incinerando espectros al instante.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "STELLAR_BLAST_CRITICAL"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 45,
+      "global_flags_required": [
+        "STELLAR_RADIATION_ALERT"
+      ],
+      "required_sequence_max": 4
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_SUBURBS",
+      "heard_at_location_id": "LOC_WEST_CEMENTERY"
+    },
+    "source_entities": [
+      "NPC_040",
+      "NPC_053"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [
+        "KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+      ],
+      "knowledge_granted_on_hearing": [
+        "KNOW_STELLAR_OCCULTISM"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_040"
+    },
+    "book_unlocks": [
+      "BOOK_050"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 10,
+      "local_panic_increment": 18
+    },
+    "propagation": {
+      "spread_rate": 12,
+      "max_regions": 4
+    },
+    "lifecycle": {
+      "ticks_to_expire": 72,
+      "is_repeatable": false
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "RUMOR_023",
+    "metadata": {
+      "title": "Los robos conceptuales en el mercado",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 90,
+      "buying_cost_copper": 8
+    },
+    "narrative": {
+      "description": "Los vendedores ambulantes de Cherwood culpan a un carterista invisible que no roba monederos, sino la suerte de los compradores mediante sutiles tirones de aire.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "LOCAL_FORTUNE_STEAL_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 0,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_EAST",
+      "heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+    },
+    "source_entities": [],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_PATHWAY_ERROR_TIME_LOOPS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_008"
+    },
+    "book_unlocks": [
+      "BOOK_051"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 3
+    },
+    "propagation": {
+      "spread_rate": 25,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 36,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_024",
+    "metadata": {
+      "title": "La ronda silenciosa de San Beuve",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 80,
+      "buying_cost_copper": 14
+    },
+    "narrative": {
+      "description": "Vigilantes nocturnos de los suburbios informan que patrullas eclesiásticas fuertemente armadas disipan las huellas corruptas del cementerio usando rezos mudos.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "NIGHT_PATROL_INTENSIFIED"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 5,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_SUBURBS",
+      "heard_at_location_id": "LOC_ST_BEUVE_ABBEY"
+    },
+    "source_entities": [
+      "NPC_074",
+      "NPC_087"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": false,
+      "linked_investigation_id": "NONE"
+    },
+    "book_unlocks": [
+      "BOOK_039",
+      "BOOK_056"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 1
+    },
+    "propagation": {
+      "spread_rate": 15,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 60,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_025",
+    "metadata": {
+      "title": "El cortocircuito lógico universitaria",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 70,
+      "buying_cost_copper": 45
+    },
+    "narrative": {
+      "description": "Profesores del campus norte informan que un intento de descifrado rúnico rústico provocó una parálisis absoluta en los amuletos de adivinación del área de archivo.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "SPELL_PARSING_ERROR_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 15,
+      "global_flags_required": [],
+      "required_sequence_max": 7
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_NORTH",
+      "heard_at_location_id": "LOC_BACKLUND_UNIVERSITY"
+    },
+    "source_entities": [
+      "NPC_083",
+      "NPC_096"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_049"
+    },
+    "book_unlocks": [
+      "BOOK_020",
+      "BOOK_043"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 1,
+      "local_panic_increment": 8
+    },
+    "propagation": {
+      "spread_rate": 15,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 72,
+      "is_repeatable": true
+    },
+    "importance": "STANDARD"
+  },
+  {
+    "id": "RUMOR_026",
+    "metadata": {
+      "title": "Los discursos encendidos del callejón",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 75,
+      "buying_cost_copper": 20
+    },
+    "narrative": {
+      "description": "Se susurra entre los obreros de Dye Alley que un agitador extranjero está coordinando altercados con guardias mediante ritos de calor místico.",
+      "veracity": "PARTIAL",
+      "revealed_truth_flag": "LOCAL_REBEL_RIOT_RISK"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 10,
+      "global_flags_required": [
+        "STREET_BLOOD_TRAIL_ACTIVE"
+      ],
+      "required_sequence_max": 8
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_EAST",
+      "heard_at_location_id": "LOC_DYE_ALLEY"
+    },
+    "source_entities": [
+      "NPC_082",
+      "NPC_090"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_ORGANIZATION_DEMONESS_NETWORKS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_005"
+    },
+    "book_unlocks": [
+      "BOOK_032"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 14
+    },
+    "propagation": {
+      "spread_rate": 18,
+      "max_regions": 4
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "STANDARD"
+  },
+  {
+    "id": "RUMOR_027",
+    "metadata": {
+      "title": "El pánico hipnótico del salón aristocrático",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 65,
+      "buying_cost_copper": 65
+    },
+    "narrative": {
+      "description": "Asistentes a una reunión privada en Backlund Oeste alegan haber despertado con lagunas mentales severas y sugerencias pasivas de transferencias bancarias.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "SALON_HYPNOSIS_LATENT"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 15,
+      "global_flags_required": [],
+      "required_sequence_max": 6
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_WEST",
+      "heard_at_location_id": "LOC_HIGH_SOCIETY_SALON"
+    },
+    "source_entities": [
+      "NPC_085"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_PATHWAY_SPECTATOR_HYPNOSIS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_039"
+},
+"book_unlocks": [
+"BOOK_035",
+"BOOK_053"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 4,
+"local_panic_increment": 10
+},
+"propagation": {
+"spread_rate": 12,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": true
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_028",
+"metadata": {
+"title": "La disolución conceptual de aduanas",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 50,
+"buying_cost_copper": 110
+},
+"narrative": {
+"description": "Inspectores navales juran que las leyes físicas y comerciales en los muelles de carga se desvanecieron bajo un vapor denso que anula las firmas escritas.",
+"veracity": "TRUE",
+"revealed_truth_flag": "PORT_LAWS_DISSOLVED_CRITICAL"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 50,
+"global_flags_required": [
+"UNCERTAIN_MIST_OVER_REGIONS",
+"THE_ANARCHY_WAVE_ACTIVE"
+],
+"required_sequence_max": 4
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_PORT",
+"heard_at_location_id": "LOC_PIER_9"
+},
+"source_entities": [
+"NPC_045",
+"NPC_082"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_031"
+},
+"book_unlocks": [
+"BOOK_042"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 12,
+"local_panic_increment": 25
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_029",
+"metadata": {
+"title": "Las esporas letárgicas de Cherwood",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 75,
+"buying_cost_copper": 18
+},
+"narrative": {
+"description": "Vecinos de los juzgados afirman que un boticario clandestino esparció accidentalmente una esencia herbal que provoca somnolencia severa en toda la cuadra.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SOMNIFEROUS_MIASMA_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 5,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_CHERWOOD",
+"heard_at_location_id": "LOC_LAW_COURTS_CHERWOOD"
+},
+"source_entities": [
+"NPC_064",
+"NPC_086"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_MYSTICAL_ANATOMY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_010"
+},
+"book_unlocks": [
+"BOOK_021",
+"BOOK_047"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 6
+},
+"propagation": {
+"spread_rate": 20,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 60,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_030",
+"metadata": {
+"title": "El brote cognitivo universitario",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 60,
+"buying_cost_copper": 80
+},
+"narrative": {
+"description": "Estudiantes de medicina perdieron la cordura simultáneamente durante una clase de anatomía; aseguraban oír murmullos mecánicos masivos en el plano astral.",
+"veracity": "TRUE",
+"revealed_truth_flag": "CAMPUS_COGNITIVE_SHATTER"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 50,
+"global_flags_required": [
+"FORCED_MADNESS_WAVE"
+],
+"required_sequence_max": 5
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_BACKLUND_UNIVERSITY"
+},
+"source_entities": [
+"NPC_083",
+"NPC_091",
+"NPC_096"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_COSMIC_SUSURRUS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_040",
+"BOOK_060"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 15,
+"local_panic_increment": 25
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_031",
+"metadata": {
+"title": "Los trucos de feria de la avenida de lujo",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 90,
+"buying_cost_copper": 10
+},
+"narrative": {
+"description": "Transeúntes del Distrito Oeste reportan que un equilibrista callejero ejecuta piruetas imposibles que tuercen sutilmente las leyes ópticas locales.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "CLOWN_RESONANCE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_WEST",
+"heard_at_location_id": "LOC_LUXURY_BOULEVARD"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHWAY_SEER_THREAD_CONTROL"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_008"
+},
+"book_unlocks": [
+"BOOK_046"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 2
+},
+"propagation": {
+"spread_rate": 25,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_032",
+"metadata": {
+"title": "El cerrojo criptográfico ministerial",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 65,
+"buying_cost_copper": 50
+},
+"narrative": {
+"description": "Se rumorea en las oficinas de gobierno que un sector entero de criptografía fue sellado con barreras de aislamiento debido a códigos corruptos rúnicos.",
+"veracity": "TRUE",
+"revealed_truth_flag": "CRYPTOGRAPHY_SECTOR_LOCK"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 30,
+"global_flags_required": [
+"LOEN_STATE_SECRETS_LEAKED"
+],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"source_entities": [
+"NPC_083",
+"NPC_091",
+"NPC_100"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_049",
+"BOOK_084"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 12
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 84,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_033",
+"metadata": {
+"title": "Las ilusiones espaciales de Cherwood",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 70,
+"buying_cost_copper": 30
+},
+"narrative": {
+"description": "Oficiales de patrulla reportan que ciertos fugitivos en Cherwood despliegan trucos ópticos e ilusiones para desvanecerse al doblar la esquina.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SECRET_ORDER_MAGICIAN_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 15,
+"global_flags_required": [],
+"required_sequence_max": 7
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_CHERWOOD",
+"heard_at_location_id": "LOC_LAW_COURTS_CHERWOOD"
+},
+"source_entities": [
+"NPC_064",
+"NPC_070"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SPACE_TIME_MECHANICS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_008"
+},
+"book_unlocks": [
+"BOOK_013",
+"BOOK_093"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 7
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_034",
+"metadata": {
+"title": "La purga solar del viñedo aislado",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 50,
+"buying_cost_copper": 95
+},
+"narrative": {
+"description": "Campesinos del norte informan sobre una ráfaga estelar purificadora que calcinó vides enfermas instantáneamente, dejando un velo solar residual.",
+"veracity": "TRUE",
+"revealed_truth_flag": "VINEYARD_STELLAR_PURGE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 50,
+"global_flags_required": [
+"STELLAR_RADIATION_ALERT"
+],
+"required_sequence_max": 4
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_OUTSKIRTS",
+"heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+},
+"source_entities": [
+"NPC_040",
+"NPC_053"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_050"
+},
+"book_unlocks": [
+"BOOK_050",
+"BOOK_089"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 8,
+"local_panic_increment": 15
+},
+"propagation": {
+"spread_rate": 12,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 60,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_035",
+"metadata": {
+"title": "El brote de miasma en los suburbios",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 80,
+"buying_cost_copper": 16
+},
+"narrative": {
+"description": "Se susurra en el Distrito Este que un error al destilar esporas biológicas liberó un gas letárgico menor sobre la barriada obrera.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SOMNIFEROUS_PLAGUE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 5,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+},
+"source_entities": [
+"NPC_086"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_MYSTICAL_ANATOMY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_010"
+},
+"book_unlocks": [
+"BOOK_021",
+"BOOK_092"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 5
+},
+"propagation": {
+"spread_rate": 22,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_036",
+"metadata": {
+"title": "El cerrojo de los archivos financieros",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 60,
+"buying_cost_copper": 55
+},
+"narrative": {
+"description": "Se reporta entre los auditores que las bovedas de registros del Ministerio fueron bloqueadas debido a filtraciones masivas de datos fiscales cifrados.",
+"veracity": "TRUE",
+"revealed_truth_flag": "FINANCE_ARCHIVES_LOCK"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 30,
+"global_flags_required": [
+"LOEN_STATE_SECRETS_LEAKED"
+],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_MINISTRY_FINANCE_ARCHIVES"
+},
+"source_entities": [
+"NPC_083",
+"NPC_091",
+"NPC_100"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_044"
+},
+"book_unlocks": [
+"BOOK_049",
+"BOOK_091"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 10
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_037",
+"metadata": {
+"title": "El fetiche de oro falso de aduanas",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 75,
+"buying_cost_copper": 35
+},
+"narrative": {
+"description": "Se susurra en los muelles de carga que un merodeador explota fallas conceptuales en los pesajes para blanquear libras de oro herético.",
+"veracity": "TRUE",
+"revealed_truth_flag": "PORT_LOGIC_BUG_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 5,
+"global_flags_required": [],
+"required_sequence_max": 8
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_PORT",
+"heard_at_location_id": "LOC_BLACK_MARKET_DOCKS"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHVIEW_SAVANT_TRANSMUTATION"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_030"
+},
+"book_unlocks": [
+"BOOK_038",
+"BOOK_076"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 8
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_038",
+"metadata": {
+"title": "Las rimas místicas de los suburbios",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 85,
+"buying_cost_copper": 12
+},
+"narrative": {
+"description": "Habitantes cercanos al cementerio oeste informan sobre rimas poéticas de serenidad que se escuchan a medianoche, calmando a los espectros hostiles.",
+"veracity": "TRUE",
+"revealed_truth_flag": "MIDNIGHT_POETRY_RESONANCE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_SUBURBS",
+"heard_at_location_id": "LOC_WEST_CEMENTERY"
+},
+"source_entities": [
+"NPC_074"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_004"
+},
+"book_unlocks": [
+"BOOK_041",
+"BOOK_078"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 1
+},
+"propagation": {
+"spread_rate": 20,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_039",
+"metadata": {
+"title": "La contra-operación de Backlund Norte",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 70,
+"buying_cost_copper": 40
+},
+"narrative": {
+"description": "Se susurra entre los empleados gubernamentales que la corona inició inspecciones encubiertas para purgar las aduanas de hilos conspirativos aristocráticos.",
+"veracity": "TRUE",
+"revealed_truth_flag": "COUNTER_CONSPIRACY_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 35,
+"global_flags_required": [
+"COURT_CONSPIRACY_DETECTED"
+],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"source_entities": [
+"NPC_037",
+"NPC_045"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_031"
+},
+"book_unlocks": [
+"BOOK_063",
+"BOOK_098"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 6
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 96,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_040",
+"metadata": {
+"title": "La fractura cognitiva del observatorio",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 60,
+"buying_cost_copper": 85
+},
+"narrative": {
+"description": "El astrónomo real fue recluido tras asegurar que las estrellas del plano rúnico emitían ondas sonoras puras que disuelven la memoria humana.",
+"veracity": "TRUE",
+"revealed_truth_flag": "OBSERVATORY_COGNITIVE_SHATTER"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 35,
+"global_flags_required": [
+"FORCED_MADNESS_WAVE"
+],
+"required_sequence_max": 5
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_VANCE_PRIVATE_STUDIO"
+},
+"source_entities": [
+"NPC_083",
+"NPC_091"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_COSMIC_SUSURRUS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_040",
+"BOOK_100"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 12,
+"local_panic_increment": 20
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+  {
+    "id": "RUMOR_041",
+    "metadata": {
+      "title": "Las sombras andantes del Cementerio Oeste",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 80,
+      "buying_cost_copper": 16
+    },
+    "narrative": {
+      "description": "Los sepultureros juran que los cadáveres recientes se levantan solos a medianoche para ordenar las lápidas según un patrón místico.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "SUBURBS_GHOST_INFESTATION_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 5,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_SUBURBS",
+      "heard_at_location_id": "LOC_WEST_CEMENTERY"
+    },
+    "source_entities": [
+      "NPC_081",
+      "NPC_089"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_DANGEROUS_UNDERWORLD_GATES"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_012"
+    },
+    "book_unlocks": [
+      "BOOK_037",
+      "BOOK_061"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 1,
+      "local_panic_increment": 6
+    },
+    "propagation": {
+      "spread_rate": 20,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "STANDARD"
+  },
+  {
+    "id": "RUMOR_042",
+    "metadata": {
+      "title": "El fraude fiscal de las libras de cera",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 85,
+      "buying_cost_copper": 22
+    },
+    "narrative": {
+      "description": "Un copista de la oficina central de impuestos fue detenido tras clonar pagarés estatales usando un amuleto corrupto que burla los sellos de la corona.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "FISCAL_FRAUD_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 0,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_CHERWOOD",
+      "heard_at_location_id": "LOC_TAX_OFFICE_CENTRAL"
+    },
+    "source_entities": [
+      "NPC_042",
+      "NPC_064"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_LAW_AND_ORDER_MYSTICISM"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_042"
+    },
+    "book_unlocks": [
+      "BOOK_026",
+      "BOOK_086"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 4
+    },
+    "propagation": {
+      "spread_rate": 25,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 36,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_043",
+    "metadata": {
+      "title": "La marea de sonambulismo en el salón financiero",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 60,
+      "buying_cost_copper": 75
+    },
+    "narrative": {
+      "description": "Una marea psíquica residual indujo un estado de trance hipnótico simultáneo a todos los banqueros reunidos en el club privado de Backlund Oeste.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "SANGUINE_FRENZY_RISK"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 20,
+      "global_flags_required": [],
+      "required_sequence_max": 6
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_WEST",
+      "heard_at_location_id": "LOC_HIGH_SOCIETY_SALON"
+    },
+    "source_entities": [
+      "NPC_085",
+      "NPC_086"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [
+        "KNOW_PATHWAY_SPECTATOR_HYPNOSIS"
+      ],
+      "knowledge_granted_on_hearing": [
+        "KNOW_MYSTICAL_ANATOMY"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_010"
+    },
+    "book_unlocks": [
+      "BOOK_067",
+      "BOOK_077"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 4,
+      "local_panic_increment": 12
+    },
+    "propagation": {
+      "spread_rate": 15,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 72,
+      "is_repeatable": true
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "RUMOR_044",
+    "metadata": {
+      "title": "La filtración rúnica del archivo de finanzas",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 65,
+      "buying_cost_copper": 50
+    },
+    "narrative": {
+      "description": "Auditores de la corona descubrieron alteraciones matemáticas místicas que desvían el balance fiscal hacia cuentas fantasmas en el extranjero.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "FINANCE_ARCHIVES_LOCK"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 25,
+      "global_flags_required": [
+        "LOEN_STATE_SECRETS_LEAKED"
+      ],
+      "required_sequence_max": 6
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_NORTH",
+      "heard_at_location_id": "LOC_MINISTRY_FINANCE_ARCHIVES"
+    },
+    "source_entities": [
+      "NPC_083",
+      "NPC_091",
+      "NPC_100"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_044"
+    },
+    "book_unlocks": [
+      "BOOK_049",
+      "BOOK_090"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 1,
+      "local_panic_increment": 9
+    },
+    "propagation": {
+      "spread_rate": 10,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 84,
+      "is_repeatable": false
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "RUMOR_045",
+    "metadata": {
+      "title": "Las peleas calientes de Cherwood",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 80,
+      "buying_cost_copper": 12
+    },
+    "narrative": {
+      "description": "Se dice entre los obreros de Cherwood que los altercados callejeros son provocados por un extranjero pelirrojo que manipula la agresividad de las masas.",
+      "veracity": "PARTIAL",
+      "revealed_truth_flag": "CHERWOOD_RIOT_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 0,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_CHERWOOD",
+      "heard_at_location_id": "LOC_LAW_COURTS_CHERWOOD"
+    },
+    "source_entities": [],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_PATHWAY_HUNTER_PYROMANIAC"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": false,
+      "linked_investigation_id": "NONE"
+    },
+    "book_unlocks": [
+      "BOOK_023",
+      "BOOK_076"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 8
+    },
+    "propagation": {
+      "spread_rate": 20,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_046",
+    "metadata": {
+      "title": "El brote de insomnio en el puerto",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 85,
+      "buying_cost_copper": 15
+    },
+    "narrative": {
+      "description": "Los marineros de las tabernas no pueden conciliar el sueño; aseguran que desde el agua emergen susurros poéticos que provocan pesadillas despiertos.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "INSOMNIA_WAVE_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 5,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_PORT",
+      "heard_at_location_id": "LOC_TAVERN_DOCKS"
+    },
+    "source_entities": [],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_004"
+    },
+    "book_unlocks": [
+      "BOOK_041",
+      "BOOK_056"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 1,
+      "local_panic_increment": 5
+    },
+    "propagation": {
+      "spread_rate": 22,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "STANDARD"
+  },
+  {
+    "id": "RUMOR_047",
+    "metadata": {
+      "title": "La fractura espiritual del observatorio norte",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 60,
+      "buying_cost_copper": 85
+    },
+    "narrative": {
+      "description": "El director del observatorio privado Vance colapsó mentalmente tras transcribir una señal cósmica pura que disuelve la lógica matemática.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "OBSERVATORY_COGNITIVE_SHATTER"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 35,
+      "global_flags_required": [
+        "FORCED_MADNESS_WAVE"
+      ],
+      "required_sequence_max": 5
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_NORTH",
+      "heard_at_location_id": "LOC_VANCE_PRIVATE_STUDIO"
+    },
+    "source_entities": [
+      "NPC_083",
+      "NPC_091"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_COSMIC_SUSURRUS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_040",
+"BOOK_060"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 12,
+"local_panic_increment": 20
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_048",
+"metadata": {
+"title": "La distorsión aduanera del puerto",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 50,
+"buying_cost_copper": 115
+},
+"narrative": {
+"description": "Contratos navales completos se disolvieron físicamente bajo una niebla indeterminada que elimina las restricciones lógicas y penales de las cargas.",
+"veracity": "TRUE",
+"revealed_truth_flag": "PORT_LAWS_DISSOLVED_CRITICAL"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 50,
+"global_flags_required": [
+"UNCERTAIN_MIST_OVER_REGIONS",
+"THE_ANARCHY_WAVE_ACTIVE"
+],
+"required_sequence_max": 4
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_PORT",
+"heard_at_location_id": "LOC_BLACK_MARKET_DOCKS"
+},
+"source_entities": [
+"NPC_045",
+"NPC_082"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_031"
+},
+"book_unlocks": [
+"BOOK_042",
+"BOOK_073"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 12,
+"local_panic_increment": 25
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_049",
+"metadata": {
+"title": "El fraude del Alguacil de Cherwood",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 85,
+"buying_cost_copper": 14
+},
+"narrative": {
+"description": "Se murmura entre los tinteros judiciales que el perímetro de requisa fue modificado mágicamente para favorecer el contrabando de un sindicato de Intis.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SHERIFF_LOCKDOWN_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_CHERWOOD",
+"heard_at_location_id": "LOC_LAW_COURTS_CHERWOOD"
+},
+"source_entities": [
+"NPC_028"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": false,
+"linked_investigation_id": "NONE"
+},
+"book_unlocks": [
+"BOOK_026",
+"BOOK_043"
+],
+"world_effects": {
+"sanity_cost": 0,
+"local_panic_increment": 4
+},
+"propagation": {
+"spread_rate": 20,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_050",
+"metadata": {
+"title": "La purga solar del altar herético",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 50,
+"buying_cost_copper": 90
+},
+"narrative": {
+"description": "Una explosión destructiva de radiación estelar calcinó los altares clandestinos de los suburbios, disolviendo toda presencia de espectros o vampiros en la zona.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SOLAR_PURGE_ENFORCED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 50,
+"global_flags_required": [
+"STELLAR_RADIATION_ALERT"
+],
+"required_sequence_max": 4
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_SUBURBS",
+"heard_at_location_id": "LOC_HERETIC_ALTAR_SOLAR"
+},
+"source_entities": [
+"NPC_040",
+"NPC_053"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_040"
+},
+"book_unlocks": [
+"BOOK_050",
+"BOOK_075"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 8,
+"local_panic_increment": 14
+},
+"propagation": {
+"spread_rate": 12,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 60,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_051",
+"metadata": {
+"title": "Las ilusiones ópticas de Dye Alley",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 90,
+"buying_cost_copper": 10
+},
+"narrative": {
+"description": "Transeúntes del Distrito Este reportan que ciertos callejones se duplican o alteran sus esquinas de forma ilusoria para confundir a la guardia civil.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "TRICKSTER_ILLUSION_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_DYE_ALLEY"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_ORGANIZATION_SECRET_ORDER"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_029"
+},
+"book_unlocks": [
+"BOOK_046",
+"BOOK_093"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 2
+},
+"propagation": {
+"spread_rate": 25,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_052",
+"metadata": {
+"title": "La parálisis por gas en la siderúrgica",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 70,
+"buying_cost_copper": 35
+},
+"narrative": {
+"description": "Los fundidores de Backlund Este informan sobre una fuga de vapor ácido corrosivo místico que disuelve los contenedores de plomo comunes.",
+"veracity": "TRUE",
+"revealed_truth_flag": "ALCHEMICAL_GAS_OUTBREAK"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 15,
+"global_flags_required": [],
+"required_sequence_max": 7
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_SIDERURGICA_CENTRAL"
+},
+"source_entities": [
+"NPC_046",
+"NPC_055"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_ALCHEMICAL_FOUNDATIONS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_035"
+},
+"book_unlocks": [
+"BOOK_038",
+"BOOK_055",
+"BOOK_072"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 6
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 60,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_053",
+"metadata": {
+"title": "El monopolio arancelario aduanero",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 80,
+"buying_cost_copper": 30
+},
+"narrative": {
+"description": "Se rumorea en los muelles mercantes que una organización clandestina controla los ingresos mediante contratos de distorsión legal y vacíos de la corona.",
+"veracity": "TRUE",
+"revealed_truth_flag": "PORT_MONOPOLY_ESTABLISHED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 10,
+"global_flags_required": [],
+"required_sequence_max": 8
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_PORT",
+"heard_at_location_id": "LOC_BLACK_MARKET_DOCKS"
+},
+"source_entities": [
+"NPC_045",
+"NPC_093"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_031"
+},
+"book_unlocks": [
+"BOOK_028",
+"BOOK_073"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 8
+},
+"propagation": {
+"spread_rate": 12,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_054",
+"metadata": {
+"title": "Las esporas somníferas de los barrios bajos",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 75,
+"buying_cost_copper": 20
+},
+"narrative": {
+"description": "Trabajadores de Cherwood afirman que un destilado medicinal defectuoso de un sanador clandestino liberó esporas que provocan letargo masivo en los inquilinos.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SOMNIFEROUS_PLAGUE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 5,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+},
+"source_entities": [
+"NPC_086"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_MYSTICAL_ANATOMY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_010"
+},
+"book_unlocks": [
+"BOOK_021",
+"BOOK_092"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 5
+},
+"propagation": {
+"spread_rate": 22,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_055",
+"metadata": {
+"title": "El hackeo cifrado de despachos postales",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 65,
+"buying_cost_copper": 45
+},
+"narrative": {
+"description": "Inspectores reales descubrieron sellos con firmas místicas corruptas latentes que duplican la correspondencia confidencial del Ministerio.",
+"veracity": "TRUE",
+"revealed_truth_flag": "POSTAL_DREAM_INTERCEPT"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 20,
+"global_flags_required": [],
+"required_sequence_max": 7
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"source_entities": [
+"NPC_083",
+"NPC_100"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_049",
+"BOOK_084"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 2,
+"local_panic_increment": 11
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 84,
+"is_repeatable": false
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_056",
+"metadata": {
+"title": "La fuga cuántica de la lámpara mística",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 50,
+"buying_cost_copper": 125
+},
+"narrative": {
+"description": "Un erudito independiente asegura que las bovedas secretas imperiales sufren distorsión de reglas debido a la activación parcial del artefacto de los deseos.",
+"veracity": "TRUE",
+"revealed_truth_flag": "THE_ANARCHY_WAVE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 45,
+"global_flags_required": [
+"LAMP_PARTIALLY_ACTIVE"
+],
+"required_sequence_max": 4
+},
+"regional_scope": {
+"origin_region_id": "REG_SPIRIT_WORLD",
+"heard_at_location_id": "LOC_MIRROR_PLANE_BACKLUND"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_WISHING_LAMP_CURSE"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_050"
+},
+"book_unlocks": [
+"BOOK_042",
+"BOOK_085"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 15,
+"local_panic_increment": 30
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_057",
+"metadata": {
+"title": "El brote histérico en los viñedos",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 60,
+"buying_cost_copper": 70
+},
+"narrative": {
+"description": "Trabajadores agrícolas de la periferia norte alegan desajustes biológicos severos y ataques de frenesí tras recolectar uvas mutadas bajo la luna llena mística.",
+"veracity": "TRUE",
+"revealed_truth_flag": "VINEYARD_BLOOD_FRENZY"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 30,
+"global_flags_required": [
+"SANGUINE_ANCIENT_AWAKENED"
+],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_OUTSKIRTS",
+"heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+},
+"source_entities": [
+"NPC_080",
+"NPC_086"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_MYSTICAL_ANATOMY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_024"
+},
+"book_unlocks": [
+"BOOK_092",
+"BOOK_094"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 3,
+"local_panic_increment": 11
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": true
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_058",
+"metadata": {
+"title": "El cierre de las bóvedas de finanzas",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 60,
+"buying_cost_copper": 55
+},
+"narrative": {
+"description": "Se reporta entre los oficiales que el ala completa de archivos confidenciales fue bloqueada debido a filtraciones masivas de balances fiscales cifrados de la corona.",
+"veracity": "TRUE",
+"revealed_truth_flag": "FINANCE_ARCHIVES_LOCK"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 30,
+"global_flags_required": [
+"LOEN_STATE_SECRETS_LEAKED"
+],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_MINISTRY_FINANCE_ARCHIVES"
+},
+"source_entities": [
+"NPC_083",
+"NPC_091",
+"NPC_100"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_044"
+},
+"book_unlocks": [
+"BOOK_049",
+"BOOK_087"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 10
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_059",
+"metadata": {
+"title": "El estafador de las aduanas portuarias",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 75,
+"buying_cost_copper": 35
+},
+"narrative": {
+"description": "Se susurra en los muelles comerciales que un merodeador explota lagunas lógicas conceptuales para desviar libras del fisco real aduanero.",
+"veracity": "TRUE",
+"revealed_truth_flag": "PORT_LOGIC_BUG_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 5,
+"global_flags_required": [],
+"required_sequence_max": 8
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_PORT",
+"heard_at_location_id": "LOC_BLACK_MARKET_DOCKS"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHVIEW_SAVANT_TRANSMUTATION"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_030"
+},
+"book_unlocks": [
+"BOOK_038",
+"BOOK_095"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 8
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_060",
+"metadata": {
+"title": "La fractura mental del observatorio privado",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 60,
+"buying_cost_copper": 85
+},
+"narrative": {
+"description": "Se reporta el aislamiento de un astrónomo real tras descifrar ondas sonoras cósmicas puras que quiebran la barrera de memoria humana.",
+"veracity": "TRUE",
+"revealed_truth_flag": "OBSERVATORY_COGNITIVE_SHATTER"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 35,
+"global_flags_required": [
+"FORCED_MADNESS_WAVE"
+],
+"required_sequence_max": 5
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_VANCE_PRIVATE_STUDIO"
+},
+"source_entities": [
+"NPC_083",
+"NPC_091"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_COSMIC_SUSURRUS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_040",
+"BOOK_060",
+"BOOK_100"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 12,
+"local_panic_increment": 20
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+  {
+    "id": "RUMOR_061",
+    "metadata": {
+      "title": "Las rimas místicas de West Cemetery",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 85,
+      "buying_cost_copper": 12
+    },
+    "narrative": {
+      "description": "Sepultureros del Distrito Oeste informan que rimas poéticas de serenidad se escuchan a medianoche, apaciguando a los espectros hostiles del cementerio.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "MIDNIGHT_POETRY_RESONANCE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 0,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_SUBURBS",
+      "heard_at_location_id": "LOC_WEST_CEMENTERY"
+    },
+    "source_entities": [
+      "NPC_074"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_004"
+    },
+    "book_unlocks": [
+      "BOOK_041",
+      "BOOK_078"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 1
+    },
+    "propagation": {
+      "spread_rate": 20,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_062",
+    "metadata": {
+      "title": "La contra-limpieza de Backlund Norte",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 70,
+      "buying_cost_copper": 40
+    },
+    "narrative": {
+      "description": "Se susurra entre los escribas ministeriales que la corona inició auditorías encubiertas para purgar las aduanas de hilos de distorsión aristocráticos.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "COUNTER_CONSPIRACY_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 35,
+      "global_flags_required": [
+        "COURT_CONSPIRACY_DETECTED"
+      ],
+      "required_sequence_max": 6
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_NORTH",
+      "heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+    },
+    "source_entities": [
+      "NPC_037",
+      "NPC_045"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_LAW_AND_ORDER_MYSTICISM"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_031"
+    },
+    "book_unlocks": [
+      "BOOK_063",
+      "BOOK_098"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 1,
+      "local_panic_increment": 6
+    },
+    "propagation": {
+      "spread_rate": 15,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 96,
+      "is_repeatable": false
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "RUMOR_063",
+    "metadata": {
+      "title": "La disolución cognitiva rúnica Vance",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 60,
+      "buying_cost_copper": 85
+    },
+    "narrative": {
+      "description": "Se reporta la locura forzada de un astrónomo real tras descifrar ondas sonoras cósmicas puras que disuelven de golpe la memoria humana.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "OBSERVATORY_COGNITIVE_SHATTER"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 35,
+      "global_flags_required": [
+        "FORCED_MADNESS_WAVE"
+      ],
+      "required_sequence_max": 5
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_NORTH",
+      "heard_at_location_id": "LOC_VANCE_PRIVATE_STUDIO"
+    },
+    "source_entities": [
+      "NPC_083",
+      "NPC_091"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_COSMIC_SUSURRUS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_049"
+    },
+    "book_unlocks": [
+      "BOOK_040",
+      "BOOK_060",
+      "BOOK_100"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 12,
+      "local_panic_increment": 20
+    },
+    "propagation": {
+      "spread_rate": 10,
+      "max_regions": 4
+    },
+    "lifecycle": {
+      "ticks_to_expire": 72,
+      "is_repeatable": false
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "RUMOR_064",
+    "metadata": {
+      "title": "Las cartas quemadas de Cherwood Slums",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 90,
+      "buying_cost_copper": 10
+    },
+    "narrative": {
+      "description": "Aventureros afirman que un estafador Beyonder predice desgracias precisas en los callejones usando cartas ordinarias alteradas mísiticamente.",
+      "veracity": "PARTIAL",
+      "revealed_truth_flag": "STREET_SEERS_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 0,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_CHERWOOD",
+      "heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+    },
+    "source_entities": [],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_PATHWAY_SEER_THREAD_CONTROL"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_008"
+    },
+    "book_unlocks": [
+      "BOOK_001",
+      "BOOK_046"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 2
+    },
+    "propagation": {
+      "spread_rate": 25,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_065",
+    "metadata": {
+      "title": "El cerrojo de las actas de aduana",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 85,
+      "buying_cost_copper": 18
+    },
+    "narrative": {
+      "description": "Se susurra entre los estibadores que un Oficial Sheriff bloqueó los muelles mercantes, inyectando un perímetro de escaneo lógico que frena el mercado negro.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "SHERIFF_LOCKDOWN_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 0,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_PORT",
+      "heard_at_location_id": "LOC_BLACK_MARKET_DOCKS"
+    },
+    "source_entities": [
+      "NPC_082"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_LAW_AND_ORDER_MYSTICISM"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": false,
+      "linked_investigation_id": "NONE"
+    },
+    "book_unlocks": [
+      "BOOK_026",
+      "BOOK_043"
+    ],
+    "world_effects": {
+      "sanity_cost": 0,
+      "local_panic_increment": 3
+    },
+    "propagation": {
+      "spread_rate": 20,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_066",
+    "metadata": {
+      "title": "El trance lúcido de las joyas corrompidas",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 60,
+      "buying_cost_copper": 70
+    },
+    "narrative": {
+      "description": "Tres orfebres reales de Backlund Oeste cayeron en coma; alegaban forjar una corona conceptual idéntica inducida por una marea psíquica.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "SUBCONSCIOUS_TIDE_OVERLOAD"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 20,
+      "global_flags_required": [],
+      "required_sequence_max": 6
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_WEST",
+      "heard_at_location_id": "LOC_JEWELRY_QUARTER_STREET"
+    },
+    "source_entities": [
+      "NPC_085"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [
+        "KNOW_PATHWAY_SPECTATOR_HYPNOSIS"
+      ],
+      "knowledge_granted_on_hearing": [
+        "KNOW_ORGANIZATION_PSYCHOLOGY_ALCHEMISTS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_039"
+    },
+    "book_unlocks": [
+      "BOOK_035",
+      "BOOK_053"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 4,
+      "local_panic_increment": 12
+    },
+    "propagation": {
+      "spread_rate": 15,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 72,
+      "is_repeatable": true
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "RUMOR_067",
+    "metadata": {
+      "title": "La parálisis fiscal del Ministerio",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 65,
+      "buying_cost_copper": 55
+    },
+    "narrative": {
+      "description": "Auditores de la corona descubrieron una filtración masiva de balances cifrados que altera los registros tributarios aduaneros en el Distrito Norte.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "FINANCE_ARCHIVES_LOCK"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 30,
+      "global_flags_required": [
+        "LOEN_STATE_SECRETS_LEAKED"
+      ],
+      "required_sequence_max": 6
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_NORTH",
+      "heard_at_location_id": "LOC_MINISTRY_FINANCE_ARCHIVES"
+    },
+    "source_entities": [
+      "NPC_083",
+      "NPC_091",
+      "NPC_100"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+      ]
+    },
+    "investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_044"
+},
+"book_unlocks": [
+"BOOK_049",
+"BOOK_091"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 10
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_068",
+"metadata": {
+"title": "Los altercados verbales del muelle obrero",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 80,
+"buying_cost_copper": 12
+},
+"narrative": {
+"description": "Se dice en las tabernas portuarias que un Cazador herético (Secuencia 8: Provoker) desata revueltas civiles menores inyectando agresividad mística.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "PORT_BAR_BRAWL_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_PORT",
+"heard_at_location_id": "LOC_TAVERN_DOCKS"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHWAY_HUNTER_PYROMANIAC"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": false,
+"linked_investigation_id": "NONE"
+},
+"book_unlocks": [
+"BOOK_023",
+"BOOK_076"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 8
+},
+"propagation": {
+"spread_rate": 20,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_069",
+"metadata": {
+"title": "La epidemia letárgica de Cherwood Slums",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 75,
+"buying_cost_copper": 16
+},
+"narrative": {
+"description": "Inquilinos de los callejones este sufren un letargo repentino; afirman que se debió a un error de filtrado herbal de un sanador clandestino.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SOMNIFEROUS_PLAGUE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 5,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+},
+"source_entities": [
+"NPC_086"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_MYSTICAL_ANATOMY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_010"
+},
+"book_unlocks": [
+"BOOK_021",
+"BOOK_092"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 5
+},
+"propagation": {
+"spread_rate": 22,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_070",
+"metadata": {
+"title": "El velo estelar calcinador",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 50,
+"buying_cost_copper": 90
+},
+"narrative": {
+"description": "Ondas conceptuales destructivas procedentes del Dominador de la Supernova impactaron Backlund Norte, evaporando escrituras diplomáticas heréticas.",
+"veracity": "TRUE",
+"revealed_truth_flag": "NORTH_STELLAR_PURGE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 50,
+"global_flags_required": [
+"STELLAR_RADIATION_ALERT"
+],
+"required_sequence_max": 4
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"source_entities": [
+"NPC_040",
+"NPC_053"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_040"
+},
+"book_unlocks": [
+"BOOK_050",
+"BOOK_075"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 8,
+"local_panic_increment": 14
+},
+"propagation": {
+"spread_rate": 12,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 60,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_071",
+"metadata": {
+"title": "Las adivinaciones fraudulentas de Cherwood",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 90,
+"buying_cost_copper": 10
+},
+"narrative": {
+"description": "Ciudadanos informan que timadores callejeros en los mercados manipulan cartas ordinarias para desviar la vigilancia de los alguaciles de la corona.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "STREET_SEERS_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_CHERWOOD",
+"heard_at_location_id": "LOC_LAW_COURTS_CHERWOOD"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHWAY_SEER_THREAD_CONTROL"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_008"
+},
+"book_unlocks": [
+"BOOK_001",
+"BOOK_046"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 2
+},
+"propagation": {
+"spread_rate": 25,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_072",
+"metadata": {
+"title": "El cerrojo lógico de Cherwood Courtyard",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 85,
+"buying_cost_copper": 18
+},
+"narrative": {
+"description": "Se susurra entre los procuradores que un Inspector real extendió un perímetro de requisa estricto, congelando el contrabando del mercado negro.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SHERIFF_PERIMETER_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_CHERWOOD",
+"heard_at_location_id": "LOC_LAW_COURTS_COURTYARD"
+},
+"source_entities": [
+"NPC_028"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": false,
+"linked_investigation_id": "NONE"
+},
+"book_unlocks": [
+"BOOK_026",
+"BOOK_043"
+],
+"world_effects": {
+"sanity_cost": 0,
+"local_panic_increment": 3
+},
+"propagation": {
+"spread_rate": 20,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_073",
+"metadata": {
+"title": "El colapso místico de High Society",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 60,
+"buying_cost_copper": 70
+},
+"narrative": {
+"description": "Aristócratas reunidos en el salón de Backlund Oeste sufrieron una parálisis mental simultánea provocada por una marea psíquica residual profunda.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SUBCONSCIOUS_TIDE_OVERLOAD"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 20,
+"global_flags_required": [],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_WEST",
+"heard_at_location_id": "LOC_HIGH_SOCIETY_SALON"
+},
+"source_entities": [
+"NPC_085"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_PATHWAY_SPECTATOR_HYPNOSIS"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_ORGANIZATION_PSYCHOLOGY_ALCHEMISTS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_039"
+},
+"book_unlocks": [
+"BOOK_035",
+"BOOK_053"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 4,
+"local_panic_increment": 12
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": true
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_074",
+"metadata": {
+"title": "La fuga de balances fiscales cifrados",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 65,
+"buying_cost_copper": 55
+},
+"narrative": {
+"description": "Se reporta entre los oficiales que el ala completa de archivos confidenciales fue bloqueada debido a filtraciones de actas diplomáticas confidenciales de la corona.",
+"veracity": "TRUE",
+"revealed_truth_flag": "MINISTRY_VAULT_LOCK"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 30,
+"global_flags_required": [
+"LOEN_STATE_SECRETS_LEAKED"
+],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"source_entities": [
+"NPC_083",
+"NPC_091",
+"NPC_100"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_049",
+"BOOK_087"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 10
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_075",
+"metadata": {
+"title": "Los altercados físicos de Dye Alley",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 80,
+"buying_cost_copper": 12
+},
+"narrative": {
+"description": "Se dice entre los obreros del Distrito Este que las peleas en los callejones son instigadas por un Provocador herético para digerir su poción mística.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "EAST_STREET_BRAWL_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_DYE_ALLEY"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHWAY_HUNTER_PYROMANIAC"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": false,
+"linked_investigation_id": "NONE"
+},
+"book_unlocks": [
+"BOOK_023",
+"BOOK_076"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 8
+},
+"propagation": {
+"spread_rate": 20,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_076",
+"metadata": {
+"title": "El brote de esporas de las granjas norte",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 75,
+"buying_cost_copper": 16
+},
+"narrative": {
+"description": "Campesinos de la periferia reportan un letargo masivo en los hogares; afirman que se debió a un error de esporas de un boticario clandestino.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SOMNIFEROUS_PLAGUE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 5,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_OUTSKIRTS",
+"heard_at_location_id": "LOC_NORTH_FARMS"
+},
+"source_entities": [
+"NPC_086"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_MYSTICAL_ANATOMY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_010"
+},
+"book_unlocks": [
+"BOOK_021",
+"BOOK_092"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 5
+},
+"propagation": {
+"spread_rate": 22,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_077",
+"metadata": {
+"title": "La purga solar del viñedo norte",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 50,
+"buying_cost_copper": 90
+},
+"narrative": {
+"description": "Ráfagas destructivas solares masivas procedentes de la Supernova Dominator impactaron el viñedo aislado, calcinando vides mutadas de forma inmediata.",
+"veracity": "TRUE",
+"revealed_truth_flag": "VINEYARD_STELLAR_PURGE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 50,
+"global_flags_required": [
+"STELLAR_RADIATION_ALERT"
+],
+"required_sequence_max": 4
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_OUTSKIRTS",
+"heard_at_location_id": "LOC_NORTH_VINEYARDS_ISOLATED"
+},
+"source_entities": [
+"NPC_040",
+"NPC_053"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_040"
+},
+"book_unlocks": [
+"BOOK_050",
+"BOOK_089"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 8,
+"local_panic_increment": 14
+},
+"propagation": {
+"spread_rate": 12,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 60,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_078",
+"metadata": {
+"title": "Las adivinaciones fraudulentas del mercado este",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 90,
+"buying_cost_copper": 10
+},
+"narrative": {
+"description": "Trabajadores del mercado obrero reportan que un Merodeador de secuencia baja ejecuta raterías conceptuales de hilos de fortuna civil.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "STREET_FORTUNE_STEAL_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHWAY_ERROR_TIME_LOOPS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_008"
+},
+"book_unlocks": [
+"BOOK_051",
+"BOOK_081"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 2
+},
+"propagation": {
+"spread_rate": 25,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_079",
+"metadata": {
+"title": "El cerrojo de las bovedas ministeriales Vance",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 65,
+"buying_cost_copper": 50
+},
+"narrative": {
+"description": "Se rumorea entre los secretarios reales que el ala completa de archivos fiscales fue bloqueada debido a filtraciones de balances confidenciales de la corona.",
+"veracity": "TRUE",
+"revealed_truth_flag": "MINISTRY_VAULT_LOCK"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 30,
+"global_flags_required": [
+"LOEN_STATE_SECRETS_LEAKED"
+],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"source_entities": [
+"NPC_083",
+"NPC_091",
+"NPC_100"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_049",
+"BOOK_084"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 12
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 84,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_080",
+"metadata": {
+"title": "Las disputas físicas de los callejones Cherwood",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 80,
+"buying_cost_copper": 12
+},
+"narrative": {
+"description": "Se dice en los juzgados de Cherwood que las reyertas masivas entre obreros son instigadas por un extranjero pelirrojo mediante ritos de calor provocador.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "SLUM_BRAWL_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_CHERWOOD",
+"heard_at_location_id": "LOC_LAW_COURTS_CHERWOOD"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHWAY_HUNTER_PYROMANIAC"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": false,
+"linked_investigation_id": "NONE"
+},
+"book_unlocks": [
+"BOOK_023",
+"BOOK_076"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 8
+},
+"propagation": {
+"spread_rate": 20,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+  {
+    "id": "RUMOR_081",
+    "metadata": {
+      "title": "Las rimas místicas de Cherwood",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 85,
+      "buying_cost_copper": 12
+    },
+    "narrative": {
+      "description": "Estibadores de los callejones este informan que rimas poéticas de serenidad se escuchan a medianoche, apaciguando los brotes de insomnio locales.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "MIDNIGHT_POETRY_RESONANCE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 0,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_EAST",
+      "heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+    },
+    "source_entities": [
+      "NPC_074"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_004"
+    },
+    "book_unlocks": [
+      "BOOK_041",
+      "BOOK_078"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 1
+    },
+    "propagation": {
+      "spread_rate": 20,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_082",
+    "metadata": {
+      "title": "La contra-limpieza aduanera del puerto",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 70,
+      "buying_cost_copper": 40
+    },
+    "narrative": {
+      "description": "Se susurra entre los oficiales navales que la corona inició auditorías encubiertas para purgar las aduanas de hilos de distorsión aristocráticos.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "COUNTER_CONSPIRACY_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 35,
+      "global_flags_required": [
+        "COURT_CONSPIRACY_DETECTED"
+      ],
+      "required_sequence_max": 6
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_PORT",
+      "heard_at_location_id": "LOC_BLACK_MARKET_DOCKS"
+    },
+    "source_entities": [
+      "NPC_037",
+      "NPC_045"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_LAW_AND_ORDER_MYSTICISM"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_031"
+    },
+    "book_unlocks": [
+      "BOOK_063",
+      "BOOK_098"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 1,
+      "local_panic_increment": 6
+    },
+    "propagation": {
+      "spread_rate": 15,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 96,
+      "is_repeatable": false
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "RUMOR_083",
+    "metadata": {
+      "title": "La disolución cognitiva rúnica ministerial",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 60,
+      "buying_cost_copper": 85
+    },
+    "narrative": {
+      "description": "Se reporta la locura forzada de un descifrador real tras analizar ondas sonoras cósmicas puras que disuelven de golpe la memoria humana.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "OBSERVATORY_COGNITIVE_SHATTER"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 35,
+      "global_flags_required": [
+        "FORCED_MADNESS_WAVE"
+      ],
+      "required_sequence_max": 5
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_NORTH",
+      "heard_at_location_id": "LOC_MINISTRY_FINANCE_ARCHIVES"
+    },
+    "source_entities": [
+      "NPC_083",
+      "NPC_091"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_COSMIC_SUSURRUS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_049"
+    },
+    "book_unlocks": [
+      "BOOK_040",
+      "BOOK_060",
+      "BOOK_100"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 12,
+      "local_panic_increment": 20
+    },
+    "propagation": {
+      "spread_rate": 10,
+      "max_regions": 4
+    },
+    "lifecycle": {
+      "ticks_to_expire": 72,
+      "is_repeatable": false
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "RUMOR_084",
+    "metadata": {
+      "title": "Las cartas quemadas de Dye Alley Slums",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 90,
+      "buying_cost_copper": 10
+    },
+    "narrative": {
+      "description": "Aventureros afirman que un estafador Beyonder predice desgracias precisas en los callejones este usando cartas ordinarias alteradas místicamente.",
+      "veracity": "PARTIAL",
+      "revealed_truth_flag": "STREET_SEERS_ACTIVE"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 0,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_EAST",
+      "heard_at_location_id": "LOC_DYE_ALLEY"
+    },
+    "source_entities": [],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_PATHWAY_SEER_THREAD_CONTROL"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_008"
+    },
+    "book_unlocks": [
+      "BOOK_001",
+      "BOOK_046"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 0,
+      "local_panic_increment": 2
+    },
+    "propagation": {
+      "spread_rate": 25,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_085",
+    "metadata": {
+      "title": "El cerrojo de las actas ministeriales",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 85,
+      "buying_cost_copper": 18
+    },
+    "narrative": {
+      "description": "Se susurra entre los escribas que un Oficial Sheriff bloqueó el sector gubernamental, inyectando un perímetro de escaneo lógico que frena el mercado negro.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "SHERIFF_PATROL_BYPASSED"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 0,
+      "global_flags_required": [],
+      "required_sequence_max": 9
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_NORTH",
+      "heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+    },
+    "source_entities": [
+      "NPC_028"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_LAW_AND_ORDER_MYSTICISM"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": false,
+      "linked_investigation_id": "NONE"
+    },
+    "book_unlocks": [
+      "BOOK_026",
+      "BOOK_043"
+    ],
+    "world_effects": {
+      "sanity_cost": 0,
+      "local_panic_increment": 3
+    },
+    "propagation": {
+      "spread_rate": 20,
+      "max_regions": 2
+    },
+    "lifecycle": {
+      "ticks_to_expire": 48,
+      "is_repeatable": true
+    },
+    "importance": "COMMON"
+  },
+  {
+    "id": "RUMOR_086",
+    "metadata": {
+      "title": "El trance lúcido de las alhajas de lujo",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 60,
+      "buying_cost_copper": 70
+    },
+    "narrative": {
+      "description": "Tres artesanos smith de Backlund Oeste cayeron en coma; alegan forjar una corona de dominación conceptual idéntica inducida por una marea psíquica.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "SUBCONSCIOUS_TIDE_OVERLOAD"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 20,
+      "global_flags_required": [],
+      "required_sequence_max": 6
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_WEST",
+      "heard_at_location_id": "LOC_LUXURY_BOULEVARD"
+    },
+    "source_entities": [
+      "NPC_085"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [
+        "KNOW_PATHWAY_SPECTATOR_HYPNOSIS"
+      ],
+      "knowledge_granted_on_hearing": [
+        "KNOW_ORGANIZATION_PSYCHOLOGY_ALCHEMISTS"
+      ]
+    },
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigation_id": "INV_CASE_039"
+    },
+    "book_unlocks": [
+      "BOOK_035",
+      "BOOK_053"
+    ],
+    "world_effects": {
+      "sanity_loss_on_hearing": 4,
+      "local_panic_increment": 12
+    },
+    "propagation": {
+      "spread_rate": 15,
+      "max_regions": 3
+    },
+    "lifecycle": {
+      "ticks_to_expire": 72,
+      "is_repeatable": true
+    },
+    "importance": "ELITE"
+  },
+  {
+    "id": "RUMOR_087",
+    "metadata": {
+      "title": "La parálisis fiscal de los archivos ministeriales",
+      "historical_era": "Fifth Epoch",
+      "spawn_weight": 65,
+      "buying_cost_copper": 55
+    },
+    "narrative": {
+      "description": "Auditores de la corona descubrieron una filtración masiva de balances cifrados que altera los registros tributarios aduaneros de la capital.",
+      "veracity": "TRUE",
+      "revealed_truth_flag": "FINANCE_ARCHIVES_LOCK"
+    },
+    "trigger_conditions": {
+      "min_global_corruption_index": 30,
+      "global_flags_required": [
+        "LOEN_STATE_SECRETS_LEAKED"
+      ],
+      "required_sequence_max": 6
+    },
+    "regional_scope": {
+      "origin_region_id": "REG_BACKLUND_NORTH",
+      "heard_at_location_id": "LOC_MINISTRY_FINANCE_ARCHIVES"
+    },
+    "source_entities": [
+      "NPC_083",
+      "NPC_091",
+      "NPC_100"
+    ],
+    "knowledge_links": {
+      "required_knowledge_to_understand": [],
+      "knowledge_granted_on_hearing": [
+        "KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+      ]
+    },
+    "investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_044"
+},
+"book_unlocks": [
+"BOOK_049",
+"BOOK_091"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 10
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_088",
+"metadata": {
+"title": "Los altercados verbales del callejón industrial",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 80,
+"buying_cost_copper": 12
+},
+"narrative": {
+"description": "Se dice en las tabernas industriales este que un Cazador herético desata revueltas civiles menores inyectando agresividad mística verbal.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "SLUM_BRAWL_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_SIDERURGICA_CENTRAL"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHWAY_HUNTER_PYROMANIAC"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": false,
+"linked_investigation_id": "NONE"
+},
+"book_unlocks": [
+"BOOK_023",
+"BOOK_076"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 8
+},
+"propagation": {
+"spread_rate": 20,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_089",
+"metadata": {
+"title": "La epidemia letárgica de Dye Alley",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 75,
+"buying_cost_copper": 16
+},
+"narrative": {
+"description": "Inquilinos de los callejones textiles sufren un letargo repentino; afirman que se debió a un error de filtrado herbal de un sanador clandestino.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SOMNIFEROUS_PLAGUE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 5,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_DYE_ALLEY"
+},
+"source_entities": [
+"NPC_086"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_MYSTICAL_ANATOMY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_010"
+},
+"book_unlocks": [
+"BOOK_021",
+"BOOK_092"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 5
+},
+"propagation": {
+"spread_rate": 22,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_090",
+"metadata": {
+"title": "El velo estelar calcinador ministerial",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 50,
+"buying_cost_copper": 90
+},
+"narrative": {
+"description": "Ondas conceptuales destructivas solares procedentes del Dominador de la Supernova impactaron Backlund Norte, evaporando archivos diplomáticos heréticos.",
+"veracity": "TRUE",
+"revealed_truth_flag": "NORTH_STELLAR_PURGE_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 50,
+"global_flags_required": [
+"STELLAR_RADIATION_ALERT"
+],
+"required_sequence_max": 4
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"source_entities": [
+"NPC_040",
+"NPC_053"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_040"
+},
+"book_unlocks": [
+"BOOK_050",
+"BOOK_075"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 8,
+"local_panic_increment": 14
+},
+"propagation": {
+"spread_rate": 12,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 60,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_091",
+"metadata": {
+"title": "Las adivinaciones fraudulentas de Dye Alley",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 90,
+"buying_cost_copper": 10
+},
+"narrative": {
+"description": "Trabajadores del mercado textil reportan que un Merodeador de secuencia baja ejecuta raterías conceptuales de hilos de fortuna civil para evadir inspectores.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "TRICKSTER_ILLUSION_ACTIVE"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_DYE_ALLEY"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHWAY_ERROR_TIME_LOOPS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_008"
+},
+"book_unlocks": [
+"BOOK_051",
+"BOOK_081"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 2
+},
+"propagation": {
+"spread_rate": 25,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_092",
+"metadata": {
+"title": "El cerrojo de los archivos ministeriales Vance",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 65,
+"buying_cost_copper": 50
+},
+"narrative": {
+"description": "Se rumorea entre los secretarios ministeriales que el ala completa de archivos confidenciales fue bloqueada debido a filtraciones de actas confidenciales de la corona.",
+"veracity": "TRUE",
+"revealed_truth_flag": "MINISTRY_CODES_SECURED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 30,
+"global_flags_required": [
+"LOEN_STATE_SECRETS_LEAKED"
+],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_GOVERNMENT_OFFICES"
+},
+"source_entities": [
+"NPC_083",
+"NPC_091",
+"NPC_100"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_049",
+"BOOK_084"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 1,
+"local_panic_increment": 12
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 84,
+"is_repeatable": false
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_093",
+"metadata": {
+"title": "Las disputas físicas de los callejones este",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 80,
+"buying_cost_copper": 12
+},
+"narrative": {
+"description": "Se dice en las barriadas textiles del este que las reyertas masivas entre obreros son instigadas por un extranjero pelirrojo mediante ritos de calor provocador.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "EAST_ALLEY_PEACE_RESTORED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_DYE_ALLEY"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHWAY_HUNTER_PYROMANIAC"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": false,
+"linked_investigation_id": "NONE"
+},
+"book_unlocks": [
+"BOOK_023",
+"BOOK_076"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 8
+},
+"propagation": {
+"spread_rate": 20,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_094",
+"metadata": {
+"title": "El pánico hipnótico del club financiero",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 65,
+"buying_cost_copper": 65
+},
+"narrative": {
+"description": "Asistentes a un salon privado en Backlund Oeste alegan haber despertado con lagunas mentales severas y sugerencias pasivas de vaciado de cuentas reales.",
+"veracity": "TRUE",
+"revealed_truth_flag": "SALON_SUGGESTION_PURGED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 15,
+"global_flags_required": [],
+"required_sequence_max": 6
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_WEST",
+"heard_at_location_id": "LOC_HIGH_SOCIETY_SALON"
+},
+"source_entities": [
+"NPC_085"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_PATHWAY_SPECTATOR_HYPNOSIS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_039"
+},
+"book_unlocks": [
+"BOOK_035",
+"BOOK_053"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 4,
+"local_panic_increment": 10
+},
+"propagation": {
+"spread_rate": 12,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": true
+},
+"importance": "ELITE"
+},
+{
+"id": "RUMOR_095",
+"metadata": {
+"title": "La distorsión aduanera del muelle negro",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 50,
+"buying_cost_copper": 115
+},
+"narrative": {
+"description": "Contratos navales completos se disolvieron físicamente bajo una niebla indeterminada que elimina las restricciones lógicas y penales de las cargas aduaneras.",
+"veracity": "TRUE",
+"revealed_truth_flag": "PORT_LAW_RESTORED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 50,
+"global_flags_required": [
+"UNCERTAIN_MIST_OVER_REGIONS"
+],
+"required_sequence_max": 4
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_PORT",
+"heard_at_location_id": "LOC_BLACK_MARKET_DOCKS"
+},
+"source_entities": [
+"NPC_045",
+"NPC_082"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_031"
+},
+"book_unlocks": [
+"BOOK_042",
+"BOOK_073"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 12,
+"local_panic_increment": 25
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_096",
+"metadata": {
+"title": "El fraude del Inspector de aduanas",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 85,
+"buying_cost_copper": 14
+},
+"narrative": {
+"description": "Se murmura entre los escribas aduaneros que el perímetro de requisa fue modificado mágicamente para favorecer el contrabando de un sindicato herético.",
+"veracity": "TRUE",
+"revealed_truth_flag": "PORT_TARIFFS_NORMALIZED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_PORT",
+"heard_at_location_id": "LOC_BLACK_MARKET_DOCKS"
+},
+"source_entities": [
+"NPC_028"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": false,
+"linked_investigation_id": "NONE"
+},
+"book_unlocks": [
+"BOOK_026",
+"BOOK_043"
+],
+"world_effects": {
+"sanity_cost": 0,
+"local_panic_increment": 4
+},
+"propagation": {
+"spread_rate": 20,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_097",
+"metadata": {
+"title": "La purga solar del herético altar",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 50,
+"buying_cost_copper": 90
+},
+"narrative": {
+"description": "Una explosión destructiva estelar solar calcinó los altares clandestinos suburbanos, disolviendo toda presencia de espectros o vampiros de la zona.",
+"veracity": "TRUE",
+"revealed_truth_flag": "STELLAR_FLARE_CONTAINED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 50,
+"global_flags_required": [
+"STELLAR_RADIATION_ALERT"
+],
+"required_sequence_max": 4
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_SUBURBS",
+"heard_at_location_id": "LOC_HERETIC_ALTAR_SOLAR"
+},
+"source_entities": [
+"NPC_040",
+"NPC_053"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+],
+"knowledge_granted_on_hearing": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_040"
+},
+"book_unlocks": [
+"BOOK_050",
+"BOOK_075"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 8,
+"local_panic_increment": 14
+},
+"propagation": {
+"spread_rate": 12,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 60,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "RUMOR_098",
+"metadata": {
+"title": "Las ilusiones ópticas de los callejones este",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 90,
+"buying_cost_copper": 10
+},
+"narrative": {
+"description": "Transeúntes del sector textil reportan que ciertos callejones se duplican o alteran sus esquinas de forma ilusoria para confundir inspectores.",
+"veracity": "PARTIAL",
+"revealed_truth_flag": "EAST_ALLEY_PERCEPTION_NORMAL"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 0,
+"global_flags_required": [],
+"required_sequence_max": 9
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_CHERWOOD_SLUMS"
+},
+"source_entities": [],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_ORGANIZATION_SECRET_ORDER"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_029"
+},
+"book_unlocks": [
+"BOOK_046",
+"BOOK_093"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 2
+},
+"propagation": {
+"spread_rate": 25,
+"max_regions": 2
+},
+"lifecycle": {
+"ticks_to_expire": 48,
+"is_repeatable": true
+},
+"importance": "COMMON"
+},
+{
+"id": "RUMOR_099",
+"metadata": {
+"title": "La parálisis por vapores de la fundición este",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 70,
+"buying_cost_copper": 35
+},
+"narrative": {
+"description": "Los obreros de Backlund Este informan sobre una fuga de vapor ácido corrosivo místico que disuelve los contenedores de plomo ministeriales.",
+"veracity": "TRUE",
+"revealed_truth_flag": "EAST_BOILERS_CLEANSED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 15,
+"global_flags_required": [],
+"required_sequence_max": 7
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_EAST",
+"heard_at_location_id": "LOC_SIDERURGICA_CENTRAL"
+},
+"source_entities": [
+"NPC_046",
+"NPC_055"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_ALCHEMICAL_FOUNDATIONS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_035"
+},
+"book_unlocks": [
+"BOOK_038",
+"BOOK_055",
+"BOOK_072"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 0,
+"local_panic_increment": 6
+},
+"propagation": {
+"spread_rate": 15,
+"max_regions": 3
+},
+"lifecycle": {
+"ticks_to_expire": 60,
+"is_repeatable": true
+},
+"importance": "STANDARD"
+},
+{
+"id": "RUMOR_100",
+"metadata": {
+"title": "La fractura mística del observatorio real Vance",
+"historical_era": "Fifth Epoch",
+"spawn_weight": 60,
+"buying_cost_copper": 85
+},
+"narrative": {
+"description": "Se reporta el aislamiento del astrónomo real Vance tras descifrar ondas sonoras cósmicas puras que quiebran por completo la memoria humana.",
+"veracity": "TRUE",
+"revealed_truth_flag": "OBSERVATORY_SANITY_RESTORED"
+},
+"trigger_conditions": {
+"min_global_corruption_index": 35,
+"global_flags_required": [
+"FORCED_MADNESS_WAVE"
+],
+"required_sequence_max": 5
+},
+"regional_scope": {
+"origin_region_id": "REG_BACKLUND_NORTH",
+"heard_at_location_id": "LOC_VANCE_PRIVATE_STUDIO"
+},
+"source_entities": [
+"NPC_083",
+"NPC_091"
+],
+"knowledge_links": {
+"required_knowledge_to_understand": [],
+"knowledge_granted_on_hearing": [
+"KNOW_COSMIC_SUSURRUS"
+]
+},
+"investigation_hooks": {
+"can_trigger_investigation": true,
+"linked_investigation_id": "INV_CASE_049"
+},
+"book_unlocks": [
+"BOOK_040",
+"BOOK_060",
+"BOOK_100"
+],
+"world_effects": {
+"sanity_loss_on_hearing": 12,
+"local_panic_increment": 20
+},
+"propagation": {
+"spread_rate": 10,
+"max_regions": 4
+},
+"lifecycle": {
+"ticks_to_expire": 72,
+"is_repeatable": false
+},
+"importance": "LEGENDARY"
+}
+]
+

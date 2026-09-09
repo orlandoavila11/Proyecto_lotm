@@ -1,0 +1,508 @@
+{
+  "FOOL": {
+    "pathway": "FOOL",
+    "line1Authorities": [
+      "El Soberano de las Sombras y el Castillo Carmesí",
+      "El Señor de los Hilos Espirituales",
+      "El Gobernante de la Niebla Gris"
+    ],
+    "line2CosmicSymbols": [
+      "El Testigo de la Historia Olvidada",
+      "La Máscara de los Mil Rostros",
+      "El Ojo que Contempla el Pasado y el Destino"
+    ],
+    "line3Mysteries": [
+      "El Milagro Errante de la Quinta Época",
+      "El Guardián de los Secretos del Tiempo",
+      "El Titiritero de los Misterios"
+    ],
+    "line4Titles": [
+      "El Gran Soberano de la Fortuna y la Ilusión",
+      "El Señor del Destino Inescrutable",
+      "El Guía de los Buscadores de la Niebla"
+    ]
+  },
+  "DOOR": {
+    "pathway": "DOOR",
+    "line1Authorities": [
+      "El Guardián de los Portales Secretos",
+      "El Caminante de las Estrellas Distantes",
+      "El Amo de las Llaves del Cosmos"
+    ],
+    "line2CosmicSymbols": [
+      "El Velo que Separa las Dimensiones",
+      "La Puerta que Nunca se Cierra",
+      "El Reflejo de las Constelaciones Silenciosas"
+    ],
+    "line3Mysteries": [
+      "El Desterrado de la Luna Llena",
+      "El Señor de los Espacios Infinitos",
+      "El Escriba de los Salmos Astrales"
+    ],
+    "line4Titles": [
+      "El Viajero de la Bóveda Celeste",
+      "La Llave de todas las Respuestas",
+      "El Señor de la Gran Apertura"
+    ]
+  },
+  "ERROR": {
+    "pathway": "ERROR",
+    "line1Authorities": [
+      "El Ladrón de las Lagunas del Destino",
+      "El Parásito de la Realidad Concreta",
+      "El Amo del Monóculo de Cristal"
+    ],
+    "line2CosmicSymbols": [
+      "El Engaño que Desafía a la Ley",
+      "La Grieta en el Flujo del Tiempo",
+      "El Devorador de Intenciones Mortales"
+    ],
+    "line3Mysteries": [
+      "El Truco que Burlar la Muerte",
+      "El Gusano que Teje Paradojas",
+      "El Heredero del Caos Astuto"
+    ],
+    "line4Titles": [
+      "El Gran Engañador del Panteón",
+      "El Hurto de la Razón Suprema",
+      "La Excepción de todas las Reglas"
+    ]
+  },
+  "VISIONARY": {
+    "pathway": "VISIONARY",
+    "line1Authorities": [
+      "El Arquitecto de los Sueños Lúcidos",
+      "El Creador de la Imaginación Primigenia",
+      "El Espejo de las Almas Humanas"
+    ],
+    "line2CosmicSymbols": [
+      "El Espectador de la Gran Obra de Teatro",
+      "El Ojo del Dragón de la Sabiduría",
+      "El Director del Subconsciente Colectivo"
+    ],
+    "line3Mysteries": [
+      "La Coincidencia Razonable del Destino",
+      "La Pluma que Escribe la Verdad Oculta",
+      "El Médico del Trauma Cósmico"
+    ],
+    "line4Titles": [
+      "El Gran Autor de las Eras",
+      "El Soberano de la Psique Infinita",
+      "El Despertar de la Razón"
+    ]
+  },
+  "HANGED_MAN": {
+    "pathway": "HANGED_MAN",
+    "line1Authorities": [
+      "El Cordero del Sacrificio Eterno",
+      "El Señor de la Carne y la Penitencia",
+      "El Soberano de la Cruz Invertida"
+    ],
+    "line2CosmicSymbols": [
+      "El Pastor de las Almas Caídas",
+      "La Sangre que Purifica el Pecado del Mundo",
+      "El Oído que Escucha los Murmullos del Dolor"
+    ],
+    "line3Mysteries": [
+      "El Mártir del Abismo Interior",
+      "El Redentor de los Desesperados",
+      "La Herida que Nunca Cicatriza"
+    ],
+    "line4Titles": [
+      "El Verdadero Dios del Sacrificio",
+      "El Guardián de la Gracia Doliente",
+      "El Señor del Juicio de Sangre"
+    ]
+  },
+  "TYRANT": {
+    "pathway": "TYRANT",
+    "line1Authorities": [
+      "El Emperador de las Aguas Embravecidas",
+      "El Trueno que Quiebra los Cielos",
+      "El Señor de las Tempestades Oceánicas"
+    ],
+    "line2CosmicSymbols": [
+      "La Furia del Relámpago Divino",
+      "El Tirano de los Cinco Mares",
+      "El Aliento del Huracán Primigenio"
+    ],
+    "line3Mysteries": [
+      "El Martillo de los Dioses Marinos",
+      "La Cólera Justiciera del Abismo Azul",
+      "El Terror de los Monstruos de las Profundidades"
+    ],
+    "line4Titles": [
+      "El Supremo Señor de las Olas",
+      "El Soberano de la Furia Eléctrica",
+      "La Voz que Ruge en el Vendaval"
+    ]
+  },
+  "SUN": {
+    "pathway": "SUN",
+    "line1Authorities": [
+      "La Luz Inmaculada que Disipa las Tinieblas",
+      "El Fuego Sagrado de la Purificación",
+      "El Eterno Disco Solar"
+    ],
+    "line2CosmicSymbols": [
+      "El Voto que Vence al Engaño",
+      "El Vigor de los Justos y los Valientes",
+      "El Juicio Brillante de la Mañana"
+    ],
+    "line3Mysteries": [
+      "El Azote de los Espectros y Demonios",
+      "La Verdad que Quema la Corrupción",
+      "El Calor de la Creación Pura"
+    ],
+    "line4Titles": [
+      "El Supremo Soberano de la Luz",
+      "El Gran Purificador del Cosmos",
+      "El Dios de la Rectitud Sagrada"
+    ]
+  },
+  "WHITE_TOWER": {
+    "pathway": "WHITE_TOWER",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de WHITE_TOWER",
+      "La Esencia Primigenia de la Vía WHITE_TOWER",
+      "El Soberano del Trono Místico de WHITE_TOWER"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de WHITE_TOWER",
+      "La Ley Inmanente del Panteón de WHITE_TOWER",
+      "El Pilar Extraordinario de WHITE_TOWER"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de WHITE_TOWER",
+      "La Fuerza que Rige el Destino de WHITE_TOWER",
+      "La Manifestación Terrenal de WHITE_TOWER"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de WHITE_TOWER",
+      "El Guía de los Adeptos de WHITE_TOWER",
+      "La Corona Eterna de WHITE_TOWER"
+    ]
+  },
+  "DARKNESS": {
+    "pathway": "DARKNESS",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de DARKNESS",
+      "La Esencia Primigenia de la Vía DARKNESS",
+      "El Soberano del Trono Místico de DARKNESS"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de DARKNESS",
+      "La Ley Inmanente del Panteón de DARKNESS",
+      "El Pilar Extraordinario de DARKNESS"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de DARKNESS",
+      "La Fuerza que Rige el Destino de DARKNESS",
+      "La Manifestación Terrenal de DARKNESS"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de DARKNESS",
+      "El Guía de los Adeptos de DARKNESS",
+      "La Corona Eterna de DARKNESS"
+    ]
+  },
+  "DEATH": {
+    "pathway": "DEATH",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de DEATH",
+      "La Esencia Primigenia de la Vía DEATH",
+      "El Soberano del Trono Místico de DEATH"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de DEATH",
+      "La Ley Inmanente del Panteón de DEATH",
+      "El Pilar Extraordinario de DEATH"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de DEATH",
+      "La Fuerza que Rige el Destino de DEATH",
+      "La Manifestación Terrenal de DEATH"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de DEATH",
+      "El Guía de los Adeptos de DEATH",
+      "La Corona Eterna de DEATH"
+    ]
+  },
+  "TWILIGHT_GIANT": {
+    "pathway": "TWILIGHT_GIANT",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de TWILIGHT_GIANT",
+      "La Esencia Primigenia de la Vía TWILIGHT_GIANT",
+      "El Soberano del Trono Místico de TWILIGHT_GIANT"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de TWILIGHT_GIANT",
+      "La Ley Inmanente del Panteón de TWILIGHT_GIANT",
+      "El Pilar Extraordinario de TWILIGHT_GIANT"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de TWILIGHT_GIANT",
+      "La Fuerza que Rige el Destino de TWILIGHT_GIANT",
+      "La Manifestación Terrenal de TWILIGHT_GIANT"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de TWILIGHT_GIANT",
+      "El Guía de los Adeptos de TWILIGHT_GIANT",
+      "La Corona Eterna de TWILIGHT_GIANT"
+    ]
+  },
+  "RED_PRIEST": {
+    "pathway": "RED_PRIEST",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de RED_PRIEST",
+      "La Esencia Primigenia de la Vía RED_PRIEST",
+      "El Soberano del Trono Místico de RED_PRIEST"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de RED_PRIEST",
+      "La Ley Inmanente del Panteón de RED_PRIEST",
+      "El Pilar Extraordinario de RED_PRIEST"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de RED_PRIEST",
+      "La Fuerza que Rige el Destino de RED_PRIEST",
+      "La Manifestación Terrenal de RED_PRIEST"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de RED_PRIEST",
+      "El Guía de los Adeptos de RED_PRIEST",
+      "La Corona Eterna de RED_PRIEST"
+    ]
+  },
+  "DEMONESS": {
+    "pathway": "DEMONESS",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de DEMONESS",
+      "La Esencia Primigenia de la Vía DEMONESS",
+      "El Soberano del Trono Místico de DEMONESS"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de DEMONESS",
+      "La Ley Inmanente del Panteón de DEMONESS",
+      "El Pilar Extraordinario de DEMONESS"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de DEMONESS",
+      "La Fuerza que Rige el Destino de DEMONESS",
+      "La Manifestación Terrenal de DEMONESS"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de DEMONESS",
+      "El Guía de los Adeptos de DEMONESS",
+      "La Corona Eterna de DEMONESS"
+    ]
+  },
+  "MOTHER": {
+    "pathway": "MOTHER",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de MOTHER",
+      "La Esencia Primigenia de la Vía MOTHER",
+      "El Soberano del Trono Místico de MOTHER"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de MOTHER",
+      "La Ley Inmanente del Panteón de MOTHER",
+      "El Pilar Extraordinario de MOTHER"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de MOTHER",
+      "La Fuerza que Rige el Destino de MOTHER",
+      "La Manifestación Terrenal de MOTHER"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de MOTHER",
+      "El Guía de los Adeptos de MOTHER",
+      "La Corona Eterna de MOTHER"
+    ]
+  },
+  "MOON": {
+    "pathway": "MOON",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de MOON",
+      "La Esencia Primigenia de la Vía MOON",
+      "El Soberano del Trono Místico de MOON"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de MOON",
+      "La Ley Inmanente del Panteón de MOON",
+      "El Pilar Extraordinario de MOON"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de MOON",
+      "La Fuerza que Rige el Destino de MOON",
+      "La Manifestación Terrenal de MOON"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de MOON",
+      "El Guía de los Adeptos de MOON",
+      "La Corona Eterna de MOON"
+    ]
+  },
+  "BLACK_EMPEROR": {
+    "pathway": "BLACK_EMPEROR",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de BLACK_EMPEROR",
+      "La Esencia Primigenia de la Vía BLACK_EMPEROR",
+      "El Soberano del Trono Místico de BLACK_EMPEROR"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de BLACK_EMPEROR",
+      "La Ley Inmanente del Panteón de BLACK_EMPEROR",
+      "El Pilar Extraordinario de BLACK_EMPEROR"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de BLACK_EMPEROR",
+      "La Fuerza que Rige el Destino de BLACK_EMPEROR",
+      "La Manifestación Terrenal de BLACK_EMPEROR"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de BLACK_EMPEROR",
+      "El Guía de los Adeptos de BLACK_EMPEROR",
+      "La Corona Eterna de BLACK_EMPEROR"
+    ]
+  },
+  "JUSTICIAR": {
+    "pathway": "JUSTICIAR",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de JUSTICIAR",
+      "La Esencia Primigenia de la Vía JUSTICIAR",
+      "El Soberano del Trono Místico de JUSTICIAR"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de JUSTICIAR",
+      "La Ley Inmanente del Panteón de JUSTICIAR",
+      "El Pilar Extraordinario de JUSTICIAR"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de JUSTICIAR",
+      "La Fuerza que Rige el Destino de JUSTICIAR",
+      "La Manifestación Terrenal de JUSTICIAR"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de JUSTICIAR",
+      "El Guía de los Adeptos de JUSTICIAR",
+      "La Corona Eterna de JUSTICIAR"
+    ]
+  },
+  "HERMIT": {
+    "pathway": "HERMIT",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de HERMIT",
+      "La Esencia Primigenia de la Vía HERMIT",
+      "El Soberano del Trono Místico de HERMIT"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de HERMIT",
+      "La Ley Inmanente del Panteón de HERMIT",
+      "El Pilar Extraordinario de HERMIT"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de HERMIT",
+      "La Fuerza que Rige el Destino de HERMIT",
+      "La Manifestación Terrenal de HERMIT"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de HERMIT",
+      "El Guía de los Adeptos de HERMIT",
+      "La Corona Eterna de HERMIT"
+    ]
+  },
+  "PARAGON": {
+    "pathway": "PARAGON",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de PARAGON",
+      "La Esencia Primigenia de la Vía PARAGON",
+      "El Soberano del Trono Místico de PARAGON"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de PARAGON",
+      "La Ley Inmanente del Panteón de PARAGON",
+      "El Pilar Extraordinario de PARAGON"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de PARAGON",
+      "La Fuerza que Rige el Destino de PARAGON",
+      "La Manifestación Terrenal de PARAGON"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de PARAGON",
+      "El Guía de los Adeptos de PARAGON",
+      "La Corona Eterna de PARAGON"
+    ]
+  },
+  "WHEEL_OF_FORTUNE": {
+    "pathway": "WHEEL_OF_FORTUNE",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de WHEEL_OF_FORTUNE",
+      "La Esencia Primigenia de la Vía WHEEL_OF_FORTUNE",
+      "El Soberano del Trono Místico de WHEEL_OF_FORTUNE"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de WHEEL_OF_FORTUNE",
+      "La Ley Inmanente del Panteón de WHEEL_OF_FORTUNE",
+      "El Pilar Extraordinario de WHEEL_OF_FORTUNE"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de WHEEL_OF_FORTUNE",
+      "La Fuerza que Rige el Destino de WHEEL_OF_FORTUNE",
+      "La Manifestación Terrenal de WHEEL_OF_FORTUNE"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de WHEEL_OF_FORTUNE",
+      "El Guía de los Adeptos de WHEEL_OF_FORTUNE",
+      "La Corona Eterna de WHEEL_OF_FORTUNE"
+    ]
+  },
+  "ABYSS": {
+    "pathway": "ABYSS",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de ABYSS",
+      "La Esencia Primigenia de la Vía ABYSS",
+      "El Soberano del Trono Místico de ABYSS"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de ABYSS",
+      "La Ley Inmanente del Panteón de ABYSS",
+      "El Pilar Extraordinario de ABYSS"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de ABYSS",
+      "La Fuerza que Rige el Destino de ABYSS",
+      "La Manifestación Terrenal de ABYSS"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de ABYSS",
+      "El Guía de los Adeptos de ABYSS",
+      "La Corona Eterna de ABYSS"
+    ]
+  },
+  "CHAINED": {
+    "pathway": "CHAINED",
+    "line1Authorities": [
+      "El Señor de la Autoridad Suprema de CHAINED",
+      "La Esencia Primigenia de la Vía CHAINED",
+      "El Soberano del Trono Místico de CHAINED"
+    ],
+    "line2CosmicSymbols": [
+      "El Símbolo Viviente en el Cosmos de CHAINED",
+      "La Ley Inmanente del Panteón de CHAINED",
+      "El Pilar Extraordinario de CHAINED"
+    ],
+    "line3Mysteries": [
+      "El Guardián de los Misterios Profundos de CHAINED",
+      "La Fuerza que Rige el Destino de CHAINED",
+      "La Manifestación Terrenal de CHAINED"
+    ],
+    "line4Titles": [
+      "El Gran Dominador del Destino de CHAINED",
+      "El Guía de los Adeptos de CHAINED",
+      "La Corona Eterna de CHAINED"
+    ]
+  }
+}

@@ -1,0 +1,2752 @@
+[
+  {
+    "id": "INV_CASE_001",
+    "name": "El Murmullo de las Alcantarillas de Hillside",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "MEDIUM",
+      "required_exploration_tier": 2,
+      "base_success_chance": 65
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_EAST",
+      "sub_location_id": "LOC_HILLSIDE_SLUMS",
+      "required_weather": ["WEATHER_FOGGY", "WEATHER_SMOG_HEAVY"],
+      "time_restrictions": { "start_hour": 18, "end_hour": 6 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 5
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_001",
+      "text": "Los vagabundos del distrito obrero informan que el agua de los sumideros palpita como un corazón humano por las noches."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 2,
+      "danger_encounter_rate_modifier": 1.15,
+      "investigation_steps_required": 3,
+      "evidence_pool": [
+        "E_001_A: Restos de grasa humana purificada mezclada con agua bendita profanada.",
+        "E_001_B: Un grabado rústico del Dios Colgado tallado en una compuerta de hierro."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "secret_organizations": 15 },
+      "allowed_pathways": ["Secrets Suppliant", "Bard"],
+      "minimum_sequence_required": 8,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["shadow_hyphae", "gold_pounds_20"],
+      "knowledge_keys": ["KNOW_SECRET_AURORA_ORDER_BILI"],
+      "faction_reputation": { "church_of_evernight": 5 }
+    },
+    "on_success_effects": {
+      "log_message": "Evita un brote de carne mutada en el distrito industrial.",
+      "world_state_flags_to_add": { "hillside_sewers_cleansed": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "El distrito se convierte en zona de cuarentena por mutación tisular masiva.",
+      "world_state_flags_to_add": { "hillside_sewers_corrupted": true, "backlund_plague_alert": true },
+      "player_stat_modifiers": { "permanent_corruption_gain": 2, "sanity_damage": 25 }
+    }
+  },
+  {
+    "id": "INV_CASE_002",
+    "name": "Los Óleos Sangrientos de la Galería Harwood",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 45
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_WEST",
+      "sub_location_id": "LOC_HARWOOD_GALLERY",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 8, "end_hour": 22 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 10
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_002",
+      "text": "Tres críticos de arte se arrancaron los ojos tras contemplar la nueva exposición abstracta de un pintor vanguardista."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 4,
+      "danger_encounter_rate_modifier": 1.25,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_002_A: Los lienzos están imprimados con sangre que mantiene temperatura corporal semanas después.",
+        "E_002_B: Un patrón geométrico oculto bajo la pintura que simula cadenas rotas y colmillos."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "abnormal_psychology": 20, "mystical_anatomy": 10 },
+      "allowed_pathways": [],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["artifact_3_002_pincel_desollador", "gold_pounds_50"],
+      "knowledge_keys": ["KNOW_PATHWAY_PRISONER_MUTANT"],
+      "faction_reputation": { "rose_school_of_thought_temperance": 15, "loen_police": 10 }
+    },
+    "on_success_effects": {
+      "log_message": "El pintor huye al Continente Sur. Se asegura un Artefacto Sellado Grado 3.",
+      "world_state_flags_to_add": { "harwood_painter_neutralized": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "acting_digestion_bonus_prisoner": 0.10 }
+    },
+    "on_failure_effects": {
+      "log_message": "Los visitantes de la galería se transforman en zombies inducidos por el deseo carnal salvaje.",
+      "world_state_flags_to_add": { "harwood_gallery_infested": true },
+      "player_stat_modifiers": { "corruption_gain": 15, "sanity_damage": 30 }
+    }
+  },
+  {
+    "id": "INV_CASE_003",
+    "name": "El Sínodo de las Sombras Invertidas",
+    "danger_level": "FORBIDDEN",
+    "difficulty": {
+      "rating": "EXTREME",
+      "required_exploration_tier": 5,
+      "base_success_chance": 20
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_SUBURBS",
+      "sub_location_id": "LOC_ST_BEUVE_ABBEY",
+      "required_weather": ["WEATHER_ECLIPSE", "WEATHER_CLEAR_NIGHT"],
+      "time_restrictions": { "start_hour": 0, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": { "TAROT_CLUB_FOUNDED": true },
+      "min_global_corruption_index": 25
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_003",
+      "text": "En las ruinas de la abadía de Saint-Beuve, las sombras de los árboles apuntan directamente hacia el altar derruido en contra del sol."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 8,
+      "danger_encounter_rate_modifier": 1.50,
+      "investigation_steps_required": 6,
+      "evidence_pool": [
+        "E_003_A: Cenizas flottantes que queman la piel pero no consumen los objetos de madera.",
+        "E_003_B: Un pergamino escrito en Hermes Antiguo describiendo el descenso de una estrella danzante."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "cosmology": 35, "outer_deities": 35 },
+      "allowed_pathways": ["Mystery Pryer", "Astrologer"],
+      "minimum_sequence_required": 5,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["star_shard_ore", "gold_pounds_200"],
+      "knowledge_keys": ["KNOW_FORBIDDEN_COSMIC_INEVITABILITY"],
+      "faction_reputation": { "church_of_evernight": 30, "church_of_storms": 20 }
+    },
+    "on_success_effects": {
+      "log_message": "Bloquea la invocación de una anomalía espacial exterior antes de abrir el nexo.",
+      "world_state_flags_to_add": { "saint_beuve_rift_sealed": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "max_sanity_penalty": -5 }
+    },
+    "on_failure_effects": {
+      "log_message": "Se activa radiación cósmica latente. La adivinación se vuelve letal en la región.",
+      "world_state_flags_to_add": { "cosmic_radiation_backlund_active": true },
+      "player_stat_modifiers": { "permanent_corruption_gain": 12, "sanity_damage": 60 }
+    }
+  },
+  {
+    "id": "INV_CASE_004",
+    "name": "La Epidemia del Insomnio Dorado",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 50
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_CHERWOOD",
+      "sub_location_id": "LOC_FINANCIAL_EXCHANGE",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 9, "end_hour": 17 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": { "ECONOMIC_BOOM_ACTIVE": true },
+      "min_global_corruption_index": 8
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_004",
+      "text": "Los banqueros del distrito financiero llevan 14 días sin dormir, comprando acciones de empresas fantasma mientras ríen descontroladamente."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.10,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_004_A: Residuos de polvo alucinógeno místico en los sistemas de ventilación de la bolsa.",
+        "E_004_B: Contratos financieros cuyas cláusulas ocultas forman un circuito de resonancia mental."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "mind_architecture": 25, "secret_organizations": 10 },
+      "allowed_pathways": ["Spectator"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["beyonder_characteristic_seq7_psychiatrist", "gold_pounds_150"],
+      "knowledge_keys": ["KNOW_ORGANIZATION_PSYCHOLOGY_ALCHEMISTS"],
+      "faction_reputation": { "loen_government": 25, "church_of_steam": -10 }
+    },
+    "on_success_effects": {
+      "log_message": "Desarticula la red de manipulación mental de los Alquimistas de la Psicología.",
+      "world_state_flags_to_add": { "financial_exchange_stabilized": true },
+      "world_state_flags_to_remove": { "ECONOMIC_BOOM_ACTIVE": true },
+      "player_stat_modifiers": { "sanity_restore": 20 }
+    },
+    "on_failure_effects": {
+      "log_message": "Quiebra masiva en Backlund. El desespero colectivo alimenta el ascenso de un Semidiós enemigo.",
+      "world_state_flags_to_add": { "backlund_financial_crisis": true, "enemy_manipulator_active": true },
+      "player_stat_modifiers": { "sanity_damage": 15, "corruption_gain": 5 }
+    }
+  },
+  {
+    "id": "INV_CASE_005",
+    "name": "Los Muertos Vivientes del Muelle 9",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 85
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_PORT",
+      "sub_location_id": "LOC_PIER_9",
+      "required_weather": ["WEATHER_FOGGY", "WEATHER_RAINY"],
+      "time_restrictions": { "start_hour": 22, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 0
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_005",
+"text": "Varios estibadores que murieron por accidentes laborales la semana pasada fueron vistos descargando mercancía en el turno de noche."
+},
+"adventure_engine_mechanics": {
+"sanity_drain_per_tick": 1,
+"danger_encounter_rate_modifier": 1.05,
+"investigation_steps_required": 2,
+"evidence_pool": [
+"E_005_A: Hilos de seda invisibles al ojo humano atados a las articulaciones de los cadáveres.",
+"E_005_B: Una tarjeta de visita con una marioneta sonriente dibujada en tinta negra."
+]
+},
+"deduction_requirements": {
+"min_knowledge_points": { "mystical_pathways": 10 },
+"allowed_pathways": ["Seer", "Mystery Pryer"],
+"minimum_sequence_required": 9,
+"requires_spirit_vision": true
+},
+"rewards": {
+"items": ["potion_recipe_seq8_clown", "gold_pounds_10"],
+"knowledge_keys": ["KNOW_ORGANIZATION_SECRET_ORDER"],
+"faction_reputation": { "loen_navy": 15, "secret_order": -15 }
+},
+"on_success_effects": {
+"log_message": "Intercepción exitosa de suministros robados de la Marina de Loen.",
+"world_state_flags_to_add": { "pier_9_secured": true },
+"world_state_flags_to_remove": {},
+"player_stat_modifiers": {}
+},
+"on_failure_effects": {
+"log_message": "Los cadáveres son utilizados como marionetas humanas para cometer un atentado en el Parlamento.",
+"world_state_flags_to_add": { "parliament_assassination_crisis": true },
+"player_stat_modifiers": { "sanity_damage": 10 }
+}
+},
+  {
+    "id": "INV_CASE_006",
+    "name": "El Canto del Cisne Negro de Tingen",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "MEDIUM",
+      "required_exploration_tier": 2,
+      "base_success_chance": 60
+    },
+    "world_system_context": {
+      "region_id": "REG_TINGEN_SUBURBS",
+      "sub_location_id": "LOC_TINGEN_OPERA",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 19, "end_hour": 23 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 4
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_006",
+      "text": "Una famosa soprano de ópera hechiza tanto a su público que los asistentes empiezan a automutilarse para ofrecerle sus joyas de carne."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.10,
+      "investigation_steps_required": 3,
+      "evidence_pool": [
+        "E_006_A: Partituras musicales alteradas con caracteres de la Segunda Época (Élfico).",
+        "E_006_B: Espejos ocultos tras el escenario que absorben la vitalidad y juventud del público."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "witchcraft": 20, "demoness_sect": 10 },
+      "allowed_pathways": ["Assassin"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["witch_mirror_shard", "gold_pounds_40"],
+      "knowledge_keys": ["KNOW_PATHWAY_DEMONESS_WITCH"],
+      "faction_reputation": { "church_of_evernight": 15, "demoness_sect": -20 }
+    },
+    "on_success_effects": {
+      "log_message": "Eliminación encubierta de una Witch de Secuencia 6.",
+      "world_state_flags_to_add": { "tingen_opera_purified": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 15 }
+    },
+    "on_failure_effects": {
+      "log_message": "La soprano asciende a Secuencia 5 (Pleasure), maldiciendo el distrito cultural con histeria mística.",
+      "world_state_flags_to_add": { "district_cultural_hysteria": true, "demoness_influence_rise": true },
+      "player_stat_modifiers": { "sanity_damage": 30, "corruption_gain": 5 }
+    }
+  },
+  {
+    "id": "INV_CASE_007",
+    "name": "Las Reliquias Mutables del Museo de Historia",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 45
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_NORTH",
+      "sub_location_id": "LOC_BACKLUND_MUSEUM",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 6, "end_hour": 10 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 8
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_007",
+      "text": "Las armaduras de la época de la Guerra de los Cuatro Emperadores cambian de posición solas y emiten calor de combate al amanecer."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 2,
+      "danger_encounter_rate_modifier": 1.20,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_007_A: Cenizas de hierro que reaccionan violentamente ante agua bendita del Dios del Vapor.",
+        "E_007_B: Inscripciones rúnicas de provocación militar talladas en los escudos del museo."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "military_history": 15, "fourth_epoch_lore": 10 },
+      "allowed_pathways": ["Hunter", "Arbiter"],
+      "minimum_sequence_required": 8,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["mystical_iron_shards", "gold_pounds_60"],
+      "knowledge_keys": ["KNOW_FOURTH_EPOCH_WARS"],
+      "faction_reputation": { "church_of_steam_and_machinery": 15, "military_loen": 10 }
+    },
+    "on_success_effects": {
+      "log_message": "Recuperación de fragmentos de metal místico para forjar armas Beyonder. Estabiliza el orden en el distrito militar.",
+      "world_state_flags_to_add": { "museum_relics_secured": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "Las armaduras cobran vida de forma permanente, masacrando al personal del museo y provocando un disturbio civil masivo.",
+      "world_state_flags_to_add": { "museum_armors_hostile": true, "backlund_martial_law_risk": true },
+      "player_stat_modifiers": { "sanity_damage": 20 }
+    }
+  },
+  {
+    "id": "INV_CASE_008",
+    "name": "Los Huérfanos de la Mirada Vacía",
+    "danger_level": "FORBIDDEN",
+    "difficulty": {
+      "rating": "EXTREME",
+      "required_exploration_tier": 4,
+      "base_success_chance": 25
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_SUBURBS",
+      "sub_location_id": "LOC_ROTHWELL_ORPHANAGE",
+      "required_weather": ["WEATHER_RAINY", "WEATHER_THUNDERSTORM"],
+      "time_restrictions": { "start_hour": 0, "end_hour": 24 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 15
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_008",
+      "text": "En un orfanato privado de Rothwell, los niños han dejado de parpadear y pasan el día de rodillas frente a las plantas del jardín interior."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 6,
+      "danger_encounter_rate_modifier": 1.40,
+      "investigation_steps_required": 5,
+      "evidence_pool": [
+        "E_008_A: Pequeñas raíces de madera creciendo por debajo de las uñas de las manos de los infantes.",
+        "E_008_B: Un fetiche hecho de cabello humano trenzado con hiedras que sangra savia lechosa al ser cortado."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "outer_deities": 30, "herbology": 25 },
+      "allowed_pathways": ["Apothecary", "Planter"],
+      "minimum_sequence_required": 6,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["corrupted_sap_vial", "gold_pounds_120"],
+      "knowledge_keys": ["KNOW_OUTER_DEITIES_TREE_DESIRE"],
+      "faction_reputation": { "church_of_earth_mother": 20, "rose_school_of_thought_indulgence": -30 }
+    },
+    "on_success_effects": {
+      "log_message": "Salvación de los niños sobrevivientes y destrucción del fetiche parasitario.",
+      "world_state_flags_to_add": { "rothwell_orphanage_saved": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "permanent_corruption_gain": -1 }
+    },
+    "on_failure_effects": {
+      "log_message": "El orfanato estalla en una colmena de carne vegetal, infestando toda la sub-región con esporas de fertilidad corrupta.",
+      "world_state_flags_to_add": { "rothwell_hive_active": true, "suburbs_quarantine_active": true },
+      "player_stat_modifiers": { "permanent_corruption_gain": 5, "sanity_damage": 45 }
+    }
+  },
+  {
+    "id": "INV_CASE_009",
+    "name": "El Telégrafo de los Difuntos",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 80
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_WEST",
+      "sub_location_id": "LOC_POST_OFFICE_CENTRAL",
+      "required_weather": ["WEATHER_FOGGY"],
+      "time_restrictions": { "start_hour": 21, "end_hour": 3 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 2
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_009",
+      "text": "Las oficinas de correos de Backlund están recibiendo mensajes en código morse desde líneas telegráficas cortadas hace años."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 1,
+      "danger_encounter_rate_modifier": 1.05,
+      "investigation_steps_required": 2,
+      "evidence_pool": [
+        "E_009_A: Cintas de papel de telégrafo impresas con ectoplasma residual en lugar de tinta ordinaria.",
+        "E_009_B: Las coordenadas enviadas en los mensajes coinciden con fosas comunes sin registrar del cementerio."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "spirit_world": 15 },
+      "allowed_pathways": ["Seer", "Corpse Collector"],
+      "minimum_sequence_required": 9,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["ectoplasmic_residue_stable", "gold_pounds_15"],
+      "knowledge_keys": ["KNOW_SPIRIT_WORLD_TELEGRAPHY"],
+      "faction_reputation": { "church_of_evernight": 10 }
+    },
+    "on_success_effects": {
+      "log_message": "Contención de espíritus errantes atormentados. Aumento de confianza con los Nighthawks.",
+      "world_state_flags_to_add": { "telegraph_ghost_contained": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 5 }
+    },
+    "on_failure_effects": {
+      "log_message": "Filtración de secretos de estado a través de los telégrafos públicos, reduciendo la estabilidad del gobierno de Loen.",
+      "world_state_flags_to_add": { "loen_state_secrets_leaked": true },
+      "player_stat_modifiers": { "sanity_damage": 5 }
+    }
+  },
+  {
+    "id": "INV_CASE_010",
+    "name": "La Paradoja del Relojero de Odel",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 50
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_CHERWOOD",
+      "sub_location_id": "LOC_ODEL_WATCHES",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 10, "end_hour": 18 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 7
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_010",
+"text": "En el taller del relojero más famoso de la ciudad, los péndulos se mueven hacia atrás, pero el tiempo físico de las personas dentro del taller avanza el doble de rápido."
+},
+"adventure_engine_mechanics": {
+"sanity_drain_per_tick": 4,
+"danger_encounter_rate_modifier": 1.20,
+"investigation_steps_required": 4,
+"evidence_pool": [
+"E_010_A: Engranajes fabricados con huesos de ratas Beyonder que mutaron al absorber el efecto de un 'Gusano del Tiempo'.",
+"E_010_B: Una distorsión en el plano astral de la habitación que atrapa las almas en un bucle cerrado de 60 segundos."
+]
+},
+"deduction_requirements": {
+"min_knowledge_points": { "space_time_mechanics": 25, "jacob_family_lore": 10 },
+"allowed_pathways": ["Apprentice", "Error"],
+"minimum_sequence_required": 7,
+"requires_spirit_vision": true
+},
+"rewards": {
+"items": ["mistic_accessory_blink_charm", "gold_pounds_80"],
+"knowledge_keys": ["KNOW_PATHWAY_ERROR_TIME_LOOPS"],
+"faction_reputation": { "mi6_loen": 15 }
+},
+"on_success_effects": {
+"log_message": "Rompe el bucle temporal. El taller de Odel vuelve a la normalidad cronológica.",
+"world_state_flags_to_add": { "odel_time_loop_shattered": true },
+"world_state_flags_to_remove": {},
+"player_stat_modifiers": {}
+},
+"on_failure_effects": {
+"log_message": "El taller desaparece del mapa físico, dejando un agujero espacial donde caen los ciudadanos y quedan atrapados eternamente.",
+"world_state_flags_to_add": { "odel_workshop_dimensional_rift": true, "cherwood_map_node_locked": true },
+"player_stat_modifiers": { "sanity_damage": 25, "permanent_corruption_gain": 2 }
+}
+},
+  {
+    "id": "INV_CASE_011",
+    "name": "La Cosecha de Ojos en el Distrito Agrícola",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "MEDIUM",
+      "required_exploration_tier": 2,
+      "base_success_chance": 65
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_OUTSKIRTS",
+      "sub_location_id": "LOC_NORTH_FARMS",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 5, "end_hour": 19 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 5
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_011",
+      "text": "Los espantapájaros de los campos tienen ojos humanos reales que parpadean cuando pasa la policía ferroviaria."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 2,
+      "danger_encounter_rate_modifier": 1.12,
+      "investigation_steps_required": 3,
+      "evidence_pool": [
+        "E_011_A: Muñecos de paja rellenos de vísceras de Beyonders de la vía Apothecary sacrificados ritualmente.",
+        "E_011_B: Símbolos heréticos de apaciguamiento de la Luna Primordial grabados en las hoces de los agricultores."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "mystical_anatomy": 20, "heretic_cults": 10 },
+      "allowed_pathways": ["Apothecary", "Planter"],
+      "minimum_sequence_required": 8,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["star_root_extract", "gold_pounds_30"],
+      "knowledge_keys": ["KNOW_OUTER_DEITIES_PRIMITIVE_MOON"],
+      "faction_reputation": { "rose_school_of_thought_temperance": 15, "church_of_earth_mother": 10 }
+    },
+    "on_success_effects": {
+      "log_message": "Se rescata a un Beyonder prisionero de la facción de la templanza y se purgan los campos de espantapájaros malditos.",
+      "world_state_flags_to_add": { "north_farms_cleansed": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "El distrito agrícola sufre una hambruna mística; los alimentos cultivados en la zona causan mutaciones biológicas a la población.",
+      "world_state_flags_to_add": { "north_farms_famine_active": true },
+      "player_stat_modifiers": { "permanent_corruption_gain": 2, "max_sanity_penalty": -2 }
+    }
+  },
+  {
+    "id": "INV_CASE_012",
+    "name": "El Concierto Silencioso de la Catedral Derruida",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 85
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_EAST",
+      "sub_location_id": "LOC_ABANDONED_CHAPEL_01",
+      "required_weather": ["WEATHER_RAINY"],
+      "time_restrictions": { "start_hour": 18, "end_hour": 24 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 1
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_012",
+      "text": "Se escucha música celestial desde una antigua iglesia abandonada del distrito este, pero si entras quedas sordo al instante."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 1,
+      "danger_encounter_rate_modifier": 1.02,
+      "investigation_steps_required": 2,
+      "evidence_pool": [
+        "E_012_A: Frecuencias de sonido místicas de la Cuarta Época impresas físicamente en el polvo del suelo.",
+        "E_012_B: Un diapasón de plata maldito que vibra al ritmo exacto de los latidos del corazón del investigador."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "acoustic_mysticism": 15 },
+      "allowed_pathways": ["Bard", "Sleepless"],
+      "minimum_sequence_required": 9,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["serenity_stone_shard", "gold_pounds_15"],
+      "knowledge_keys": ["KNOW_CHURCH_EVERNIGHT_HIDDEN_PSALMS"],
+      "faction_reputation": { "church_of_evernight": 15 }
+    },
+    "on_success_effects": {
+      "log_message": "Purificación exitosa del lugar, liberando el eco espiritual atrapado.",
+      "world_state_flags_to_add": { "abandoned_chapel_01_purified": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 5 }
+    },
+    "on_failure_effects": {
+      "log_message": "La disonancia mística estalla en la mente del jugador, afectando sus sentidos espirituales.",
+      "world_state_flags_to_add": {},
+      "player_stat_modifiers": { "sanity_damage": 20, "temporary_debuff_spiritual_deafness_duration_ticks": 50 }
+    }
+  },
+  {
+    "id": "INV_CASE_013",
+    "name": "Las Monedas de la Suerte Macabra",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 45
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_HILLSIDE",
+      "sub_location_id": "LOC_STREET_GAMBLERS",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 22, "end_hour": 5 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 6
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_013",
+      "text": "Circulan monedas de oro que aparecen solas en los bolsillos; al día siguiente se gana una fortuna, pero al segundo muere toda la familia del portador."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 4,
+      "danger_encounter_rate_modifier": 1.25,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_013_A: Monedas de la dinastía Tudor grabadas con la serpiente devorándose la cola (Ouroboros).",
+        "E_013_B: Fluctuaciones extremas y anómalas en el indicador pasivo de suerte del jugador al entrar en contacto con las evidencias."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "fate_and_probability": 25 },
+      "allowed_pathways": ["Monster"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["charm_luck_balance", "gold_pounds_100"],
+      "knowledge_keys": ["KNOW_PATHWAY_MONSTER_RECONSTRUCTION"],
+      "faction_reputation": { "life_school_of_thought": 15 }
+    },
+    "on_success_effects": {
+      "log_message": "Se intercepta la fuente de las monedas y se rompe el ciclo de probabilidad corrupta que drenaba la fortuna de la sub-región.",
+      "world_state_flags_to_add": { "tudor_coins_cycle_broken": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "temporary_luck_bonus_duration_ticks": 100 }
+    },
+    "on_failure_effects": {
+      "log_message": "El jugador es infectado por una maldición probabilística de desgracia continua.",
+      "world_state_flags_to_add": { "probability_anomaly_active": true },
+      "player_stat_modifiers": { "sanity_damage": 15, "temporary_misfortune_debuff_duration_ticks": 200 }
+    }
+  },
+  {
+    "id": "INV_CASE_014",
+    "name": "La Fundición de Almas de la Siderúrgica",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 50
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_EAST",
+      "sub_location_id": "LOC_SIDERURGICA_CENTRAL",
+      "required_weather": ["WEATHER_SMOG_HEAVY"],
+      "time_restrictions": { "start_hour": 8, "end_hour": 18 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 8
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_014",
+      "text": "Las máquinas de vapor de la fundición principal funcionan sin carbón, consumiendo en su lugar los recuerdos de identidad de los obreros."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.15,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_014_A: Vapor condensado que contiene rostros humanos en miniatura atrapados gritando en los pistones.",
+        "E_014_B: Planos de maquinaria pesada modificados con geometrías heréticas por un místico renegado de la vía Savant."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "steam_engineering": 20, "mistical_geometry": 15 },
+      "allowed_pathways": ["Savant"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["steam_core_pure", "gold_pounds_120"],
+      "knowledge_keys": ["KNOW_PATHWAY_SAVANT_HERESY"],
+      "faction_reputation": { "church_of_steam_and_machinery": 20 }
+    },
+    "on_success_effects": {
+      "log_message": "Desmantelamiento del motor de fundición corrupto, salvando los fragmentos de memoria de los obreros supervivientes.",
+      "world_state_flags_to_add": { "siderurgica_central_secured": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "Pérdida masiva de conocimiento tecnológico funcional en la ciudad debido al sabotaje del plano mecánico.",
+      "world_state_flags_to_add": { "steam_infrastructure_crisis": true },
+      "player_stat_modifiers": { "sanity_damage": 20, "permanent_corruption_gain": 1 }
+    }
+  },
+  {
+    "id": "INV_CASE_015",
+    "name": "Los Libros Vivientes de la Biblioteca Central",
+    "danger_level": "FORBIDDEN",
+    "difficulty": {
+      "rating": "EXTREME",
+      "required_exploration_tier": 4,
+      "base_success_chance": 30
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_NORTH",
+      "sub_location_id": "LOC_CENTRAL_LIBRARY_ARCHIVES",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 22, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 12
+},
+"trigger_context": {
+"rumor_id": "RUMOR_015",
+"text": "Varios tomos de historia en la sección restringida han desarrollado bocas en sus lomos y devoran las manos de los estudiantes nocturnos."
+},
+"adventure_engine_mechanics": {
+"sanity_drain_per_tick": 5,
+"danger_encounter_rate_modifier": 1.35,
+"investigation_steps_required": 5,
+"evidence_pool": [
+"E_015_A: Páginas hechas de piel humana pergaminada que sangran al intentar forzar el lomo del libro.",
+"E_015_B: Tinta compuesta de polvo de cristales Beyonder rotos de la vía del Sabio Ermitaño."
+]
+},
+"deduction_requirements": {
+"min_knowledge_points": { "forbidden_literature": 30, "moses_ascetic_order_lore": 15 },
+"allowed_pathways": ["Mystery Pryer"],
+"minimum_sequence_required": 6,
+"requires_spirit_vision": true
+},
+"rewards": {
+"items": ["crystal_knowledge_powder", "gold_pounds_180"],
+"knowledge_keys": ["KNOW_DANGEROUS_MOSES_TRANSCRIPTION"],
+"faction_reputation": { "moses_ascetic_order": -25, "church_of_evernight": 15 }
+},
+"on_success_effects": {
+"log_message": "Los tomos parasitarios son sellados con éxito en cofres de plomo y plata.",
+"world_state_flags_to_add": { "library_archives_secured": true },
+"world_state_flags_to_remove": {},
+"player_stat_modifiers": { "sanity_restore": 10 }
+},
+"on_failure_effects": {
+"log_message": "El conocimiento prohibido se escapa al aire ambiente de la universidad, induciendo crisis de locura generalizada en el campus.",
+"world_state_flags_to_add": { "university_madness_outbreak": true },
+"player_stat_modifiers": { "sanity_damage": 40, "permanent_corruption_gain": 3 }
+}
+},
+  {
+    "id": "INV_CASE_016",
+    "name": "La Cofradía de los Espejos Ahogados",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 50
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_WEST",
+      "sub_location_id": "LOC_HIGH_SOCIETY_SALON",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 16, "end_hour": 23 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 7
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_016",
+      "text": "Las mujeres de la alta sociedad compran espejos compactos que muestran sus reflejos envejeciendo a cambio de otorgarles favores instantáneos de belleza mística."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.18,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_016_A: Polvo cosmético imbuido con veneno de araña espiritual de las profundidades del plano místico.",
+        "E_016_B: Residuos de hielo místico permanente en el marco de plata labrada de los espejos incautados."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "demoness_lore": 25, "witchcraft": 15 },
+      "allowed_pathways": ["Assassin"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["mirror_cam_charm", "gold_pounds_140"],
+      "knowledge_keys": ["KNOW_PATHWAY_DEMONESS_PLEASURE"],
+      "faction_reputation": { "demoness_sect": -30, "loen_government": 20 }
+    },
+    "on_success_effects": {
+      "log_message": "Interrupción de un ritual estético de absorción de almas masivo. Se desarticula la célula del culto.",
+      "world_state_flags_to_add": { "mirror_sect_shattered": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 15 }
+    },
+    "on_failure_effects": {
+      "log_message": "Varias hijas de nobles mueren simultáneamente de inanición biológica, desatando una cacería implacable y caótica en la ciudad.",
+      "world_state_flags_to_add": { "witch_hunt_crisis_active": true },
+      "player_stat_modifiers": { "sanity_damage": 25, "permanent_corruption_gain": 1 }
+    }
+  },
+  {
+    "id": "INV_CASE_017",
+    "name": "La Carne que Canta en el Matadero",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "MEDIUM",
+      "required_exploration_tier": 2,
+      "base_success_chance": 60
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_EAST",
+      "sub_location_id": "LOC_MUNICIPAL_SLAUGHTERHOUSE",
+      "required_weather": ["WEATHER_FOGGY"],
+      "time_restrictions": { "start_hour": 2, "end_hour": 8 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 9
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_017",
+      "text": "Los cerdos sacrificados en el matadero municipal siguen cantando himnos religiosos distorsionados al Verdadero Creador después de ser descuartizados."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 4,
+      "danger_encounter_rate_modifier": 1.22,
+      "investigation_steps_required": 3,
+      "evidence_pool": [
+        "E_017_A: Carne porcina combinada y mutada genéticamente con células vivas de Beyonders caídos.",
+        "E_017_B: Marcas de crucifixión invertida talladas con sangre ácida en las gancheras de acero del recinto."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "secret_organizations": 20, "heretic_symbology": 15 },
+      "allowed_pathways": ["Secrets Suppliant"],
+      "minimum_sequence_required": 8,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["aberrant_meat_samples", "gold_pounds_45"],
+      "knowledge_keys": ["KNOW_ORGANIZATION_AURORA_ORDER_FLESH"],
+      "faction_reputation": { "church_of_sun": 20, "aurora_order": -25 }
+    },
+    "on_success_effects": {
+      "log_message": "Purificación absoluta por fuego sagrado del matadero, evitando la propagación de la biomasa corrupta.",
+      "world_state_flags_to_add": { "slaughterhouse_purified": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "La carne contaminada se distribuye en los mercados públicos, aumentando el nivel de corrupción basal e infecciones de la población.",
+      "world_state_flags_to_add": { "meat_supply_contaminated": true },
+      "player_stat_modifiers": { "permanent_corruption_gain": 4, "sanity_damage": 30 }
+    }
+  },
+  {
+    "id": "INV_CASE_018",
+    "name": "La Sombra Hambrienta de la Calle de los Tintes",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 75
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_EAST",
+      "sub_location_id": "LOC_DYE_ALLEY",
+      "required_weather": ["WEATHER_CLEAR_NIGHT"],
+      "time_restrictions": { "start_hour": 23, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 0
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_018",
+      "text": "Un callejón sin salida donde las sombras de los transeúntes se desprenden de sus cuerpos y huyen hacia la oscuridad profunda de los muros."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 1,
+      "danger_encounter_rate_modifier": 1.05,
+      "investigation_steps_required": 2,
+      "evidence_pool": [
+        "E_018_A: Residuos espirituales de la habilidad 'Shadow-Flank' abandonados en el suelo empedrado.",
+        "E_018_B: Ropa vacía abandonada por víctimas civiles que perdieron su sombra y su fuerza vital por completo."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "spirit_world_entities": 15 },
+      "allowed_pathways": ["Sailor", "Sleepless"],
+      "minimum_sequence_required": 9,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["sailor_potion_ingredients_kit", "gold_pounds_25"],
+      "knowledge_keys": ["KNOW_SPIRIT_WORLD_SHADOWS"],
+      "faction_reputation": { "mandated_punishers": 10 }
+    },
+    "on_success_effects": {
+      "log_message": "Se captura o elimina al Beyonder renegado que manipulaba las sombras, restaurando el callejón.",
+      "world_state_flags_to_add": { "dye_alley_secured": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "El callejón se vuelve completamente intransitable por las noches. Desaparición continua de NPCs obreros.",
+      "world_state_flags_to_add": { "dye_alley_hazard_active": true },
+      "player_stat_modifiers": { "sanity_damage": 10 }
+    }
+  },
+  {
+    "id": "INV_CASE_019",
+    "name": "El Culto de la Rueda Dorada de la Fortuna",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 45
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_HILLSIDE",
+      "sub_location_id": "LOC_CLANDESTINE_CASINO",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 21, "end_hour": 5 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 5
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_019",
+      "text": "Un casino subterráneo ilegal donde los jugadores de alto nivel apuestan sus años de vida y juventud restantes en lugar de dinero."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.20,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_019_A: Dados hechos de falanges humanas pulidas y talladas con runas numéricas de probabilidad mística.",
+        "E_019_B: Una ruleta modificada mecánicamente que gira perpetuamente en contra de las corrientes astrales básicas."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "fate_and_probability": 30, "life_school_lore": 15 },
+      "allowed_pathways": ["Monster"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["fortune_dice_trinket", "gold_pounds_250"],
+      "knowledge_keys": ["KNOW_PATHWAY_MONSTER_WINNER"],
+      "faction_reputation": { "life_school_of_thought": 20, "loen_police": 15 }
+    },
+    "on_success_effects": {
+      "log_message": "Cierre del establecimiento y restauración mística del balance probabilístico local.",
+      "world_state_flags_to_add": { "clandestine_casino_busted": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "El dueño del casino absorbe la fortuna existencial del distrito, provocando accidentes trágicos concatenados en cadena.",
+      "world_state_flags_to_add": { "district_misfortune_plague": true },
+      "player_stat_modifiers": { "temporary_misfortune_debuff_duration_ticks": 300, "sanity_damage": 20 }
+    }
+  },
+  {
+    "id": "INV_CASE_020",
+    "name": "El Descenso de la Bruma de Cenizas",
+    "danger_level": "FORBIDDEN",
+    "difficulty": {
+      "rating": "EXTREME",
+      "required_exploration_tier": 5,
+      "base_success_chance": 20
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_SOUTH",
+      "sub_location_id": "LOC_SOUTH_CEMETERY",
+      "required_weather": ["WEATHER_FOGGY", "WEATHER_SMOG_HEAVY"],
+      "time_restrictions": { "start_hour": 1, "end_hour": 5 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": { "TAROT_CLUB_FOUNDED": true },
+"min_global_corruption_index": 20
+},
+"trigger_context": {
+"rumor_id": "RUMOR_020",
+"text": "Una niebla grisácea de denso olor azufrado se ha estancado sobre el cementerio del sur, reviviendo cadáveres antiguos en estado de momificación instantánea."
+},
+"adventure_engine_mechanics": {
+"sanity_drain_per_tick": 7,
+"danger_encounter_rate_modifier": 1.45,
+"investigation_steps_required": 5,
+"evidence_pool": [
+"E_020_A: Tierra de tumba cristalizada por una fuente de calor extremo sin marcas de fuego físico visible.",
+"E_020_B: Símbolos heréticos de un bucle infinito entrelazado con espinas grabados a fuego en las lápidas de piedra."
+]
+},
+"deduction_requirements": {
+"min_knowledge_points": { "outer_deities": 35, "cosmology": 30 },
+"allowed_pathways": ["Mystery Pryer", "Inmate", "Dancer"],
+"minimum_sequence_required": 5,
+"requires_spirit_vision": true
+},
+"rewards": {
+"items": ["inevitability_essence_vial", "gold_pounds_400"],
+"knowledge_keys": ["KNOW_FORBIDDEN_OUTER_DEITY_INEVITALITY"],
+"faction_reputation": { "church_of_evernight": 25, "tarot_club": 20 }
+},
+"on_success_effects": {
+"log_message": "Disipación completa de la bruma cósmica mediante un macro-ritual purificador severo.",
+"world_state_flags_to_add": { "south_cemetery_mist_sealed": true },
+"world_state_flags_to_remove": {},
+"player_stat_modifiers": { "sanity_restore": 30 }
+},
+"on_failure_effects": {
+"log_message": "Aparición e inyección del Jefe de Zona 'Avatar de la Inevitabilidad' en las coordenadas de simulación de Backlund Sur.",
+"world_state_flags_to_add": { "boss_avatar_inevitability_active": true, "south_cemetery_corrupted_nexus": true },
+"player_stat_modifiers": { "permanent_corruption_gain": 8, "sanity_damage": 50 }
+}
+},
+  {
+    "id": "INV_CASE_021",
+    "name": "La Farmacia de las Píldoras de Carne",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "MEDIUM",
+      "required_exploration_tier": 2,
+      "base_success_chance": 65
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_EAST",
+      "sub_location_id": "LOC_SLUMS_APOTHECARY",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 8, "end_hour": 20 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 6
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_021",
+      "text": "Se venden medicamentos milagrosos que curan cualquier enfermedad en minutos, pero los pacientes desarrollan un apetito insaciable por carne cruda."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 2,
+      "danger_encounter_rate_modifier": 1.10,
+      "investigation_steps_required": 3,
+      "evidence_pool": [
+        "E_021_A: Píldoras terapéuticas compuestas por tejido muscular de monstruos Beyonder licuados.",
+        "E_021_B: Licencia médica falsa con un sello heráldico de la Cuarta Época perteneciente a la familia Barona."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "mystical_anatomy": 22, "fourth_epoch_lore": 10 },
+      "allowed_pathways": ["Apothecary", "Planter"],
+      "minimum_sequence_required": 8,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["corrupted_flesh_extract", "gold_pounds_50"],
+      "knowledge_keys": ["KNOW_PATHWAY_APOTHECARY_BARONA"],
+      "faction_reputation": { "church_of_earth_mother": 15, "loen_police": 10 }
+    },
+    "on_success_effects": {
+      "log_message": "Arresto del farmacéutico ilegal y decomiso definitivo de la medicina contaminada.",
+      "world_state_flags_to_add": { "slums_apothecary_sealed": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "Brote de canibalismo inducido en el distrito obrero, reduciendo drásticamente el orden público.",
+      "world_state_flags_to_add": { "slums_cannibalism_outbreak": true },
+      "player_stat_modifiers": { "permanent_corruption_gain": 3, "sanity_damage": 20 }
+    }
+  },
+  {
+    "id": "INV_CASE_022",
+    "name": "Los Susurros del Calefactor de Vapor",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 80
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_NORTH",
+      "sub_location_id": "LOC_GOVERNMENT_OFFICES",
+      "required_weather": ["WEATHER_RAINY"],
+      "time_restrictions": { "start_hour": 7, "end_hour": 16 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 1
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_022",
+      "text": "Los radiadores de las oficinas gubernamentales modulan el vapor para susurrar secretos de estado confidenciales a los mecanógrafos."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 1,
+      "danger_encounter_rate_modifier": 1.05,
+      "investigation_steps_required": 2,
+      "evidence_pool": [
+        "E_022_A: Tuberías modificadas con estrías internas resonantes que imitan cuerdas vocales orgánicas.",
+        "E_022_B: Aceite de máquina imbuido con fluidos espirituales de un espectro renegado de la vía Savant."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "acoustic_mysticism": 15, "machinery_lore": 10 },
+      "allowed_pathways": ["Savant"],
+      "minimum_sequence_required": 9,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["resonating_brass_gear", "gold_pounds_35"],
+      "knowledge_keys": ["KNOW_INTIS_ESPIONAGE_NETWORKS"],
+      "faction_reputation": { "church_of_steam_and_machinery": 15, "mi6_loen": 15 }
+    },
+    "on_success_effects": {
+      "log_message": "Extracción segura del espíritu atrapado en la maquinaria, cortando la red de espionaje místico.",
+      "world_state_flags_to_add": { "government_radiators_cleansed": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "Filtración total de los planos militares de la armada de Loen hacia el imperio vecino de Intis.",
+      "world_state_flags_to_add": { "naval_intel_leaked_to_intis": true },
+      "player_stat_modifiers": { "sanity_damage": 5 }
+    }
+  },
+  {
+    "id": "INV_CASE_023",
+    "name": "El Contrabando de las Máscaras de Cera",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 50
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_PORT",
+      "sub_location_id": "LOC_BLACK_MARKET_DOCKS",
+      "required_weather": ["WEATHER_FOGGY"],
+      "time_restrictions": { "start_hour": 20, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 5
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_023",
+      "text": "Se venden máscaras de cera en el mercado negro que permiten duplicar la identidad física de nobles fallecidos con precisión perfecta."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 2,
+      "danger_encounter_rate_modifier": 1.15,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_023_A: Máscaras impregnadas con secreciones de la glándula pineal de una Face-Changer.",
+        "E_023_B: Cabello real y muestras biológicas extraídas clandestinamente de las tumbas de la aristocracia."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "mystical_pathways": 20, "secret_order_lore": 10 },
+      "allowed_pathways": ["Seer"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["wax_faceless_mold", "gold_pounds_90"],
+      "knowledge_keys": ["KNOW_PATHWAY_SEER_FACELESS"],
+      "faction_reputation": { "secret_order": -20, "loen_government": 15 }
+    },
+    "on_success_effects": {
+      "log_message": "Se detiene la red de suplantación de identidad en la corte, estabilizando los estamentos nobles.",
+      "world_state_flags_to_add": { "court_identity_theft_stopped": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "La Orden Secreta infiltra con éxito el círculo íntimo del rey, manipulando las políticas de impuestos.",
+      "world_state_flags_to_add": { "royal_court_infiltrated": true },
+      "player_stat_modifiers": { "sanity_damage": 15 }
+    }
+  },
+  {
+    "id": "INV_CASE_024",
+    "name": "El Viñedo de la Sangre Hirviente",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 45
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_OUTSKIRTS",
+      "sub_location_id": "LOC_SOUTH_VINEYARDS",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 18, "end_hour": 2 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 8
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_024",
+      "text": "Las uvas de un viñedo en las afueras crecen con sabor a vino fermentado con sangre; los catadores sufren combustión espontánea mística."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 4,
+      "danger_encounter_rate_modifier": 1.20,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_024_A: Raíces regadas con residuos alcalinos altamente concentrados de sacrificios humanos.",
+        "E_024_B: Un altar subterráneo enterrado dedicado por completo al Dios de la Indulgencia."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "secret_organizations": 24, "rose_school_lore": 15 },
+      "allowed_pathways": ["Prisoner"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["blood_cruz_chalice", "gold_pounds_110"],
+      "knowledge_keys": ["KNOW_ORGANIZATION_ROSE_SCHOOL_INDULGENCE"],
+      "faction_reputation": { "rose_school_of_thought_temperance": 20, "rose_school_of_thought_indulgence": -35 }
+    },
+    "on_success_effects": {
+      "log_message": "Destrucción total del viñedo místico corrupto y purga de sus guardianes.",
+      "world_state_flags_to_add": { "south_vineyards_purified": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "El alcohol contaminado se exporta a gran escala, provocando episodios salvajes de locura violenta en las tabernas de los muelles.",
+      "world_state_flags_to_add": { "corrupted_wine_distributed": true },
+      "player_stat_modifiers": { "permanent_corruption_gain": 3, "sanity_damage": 30 }
+    }
+  },
+  {
+    "id": "INV_CASE_025",
+    "name": "Los Niños Perdidos en el País de los Juguetes",
+    "danger_level": "FORBIDDEN",
+    "difficulty": {
+      "rating": "EXTREME",
+      "required_exploration_tier": 4,
+      "base_success_chance": 25
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_SUBURBS",
+      "sub_location_id": "LOC_ROTHWELL_WOODS",
+      "required_weather": ["WEATHER_CLEAR_NIGHT"],
+      "time_restrictions": { "start_hour": 22, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 14
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_025",
+"text": "Juguetes mecánicos de madera fina caminan solos por la noche hacia los bosques atrayendo de forma hipnótica a los niños de la comarca."
+},
+"adventure_engine_mechanics": {
+"sanity_drain_per_tick": 6,
+"danger_encounter_rate_modifier": 1.38,
+"investigation_steps_required": 5,
+"evidence_pool": [
+"E_025_A: Madera que late al tacto y posee fibras nerviosas idénticas a las del sistema nervioso humano.",
+"E_025_B: Símbolos esotéricos grabados con un patrón de ojo de tres pupilas en la base de los juguetes de madera."
+]
+},
+"deduction_requirements": {
+"min_knowledge_points": { "outer_deities": 32, "cosmology": 20 },
+"allowed_pathways": ["Mystery Pryer", "Savant"],
+"minimum_sequence_required": 6,
+"requires_spirit_vision": true
+},
+"rewards": {
+"items": ["cosmic_wooden_heart", "gold_pounds_220"],
+"knowledge_keys": ["KNOW_OUTER_DEITIES_COSMIC_WISDOM"],
+"faction_reputation": { "church_of_evernight": 20, "tarot_club": 15 }
+},
+"on_success_effects": {
+"log_message": "Rescate seguro de las almas infantiles antes de la transmutación orgánica en madera.",
+"world_state_flags_to_add": { "rothwell_woods_saved": true },
+"world_state_flags_to_remove": {},
+"player_stat_modifiers": { "sanity_restore": 20 }
+},
+"on_failure_effects": {
+"log_message": "Los niños se transforman en capullos de madera cósmica, naciendo de ellos aberraciones del plano espiritual exterior.",
+"world_state_flags_to_add": { "cosmic_aberrations_in_woods": true },
+"player_stat_modifiers": { "permanent_corruption_gain": 6, "sanity_damage": 40 }
+}
+},
+  {
+    "id": "INV_CASE_026",
+    "name": "El Correo de las Cartas Carbonizadas",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 80
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_EAST",
+      "sub_location_id": "LOC_DISTRIBUTION_POST",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 6, "end_hour": 14 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 2
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_026",
+      "text": "Cartas que llegan quemadas a sus destinatarios, pero al abrirlas transmiten una sed de sangre incontrolable a quien las lee."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 1,
+      "danger_encounter_rate_modifier": 1.08,
+      "investigation_steps_required": 2,
+      "evidence_pool": [
+        "E_026_A: Ceniza imbuida con espiritualidad hostil de la vía Hunter.",
+        "E_026_B: Sellos lacrados con el antiguo escudo heráldico de la familia Sauron."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "military_history": 15, "fourth_epoch_lore": 10 },
+      "allowed_pathways": ["Hunter"],
+      "minimum_sequence_required": 9,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["charred_sauron_emblem", "gold_pounds_20"],
+      "knowledge_keys": ["KNOW_FAMILY_SAURON_HERESY"],
+      "faction_reputation": { "military_loen": 15, "iron_blood_cross": -10 }
+    },
+    "on_success_effects": {
+      "log_message": "Se detiene la ola de provocación mística y se asegura la integridad de los envíos de la oficina postal.",
+      "world_state_flags_to_add": { "post_office_sabotage_cleared": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "Estallan motines callejeros violentos e incontrolables en el distrito este debido a la histeria inducida.",
+      "world_state_flags_to_add": { "east_district_riots_active": true },
+      "player_stat_modifiers": { "sanity_damage": 10 }
+    }
+  },
+  {
+    "id": "INV_CASE_027",
+    "name": "El Manicomio de las Puertas Inexistentes",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 45
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_SUBURBS",
+      "sub_location_id": "LOC_ASYLUM_WARD_7",
+      "required_weather": ["WEATHER_FOGGY"],
+      "time_restrictions": { "start_hour": 0, "end_hour": 24 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 8
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_027",
+      "text": "Los médicos de un asilo psiquiátrico han desaparecido; los pacientes afirman que entraron en un pasillo pintado burdamente en la pared."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 4,
+      "danger_encounter_rate_modifier": 1.25,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_027_A: Residuos astrales de un viaje dimensional forzado de baja escala.",
+        "E_027_B: Pinturas murales cuya geometría no euclidiana altera pasivamente el espacio tridimensional de la celda."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "space_time_mechanics": 24, "abnormal_psychology": 15 },
+      "allowed_pathways": ["Apprentice"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["spatial_anchor_stone", "gold_pounds_130"],
+      "knowledge_keys": ["KNOW_PATHWAY_APPRENTICE_TRAVELLER"],
+      "faction_reputation": { "psychology_alchemists": 15, "church_of_evernight": 10 }
+    },
+    "on_success_effects": {
+      "log_message": "Cierre definitivo de la brecha espacial y recuperación a salvo de los médicos atrapados en el plano espiritual.",
+      "world_state_flags_to_add": { "asylum_rift_sealed": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 15 }
+    },
+    "on_failure_effects": {
+      "log_message": "El pabellón del manicomio colapsa en un agujero negro místico, tragándose tres manzanas del distrito residencial periférico.",
+      "world_state_flags_to_add": { "asylum_spatial_collapse": true, "suburbs_node_damaged": true },
+      "player_stat_modifiers": { "sanity_damage": 35, "permanent_corruption_gain": 2 }
+    }
+  },
+  {
+    "id": "INV_CASE_028",
+    "name": "El Ritual del Pescado con Rostro Humano",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "MEDIUM",
+      "required_exploration_tier": 2,
+      "base_success_chance": 60
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_PORT",
+      "sub_location_id": "LOC_FISHERMAN_WHARF",
+      "required_weather": ["WEATHER_RAINY", "WEATHER_THUNDERSTORM"],
+      "time_restrictions": { "start_hour": 18, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 5
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_028",
+      "text": "Los pescadores del norte adoran a un pez gigante con rostro de mujer que les exige sacrificar a sus primogénitos a cambio de pescas abundantes."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.15,
+      "investigation_steps_required": 3,
+      "evidence_pool": [
+        "E_028_A: Escamas de pez abisal que contienen grabados con patrones de runas de tormenta corruptas.",
+        "E_028_B: Agua marina densa en los barriles que no se evapora y mantiene un color negro espeso constante."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "sea_legends": 20, "heretic_cults": 15 },
+      "allowed_pathways": ["Sailor"],
+      "minimum_sequence_required": 8,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["corrupted_storm_scale", "gold_pounds_75"],
+      "knowledge_keys": ["KNOW_PATHWAY_SAILOR_CORRUPTION"],
+      "faction_reputation": { "mandated_punishers": 25 }
+    },
+    "on_success_effects": {
+      "log_message": "Aniquilación de la criatura marina Beyonder y arresto de los líderes de la secta costera.",
+      "world_state_flags_to_add": { "fisherman_wharf_purified": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "Tsunamis localizados destruyen las instalaciones del muelle, deteniendo el comercio marítimo por completo.",
+      "world_state_flags_to_add": { "port_tsunami_damage_active": true, "port_trade_blocked": true },
+      "player_stat_modifiers": { "sanity_damage": 20, "permanent_corruption_gain": 1 }
+    }
+  },
+  {
+    "id": "INV_CASE_029",
+    "name": "Los Espejos Sin Reflejo de la Ópera",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 85
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_TINGEN",
+      "sub_location_id": "LOC_TINGEN_THEATER",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 14, "end_hour": 22 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 2
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_029",
+      "text": "Los grandes espejos del vestíbulo de la ópera real han dejado de reflejar los cuerpos de las personas que visten prendas de color rojo."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 1,
+      "danger_encounter_rate_modifier": 1.05,
+      "investigation_steps_required": 2,
+      "evidence_pool": [
+        "E_029_A: Hilos invisibles de maldición espiritual adheridos a los marcos de los espejos.",
+        "E_029_B: Residuos de aceites corporales exóticos utilizados en rituales de adivinación por Beyonders de la vía Witch."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "witchcraft": 18, "demoness_sect": 10 },
+      "allowed_pathways": ["Assassin", "Mystery Pryer"],
+      "minimum_sequence_required": 9,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["refined_makeup_vial", "gold_pounds_30"],
+      "knowledge_keys": ["KNOW_ORGANIZATION_DEMONESS_NETWORKS"],
+      "faction_reputation": { "church_of_evernight": 15, "demoness_sect": -15 }
+    },
+    "on_success_effects": {
+      "log_message": "Purificación de los espejos del teatro, cortando el espionaje místico masivo a la alta sociedad.",
+      "world_state_flags_to_add": { "ting_theater_mirrors_cleansed": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "La Secta de las Demonisas chantajea con éxito a tres ministros clave usando secretos sensibles obtenidos del reflejo inverso.",
+      "world_state_flags_to_add": { "political_blackmail_crisis_active": true },
+      "player_stat_modifiers": { "sanity_damage": 10 }
+    }
+  },
+  {
+    "id": "INV_CASE_030",
+    "name": "El Oro Alquímico de las Alcantarillas",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "MEDIUM",
+      "required_exploration_tier": 2,
+      "base_success_chance": 55
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_HILLSIDE",
+      "sub_location_id": "LOC_UNDERGROUND_SEWERS_03",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 0, "end_hour": 24 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 4
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_030",
+"text": "Un alquimista loco está transmutando la basura de los suburbios en lingotes de oro puro que se derriten en ácido sulfúrico místico tras 24 horas."
+},
+"adventure_engine_mechanics": {
+"sanity_drain_per_tick": 2,
+"danger_encounter_rate_modifier": 1.12,
+"investigation_steps_required": 3,
+"evidence_pool": [
+"E_030_A: Lingotes de oro falso imbuido con energía espiritual inestable de transmutación fallida.",
+"E_030_B: Planos técnicos de un crisol de alquimia portátil abandonados en un refugio provisional."
+]
+},
+"deduction_requirements": {
+"min_knowledge_points": { "alchemical_foundations": 22, "machinery_lore": 10 },
+"allowed_pathways": ["Savant"],
+"minimum_sequence_required": 8,
+"requires_spirit_vision": false
+},
+"rewards": {
+"items": ["portable_alchemical_crucible_gr3", "gold_pounds_50"],
+"knowledge_keys": ["KNOW_PATHWAY_SAVANT_TRANSMUTATION"],
+"faction_reputation": { "church_of_steam_and_machinery": 15 }
+},
+"on_success_effects": {
+"log_message": "Captura del alquimista renegado y confiscación total de sus notas de investigación mística.",
+"world_state_flags_to_add": { "sewer_alchemist_detained": true },
+"world_state_flags_to_remove": {},
+"player_stat_modifiers": { "sanity_restore": 5 }
+},
+"on_failure_effects": {
+"log_message": "Se produce un colapso económico inflacionario en los mercados locales debido a la circulación incontrolada de oro falso.",
+"world_state_flags_to_add": { "suburbs_inflation_crisis": true },
+"player_stat_modifiers": { "sanity_damage": 15 }
+}
+}, 
+  {
+    "id": "INV_CASE_031",
+    "name": "La Sombra del Verdugo del Rey",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 45
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_NORTH",
+      "sub_location_id": "LOC_ROYAL_PRISON",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 23, "end_hour": 3 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 6
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_031",
+      "text": "Un verdugo fantasma ejecuta por las noches a criminales encarcelados antes de sus juicios públicos, extrayendo sus corazones sin forzar las celdas."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.20,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_031_A: Cortes milimétricos perfectos en el cuello realizados con un arma mística translúcida.",
+        "E_031_B: Ausencia total de huellas físicas o espirituales dentro de las celdas de máxima seguridad."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "law_and_order_mysticism": 26, "royal_family_secrets": 15 },
+      "allowed_pathways": ["Arbiter"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["executioner_blade_fragment", "gold_pounds_160"],
+      "knowledge_keys": ["KNOW_PATHWAY_ARBITER_JUDGE"],
+      "faction_reputation": { "royal_family_loen": 10, "mi6_loen": 15 }
+    },
+    "on_success_effects": {
+      "log_message": "Se descubre la conspiración de ejecución estatal sin comprometer la vida del jugador, ganando inmunidad temporal.",
+      "world_state_flags_to_add": { "executioner_conspiracy_uncovered": true, "player_has_immunity_flag": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "El jugador se convierte en el próximo objetivo prioritario del verdugo real al ser catalogado como traidor.",
+      "world_state_flags_to_add": { "player_hunted_by_executioner": true },
+      "player_stat_modifiers": { "sanity_damage": 30, "permanent_corruption_gain": 1 }
+    }
+  },
+  {
+    "id": "INV_CASE_032",
+    "name": "Las Estatuas Lloronas del Cementerio Oeste",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 85
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_SUBURBS",
+      "sub_location_id": "LOC_WEST_CEMENTERY",
+      "required_weather": ["WEATHER_FOGGY"],
+      "time_restrictions": { "start_hour": 17, "end_hour": 21 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 2
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_032",
+      "text": "Los ángeles de piedra del cementerio lloran un líquido negro que induce un sueño profundo y letal a todo aquel que lo toca durante el crepúsculo."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 1,
+      "danger_encounter_rate_modifier": 1.05,
+      "investigation_steps_required": 2,
+      "evidence_pool": [
+        "E_032_A: Agua destilada del río Styx (Inframundo) filtrándose por microfisuras en el mármol antiguo.",
+        "E_032_B: Hierba de la oscuridad creciendo de forma inusualmente acelerada alrededor de los monumentos afectados."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "spirit_world": 15, "underworld_lore": 10 },
+      "allowed_pathways": ["Corpse Collector", "Sleepless"],
+      "minimum_sequence_required": 9,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["styx_water_vial", "gold_pounds_25"],
+      "knowledge_keys": ["KNOW_UNDERWORLD_GATES_LOC"],
+      "faction_reputation": { "church_of_evernight": 20 }
+    },
+    "on_success_effects": {
+      "log_message": "Sellado exitoso de la microfisura con el plano espiritual inferior, deteniendo el flujo del agua corrupta.",
+      "world_state_flags_to_add": { "west_cemetery_crack_sealed": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "cemetery_sanity_loss_resistance": 0.10 }
+    },
+    "on_failure_effects": {
+      "log_message": "Un brote denso de espectros de bajo rango invade las calles residenciales adyacentes al camposanto.",
+      "world_state_flags_to_add": { "suburbs_ghost_infestation_active": true },
+      "player_stat_modifiers": { "sanity_damage": 15 }
+    }
+  },
+  {
+    "id": "INV_CASE_033",
+    "name": "El Banquete de los Mendigos Corpulentos",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "MEDIUM",
+      "required_exploration_tier": 2,
+      "base_success_chance": 60
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_EAST",
+      "sub_location_id": "LOC_CLANDESTINE_SOUP_KITCHEN",
+      "required_weather": ["WEATHER_SMOG_HEAVY"],
+      "time_restrictions": { "start_hour": 20, "end_hour": 2 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 9
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_033",
+      "text": "Mendigos del distrito este que sufrían hambruna extrema engordan 50 kilos de pura masa muscular en una sola noche tras asistir a una cena caritativa secreta."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 4,
+      "danger_encounter_rate_modifier": 1.22,
+      "investigation_steps_required": 3,
+      "evidence_pool": [
+        "E_033_A: Células de tejido conectivo humano hipertrofiadas mediante magia mística biológica de transmutación.",
+        "E_033_B: Panfletos clandestinos con el salmo distorsionado del Dios del Sufrimiento Profundo."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "secret_organizations": 20, "aberrant_biology": 15 },
+      "allowed_pathways": ["Secrets Suppliant"],
+      "minimum_sequence_required": 8,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["flesh_goliath_schematic", "gold_pounds_60"],
+      "knowledge_keys": ["KNOW_AURORA_ORDER_FLESH_TITANS"],
+      "faction_reputation": { "church_of_sun": 20, "aurora_order": -30 }
+    },
+    "on_success_effects": {
+      "log_message": "Interrupción táctica del comedor clandestino y desmantelamiento del ritual de creación de Goliaths de Carne.",
+      "world_state_flags_to_add": { "soup_kitchen_cult_busted": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "Los mendigos mutados explotan en plazas públicas, liberando una toxina volátil que infecta a cientos de obreros textiles.",
+      "world_state_flags_to_add": { "flesh_plague_east_district": true },
+      "player_stat_modifiers": { "permanent_corruption_gain": 5, "sanity_damage": 35 }
+    }
+  },
+  {
+    "id": "INV_CASE_034",
+    "name": "El Reloj de Sol de la Luz Eterna",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 50
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_SUBURBS",
+      "sub_location_id": "LOC_HERETIC_ALTAR_SOLAR",
+      "required_weather": ["WEATHER_CLEAR_NIGHT"],
+      "time_restrictions": { "start_hour": 0, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 7
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_034",
+      "text": "Un reloj de sol antiguo deserrumbado emite una luz solar cegadora a medianoche, calcinando de forma espontánea a vampiros y Beyonders de la vía criminal."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.15,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_034_A: Piedra caliza antigua imbuida con plasma solar concentrado en estado inestable.",
+        "E_034_B: Inscripciones teológicas radicales que exigen la purga total por fuego de todas las demás iglesias del reino."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "theological_schisms": 22, "solar_geometry": 15 },
+      "allowed_pathways": ["Bard", "Sun"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["unstable_solar_core", "gold_pounds_110"],
+      "knowledge_keys": ["KNOW_CHURCH_SUN_HERETICAL_TEXTS"],
+      "faction_reputation": { "church_of_sun": -25, "church_of_evernight": 20 }
+    },
+    "on_success_effects": {
+      "log_message": "Neutralización exitosa del artefacto solar inestable antes de que detone su frecuencia destructiva.",
+      "world_state_flags_to_add": { "heretic_sundial_disabled": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "Estalla una guerra civil teológica de baja intensidad entre facciones extremistas solares y los feligreses locales de las Tormentas.",
+      "world_state_flags_to_add": { "religious_suburb_war_active": true },
+      "player_stat_modifiers": { "sanity_damage": 20 }
+    }
+  },
+  {
+    "id": "INV_CASE_035",
+    "name": "El Contrato del Abogado de Sombras",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "MEDIUM",
+      "required_exploration_tier": 2,
+      "base_success_chance": 55
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_CHERWOOD",
+      "sub_location_id": "LOC_LAW_COURTS_CHERWOOD",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 9, "end_hour": 17 }
+    },
+"world_state_manager_requirements": {
+"global_flags_required": {},
+"min_global_corruption_index": 5
+},
+"trigger_context": {
+"rumor_id": "RUMOR_035",
+"text": "Un nuevo abogado corporativo de Intis gana todos sus litigios forzando de alguna manera a los jueces a firmar acuerdos con tinta invisible que les destruye la cordura."
+},
+"adventure_engine_mechanics": {
+"sanity_drain_per_tick": 2,
+"danger_encounter_rate_modifier": 1.12,
+"investigation_steps_required": 3,
+"evidence_pool": [
+"E_035_A: Documentos legales redactados con sintaxis corrupta que explota bucles en el plano espiritual.",
+"E_035_B: Monedas de platino con la efigie distorsionada del Emperador Roselle ocultas bajo los despachos."
+]
+},
+"deduction_requirements": {
+"min_knowledge_points": { "law_and_order_mysticism": 20, "intis_history": 15 },
+"allowed_pathways": ["Lawyer"],
+"minimum_sequence_required": 8,
+"requires_spirit_vision": true
+},
+"rewards": {
+"items": ["corrupted_law_seal", "gold_pounds_140"],
+"knowledge_keys": ["KNOW_PATHWAY_LAWYER_BARON"],
+"faction_reputation": { "loen_government": 20, "intis_intelligence": -25 }
+},
+"on_success_effects": {
+"log_message": "Anulación mística de los contratos judiciales amañados y encarcelamiento del abogado infiltrado en las cortes.",
+"world_state_flags_to_add": { "corrupted_lawyer_captured": true },
+"world_state_flags_to_remove": {},
+"player_stat_modifiers": { "sanity_restore": 10 }
+},
+"on_failure_effects": {
+"log_message": "El sistema legal de la provincia colapsa administrativamente, permitiendo que los delitos Beyonder de alta escala no dejen rastro oficial.",
+"world_state_flags_to_add": { "judicial_corruption_crisis": true },
+"player_stat_modifiers": { "sanity_damage": 15 }
+}
+},
+  {
+    "id": "INV_CASE_036",
+    "name": "La Marioneta de Carne del Teatro Real",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 45
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_NORTH",
+      "sub_location_id": "LOC_ROYAL_THEATER",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 18, "end_hour": 23 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 7
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_036",
+      "text": "El actor principal del teatro dramático actúa con movimientos mecánicos perfectos; al tocar su piel, esta se siente fría como la madera pulida."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 4,
+      "danger_encounter_rate_modifier": 1.25,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_036_A: Reemplazo total de los órganos internos del actor por engranajes de madera mística y resortes.",
+        "E_036_B: Hilos astrales y filamentos espirituales conectados directamente a un palco vacío del teatro."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "mystical_pathways": 25, "secret_order_lore": 15 },
+      "allowed_pathways": ["Seer"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["marionette_eye_lens", "gold_pounds_150"],
+      "knowledge_keys": ["KNOW_PATHWAY_SEER_MARIONETTIST"],
+      "faction_reputation": { "royal_family_loen": 15, "secret_order": -30 }
+    },
+    "on_success_effects": {
+      "log_message": "Destrucción de la marioneta y retirada del Marionetista enemigo de la escena, salvando al elenco.",
+      "world_state_flags_to_add": { "royal_theater_marionette_destroyed": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 15 }
+    },
+    "on_failure_effects": {
+      "log_message": "El teatro real es masacrado por completo durante una función de gala ante la asistencia de la alta nobleza.",
+      "world_state_flags_to_add": { "royal_theater_massacre": true, "high_society_panic": true },
+      "player_stat_modifiers": { "sanity_damage": 30, "permanent_corruption_gain": 2 }
+    }
+  },
+  {
+    "id": "INV_CASE_037",
+    "name": "El Diario del Marinero Ahogado",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 85
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_PORT",
+      "sub_location_id": "LOC_TAVERN_DOCKS",
+      "required_weather": ["WEATHER_RAINY"],
+      "time_restrictions": { "start_hour": 20, "end_hour": 2 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 1
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_037",
+      "text": "Un diario recuperado de un naufragio se escribe solo por las noches, detallando los tesoros submarinos de una isla fantasma mística."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 1,
+      "danger_encounter_rate_modifier": 1.05,
+      "investigation_steps_required": 2,
+      "evidence_pool": [
+        "E_037_A: Tinta hecha con savia de algas espirituales abisales que reacciona a la humedad ambiente.",
+        "E_037_B: Presión mística extrema que emana de las páginas simulando la profundidad física del océano."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "sea_legends": 18, "abyssal_lore": 10 },
+      "allowed_pathways": ["Sailor"],
+      "minimum_sequence_required": 9,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["abyssal_ink_well", "gold_pounds_40"],
+      "knowledge_keys": ["KNOW_SONA_ISLAND_COORDINATES"],
+      "faction_reputation": { "church_of_storms": 15 }
+    },
+    "on_success_effects": {
+      "log_message": "Descifrado exitoso de las coordenadas geográficas estables en el plano marítimo.",
+      "world_state_flags_to_add": { "sona_island_route_unlocked": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "El diario induce una maldición de ahogamiento ilusorio en tierra firme a quien intente destruirlo sin los rituales.",
+      "world_state_flags_to_add": { "drowning_curse_active": true },
+      "player_stat_modifiers": { "sanity_damage": 20, "max_sanity_penalty": -3 }
+    }
+  },
+  {
+    "id": "INV_CASE_038",
+    "name": "Las Velas de Grasa de Bruja",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 50
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_WEST",
+      "sub_location_id": "LOC_LUXURY_BROTHEL",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 22, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 8
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_038",
+      "text": "Se venden velas negras aromáticas en los burdeles de lujo que inducen sueños eróticos colectivos donde los hombres pierden su fuerza vital."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.18,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_038_A: Cera compuesta por manteca de Beyonders femeninos de la vía Assassin sacrificados ritualmente.",
+        "E_038_B: Aroma químico místico que anula la resistencia pasiva del objetivo a los ataques de tipo espiritual."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "witchcraft": 21, "demoness_sect": 15 },
+      "allowed_pathways": ["Assassin"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["black_witch_wax", "gold_pounds_120"],
+      "knowledge_keys": ["KNOW_PATHWAY_DEMONESS_AFFILIATIONS"],
+      "faction_reputation": { "demoness_sect": -25, "church_of_evernight": 15 }
+    },
+    "on_success_effects": {
+      "log_message": "Cierre e incineración de los burdeles clandestinos controlados por la Secta de las Demonisas.",
+      "world_state_flags_to_add": { "luxury_brothel_cells_purged": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "Fallecimiento masivo por desgaste biológico de jóvenes herederos de la aristocracia de Loen, causando caos político.",
+      "world_state_flags_to_add": { "aristocracy_succession_crisis": true },
+      "player_stat_modifiers": { "sanity_damage": 20, "permanent_corruption_gain": 1 }
+    }
+  },
+  {
+    "id": "INV_CASE_039",
+    "name": "El Taller de Muñecas Sin Rostro",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 75
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_SUBURBS",
+      "sub_location_id": "LOC_TOY_WORKSHOP",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 8, "end_hour": 17 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 3
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_039",
+      "text": "Un artesano de juguetes fabrica muñecas de porcelana que copian las facciones exactas del rostro de los clientes, dejándolos desfigurados."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 1,
+      "danger_encounter_rate_modifier": 1.05,
+      "investigation_steps_required": 2,
+      "evidence_pool": [
+        "E_039_A: Porcelana mística imbuida con fragmentos de alma atrapados de la vía Seer.",
+        "E_039_B: Herramientas de modelado de arcilla bendecidas secretamente por un dios herético menor."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "alchemical_foundations": 16, "mystical_anatomy": 10 },
+      "allowed_pathways": ["Savant", "Seer"],
+      "minimum_sequence_required": 9,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["porcelain_mask_artifact_gr3", "gold_pounds_45"],
+      "knowledge_keys": ["KNOW_HERETIC_ARTISAN_METHODS"],
+      "faction_reputation": { "church_of_steam_and_machinery": 10 }
+    },
+    "on_success_effects": {
+      "log_message": "Neutralización del artesano desquiciado. El artefacto 'Máscara de Porcelana' es asegurado para el jugador.",
+      "world_state_flags_to_add": { "toy_workshop_neutralized": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "Aparición masiva de decenas de ciudadanos desfigurados y zombificados vagando por los suburbios, colapsando el orden.",
+      "world_state_flags_to_add": { "suburbs_faceless_panhandlers": true },
+      "player_stat_modifiers": { "sanity_damage": 15 }
+    }
+  },
+  {
+    "id": "INV_CASE_040",
+    "name": "El Festín de la Luna Llena",
+    "danger_level": "FORBIDDEN",
+    "difficulty": {
+      "rating": "EXTREME",
+      "required_exploration_tier": 4,
+      "base_success_chance": 30
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_CHERWOOD",
+      "sub_location_id": "LOC_MEDICAL_FACULTY_BASEMENT",
+      "required_weather": ["WEATHER_FULL_MOON"],
+      "time_restrictions": { "start_hour": 21, "end_hour": 3 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 12
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_040",
+"text": "En los sótanos de la Facultad de Medicina, los anatomistas realizan banquetes secretos con carne de monstruos lunares durante la luna llena."
+},
+"adventure_engine_mechanics": {
+"sanity_drain_per_tick": 5,
+"danger_encounter_rate_modifier": 1.35,
+"investigation_steps_required": 5,
+"evidence_pool": [
+"E_040_A: Sangre alterada mística que brilla con un tono carmesí fosforescente bajo la luz nocturna.",
+"E_040_B: Esquemas de disección y evolución biológica acelerada que contradicen la ciencia médica oficial."
+]
+},
+"deduction_requirements": {
+"min_knowledge_points": { "outer_deities": 34, "mystical_anatomy": 20 },
+"allowed_pathways": ["Apothecary"],
+"minimum_sequence_required": 6,
+"requires_spirit_vision": true
+},
+"rewards": {
+"items": ["lunar_beast_tendon", "gold_pounds_200"],
+"knowledge_keys": ["KNOW_OUTER_DEITIES_PRIMITIVE_MOON_BLOOD"],
+"faction_reputation": { "church_of_earth_mother": 20, "rose_school_of_thought_temperance": 15 }
+},
+"on_success_effects": {
+"log_message": "Purga drástica de los anatomistas corruptos de la facultad, sellando los accesos contaminados.",
+"world_state_flags_to_add": { "medical_faculty_basement_purged": true },
+"world_state_flags_to_remove": {},
+"player_stat_modifiers": { "sanity_restore": 20 }
+},
+"on_failure_effects": {
+"log_message": "Infiltración total del culto en el sistema de salud pública; la tasa de infección por veneno místico sube globalmente.",
+"world_state_flags_to_add": { "public_health_infiltrated_by_moon": true },
+"player_stat_modifiers": { "permanent_corruption_gain": 5, "sanity_damage": 35 }
+}
+}, 
+  {
+    "id": "INV_CASE_041",
+    "name": "El Ferrocarril Fantasma de la Línea Norte",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 45
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_OUTSKIRTS",
+      "sub_location_id": "LOC_NORTH_RAILWAY_TRACKS",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 2, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 7
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_041",
+      "text": "Un tren de carga militar que fue destruido en la última guerra civil aparece en las vías a las 03:00, arrollando patrullas policiales."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.22,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_041_A: Residuos magnéticos anómalos en los rieles que pertenecen al espectro del plano espiritual.",
+        "E_041_B: Una linterna de señales ferroviarias de bronce que proyecta una luz verde mística intermitente."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "space_time_mechanics": 26, "fourth_epoch_lore": 10 },
+      "allowed_pathways": ["Apprentice", "Error"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["spatial_iron_bars", "gold_pounds_140"],
+      "knowledge_keys": ["KNOW_PATHWAY_APPRENTICE_DOOR"],
+      "faction_reputation": { "military_loen": 20 }
+    },
+    "on_success_effects": {
+      "log_message": "Se disipa la proyección espacial del tren atrapado en el bucle astral, estabilizando las líneas ferroviarias.",
+      "world_state_flags_to_add": { "north_line_railway_stabilized": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "Bloquea por completo el transporte ferroviario de la corona de Loen, ralentizando drásticamente la economía del reino.",
+      "world_state_flags_to_add": { "loen_railway_transport_blocked": true },
+      "player_stat_modifiers": { "sanity_damage": 20, "permanent_corruption_gain": 2 }
+    }
+  },
+  {
+    "id": "INV_CASE_042",
+    "name": "Las Monedas de la Traición Invertida",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "MEDIUM",
+      "required_exploration_tier": 2,
+      "base_success_chance": 60
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_CHERWOOD",
+      "sub_location_id": "LOC_TAX_OFFICE_CENTRAL",
+      "required_weather": ["WEATHER_SMOG_HEAVY"],
+      "time_restrictions": { "start_hour": 8, "end_hour": 16 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 5
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_042",
+      "text": "Monedas de plata circulando entre los cobradores de impuestos hacen que las personas denuncien falsamente a sus propios vecinos por traición a la corona."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 2,
+      "danger_encounter_rate_modifier": 1.15,
+      "investigation_steps_required": 3,
+      "evidence_pool": [
+        "E_042_A: Plata corrupta grabada con treinta marcas microscópicas en los bordes perimetrales.",
+        "E_042_B: Aumento estadístico e injustificado de la tasa de criminalidad y denuncias civiles en el distrito."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "secret_organizations": 20, "heretic_symbology": 10 },
+      "allowed_pathways": ["Secrets Suppliant", "Lawyer"],
+      "minimum_sequence_required": 8,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["corrupted_silver_pieces", "gold_pounds_80"],
+      "knowledge_keys": ["KNOW_ORGANIZATION_AURORA_ORDER_COINS"],
+      "faction_reputation": { "loen_government": 20, "aurora_order": -20 }
+    },
+    "on_success_effects": {
+      "log_message": "Retirada exitosa de las monedas malditas de los bancos públicos de Cherwood, estabilizando el orden civil.",
+      "world_state_flags_to_add": { "tax_office_corruption_purged": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "El índice de paranoia gubernamental sube al máximo nivel, suspendiendo temporalmente el despliegue de misiones civiles.",
+      "world_state_flags_to_add": { "paranoia_martial_law_risk": true },
+      "player_stat_modifiers": { "sanity_damage": 15 }
+    }
+  },
+  {
+    "id": "INV_CASE_043",
+    "name": "El Creador de Espejismos del Distrito Comercial",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 80
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_HILLSIDE",
+      "sub_location_id": "LOC_LUXURY_BOULEVARD",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 10, "end_hour": 19 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 2
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_043",
+      "text": "Tiendas de lujo flotantes e ilusorias venden joyas invisibles que los compradores juran ver y tocar con perfecta claridad mística."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 1,
+      "danger_encounter_rate_modifier": 1.05,
+      "investigation_steps_required": 2,
+      "evidence_pool": [
+        "E_043_A: Hipnosis colectiva residual inducida mediante ondas de choque espirituales de baja frecuencia.",
+        "E_043_B: Facturas y pagarés bancarios falsificados con total precisión mediante sugestión mental."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "mind_architecture": 18, "abnormal_psychology": 10 },
+      "allowed_pathways": ["Spectator"],
+      "minimum_sequence_required": 9,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["essence_crystal_powder", "gold_pounds_55"],
+      "knowledge_keys": ["KNOW_PATHWAY_SPECTATOR_HYPNOSIS"],
+      "faction_reputation": { "psychology_alchemists": -15, "loen_police": 15 }
+    },
+    "on_success_effects": {
+      "log_message": "Se deshace por completo el fraude mental masivo, devolviendo la lucidez a los aristócratas estafados.",
+      "world_state_flags_to_add": { "luxury_boulevard_mirages_cleared": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "Decenas de grandes mercaderes adinerados caen en la bancarrota absoluta tras comprar bienes puramente ilusorios.",
+      "world_state_flags_to_add": { "hillside_merchant_bankruptcy": true },
+      "player_stat_modifiers": { "sanity_damage": 10 }
+    }
+  },
+  {
+    "id": "INV_CASE_044",
+    "name": "La Peste de los Libros de Contabilidad",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 50
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_NORTH",
+      "sub_location_id": "LOC_MINISTRY_FINANCE_ARCHIVES",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 20, "end_hour": 2 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 6
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_044",
+      "text": "Los contables del Ministerio de Finanzas enferman súbitamente de ceguera mística tras revisar los balances de importación de antigüedades del Continente Sur."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.18,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_044_A: Cifras numéricas escritas con tinta mística infundida con runas latentes de maldición visual.",
+        "E_044_B: Olor a pergamino milenario quemado con azufre concentrado en las salas de archivo estatales."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "forbidden_literature": 24, "moses_ascetic_order_lore": 10 },
+      "allowed_pathways": ["Mystery Pryer"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["blindness_curse_inkwell", "gold_pounds_120"],
+      "knowledge_keys": ["KNOW_ORGANIZATION_MOSES_ASCETIC_CONSPIRACY"],
+      "faction_reputation": { "moses_ascetic_order": -30, "loen_government": 20 }
+    },
+    "on_success_effects": {
+      "log_message": "Purificación de los registros financieros y cura definitiva de la ceguera inducida a los funcionarios públicos.",
+      "world_state_flags_to_add": { "finance_ministry_archives_cleansed": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "El gobierno de Loen pierde el rastro fiscal de las transacciones místicas de la ciudad, facilitando el contrabando ilegal masivo.",
+      "world_state_flags_to_add": { "mystical_contraband_unmonitored": true },
+      "player_stat_modifiers": { "sanity_damage": 20, "permanent_corruption_gain": 1 }
+    }
+  },
+  {
+    "id": "INV_CASE_045",
+    "name": "El Ídolo de Carne de la Tribu Fluvial",
+    "danger_level": "FORBIDDEN",
+    "difficulty": {
+      "rating": "EXTREME",
+      "required_exploration_tier": 4,
+      "base_success_chance": 25
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_PORT",
+      "sub_location_id": "LOC_UNDERGROUND_SEWER_OUTLET",
+      "required_weather": ["WEATHER_RAINY", "WEATHER_THUNDERSTORM"],
+"time_restrictions": { "start_hour": 23, "end_hour": 5 }
+},
+"world_state_manager_requirements": {
+"global_flags_required": {},
+"min_global_corruption_index": 11
+},
+"trigger_context": {
+"rumor_id": "RUMOR_045",
+"text": "Una pequeña secta de marineros adora a una aberrante estatua de arcilla que crece en tamaño a medida que absorbe falanges amputadas de sus fieles."
+},
+"adventure_engine_mechanics": {
+"sanity_drain_per_tick": 5,
+"danger_encounter_rate_modifier": 1.35,
+"investigation_steps_required": 5,
+"evidence_pool": [
+"E_045_A: Arcilla combinada molecularmente con tejido conectivo óseo humano en estado vivo.",
+"E_045_B: Símbolos heréticos de la vía Prisoner profundamente tallados con ácido en la base de la estatua."
+]
+},
+"deduction_requirements": {
+"min_knowledge_points": { "secret_organizations": 30, "aberrant_biology": 20 },
+"allowed_pathways": ["Prisoner"],
+"minimum_sequence_required": 6,
+"requires_spirit_vision": true
+},
+"rewards": {
+"items": ["beyonder_characteristic_seq6_zombie", "gold_pounds_180"],
+"knowledge_keys": ["KNOW_PATHWAY_PRISONER_ZOMBIE"],
+"faction_reputation": { "rose_school_of_thought_temperance": 20, "rose_school_of_thought_indulgence": -35 }
+},
+"on_success_effects": {
+"log_message": "Destrucción total del ídolo de carne en expansión y purificación del efluente contaminado del alcantarillado.",
+"world_state_flags_to_add": { "river_idol_flesh_destroyed": true },
+"world_state_flags_to_remove": {},
+"player_stat_modifiers": { "sanity_restore": 20 }
+},
+"on_failure_effects": {
+"log_message": "La estatua de carne cobra vida por completo como un monstruo aberrante de Secuencia 4, atacando severamente las defensas del puerto.",
+"world_state_flags_to_add": { "boss_flesh_aberration_s4_active": true, "port_defenses_damaged": true },
+"player_stat_modifiers": { "permanent_corruption_gain": 6, "sanity_damage": 45 }
+}
+}, 
+  {
+    "id": "INV_CASE_046",
+    "name": "Las Luces Errantes del Pantano Negro",
+    "danger_level": "SAFE",
+    "difficulty": {
+      "rating": "LOW",
+      "required_exploration_tier": 1,
+      "base_success_chance": 80
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_OUTSKIRTS",
+      "sub_location_id": "LOC_BLACK_MOOR_MARSH",
+      "required_weather": ["WEATHER_FOGGY"],
+      "time_restrictions": { "start_hour": 22, "end_hour": 5 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 2
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_046",
+      "text": "Fuegos fatuos azulados guían a los viajeros hacia arenas movedizas místicas en el pantano, donde sus almas quedan atrapadas en faroles orgánicos."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 1,
+      "danger_encounter_rate_modifier": 1.08,
+      "investigation_steps_required": 2,
+      "evidence_pool": [
+        "E_046_A: Ectoplasma residual destilado e imbuido con esencias de la vía Monster.",
+        "E_046_B: Restos corroídos de antiguos faroles metálicos con inscripciones rúnicas de la Cuarta Época."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "spirit_world_entities": 16, "fourth_epoch_lore": 10 },
+      "allowed_pathways": ["Monster", "Sleepless"],
+      "minimum_sequence_required": 9,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["stable_ectoplasm_core", "gold_pounds_30"],
+      "knowledge_keys": ["KNOW_SPIRIT_WORLD_WISP_ANOMALIES"],
+      "faction_reputation": { "life_school_of_thought": 10, "church_of_evernight": 5 }
+    },
+    "on_success_effects": {
+      "log_message": "Liberación exitosa de las almas atrapadas y mapeo seguro de las arenas movedizas del pantano.",
+      "world_state_flags_to_add": { "black_moor_safeguarded": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 5 }
+    },
+    "on_failure_effects": {
+      "log_message": "El pantano se expande físicamente devorando terrenos agrícolas fértiles y bloqueando la sub-localización.",
+      "world_state_flags_to_add": { "marsh_expansion_hazard": true, "black_moor_locked": true },
+      "player_stat_modifiers": { "sanity_damage": 10 }
+    }
+  },
+  {
+    "id": "INV_CASE_047",
+    "name": "El Incendio Frío de la Imprenta",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "MEDIUM",
+      "required_exploration_tier": 2,
+      "base_success_chance": 60
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_EAST",
+      "sub_location_id": "LOC_OPPOSITION_PRESS_PLANT",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 23, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 4
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_047",
+      "text": "Un fuego de tono azul que no emite calor físico consume los periódicos de oposición política antes de que salgan a la venta en los talleres gráficos."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 2,
+      "danger_encounter_rate_modifier": 1.15,
+      "investigation_steps_required": 3,
+      "evidence_pool": [
+        "E_047_A: Ceniza helada con firmas místicas de la habilidad Hunter / Pyromaniac.",
+        "E_047_B: Notas de amenaza escritas con sangre ácida en los muros interiores de los talleres de impresión."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "military_history": 20, "secret_organizations": 10 },
+      "allowed_pathways": ["Hunter"],
+      "minimum_sequence_required": 8,
+      "requires_spirit_vision": false
+    },
+    "rewards": {
+      "items": ["pyromaniac_ash_vial", "gold_pounds_65"],
+      "knowledge_keys": ["KNOW_PATHWAY_HUNTER_PYROMANIAC"],
+      "faction_reputation": { "iron_blood_cross": -20, "loen_government": 15 }
+    },
+    "on_success_effects": {
+      "log_message": "Se detiene el sabotaje místico encubierto, asegurando el correcto funcionamiento del NewspaperEngine.",
+      "world_state_flags_to_add": { "opposition_press_secured": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": {}
+    },
+    "on_failure_effects": {
+      "log_message": "La facción militar radical toma el control informativo total de los medios impresos y la imprenta es destruida.",
+      "world_state_flags_to_add": { "press_censorship_active": true, "opposition_press_burned": true },
+      "player_stat_modifiers": { "sanity_damage": 15 }
+    }
+  },
+  {
+    "id": "INV_CASE_048",
+    "name": "La Epidemia del Sueño de Oro",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 50
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_WEST",
+      "sub_location_id": "LOC_JEWELRY_QUARTER_STREET",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 9, "end_hour": 18 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 7
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_048",
+      "text": "Los maestros joyeros de la calle principal caen en un coma místico profundo donde sueñan colectivamente que forjan una corona dorada para un rey invisible."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 3,
+      "danger_encounter_rate_modifier": 1.20,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_048_A: Ondas astrales ralentizadas artificialmente mediante barreras de supresión mental.",
+        "E_048_B: Fragmentos de oro puro que han perdido de forma anómala toda su conductividad mística natural."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "mind_architecture": 25, "abnormal_psychology": 15 },
+      "allowed_pathways": ["Spectator", "Savant"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["spirit_star_dust_vial", "gold_pounds_130"],
+      "knowledge_keys": ["KNOW_PSYCHOLOGY_ALCHEMISTS_DREAM_WEAVING"],
+      "faction_reputation": { "psychology_alchemists": -20, "church_of_steam_and_machinery": 15 }
+    },
+    "on_success_effects": {
+      "log_message": "Se despierta a los joyeros rompiendo la densa sugestión hipnótica colectiva implantada.",
+      "world_state_flags_to_add": { "jewelry_quarter_awakened": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 10 }
+    },
+    "on_failure_effects": {
+      "log_message": "La corona ilusoria se materializa en el plano espiritual superior como un artefacto maldito activo de dominación mental.",
+      "world_state_flags_to_add": { "dream_crown_artifact_materialized": true },
+      "player_stat_modifiers": { "sanity_damage": 25, "permanent_corruption_gain": 2 }
+    }
+  },
+  {
+    "id": "INV_CASE_049",
+    "name": "Los Ladrones de Sombras del Banco de Loen",
+    "danger_level": "DANGEROUS",
+    "difficulty": {
+      "rating": "HIGH",
+      "required_exploration_tier": 3,
+      "base_success_chance": 45
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_NORTH",
+      "sub_location_id": "LOC_BANK_OF_LOEN_VAULTS",
+      "required_weather": [],
+      "time_restrictions": { "start_hour": 1, "end_hour": 5 }
+    },
+    "world_state_manager_requirements": {
+      "global_flags_required": {},
+      "min_global_corruption_index": 8
+    },
+    "trigger_context": {
+      "rumor_id": "RUMOR_049",
+      "text": "Las propias sombras de las cajas fuertes del banco central se desprenden para abrir los cerrojos de seguridad desde el interior sin dejar marcas físicas."
+    },
+    "adventure_engine_mechanics": {
+      "sanity_drain_per_tick": 4,
+      "danger_encounter_rate_modifier": 1.25,
+      "investigation_steps_required": 4,
+      "evidence_pool": [
+        "E_049_A: Residuos densos de la habilidad de control místico de marionetas aplicados directamente sobre sombras físicas ordinarias.",
+        "E_049_B: Notas cifradas de espionaje místico escritas con tipografía morse de frecuencia espiritual."
+      ]
+    },
+    "deduction_requirements": {
+      "min_knowledge_points": { "mystical_pathways": 28, "secret_order_lore": 15 },
+      "allowed_pathways": ["Seer"],
+      "minimum_sequence_required": 7,
+      "requires_spirit_vision": true
+    },
+    "rewards": {
+      "items": ["shadow_marionette_thread", "gold_pounds_300"],
+      "knowledge_keys": ["KNOW_PATHWAY_SEER_THREAD_CONTROL"],
+      "faction_reputation": { "royal_family_loen": 25, "secret_order": -25 }
+    },
+    "on_success_effects": {
+      "log_message": "Frustración absoluta del robo millonario de fondos y aseguramiento de las reservas estratégicas del reino.",
+      "world_state_flags_to_add": { "bank_of_loen_heist_thwarted": true },
+      "world_state_flags_to_remove": {},
+      "player_stat_modifiers": { "sanity_restore": 15 }
+    },
+    "on_failure_effects": {
+      "log_message": "Pérdida masiva de libras de oro de las reservas estratégicas de Loen, detonando una severa crisis bancaria.",
+      "world_state_flags_to_add": { "loen_liquidity_crisis_active": true },
+      "player_stat_modifiers": { "sanity_damage": 20 }
+    }
+  },
+  {
+    "id": "INV_CASE_050",
+    "name": "El Descenso de la Estrella Marchita",
+    "danger_level": "FORBIDDEN",
+    "difficulty": {
+      "rating": "EXTREME",
+      "required_exploration_tier": 5,
+      "base_success_chance": 20
+    },
+    "world_system_context": {
+      "region_id": "REG_BACKLUND_OUTSKIRTS",
+      "sub_location_id": "LOC_NORTH_VINEYARDS_ISOLATED",
+      "required_weather": ["WEATHER_METEOR_SHOWER", "WEATHER_CLEAR_NIGHT"],
+      "time_restrictions": { "start_hour": 0, "end_hour": 4 }
+    },
+    "world_state_manager_requirements": {
+"global_flags_required": { "TAROT_CLUB_FOUNDED": true },
+"min_global_corruption_index": 22
+},
+"trigger_context": {
+"rumor_id": "RUMOR_050",
+"text": "Un fragmento de meteorito verde brillante cae en un viñedo aislado del norte; las vides mutan instantáneamente en extremidades humanas sedientas de sangre mística."
+},
+"adventure_engine_mechanics": {
+"sanity_drain_per_tick": 7,
+"danger_encounter_rate_modifier": 1.45,
+"investigation_steps_required": 5,
+"evidence_pool": [
+"E_050_A: Mineral extraterrestre que irradia contaminación espiritual cósmica severa de procedencia exterior.",
+"E_050_B: Transmutación celular vegetal instantánea en flora nativa e inocente de los alrededores del impacto."
+]
+},
+"deduction_requirements": {
+"min_knowledge_points": { "outer_deities": 40, "cosmology": 35 },
+"allowed_pathways": ["Mystery Pryer", "Monster"],
+"minimum_sequence_required": 5,
+"requires_spirit_vision": true
+},
+"rewards": {
+"items": ["star_shard_ore_pure", "gold_pounds_500"],
+"knowledge_keys": ["KNOW_FORBIDDEN_OUTER_DEITY_VAGRANT_STAR"],
+"faction_reputation": { "church_of_evernight": 30, "tarot_club": 25 }
+},
+"on_success_effects": {
+"log_message": "Aislamiento y contención del meteorito cósmico mediante un super-ritual místico hermético de contención astral.",
+"world_state_flags_to_add": { "star_shard_contained": true },
+"world_state_flags_to_remove": {},
+"player_stat_modifiers": { "sanity_restore": 35 }
+},
+"on_failure_effects": {
+"log_message": "Contaminación total y perpetua de la provincia norteña; el mapa de simulación bloquea de forma indefinida toda la ruta debido a horrores biológicos alienígenas.",
+"world_state_flags_to_add": { "north_province_alien_infestation": true, "north_outskirts_locked": true },
+"player_stat_modifiers": { "permanent_corruption_gain": 10, "sanity_damage": 60 }
+}
+}
+]

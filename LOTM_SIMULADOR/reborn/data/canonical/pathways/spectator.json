@@ -1,0 +1,383 @@
+{
+  "pathway": "SPECTATOR",
+  "displayName": "Visionary Pathway",
+
+  "mythicalCreatureForm": "A grayish-white psychic dragon with pale golden vertical pupils.",
+
+  "divineKingdom": "A self-created nation of imagination.",
+
+  "sequences": {
+
+    "9": {
+      "name": "Spectator",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Acute Observation",
+        "Aura Color Reading",
+        "Body Language Analysis",
+        "Emotional Fluctuation Perception"
+      ],
+
+      "actingMethods": [
+        "Be an observer.",
+        "Do not participate in the play.",
+        "Maintain emotional detachment."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Pair of Eyes from an Adult Manhal Fish",
+          "35ml Ram-Horn Blackfish Blood"
+        ],
+
+        "supplementaryIngredients": [
+          "80ml Pure Water",
+          "5 Drops Autumn Crocus Essence",
+          "13g Ox-Tooth Peony Powder",
+          "7 Elven Flower Petals"
+        ],
+
+        "potionAppearance": "Initially releases countless bubbles before becoming a viscous silver-white liquid."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A silver-white vertical eye."
+    },
+
+    "8": {
+      "name": "Telepathist",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Mind Reading",
+        "Thought Detection",
+        "Mental Suggestion",
+        "Emotional Perception"
+      ],
+
+      "actingMethods": [
+        "Understand others through their thoughts.",
+        "Maintain balance between listening and guiding."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Complete Pituitary Gland of an Adult Seven-Colored Lizard Dragon",
+          "10ml Spinal Fluid of a Falsman Rabbit"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml Pure Water",
+          "5g Chestnut Buds",
+          "8g Dragon-Tooth Grass Powder",
+          "3 Pure White Elven Flowers"
+        ],
+
+        "potionAppearance": "A liquid whose luster constantly shifts as if peering into the depths of every heart."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "Transparent dreamlike eyes."
+    },
+
+    "7": {
+      "name": "Psychiatrist",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Placate",
+        "Psychological Cue",
+        "Mental Trauma Healing",
+        "Frenzy Induction",
+        "Mental Storm"
+      ],
+
+      "actingMethods": [
+        "Heal minds.",
+        "Treat yourself as a patient as well.",
+        "Observe your own mental state."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Pair of Mirror Dragon Eyes",
+          "Fruit of the Elder Tree"
+        ],
+
+        "supplementaryIngredients": [
+          "50ml Mirror Dragon Blood",
+          "15g Elder Tree Bark Powder",
+          "10 Drops Foxglove Essential Oil",
+          "9 Infant Hair Strands"
+        ],
+
+        "potionAppearance": "A slightly golden liquid resembling a giant shifting pupil."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A pale blue crystalline heart shimmering with dreamlike colors."
+    },
+
+    "6": {
+      "name": "Hypnotist",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Deep Hypnosis",
+        "Memory Manipulation",
+        "Forced Sleep",
+        "Psychological Invisibility"
+      ],
+
+      "actingMethods": [
+        "Influence minds without drawing attention.",
+        "Guide thoughts subtly."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Young Psychic Dragon Pituitary Gland",
+          "OR 60ml Black-Hunt Giant Lizard Spinal Fluid",
+          "OR Hallucination Wind-Chime Tree Fruit"
+        ],
+
+        "supplementaryIngredients": [
+          "80ml Young Psychic Dragon Blood",
+          "3 Young Psychic Dragon Scales",
+          "Belladonna Fruit",
+          "Mirror Kept In Personal Room For More Than Three Months"
+        ],
+
+        "potionAppearance": "Transparent colorless liquid that behaves like a perfect mirror."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A gelatinous mirror-like mass containing countless transparent bubbles."
+    },
+
+    "5": {
+      "name": "Dreamwalker",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Dream Infiltration",
+        "Dream Modification",
+        "Dream Traversal",
+        "Spiritual Guidance"
+      ],
+
+      "actingMethods": [
+        "Walk within dreams.",
+        "Remain detached from illusions."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Dreamcatcher Heart",
+          "Psychic Phantom Crystal",
+          "OR Complete Brain of an Adult Psychic Dragon"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml Adult Psychic Dragon Blood",
+          "3 Adult Psychic Dragon Scales",
+          "Gray-White Dragon's Breath Flower",
+          "3 Treant Leaves"
+        ],
+
+        "potionAppearance": "A dark liquid scattered with faint gray-white light."
+      },
+
+      "ritual": "Form a contract with a Spirit World creature to obtain lucid dreaming, or contract a bird-headed Spirit World demon and consume the potion while holding one of its tail feathers during intense emotional fluctuation.",
+
+      "characteristicAppearance": "A condensed mass of gray-white dream mist."
+    },
+
+    "4": {
+      "name": "Manipulator",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Mass Suggestion",
+        "Collective Psychology Manipulation",
+        "Mental Plague",
+        "Mind Domination"
+      ],
+
+      "actingMethods": [
+        "Influence the masses from the shadows.",
+        "Manipulate large-scale psychological trends."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Complete Brain of an Elderly Psychic Dragon",
+          "OR Crystalline Heart of a Treant Mentor"
+        ],
+
+        "supplementaryIngredients": [
+          "80ml Elderly Psychic Dragon Blood",
+          "3 Golden Leaves of a Treant Mentor",
+          "Tears of Seven Individuals Under Extreme Emotion"
+        ],
+
+        "potionAppearance": "Contains countless fragments of light resembling the collective subconscious."
+      },
+
+      "ritual": "Consume the potion among at least ten thousand people experiencing powerful emotional resonance.",
+
+      "characteristicAppearance": "A heart-shaped alien brain connected to an invisible world."
+    },
+
+    "3": {
+      "name": "Dream Weaver",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Dream Projection",
+        "Reality Weaving",
+        "Nightmare Manifestation",
+        "Dream Materialization"
+      ],
+
+      "actingMethods": [
+        "Shape dreams into reality.",
+        "Create and sustain shared dream worlds."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Treant King Crystalline Heart",
+          "OR Complete Brain of a Dream Dragon"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml Treant King Sap",
+          "Nine Strands From Thirteen Nightmare Victims",
+          "Sapling",
+          "10 Drops Nightmare Grass Juice"
+        ],
+
+        "potionAppearance": "Dark mist-like liquid constantly changing form."
+      },
+
+      "ritual": "Cause at least one hundred thousand people to experience the exact same dream in one night.",
+
+      "characteristicAppearance": "A dream-formed gray-white brain made of mist."
+    },
+
+    "2": {
+      "name": "Discerner",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Truth Vision",
+        "Flaw Detection",
+        "Concept Identification",
+        "Psychological Insight"
+      ],
+
+      "actingMethods": [
+        "Understand the deepest truths hidden within sentient beings."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Pale Heart of Erihog",
+          "OR Ancient Psychic Dragon Heart",
+          "OR Discerner Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "90ml Ancient Psychic Dragon Blood",
+          "3 Self-Created True Identities",
+          "9 Flowers Manifesting Humanity's Darkest Fears",
+          "Sun God Bird Feather"
+        ],
+
+        "potionAppearance": "Pale liquid containing countless opening and closing vertical eyes."
+      },
+
+      "ritual": "Enter the subconscious of at least ten thousand humans, uncover their deepest truths and leave behind your own mark.",
+
+      "characteristicAppearance": "A pale heart riddled with holes and filled with vertical eyes."
+    },
+
+    "1": {
+      "name": "Author",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Reality Writing",
+        "Fate Design",
+        "Narrative Manipulation",
+        "Character Authoring"
+      ],
+
+      "actingMethods": [
+        "Write the history of the world without leaving your own trace."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Pen of Alesu Hod",
+          "OR Author Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml Nightmare Swamp Water",
+          "Astral Meteor Fragment",
+          "Nine Popular Novels Or Fairy Tales",
+          "Own Corrupt Essence"
+        ],
+
+        "potionAppearance": "Transparent liquid containing countless destinies and conceptual projections."
+      },
+
+      "ritual": "Write a novel using real people as characters and ensure reality follows the plot while leaving marks in both the Spirit World and River of Fate.",
+
+      "characteristicAppearance": "A crystal-clear finger bone shaped like a writing pen."
+    },    
+    "0": {
+      "name": "Visionary",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Authority of Imagination and Reality Manifestation",
+        "Envisioning of True Divine Personas and Mythical Items",
+        "Omnipresent Thought Anchor and Mental Puppetry",
+        "Absolute Concept Materialization and Erasure",
+        "Total Domination Over Collective Subconscious Matrix"
+      ],
+
+      "actingMethods": [
+        "Anchor the ultimate conceptual and psychological blueprint of reality.",
+        "Embody the absolute creative force of cosmic thoughts.",
+        "Uphold the eternal shifting script across universal minds."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "The Visionary Uniqueness",
+          "3 Author Beyonder characteristics"
+        ],
+
+        "supplementaryIngredients": [
+          "A self-created realm born from dreams and imagination"
+        ],
+
+        "potionAppearance": "A golden potion containing a miniature, slowly breathing fantasy world."
+      },
+
+      "ritual": "Align the course of an era with your expectations and consume the potion at a key turning point in history.",
+
+      "characteristicAppearance": "A gray-white fusion of heart and brain."
+    }
+  }
+}

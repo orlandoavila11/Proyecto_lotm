@@ -1,0 +1,22 @@
+# Rutas purgadas y código muerto
+src/
+reports/
+dist/
+reborn/dist/
+ui/dist/
+
+# Dependencias
+node_modules/
+reborn/node_modules/
+ui/node_modules/
+
+# Saves locales y temporales
+saves/
+reborn/saves/
+*.log
+*.tmp
+
+# Git y entornos
+.git/
+.vscode/
+

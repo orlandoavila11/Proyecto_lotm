@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=MedievalSharp&display=swap');
+
+:root {
+  --bg-void: #090807;
+  --bg-desk: #12100e;
+  --card-dark: #191714;
+  --card-border: #383024;
+  --card-border-gold: #8c733e;
+  --parchment: #f3ecdb;
+  --parchment-border: #c4b59a;
+  --text-parchment: #1f1a14;
+  --text-light: #e5ded2;
+  --text-muted: #968c7e;
+  --gold: #d4af37;
+  --gold-glow: rgba(212, 175, 55, 0.4);
+  --crimson: #851c22;
+  --astral: #9b6fe0;
+  --shadow-gothic: 0 10px 30px rgba(0, 0, 0, 0.85);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+body {
+  background: var(--bg-void);
+  color: var(--text-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: radial-gradient(circle at 50% 20%, #1c1813 0%, #090807 80%);
+}
+
+h1, h2, h3, h4, .cinzel {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+}
+
+/* Custom Victorian Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #100f0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #3d3428;
+  border-radius: 3px;
+  border: 1px solid #5a4d3b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+.parchment-sheet {
+  background: var(--parchment);
+  color: var(--text-parchment);
+  border: 2px solid var(--parchment-border);
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.15), 0 4px 15px rgba(0,0,0,0.6);
+  border-radius: 4px;
+}
+
+.card-frame {
+  background: var(--card-dark);
+  border: 1px solid var(--card-border);
+  border-radius: 5px;
+  transition: all 0.25s ease;
+}
+.card-frame:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 15px var(--gold-glow);
+}
+
+.gold-badge {
+  background: #241e17;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.crimson-btn {
+  background: var(--crimson);
+  color: #fff;
+  border: 1px solid var(--gold);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+.crimson-btn:hover {
+  background: #aa242c;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+.action-tab-btn {
+  background: #1e1b17;
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.88rem;
+  transition: all 0.2s;
+}
+.action-tab-btn:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: #2a241d;
+}
+.action-tab-btn.active {
+  color: #12100e;
+  background: var(--gold);
+  border-color: var(--gold);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   SPRINT 1: SOMATIC EFFECTS, TACTILE DESK & VICTORIAN NEWSPAPER
+   ========================================================================== */
+
+/* Viñeteado somático reactivo al estado mental */
+.sanity-vignette-danger {
+  box-shadow: inset 0 0 100px 30px rgba(133, 28, 34, 0.45);
+  animation: pulse-sanity-danger 2.8s infinite ease-in-out;
+}
+
+@keyframes pulse-sanity-danger {
+  0% { box-shadow: inset 0 0 70px 20px rgba(133, 28, 34, 0.35); }
+  50% { box-shadow: inset 0 0 120px 45px rgba(133, 28, 34, 0.6); }
+  100% { box-shadow: inset 0 0 70px 20px rgba(133, 28, 34, 0.35); }
+}
+
+.corruption-shimmer {
+  border-color: var(--astral) !important;
+  box-shadow: 0 0 20px rgba(155, 111, 224, 0.35) !important;
+  animation: astral-flicker 4s infinite alternate;
+}
+
+@keyframes astral-flicker {
+  0% { filter: drop-shadow(0 0 4px rgba(155, 111, 224, 0.2)); }
+  100% { filter: drop-shadow(0 0 14px rgba(155, 111, 224, 0.6)); }
+}
+
+/* Tapete de Cuero del Escritorio */
+.leather-desk-mat {
+  background: linear-gradient(135deg, #181410 0%, #120e0b 50%, #0d0a08 100%);
+  border: 3px double #544430;
+  border-radius: 8px;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.85), 0 12px 36px rgba(0, 0, 0, 0.95);
+  position: relative;
+}
+
+/* Esfera Victoriana de Latón */
+.brass-dial {
+  background: radial-gradient(circle, #2a2217 0%, #15110c 100%);
+  border: 2px solid #a68444;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.9), 0 4px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  color: #dfcaa2;
+}
+
+/* Periódico Victoriano */
+.victorian-newspaper {
+  background: #ede3cc;
+  color: #1a1612;
+  border: 1px solid #baa98f;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(160, 135, 95, 0.25);
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+.newspaper-header-border {
+  border-top: 3px double #2b2319;
+  border-bottom: 3px double #2b2319;
+}
+
+/* Sello de Cera Carmesí */
+.wax-seal {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #b52b34, #661015);
+  border: 2px solid #851c22;
+  box-shadow: 2px 3px 8px rgba(0,0,0,0.7), inset -1px -2px 4px rgba(0,0,0,0.5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Sello Dorado del Velo Mortal (Secuencia 7) */
+.mortal-veil-seal {
+  background: linear-gradient(135deg, #2b2318 0%, #17130e 100%);
+  border: 2px solid var(--gold);
+  box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.25), 0 4px 15px rgba(0,0,0,0.8);
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Tarjeta Ocultista Táctil */
+.occult-card {
+  background: linear-gradient(145deg, #1c1813 0%, #12100d 100%);
+  border: 1px solid #3d3324;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: all 0.22s ease-in-out;
+}
+.occult-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Susurro del Velo (Estilo Disco Elysium) */
+.whisper-bubble {
+  background: #15110d;
+  border-left: 3px solid var(--gold);
+  padding: 10px 14px;
+  font-style: italic;
+  color: #d1c5b4;
+  position: relative;
+  border-radius: 0 4px 4px 0;
+  line-height: 1.45;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+}
+
+/* Tarjetas de Dilema de Actuación */
+.choice-card-aligned {
+  background: linear-gradient(145deg, #192416 0%, #10180d 100%);
+  border: 1px solid #2e5927;
+  border-radius: 5px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+.choice-card-aligned:hover {
+  border-color: #4ade80;
+  box-shadow: 0 0 14px rgba(74, 222, 128, 0.3);
+  transform: translateX(3px);
+}
+
+.choice-card-conflict {
+  background: linear-gradient(145deg, #2b1616 0%, #190e0e 100%);
+  border: 1px solid #632323;
+  border-radius: 5px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+.choice-card-conflict:hover {
+  border-color: #f87171;
+  box-shadow: 0 0 14px rgba(248, 113, 113, 0.3);
+  transform: translateX(3px);
+}
+
+/* Tarjetas de Habilidad en Combate Táctico */
+.combat-skill-card {
+  background: linear-gradient(135deg, #241a18 0%, #15100f 100%);
+  border: 1px solid #6b4435;
+  border-radius: 5px;
+  padding: 8px 12px;
+  color: #e5ded2;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+.combat-skill-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 12px var(--gold-glow);
+  background: #31211e;
+}
+
+

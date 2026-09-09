@@ -1,0 +1,632 @@
+[
+  {
+    "id": "GOO_LORD_OF_MYSTERIES",
+    "identity": {
+      "name": "Lord of Mysteries",
+      "true_name": "The Celestial Worthy of Heaven and Earth",
+      "associated_pathways": [
+        "FOOL",
+        "ERROR",
+        "APPRENTICE"
+      ],
+      "historical_era": "Pre-Epoch",
+      "primary_faction": "Tarot Club (Legacy Resonance)",
+      "covert_affiliation": "Sefirah Castle Core"
+    },
+    "goo_properties": {
+      "is_pillar": true,
+      "pillar_path": "LORD_OF_MYSTERIES",
+      "completion_percentage": 100,
+      "requires_sephirot": "CASTLE_OF_SEFIRAH",
+      "scale_of_influence": "COSMIC"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "CASTLE_OF_SEFIRAH",
+      "conceptual_control_rating": 100,
+      "authority_domains": [
+        "SPACE_TIME",
+        "MYSTERY",
+        "SPIRIT_WORLD",
+        "MIRACLES",
+        "DESTINY"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 80,
+      "is_sealed": false,
+      "anchor_stability_index": 95
+    },
+    "activity_profile": {
+      "world_presence": 95,
+      "world_activity_rating": 85,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 80,
+      "divination_misdirection_chance": 100,
+      "corruption_leak_multiplier": 1.10
+    },
+    "accessible_knowledge_categories": [
+      "FOOL_PATHWAY",
+      "ERROR_PATHWAY",
+      "APPRENTICE_PATHWAY",
+      "SPACE_TIME_COSMOLOGY",
+      "CASTLE_OF_SEFIRAH_MYSTERIES",
+      "PRE_EPOCH_HISTORY"
+    ],
+    "relationship_links": [
+      { "entity_id": "GOD_THE_FOOL_KLEIN", "type": "COMPETING_CONSCIOUSNESS", "value": 85 },
+      { "entity_id": "KOA_AMON", "type": "CONVERGENCE_TARGET", "value": 90 }
+    ],
+    "influence_regions": [
+      "REG_SPIRIT_WORLD",
+      "REG_BACKLUND_WEST"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 45,
+      "quest_trigger_id": "QST_CELESTIAL_WORTHY_AWAKENING"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "SPIRIT_WORLD_DOMINANCE_ACTIVE": true, "COSMIC_DOOR_SEAL_REINFORCED": true },
+      "region_stat_overrides": {
+        "REG_SPIRIT_WORLD": { "exploration_sanity_cost_multiplier": 0.50, "divination_speed_modifier": 1.50 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 100
+  },
+  {
+    "id": "GOO_GOD_ALMIGHTY",
+    "identity": {
+      "name": "God Almighty",
+      "true_name": "The Ancient Sun God (Peak Entity)",
+      "associated_pathways": [
+        "SUN",
+        "SAILOR",
+        "READER",
+        "SPECTATOR",
+        "HANGED_MAN"
+      ],
+      "historical_era": "Third Epoch",
+      "primary_faction": "Independent",
+      "covert_affiliation": "Chaos Sea Core"
+    },
+    "goo_properties": {
+      "is_pillar": true,
+      "pillar_path": "GOD_ALMIGHTY",
+      "completion_percentage": 100,
+      "requires_sephirot": "CHAOS_SEA",
+      "scale_of_influence": "COSMIC"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "CHAOS_SEA",
+      "conceptual_control_rating": 100,
+      "authority_domains": [
+        "OMNISCIENCE",
+        "OMNIPOTENCE",
+        "CREATION_CONCEPT",
+        "PRIMORDIAL_SEA_ORDER"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 75,
+      "is_sealed": false,
+      "anchor_stability_index": 90
+    },
+    "activity_profile": {
+      "world_presence": 98,
+      "world_activity_rating": 90,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 85,
+      "divination_misdirection_chance": 95,
+      "corruption_leak_multiplier": 1.20
+    },
+    "accessible_knowledge_categories": [
+      "SUN_PATHWAY",
+      "SAILOR_PATHWAY",
+      "READER_PATHWAY",
+      "SPECTATOR_PATHWAY",
+      "HANGED_MAN_PATHWAY",
+      "CHAOS_SEA_MYSTERIES",
+      "DIVINE_HISTORY_THIRD_EPOCH"
+    ],
+    "relationship_links": [
+      { "entity_id": "GOD_ADAM_TRUE_CREATOR", "type": "SUCCESSOR", "value": 95 },
+      { "entity_id": "KOA_SASRIR", "type": "RESIDUAL_WILL", "value": 100 }
+    ],
+    "influence_regions": [
+      "REG_BACKLUND_SUBURBS",
+      "REG_BACKLUND_PORT",
+      "REG_BACKLUND_WEST"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 50,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "CHAOS_SEA_RESONANCE_MAXIMUM": true, "OMNISCIENCE_OVERRIDE": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_WEST": { "corruption_gain_rate_multiplier": 1.20 },
+        "REG_BACKLUND_PORT": { "lightning_damage_bonus": 40 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 100
+  },
+  {
+    "id": "GOO_ETERNAL_DARKNESS",
+    "identity": {
+      "name": "Eternal Darkness",
+      "true_name": "Amanises (Pillar State)",
+      "associated_pathways": [
+        "NIGHT",
+        "DEATH",
+        "COMBAT"
+      ],
+      "historical_era": "Fifth Epoch",
+      "primary_faction": "Church of Evernight",
+      "covert_affiliation": "NONE"
+    },
+    "goo_properties": {
+      "is_pillar": false,
+      "pillar_path": "ETERNAL_DARKNESS",
+      "completion_percentage": 90,
+      "requires_sephirot": "RIVER_OF_ETERNAL_DARKNESS",
+      "scale_of_influence": "COSMIC"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "RIVER_OF_ETERNAL_DARKNESS",
+      "conceptual_control_rating": 95,
+      "authority_domains": [
+        "SINGULARITY_OF_NIGHT",
+        "DEMISE_CONCEPT",
+        "SILENT_CONCEALMENT",
+        "TWILIGHT_TERMINATION"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 95,
+      "is_sealed": false,
+      "anchor_stability_index": 98
+    },
+    "activity_profile": {
+      "world_presence": 90,
+      "world_activity_rating": 75,
+      "can_spawn_events": true,
+      "can_spawn_rumors": false,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 70,
+      "divination_misdirection_chance": 95,
+      "corruption_leak_multiplier": 1.00
+    },
+    "accessible_knowledge_categories": [
+      "NIGHT_PATHWAY",
+      "DEATH_PATHWAY",
+      "COMBAT_PATHWAY",
+      "RIVER_OF_DARKNESS_MYSTERIES",
+      "UNDERWORLD_ANOMALIES"
+    ],
+    "relationship_links": [
+      { "entity_id": "GOD_EVERNIGHT", "type": "SUCCESSOR", "value": 100 },
+      { "entity_id": "ANGEL_ARIANNA", "type": "RESIDUAL_WILL", "value": 85 }
+    ],
+    "influence_regions": [
+      "REG_BACKLUND_WEST",
+      "REG_SPIRIT_WORLD",
+      "REG_BACKLUND_SUBURBS"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 45,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "CONCEALMENT_BARRIER_REINFORCED": true, "ETERNAL_DARKNESS_LATENT": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_WEST": { "corruption_gain_rate_multiplier": 0.60, "player_sanity_regen_rate": 1.30 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 99
+  },
+  {
+    "id": "GOO_CALAMITY_DESTRUCTION",
+    "identity": {
+      "name": "Calamity of Destruction",
+      "true_name": "The Primordial Demoness (Peak State)",
+      "associated_pathways": [
+        "HUNTER",
+        "ASSASSIN"
+      ],
+      "historical_era": "Multiple Epochs",
+      "primary_faction": "Demoness Sect",
+      "covert_affiliation": "Iron and Blood Cross Order (Indirect)"
+    },
+    "goo_properties": {
+      "is_pillar": false,
+      "pillar_path": "CALAMITY_OF_DESTRUCTION",
+      "completion_percentage": 75,
+      "requires_sephirot": "CITY_OF_CALAMITY",
+      "scale_of_influence": "COSMIC"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "CITY_OF_CALAMITY",
+      "conceptual_control_rating": 90,
+      "authority_domains": [
+        "APOCALYPSE_TRIGGERS",
+        "CATACLYSM_CONCEPT",
+        "WARFARE_FLAME",
+        "DISEASE_PLAGUE"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 50,
+      "is_sealed": false,
+      "anchor_stability_index": 70
+    },
+    "activity_profile": {
+      "world_presence": 80,
+      "world_activity_rating": 80,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 70,
+      "divination_misdirection_chance": 90,
+      "corruption_leak_multiplier": 1.25
+    },
+    "accessible_knowledge_categories": [
+      "HUNTER_PATHWAY",
+      "ASSASSIN_PATHWAY",
+      "CITY_OF_CALAMITY_MYSTERIES",
+      "PLAGUE_OCCULTISM"
+    ],
+    "relationship_links": [
+      { "entity_id": "GOD_CHEEK_DEMONESS", "type": "PREDECESSOR", "value": 90 },
+      { "entity_id": "KOA_MEDICI", "type": "COMPETING_CONSCIOUSNESS", "value": 75 }
+    ],
+    "influence_regions": [
+      "REG_BACKLUND_EAST",
+      "REG_BACKLUND_WEST"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 45,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "CITY_OF_CALAMITY_RESONANCE": true, "WAR_TENSION_GLOBAL_RISE": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_EAST": { "corruption_gain_rate_multiplier": 1.30, "combat_damage_bonus": 25 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 98
+  },
+  {
+    "id": "GOO_KEY_OF_LIGHT",
+    "identity": {
+      "name": "Key of Light",
+      "true_name": "The Wheel of Fortune",
+      "associated_pathways": [
+        "MONSTER"
+      ],
+      "historical_era": "Pre-Epoch",
+      "primary_faction": "Life School of Thought",
+"covert_affiliation": "NONE"
+},
+"goo_properties": {
+"is_pillar": false,
+"pillar_path": "KEY_OF_LIGHT",
+"completion_percentage": 50,
+"requires_sephirot": "KEY_OF_LIGHT",
+"scale_of_influence": "COSMIC"
+},
+"authority": {
+"has_uniqueness": true,
+"sephirot_resonance_id": "KEY_OF_LIGHT",
+"conceptual_control_rating": 85,
+"authority_domains": [
+"ABSOLUTE_LUCK",
+"PROBABILITY_DOMINANCE",
+"REINCARNATION_CYCLE"
+]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 95,
+"is_sealed": false,
+"anchor_stability_index": 80
+},
+"activity_profile": {
+"world_presence": 60,
+"world_activity_rating": 50,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": false
+},
+"world_influence": {
+"divination_sanity_drain": 55,
+"divination_misdirection_chance": 95,
+"corruption_leak_multiplier": 1.00
+},
+"accessible_knowledge_categories": [
+"MONSTER_PATHWAY",
+"FATE_COSMOLOGY",
+"KEY_OF_LIGHT_MYSTERIES"
+],
+"relationship_links": [
+{ "entity_id": "ANGEL_WILL_AUCEPTIN", "type": "SUCCESSOR", "value": 85 },
+{ "entity_id": "KOA_OUROBOROS", "type": "COMPETING_CONSCIOUSNESS", "value": 70 }
+],
+"influence_regions": [
+"REG_BACKLUND_HILLSIDE",
+"REG_BACKLUND_WEST"
+],
+"interaction_hooks": {
+"interaction_allowed": true,
+"knowledge_threshold_required": 40,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "KEY_OF_LIGHT_RESONANCE": true, "LUCK_FLUCTUATION_LOCAL_STABLE": true },
+"region_stat_overrides": {
+"REG_BACKLUND_WEST": { "base_luck_index_bonus": 30 }
+}
+},
+"importance": "LEGENDARY",
+"influence_score": 97
+},
+{
+"id": "GOO_DEMON_OF_KNOWLEDGE",
+"identity": {
+"name": "Demon of Knowledge",
+"true_name": "The Paragon of Occultism",
+"associated_pathways": [
+"MYSTERY_PRYER",
+"PARAGON"
+],
+"historical_era": "Multiple Epochs",
+"primary_faction": "Church of Steam and Machinery",
+"covert_affiliation": "Moses Ascetic Order"
+},
+"goo_properties": {
+"is_pillar": false,
+"pillar_path": "DEMON_OF_KNOWLEDGE",
+"completion_percentage": 70,
+"requires_sephirot": "KNOWLEDGE_MOOR",
+"scale_of_influence": "COSMIC"
+},
+"authority": {
+"has_uniqueness": true,
+"sephirot_resonance_id": "KNOWLEDGE_MOOR",
+"conceptual_control_rating": 88,
+"authority_domains": [
+"FORCED_OCCULTISM",
+"MACHINERY_TRANSMUTATION",
+"KNOWLEDGE_CONTAMINATION"
+]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 85,
+"is_sealed": false,
+"anchor_stability_index": 75
+},
+"activity_profile": {
+"world_presence": 80,
+"world_activity_rating": 65,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": true
+},
+"world_influence": {
+"divination_sanity_drain": 60,
+"divination_misdirection_chance": 85,
+"corruption_leak_multiplier": 1.10
+},
+"accessible_knowledge_categories": [
+"MYSTERY_PRYER_PATHWAY",
+"PARAGON_PATHWAY",
+"KNOWLEDGE_MOOR_MYSTERIES",
+"ALCHEMICAL_FOUNDATIONS"
+],
+"relationship_links": [
+{ "entity_id": "GOD_STEAM_MACHINERY", "type": "CONVERGENCE_TARGET", "value": 90 },
+{ "entity_id": "GOD_HIDDEN_SAGE", "type": "COMPETING_CONSCIOUSNESS", "value": 80 }
+],
+"influence_regions": [
+"REG_BACKLUND_NORTH",
+"REG_BACKLUND_EAST"
+],
+"interaction_hooks": {
+"interaction_allowed": false,
+"knowledge_threshold_required": 42,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "KNOWLEDGE_MOOR_RESONANCE": true },
+"region_stat_overrides": {
+"REG_BACKLUND_NORTH": { "player_sanity_drain_rate_multiplier": 1.15 }
+}
+},
+"importance": "LEGENDARY",
+"influence_score": 96
+}
+  ,
+  {
+    "id": "GOO_THE_ANARCHY",
+    "identity": {
+      "name": "The Anarchy",
+      "true_name": "Son of Chaos (Unfragmented State)",
+      "associated_pathways": [
+        "ARBITER",
+        "LAWYER"
+      ],
+      "historical_era": "Pre-Epoch",
+      "primary_faction": "Outer Deities Alliance",
+      "covert_affiliation": "Nation of Disorder Resonance"
+    },
+    "goo_properties": {
+      "is_pillar": false,
+      "pillar_path": "NONE",
+      "completion_percentage": 100,
+      "requires_sephirot": "NATION_OF_DISORDER",
+      "scale_of_influence": "COSMIC"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "NATION_OF_DISORDER",
+      "conceptual_control_rating": 100,
+      "authority_domains": [
+        "ABSOLUTE_ANARCHY",
+        "RULE_DISTORTION",
+        "ORDER_REVERSAL",
+        "CONCEPTUAL_MAGNIFICATION"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 100,
+      "is_sealed": true,
+      "anchor_stability_index": 90
+    },
+    "activity_profile": {
+      "world_presence": 65,
+      "world_activity_rating": 70,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 85,
+      "divination_misdirection_chance": 95,
+      "corruption_leak_multiplier": 1.30
+    },
+    "accessible_knowledge_categories": [
+      "ARBITER_PATHWAY",
+      "LAWYER_PATHWAY",
+      "BLACK_EMPEROR_PATHWAY",
+      "NATION_OF_DISORDER_MYSTERIES",
+      "COSMIC_ANARCHY"
+    ],
+    "relationship_links": [
+      { "entity_id": "OD_SON_OF_CHAOS", "type": "COMPETING_CONSCIOUSNESS", "value": 95 },
+      { "entity_id": "GOD_ROSELLE_BLACK_EMPEROR", "type": "CONVERGENCE_TARGET", "value": 85 }
+    ],
+    "influence_regions": [
+      "REG_SPIRIT_WORLD",
+      "REG_BACKLUND_WEST"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 48,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "THE_ANARCHY_WAVE_ACTIVE": true, "ROYAL_LAW_DISTORTED": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_WEST": { "black_market_price_modifier": 0.50, "crime_encounter_rate": 2.00 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 99
+  },
+  {
+    "id": "GOO_FATHER_OF_DEVILS",
+    "identity": {
+      "name": "Father of Devils",
+      "true_name": "Mother Tree of Desire (Abyssal State)",
+      "associated_pathways": [
+        "PRISONER",
+        "CRIMINAL"
+      ],
+      "historical_era": "Pre-Epoch",
+      "primary_faction": "Rose School of Thought",
+      "covert_affiliation": "Abyss Cult Core"
+    },
+    "goo_properties": {
+      "is_pillar": false,
+      "pillar_path": "NONE",
+      "completion_percentage": 100,
+      "requires_sephirot": "MUTATED_Tटने_TREE",
+      "scale_of_influence": "COSMIC"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "NONE",
+      "conceptual_control_rating": 100,
+      "authority_domains": [
+        "ABYSSAL_DESIRE",
+        "DEVIL_PROVOCATION",
+        "MALEDICTION_BLOOD",
+        "FETISH_MUTATION"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 95,
+      "is_sealed": true,
+      "anchor_stability_index": 92
+    },
+    "activity_profile": {
+      "world_presence": 85,
+      "world_activity_rating": 80,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 80,
+      "divination_misdirection_chance": 90,
+      "corruption_leak_multiplier": 1.35
+    },
+    "accessible_knowledge_categories": [
+      "PRISONER_PATHWAY",
+      "CRIMINAL_PATHWAY",
+      "OUTER_TREE_MYSTICISM",
+      "DESIRE_MUTATION",
+      "ABYSSAL_GEOGRAPHY"
+    ],
+    "relationship_links": [
+      { "entity_id": "OD_MTOD", "type": "COMPETING_CONSCIOUSNESS", "value": 100 },
+      { "entity_id": "ANGEL_SUAH_ABOMINATION", "type": "RESIDUAL_WILL", "value": 90 }
+    ],
+    "influence_regions": [
+      "REG_BACKLUND_SUBURBS",
+      "REG_SPIRIT_WORLD"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 46,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "FATHER_OF_DEVILS_WHISPER": true, "CRIMINAL_PATHWAY_BUFFED": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_SUBURBS": { "corruption_gain_rate_multiplier": 1.35, "sanity_drain_per_tick_modifier": 2 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 98
+  }
+]

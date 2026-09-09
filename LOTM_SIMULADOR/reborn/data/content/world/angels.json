@@ -1,0 +1,997 @@
+[
+  {
+    "id": "ANGEL_PALLEZ_ZOROAST",
+    "identity": {
+      "name": "Pallez Zoroast",
+      "pathway": "ERROR",
+      "sequence": 1,
+      "historical_era": "Fourth Epoch",
+      "primary_faction": "Zoroast Family",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "ANGEL"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "NONE",
+      "conceptual_control_rating": 85,
+      "authority_domains": [
+        "TIME",
+        "PARASITISM",
+        "DECEPTION",
+        "DECRYPTION"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 75,
+      "is_sealed": false,
+      "current_anchor_count": 45
+    },
+    "activity_profile": {
+      "world_presence": 40,
+      "world_activity_rating": 35,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 30,
+      "divination_misdirection_chance": 75,
+      "corruption_leak_multiplier": 1.01
+    },
+    "knowledge_inventory": [
+      "KNOW_PATHWAY_ERROR_TIME_LOOPS",
+      "KNOW_SPACE_TIME_MECHANICS",
+      "KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+    ],
+    "relationship_links": [
+      { "entity_id": "KOA_AMON", "type": "ENEMY", "value": 5 },
+      { "entity_id": "NPC_009", "type": "ALLY", "value": 65 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_NORTH"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 24,
+      "quest_trigger_id": "QST_PALLEZ_TIME_REFUND"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "WORM_OF_TIME_DETECTION_ACTIVE": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_NORTH": { "divination_speed_modifier": 1.15 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 60
+  },
+  {
+    "id": "ANGEL_WILL_AUCEPTIN",
+    "identity": {
+      "name": "Will Auceptin",
+      "pathway": "MONSTER",
+      "sequence": 1,
+      "historical_era": "Fifth Epoch",
+      "primary_faction": "Life School of Thought",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "ANGEL"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "KEY_OF_LIGHT",
+      "conceptual_control_rating": 84,
+      "authority_domains": [
+        "FATE",
+        "PROBABILITY",
+        "LUCK",
+        "REINCARNATION"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "REINCARNATING",
+      "sanity_index": 95,
+      "is_sealed": false,
+      "current_anchor_count": 55
+    },
+    "activity_profile": {
+      "world_presence": 50,
+      "world_activity_rating": 40,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": false
+    },
+    "world_influence": {
+      "divination_sanity_drain": 25,
+      "divination_misdirection_chance": 85,
+      "corruption_leak_multiplier": 1.00
+    },
+    "knowledge_inventory": [
+      "KNOW_FATE_AND_PROBABILITY",
+      "KNOW_SPIRIT_WORLD_WISP_ANOMALIES"
+    ],
+    "relationship_links": [
+      { "entity_id": "KOA_OUROBOROS", "type": "ENEMY", "value": 10 },
+      { "entity_id": "NPC_014", "type": "MASTER", "value": 80 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_WEST"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 20,
+      "quest_trigger_id": "QST_WILL_REBIRTH_COORDINATE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "LUCK_FLUCTUATION_LOCAL_STABLE": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_WEST": { "base_luck_index_bonus": 20 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 64
+  },
+  {
+    "id": "ANGEL_AZIK_EGGERS",
+    "identity": {
+      "name": "Azik Eggers",
+      "pathway": "DEATH",
+      "sequence": 2,
+      "historical_era": "Fourth Epoch",
+      "primary_faction": "Independent",
+      "covert_affiliation": "Loen Kingdom Academia"
+    },
+    "classification": {
+      "tier": "ANGEL"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "RIVER_OF_ETERNAL_DARKNESS",
+      "conceptual_control_rating": 80,
+      "authority_domains": [
+        "SOULS",
+        "UNDERWORLD",
+        "DEATH",
+        "AMNESIA"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 80,
+      "is_sealed": false,
+      "current_anchor_count": 40
+    },
+    "activity_profile": {
+      "world_presence": 35,
+      "world_activity_rating": 30,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 35,
+      "divination_misdirection_chance": 65,
+      "corruption_leak_multiplier": 1.02
+    },
+    "knowledge_inventory": [
+      "KNOW_DANGEROUS_UNDERWORLD_GATES",
+      "KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_REINETTE_TINEKERR", "type": "ALLY", "value": 70 },
+      { "entity_id": "NPC_061", "type": "MASTER", "value": 50 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_SUBURBS",
+      "REG_SPIRIT_WORLD"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 18,
+      "quest_trigger_id": "QST_AZIK_MEMORY_RECOVERY"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "UNDERWORLD_ECHO_PASSIVE_STABLE": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_SUBURBS": { "ghost_encounter_rate_multiplier": 0.50 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 58
+  },
+  {
+    "id": "ANGEL_SIA_PALENQUE",
+    "identity": {
+      "name": "Sia Palenque Eggers",
+      "pathway": "DEATH",
+      "sequence": 1,
+      "historical_era": "Fourth Epoch",
+      "primary_faction": "Eggers Family",
+      "covert_affiliation": "Numinous Episcopacy"
+    },
+    "classification": {
+      "tier": "ANGEL"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "RIVER_OF_ETERNAL_DARKNESS",
+      "conceptual_control_rating": 88,
+      "authority_domains": [
+        "DEATH",
+        "UNDERWORLD",
+        "SOULS",
+        "REANIMATION"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 60,
+      "is_sealed": false,
+      "current_anchor_count": 80
+    },
+    "activity_profile": {
+      "world_presence": 55,
+      "world_activity_rating": 50,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 45,
+      "divination_misdirection_chance": 75,
+      "corruption_leak_multiplier": 1.08
+    },
+    "knowledge_inventory": [
+      "KNOW_DANGEROUS_UNDERWORLD_GATES",
+      "KNOW_FOURTH_EPOCH_WARS"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_AZIK_EGGERS", "type": "RIVAL", "value": 40 }
+    ],
+    "active_regions": [
+      "REG_SPIRIT_WORLD"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 28,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "PALE_EPISCOPACY_INFLUENCE": true },
+      "region_stat_overrides": {}
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 80
+  },
+  {
+    "id": "ANGEL_REINETTE_TINEKERR",
+    "identity": {
+      "name": "Reinette Tinekerr",
+      "pathway": "DEATH",
+      "sequence": 2,
+      "historical_era": "Fourth Epoch",
+      "primary_faction": "Independent",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "ANGEL"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "NONE",
+      "conceptual_control_rating": 78,
+      "authority_domains": [
+        "SOULS",
+        "SPIRIT_WORLD",
+        "DEATH",
+        "CONTRACTS"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 85,
+      "is_sealed": false,
+      "current_anchor_count": 35
+    },
+    "activity_profile": {
+      "world_presence": 45,
+      "world_activity_rating": 55,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 30,
+      "divination_misdirection_chance": 55,
+      "corruption_leak_multiplier": 1.01
+    },
+    "knowledge_inventory": [
+      "KNOW_SPIRIT_WORLD_TELEGRAPHY",
+      "KNOW_SPIRIT_WORLD_SHADOWS"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_AZIK_EGGERS", "type": "ALLY", "value": 70 }
+    ],
+    "active_regions": [
+      "REG_SPIRIT_WORLD"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 22,
+      "quest_trigger_id": "QST_REINETTE_GOLD_CONTRACT"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "SPIRIT_WORLD_TRANSPORT_COST_REDUCED": true },
+      "region_stat_overrides": {
+        "REG_SPIRIT_WORLD": { "exploration_sanity_cost_multiplier": 0.80 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 55
+  },
+  {
+    "id": "ANGEL_BERNADETTE_GUSTAV",
+    "identity": {
+      "name": "Bernadette Gustav",
+      "pathway": "MYSTERY_PRYER",
+      "sequence": 2,
+      "historical_era": "Fifth Epoch",
+      "primary_faction": "The Element Dawn",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "ANGEL"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "KNOWLEDGE_MOOR",
+      "conceptual_control_rating": 82,
+      "authority_domains": [
+        "KNOWLEDGE",
+        "DISCOVERY",
+        "OCCULTISM",
+        "MYSTICAL_ITEMS"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 88,
+      "is_sealed": false,
+      "current_anchor_count": 65
+    },
+    "activity_profile": {
+      "world_presence": 60,
+      "world_activity_rating": 50,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 20,
+      "divination_misdirection_chance": 70,
+      "corruption_leak_multiplier": 1.00
+    },
+    "knowledge_inventory": [
+      "KNOW_DANGEROUS_MOSES_TRANSCRIPTION",
+      "KNOW_INTIS_ESPIONAGE_NETWORKS",
+      "KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+    ],
+    "relationship_links": [
+      { "entity_id": "NPC_011", "type": "ENEMY", "value": 20 },
+      { "entity_id": "NPC_015", "type": "STUDENT", "value": 60 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_PORT"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 16,
+      "quest_trigger_id": "QST_BERNADETTE_FAIRY_TALE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "MYSTICAL_ITEMS_DISCOVERY_UP": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_PORT": { "black_market_price_modifier": 0.85 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 68
+  },
+  {
+    "id": "ANGEL_BORNOVA_GUSTAV",
+    "identity": {
+      "name": "Bornova Gustav",
+      "pathway": "PARAGON",
+      "sequence": 2,
+      "historical_era": "Fifth Epoch",
+      "primary_faction": "Church of Steam and Machinery",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "ANGEL"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "KNOWLEDGE_MOOR",
+      "conceptual_control_rating": 80,
+      "authority_domains": [
+        "MACHINERY",
+        "CRAFTING",
+        "STABILITY",
+        "GROUNDING"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 92,
+      "is_sealed": false,
+      "current_anchor_count": 50
+    },
+    "activity_profile": {
+      "world_presence": 40,
+      "world_activity_rating": 30,
+      "can_spawn_events": true,
+      "can_spawn_rumors": false,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 25,
+      "divination_misdirection_chance": 60,
+      "corruption_leak_multiplier": 1.00
+    },
+    "knowledge_inventory": [
+      "KNOW_PATHVIEW_SAVANT_TRANSMUTATION",
+      "KNOW_ALCHEMICAL_FOUNDATIONS"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_BERNADETTE_GUSTAV", "type": "RIVAL", "value": 40 },
+      { "entity_id": "NPC_035", "type": "ALLY", "value": 75 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_NORTH"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 22,
+      "quest_trigger_id": "QST_BORNOVA_GROUND_SEAL"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "PARAGON_GROUNDING_STABLE": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_NORTH": { "exploration_danger_rate_modifier": 0.80 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 65
+  },
+  {
+    "id": "ANGEL_HERMES_ANCIENT",
+    "identity": {
+      "name": "Hermes",
+      "pathway": "SPECTATOR",
+      "sequence": 2,
+      "historical_era": "Multiple Epochs",
+      "primary_faction": "Psychology Alchemists",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "ANGEL"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "CHAOS_SEA",
+      "conceptual_control_rating": 86,
+      "authority_domains": [
+        "PSYCHOLOGY",
+        "MYSTICISM",
+        "HIDDEN_KNOWLEDGE",
+        "MIND_MAZE"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 70,
+      "is_sealed": false,
+      "current_anchor_count": 45
+    },
+    "activity_profile": {
+      "world_presence": 55,
+      "world_activity_rating": 45,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 45,
+      "divination_misdirection_chance": 85,
+      "corruption_leak_multiplier": 1.05
+    },
+    "knowledge_inventory": [
+      "KNOW_DANGEROUS_MIND_CATACOMBS",
+      "KNOW_ORGANIZATION_PSYCHOLOGY_ALCHEMISTS",
+      "KNOW_PSYCHOLOGY_ALCHEMISTS_DREAM_WEAVING"
+    ],
+    "relationship_links": [
+      { "entity_id": "NPC_006", "type": "MASTER", "value": 90 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_WEST"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 26,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "MIND_CATACOMBS_RESONANCE_HIGH": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_WEST": { "player_sanity_regen_rate": 0.80 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 72
+  },
+  {
+    "id": "ANGEL_ARIANNA",
+    "identity": {
+      "name": "Arianna",
+      "pathway": "NIGHT",
+      "sequence": 2,
+      "historical_era": "Fifth Epoch",
+      "primary_faction": "Church of Evernight",
+      "covert_affiliation": "Ascetic Order Leader"
+    },
+    "classification": {
+      "tier": "ANGEL"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "RIVER_OF_ETERNAL_DARKNESS",
+      "conceptual_control_rating": 87,
+      "authority_domains": [
+        "DREAMS",
+        "NIGHT",
+        "CONCEALMENT",
+        "ASCETICISM"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 95,
+      "is_sealed": false,
+      "current_anchor_count": 75
+    },
+    "activity_profile": {
+      "world_presence": 65,
+      "world_activity_rating": 60,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 40,
+      "divination_misdirection_chance": 90,
+      "corruption_leak_multiplier": 1.00
+    },
+    "knowledge_inventory": [
+      "KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS",
+      "KNOW_SPIRIT_WORLD"
+    ],
+    "relationship_links": [
+      { "entity_id": "NPC_005", "type": "MASTER", "value": 95 },
+      { "entity_id": "NPC_017", "type": "ALLY", "value": 85 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_WEST"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 20,
+      "quest_trigger_id": "QST_ARIANNA_CONCEALED_TRUTH"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "CONCEALMENT_BARRIER_REINFORCED": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_WEST": { "corruption_gain_rate_multiplier": 0.85 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 75
+  },
+  {
+    "id": "ANGEL_SUAH_ABOMINATION",
+    "identity": {
+      "name": "Suah",
+      "pathway": "PRISONER",
+      "sequence": 1,
+      "historical_era": "Fifth Epoch",
+      "primary_faction": "Rose School of Thought",
+      "covert_affiliation": "Indulgence Fraction"
+    },
+    "classification": {
+      "tier": "ANGEL"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "NONE",
+      "conceptual_control_rating": 88,
+      "authority_domains": [
+        "MALEDICTION",
+        "MUTATION",
+        "DESIRE",
+        "FETISHISM"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 30,
+      "is_sealed": false,
+      "current_anchor_count": 90
+    },
+    "activity_profile": {
+      "world_presence": 75,
+      "world_activity_rating": 70,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 60,
+      "divination_misdirection_chance": 80,
+      "corruption_leak_multiplier": 1.25
+    },
+    "knowledge_inventory": [
+      "KNOW_DANGEROUS_BLOOD_RITUALS",
+      "KNOW_FORBIDDEN_OUTER_DEITY_TREE_DESIRE"
+    ],
+    "relationship_links": [
+      { "entity_id": "NPC_002", "type": "MASTER", "value": 90 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_SUBURBS",
+      "REG_SPIRIT_WORLD"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 35,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "ABERRANT_CONTAMINATION_SPREADING": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_SUBURBS": { "corruption_gain_rate_multiplier": 1.30, "sanity_drain_per_tick_modifier": 2 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 82
+  },
+  {
+    "id": "ANGEL_TIRIE_CHAINED",
+    "identity": {
+      "name": "Tirié",
+      "pathway": "PRISONER",
+      "sequence": 1,
+      "historical_era": "Fifth Epoch",
+      "primary_faction": "Rose School of Thought",
+      "covert_affiliation": "Indulgence Fraction"
+    },
+    "classification": {
+      "tier": "ANGEL"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "NONE",
+      "conceptual_control_rating": 80,
+      "authority_domains": [
+        "CHAINS",
+        "RESTRICTION",
+        "BINDING",
+        "DESIRE"
+      ]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 45,
+"is_sealed": false,
+"current_anchor_count": 40
+},
+"activity_profile": {
+"world_presence": 45,
+"world_activity_rating": 50,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": false
+},
+"world_influence": {
+"divination_sanity_drain": 45,
+"divination_misdirection_chance": 75,
+"corruption_leak_multiplier": 1.15
+},
+"knowledge_inventory": [
+"KNOW_DANGEROUS_BLOOD_RITUALS"
+],
+"relationship_links": [
+{ "entity_id": "ANGEL_SUAH_ABOMINATION", "type": "ALLY", "value": 80 }
+],
+"active_regions": [
+"REG_SPIRIT_WORLD"
+],
+"interaction_hooks": {
+"interaction_allowed": false,
+"knowledge_threshold_required": 28,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "CHAINED_MIND_RESTRAIN": true },
+"region_stat_overrides": {}
+},
+"importance": "LEGENDARY",
+"influence_score": 64
+},
+{
+"id": "ANGEL_KOTAR_DEVIL_WOLF",
+"identity": {
+"name": "Kotar",
+"pathway": "FOOL",
+"sequence": 1,
+"historical_era": "Second Epoch",
+"primary_faction": "Independent",
+"covert_affiliation": "NONE"
+},
+"classification": {
+"tier": "ANGEL"
+},
+"authority": {
+"has_uniqueness": false,
+"sephirot_resonance_id": "CASTLE_OF_SEFIRAH",
+"conceptual_control_rating": 89,
+"authority_domains": [
+"WISHES",
+"MIRACLES",
+"ILLUSIONS",
+"CONCEALMENT"
+]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 55,
+"is_sealed": false,
+"current_anchor_count": 20
+},
+"activity_profile": {
+"world_presence": 30,
+"world_activity_rating": 45,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": true
+},
+"world_influence": {
+"divination_sanity_drain": 50,
+"divination_misdirection_chance": 90,
+"corruption_leak_multiplier": 1.08
+},
+"knowledge_inventory": [
+"KNOW_SPACE_TIME_MECHANICS",
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+],
+"relationship_links": [
+{ "entity_id": "DEITY_ANTIGONUS", "type": "ALLY", "value": 50 }
+],
+"active_regions": [
+"REG_SPIRIT_WORLD"
+],
+"interaction_hooks": {
+"interaction_allowed": true,
+"knowledge_threshold_required": 30,
+"quest_trigger_id": "QST_KOTAR_WISH_GRANT"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "MIRACLE_ALTERATION_LEAK": true },
+"region_stat_overrides": {
+"REG_SPIRIT_WORLD": { "divination_misdirection_chance_modifier": 20 }
+}
+},
+"importance": "LEGENDARY",
+"influence_score": 70
+},
+{
+"id": "ANGEL_JUDITH_DEMONESS",
+"identity": {
+"name": "Judith",
+"pathway": "ASSASSIN",
+"sequence": 2,
+"historical_era": "Fifth Epoch",
+"primary_faction": "Demoness Sect",
+"covert_affiliation": "NONE"
+},
+"classification": {
+"tier": "ANGEL"
+},
+"authority": {
+"has_uniqueness": false,
+"sephirot_resonance_id": "NONE",
+"conceptual_control_rating": 80,
+"authority_domains": [
+"DISEASE",
+"AFFLICTION",
+"WITCHCRAFT",
+"CONCEALMENT"
+]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 60,
+"is_sealed": false,
+"current_anchor_count": 75
+},
+"activity_profile": {
+"world_presence": 55,
+"world_activity_rating": 60,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": true
+},
+"world_influence": {
+"divination_sanity_drain": 35,
+"divination_misdirection_chance": 80,
+"corruption_leak_multiplier": 1.05
+},
+"knowledge_inventory": [
+"KNOW_ORGANIZATION_DEMONESS_NETWORKS",
+"KNOW_PATHWAY_DEMONESS_PLEASURE"
+],
+"relationship_links": [
+{ "entity_id": "NPC_019", "type": "MASTER", "value": 85 }
+],
+"active_regions": [
+"REG_BACKLUND_EAST"
+],
+"interaction_hooks": {
+"interaction_allowed": false,
+"knowledge_threshold_required": 24,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "DEMONESS_PLAGUE_SPREADING": true },
+"region_stat_overrides": {
+"REG_BACKLUND_EAST": { "corruption_gain_rate_multiplier": 1.10 }
+}
+},
+"importance": "LEGENDARY",
+"influence_score": 66
+},
+{
+"id": "ANGEL_TISSAVICA_DEMONESS",
+"identity": {
+"name": "Tissavica",
+"pathway": "ASSASSIN",
+"sequence": 2,
+"historical_era": "Fifth Epoch",
+"primary_faction": "Demoness Sect",
+"covert_affiliation": "NONE"
+},
+"classification": {
+"tier": "ANGEL"
+},
+"authority": {
+"has_uniqueness": false,
+"sephirot_resonance_id": "NONE",
+"conceptual_control_rating": 77,
+"authority_domains": [
+"PAIN",
+"CATACLYSM",
+"WITCHCRAFT",
+"SUGESTION"
+]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 55,
+"is_sealed": false,
+"current_anchor_count": 65
+},
+"activity_profile": {
+"world_presence": 50,
+"world_activity_rating": 55,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": false
+},
+"world_influence": {
+"divination_sanity_drain": 35,
+"divination_misdirection_chance": 75,
+"corruption_leak_multiplier": 1.04
+},
+"knowledge_inventory": [
+"KNOW_ORGANIZATION_DEMONESS_NETWORKS"
+],
+"relationship_links": [
+{ "entity_id": "ANGEL_JUDITH_DEMONESS", "type": "ALLY", "value": 75 }
+],
+"active_regions": [
+"REG_BACKLUND_WEST"
+],
+"interaction_hooks": {
+"interaction_allowed": false,
+"knowledge_threshold_required": 22,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "PAIN_ECHO_ACTIVE": true },
+"region_stat_overrides": {}
+},
+"importance": "LEGENDARY",
+"influence_score": 62
+},
+{
+"id": "ANGEL_LADY_MOON_COI",
+"identity": {
+"name": "Lady Moon",
+"pathway": "MOON",
+"sequence": 1,
+"historical_era": "Fifth Epoch",
+"primary_faction": "Primal Moon Cult",
+"covert_affiliation": "Outer Deities Splinter"
+},
+"classification": {
+"tier": "ANGEL"
+},
+"authority": {
+"has_uniqueness": false,
+"sephirot_resonance_id": "BROOD_INCARNATE",
+"conceptual_control_rating": 86,
+"authority_domains": [
+"CONTAMINATION",
+"COSMIC_FERTILITY",
+"HERESY_BLOOD"
+]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 40,
+"is_sealed": false,
+"current_anchor_count": 80
+},
+"activity_profile": {
+"world_presence": 80,
+"world_activity_rating": 85,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": true
+},
+"world_influence": {
+"divination_sanity_drain": 55,
+"divination_misdirection_chance": 90,
+"corruption_leak_multiplier": 1.20
+},
+"knowledge_inventory": [
+"KNOW_OUTER_DEITIES_PRIMITIVE_MOON_BLOOD",
+"KNOW_FORBIDDEN_COSMIC_INEVITABILITY"
+],
+"relationship_links": [
+{ "entity_id": "NPC_022", "type": "MASTER", "value": 95 }
+],
+"active_regions": [
+"REG_BACKLUND_OUTSKIRTS",
+"REG_BACKLUND_EAST"
+],
+"interaction_hooks": {
+"interaction_allowed": false,
+"knowledge_threshold_required": 32,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "COSMIC_MOON_CONTAMINATION_ACTIVE": true },
+"region_stat_overrides": {
+"REG_BACKLUND_OUTSKIRTS": { "corruption_gain_rate_multiplier": 1.40 },
+"REG_BACKLUND_EAST": { "sanity_drain_per_tick_modifier": 3 }
+}
+},
+"importance": "LEGENDARY",
+"influence_score": 84
+}
+]
+

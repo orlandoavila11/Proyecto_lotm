@@ -1,0 +1,413 @@
+[
+  {
+    "id": "SEPH_SEPHIRAH_CASTLE",
+    "identity": {
+      "name": "Sephirah Castle",
+      "ats_group": "LORD_OF_MYSTERIES"
+    },
+    "pathway_group": [
+      "FOOL",
+      "DOOR",
+      "ERROR"
+    ],
+    "current_state": {
+      "status": "ACTIVE",
+      "current_owner_id": "GOD_THE_FOOL_KLEIN",
+      "access_level": 100,
+      "planetary_shield_barrier": true
+    },
+    "authority": {
+      "authority_domains": [
+        "SPIRIT_WORLD",
+        "SPACE_TIME",
+        "DESTINY",
+        "MYSTERY"
+      ]
+    },
+    "ats_progression": {
+      "target_goo_id": "GOO_LORD_OF_MYSTERIES",
+      "uniqueness_ids_required": [
+        "UNI_FOOL",
+        "UNI_DOOR",
+        "UNI_ERROR"
+      ],
+      "required_sequence_1_characteristics": [
+        { "pathway": "FOOL", "count": 1 },
+        { "pathway": "DOOR", "count": 1 },
+        { "pathway": "ERROR", "count": 1 }
+      ]
+    },
+    "neighboring_outer_deities": [
+      "OD_HIGH_DIMENSIONAL_OVERSEER",
+      "OD_GODDESS_OF_FATE"
+    ],
+    "world_influence": {
+      "corruption_rating": 100,
+      "cosmic_attraction_score": 85,
+      "global_sanity_drain_modifier": 2
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "SEPH_CHAOS_SEA",
+    "identity": {
+      "name": "Chaos Sea",
+      "ats_group": "GOD_ALMIGHTY"
+    },
+    "pathway_group": [
+      "SPECTATOR",
+      "HANGED_MAN",
+      "SUN",
+      "SAILOR",
+      "READER"
+    ],
+    "current_state": {
+      "status": "ACTIVE",
+      "current_owner_id": "GOD_ADAM_TRUE_CREATOR",
+      "access_level": 90,
+      "planetary_shield_barrier": true
+    },
+    "authority": {
+      "authority_domains": [
+        "OMNIPOTENCE",
+        "OMNISCIENCE",
+        "CREATION_DISSOLUTION"
+      ]
+    },
+    "ats_progression": {
+      "target_goo_id": "GOO_GOD_ALMIGHTY",
+      "uniqueness_ids_required": [
+        "UNI_VISIONARY",
+        "UNI_HANGED_MAN",
+        "UNI_SUN",
+        "UNI_TYRANT",
+        "UNI_WHITE_TOWER"
+      ],
+      "required_sequence_1_characteristics": [
+        { "pathway": "SPECTATOR", "count": 1 },
+        { "pathway": "HANGED_MAN", "count": 1 },
+        { "pathway": "SUN", "count": 1 },
+        { "pathway": "SAILOR", "count": 1 },
+        { "pathway": "READER", "count": 1 }
+      ]
+    },
+    "neighboring_outer_deities": [
+      "OD_GOD_ALMIGHTY_RIVAL"
+    ],
+    "world_influence": {
+      "corruption_rating": 100,
+      "cosmic_attraction_score": 90,
+      "global_sanity_drain_modifier": 3
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "SEPH_RIVER_OF_ETERNAL_DARKNESS",
+    "identity": {
+      "name": "River of Eternal Darkness",
+      "ats_group": "ETERNAL_DARKNESS"
+    },
+    "pathway_group": [
+      "NIGHT",
+      "DEATH",
+      "COMBAT"
+    ],
+    "current_state": {
+      "status": "SEALED",
+      "current_owner_id": "GOD_EVERNIGHT",
+      "access_level": 60,
+      "planetary_shield_barrier": true
+    },
+    "authority": {
+      "authority_domains": [
+        "CONCEALMENT",
+        "UNDERWORLD_FLOW",
+        "OBLIVION"
+      ]
+    },
+    "ats_progression": {
+      "target_goo_id": "GOO_ETERNAL_DARKNESS",
+      "uniqueness_ids_required": [
+        "UNI_DARKNESS",
+        "UNI_DEATH",
+        "UNI_TWILIGHT_GIANT"
+      ],
+      "required_sequence_1_characteristics": [
+        { "pathway": "NIGHT", "count": 1 },
+        { "pathway": "DEATH", "count": 1 },
+        { "pathway": "COMBAT", "count": 1 }
+      ]
+    },
+    "neighboring_outer_deities": [
+      "OD_MONARCH_OF_DECAY"
+    ],
+    "world_influence": {
+      "corruption_rating": 90,
+      "cosmic_attraction_score": 75,
+      "global_sanity_drain_modifier": 1
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "SEPH_CITY_OF_CALAMITY",
+    "identity": {
+      "name": "City of Calamity",
+      "ats_group": "CALAMITY_OF_DESTRUCTION"
+    },
+    "pathway_group": [
+      "HUNTER",
+      "ASSASSIN"
+    ],
+    "current_state": {
+      "status": "SEALED",
+      "current_owner_id": "NONE",
+      "access_level": 0,
+      "planetary_shield_barrier": true
+    },
+    "authority": {
+      "authority_domains": [
+        "WARFARE",
+        "APOCALYPSE",
+        "CONFLAGRATION"
+      ]
+    },
+    "ats_progression": {
+      "target_goo_id": "GOO_CALAMITY_OF_DESTRUCTION",
+      "uniqueness_ids_required": [
+        "UNI_RED_PRIEST",
+        "UNI_DEMONESS"
+      ],
+      "required_sequence_1_characteristics": [
+        { "pathway": "HUNTER", "count": 1 },
+        { "pathway": "ASSASSIN", "count": 1 }
+      ]
+    },
+    "neighboring_outer_deities": [
+      "OD_SUPERNOVA_DOMINATOR"
+    ],
+    "world_influence": {
+      "corruption_rating": 95,
+      "cosmic_attraction_score": 80,
+      "global_sanity_drain_modifier": 2
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "SEPH_KNOWLEDGE_MOOR",
+    "identity": {
+      "name": "Knowledge Moor",
+      "ats_group": "DEMON_OF_KNOWLEDGE"
+    },
+    "pathway_group": [
+      "SAVANT",
+      "MYSTERY_PRYER"
+    ],
+    "current_state": {
+      "status": "SEALED",
+      "current_owner_id": "NONE",
+      "access_level": 0,
+      "planetary_shield_barrier": true
+    },
+    "authority": {
+      "authority_domains": [
+        "LOGIC_TRANSMUTATION",
+        "RUNIC_INFORMATION",
+        "ACTIVE_CORRUPTION"
+      ]
+    },
+    "ats_progression": {
+      "target_goo_id": "GOO_DEMON_OF_KNOWLEDGE",
+      "uniqueness_ids_required": [
+        "UNI_PARAGON",
+        "UNI_HERMIT"
+      ],
+      "required_sequence_1_characteristics": [
+        { "pathway": "SAVANT", "count": 1 },
+        { "pathway": "MYSTERY_PRYER", "count": 1 }
+      ]
+    },
+    "neighboring_outer_deities": [
+      "OD_DEMON_OF_KNOWLEDGE_RIVAL"
+    ],
+    "world_influence": {
+      "corruption_rating": 85,
+      "cosmic_attraction_score": 70,
+      "global_sanity_drain_modifier": 2
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "SEPH_KEY_OF_LIGHT",
+    "identity": {
+      "name": "Key of Light",
+      "ats_group": "KEY_OF_LIGHT"
+    },
+    "pathway_group": [
+      "MONSTER"
+    ],
+    "current_state": {
+      "status": "SEALED",
+      "current_owner_id": "NONE",
+      "access_level": 0,
+      "planetary_shield_barrier": true
+    },
+    "authority": {
+      "authority_domains": [
+        "PROBABILITY_INFINITE",
+        "REINCARNATION_LOOP",
+        "FATE_DOMINANCE"
+      ]
+    },
+    "ats_progression": {
+      "target_goo_id": "GOO_KEY_OF_LIGHT",
+      "uniqueness_ids_required": [
+        "UNI_WHEEL_OF_FORTUNE"
+      ],
+      "required_sequence_1_characteristics": [
+        { "pathway": "MONSTER", "count": 1 }
+      ]
+    },
+    "neighboring_outer_deities": [
+      "OD_GODDESS_OF_FATE"
+    ],
+    "world_influence": {
+      "corruption_rating": 80,
+      "cosmic_attraction_score": 85,
+      "global_sanity_drain_modifier": 0
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "SEPH_NATION_OF_DISORDER",
+    "identity": {
+      "name": "Nation of Disorder",
+      "ats_group": "THE_ANARCHY"
+    },
+    "pathway_group": [
+      "ARBITER",
+      "LAWYER"
+    ],
+    "current_state": {
+      "status": "SEALED",
+      "current_owner_id": "NONE",
+      "access_level": 0,
+      "planetary_shield_barrier": true
+    },
+    "authority": {
+      "authority_domains": [
+        "RULE_DISTORTION",
+        "CONCEPTUAL_EXPLOITS",
+        "ABSOLUTE_MANDATE"
+      ]
+    },
+    "ats_progression": {
+      "target_goo_id": "GOO_THE_ANARCHY",
+      "uniqueness_ids_required": [
+        "UNI_JUSTICIAR",
+        "UNI_BLACK_EMPEROR"
+      ],
+      "required_sequence_1_characteristics": [
+        { "pathway": "ARBITER", "count": 1 },
+        { "pathway": "LAWYER", "count": 1 }
+      ]
+    },
+    "neighboring_outer_deities": [
+      "OD_SON_OF_CHAOS",
+      "OD_UNCERTAIN_MIST"
+    ],
+    "world_influence": {
+      "corruption_rating": 90,
+      "cosmic_attraction_score": 75,
+      "global_sanity_drain_modifier": 2
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "SEPH_TENEBROUS_WORLD",
+    "identity": {
+      "name": "Tenebrous World",
+      "ats_group": "FATHER_OF_DEVILS"
+    },
+    "pathway_group": [
+      "DEVIL",
+      "PRISONER"
+    ],
+    "current_state": {
+      "status": "SEALED",
+      "current_owner_id": "NONE",
+      "access_level": 0,
+      "planetary_shield_barrier": true
+    },
+    "authority": {
+      "authority_domains": [
+        "MALICE_MAZE",
+        "FLESH_INDULGENCE",
+        "ABERRANT_RESONANCE"
+      ]
+    },
+    "ats_progression": {
+      "target_goo_id": "GOO_FATHER_OF_DEVILS",
+      "uniqueness_ids_required": [
+        "UNI_ABYSS",
+        "UNI_CHAINED"
+      ],
+      "required_sequence_1_characteristics": [
+        { "pathway": "DEVIL", "count": 1 },
+        { "pathway": "PRISONER", "count": 1 }
+      ]
+    },
+    "neighboring_outer_deities": [
+      "OD_MTOD"
+    ],
+    "world_influence": {
+      "corruption_rating": 95,
+      "cosmic_attraction_score": 90,
+      "global_sanity_drain_modifier": 3
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "SEPH_BROOD_HIVE",
+    "identity": {
+      "name": "Brood Hive",
+      "ats_group": "BROOD_HIVE"
+    },
+    "pathway_group": [
+      "APOTHECARY",
+      "PLANTER"
+    ],
+    "current_state": {
+      "status": "SEALED",
+      "current_owner_id": "NONE",
+      "access_level": 0,
+      "planetary_shield_barrier": true
+    },
+    "authority": {
+      "authority_domains": [
+        "MUTATION_OVERLOAD",
+        "BIOLOGICAL_CREATION",
+        "DESIRE_FRENZY"
+      ]
+    },
+    "ats_progression": {
+      "target_goo_id": "GOO_BROOD_HIVE",
+      "uniqueness_ids_required": [
+        "UNI_MOON",
+        "UNI_MOTHER"
+      ],
+      "required_sequence_1_characteristics": [
+        { "pathway": "APOTHECARY", "count": 1 },
+        { "pathway": "PLANTER", "count": 1 }
+      ]
+    },
+    "neighboring_outer_deities": [
+      "OD_MGD"
+    ],
+    "world_influence": {
+      "corruption_rating": 100,
+      "cosmic_attraction_score": 95,
+      "global_sanity_drain_modifier": 4
+    },
+    "importance": "LEGENDARY"
+  }
+]

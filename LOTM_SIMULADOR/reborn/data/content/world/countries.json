@@ -1,0 +1,246 @@
+[
+  {
+    "id": "COUN_LOEN",
+    "metadata": {
+      "name": "Loen Kingdom",
+      "government_type": "CONSTITUTIONAL_MONARCHY",
+      "capital_city_id": "REG_BACKLUND_NORTH",
+      "continental_region": "NORTHERN_CONTINENT"
+    },
+    "economy_profile": {
+      "currency_name": "Pound",
+      "base_inflation_modifier": 1.05,
+      "black_market_activity_index": 45
+    },
+    "geopolitical_stability": {
+      "stability_index": 70,
+      "conscription_active": true,
+      "border_tension_score": 85
+    },
+    "religious_influence": {
+      "dominant_orthodox_church_ids": [
+        "CHURCH_EVERNIGHT",
+        "CHURCH_STORMS",
+        "CHURCH_STEAM"
+      ],
+      "state_suppression_of_heresy_rating": 80
+    },
+    "intelligence_and_shadows": {
+      "native_secret_service_ids": [
+        "ORG_MI9"
+      ],
+      "infiltrated_cult_ids": [
+        "ORG_AURORA_ORDER",
+        "ORG_SECRET_ORDER",
+        "ORG_DEMONESS_SECT"
+      ]
+    },
+    "engine_modifiers": {
+      "global_sanity_drain_multiplier": 1.00,
+      "crime_encounter_rate_modifier": 1.20,
+      "divination_interference_index": 35
+    },
+    "diplomatic_matrix": [
+      {
+        "target_country_id": "COUN_INTIS",
+        "relation_type": "HOSTILE",
+        "diplomatic_value": -40
+      },
+      {
+        "target_country_id": "COUN_FEYSAC",
+        "relation_type": "WAR_STATE",
+        "diplomatic_value": -95
+      },
+      {
+        "target_country_id": "COUN_LENBURG",
+        "relation_type": "FRIENDLY",
+        "diplomatic_value": 45
+      }
+    ],
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "COUN_INTIS",
+    "metadata": {
+      "name": "Intis Republic",
+      "government_type": "REPUBLIC",
+      "capital_city_id": "REG_TRIER_CENTRAL",
+      "continental_region": "NORTHERN_CONTINENT"
+    },
+    "economy_profile": {
+      "currency_name": "Ver d'Or",
+      "base_inflation_modifier": 1.10,
+      "black_market_activity_index": 60
+    },
+    "geopolitical_stability": {
+      "stability_index": 65,
+      "conscription_active": true,
+      "border_tension_score": 75
+    },
+    "religious_influence": {
+      "dominant_orthodox_church_ids": [
+        "CHURCH_SUN"
+      ],
+      "state_suppression_of_heresy_rating": 90
+    },
+    "intelligence_and_shadows": {
+      "native_secret_service_ids": [
+        "ORG_SAURON_REMNANTS"
+      ],
+      "infiltrated_cult_ids": [
+        "ORG_COI_DANCERS",
+        "ORG_MOSES_ORDER"
+      ]
+    },
+    "engine_modifiers": {
+      "global_sanity_drain_multiplier": 1.15,
+      "crime_encounter_rate_modifier": 1.35,
+      "divination_interference_index": 50
+    },
+    "diplomatic_matrix": [
+      {
+        "target_country_id": "COUN_LOEN",
+        "relation_type": "HOSTILE",
+        "diplomatic_value": -40
+      },
+      {
+        "target_country_id": "COUN_FEYNABOTTER",
+        "relation_type": "NEUTRAL",
+        "diplomatic_value": 10
+      }
+    ],
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "COUN_FEYSAC",
+    "metadata": {
+      "name": "Feysac Empire",
+      "government_type": "MILITARY_EMPIRE",
+      "capital_city_id": "REG_AWWA_CORE",
+      "continental_region": "NORTHERN_CONTINENT"
+    },
+    "economy_profile": {
+      "currency_name": "Gold Mark",
+      "base_inflation_modifier": 1.15,
+      "black_market_activity_index": 30
+    },
+    "geopolitical_stability": {
+      "stability_index": 55,
+      "conscription_active": true,
+      "border_tension_score": 95
+    },
+    "religious_influence": {
+      "dominant_orthodox_church_ids": [
+        "CHURCH_EARTH_MOTHER"
+      ],
+      "state_suppression_of_heresy_rating": 65
+    },
+    "intelligence_and_shadows": {
+      "native_secret_service_ids": [],
+      "infiltrated_cult_ids": [
+        "ORG_IRON_BLOOD"
+      ]
+    },
+    "engine_modifiers": {
+      "global_sanity_drain_multiplier": 1.10,
+      "crime_encounter_rate_modifier": 1.15,
+      "divination_interference_index": 20
+    },
+    "diplomatic_matrix": [
+      {
+        "target_country_id": "COUN_LOEN",
+        "relation_type": "WAR_STATE",
+        "diplomatic_value": -95
+      }
+    ],
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "COUN_FEYNABOTTER",
+    "metadata": {
+      "name": "Feynapotter Kingdom",
+      "government_type": "ABSOLUTE_MONARCHY",
+      "capital_city_id": "REG_DURMUR_CORE",
+      "continental_region": "NORTHERN_CONTINENT"
+    },
+    "economy_profile": {
+      "currency_name": "Lira",
+      "base_inflation_modifier": 1.02,
+      "black_market_activity_index": 25
+    },
+    "geopolitical_stability": {
+      "stability_index": 85,
+      "conscription_active": false,
+      "border_tension_score": 40
+    },
+    "religious_influence": {
+      "dominant_orthodox_church_ids": [
+        "CHURCH_EARTH_MOTHER"
+      ],
+      "state_suppression_of_heresy_rating": 75
+    },
+    "intelligence_and_shadows": {
+      "native_secret_service_ids": [],
+      "infiltrated_cult_ids": [
+        "ORG_SANGUINE_COUNCIL"
+      ]
+    },
+    "engine_modifiers": {
+      "global_sanity_drain_multiplier": 0.90,
+      "crime_encounter_rate_modifier": 0.95,
+      "divination_interference_index": 15
+    },
+    "diplomatic_matrix": [
+      {
+        "target_country_id": "COUN_INTIS",
+        "relation_type": "NEUTRAL",
+        "diplomatic_value": 10
+      }
+    ],
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "COUN_LENBURG",
+    "metadata": {
+      "name": "Lenburg",
+      "government_type": "PRINCIPALITY",
+      "capital_city_id": "REG_LENBURG_CITY",
+      "continental_region": "NORTHERN_CONTINENT"
+    },
+    "economy_profile": {
+      "currency_name": "Gold Coin",
+      "base_inflation_modifier": 1.00,
+      "black_market_activity_index": 15
+    },
+    "geopolitical_stability": {
+      "stability_index": 90,
+      "conscription_active": false,
+      "border_tension_score": 30
+    },
+    "religious_influence": {
+      "dominant_orthodox_church_ids": [
+        "CHURCH_WISDOM"
+      ],
+      "state_suppression_of_heresy_rating": 85
+    },
+    "intelligence_and_shadows": {
+      "native_secret_service_ids": [],
+      "infiltrated_cult_ids": [
+        "ORG_ELEMENT_DAWN"
+      ]
+    },
+    "engine_modifiers": {
+      "global_sanity_drain_multiplier": 0.85,
+      "crime_encounter_rate_modifier": 0.80,
+      "divination_interference_index": 10
+    },
+    "diplomatic_matrix": [
+      {
+        "target_country_id": "COUN_LOEN",
+        "relation_type": "FRIENDLY",
+        "diplomatic_value": 45
+      }
+    ],
+    "importance": "LEGENDARY"
+  }
+]

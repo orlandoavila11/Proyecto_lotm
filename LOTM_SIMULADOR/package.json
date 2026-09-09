@@ -1,19 +1,31 @@
 {
-  "name": "lotm_simulador",
+  "name": "lotm-engine-reborn-workspace",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Path to Godhood — Lord of the Mysteries Systemic RPG",
+  "private": true,
+  "workspaces": [
+    "reborn",
+    "ui"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/index.ts"
+    "dev:server": "npm --prefix reborn run dev",
+    "dev:ui": "npm --prefix ui run dev",
+    "build:server": "npm --prefix reborn run build",
+    "build:ui": "npm --prefix ui run build",
+    "build": "npm run build:server && npm run build:ui",
+    "start": "npm --prefix reborn run start",
+    "test": "npm --prefix reborn run test",
+    "test:server": "npm --prefix reborn run test",
+    "test:ui": "npm --prefix ui run build",
+    "verify:tier-l": "npm --prefix reborn run verify:tier-l"
   },
-  "keywords": [],
+  "keywords": [
+    "lotm",
+    "lord-of-the-mysteries",
+    "rpg",
+    "fastify",
+    "react"
+  ],
   "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "@types/node": "^26.4.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
-  }
+  "license": "ISC"
 }

@@ -1,0 +1,3236 @@
+[
+  {
+    "id": "FATE_EV_FORTUNA_01",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #1",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 5,
+      "maxDay": 50
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 22,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_02",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #2",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 10,
+      "maxDay": 70
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 24,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_03",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #3",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 15,
+      "maxDay": 90
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 26,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_04",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #4",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 20,
+      "maxDay": 110
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 28,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_05",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #5",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 25,
+      "maxDay": 130
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 30,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_06",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #6",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 30,
+      "maxDay": 150
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 32,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_07",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #7",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 35,
+      "maxDay": 170
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 34,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_08",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #8",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 40,
+      "maxDay": 190
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 36,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_09",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #9",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 45,
+      "maxDay": 210
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 38,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_10",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #10",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 50,
+      "maxDay": 230
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 40,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_11",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #11",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 55,
+      "maxDay": 250
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 42,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_12",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #12",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 60,
+      "maxDay": 270
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 44,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_13",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #13",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 65,
+      "maxDay": 290
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 46,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_14",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #14",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 70,
+      "maxDay": 310
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 48,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_15",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #15",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 75,
+      "maxDay": 330
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 50,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_16",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #16",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 80,
+      "maxDay": 350
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 52,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_17",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #17",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 85,
+      "maxDay": 370
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 54,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_18",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #18",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 90,
+      "maxDay": 390
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 56,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_19",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #19",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 95,
+      "maxDay": 410
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 58,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_20",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #20",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 100,
+      "maxDay": 430
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 60,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_21",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #21",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 105,
+      "maxDay": 450
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 62,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_FORTUNA_22",
+    "category": "FORTUNA",
+    "title": "Golpe de Azar Providencial #22",
+    "description": "Un carruaje se detiene a tu lado justo a tiempo para sacarte de un aguacero; el cochero resulta ser un coleccionista dispuesto a comprar un amuleto común por el triple de su valor.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 110,
+      "maxDay": 470
+    },
+    "consequences": {
+      "karmaDelta": -10,
+      "sanityDelta": 5,
+      "corruptionDelta": 0,
+      "poundsDelta": 64,
+      "anchorsDelta": 2,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 30,
+    "flavorLore": "La rueda del azar gira brevemente a tu favor. En Lord of the Mysteries, toda buena fortuna viene con una factura futura."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_01",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #1",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 5,
+      "maxDay": 50
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_02",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #2",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 10,
+      "maxDay": 70
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_03",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #3",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 15,
+      "maxDay": 90
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_04",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #4",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 20,
+      "maxDay": 110
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_05",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #5",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 25,
+      "maxDay": 130
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_06",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #6",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 30,
+      "maxDay": 150
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_07",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #7",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 35,
+      "maxDay": 170
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_08",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #8",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 40,
+      "maxDay": 190
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_09",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #9",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 45,
+      "maxDay": 210
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_10",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #10",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 50,
+      "maxDay": 230
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_11",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #11",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 55,
+      "maxDay": 250
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_12",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #12",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 60,
+      "maxDay": 270
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_13",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #13",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 65,
+      "maxDay": 290
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_14",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #14",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 70,
+      "maxDay": 310
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_15",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #15",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 75,
+      "maxDay": 330
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_16",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #16",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 80,
+      "maxDay": 350
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_17",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #17",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 85,
+      "maxDay": 370
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_18",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #18",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 90,
+      "maxDay": 390
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_19",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #19",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 95,
+      "maxDay": 410
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_20",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #20",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 100,
+      "maxDay": 430
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_21",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #21",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 105,
+      "maxDay": 450
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INFORTUNIO_22",
+    "category": "INFORTUNIO",
+    "title": "Trallazo del Destino Opuesto #22",
+    "description": "Una racha de viento arranca las notas de tu investigación; al recogerlas, un perro callejero rabioso te acorrala en un callejón sin salida mientras la policía dobla la esquina.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 110,
+      "maxDay": 470
+    },
+    "consequences": {
+      "karmaDelta": 15,
+      "sanityDelta": -6,
+      "corruptionDelta": 0,
+      "poundsDelta": -10,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 45,
+    "flavorLore": "La mala suerte es un mecanismo de ajuste cósmico. Sobrevivir a ella estabiliza el hilo espiritual."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_01",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #1",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 5,
+      "maxDay": 50
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_02",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #2",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 10,
+      "maxDay": 70
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_03",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #3",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 15,
+      "maxDay": 90
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_04",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #4",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 20,
+      "maxDay": 110
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_05",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #5",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 25,
+      "maxDay": 130
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_06",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #6",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 30,
+      "maxDay": 150
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_07",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #7",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 35,
+      "maxDay": 170
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_08",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #8",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 40,
+      "maxDay": 190
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_09",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #9",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 45,
+      "maxDay": 210
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_10",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #10",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 50,
+      "maxDay": 230
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_11",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #11",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 55,
+      "maxDay": 250
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_12",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #12",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 60,
+      "maxDay": 270
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_13",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #13",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 65,
+      "maxDay": 290
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_14",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #14",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 70,
+      "maxDay": 310
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_15",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #15",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 75,
+      "maxDay": 330
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_16",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #16",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 80,
+      "maxDay": 350
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_17",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #17",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 85,
+      "maxDay": 370
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_18",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #18",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 90,
+      "maxDay": 390
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_19",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #19",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 95,
+      "maxDay": 410
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_20",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #20",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 100,
+      "maxDay": 430
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_21",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #21",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 105,
+      "maxDay": 450
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_INEVITABILIDAD_22",
+    "category": "INEVITABILIDAD",
+    "title": "El Encuentro Predestinado #22",
+    "description": "Sin importar qué calle tomes para regresar a casa, tus pasos te conducen inexorablemente a la misma plaza donde un sacerdote herido de la Iglesia se desploma a tus pies.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 110,
+      "maxDay": 470
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -2,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 95,
+    "flavorLore": "Hay eventos que ya están escritos en la trama del cosmos. No se pueden esquivar, solo navegar con prudencia."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_01",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #1",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 5,
+      "maxDay": 50
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_02",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #2",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 10,
+      "maxDay": 70
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_03",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #3",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 15,
+      "maxDay": 90
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_04",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #4",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 20,
+      "maxDay": 110
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_05",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #5",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 25,
+      "maxDay": 130
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_06",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #6",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 30,
+      "maxDay": 150
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_07",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #7",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 35,
+      "maxDay": 170
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_08",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #8",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 40,
+      "maxDay": 190
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_09",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #9",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 45,
+      "maxDay": 210
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_10",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #10",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 50,
+      "maxDay": 230
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_11",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #11",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 55,
+      "maxDay": 250
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_12",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #12",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 60,
+      "maxDay": 270
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_13",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #13",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 65,
+      "maxDay": 290
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_14",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #14",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 70,
+      "maxDay": 310
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_15",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #15",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 75,
+      "maxDay": 330
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_16",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #16",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 80,
+      "maxDay": 350
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_17",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #17",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 85,
+      "maxDay": 370
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_18",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #18",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 90,
+      "maxDay": 390
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_19",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #19",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 95,
+      "maxDay": 410
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_20",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #20",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 100,
+      "maxDay": 430
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_21",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #21",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 105,
+      "maxDay": 450
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_CAUSALIDAD_22",
+    "category": "CAUSALIDAD",
+    "title": "El Efecto Dominó de las Sombras #22",
+    "description": "Una moneda que dejaste como propina hace tres semanas en una taberna permitió a un informante pagar una fianza; hoy ese mismo informante te entrega un mapa crucial.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 110,
+      "maxDay": 470
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": 3,
+      "corruptionDelta": 0,
+      "poundsDelta": 15,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 65,
+    "flavorLore": "Causa y efecto se entrelazan como hilos invisibles en Backlund. Nada de lo que un Beyonder hace carece de consecuencias."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_01",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #1",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 5,
+      "maxDay": 50
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_02",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #2",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 10,
+      "maxDay": 70
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_03",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #3",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 15,
+      "maxDay": 90
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_04",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #4",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 20,
+      "maxDay": 110
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_05",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #5",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 25,
+      "maxDay": 130
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_06",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #6",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 30,
+      "maxDay": 150
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_07",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #7",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 35,
+      "maxDay": 170
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_08",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #8",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 40,
+      "maxDay": 190
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_09",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #9",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 45,
+      "maxDay": 210
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_10",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #10",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 50,
+      "maxDay": 230
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_11",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #11",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 55,
+      "maxDay": 250
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_12",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #12",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 60,
+      "maxDay": 270
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_13",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #13",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 65,
+      "maxDay": 290
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_14",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #14",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 70,
+      "maxDay": 310
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_15",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #15",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 75,
+      "maxDay": 330
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_16",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #16",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 80,
+      "maxDay": 350
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_17",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #17",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 85,
+      "maxDay": 370
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_18",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #18",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 90,
+      "maxDay": 390
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_19",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #19",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 95,
+      "maxDay": 410
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_20",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #20",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 100,
+      "maxDay": 430
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_21",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #21",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 105,
+      "maxDay": 450
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_DEUDA_KARMICA_22",
+    "category": "DEUDA_KARMICA",
+    "title": "El Cobro del Hado Negativo #22",
+    "description": "Habiendo forzado la suerte en repetidas ocasiones, el balance del mundo se resquebraja. Un cristal cae de un tejado partiéndose a pulgadas de tu cráneo y destruyendo tu reloj de bolsillo.",
+    "karmaThreshold": -30,
+    "targetDayRange": {
+      "minDay": 110,
+      "maxDay": 470
+    },
+    "consequences": {
+      "karmaDelta": 30,
+      "sanityDelta": -8,
+      "corruptionDelta": 0,
+      "poundsDelta": -25,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 90,
+    "flavorLore": "El camino del Monstruo y la Rueda de la Fortuna lo advierten: la suerte prestada siempre cobra intereses de sangre."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_01",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #1",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 15.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 5,
+      "maxDay": 50
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_02",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #2",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 30.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 10,
+      "maxDay": 70
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_03",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #3",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 45.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 15,
+      "maxDay": 90
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_04",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #4",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 60.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 20,
+      "maxDay": 110
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_05",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #5",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 75.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 25,
+      "maxDay": 130
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_06",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #6",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 90.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 30,
+      "maxDay": 150
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_07",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #7",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 105.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 35,
+      "maxDay": 170
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_08",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #8",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 120.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 40,
+      "maxDay": 190
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_09",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #9",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 135.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 45,
+      "maxDay": 210
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_10",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #10",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 150.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 50,
+      "maxDay": 230
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_11",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #11",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 165.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 55,
+      "maxDay": 250
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_12",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #12",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 180.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 60,
+      "maxDay": 270
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_13",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #13",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 195.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 65,
+      "maxDay": 290
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_14",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #14",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 210.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 70,
+      "maxDay": 310
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_15",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #15",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 225.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 75,
+      "maxDay": 330
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_16",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #16",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 240.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 80,
+      "maxDay": 350
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_17",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #17",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 255.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 85,
+      "maxDay": 370
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_18",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #18",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 270.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 90,
+      "maxDay": 390
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_19",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #19",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 285.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 95,
+      "maxDay": 410
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_20",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #20",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 300.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 100,
+      "maxDay": 430
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_21",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #21",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 315.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 105,
+      "maxDay": 450
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PROFECIA_22",
+    "category": "PROFECIA",
+    "title": "Susurros del Espejo de Azogue #22",
+    "description": "En un sueño lúcido o al mirar un charco de agua de lluvia, contemplas un presagio exacto: una figura con sombrero de seda caerá en la catedral de San Samuel en el Día 330.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 110,
+      "maxDay": 470
+    },
+    "consequences": {
+      "karmaDelta": 5,
+      "sanityDelta": -4,
+      "corruptionDelta": 0,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 0
+    },
+    "inevitabilityScore": 80,
+    "flavorLore": "Las profecías son destellos de las ondas del río del tiempo. Saber qué ocurrirá cambia la forma en que colapsa la probabilidad."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_01",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #1",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 5,
+      "maxDay": 50
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_02",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #2",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 10,
+      "maxDay": 70
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_03",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #3",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 15,
+      "maxDay": 90
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_04",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #4",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 20,
+      "maxDay": 110
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_05",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #5",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 25,
+      "maxDay": 130
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_06",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #6",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 30,
+      "maxDay": 150
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_07",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #7",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 35,
+      "maxDay": 170
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_08",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #8",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 40,
+      "maxDay": 190
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_09",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #9",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 45,
+      "maxDay": 210
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_10",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #10",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 50,
+      "maxDay": 230
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_11",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #11",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 55,
+      "maxDay": 250
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_12",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #12",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 60,
+      "maxDay": 270
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_13",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #13",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 65,
+      "maxDay": 290
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_14",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #14",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 70,
+      "maxDay": 310
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_15",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #15",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 75,
+      "maxDay": 330
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_16",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #16",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 80,
+      "maxDay": 350
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_17",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #17",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 85,
+      "maxDay": 370
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_18",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #18",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 90,
+      "maxDay": 390
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_19",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #19",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 95,
+      "maxDay": 410
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_20",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #20",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 100,
+      "maxDay": 430
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_21",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #21",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 105,
+      "maxDay": 450
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  },
+  {
+    "id": "FATE_EV_PARADOJA_22",
+    "category": "PARADOJA",
+    "title": "Bucle Temporal en la Calzada #22",
+    "description": "Caminas por la misma avenida durante quince minutos solo para darte cuenta de que el mismo niño vendiendo periódicos ha gritado el mismo titular tres veces en el mismo segundo.",
+    "karmaThreshold": 0,
+    "targetDayRange": {
+      "minDay": 110,
+      "maxDay": 470
+    },
+    "consequences": {
+      "karmaDelta": 0,
+      "sanityDelta": -12,
+      "corruptionDelta": 4,
+      "poundsDelta": 0,
+      "anchorsDelta": 0,
+      "worldTensionDelta": 5
+    },
+    "inevitabilityScore": 75,
+    "flavorLore": "La influencia de entidades del Camino del Error o la Puerta puede astillar la continuidad del flujo espacio-temporal."
+  }
+]

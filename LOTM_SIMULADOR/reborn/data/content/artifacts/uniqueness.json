@@ -1,0 +1,907 @@
+[
+  {
+    "id": "UNI_FOOL",
+    "identity": {
+      "name": "Fool Uniqueness",
+      "pathway": "FOOL"
+    },
+    "current_state": {
+      "status": "ACCOMMODATED",
+      "current_holder_id": "GOD_THE_FOOL_KLEIN",
+      "ownership_type": "GOD",
+      "last_known_location_id": "LOC_SEPHIRAH_CASTLE"
+    },
+    "acquisition_conditions": {
+      "minimum_sequence": 1,
+      "requires_ritual": true
+    },
+    "authority": {
+      "authority_domains": [
+        "FOOLING",
+        "CHANGE",
+        "PUPPETRY",
+        "MIRACLES"
+      ]
+    },
+    "world_effects": {
+      "corruption_rating": 90,
+      "divination_distortion": 95,
+      "reality_instability": 80,
+      "convergence_risk_multiplier": 3.5,
+      "global_sanity_drain_modifier": 2
+    },
+    "ownership_history": [
+      "THE_HALF_FOOL_ANTIGONUS",
+      "CELESTIAL_WORTHY",
+      "KLEIN_MORETTI"
+    ],
+    "advancement_links": {
+      "required_for_sequence_0": true,
+      "required_for_ats": true,
+      "linked_sephirot_id": "SEPH_SEPHIRAH_CASTLE"
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "UNI_DOOR",
+    "identity": {
+      "name": "Door Uniqueness",
+      "pathway": "DOOR"
+    },
+    "current_state": {
+      "status": "ACCOMMODATED",
+      "current_holder_id": "GOD_THE_FOOL_KLEIN",
+      "ownership_type": "GOD",
+      "last_known_location_id": "LOC_SEPHIRAH_CASTLE"
+    },
+    "acquisition_conditions": {
+      "minimum_sequence": 1,
+      "requires_ritual": true
+    },
+    "authority": {
+      "authority_domains": [
+        "SPACE_TIME_TRAVEL",
+        "SEALING",
+        "CONCEPTUAL_COPYING"
+      ]
+    },
+    "world_effects": {
+      "corruption_rating": 85,
+      "divination_distortion": 90,
+      "reality_instability": 95,
+      "convergence_risk_multiplier": 3.0,
+      "global_sanity_drain_modifier": 1
+    },
+    "ownership_history": [
+      "BETHEL_ABRAHAM",
+      "AMON",
+      "KLEIN_MORETTI"
+    ],
+    "advancement_links": {
+      "required_for_sequence_0": true,
+      "required_for_ats": true,
+      "linked_sephirot_id": "SEPH_SEPHIRAH_CASTLE"
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "UNI_ERROR",
+    "identity": {
+      "name": "Error Uniqueness",
+      "pathway": "ERROR"
+    },
+    "current_state": {
+      "status": "ACCOMMODATED",
+      "current_holder_id": "GOD_THE_FOOL_KLEIN",
+      "ownership_type": "GOD",
+      "last_known_location_id": "LOC_SEPHIRAH_CASTLE"
+    },
+    "acquisition_conditions": {
+      "minimum_sequence": 1,
+      "requires_ritual": true
+    },
+    "authority": {
+      "authority_domains": [
+        "TIME_THEFT",
+        "PARASITISM",
+        "LOGICAL_LOOPHOLES"
+      ]
+    },
+    "world_effects": {
+      "corruption_rating": 85,
+      "divination_distortion": 95,
+      "reality_instability": 85,
+      "convergence_risk_multiplier": 3.2,
+      "global_sanity_drain_modifier": 2
+    },
+    "ownership_history": [
+      "AMON",
+      "KLEIN_MORETTI"
+    ],
+    "advancement_links": {
+      "required_for_sequence_0": true,
+      "required_for_ats": true,
+      "linked_sephirot_id": "SEPH_SEPHIRAH_CASTLE"
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "UNI_VISIONARY",
+    "identity": {
+      "name": "Visionary Uniqueness",
+      "pathway": "SPECTATOR"
+    },
+    "current_state": {
+      "status": "ACCOMMODATED",
+      "current_holder_id": "GOD_ADAM_TRUE_CREATOR",
+      "ownership_type": "GOD",
+      "last_known_location_id": "LOC_CORPSE_CATHEDRAL"
+    },
+    "acquisition_conditions": {
+      "minimum_sequence": 1,
+      "requires_ritual": true
+    },
+    "authority": {
+      "authority_domains": [
+        "REASON_MIND",
+        "CONCEPTUAL_REALIZATION",
+        "PSYCHIC_SEA"
+      ]
+    },
+    "world_effects": {
+      "corruption_rating": 90,
+      "divination_distortion": 85,
+      "reality_instability": 80,
+      "convergence_risk_multiplier": 3.4,
+      "global_sanity_drain_modifier": 3
+    },
+    "ownership_history": [
+      "ANCIENT_SUN_GOD",
+      "ADAM"
+    ],
+    "advancement_links": {
+      "required_for_sequence_0": true,
+      "required_for_ats": true,
+      "linked_sephirot_id": "SEPH_CHAOS_SEA"
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "UNI_HANGED_MAN",
+    "identity": {
+      "name": "Hanged Man Uniqueness",
+      "pathway": "HANGED_MAN"
+    },
+    "current_state": {
+      "status": "ACCOMMODATED",
+      "current_holder_id": "GOD_ADAM_TRUE_CREATOR",
+      "ownership_type": "GOD",
+      "last_known_location_id": "LOC_CORPSE_CATHEDRAL"
+    },
+    "acquisition_conditions": {
+      "minimum_sequence": 1,
+      "requires_ritual": true
+    },
+    "authority": {
+      "authority_domains": [
+        "DEGENERATION",
+        "BLOOD_SACRIFICE",
+        "SHADOW_GRAFTING"
+      ]
+    },
+    "world_effects": {
+      "corruption_rating": 95,
+      "divination_distortion": 80,
+      "reality_instability": 85,
+      "convergence_risk_multiplier": 3.6,
+      "global_sanity_drain_modifier": 4
+    },
+    "ownership_history": [
+      "ANCIENT_SUN_GOD",
+      "TRUE_CREATOR",
+      "ADAM"
+    ],
+    "advancement_links": {
+      "required_for_sequence_0": true,
+      "required_for_ats": true,
+      "linked_sephirot_id": "SEPH_CHAOS_SEA"
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "UNI_SUN",
+    "identity": {
+      "name": "Eternal Blazing Sun Uniqueness",
+      "pathway": "SUN"
+    },
+    "current_state": {
+      "status": "ACCOMMODATED",
+      "current_holder_id": "GOD_ETERNAL_BLAZING_SUN",
+      "ownership_type": "GOD",
+      "last_known_location_id": "LOC_SUN_CATHEDRAL"
+    },
+    "acquisition_conditions": {
+      "minimum_sequence": 1,
+      "requires_ritual": true
+    },
+    "authority": {
+      "authority_domains": [
+        "PURIFICATION",
+        "LIGHT",
+        "HOLY_RESONANCE"
+      ]
+    },
+    "world_effects": {
+      "corruption_rating": 75,
+      "divination_distortion": 70,
+      "reality_instability": 65,
+      "convergence_risk_multiplier": 2.8,
+      "global_sanity_drain_modifier": 1
+    },
+    "ownership_history": [
+      "ANCIENT_SUN_GOD",
+      "AUCUSES"
+    ],
+    "advancement_links": {
+      "required_for_sequence_0": true,
+      "required_for_ats": true,
+      "linked_sephirot_id": "SEPH_CHAOS_SEA"
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "UNI_TYRANT",
+    "identity": {
+      "name": "Lord of Storms Uniqueness",
+      "pathway": "SAILOR"
+    },
+    "current_state": {
+      "status": "ACCOMMODATED",
+      "current_holder_id": "GOD_LORD_STORMS",
+      "ownership_type": "GOD",
+      "last_known_location_id": "LOC_STORMS_CATHEDRAL"
+    },
+    "acquisition_conditions": {
+      "minimum_sequence": 1,
+      "requires_ritual": true
+    },
+    "authority": {
+      "authority_domains": [
+        "STORMS",
+        "LIGHTNING",
+        "OCEAN_DOMINANCE"
+      ]
+    },
+    "world_effects": {
+      "corruption_rating": 80,
+      "divination_distortion": 65,
+      "reality_instability": 75,
+      "convergence_risk_multiplier": 3.0,
+      "global_sanity_drain_modifier": 2
+    },
+    "ownership_history": [
+      "ANCIENT_SUN_GOD",
+      "LEODERO"
+    ],
+    "advancement_links": {
+      "required_for_sequence_0": true,
+      "required_for_ats": true,
+      "linked_sephirot_id": "SEPH_CHAOS_SEA"
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "UNI_WHITE_TOWER",
+    "identity": {
+      "name": "God of Knowledge Uniqueness",
+      "pathway": "READER"
+    },
+    "current_state": {
+      "status": "ACCOMMODATED",
+      "current_holder_id": "GOD_WISDOM",
+      "ownership_type": "GOD",
+      "last_known_location_id": "LOC_WISDOM_TOWER"
+    },
+    "acquisition_conditions": {
+      "minimum_sequence": 1,
+      "requires_ritual": true
+    },
+    "authority": {
+      "authority_domains": [
+        "OMNISCIENCE",
+        "SPELL_PARSING",
+        "DEDUCTION_MATRIX"
+      ]
+    },
+    "world_effects": {
+      "corruption_rating": 70,
+      "divination_distortion": 85,
+      "reality_instability": 60,
+      "convergence_risk_multiplier": 2.5,
+      "global_sanity_drain_modifier": 1
+    },
+    "ownership_history": [
+      "ANCIENT_SUN_GOD",
+      "HERABERGEN"
+    ],
+    "advancement_links": {
+      "required_for_sequence_0": true,
+      "required_for_ats": true,
+      "linked_sephirot_id": "SEPH_CHAOS_SEA"
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "UNI_DARKNESS",
+    "identity": {
+      "name": "Evernight Uniqueness",
+      "pathway": "NIGHT"
+    },
+    "current_state": {
+      "status": "ACCOMMODATED",
+      "current_holder_id": "GOD_EVERNIGHT",
+      "ownership_type": "GOD",
+      "last_known_location_id": "LOC_SERENITY_CATHEDRAL_CORES"
+    },
+    "acquisition_conditions": {
+      "minimum_sequence": 1,
+      "requires_ritual": true
+    },
+    "authority": {
+      "authority_domains": [
+        "CONCEALMENT",
+        "HORROR_SLEEP",
+        "MISFORTUNE"
+      ]
+    },
+    "world_effects": {
+      "corruption_rating": 85,
+      "divination_distortion": 95,
+      "reality_instability": 70,
+      "convergence_risk_multiplier": 3.2,
+      "global_sanity_drain_modifier": 1
+    },
+    "ownership_history": [
+      "FLEGREA",
+      "AMANISES"
+    ],
+    "advancement_links": {
+      "required_for_sequence_0": true,
+      "required_for_ats": true,
+      "linked_sephirot_id": "SEPH_RIVER_OF_ETERNAL_DARKNESS"
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "UNI_DEATH",
+    "identity": {
+      "name": "Death Uniqueness",
+      "pathway": "DEATH"
+    },
+    "current_state": {
+      "status": "ACCOMMODATED",
+      "current_holder_id": "GOD_EVERNIGHT",
+      "ownership_type": "GOD",
+      "last_known_location_id": "LOC_SERENITY_CATHEDRAL_CORES"
+    },
+    "acquisition_conditions": {
+      "minimum_sequence": 1,
+      "requires_ritual": true
+    },
+    "authority": {
+      "authority_domains": [
+        "UNDERWORLD",
+        "WITHERING",
+        "SOUL_REAPING"
+      ]
+    },
+    "world_effects": {
+      "corruption_rating": 90,
+      "divination_distortion": 80,
+      "reality_instability": 75,
+      "convergence_risk_multiplier": 3.0,
+"global_sanity_drain_modifier": 2
+},
+"ownership_history": [
+"SALINGER",
+"AMANISES"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_RIVER_OF_ETERNAL_DARKNESS"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_TWILIGHT_GIANT",
+"identity": {
+"name": "Twilight Giant Uniqueness",
+"pathway": "COMBAT"
+},
+"current_state": {
+"status": "ACCOMMODATED",
+"current_holder_id": "GOD_EVERNIGHT",
+"ownership_type": "GOD",
+"last_known_location_id": "LOC_SERENITY_CATHEDRAL_CORES"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"DECLINE",
+"PHYSICAL_PROWESS",
+"GUARDIAN_VEIL"
+]
+},
+"world_effects": {
+"corruption_rating": 80,
+"divination_distortion": 60,
+"reality_instability": 70,
+"convergence_risk_multiplier": 2.8,
+"global_sanity_drain_modifier": 1
+},
+"ownership_history": [
+"BADHEIL",
+"AMANISES"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_RIVER_OF_ETERNAL_DARKNESS"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_RED_PRIEST",
+"identity": {
+"name": "0-01: Salinger's Blood Banner",
+"pathway": "HUNTER"
+},
+"current_state": {
+"status": "UNACCOMMODATED",
+"current_holder_id": "NONE",
+"ownership_type": "NOBODY",
+"last_known_location_id": "LOC_UNDERWORLD_RIFT_BACKLUND"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"WAR_TACTICS",
+"CONFLAGRATION",
+"CONVERGENCE_IRON"
+]
+},
+"world_effects": {
+"corruption_rating": 90,
+"divination_distortion": 75,
+"reality_instability": 90,
+"convergence_risk_multiplier": 4.0,
+"global_sanity_drain_modifier": 3
+},
+"ownership_history": [
+"ALISTA_SOLOMON",
+"SALINGER",
+"NONE"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_CITY_OF_CALAMITY"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_DEMONESS",
+"identity": {
+"name": "Demoness Uniqueness",
+"pathway": "ASSASSIN"
+},
+"current_state": {
+"status": "ACCOMMODATED",
+"current_holder_id": "GOD_CHEEK_DEMONESS",
+"ownership_type": "GOD",
+"last_known_location_id": "LOC_MIRROR_PLANE_BACKLUND"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"PLAGUE_DISEASE",
+"DESTRUCTION_APOCALYPSE",
+"PLEASURE_ILLUSION"
+]
+},
+"world_effects": {
+"corruption_rating": 95,
+"divination_distortion": 85,
+"reality_instability": 80,
+"convergence_risk_multiplier": 3.5,
+"global_sanity_drain_modifier": 3
+},
+"ownership_history": [
+"CHEEK"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_CITY_OF_CALAMITY"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_PARAGON",
+"identity": {
+"name": "Steam and Machinery Uniqueness",
+"pathway": "SAVANT"
+},
+"current_state": {
+"status": "ACCOMMODATED",
+"current_holder_id": "GOD_STEAM_MACHINERY",
+"ownership_type": "GOD",
+"last_known_location_id": "LOC_MACHINERY_CATHEDRAL"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"MECHANICAL_EVOLUTION",
+"TRANSMUTATION_LOGIC",
+"INFRASTRUCTURE"
+]
+},
+"world_effects": {
+"corruption_rating": 70,
+"divination_distortion": 65,
+"reality_instability": 70,
+"convergence_risk_multiplier": 2.5,
+"global_sanity_drain_modifier": 1
+},
+"ownership_history": [
+"GOD_OF_STEAM"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_KNOWLEDGE_MOOR"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_HERMIT",
+"identity": {
+"name": "Hidden Sage Uniqueness",
+"pathway": "MYSTERY_PRYER"
+},
+"current_state": {
+"status": "ACCOMMODATED",
+"current_holder_id": "GOD_HIDDEN_SAGE",
+"ownership_type": "GOD",
+"last_known_location_id": "LOC_ASTRAL_SHADOWS"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"ACTIVE_KNOWLEDGE_CORRUPTION",
+"RUNIC_DECODING",
+"MYSTIC_HERESY"
+]
+},
+"world_effects": {
+"corruption_rating": 85,
+"divination_distortion": 90,
+"reality_instability": 75,
+"convergence_risk_multiplier": 3.3,
+"global_sanity_drain_modifier": 3
+},
+"ownership_history": [
+"HIDDEN_SAGE"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_KNOWLEDGE_MOOR"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_WHEEL_OF_FORTUNE",
+"identity": {
+"name": "Die of Probability",
+"pathway": "MONSTER"
+},
+"current_state": {
+"status": "ACCOMMODATED",
+"current_holder_id": "ANGEL_WILL_AUCEPTIN",
+"ownership_type": "KOA",
+"last_known_location_id": "LOC_BACKLUND_SUBURBS_HIDDEN"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"PROBABILITY_MANIPULATION",
+"REINCARNATION",
+"FATE_ALIGNMENT"
+]
+},
+"world_effects": {
+"corruption_rating": 80,
+"divination_distortion": 95,
+"reality_instability": 80,
+"convergence_risk_multiplier": 3.5,
+"global_sanity_drain_modifier": 1
+},
+"ownership_history": [
+"OUROBOROS",
+"WILL_AUCEPTIN"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_KEY_OF_LIGHT"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_JUSTICIAR",
+"identity": {
+"name": "0-02: The Trunsoest Brass Book",
+"pathway": "ARBITER"
+},
+"current_state": {
+"status": "SEALED",
+"current_holder_id": "NONE",
+"ownership_type": "NOBODY",
+"last_known_location_id": "LOC_NIGHTHAWK_HQ_BASEMENT"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"ABSOLUTE_PROHIBITION",
+"CONCEPTUAL_RULES",
+"LAW_ENFORCEMENT"
+]
+},
+"world_effects": {
+"corruption_rating": 85,
+"divination_distortion": 70,
+"reality_instability": 90,
+"convergence_risk_multiplier": 3.0,
+"global_sanity_drain_modifier": 2
+},
+"ownership_history": [
+"TRUNSOEST_EMPEROR",
+"CHURCH_OF_EVERNIGHT",
+"NONE"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_NATION_OF_DISORDER"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_BLACK_EMPEROR",
+"identity": {
+"name": "Black Emperor Uniqueness",
+"pathway": "LAWYER"
+},
+"current_state": {
+"status": "SEALED",
+"current_holder_id": "GOD_ROSELLE_BLACK_EMPEROR",
+"ownership_type": "GOD",
+"last_known_location_id": "LOC_MAUSOLEUM_ABYSSAL"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"DISTORTION_RULES",
+"SHADOW_EMPEROR",
+"RESURRECTION_LOGIC"
+]
+},
+"world_effects": {
+"corruption_rating": 90,
+"divination_distortion": 85,
+"reality_instability": 85,
+"convergence_risk_multiplier": 3.2,
+"global_sanity_drain_modifier": 2
+},
+"ownership_history": [
+"GEORGE_III",
+"ROSELLE_GUSTAV"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_NATION_OF_DISORDER"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_MOON",
+"identity": {
+"name": "Primitive Moon Uniqueness",
+"pathway": "APOTHECARY"
+},
+"current_state": {
+"status": "ACCOMMODATED",
+"current_holder_id": "OD_MGD",
+"ownership_type": "GOD",
+"last_known_location_id": "LOC_COSMIC_MOON"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"MUTATION_BLOOD",
+"VAMPIRE_KINGS",
+"PRIMITIVE_FORCE"
+]
+},
+"world_effects": {
+"corruption_rating": 95,
+"divination_distortion": 90,
+"reality_instability": 85,
+"convergence_risk_multiplier": 4.0,
+"global_sanity_drain_modifier": 4
+},
+"ownership_history": [
+"LILITH",
+"MOTHER_GODDESS_DEPRAVITY"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_BROOD_HIVE"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_MOTHER",
+"identity": {
+"name": "Earth Mother Uniqueness",
+"pathway": "PLANTER"
+},
+"current_state": {
+"status": "ACCOMMODATED",
+"current_holder_id": "GOD_EARTH_MOTHER",
+"ownership_type": "GOD",
+"last_known_location_id": "LOC_EARTH_MOTHER_CATHEDRAL"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"BIOLOGICAL_LIFE",
+"FERTILITY",
+"NATURAL_HARVEST"
+]
+},
+"world_effects": {
+"corruption_rating": 80,
+"divination_distortion": 70,
+"reality_instability": 60,
+"convergence_risk_multiplier": 2.8,
+"global_sanity_drain_modifier": 1
+},
+"ownership_history": [
+"OMNIPOTENT_EARTH_OMAY",
+"LILITH"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_BROOD_HIVE"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_ABYSS",
+"identity": {
+"name": "Father of Devils Uniqueness",
+"pathway": "DEVIL"
+},
+"current_state": {
+"status": "ACCOMMODATED",
+"current_holder_id": "GOO_FATHER_OF_DEVILS",
+"ownership_type": "GOD",
+"last_known_location_id": "LOC_ABYSSAL_PLANE"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"MALLICE_WHISPER",
+"CORRUPTION_FLESH",
+"DEVIL_TRIGGERS"
+]
+},
+"world_effects": {
+"corruption_rating": 95,
+"divination_distortion": 85,
+"reality_instability": 90,
+"convergence_risk_multiplier": 3.8,
+"global_sanity_drain_modifier": 4
+},
+"ownership_history": [
+"FARBANTI",
+"FATHER_OF_DEVILS"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_TENEBROUS_WORLD"
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "UNI_CHAINED",
+"identity": {
+"name": "Chained God Uniqueness",
+"pathway": "PRISONER"
+},
+"current_state": {
+"status": "ACCOMMODATED",
+"current_holder_id": "ANGEL_SUAH_ABOMINATION",
+"ownership_type": "KOA",
+"last_known_location_id": "LOC_ROSE_SCHOOL_DARK_VAULT"
+},
+"acquisition_conditions": {
+"minimum_sequence": 1,
+"requires_ritual": true
+},
+"authority": {
+"authority_domains": [
+"PRISON_VEIL",
+"INDULGENCE_FRENZY",
+"ABERRANT_MUTATION"
+]
+},
+"world_effects": {
+"corruption_rating": 90,
+"divination_distortion": 80,
+"reality_instability": 85,
+"convergence_risk_multiplier": 3.5,
+"global_sanity_drain_modifier": 3
+},
+"ownership_history": [
+"CHAINED_GOD",
+"SUAH"
+],
+"advancement_links": {
+"required_for_sequence_0": true,
+"required_for_ats": true,
+"linked_sephirot_id": "SEPH_TENEBROUS_WORLD"
+},
+"importance": "LEGENDARY"
+}
+]

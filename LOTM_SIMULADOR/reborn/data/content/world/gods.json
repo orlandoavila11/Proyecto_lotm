@@ -1,0 +1,952 @@
+[
+  {
+    "id": "GOD_EVERNIGHT",
+    "identity": {
+      "name": "Evernight Goddess",
+      "true_name": "Amanises",
+      "pathway": "NIGHT",
+      "sequence": 0,
+      "historical_era": "Multiple Epochs",
+      "primary_faction": "Church of Evernight",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "TRUE_DEITY"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "RIVER_OF_ETERNAL_DARKNESS",
+      "conceptual_control_rating": 100,
+      "authority_domains": [
+        "CONCEALMENT",
+        "HORROR",
+        "MISFORTUNE",
+        "SERENITY",
+        "DEATH_CONSUL",
+        "DECAY",
+        "TWILIGHT",
+        "COMBAT"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 100,
+      "is_sealed": false
+    },
+    "god_properties": {
+      "church_controlled": true,
+      "anchor_population_scale": "GLOBAL",
+      "pillar_candidate": true
+    },
+    "pillar_progress": {
+      "is_pillar": false,
+      "pillar_path": "ETERNITY_DARKNESS",
+      "completion_percentage": 85
+    },
+    "activity_profile": {
+      "world_presence": 95,
+      "world_activity_rating": 80,
+      "can_spawn_events": true,
+      "can_spawn_rumors": false,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 60,
+      "divination_misdirection_chance": 95,
+      "corruption_leak_multiplier": 1.00
+    },
+    "knowledge_tier": "OMNISCIENT_WITHIN_DOMAIN",
+    "accessible_knowledge_categories": [
+      "NIGHT_PATHWAY",
+      "DEATH_PATHWAY",
+      "TWILIGHT_PATHWAY"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_ARIANNA", "type": "MASTER", "value": 100 },
+      { "entity_id": "GOD_LORD_STORMS", "type": "ALLY", "value": 70 },
+      { "entity_id": "GOD_THE_FOOL_KLEIN", "type": "ALLY", "value": 90 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_WEST",
+      "REG_SPIRIT_WORLD"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 40,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "CONCEALMENT_BARRIER_REINFORCED": true, "EVERNIGHT_BLESSING_ACTIVE": true, "DEATH_PATHWAY_SUPRESSED": true, "TWILIGHT_PATHWAY_SUPRESSED": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_WEST": { "corruption_gain_rate_multiplier": 0.80, "player_sanity_regen_rate": 1.20 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 98
+  },
+  {
+    "id": "GOD_LORD_STORMS",
+    "identity": {
+      "name": "Lord of Storms",
+      "true_name": "Leodero",
+      "pathway": "SAILOR",
+      "sequence": 0,
+      "historical_era": "Multiple Epochs",
+      "primary_faction": "Church of the Lord of Storms",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "TRUE_DEITY"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "CHAOS_SEA",
+      "conceptual_control_rating": 100,
+      "authority_domains": [
+        "TYRANNY",
+        "THUNDER",
+        "GALES",
+        "OCEAN_AUTHORITY"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 90,
+      "is_sealed": false
+    },
+    "god_properties": {
+      "church_controlled": true,
+      "anchor_population_scale": "GLOBAL",
+      "pillar_candidate": false
+    },
+    "pillar_progress": {
+      "is_pillar": false,
+      "pillar_path": "NONE",
+      "completion_percentage": 0
+    },
+    "activity_profile": {
+      "world_presence": 90,
+      "world_activity_rating": 85,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 65,
+      "divination_misdirection_chance": 80,
+      "corruption_leak_multiplier": 1.00
+    },
+    "knowledge_tier": "OMNISCIENT_WITHIN_DOMAIN",
+    "accessible_knowledge_categories": [
+      "SAILOR_PATHWAY"
+    ],
+    "relationship_links": [
+      { "entity_id": "GOD_EVERNIGHT", "type": "ALLY", "value": 70 },
+      { "entity_id": "ANGEL_GE_MENG", "type": "MASTER", "value": 100 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_PORT"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 38,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "STORM_FORCE_MAXIMUM": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_PORT": { "lightning_damage_bonus": 30, "exploration_danger_rate_modifier": 1.15 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 96
+  },
+  {
+    "id": "GOD_STEAM_MACHINERY",
+    "identity": {
+      "name": "God of Steam and Machinery",
+      "true_name": "Cochrane",
+      "pathway": "PARAGON",
+      "sequence": 0,
+      "historical_era": "Fifth Epoch",
+      "primary_faction": "Church of Steam and Machinery",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "TRUE_DEITY"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "KNOWLEDGE_MOOR",
+      "conceptual_control_rating": 95,
+      "authority_domains": [
+        "STEAM",
+        "MECHANIZATION",
+        "PARAGON_ARCHITECTURE",
+        "PRODUCTION"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 95,
+      "is_sealed": false
+    },
+    "god_properties": {
+      "church_controlled": true,
+      "anchor_population_scale": "GLOBAL",
+      "pillar_candidate": false
+    },
+    "pillar_progress": {
+      "is_pillar": false,
+      "pillar_path": "NONE",
+      "completion_percentage": 0
+    },
+    "activity_profile": {
+      "world_presence": 90,
+      "world_activity_rating": 70,
+      "can_spawn_events": true,
+      "can_spawn_rumors": false,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 50,
+      "divination_misdirection_chance": 70,
+      "corruption_leak_multiplier": 1.00
+    },
+    "knowledge_tier": "OMNISCIENT_WITHIN_DOMAIN",
+    "accessible_knowledge_categories": [
+      "PARAGON_PATHWAY"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_BORNOVA_GUSTAV", "type": "ALLY", "value": 85 },
+      { "entity_id": "NPC_035", "type": "MASTER", "value": 90 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_NORTH",
+      "REG_BACKLUND_EAST"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 36,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "STEAM_INFRASTRUCTURE_REINFORCED": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_EAST": { "black_market_price_modifier": 1.10 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 94
+  },
+  {
+    "id": "GOD_ETERNAL_BLAZING_SUN",
+    "identity": {
+      "name": "Eternal Blazing Sun",
+      "true_name": "Aucuses",
+      "pathway": "SUN",
+      "sequence": 0,
+      "historical_era": "Multiple Epochs",
+      "primary_faction": "Church of the Eternal Blazing Sun",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "TRUE_DEITY"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "CHAOS_SEA",
+      "conceptual_control_rating": 100,
+      "authority_domains": [
+        "LIGHT",
+        "PURIFICATION",
+        "HOLINESS",
+        "SOLAR_FLAME"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 85,
+      "is_sealed": false
+    },
+    "god_properties": {
+      "church_controlled": true,
+      "anchor_population_scale": "GLOBAL",
+      "pillar_candidate": false
+    },
+    "pillar_progress": {
+      "is_pillar": false,
+      "pillar_path": "NONE",
+      "completion_percentage": 0
+    },
+    "activity_profile": {
+      "world_presence": 85,
+      "world_activity_rating": 75,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 60,
+      "divination_misdirection_chance": 85,
+      "corruption_leak_multiplier": 1.00
+    },
+    "knowledge_tier": "OMNISCIENT_WITHIN_DOMAIN",
+    "accessible_knowledge_categories": [
+      "SUN_PATHWAY"
+    ],
+    "relationship_links": [
+      { "entity_id": "NPC_053", "type": "MASTER", "value": 90 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_SUBURBS"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 38,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "SOLAR_RADIANCE_ACTIVE": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_SUBURBS": { "corruption_gain_rate_multiplier": 0.70, "ghost_encounter_rate_multiplier": 0.30 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 95
+  },
+  {
+    "id": "GOD_EARTH_MOTHER",
+    "identity": {
+      "name": "Earth Mother",
+      "true_name": "Lilith",
+      "pathway": "MOTHER",
+      "sequence": 0,
+      "historical_era": "Multiple Epochs",
+      "primary_faction": "Church of the Earth Mother",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "TRUE_DEITY"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "GODDESS_OF_ORIGIN",
+      "conceptual_control_rating": 100,
+      "authority_domains": [
+        "FERTILITY",
+        "LIFE",
+        "CREATION",
+        "MOON_AUTHORITY",
+        "VAMPIRE_DOMINANCE"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 95,
+      "is_sealed": false
+    },
+    "god_properties": {
+      "church_controlled": true,
+      "anchor_population_scale": "GLOBAL",
+      "pillar_candidate": false
+    },
+    "pillar_progress": {
+      "is_pillar": false,
+"pillar_path": "GODDESS_ORIGIN",
+"completion_percentage": 50
+},
+"activity_profile": {
+"world_presence": 80,
+"world_activity_rating": 70,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": false
+},
+"world_influence": {
+"divination_sanity_drain": 55,
+"divination_misdirection_chance": 80,
+"corruption_leak_multiplier": 1.00
+},
+"knowledge_tier": "OMNISCIENT_WITHIN_DOMAIN",
+"accessible_knowledge_categories": [
+"MOTHER_PATHWAY",
+"MOON_PATHWAY"
+],
+"relationship_links": [
+{ "entity_id": "ANGEL_WILL_AUCEPTIN", "type": "ALLY", "value": 60 }
+],
+"active_regions": [
+"REG_BACKLUND_WEST"
+],
+"interaction_hooks": {
+"interaction_allowed": false,
+"knowledge_threshold_required": 35,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "EARTH_MOTHER_VITALITY": true, "SANGUINE_RESONANCE_ACTIVE": true },
+"region_stat_overrides": {
+"REG_BACKLUND_WEST": { "vampire_encounter_rate": 1.10 }
+}
+},
+"importance": "LEGENDARY",
+"influence_score": 94
+},
+{
+"id": "GOD_WISDOM",
+"identity": {
+"name": "God of Knowledge and Wisdom",
+"true_name": "Herabergen",
+"pathway": "READER",
+"sequence": 0,
+"historical_era": "Multiple Epochs",
+"primary_faction": "Church of Knowledge and Wisdom",
+"covert_affiliation": "NONE"
+},
+"classification": {
+"tier": "TRUE_DEITY"
+},
+"authority": {
+"has_uniqueness": true,
+"sephirot_resonance_id": "CHAOS_SEA",
+"conceptual_control_rating": 100,
+"authority_domains": [
+"OMNISCIENCE",
+"ANALYSIS",
+"IMITATION",
+"SPELL_PARSING"
+]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 95,
+"is_sealed": false
+},
+"god_properties": {
+"church_controlled": true,
+"anchor_population_scale": "GLOBAL",
+"pillar_candidate": false
+},
+"pillar_progress": {
+"is_pillar": false,
+"pillar_path": "NONE",
+"completion_percentage": 0
+},
+"activity_profile": {
+"world_presence": 85,
+"world_activity_rating": 75,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": true
+},
+"world_influence": {
+"divination_sanity_drain": 55,
+"divination_misdirection_chance": 85,
+"corruption_leak_multiplier": 1.00
+},
+"knowledge_tier": "OMNISCIENT_WITHIN_DOMAIN",
+"accessible_knowledge_categories": [
+"READER_PATHWAY"
+],
+"relationship_links": [
+{ "entity_id": "ANGEL_BERNADETTE_GUSTAV", "type": "ALLY", "value": 60 }
+],
+"active_regions": [
+"REG_BACKLUND_NORTH"
+],
+"interaction_hooks": {
+"interaction_allowed": false,
+"knowledge_threshold_required": 40,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "WISDOM_ANALYSIS_ACTIVE": true },
+"region_stat_overrides": {
+"REG_BACKLUND_NORTH": { "divination_speed_modifier": 1.30 }
+}
+},
+"importance": "LEGENDARY",
+"influence_score": 93
+},
+{
+"id": "GOD_ADAM_TRUE_CREATOR",
+"identity": {
+"name": "Adam / True Creator",
+"true_name": "Adam",
+"pathway": "VISIONARY",
+"sequence": 0,
+"historical_era": "Fifth Epoch (Current)",
+"primary_faction": "Aurora Order",
+"covert_affiliation": "Twilight Hermit Order"
+},
+"classification": {
+"tier": "TRUE_DEITY"
+},
+"authority": {
+"has_uniqueness": true,
+"sephirot_resonance_id": "CHAOS_SEA",
+"conceptual_control_rating": 100,
+"authority_domains": [
+"MIND_REALIZATION",
+"PROPHECY",
+"SACRIFICE",
+"FLESH_CONTAMINATION",
+"SECRET_WHISPERS",
+"DEPRIVATION"
+]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 70,
+"is_sealed": false
+},
+"god_properties": {
+"church_controlled": false,
+"anchor_population_scale": "GLOBAL",
+"pillar_candidate": true
+},
+"pillar_progress": {
+"is_pillar": false,
+"pillar_path": "GOD_ALMIGHTY",
+"completion_percentage": 90
+},
+"activity_profile": {
+"world_presence": 98,
+"world_activity_rating": 95,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": true
+},
+"world_influence": {
+"divination_sanity_drain": 80,
+"divination_misdirection_chance": 95,
+"corruption_leak_multiplier": 1.25
+},
+"knowledge_tier": "OMNISCIENT_WITHIN_DOMAIN",
+"accessible_knowledge_categories": [
+"VISIONARY_PATHWAY",
+"HANGED_MAN_PATHWAY"
+],
+"relationship_links": [
+{ "entity_id": "KOA_OUROBOROS", "type": "MASTER", "value": 100 },
+{ "entity_id": "ANGEL_HERMES_ANCIENT", "type": "ALLY", "value": 90 }
+],
+"active_regions": [
+"REG_BACKLUND_EAST",
+"REG_BACKLUND_SUBURBS",
+"REG_BACKLUND_WEST"
+],
+"interaction_hooks": {
+"interaction_allowed": false,
+"knowledge_threshold_required": 45,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "TRUE_CREATOR_WHISPER_RESONANCE": true, "TWILIGHT_HERMIT_ACTIVE": true, "MIND_CATACOMBS_RESONANCE_HIGH": true },
+"region_stat_overrides": {
+"REG_BACKLUND_EAST": { "corruption_gain_rate_multiplier": 1.40, "sanity_drain_per_tick_modifier": 3 }
+}
+},
+"importance": "LEGENDARY",
+"influence_score": 99
+},
+{
+"id": "GOD_THE_FOOL_KLEIN",
+"identity": {
+"name": "The Fool",
+"true_name": "Klein Moretti",
+"pathway": "FOOL",
+"sequence": 0,
+"historical_era": "Fifth Epoch",
+"primary_faction": "Tarot Club",
+"covert_affiliation": "NONE"
+},
+"classification": {
+"tier": "TRUE_DEITY"
+},
+"authority": {
+"has_uniqueness": true,
+"sephirot_resonance_id": "CASTLE_OF_SEFIRAH",
+"conceptual_control_rating": 99,
+"authority_domains": [
+"MIRACLES",
+"FOOLERY",
+"REALITY_CONCEALMENT",
+"HISTORICAL_VOID",
+"SPACE_DISTORTION",
+"COSMIC_TRAVEL",
+"TIME_THEFT",
+"PARASITISM"
+]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 80,
+"is_sealed": false
+},
+"god_properties": {
+"church_controlled": false,
+"anchor_population_scale": "REGIONAL",
+"pillar_candidate": true
+},
+"pillar_progress": {
+"is_pillar": false,
+"pillar_path": "LORD_OF_MYSTERIES",
+"completion_percentage": 85
+},
+"activity_profile": {
+"world_presence": 85,
+"world_activity_rating": 60,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": true
+},
+"world_influence": {
+"divination_sanity_drain": 50,
+"divination_misdirection_chance": 95,
+"corruption_leak_multiplier": 1.00
+},
+"knowledge_tier": "OMNISCIENT_WITHIN_DOMAIN",
+"accessible_knowledge_categories": [
+"FOOL_PATHWAY",
+"DOOR_PATHWAY",
+"ERROR_PATHWAY"
+],
+"relationship_links": [
+{ "entity_id": "GOD_EVERNIGHT", "type": "ALLY", "value": 90 },
+{ "entity_id": "ANGEL_REINETTE_TINEKERR", "type": "ALLY", "value": 85 }
+],
+"active_regions": [
+"REG_SPIRIT_WORLD"
+],
+"interaction_hooks": {
+"interaction_allowed": true,
+"knowledge_threshold_required": 30,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "TAROT_CLUB_FOUNDED": true, "FOOL_MIRACLE_WAVE": true, "SPATIAL_DISTORTION_LATENT": true },
+"region_stat_overrides": {
+"REG_SPIRIT_WORLD": { "exploration_sanity_cost_multiplier": 0.70 }
+}
+},
+"importance": "LEGENDARY",
+"influence_score": 97
+},
+{
+"id": "GOD_CHEEK_DEMONESS",
+"identity": {
+"name": "Primordial Demoness",
+"true_name": "Cheek",
+"pathway": "ASSASSIN",
+"sequence": 0,
+"historical_era": "Multiple Epochs",
+"primary_faction": "Demoness Sect",
+"covert_affiliation": "NONE"
+},
+"classification": {
+"tier": "TRUE_DEITY"
+},
+"authority": {
+"has_uniqueness": true,
+"sephirot_resonance_id": "CITY_OF_CALAMITY",
+"conceptual_control_rating": 95,
+"authority_domains": [
+"DISEASE_PLAGUE",
+"CATACLYSM",
+"APOCALYPSE",
+"WITCHCRAFT_CURSE"
+]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 45,
+"is_sealed": false
+},
+"god_properties": {
+"church_controlled": false,
+"anchor_population_scale": "REGIONAL",
+"pillar_candidate": false
+},
+"pillar_progress": {
+"is_pillar": false,
+"pillar_path": "CALAMITY_DESTRUCTION",
+"completion_percentage": 50
+},
+"activity_profile": {
+"world_presence": 75,
+"world_activity_rating": 70,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": true
+},
+"world_influence": {
+"divination_sanity_drain": 65,
+"divination_misdirection_chance": 90,
+"corruption_leak_multiplier": 1.20
+},
+"knowledge_tier": "OMNISCIENT_WITHIN_DOMAIN",
+"accessible_knowledge_categories": [
+"DEMONESS_PATHWAY"
+],
+"relationship_links": [
+{ "entity_id": "ANGEL_JUDITH_DEMONESS", "type": "MASTER", "value": 90 }
+],
+"active_regions": [
+"REG_BACKLUND_WEST",
+"REG_BACKLUND_EAST"
+],
+"interaction_hooks": {
+"interaction_allowed": false,
+"knowledge_threshold_required": 40,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+      "global_flags_to_inject": { 
+        "DISEASE_PLAGUE_ALERT": true, 
+        "WITCH_HUNT_CRISIS_ACTIVE": true 
+      },
+      "region_stat_overrides": {
+        "REG_BACKLUND_EAST": { "corruption_gain_rate_multiplier": 1.25 },
+        "REG_BACKLUND_WEST": { "exploration_sanity_cost_multiplier": 1.15 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 95
+  },
+  {
+    "id": "GOD_DARK_SIDE_UNIVERSE",
+    "identity": {
+      "name": "Chained God",
+      "true_name": "NONE",
+      "pathway": "PRISONER",
+      "sequence": 0,
+      "historical_era": "Multiple Epochs",
+      "primary_faction": "Rose School of Thought",
+      "covert_affiliation": "Chained God Outer Parasite"
+    },
+    "classification": {
+      "tier": "TRUE_DEITY"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "NONE",
+      "conceptual_control_rating": 90,
+      "authority_domains": [
+        "MUTATION",
+        "MALEDICTION",
+        "DESIRE_INDULGENCE",
+        "ABOMINATION"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 30,
+      "is_sealed": false,
+      "current_anchor_count": 80
+    },
+    "god_properties": {
+      "church_controlled": false,
+      "anchor_population_scale": "REGIONAL",
+      "pillar_progress": {
+        "is_pillar": false,
+        "pillar_path": "NONE",
+        "completion_percentage": 0
+      }
+    },
+    "activity_profile": {
+      "world_presence": 80,
+      "world_activity_rating": 75,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 70,
+      "divination_misdirection_chance": 85,
+      "corruption_leak_multiplier": 1.30
+    },
+    "accessible_knowledge_categories": [
+      "PRISONER_PATHWAY"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_SUAH_ABOMINATION", "type": "MASTER", "value": 95 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_SUBURBS",
+      "REG_SPIRIT_WORLD"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 42,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "ABERRANT_CONTAMINATION_SPREADING": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_SUBURBS": { "corruption_gain_rate_multiplier": 1.30, "sanity_drain_per_tick_modifier": 2 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 93
+  },
+  {
+    "id": "GOD_HIDDEN_SAGE",
+    "identity": {
+      "name": "The Hidden Sage",
+      "true_name": "NONE",
+      "pathway": "HERMIT",
+      "sequence": 0,
+      "historical_era": "Fifth Epoch",
+      "primary_faction": "Moses Ascetic Order",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "TRUE_DEITY"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "KNOWLEDGE_MOOR",
+      "conceptual_control_rating": 90,
+      "authority_domains": [
+        "KNOWLEDGE_INFUSION",
+        "FORCED_ENLIGHTENMENT",
+        "OCCULT_RESONANCE"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 80,
+      "is_sealed": false,
+      "current_anchor_count": 50
+    },
+    "god_properties": {
+      "church_controlled": false,
+      "anchor_population_scale": "REGIONAL",
+      "pillar_progress": {
+        "is_pillar": false,
+        "pillar_path": "NONE",
+        "completion_percentage": 0
+      }
+    },
+    "activity_profile": {
+      "world_presence": 70,
+      "world_activity_rating": 80,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 60,
+      "divination_misdirection_chance": 80,
+      "corruption_leak_multiplier": 1.15
+    },
+    "accessible_knowledge_categories": [
+      "HERMIT_PATHWAY",
+      "MYSTERY_PRYER_PATHWAY"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_BERNADETTE_GUSTAV", "type": "RIVAL", "value": 30 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_NORTH"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 38,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "HIDDEN_SAGE_SUSURROS_ACTIVE": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_NORTH": { "player_sanity_drain_rate_multiplier": 1.20 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 92
+  },
+  {
+    "id": "GOD_ROSELLE_BLACK_EMPEROR",
+    "identity": {
+      "name": "Roselle Gustav",
+      "true_name": "Roselle Gustav",
+      "pathway": "LAWYER",
+      "sequence": 0,
+      "historical_era": "Fifth Epoch",
+      "primary_faction": "Independent",
+      "covert_affiliation": "Intis Empire Legacy"
+    },
+    "classification": {
+      "tier": "TRUE_DEITY"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "NATION_OF_DISORDER",
+      "conceptual_control_rating": 94,
+      "authority_domains": [
+        "DISTORTION",
+        "SHADOW_EMPIRE",
+        "CONCEPTUAL_MAGNIFICATION",
+        "ANARCHY_REGULATION"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 40,
+      "is_sealed": true,
+      "current_anchor_count": 40
+    },
+    "god_properties": {
+      "church_controlled": false,
+      "anchor_population_scale": "REGIONAL",
+      "pillar_progress": {
+        "is_pillar": false,
+        "pillar_path": "NONE",
+        "completion_percentage": 0
+      }
+    },
+    "activity_profile": {
+      "world_presence": 50,
+      "world_activity_rating": 35,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 55,
+      "divination_misdirection_chance": 85,
+      "corruption_leak_multiplier": 1.20
+    },
+    "accessible_knowledge_categories": [
+      "LAWYER_PATHWAY",
+      "BLACK_EMPEROR_PATHWAY",
+      "SAVANT_PATHWAY",
+      "PARAGON_PATHWAY",
+      "FOURTH_EPOCH_HISTORY"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_BERNADETTE_GUSTAV", "type": "MASTER", "value": 100 },
+      { "entity_id": "ANGEL_BORNOVA_GUSTAV", "type": "MASTER", "value": 80 }
+    ],
+    "active_regions": [
+      "REG_SPIRIT_WORLD"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 32,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { 
+        "BLACK_EMPEROR_DISTORTION": true, 
+        "CORRUPTED_ROSELLE_ECHO": true 
+      },
+      "region_stat_overrides": {
+        "REG_SPIRIT_WORLD": { "exploration_danger_rate_modifier": 1.20 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 94
+  }
+]
