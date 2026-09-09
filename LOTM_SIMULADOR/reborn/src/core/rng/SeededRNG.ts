@@ -61,3 +61,4 @@ export class SeededRNG {
     return this.initialSeed;
   }
 }
+

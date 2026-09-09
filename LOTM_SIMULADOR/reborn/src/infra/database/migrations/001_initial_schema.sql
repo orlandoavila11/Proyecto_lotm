@@ -107,3 +107,4 @@ CREATE TABLE IF NOT EXISTS districts (
   convergence_index INTEGER NOT NULL DEFAULT 5 CHECK (convergence_index >= 0 AND convergence_index <= 100),
   last_incident_day INTEGER DEFAULT 0
 );
+

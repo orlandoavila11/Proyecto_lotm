@@ -69,3 +69,4 @@ if (errors.length > 0) {
 
 console.log(`[PASS] Tier L verificado: ${checked}/67 archivos íntegros (SHA-256 + tamaño exacto).`);
 process.exit(0);
+

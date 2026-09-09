@@ -10,3 +10,4 @@ CREATE TABLE IF NOT EXISTS battles (
 );
 
 CREATE INDEX IF NOT EXISTS idx_battles_char_status ON battles(character_id, status);
+

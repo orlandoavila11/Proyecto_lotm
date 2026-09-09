@@ -1,0 +1,82 @@
+{
+  "sealedBy": "Director",
+  "sealedAt": "2026-09-09T23:55:00.000Z",
+  "groups": {
+    "LOTM": {
+      "id": "sefirah_castle",
+      "name": "Sefirah Castle",
+      "pathways": [
+        "FOOL",
+        "ERROR",
+        "DOOR"
+      ]
+    },
+    "GOD_ALMIGHTY": {
+      "id": "chaos_sea",
+      "name": "Chaos Sea",
+      "pathways": [
+        "VISIONARY",
+        "WHITE_TOWER",
+        "HANGED_MAN",
+        "SUN",
+        "TYRANT"
+      ]
+    },
+    "DEATH_CLUSTER": {
+      "id": "river_of_eternal_darkness",
+      "name": "River of Eternal Darkness",
+      "pathways": [
+        "DEATH",
+        "DARKNESS",
+        "TWILIGHT_GIANT"
+      ]
+    },
+    "MOTHER_CLUSTER": {
+      "id": "brood_hive",
+      "name": "Brood Hive",
+      "pathways": [
+        "MOTHER",
+        "MOON"
+      ]
+    },
+    "ORDER_CLUSTER": {
+      "id": "nation_of_disorder",
+      "name": "Nation of Disorder",
+      "pathways": [
+        "BLACK_EMPEROR",
+        "JUSTICIAR"
+      ]
+    },
+    "ABYSS_CLUSTER": {
+      "id": "tenebrous_world",
+      "name": "Tenebrous World",
+      "pathways": [
+        "CHAINED",
+        "ABYSS"
+      ]
+    },
+    "HERMIT_CLUSTER": {
+      "id": "knowledge_moor",
+      "name": "Knowledge Moor",
+      "pathways": [
+        "HERMIT",
+        "PARAGON"
+      ]
+    },
+    "CALAMITY_CLUSTER": {
+      "id": "city_of_calamity",
+      "name": "City of Calamity",
+      "pathways": [
+        "DEMONESS",
+        "RED_PRIEST"
+      ]
+    },
+    "FATE_CLUSTER": {
+      "id": "key_of_light",
+      "name": "Key of Light",
+      "pathways": [
+        "WHEEL_OF_FORTUNE"
+      ]
+    }
+  }
+}

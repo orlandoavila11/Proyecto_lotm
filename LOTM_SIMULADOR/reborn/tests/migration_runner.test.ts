@@ -58,3 +58,4 @@ describe('MigrationRunner: Versionado e Idempotencia', () => {
     db.close();
   });
 });
+

@@ -108,3 +108,4 @@ describe('PRNG Determinista: Semilla y Reproducibilidad Estricta', () => {
     assert.notStrictEqual(json1, jsonDivergent, 'Semillas distintas deben producir simulaciones divergentes');
   });
 });
+

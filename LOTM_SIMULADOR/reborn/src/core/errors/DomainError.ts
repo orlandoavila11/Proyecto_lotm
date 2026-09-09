@@ -30,3 +30,4 @@ export class ValidationDomainError extends DomainError {
   readonly statusCode = 400;
   readonly errorCode = 'VALIDATION_ERROR';
 }
+
