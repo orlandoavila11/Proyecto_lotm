@@ -3,4 +3,3 @@
 
 # Freeze Tier L: binary preservation (-text) to guarantee byte-for-byte SHA-256 integrity across Windows, Linux and macOS
 LOTM_SIMULADOR/reborn/data/content/** -text
-LOTM_SIMULADOR/reborn/data/canonical/** -text

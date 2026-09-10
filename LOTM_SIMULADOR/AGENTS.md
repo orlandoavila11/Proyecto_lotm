@@ -60,7 +60,7 @@ LOTM_SIMULADOR/
 
 ## 3. LEYES INVIOLABLES DE OPERACIÓN
 
-1. **Rutas Purgadas Muertas:** El directorio legado `/src` fue purgado por completo tras respaldar sus 67 JSONs en `reborn/data/content/`. Ningún agente debe buscar, recrear ni referenciar nada en `/src`.
+1. **Rutas Purgadas Muertas:** El directorio legado `/src` fue purgado por completo tras respaldar sus 67 JSONs en `reborn/data/content/`. Asimismo, el subdirectorio redundante `reborn/data/canonical/` fue eliminado físicamente tras comprobar paridad SHA-256 29/29 contra Tier L. Ningún agente debe buscar, recrear ni referenciar nada en `/src` ni en `reborn/data/canonical/`.
 2. **Prohibición de Métricas Tautológicas:** Se eliminaron `PathwayParityAuditor`, `GameplayValidationGate` y sus reportes de "100% PASS". El avance se mide **exclusivamente por los Gates de Verdad G1 a G7**.
 3. **Doctrina de Dos Capas:**
    - **Tier L (`reborn/data/content/`):** Biblioteca pasiva de lore. Se lee; jamás se edita directamente.
