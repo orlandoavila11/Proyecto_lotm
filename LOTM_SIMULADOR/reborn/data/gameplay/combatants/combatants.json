@@ -1,0 +1,452 @@
+[
+  {
+    "id": "spinal_octopus",
+    "name": "Spinal Octopus",
+    "atomStats": {
+      "hp": 45,
+      "maxHp": 45,
+      "spirituality": 30,
+      "maxSpirituality": 30,
+      "ap": 3,
+      "speed": 8
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "FOOL",
+    "sefiraGroupRef": "LOTM"
+  },
+  {
+    "id": "fog_wolf",
+    "name": "Fog Wolf",
+    "atomStats": {
+      "hp": 180,
+      "maxHp": 180,
+      "spirituality": 140,
+      "maxSpirituality": 140,
+      "ap": 5,
+      "speed": 14
+    },
+    "statuses": ["FOG_CONCEALMENT"],
+    "opacity": {
+      "oculto_hasta": "SPIRIT_VISION_ACTIVE"
+    },
+    "pathwayTag": "FOOL",
+    "sefiraGroupRef": "LOTM"
+  },
+  {
+    "id": "faceless_hound",
+    "name": "Faceless Hound",
+    "atomStats": {
+      "hp": 85,
+      "maxHp": 85,
+      "spirituality": 60,
+      "maxSpirituality": 60,
+      "ap": 4,
+      "speed": 11
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "FOOL",
+    "sefiraGroupRef": "LOTM"
+  },
+  {
+    "id": "spirit_paper_wraith",
+    "name": "Spirit Paper Wraith",
+    "atomStats": {
+      "hp": 55,
+      "maxHp": 55,
+      "spirituality": 75,
+      "maxSpirituality": 75,
+      "ap": 3,
+      "speed": 12
+    },
+    "statuses": ["PHYSICAL_RESISTANCE"],
+    "opacity": {
+      "oculto_hasta": "DIVINATION_IDENTIFY"
+    },
+    "pathwayTag": "FOOL",
+    "sefiraGroupRef": "LOTM"
+  },
+  {
+    "id": "shadow_rat",
+    "name": "Shadow Rat",
+    "atomStats": {
+      "hp": 30,
+      "maxHp": 30,
+      "spirituality": 25,
+      "maxSpirituality": 25,
+      "ap": 3,
+      "speed": 10
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "ERROR",
+    "sefiraGroupRef": "LOTM"
+  },
+  {
+    "id": "trickster_crow",
+    "name": "Trickster Crow",
+    "atomStats": {
+      "hp": 40,
+      "maxHp": 40,
+      "spirituality": 45,
+      "maxSpirituality": 45,
+      "ap": 3,
+      "speed": 13
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "ERROR",
+    "sefiraGroupRef": "LOTM"
+  },
+  {
+    "id": "astral_moth",
+    "name": "Astral Moth",
+    "atomStats": {
+      "hp": 35,
+      "maxHp": 35,
+      "spirituality": 50,
+      "maxSpirituality": 50,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SPIRIT_VISION_ACTIVE"
+    },
+    "pathwayTag": "DOOR",
+    "sefiraGroupRef": "LOTM"
+  },
+  {
+    "id": "gatekeeper_beetle",
+    "name": "Gatekeeper Beetle",
+    "atomStats": {
+      "hp": 90,
+      "maxHp": 90,
+      "spirituality": 40,
+      "maxSpirituality": 40,
+      "ap": 3,
+      "speed": 6
+    },
+    "statuses": ["CARAPACE_ARMOR"],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "DOOR",
+    "sefiraGroupRef": "LOTM"
+  },
+  {
+    "id": "dusk_specter",
+    "name": "Dusk Specter",
+    "atomStats": {
+      "hp": 50,
+      "maxHp": 50,
+      "spirituality": 65,
+      "maxSpirituality": 65,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": ["MENTAL_HAZE"],
+    "opacity": {
+      "oculto_hasta": "TELEPATHIC_PROBE"
+    },
+    "pathwayTag": "VISIONARY",
+    "sefiraGroupRef": "GOD_ALMIGHTY"
+  },
+  {
+    "id": "mind_dragon_whelp",
+    "name": "Mind Dragon Whelp",
+    "atomStats": {
+      "hp": 110,
+      "maxHp": 110,
+      "spirituality": 120,
+      "maxSpirituality": 120,
+      "ap": 4,
+      "speed": 10
+    },
+    "statuses": ["PSYCHIC_AURA"],
+    "opacity": {
+      "oculto_hasta": "TELEPATHIC_PROBE"
+    },
+    "pathwayTag": "VISIONARY",
+    "sefiraGroupRef": "GOD_ALMIGHTY"
+  },
+  {
+    "id": "hallucination_leech",
+    "name": "Hallucination Leech",
+    "atomStats": {
+      "hp": 40,
+      "maxHp": 40,
+      "spirituality": 50,
+      "maxSpirituality": 50,
+      "ap": 3,
+      "speed": 8
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "VISIONARY",
+    "sefiraGroupRef": "GOD_ALMIGHTY"
+  },
+  {
+    "id": "pure_sun_hound",
+    "name": "Pure Sun Hound",
+    "atomStats": {
+      "hp": 65,
+      "maxHp": 65,
+      "spirituality": 45,
+      "maxSpirituality": 45,
+      "ap": 4,
+      "speed": 11
+    },
+    "statuses": ["SOLAR_CORONA"],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "SUN",
+    "sefiraGroupRef": "GOD_ALMIGHTY"
+  },
+  {
+    "id": "radiant_spirit",
+    "name": "Radiant Spirit",
+    "atomStats": {
+      "hp": 75,
+      "maxHp": 75,
+      "spirituality": 80,
+      "maxSpirituality": 80,
+      "ap": 3,
+      "speed": 10
+    },
+    "statuses": ["HOLY_RADIANCE"],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "SUN",
+    "sefiraGroupRef": "GOD_ALMIGHTY"
+  },
+  {
+    "id": "lightning_vessel",
+    "name": "Lightning Vessel",
+    "atomStats": {
+      "hp": 80,
+      "maxHp": 80,
+      "spirituality": 70,
+      "maxSpirituality": 70,
+      "ap": 4,
+      "speed": 13
+    },
+    "statuses": ["SHOCK_CHARGED"],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "SAILOR",
+    "sefiraGroupRef": "GOD_ALMIGHTY"
+  },
+  {
+    "id": "storm_gull",
+    "name": "Storm Gull",
+    "atomStats": {
+      "hp": 30,
+      "maxHp": 30,
+      "spirituality": 30,
+      "maxSpirituality": 30,
+      "ap": 3,
+      "speed": 14
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "SAILOR",
+    "sefiraGroupRef": "GOD_ALMIGHTY"
+  },
+  {
+    "id": "logic_gargoyle",
+    "name": "Logic Gargoyle",
+    "atomStats": {
+      "hp": 95,
+      "maxHp": 95,
+      "spirituality": 55,
+      "maxSpirituality": 55,
+      "ap": 3,
+      "speed": 7
+    },
+    "statuses": ["STONE_RIGIDITY"],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "READER",
+    "sefiraGroupRef": "GOD_ALMIGHTY"
+  },
+  {
+    "id": "flame_devourer",
+    "name": "Flame Devourer",
+    "atomStats": {
+      "hp": 85,
+      "maxHp": 85,
+      "spirituality": 60,
+      "maxSpirituality": 60,
+      "ap": 4,
+      "speed": 10
+    },
+    "statuses": ["BURNING_AURA"],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "RED_PRIEST",
+    "sefiraGroupRef": "CALAMITY_CLUSTER"
+  },
+  {
+    "id": "iron_blood_hound",
+    "name": "Iron Blood Hound",
+    "atomStats": {
+      "hp": 60,
+      "maxHp": 60,
+      "spirituality": 35,
+      "maxSpirituality": 35,
+      "ap": 4,
+      "speed": 11
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "RED_PRIEST",
+    "sefiraGroupRef": "CALAMITY_CLUSTER"
+  },
+  {
+    "id": "frost_witch_shade",
+    "name": "Frost Witch Shade",
+    "atomStats": {
+      "hp": 70,
+      "maxHp": 70,
+      "spirituality": 75,
+      "maxSpirituality": 75,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": ["CHILL_VEIL"],
+    "opacity": {
+      "oculto_hasta": "DIVINATION_IDENTIFY"
+    },
+    "pathwayTag": "DEMONESS",
+    "sefiraGroupRef": "CALAMITY_CLUSTER"
+  },
+  {
+    "id": "blood_rose_parasite",
+    "name": "Blood Rose Parasite",
+    "atomStats": {
+      "hp": 55,
+      "maxHp": 55,
+      "spirituality": 50,
+      "maxSpirituality": 50,
+      "ap": 3,
+      "speed": 8
+    },
+    "statuses": ["SANGUINE_THORNS"],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "MOON",
+    "sefiraGroupRef": "MOTHER_CLUSTER"
+  },
+  {
+    "id": "mutated_black_hound",
+    "name": "Mutated Black Hound",
+    "atomStats": {
+      "hp": 65,
+      "maxHp": 65,
+      "spirituality": 30,
+      "maxSpirituality": 30,
+      "ap": 4,
+      "speed": 10
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "MOTHER",
+    "sefiraGroupRef": "MOTHER_CLUSTER"
+  },
+  {
+    "id": "abyssal_crawler",
+    "name": "Abyssal Crawler",
+    "atomStats": {
+      "hp": 75,
+      "maxHp": 75,
+      "spirituality": 45,
+      "maxSpirituality": 45,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": ["CORROSIVE_ICHOR"],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "ABYSS",
+    "sefiraGroupRef": "ABYSS_CLUSTER"
+  },
+  {
+    "id": "chained_ghoul",
+    "name": "Chained Ghoul",
+    "atomStats": {
+      "hp": 90,
+      "maxHp": 90,
+      "spirituality": 40,
+      "maxSpirituality": 40,
+      "ap": 3,
+      "speed": 6
+    },
+    "statuses": ["IRON_FETTERS"],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "CHAINED",
+    "sefiraGroupRef": "ABYSS_CLUSTER"
+  },
+  {
+    "id": "shadow_enforcer",
+    "name": "Shadow Enforcer",
+    "atomStats": {
+      "hp": 80,
+      "maxHp": 80,
+      "spirituality": 45,
+      "maxSpirituality": 45,
+      "ap": 4,
+      "speed": 10
+    },
+    "statuses": ["DISCIPLINE_ORDER"],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "JUSTICIAR",
+    "sefiraGroupRef": "ORDER_CLUSTER"
+  },
+  {
+    "id": "bribery_specter",
+    "name": "Bribery Specter",
+    "atomStats": {
+      "hp": 55,
+      "maxHp": 55,
+      "spirituality": 60,
+      "maxSpirituality": 60,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": ["DISTORTION_AURA"],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "BLACK_EMPEROR",
+    "sefiraGroupRef": "ORDER_CLUSTER"
+  }
+]

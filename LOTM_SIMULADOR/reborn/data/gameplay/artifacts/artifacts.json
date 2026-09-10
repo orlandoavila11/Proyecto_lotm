@@ -1,0 +1,304 @@
+[
+  {
+    "id": "ART_0_08",
+    "name": "Pluma de Alzod (0-08)",
+    "atomEffects": [
+      {
+        "type": "NARRATIVE_COINCIDENCE",
+        "scope": "GLOBAL",
+        "trigger": "WRITTEN_PROPHECY"
+      },
+      {
+        "type": "CORRUPTION_LEAK",
+        "drainRatePerDay": 15
+      }
+    ],
+    "presagio": {
+      "pasivo": "Los acontecimientos alrededor del portador comienzan a alinearse con coincidencias inverosímiles.",
+      "tabú": "Escribir el verdadero nombre de una deidad ortodoxa o de un Rey de Ángeles.",
+      "mirada": "La tinta parece coagularse como sangre fresca mientras murmullos describen tu muerte prematura."
+    },
+    "grade": "GRADE_0",
+    "canonConfidence": "CANON"
+  },
+  {
+    "id": "ART_0_02",
+    "name": "Regla de Trunsoest (0-02)",
+    "atomEffects": [
+      {
+        "type": "ZONE_PROHIBITION",
+        "scope": "REGIONAL",
+        "enforcement": "LETHAL"
+      }
+    ],
+    "presagio": {
+      "pasivo": "El aire se vuelve denso y rígido; cualquier acción no reglada provoca asfixia espiritual.",
+      "tabú": "Infringir cualquier ley civil o eclesiástica vigente en un radio de 50 metros.",
+      "mirada": "Letras plateadas flotan en tu campo visual dictando condenas sumarias."
+    },
+    "grade": "GRADE_0",
+    "canonConfidence": "CANON"
+  },
+  {
+    "id": "ART_0_17",
+    "name": "El Ángel Sellado (0-17)",
+    "atomEffects": [
+      {
+        "type": "DIVINE_BARRIER",
+        "intensity": 100
+      }
+    ],
+    "presagio": {
+      "pasivo": "El espacio espiritual a su alrededor se congela en un mutismo aterrador.",
+      "tabú": "Intentar abrir el sarcófago o rezar ante él.",
+      "mirada": "Un parpadeo de plumas de bronce en la penumbra te hiela la sangre."
+    },
+    "grade": "GRADE_0",
+    "canonConfidence": "CANON"
+  },
+  {
+    "id": "ART_1_42",
+    "name": "Cuaderno de la Familia Antigonus",
+    "atomEffects": [
+      {
+        "type": "OCCULT_KNOWLEDGE_POISON",
+        "knowledgeTier": 5
+      },
+      {
+        "type": "PUPPET_INDUCEMENT",
+        "sanityThreshold": 40
+      }
+    ],
+    "presagio": {
+      "pasivo": "Tus extremidades se sienten pesadas, como si hilos invisibles tiraran de tus articulaciones.",
+      "tabú": "Leer más de tres páginas consecutivas a la luz de una vela de sebo.",
+      "mirada": "Las páginas parecen hechas de piel humana tersa que late tenuemente."
+    },
+    "grade": "GRADE_1",
+    "canonConfidence": "CANON"
+  },
+  {
+    "id": "ART_1_63",
+    "name": "Espejo Mágico Arrodes",
+    "atomEffects": [
+      {
+        "type": "OMNISCIENT_INTERROGATION",
+        "accuracy": 98
+      },
+      {
+        "type": "HUMILIATION_LIGHTNING",
+        "damageType": "HOLY_ELECTRIC"
+      }
+    ],
+    "presagio": {
+      "pasivo": "El azogue del espejo vibra y refleja palabras rojas que exponen tus pensamientos íntimos.",
+      "tabú": "Mentir al responder a una de sus preguntas íntimas.",
+      "mirada": "El cristal te devuelve la mirada con una reverencia zalamera hacia lo que percibe tras tu espalda."
+    },
+    "grade": "GRADE_1",
+    "canonConfidence": "CANON"
+  },
+  {
+    "id": "ART_2_111",
+    "name": "Flauta de Hueso del Cónsul",
+    "atomEffects": [
+      {
+        "type": "SUMMON_UNDEAD",
+        "entityPool": "SPIRIT_WORLD_CORPSES"
+      },
+      {
+        "type": "TEMPERATURE_DROP",
+        "radiusMeters": 30
+      }
+    ],
+    "presagio": {
+      "pasivo": "Escarcha cadavérica cubre los objetos cercanos y los perros aúllan sin descanso.",
+      "tabú": "Tocar la flauta durante el mediodía solar.",
+      "mirada": "Los agujeros de la flauta exhalan un hedor a tierra removida y cripta milenaria."
+    },
+    "grade": "GRADE_2",
+    "canonConfidence": "CANON"
+  },
+  {
+    "id": "ART_2_049",
+    "name": "Bolsa de Viajero de los Abraham",
+    "atomEffects": [
+      {
+        "type": "SPATIAL_STORAGE",
+        "capacitySlots": 24
+      },
+      {
+        "type": "COSMIC_WHISPER_RISK",
+        "chancePerOpening": 0.05
+      }
+    ],
+    "presagio": {
+      "pasivo": "El interior del bolso parece un abismo estrellado sin fondo ni gravedad.",
+      "tabú": "Introducir la mano entera en noche de luna llena.",
+      "mirada": "Un rumor distante de campanadas cósmicas resuena cada vez que se abre el broche."
+    },
+    "grade": "GRADE_2",
+    "canonConfidence": "CANON"
+  },
+  {
+    "id": "ART_2_077",
+    "name": "Anillo de la Avaricia",
+    "atomEffects": [
+      {
+        "type": "STAT_MOD",
+        "stat": "penceRewardMultiplier",
+        "multiplier": 1.5
+      },
+      {
+        "type": "KLEPTOMANIA_COMPULSION",
+        "intensity": 3
+      }
+    ],
+    "presagio": {
+      "pasivo": "Cualquier moneda de oro cercana parece brillar con un resplandor hipnótico.",
+      "tabú": "Regalar una moneda sin recibir el doble a cambio.",
+      "mirada": "La esmeralda tallada parece una pupila voraz que se dilata al contacto con el metal."
+    },
+    "grade": "GRADE_2",
+    "canonConfidence": "HIGH_CONFIDENCE"
+  },
+  {
+    "id": "ART_2_099",
+    "name": "Muñeca de Trapo con Maldición de Sangre",
+    "atomEffects": [
+      {
+        "type": "REMOTE_CURSE",
+        "targetRequired": "HAIR_OR_BLOOD"
+      },
+      {
+        "type": "BACKLASH_PAIN",
+        "userHpDrain": 10
+      }
+    ],
+    "presagio": {
+      "pasivo": "Pinchazos fantasma en las puntas de tus dedos y manchas rojas en la tela de tus mangas.",
+      "tabú": "Dejar la muñeca frente a un espejo sin cubrirla con un paño negro.",
+      "mirada": "Los botones que forman sus ojos parpadean cuando no la miras de frente."
+    },
+    "grade": "GRADE_2",
+    "canonConfidence": "HIGH_CONFIDENCE"
+  },
+  {
+    "id": "ART_3_ALCOHOL_NEMESIS",
+    "name": "Némesis del Alcohol (3-Alcohol)",
+    "atomEffects": [
+      {
+        "type": "POISON_NEUTRALIZATION",
+        "target": "ALCOHOL_AND_SEDATIVES"
+      },
+      {
+        "type": "INSOMNIA_STATUS",
+        "durationHours": 12
+      }
+    ],
+    "presagio": {
+      "pasivo": "Cualquier licor en un radio de dos metros se agria y se convierte en vinagre amargo.",
+      "tabú": "Brindar en un banquete oficial mientras se porta el artefacto.",
+      "mirada": "El frasco de cristal emite un olor acre a hierbas maceradas y alcanfor."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "CANON"
+  },
+  {
+    "id": "ART_3_0214",
+    "name": "Amuleto del Sol Purificador",
+    "atomEffects": [
+      {
+        "type": "HOLY_LIGHT_EMISSION",
+        "intensity": 30
+      },
+      {
+        "type": "GHOST_REPULSION",
+        "radiusMeters": 15
+      }
+    ],
+    "presagio": {
+      "pasivo": "Calor agradable en el pecho como un mediodía estival en medio del smog frío.",
+      "tabú": "Entrar a una cripta funeraria con el amuleto visible.",
+      "mirada": "El oro pulido refleja una luz dorada incluso en la oscuridad total de un sótano."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "CANON"
+  },
+  {
+    "id": "ART_3_0782",
+    "name": "Gafas de Cuarzo de Visión Espiritual",
+    "atomEffects": [
+      {
+        "type": "ENABLE_AURA_SIGHT",
+        "clarityBonus": 25
+      },
+      {
+        "type": "HEADACHE_STATUS",
+        "sanityDrainPerHour": 2
+      }
+    ],
+    "presagio": {
+      "pasivo": "Los contornos de los seres vivos se desdibujan en halos multicolores pulsantes.",
+      "tabú": "Mirar directamente el sol o lámparas de arco eléctrico con las lentes puestas.",
+      "mirada": "El cuarzo ahumado parece empañarse con formas de rostros agonizantes."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "HIGH_CONFIDENCE"
+  },
+  {
+    "id": "ART_3_0451",
+    "name": "Daga de Escarcha Sombría",
+    "atomEffects": [
+      {
+        "type": "FROST_DAMAGE",
+        "coldLevel": 2
+      },
+      {
+        "type": "SLOW_TARGET",
+        "speedReduction": 4
+      }
+    ],
+    "presagio": {
+      "pasivo": "Hielo fino se forma sobre la funda de cuero y el aliento del portador se condensa.",
+      "tabú": "Acercar la hoja desenvainada a una fogata encendida.",
+      "mirada": "El acero azulado refleja la luz como hielo milenario de los glaciares del norte."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "HIGH_CONFIDENCE"
+  },
+  {
+    "id": "ART_3_0612",
+    "name": "Moneda del Azar Ciego",
+    "atomEffects": [
+      {
+        "type": "LUCK_GAMBLE",
+        "successChance": 0.5
+      }
+    ],
+    "presagio": {
+      "pasivo": "Decisiones casuales como cruzar una calle se ven alteradas por accidentes fortuitos.",
+      "tabú": "Lanzar la moneda tres veces consecutivas cayendo en la misma cara.",
+      "mirada": "Las figuras grabadas en sus dos caras parecen guiñar el ojo en la penumbra."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "HIGH_CONFIDENCE"
+  },
+  {
+    "id": "ART_3_0899",
+    "name": "Pluma de Escriba de Leyes",
+    "atomEffects": [
+      {
+        "type": "BINDING_CONTRACT",
+        "breachPenalty": "LEGAL_BACKLASH"
+      }
+    ],
+    "presagio": {
+      "pasivo": "Los documentos firmados con esta pluma emiten una débil pulsación dorada de orden.",
+      "tabú": "Redactar un contrato con términos deliberadamente contradictorios.",
+      "mirada": "La punta de acero no requiere tinta y rasga el papel con una precisión geométrica inhumana."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "HIGH_CONFIDENCE"
+  }
+]

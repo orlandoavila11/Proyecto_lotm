@@ -1,0 +1,492 @@
+[
+  {
+    "id": "CONSP_GRAIN_HOARDING",
+    "title": "El Acaparamiento de Silos en el Distrito Este",
+    "description": "Casas comerciales vinculadas a la nobleza de Loen retienen silos de trigo para especular con el precio del pan en la posguerra.",
+    "actors": [
+      "FAM_AUGUSTUS",
+      "ORG_MI9"
+    ],
+    "trigger": "GRAIN_SHORTAGE_NEWS",
+    "temporizador": 7,
+    "escalationPhases": [
+      {
+        "dia": 1,
+        "evento": "Aumento del 30% en el precio de la harina en los distritos obreros."
+      },
+      {
+        "dia": 4,
+        "evento": "Disturbios violentos frente a las panaderías de East Borough."
+      },
+      {
+        "dia": 7,
+        "evento": "Cierre de almacenes bajo ley marcial y hambre generalizada."
+      }
+    ],
+    "playerAffordances": [
+      {
+        "accion": "INVESTIGAR_MANIFIESTOS",
+        "requisito": "Vía Lector o contactos en aduanas."
+      },
+      {
+        "accion": "FILTRAR_INFORMACION",
+        "requisito": "Contactar con gacetas independientes."
+      }
+    ],
+    "resolutionStates": [
+      {
+        "estado": "COMPLICE_NOBLE",
+        "efecto": "Ganancia monetaria alta pero incremento de la miseria barrial."
+      },
+      {
+        "estado": "DESMANTELADO",
+        "efecto": "Distribución forzada del grano; gratitud popular y sospecha de MI9."
+      }
+    ],
+    "systemicEffects": {
+      "breadPriceModifier": 1.4,
+      "unrestLevel": 3
+    }
+  },
+  {
+    "id": "CONSP_FEVR_ARMS_SMUGGLING",
+    "title": "El Tráfico de Rifles Feysakianos",
+    "description": "Agregados militares derrotados de Feysac introducen armas reglamentarias a través de barcazas de carbón en el río Tussock.",
+    "actors": [
+      "FAM_EINHORN",
+      "ORG_MI9"
+    ],
+    "trigger": "RIVER_POLICE_REPORT",
+    "temporizador": 5,
+    "escalationPhases": [
+      {
+        "dia": 1,
+        "evento": "Descarga nocturna de cajones marcados en el muelle de San Judas."
+      },
+      {
+        "dia": 3,
+        "evento": "Distribución de armas a pandillas armadas del bajo fondo."
+      },
+      {
+        "dia": 5,
+        "evento": "Tiroteo a gran escala contra una comisaría metropolitana."
+      }
+    ],
+    "playerAffordances": [
+      {
+        "accion": "EMBOSCADA_NOCTURNA",
+        "requisito": "Combate táctico con apoyo policial."
+      },
+      {
+        "accion": "INTERCEPTAR_COMUNICACIONES",
+        "requisito": "Adivinación o sondeo mental en tabernas."
+      }
+    ],
+    "resolutionStates": [
+      {
+        "estado": "INCIVIL_ESTALLIDO",
+        "efecto": "Violencia abierta en los muelles e incremento de patrullas armadas."
+      },
+      {
+        "estado": "CARGAMENTO_INCAUTADO",
+        "efecto": "Recompensa de la policía metropolitana y debilitamiento feysakiano."
+      }
+    ],
+    "systemicEffects": {
+      "dockSecurityLevel": 4,
+      "smugglingRisk": 2
+    }
+  },
+  {
+    "id": "CONSP_AURORA_SACRIFICE",
+    "title": "El Ritual de Sangre en las Catacumbas de Cherwood",
+    "description": "Fanáticos de la Orden de Aurora secuestran indigentes para un rito de invocación del Creador Verdadero en los desagües.",
+    "actors": [
+      "ORG_AURORA_ORDER",
+      "CHURCH_EVERNIGHT"
+    ],
+    "trigger": "MISSING_INDIGENTS_DISPATCH",
+    "temporizador": 4,
+    "escalationPhases": [
+      {
+        "dia": 1,
+        "evento": "Desaparición de tres barrenderos municipales en el turno nocturno."
+      },
+      {
+        "dia": 2,
+        "evento": "Olor a azufre y sangre emergiendo por las alcantarillas de Cherwood."
+      },
+      {
+        "dia": 4,
+        "evento": "Aparición de un monstruo aberrante en plena calle residencial."
+      }
+    ],
+    "playerAffordances": [
+      {
+        "accion": "SEGUIR_RASTRO_SANGUINEO",
+        "requisito": "Vía Cazador o Visión Espiritual."
+      },
+      {
+        "accion": "ALERTA_A_NIGHTHAWKS",
+        "requisito": "Entregar prueba testimonial en la catedral."
+      }
+    ],
+    "resolutionStates": [
+      {
+        "estado": "RITO_CONSUMADO",
+        "efecto": "Contaminación espiritual del distrito y pérdidas civiles."
+      },
+      {
+        "estado": "ALTAR_PURIFICADO",
+        "efecto": "Gratitud encubierta de los Nighthawks y asimilación de vía."
+      }
+    ],
+    "systemicEffects": {
+      "corruptionLevel": 5,
+      "nighthawkAlertness": 4
+    }
+  },
+  {
+    "id": "CONSP_SECRET_ORDER_PUPPET",
+    "title": "Las Cuerdas Ocultas en la Cámara de los Comunes",
+    "description": "Un parlamentario de Loen exhibe comportamientos mecánicos anómalos tras recibir una visita privada de la Orden Secreta.",
+    "actors": [
+      "ORG_SECRET_ORDER",
+      "FAM_AUGUSTUS"
+    ],
+    "trigger": "PARLIAMENT_STRANGE_VOTE",
+    "temporizador": 6,
+    "escalationPhases": [
+      {
+        "dia": 1,
+        "evento": "El parlamentario vota a favor de desmantelar un puesto de control en Backlund."
+      },
+      {
+        "dia": 3,
+        "evento": "Su secretario personal es hallado ahorcado con hilos transparentes."
+      },
+      {
+        "dia": 6,
+        "evento": "El político transfiere fondos estatales a una cuenta fantasma en ultramar."
+      }
+    ],
+    "playerAffordances": [
+      {
+        "accion": "EXAMINAR_AURA_POLITICA",
+        "requisito": "Visión Espiritual o habilidad de Vidente."
+      },
+      {
+        "accion": "SEGUIR_AL_TITIRITERO",
+        "requisito": "Rastreo sigiloso en carruajes nocturnos."
+      }
+    ],
+    "resolutionStates": [
+      {
+        "estado": "TITIRITERO_ESCAPE",
+        "efecto": "El político colapsa como una cáscara vacía; fondos perdidos."
+      },
+      {
+        "estado": "CUERDAS_CORTADAS",
+        "efecto": "Captura del agente de la Orden Secreta y rescate del político."
+      }
+    ],
+    "systemicEffects": {
+      "parliamentaryCorruption": 3,
+      "secretOrderInfluence": 2
+    }
+  },
+  {
+    "id": "CONSP_ROSE_SCHOOL_NARCOTICS",
+    "title": "El Brebaje de las Flores Sombrías en los Muelles",
+    "description": "Miembros de la Escuela de la Rosa distribuyen un narcótico derivado de la Vía del Prisionero que desata histeria entre estibadores.",
+    "actors": [
+      "ORG_ROSE_SCHOOL",
+      "CHURCH_STORMS"
+    ],
+    "trigger": "OPIUM_DEN_OVERDOSE",
+    "temporizador": 5,
+    "escalationPhases": [
+      {
+        "dia": 1,
+        "evento": "Aparición de frascos con resina oscura en fumaderos ilegales."
+      },
+      {
+        "dia": 3,
+        "evento": "Brote de agresividad salvaje en los almacenes del puerto."
+      },
+      {
+        "dia": 5,
+        "evento": "Motín generalizado y linchamiento de guardias de aduana."
+      }
+    ],
+    "playerAffordances": [
+      {
+        "accion": "ANALIZAR_TOXINA",
+        "requisito": "Vía Farmacéutico o Lector."
+      },
+      {
+        "accion": "INFILTRAR_FUMADERO",
+        "requisito": "Doble vida en los bajos fondos."
+      }
+    ],
+    "resolutionStates": [
+      {
+        "estado": "EPIDEMIA_DE_FURIA",
+        "efecto": "Parálisis del comercio marítimo y represión violenta de Storms."
+      },
+      {
+        "estado": "LABORATORIO_QUEMADO",
+        "efecto": "Cese de la distribución y botín de ingredientes alquímicos."
+      }
+    ],
+    "systemicEffects": {
+      "dockProductivity": 0.7,
+      "stormInquisitionLevel": 3
+    }
+  },
+  {
+    "id": "CONSP_FENEPOT_DIPLOMACY",
+    "title": "El Chantaje Jurídico de la Legación de Fenepot",
+    "description": "Emisarios de la casa Castiya usan leyes secretas de orden para asfixiar a jueces de Loen en casos de contrabando.",
+    "actors": [
+      "FAM_CASTIYA",
+      "ORG_MI9"
+    ],
+    "trigger": "EMBASSY_LEGAL_WRIT",
+    "temporizador": 8,
+    "escalationPhases": [
+      {
+        "dia": 2,
+        "evento": "Un juez del tribunal superior suspende juicio a mercaderes fenepotianos."
+      },
+      {
+        "dia": 5,
+        "evento": "Aparición de documentos comprometedores sobre la corte de Loen."
+      },
+      {
+        "dia": 8,
+        "evento": "Inmunidad total diplomática firmada bajo coacción judicial."
+      }
+    ],
+    "playerAffordances": [
+      {
+        "accion": "ROBAR_EXPEDIENTE",
+        "requisito": "Vía Saqueador o Payaso ágil."
+      },
+      {
+        "accion": "NEUTRALIZAR_CHANTAGE",
+        "requisito": "Vía Abogado o manipulación social."
+      }
+    ],
+    "resolutionStates": [
+      {
+        "estado": "DOMINIO_CASTIYA",
+        "efecto": "Los intereses de Fenepot prevalecen en los juzgados metropolitanos."
+      },
+      {
+        "estado": "EXPEDIENTE_REVELADO",
+        "efecto": "Expulsión del diplomático y refuerzo de soberanía judicial."
+      }
+    ],
+    "systemicEffects": {
+      "fenepotInfluence": 3,
+      "courtIntegrity": 0.8
+    }
+  },
+  {
+    "id": "CONSP_BERIA_CASINO",
+    "title": "Las Apuestas de Sangre en el Club del Trébol Negro",
+    "description": "El linaje criminal Beria organiza garitos subterráneos donde se apuestan años de vida y deudas de sangre.",
+    "actors": [
+      "FAM_BERIA",
+      "CHURCH_EVERNIGHT"
+    ],
+    "trigger": "MISSING_GAMBLER_NOTICE",
+    "temporizador": 6,
+    "escalationPhases": [
+      {
+        "dia": 1,
+        "evento": "Un joven noble pierde el título de su mansión en una mano de cartas."
+      },
+      {
+        "dia": 3,
+        "evento": "Cobro de deudas mediante matones de la vía Criminal."
+      },
+      {
+        "dia": 6,
+        "evento": "El deudor se suicida dejando una firma ensangrentada en la pared."
+      }
+    ],
+    "playerAffordances": [
+      {
+        "accion": "DESAFIO_DE_AZAR",
+        "requisito": "Vía Monstruo o Vidente."
+      },
+      {
+        "accion": "REDADA_ARMADA",
+        "requisito": "Denuncia a la policía o asalto directo."
+      }
+    ],
+    "resolutionStates": [
+      {
+        "estado": "MAFIA_CONSOLIDADA",
+        "efecto": "Los Beria controlan las apuestas de todo el distrito de Hillston."
+      },
+      {
+        "estado": "GARITO_ARRASADO",
+        "efecto": "Liberación de pagarés y botín de libras de oro."
+      }
+    ],
+    "systemicEffects": {
+      "criminalEconomy": 1.5,
+      "suicideRate": 1.2
+    }
+  },
+  {
+    "id": "CONSP_SAURON_SABOTAGE",
+    "title": "Las Bombas de Fósforo en las Imprentas de Vapor",
+    "description": "Revanchistas de la antigua nobleza Sauron buscan incendiar fábricas de maquinaria para debilitar la industria de Loen.",
+    "actors": [
+      "ORG_SAURON_REMNANTS",
+      "CHURCH_STEAM"
+    ],
+    "trigger": "FACTORY_FIRE_THREAT",
+    "temporizador": 4,
+    "escalationPhases": [
+      {
+        "dia": 1,
+        "evento": "Hallazgo de botellas con fuego químico en un taller tipográfico."
+      },
+      {
+        "dia": 2,
+        "evento": "Explosión menor en una caldera auxiliar de Cherwood."
+      },
+      {
+        "dia": 4,
+        "evento": "Incendio catastrófico en la principal fundición de Backlund."
+      }
+    ],
+    "playerAffordances": [
+      {
+        "accion": "DESACTIVAR_DISPOSITIVO",
+        "requisito": "Vía Artesano o Lector."
+      },
+      {
+        "accion": "INTERROGAR_PROVOCADOR",
+        "requisito": "Duelo verbal o combate frontal."
+      }
+    ],
+    "resolutionStates": [
+      {
+        "estado": "FABRICA_CENIZAS",
+        "efecto": "Desempleo masivo de obreros mecánicos y subida del hierro."
+      },
+      {
+        "estado": "SABOTAJE_FRUSTRADO",
+        "efecto": "Medalla de agradecimiento de la Iglesia de Steam y recompensa."
+      }
+    ],
+    "systemicEffects": {
+      "steamGuildRelations": 4,
+      "industrialProduction": 0.85
+    }
+  },
+  {
+    "id": "CONSP_STEAM_STRIKE_CRUSH",
+    "title": "La Represión de la Huelga en los Talleres del Ferrocarril",
+    "description": "La patronal ferroviaria y agentes encubiertos preparan una provocación armada para justificar el arresto de líderes obreros.",
+    "actors": [
+      "CHURCH_STEAM",
+      "ORG_MI9"
+    ],
+    "trigger": "STRIKE_DECLARATION",
+    "temporizador": 5,
+    "escalationPhases": [
+      {
+        "dia": 1,
+        "evento": "Los obreros detienen las locomotoras exigiendo pan y carbón."
+      },
+      {
+        "dia": 3,
+        "evento": "Infiltrados lanzan piedras contra guardias eclesiásticos."
+      },
+      {
+        "dia": 5,
+        "evento": "Carga de fusileros y decenas de heridos en la estación."
+      }
+    ],
+    "playerAffordances": [
+      {
+        "accion": "MEDIACION_SOCIAL",
+        "requisito": "Vía Espectador o Telépata pacificador."
+      },
+      {
+        "accion": "EXHIBIR_INFILTRADOS",
+        "requisito": "Investigación fotográfica o confesión forzada."
+      }
+    ],
+    "resolutionStates": [
+      {
+        "estado": "MASACRE_OBRERA",
+        "efecto": "Resentimiento obrero profundo y vigilancia policial reforzada."
+      },
+      {
+        "estado": "PACTO_LABORAL",
+        "efecto": "Paz social temporal y respeto de ambos bandos."
+      }
+    ],
+    "systemicEffects": {
+      "publicTension": 4,
+      "trainTransportSpeed": 1.0
+    }
+  },
+  {
+    "id": "CONSP_EPISCOPATE_GRAVE_ROBBERY",
+    "title": "La Profanación del Cementerio de San Jorge",
+    "description": "Nigromantes del Episcopado Numis profanan sepulcros de oficiales de Loen para recolectar almas en pena de la guerra.",
+    "actors": [
+      "ORG_NUMIS_EPISCOPATE",
+      "CHURCH_EVERNIGHT"
+    ],
+    "trigger": "GRAVEDIGGER_TERROR_STORY",
+    "temporizador": 4,
+    "escalationPhases": [
+      {
+        "dia": 1,
+        "evento": "Ataúdes abiertos y tierra removida en el sector de veteranos."
+      },
+      {
+        "dia": 2,
+        "evento": "Llantos lastimeros y sombras errantes asustan a los deudos."
+      },
+      {
+        "dia": 4,
+        "evento": "Levantamiento de un batallón de zombis en el mausoleo este."
+      }
+    ],
+    "playerAffordances": [
+      {
+        "accion": "VIGILANCIA_NOCTURNA",
+        "requisito": "Vía Sin Sueño o Vidente de guardia."
+      },
+      {
+        "accion": "PURIFICACION_SOLAR",
+        "requisito": "Amuletos de sol o agua bendita de Evernight."
+      }
+    ],
+    "resolutionStates": [
+      {
+        "estado": "CRIPTA_CORROMPIDA",
+        "efecto": "Clausura del cementerio bajo cuarentena eclesiástica."
+      },
+      {
+        "estado": "NIGROMANTE_ATRAPADO",
+        "efecto": "Paz a los caídos y bendición de los sacerdotes de la Noche."
+      }
+    ],
+    "systemicEffects": {
+      "graveyardDesecrationLevel": 3,
+      "evernightReputation": 2
+    }
+  }
+]
