@@ -90,6 +90,20 @@ describe('Kill -9 Recovery: Persistencia Transaccional y Restauración Byte-Equi
       const actionData = await actionRes.json();
       assert.strictEqual(actionData.battleOver, false);
 
+      // 5.b Ejecutar acción de Escudriñar para alterar los sets de opacidad mutua (Directiva f)
+      const scrutinizeRes = await fetch(`${baseUrl}/api/combat/action`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          characterId: charId,
+          actionType: 'SCRUTINIZE'
+        })
+      });
+      assert.strictEqual(scrutinizeRes.status, 200);
+      const scrutinizeData = await scrutinizeRes.json();
+      assert.ok(scrutinizeData.player.revealedAbilities.length >= 1, 'Player debe poseer habilidades reveladas');
+      assert.ok(scrutinizeData.enemy.revealedAbilities.length >= 1, 'Enemy debe poseer habilidades observadas del player');
+
       // Snapshot directo de la base de datos antes del kill -9
       const dbInspector = new DatabaseClient(dbPath);
       const battleRowBeforeKill = dbInspector.getBattleById(battleId);
@@ -121,18 +135,19 @@ describe('Kill -9 Recovery: Persistencia Transaccional y Restauración Byte-Equi
       assert.strictEqual(restoreRes.statusCode, 200, 'El combate activo debe ser restaurado');
       const restoredData = JSON.parse(restoreRes.body);
 
-      // Verificar campos semánticos
+      // Verificar campos semánticos y opacidad mutua (Directiva f)
       assert.strictEqual(restoredData.battleId, battleId);
       assert.strictEqual(restoredData.status, 'ONGOING');
       assert.strictEqual(restoredData.player.currentSpirituality, 90); // 100 - 10
       assert.strictEqual(restoredData.enemy.currentHp, 35); // 60 - 25
-      assert.strictEqual(restoredData.turnCount, 2);
+      assert.deepStrictEqual(restoredData.player.revealedAbilities, scrutinizeData.player.revealedAbilities, 'revealedAbilities de player debe ser idéntico');
+      assert.deepStrictEqual(restoredData.enemy.revealedAbilities, scrutinizeData.enemy.revealedAbilities, 'revealedAbilities de enemy debe ser idéntico');
 
-      // 9. VERIFICACIÓN BYTE-EQUIVALENTE de SQLite
+      // 9. VERIFICACIÓN BYTE-EQUIVALENTE de SQLite (incluyendo sets de opacidad)
       const restoredRow = recoveredDb.getBattleById(battleId);
       assert.ok(restoredRow, 'La fila restaurada debe existir');
       assert.strictEqual(restoredRow.status, statusBeforeKill, 'El estado ONGOING debe coincidir exactamente');
-      assert.strictEqual(restoredRow.state_json, stateJsonBeforeKill, 'El JSON del estado debe ser 100% BYTE-EQUIVALENTE');
+      assert.strictEqual(restoredRow.state_json, stateJsonBeforeKill, 'El JSON del estado (incluyendo opacidad mutua) debe ser 100% BYTE-EQUIVALENTE');
 
       // Limpieza de servidores
       recoveredDb.close();
