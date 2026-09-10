@@ -19,8 +19,8 @@ if (!fs.existsSync(manifestPath)) {
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 
-if (!manifest.manifestVersion || manifest.manifestVersion !== '1.1') {
-  console.error(`[ERROR] Versión inesperada de manifest: ${manifest.manifestVersion} (se esperaba 1.1)`);
+if (!manifest.manifestVersion || manifest.manifestVersion !== '2.0') {
+  console.error(`[ERROR] Versión inesperada de manifest: ${manifest.manifestVersion} (se esperaba 2.0)`);
   process.exit(1);
 }
 
@@ -29,6 +29,21 @@ let errors = [];
 
 for (const [catName, cat] of Object.entries(manifest.categories)) {
   for (const f of cat.files) {
+    if (f.tier !== 'L') {
+      errors.push({ file: f.destinationPath, error: 'INVALID_TIER', expected: 'L', actual: f.tier });
+      continue;
+    }
+
+    if (!f.consumerSystem) {
+      errors.push({ file: f.destinationPath, error: 'MISSING_CONSUMER_SYSTEM' });
+      continue;
+    }
+
+    if (!f.validationState) {
+      errors.push({ file: f.destinationPath, error: 'MISSING_VALIDATION_STATE' });
+      continue;
+    }
+
     const fullPath = path.resolve(packageRoot, '..', f.destinationPath);
     if (!fs.existsSync(fullPath)) {
       errors.push({ file: f.destinationPath, error: 'FILE_NOT_FOUND' });

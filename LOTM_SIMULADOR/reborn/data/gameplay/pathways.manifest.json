@@ -1,0 +1,217 @@
+{
+  "version": "2.0",
+  "description": "Contrato jugable Tier G de las 22 Vías Beyonder canónicas.",
+  "authorizedBy": "Director (Brief-02.1)",
+  "sealedAt": "2026-09-10T15:45:00.000Z",
+  "totalPathways": 22,
+  "playableCount": 6,
+  "playablePathways": [
+    "FOOL",
+    "VISIONARY",
+    "DEMONESS",
+    "MOON",
+    "CHAINED",
+    "JUSTICIAR"
+  ],
+  "sefirahSource": "reborn/data/gameplay/sefira_groups.json",
+  "pathways": [
+    {
+      "id": "ABYSS",
+      "name": "Abyss",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/criminal.json",
+      "sefirahGroupRef": "ABYSS_CLUSTER",
+      "sefirahIdRef": "tenebrous_world"
+    },
+    {
+      "id": "BLACK_EMPEROR",
+      "name": "Black Emperor",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/lawyer.json",
+      "sefirahGroupRef": "ORDER_CLUSTER",
+      "sefirahIdRef": "nation_of_disorder"
+    },
+    {
+      "id": "CHAINED",
+      "name": "The Chained",
+      "tier": "G",
+      "playable": true,
+      "tierLContentFile": "reborn/data/content/pathways/prisoner.json",
+      "sefirahGroupRef": "ABYSS_CLUSTER",
+      "sefirahIdRef": "tenebrous_world"
+    },
+    {
+      "id": "DARKNESS",
+      "name": "Darkness",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/sleepless.json",
+      "sefirahGroupRef": "DEATH_CLUSTER",
+      "sefirahIdRef": "river_of_eternal_darkness"
+    },
+    {
+      "id": "DEATH",
+      "name": "Death",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/corpse_collector.json",
+      "sefirahGroupRef": "DEATH_CLUSTER",
+      "sefirahIdRef": "river_of_eternal_darkness"
+    },
+    {
+      "id": "DEMONESS",
+      "name": "Demoness",
+      "tier": "G",
+      "playable": true,
+      "tierLContentFile": "reborn/data/content/pathways/assassin.json",
+      "sefirahGroupRef": "CALAMITY_CLUSTER",
+      "sefirahIdRef": "city_of_calamity"
+    },
+    {
+      "id": "DOOR",
+      "name": "The Door",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/apprentice.json",
+      "sefirahGroupRef": "LOTM",
+      "sefirahIdRef": "sefirah_castle"
+    },
+    {
+      "id": "ERROR",
+      "name": "Error",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/marauder.json",
+      "sefirahGroupRef": "LOTM",
+      "sefirahIdRef": "sefirah_castle"
+    },
+    {
+      "id": "FOOL",
+      "name": "The Fool",
+      "tier": "G",
+      "playable": true,
+      "tierLContentFile": "reborn/data/content/pathways/seer.json",
+      "sefirahGroupRef": "LOTM",
+      "sefirahIdRef": "sefirah_castle"
+    },
+    {
+      "id": "HANGED_MAN",
+      "name": "The Hanged Man",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/secrets_suppliant.json",
+      "sefirahGroupRef": "GOD_ALMIGHTY",
+      "sefirahIdRef": "chaos_sea"
+    },
+    {
+      "id": "HERMIT",
+      "name": "The Hermit",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/mystery_pryer.json",
+      "sefirahGroupRef": "HERMIT_CLUSTER",
+      "sefirahIdRef": "knowledge_moor"
+    },
+    {
+      "id": "JUSTICIAR",
+      "name": "Justiciar",
+      "tier": "G",
+      "playable": true,
+      "tierLContentFile": "reborn/data/content/pathways/arbiter.json",
+      "sefirahGroupRef": "ORDER_CLUSTER",
+      "sefirahIdRef": "nation_of_disorder"
+    },
+    {
+      "id": "MOON",
+      "name": "The Moon",
+      "tier": "G",
+      "playable": true,
+      "tierLContentFile": "reborn/data/content/pathways/apothecary.json",
+      "sefirahGroupRef": "MOTHER_CLUSTER",
+      "sefirahIdRef": "brood_hive"
+    },
+    {
+      "id": "MOTHER",
+      "name": "Mother",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/planter.json",
+      "sefirahGroupRef": "MOTHER_CLUSTER",
+      "sefirahIdRef": "brood_hive"
+    },
+    {
+      "id": "PARAGON",
+      "name": "Paragon",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/savant.json",
+      "sefirahGroupRef": "HERMIT_CLUSTER",
+      "sefirahIdRef": "knowledge_moor"
+    },
+    {
+      "id": "RED_PRIEST",
+      "name": "Red Priest",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/hunter.json",
+      "sefirahGroupRef": "CALAMITY_CLUSTER",
+      "sefirahIdRef": "city_of_calamity"
+    },
+    {
+      "id": "SUN",
+      "name": "The Sun",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/bard.json",
+      "sefirahGroupRef": "GOD_ALMIGHTY",
+      "sefirahIdRef": "chaos_sea"
+    },
+    {
+      "id": "TWILIGHT_GIANT",
+      "name": "Twilight Giant",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/warrior.json",
+      "sefirahGroupRef": "DEATH_CLUSTER",
+      "sefirahIdRef": "river_of_eternal_darkness"
+    },
+    {
+      "id": "TYRANT",
+      "name": "Tyrant",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/sailor.json",
+      "sefirahGroupRef": "GOD_ALMIGHTY",
+      "sefirahIdRef": "chaos_sea"
+    },
+    {
+      "id": "VISIONARY",
+      "name": "Visionary",
+      "tier": "G",
+      "playable": true,
+      "tierLContentFile": "reborn/data/content/pathways/spectator.json",
+      "sefirahGroupRef": "GOD_ALMIGHTY",
+      "sefirahIdRef": "chaos_sea"
+    },
+    {
+      "id": "WHEEL_OF_FORTUNE",
+      "name": "Wheel of Fortune",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/monster.json",
+      "sefirahGroupRef": "FATE_CLUSTER",
+      "sefirahIdRef": "key_of_light"
+    },
+    {
+      "id": "WHITE_TOWER",
+      "name": "White Tower",
+      "tier": "G",
+      "playable": false,
+      "tierLContentFile": "reborn/data/content/pathways/reader.json",
+      "sefirahGroupRef": "GOD_ALMIGHTY",
+      "sefirahIdRef": "chaos_sea"
+    }
+  ]
+}

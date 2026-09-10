@@ -46,7 +46,10 @@
             "importance": "string"
           },
           "sha256": "936681e85864009d2a2984a92e706dd782040d893447e50e0d784bbbccd904bb",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "uniqueness.json",
@@ -91,7 +94,10 @@
             "importance": "string"
           },
           "sha256": "a792de2452f2e4d800499b4939dd8da5ccd92bc166b9205194fdcb235027f082",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "grade_0.json",
@@ -139,7 +145,10 @@
             "importance": "string"
           },
           "sha256": "1875852a6b94305c20e58f5d64568142f8ecdb762cabee8331848be3f45f9b44",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "grade_1.json",
@@ -187,7 +196,10 @@
             "importance": "string"
           },
           "sha256": "104efe93056ec92abf21c6246e7d431a64032f6542eec2c68ace1d3d7a30fda8",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "grade_2.json",
@@ -235,7 +247,10 @@
             "importance": "string"
           },
           "sha256": "f10159700087d84b9de832e570253f97c6d2f6c763fb21f17cb7a334c1aa8b1b",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "grade_3.json",
@@ -283,7 +298,10 @@
             "importance": "string"
           },
           "sha256": "9e3b610846d7698a76d6b6df713031d97e804dd30df4a32cba1e347b9d0c0514",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "sealed_artifacts_expanded.json",
@@ -311,7 +329,10 @@
             }
           },
           "sha256": "96381bf1ca9582c814bcffe8b00e6dd7d0073666c59ac817b827cc5293eae03c",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         }
       ]
     },
@@ -363,7 +384,10 @@
             "importance": "string"
           },
           "sha256": "2ab4c8df3fa6cbf877e7ea086e9df76dc0559e8b032fd360ec98ee0bb9b4938e",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "forbidden_knowledge.json",
@@ -385,7 +409,10 @@
             "containmentProtocol": "string"
           },
           "sha256": "a0ec31b088ae9ddfe14594768c29c265f8d5e57f01b0ed0fbfa751da3812acc6",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "honorific_names_tables.json",
@@ -407,7 +434,10 @@
             }
           },
           "sha256": "850834a79404394b20bf7a60f6f9fa57f919669bb5c7772e11e14179e5835af5",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "rumors.json",
@@ -464,7 +494,10 @@
             "importance": "string"
           },
           "sha256": "e4aabbd9c6951aed7b19981ef3d2fb5e741bdef7b5deda363eebac673cbc2aa0",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         }
       ]
     },
@@ -502,7 +535,10 @@
             }
           },
           "sha256": "198b3ab1a673f17c6ad4ff1910011ac8c8bdc2500401083f74d17a15e2e9c30a",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "Investigation",
+          "validationState": "PENDING_VALIDATION"
         },
         {
           "fileName": "investigations_data.json",
@@ -582,7 +618,10 @@
             }
           },
           "sha256": "5860ecd80c10215512e4a68dcbf18b64fb2a6edfe24f5d383925857c97600f49",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "Investigation",
+          "validationState": "PENDING_VALIDATION"
         }
       ]
     },
@@ -621,7 +660,10 @@
             "flavorLore": "string"
           },
           "sha256": "f0374abb939a1c61108599cde442bbe526ef6936a3aea5fc3b71f235614f4198",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "Acting",
+          "validationState": "PENDING_VALIDATION"
         },
         {
           "fileName": "identity_events.json",
@@ -648,7 +690,10 @@
             "options": "array<[object Object]>"
           },
           "sha256": "cf56e831ca0ea575759c1961556d38de0c36a5bf00bc4d4b36fc20f7d952535d",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "Acting",
+          "validationState": "PENDING_VALIDATION"
         },
         {
           "fileName": "pathway_events.json",
@@ -674,7 +719,10 @@
             "systemicImpact": "string"
           },
           "sha256": "f5cc78435cd0e40d606bf9ce922a8ca337f1dd0fbb8d2e4efc8f6ae6ee16402c",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "Acting",
+          "validationState": "PENDING_VALIDATION"
         },
         {
           "fileName": "pathway_life_stories.json",
@@ -695,7 +743,10 @@
             "apotheosisClimax": "string"
           },
           "sha256": "7ad2a3c44e7a99d9d7049edcf003ea8fd194066e33278e48a977dd96174ea34d",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "Acting",
+          "validationState": "PENDING_VALIDATION"
         },
         {
           "fileName": "events.json",
@@ -787,7 +838,10 @@
           },
           "sha256": "ee93205a5739dac1af2ac74180ba902d5536bf495e4e590b407d56348e2d8416",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "Acting",
+          "validationState": "PENDING_VALIDATION"
         }
       ]
     },
@@ -823,7 +877,10 @@
             }
           },
           "sha256": "3fa945888dc5177543828fca053cd0835121c7d146902e6541a73d4b8a04cc8d",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "tarot_club_members.json",
@@ -891,7 +948,10 @@
           },
           "sha256": "517be0b4e558662f0dcbf50092d687b4a9d57b0f3bdf6995a71d6854302daa6a",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "angels.json",
@@ -961,7 +1021,10 @@
           },
           "sha256": "15422cbdd5599d543de3e61edc784c62d77e8b9b7ef1d043e62734d761bebd54",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "churches.json",
@@ -1014,7 +1077,10 @@
           },
           "sha256": "36555bf52f6f8b86611393122915d1a89d9f7cf6954e780560cd0b82590a996d",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "cities.json",
@@ -1031,7 +1097,10 @@
           },
           "sha256": "681b3f4d93145ce483680382917b36c11a16f6a7a1d87947793fda4fe2b551fa",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "countries.json",
@@ -1077,7 +1146,10 @@
           },
           "sha256": "b050c6604906848df2e6aa7bdadf5495c99ae5e58aa664a8517c019f85278b49",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "gods.json",
@@ -1162,7 +1234,10 @@
           },
           "sha256": "5dc10a5ac949fd3cc3be58fd67d6a60d53d4c45fb8ed700cca2c87e4b6d16832",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "governments.json",
@@ -1179,7 +1254,10 @@
           },
           "sha256": "b95cff715df7b7284f5b156a9a6d346c331996486d61f7565e675a1a5f579b21",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "great_old_ones.json",
@@ -1254,7 +1332,10 @@
             "influence_score": "number"
           },
           "sha256": "7e5e1a21ee4c73ba72d2cdb54f12ae097239b9b48e43ee536b044ab59ecb466f",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "kings_of_angels.json",
@@ -1328,7 +1409,10 @@
           },
           "sha256": "959d1906f81d5345b12193ca6aa1e854a5993113c0bf734877832fa0d3c48a11",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "regions.json",
@@ -1345,7 +1429,10 @@
           },
           "sha256": "edf8932943cc47c8389abeb1a751dd89172e1fb68a3724006b16adfc794123f8",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "secret_organizations.json",
@@ -1393,7 +1480,10 @@
           },
           "sha256": "8ff3fca4e08d90259996074b5d51570eb8d79c5b856f3cafdc3f54f15e7b9c2b",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         }
       ]
     },
@@ -1417,7 +1507,10 @@
           },
           "sha256": "dc98641a7eb81692fa082ba43bc558fe40a5f4b0cb461aad4c910f5caa2555da",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "low_level_monsters.json",
@@ -1434,7 +1527,10 @@
           },
           "sha256": "abcc5cf850cbd9d0be0e675e17f35d7a1bf7daebbb958801f2dd239d7c150325",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "monsters.json",
@@ -1451,7 +1547,10 @@
           },
           "sha256": "774766179073df9b881e24482cbbc701962f5d51da35e834fd3e7f8af0590f1f",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "npc.json",
@@ -1496,7 +1595,10 @@
             "influence_score": "number"
           },
           "sha256": "40c250bb77eca2a0ede6ea82469234e2a812a47189a2d4ea0b93e3b113b23ed9",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         }
       ]
     },
@@ -1519,7 +1621,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "5b0f68a777f098aab2f2ed603f3520f0e53b0bd9edc3225ab4238839c2c3a140",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "apprentice.json",
@@ -1536,7 +1641,10 @@
           },
           "sha256": "fbda4a9d732657cda0c890ed00d96db9e64e33be5a7ca5793f6817a40832e15a",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "arbiter.json",
@@ -1552,7 +1660,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "e0c6e66c70076e00433448b709de02cbbf41afa68a4fcf4edf69f9260b6e3cba",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "assassin.json",
@@ -1569,7 +1680,10 @@
           },
           "sha256": "032db1baac69d58ed2db3e7ef760616e457885751b0a9ffa408bb2356b2c3e5b",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "bard.json",
@@ -1586,7 +1700,10 @@
           },
           "sha256": "a2e129abc61cdb8acf46a58c93bb2d3fd780c13f4fea53bc6ef45f4d95bac0ff",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "corpse_collector.json",
@@ -1602,7 +1719,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "24584378f2dca9490dfffbae27583e11aefbf808f802d5dbf67d37ce631edd17",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "criminal.json",
@@ -1618,7 +1738,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "929a1f764e4c0f7e2322301a2a86502f9a3c8351a524ef5c1fe5179c5d597be1",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "hunter.json",
@@ -1634,7 +1757,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "e6dbc55ef3cbac84646d3ab346c10b672a44572f0a4cba2b5f06360bc7a116cf",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "lawyer.json",
@@ -1650,7 +1776,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "2303b0b5d8de572b78b2af18161f17a208b09893286e17e67e74fd17449a0e89",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "marauder.json",
@@ -1667,7 +1796,10 @@
           },
           "sha256": "e73a4b043fb5ac4eaa2c1e7030ef28c8c05415a906a05caff0f5969e5a8bb305",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "monster.json",
@@ -1683,7 +1815,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "d33744c99aa0723d657a3ac59bccaef026815adf40b92a48db37c79768dee42f",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "mystery_pryer.json",
@@ -1699,7 +1834,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "68cb14d2c09d6fa7011e4912d03604784380dbf8625788b06cd01bfe562e88cf",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "planter.json",
@@ -1715,7 +1853,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "31b3ac564b6bd6afe73cf05c6af33932b92715ea7e77c1110541c8a8022df96f",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "prisoner.json",
@@ -1731,7 +1872,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "1d27723327506d5b74c658996840cb543551c7773cb1f8891ae152eb7e1daf1c",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "reader.json",
@@ -1748,7 +1892,10 @@
           },
           "sha256": "e44d7807c62e18a81434adf94711fa42e9b47f49d7a795e1ed4ce28d0dc6eb93",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "sailor.json",
@@ -1765,7 +1912,10 @@
           },
           "sha256": "aec20b4494ce5d1fdd4ed20b3b9f7af013fa4d4759f99484f4aad69913a47789",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "savant.json",
@@ -1781,7 +1931,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "8610c1bd1fa185bc5ebeba1871b6ae7966d64ebff756185104078434786ac349",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "secrets_suppliant.json",
@@ -1798,7 +1951,10 @@
           },
           "sha256": "518ede62f97bd2c0724ecf9add203108bb05bf5336873c2654a9f976dbf4283c",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "seer.json",
@@ -1815,7 +1971,10 @@
           },
           "sha256": "5e26820ceeba9abe5928a2db9468adecbe542b84f9846bbe2ab4ffd4af44ee12",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "sleepless.json",
@@ -1831,7 +1990,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "79b1e3ca2216e7a5d6abf366f4cf3d0a5b9968c622dcc1b72c70261819cac2cf",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "spectator.json",
@@ -1848,7 +2010,10 @@
           },
           "sha256": "f30aa35768634b2e77c8c287cd79df6c84b253cb3b5157014bc0367192ed3304",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         },
         {
           "fileName": "warrior.json",
@@ -1864,7 +2029,10 @@
             "sampleValueSchema": "string"
           },
           "sha256": "45ae3d9c33ada68ae6bc8e6fd9c6ab136ec98068bb2b9dbb6bfd8059cfad5ba9",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "CanonicalDataLoader/Compendio",
+          "validationState": "VALIDATED"
         }
       ]
     },
@@ -1888,7 +2056,10 @@
           },
           "sha256": "7cefb880d9e720657f4e34d5368cbded59bcdf3c364c2944047cd090471fb9c8",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "sequence_1_quests.json",
@@ -1905,7 +2076,10 @@
           },
           "sha256": "492a6002a83cb1f1e5b16dd8e3f2eaa6bf146b228269b320b2fee2ed9c2f083a",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "sequence_2_quests.json",
@@ -1922,7 +2096,10 @@
           },
           "sha256": "6f3c8ad5147c0e1d2b1daebe6206385c92eb03cffeb19369142c537ab3a1709a",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "sequence_3_quests.json",
@@ -1939,7 +2116,10 @@
           },
           "sha256": "15420face8b0f90bd16c1ec5289ce9f8677a54fe1e83abab3f85a6ee9ad07ff8",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "sequence_4_quests.json",
@@ -1956,7 +2136,10 @@
           },
           "sha256": "c36b1ea1971ec9f82bac40830ac6fae2d947cc14df41913dfdcdc592578357c6",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "sequence_5_quests.json",
@@ -1973,7 +2156,10 @@
           },
           "sha256": "4ee6280a2311de56a73447b67fa39c12e5cf4593dfce803c0192f3f1e6b59720",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "sequence_6_quests.json",
@@ -1990,7 +2176,10 @@
           },
           "sha256": "adf592fda0e92eb1b662fb8a057b31d404b71dd0153b2ee09d67b5f98d3fd7d0",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "sequence_7_quests.json",
@@ -2007,7 +2196,10 @@
           },
           "sha256": "aaf25e02716479ac47a99ecf910aee6e79e69ad10650fa479d2324c81b4d6626",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "sequence_8_quests.json",
@@ -2024,7 +2216,10 @@
           },
           "sha256": "8391630091d94cef388585bb259bb9f57c0f22d1813337d1974c24d90d0dcb72",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         },
         {
           "fileName": "sequence_9_quests.json",
@@ -2041,7 +2236,10 @@
           },
           "sha256": "b2cdd8c548f74b6b9ffd6f80e4bbc85ccfc9f52ea9278c719d6bb21ac3029260",
           "anchor": "disk-at-freeze",
-          "historicalDraft": "archive/embryonic-snapshot-2026-08-31"
+          "historicalDraft": "archive/embryonic-snapshot-2026-08-31",
+          "tier": "L",
+          "consumerSystem": "PENDING_CONSUMER",
+          "validationState": "PENDING_CONSUMER"
         }
       ]
     },
@@ -2064,12 +2262,15 @@
             "sampleValueSchema": "string"
           },
           "sha256": "706a8e7706799641c90e48cd7a980f7c8e6e8f55886ddb965a5d3c310a06d98d",
-          "anchor": "disk-at-freeze"
+          "anchor": "disk-at-freeze",
+          "tier": "L",
+          "consumerSystem": "NONE",
+          "validationState": "NONE"
         }
       ]
     }
   },
-  "manifestVersion": "1.1",
+  "manifestVersion": "2.0",
   "frozenAt": "2026-09-09T23:29:39.857Z",
   "verification": {
     "method": "disk-freeze",
@@ -2079,5 +2280,7 @@
     "gitAnchored": 0,
     "gitTagCommit": "92415a203ea3325f261875ecfce66368dac10510",
     "note": "archive/pre-purga es un misnomer: contiene el commit embrionario del 31-ago-2026, no el estado pre-purga. El estado final de src/ jamás fue commiteado. Esta biblioteca es la única instancia superviviente y queda congelada como autoridad canónica de Tier L."
-  }
+  },
+  "authorizedBy": "Director (Brief-02.1)",
+  "upgradedAt": "2026-09-10T15:40:00.000Z"
 }
