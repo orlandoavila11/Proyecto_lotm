@@ -7,7 +7,8 @@ export const DilemmaOptionSchema = z.object({
   tradeOffs: z.union([z.record(z.any()), z.array(z.any())]),
   pesos: z.record(z.number()),
   costes: z.union([z.record(z.number()), z.record(z.any())]),
-  effectKey: z.string().optional()
+  effectKey: z.string().optional(),
+  narrativeOutcome: z.string().min(10)
 });
 
 export const AntiExploitSchema = z.object({
@@ -34,3 +35,20 @@ export const DilemmaGSchema = z.object({
 });
 
 export type DilemmaG = z.infer<typeof DilemmaGSchema>;
+
+export const DilemmaEffectProfileSchema = z.object({
+  digestion: z.number(),
+  sanity: z.number(),
+  policeSuspicion: z.number().int(),
+  churchSuspicion: z.number().int(),
+  penceReward: z.number().nonnegative(),
+  spiritualityCost: z.number().nonnegative()
+});
+
+export const DilemmaEffectsTableSchema = z.object({
+  schema_version: z.literal('1.0'),
+  description: z.string().optional(),
+  profiles: z.record(z.string(), DilemmaEffectProfileSchema)
+});
+
+export type DilemmaEffectsTable = z.infer<typeof DilemmaEffectsTableSchema>;

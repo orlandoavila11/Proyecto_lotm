@@ -15,14 +15,14 @@
           "riesgo": "Pérdida de clientela si la verdad resulta desagradable"
         },
         "pesos": {
-          "digestion": 20,
-          "sanity": 2,
-          "suspicion": 2
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 5
         },
-        "effectKey": "SEER_TRUTH_RIGOR"
+        "effectKey": "SEER_TRUTH_RIGOR",
+        "narrativeOutcome": "El comerciante cancela sus contratos de carga. Dos días después la gaceta confirma el hundimiento. Tu espiritualidad fluye con armonía: has actuado como un verdadero Vidente."
       },
       {
         "id": "CHOICE_FOOL_9_LIE",
@@ -33,14 +33,14 @@
           "riesgo": "Violación flagrante del principio de actuar"
         },
         "pesos": {
-          "digestion": 2,
-          "sanity": -5,
-          "suspicion": 0
+          "alignment": -1,
+          "actingWeight": 0.8
         },
         "costes": {
           "spirituality": 0
         },
-        "effectKey": "SEER_FALSEHOOD_TRANSGRESSION"
+        "effectKey": "SEER_FALSEHOOD_TRANSGRESSION",
+        "narrativeOutcome": "La poción hierve con disonancia mercurial en tu garganta: has violado la ley del Vidente mintiendo sobre el destino."
       }
     ],
     "antiExploit": {
@@ -70,14 +70,14 @@
           "riesgo": "Exposición ante vigilantes barriales"
         },
         "pesos": {
-          "digestion": 18,
-          "sanity": 1,
-          "suspicion": 1
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 8
         },
-        "effectKey": "SEER_DIVINE_OMEN_DEEP"
+        "effectKey": "SEER_DIVINE_OMEN_DEEP",
+        "narrativeOutcome": "El péndulo de cuarzo gira con frenesí hasta detenerse sobre la veta pura de agua subterránea. Los vecinos celebran con lágrimas, y una corriente etérea disuelve la frialdad de la poción en tus órganos astrales."
       },
       {
         "id": "CHOICE_FOOL_9_SAMPLE_CHEMICAL",
@@ -88,14 +88,14 @@
           "riesgo": "La comunidad sigue consumiendo agua turbia"
         },
         "pesos": {
-          "digestion": 5,
-          "sanity": 3,
-          "suspicion": 0
+          "alignment": 0.2,
+          "actingWeight": 0.5
         },
         "costes": {
           "spirituality": 0
         },
-        "effectKey": "SEER_CAUTIOUS_ABSTAIN"
+        "effectKey": "SEER_CAUTIOUS_ABSTAIN",
+        "narrativeOutcome": "Llenas el frasco con lodo en penumbra y te retiras con el cuello del abrigo levantado. La prudencia civil te salva de miradas curiosas, pero tu espiritualidad permanece estancada como el agua del pozo."
       }
     ],
     "antiExploit": {
@@ -125,14 +125,14 @@
           "riesgo": "Ver entidades más allá de tu tolerancia mental"
         },
         "pesos": {
-          "digestion": 18,
-          "sanity": 1,
-          "suspicion": 2
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 10
         },
-        "effectKey": "SEER_DIVINE_OMEN_DEEP"
+        "effectKey": "SEER_DIVINE_OMEN_DEEP",
+        "narrativeOutcome": "El mundo físico se desdibuja bajo capas de luz astral y halos esmeralda. El espectro del conscripto, atado por el dolor de la metralla, se disuelve en paz tras tu susurro místico; la poción de Vidente fluye como savia luminosa."
       },
       {
         "id": "CHOICE_FOOL_9_RITUAL_PURIFY",
@@ -143,14 +143,14 @@
           "riesgo": "El residuo espiritual no se resuelve y volverá"
         },
         "pesos": {
-          "digestion": 8,
-          "sanity": 4,
-          "suspicion": 0
+          "alignment": 0.5,
+          "actingWeight": 0.8
         },
         "costes": {
           "spirituality": 4
         },
-        "effectKey": "ACTING_PRUDENT_RITUAL"
+        "effectKey": "SEER_PRUDENT_DIVINATION",
+        "narrativeOutcome": "El humo denso de hierbas aromáticas perfuma las vigas de madera vieja. El llanto cesa temporalmente bajo un bálsamo mundano; tu mente descansa sin arriesgar la cordura, aunque el misterio sigue latente tras los tabiques."
       }
     ],
     "antiExploit": {
@@ -180,14 +180,14 @@
           "riesgo": "Rechazo del honorario por parte de la indigente"
         },
         "pesos": {
-          "digestion": 20,
-          "sanity": 2,
-          "suspicion": 0
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 5
         },
-        "effectKey": "SEER_TRUTH_RIGOR"
+        "effectKey": "SEER_TRUTH_RIGOR",
+        "narrativeOutcome": "La carta de La Torre invertida se posa con suavidad sobre el terciopelo oscuro. La mujer aprieta a su hijo en silencio y agacha la cabeza; has cumplido con revelar la amarga verdad cósmica, y el Vidente en ti se enraíza con solemnidad."
       },
       {
         "id": "CHOICE_FOOL_9_DIRECT_REFUSAL",
@@ -198,14 +198,14 @@
           "riesgo": "La mujer cae en manos de charlatanes maliciosos"
         },
         "pesos": {
-          "digestion": 4,
-          "sanity": 2,
-          "suspicion": 0
+          "alignment": 0.1,
+          "actingWeight": 0.4
         },
         "costes": {
           "spirituality": 0
         },
-        "effectKey": "SEER_CAUTIOUS_ABSTAIN"
+        "effectKey": "SEER_CAUTIOUS_ABSTAIN",
+        "narrativeOutcome": "Guardas la baraja en la funda de cuero y niegas con la cabeza. La viuda se aleja entre la llovizna con paso vacilante; preservas tu reserva espiritual, pero sientes el peso estéril de una oportunidad perdida para interpretar el telar del destino."
       }
     ],
     "antiExploit": {
@@ -235,14 +235,14 @@
           "riesgo": "La risa forzada roza la histeria"
         },
         "pesos": {
-          "digestion": 22,
-          "sanity": 5,
-          "suspicion": 0
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 10
         },
-        "effectKey": "CLOWN_STAGE_LAUGHTER"
+        "effectKey": "CLOWN_STAGE_LAUGHTER",
+        "narrativeOutcome": "Los aplausos estallan. Bajo el maquillaje blanco y rojo, tus músculos tiemblan, pero la poción de Payaso se absorbe con voracidad."
       },
       {
         "id": "CHOICE_FOOL_8_BREAKDOWN",
@@ -253,14 +253,14 @@
           "riesgo": "Escándalo público y sospechas de los vigilantes locales"
         },
         "pesos": {
-          "digestion": 3,
-          "sanity": -8,
-          "suspicion": 5
+          "alignment": -1,
+          "actingWeight": 0.8
         },
         "costes": {
           "spirituality": 0
         },
-        "effectKey": "CLOWN_BREAKDOWN_TEARS"
+        "effectKey": "CLOWN_BREAKDOWN_TEARS",
+        "narrativeOutcome": "El llanto desbarata la pintura blanca y escarlata ante las miradas atónitas de los niños. Un silencio gélido recorre la carpa mientras la poción de Payaso se agita con convulsiones disonantes en tu pecho."
       },
       {
         "id": "CHOICE_FOOL_8_ABRUPT_EXIT",
@@ -271,14 +271,14 @@
           "riesgo": "Despido del espectáculo y rumores entre los tramoyistas"
         },
         "pesos": {
-          "digestion": 5,
-          "sanity": 1,
-          "suspicion": 2
+          "alignment": 0.2,
+          "actingWeight": 0.5
         },
         "costes": {
           "spirituality": 0
         },
-        "effectKey": "CLOWN_CYNICAL_FLEE"
+        "effectKey": "CLOWN_CYNICAL_FLEE",
+        "narrativeOutcome": "Un tropiezo fingido te permite desaparecer tras el cortinaje polvoriento. Los abucheos de la grada se apagan en la niebla del callejón; tu cuerpo se estremece con alivio cobarde mientras pierdes la paga del espectáculo."
       }
     ],
     "antiExploit": {
@@ -308,14 +308,14 @@
           "riesgo": "Enfurecer aún más al agresor"
         },
         "pesos": {
-          "digestion": 19,
-          "sanity": 3,
-          "suspicion": 1
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 12
         },
-        "effectKey": "CLOWN_ACROBATIC_DEFLECTION"
+        "effectKey": "CLOWN_ACROBATIC_DEFLECTION",
+        "narrativeOutcome": "La jarra de peltre silba a un centímetro de tu oreja mientras tu columna se arquea como un junco elástico. La carcajada de los marineros resuena en la taberna y el principio del Payaso se funde en tus tendones sobrehumanos."
       },
       {
         "id": "CHOICE_FOOL_8_BRAWL_FISTS",
@@ -326,14 +326,14 @@
           "riesgo": "Intervención de la policía fluvial"
         },
         "pesos": {
-          "digestion": 6,
-          "sanity": -2,
-          "suspicion": 6
+          "alignment": -0.6,
+          "actingWeight": 0.7
         },
         "costes": {
           "spirituality": 5
         },
-        "effectKey": "ACTING_BOLD_OVERREACH"
+        "effectKey": "CLOWN_BOLD_PERFORMANCE",
+        "narrativeOutcome": "Tu puño impacta en la mandíbula del gigante con estrépito de huesos y mesas rotas. La violencia vulgar rompe la elegancia bufonesca; la policía acude al silbato y tu sangre arde con disonancia abrasiva."
       }
     ],
     "antiExploit": {
@@ -363,14 +363,14 @@
           "riesgo": "Si el inquisidor usa adivinación directa puede notar la disonancia"
         },
         "pesos": {
-          "digestion": 21,
-          "sanity": 4,
-          "suspicion": 0
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 15
         },
-        "effectKey": "CLOWN_STAGE_LAUGHTER"
+        "effectKey": "CLOWN_PAIN_ENDURANCE",
+        "narrativeOutcome": "Relajas la musculatura facial en una mueca de bobalicona timidez mientras ralentizas el pulso a cincuenta latidos por minuto. El sabueso pierde el rastro y el inquisidor sigue de largo; la digestión de Payaso avanza al dominar tu propio cuerpo."
       },
       {
         "id": "CHOICE_FOOL_8_RUN_ROOFTOPS",
@@ -381,14 +381,14 @@
           "riesgo": "Persecución activa con orden de captura en Backlund"
         },
         "pesos": {
-          "digestion": 8,
-          "sanity": -4,
-          "suspicion": 12
+          "alignment": -0.5,
+          "actingWeight": 0.9
         },
         "costes": {
           "spirituality": 20
         },
-        "effectKey": "ACTING_BOLD_OVERREACH"
+        "effectKey": "CLOWN_BOLD_PERFORMANCE",
+        "narrativeOutcome": "Te impulsas sobre un barril de arenques y alcanzas las cornisas de pizarra con un salto acrobático asombroso. Los silbatos policiales rasgan la niebla; salvas la piel, pero Backlund entero amanece con tu silueta en carteles de búsqueda."
       }
     ],
     "antiExploit": {
@@ -418,14 +418,14 @@
           "riesgo": "Miradas de escándalo por parte de vecinos conservadores"
         },
         "pesos": {
-          "digestion": 23,
-          "sanity": 6,
-          "suspicion": 0
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 10
         },
-        "effectKey": "CLOWN_STAGE_LAUGHTER"
+        "effectKey": "CLOWN_STAGE_LAUGHTER",
+        "narrativeOutcome": "Relatas los disparatados tropiezos del difunto con una voz vibrante que arranca carcajadas sofocadas a los dolientes. La mueca burlona sobre la fosa abierta sacude el aire sombrío, y la esencia del Payaso se asimila con reverente locura."
       },
       {
         "id": "CHOICE_FOOL_8_SILENT_MONEY",
@@ -436,14 +436,14 @@
           "riesgo": "Poco avance en la digestión sobrenatural de la fórmula"
         },
         "pesos": {
-          "digestion": 6,
-          "sanity": 3,
-          "suspicion": 0
+          "alignment": 0.3,
+          "actingWeight": 0.5
         },
         "costes": {
           "spirituality": 0
         },
-        "effectKey": "ACTING_SHADOW_RETREAT"
+        "effectKey": "SEER_DISCREET_RETREAT",
+        "narrativeOutcome": "Deslizas el sobre entre los pliegues del chal de la viuda sin pronunciar palabra y te pierdes entre los cipreses del cementerio. Cumples con la decencia civil, mas la poción clama por la audacia de quien ríe ante el abismo."
       }
     ],
     "antiExploit": {

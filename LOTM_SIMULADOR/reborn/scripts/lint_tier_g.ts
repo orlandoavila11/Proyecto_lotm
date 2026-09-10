@@ -11,7 +11,8 @@ import {
   ConvergenceForcesRootGSchema,
   SefiraGroupsGSchema,
   PathwaysManifestGSchema,
-  WorldStateRootSchema
+  WorldStateRootSchema,
+  DilemmaEffectsTableSchema
 } from '../src/infra/content/schemas/index.js';
 
 interface SchemaTarget {
@@ -74,6 +75,11 @@ const TARGETS: SchemaTarget[] = [
     name: 'NPC_WEEK_G',
     pattern: 'npc_weeks',
     schema: NpcWeekGSchema
+  },
+  {
+    name: 'DILEMMA_EFFECTS_BALANCE',
+    pattern: 'balance/dilemma_effects.json',
+    schema: DilemmaEffectsTableSchema
   }
 ];
 
@@ -169,6 +175,45 @@ function runLint(): void {
           for (const issue of parseResult.error.issues) {
             const fieldPath = issue.path.length > 0 ? issue.path.join('.') : '(root)';
             targetErrors.push(`[SCHEMA_FAIL] ${relPath} -> Campo "${fieldPath}": ${issue.message}`);
+          }
+        }
+      }
+
+      // Validación estricta anti-dual authority para DILEMMA_G (Regla del Director BRIEF-02.4-FIX)
+      if (target.name === 'DILEMMA_G' && Array.isArray(rawJson)) {
+        const effectsPath = path.join(gameplayDir, 'balance', 'dilemma_effects.json');
+        let validEffectKeys: Set<string> = new Set();
+        if (fs.existsSync(effectsPath)) {
+          try {
+            const effJson = JSON.parse(fs.readFileSync(effectsPath, 'utf-8'));
+            if (effJson.profiles) {
+              validEffectKeys = new Set(Object.keys(effJson.profiles));
+            }
+          } catch {}
+        }
+
+        const FORBIDDEN_PESOS_KEYS = [
+          'digestion', 'digestionGain', 'sanity', 'sanityDelta',
+          'policeSuspicion', 'churchSuspicion', 'suspicion',
+          'pence', 'penceReward', 'spirituality', 'spiritualityCost',
+          'health', 'hp'
+        ];
+
+        for (const dilemma of rawJson) {
+          if (Array.isArray(dilemma.options)) {
+            for (const opt of dilemma.options) {
+              if (opt.pesos && typeof opt.pesos === 'object') {
+                const pesosKeys = Object.keys(opt.pesos);
+                const forbiddenFound = pesosKeys.filter(k => FORBIDDEN_PESOS_KEYS.includes(k));
+                if (forbiddenFound.length > 0) {
+                  targetErrors.push(`[DUAL_AUTHORITY_FAIL] ${relPath}: En dilema '${dilemma.id}', opción '${opt.id}': pesos duplica estadísticas del perfil (${forbiddenFound.join(', ')}). Las estadísticas fluyen EXCLUSIVAMENTE de effectKey -> dilemma_effects.json.`);
+                }
+              }
+
+              if (opt.effectKey && !validEffectKeys.has(opt.effectKey)) {
+                targetErrors.push(`[ORPHAN_EFFECT_KEY] ${relPath}: En dilema '${dilemma.id}', opción '${opt.id}': effectKey '${opt.effectKey}' no existe en dilemma_effects.json.`);
+              }
+            }
           }
         }
       }

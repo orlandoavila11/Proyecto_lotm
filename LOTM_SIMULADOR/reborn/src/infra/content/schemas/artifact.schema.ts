@@ -17,7 +17,7 @@ export const ArtifactGSchema = z.object({
   ]),
   canonConfidence: z.union([
     z.number().min(0).max(1),
-    z.enum(['CANON', 'HIGH_CONFIDENCE', 'LEGEND', 'HUMAN_REVIEW', 'APOCRYPHAL'])
+    z.enum(['canon', 'library', 'CANON', 'HIGH_CONFIDENCE', 'LEGEND', 'HUMAN_REVIEW', 'APOCRYPHAL'])
   ])
 });
 

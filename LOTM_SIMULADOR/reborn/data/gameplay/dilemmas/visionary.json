@@ -15,14 +15,14 @@
           "riesgo": "No intervienes aunque preveas una traición inminente"
         },
         "pesos": {
-          "digestion": 20,
-          "sanity": 3,
-          "suspicion": -2
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 5
         },
-        "effectKey": "SPECTATOR_QUIET_ANALYSIS"
+        "effectKey": "SPECTATOR_QUIET_ANALYSIS",
+        "narrativeOutcome": "Sentado en la butaca de terciopelo, descifras el sudor frío y la contracción en el cuello del diplomático mientras mueve el caballo blanco. El teatro del mundo se despliega ante tus ojos desapegados; la poción de Espectador se asienta en tu visión astral."
       },
       {
         "id": "CHOICE_SPECTATOR_9_INTERVENE_CHESS",
@@ -33,14 +33,14 @@
           "riesgo": "Ambos diplomáticos centran su sospecha en ti"
         },
         "pesos": {
-          "digestion": 2,
-          "sanity": -4,
-          "suspicion": 6
+          "alignment": -1,
+          "actingWeight": 0.8
         },
         "costes": {
           "spirituality": 8
         },
-        "effectKey": "SPECTATOR_IMPULSIVE_ACT"
+        "effectKey": "SPECTATOR_IMPULSIVE_ACT",
+        "narrativeOutcome": "Tu mano irrumpe sobre el tablero y las dos miradas hostiles se clavan en tu rostro como bayonetas. Has abandonado la platea para pisar el escenario; la mente se nubla con una punzada de disonancia por violar el rol de observador."
       },
       {
         "id": "CHOICE_SPECTATOR_9_LEAVE_EARLY",
@@ -51,14 +51,14 @@
           "riesgo": "Pérdida de información geopolítica valiosa"
         },
         "pesos": {
-          "digestion": 6,
-          "sanity": 2,
-          "suspicion": 0
+          "alignment": 0.3,
+          "actingWeight": 0.5
         },
         "costes": {
           "spirituality": 0
         },
-        "effectKey": "SPECTATOR_COLD_WITHDRAWAL"
+        "effectKey": "SPECTATOR_COLD_WITHDRAWAL",
+        "narrativeOutcome": "Dejas dos monedas sobre la bandeja de plata y sales discretamente a la acera empapada de lluvia. Mantienes la seguridad civil y el anonimato intacto, aunque la poción susurra con apatía ante la trama abandonada."
       }
     ],
     "antiExploit": {
@@ -88,14 +88,14 @@
           "riesgo": "Empujones o extravío de pertenencias personales en la masa"
         },
         "pesos": {
-          "digestion": 18,
-          "sanity": 2,
-          "suspicion": 0
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 8
         },
-        "effectKey": "SPECTATOR_DECIPHER_MOTIVE"
+        "effectKey": "SPECTATOR_DECIPHER_MOTIVE",
+        "narrativeOutcome": "Apoyado en la barandilla de hierro, mapeas el contagio del pavor como una ola biológica que sacude a cien hombres adultos. Comprendes los engranajes del miedo colectivo y la poción de Espectador se funde con claridad cristalina en tu percepción."
       },
       {
         "id": "CHOICE_SPECTATOR_9_SPECULATE_GOLD",
@@ -106,14 +106,14 @@
           "riesgo": "Rencor de corredores arruinados que memorizan tu rostro"
         },
         "pesos": {
-          "digestion": 8,
-          "sanity": -2,
-          "suspicion": 4
+          "alignment": -0.8,
+          "actingWeight": 0.7
         },
         "costes": {
           "spirituality": 10
         },
-        "effectKey": "ACTING_BOLD_OVERREACH"
+        "effectKey": "SPECTATOR_AUDACIOUS_OBSERVE",
+        "narrativeOutcome": "Bajas al parqué gritando ofertas con billetes en mano y arrebatas los contratos de grano a precio de saldo. Los bolsillos se llenan de libras, pero el tumulto visceral ahoga tu calma psíquica en una marea de codicia ajena."
       }
     ],
     "antiExploit": {
@@ -143,14 +143,14 @@
           "riesgo": "El paciente corre peligro si el médico comete una negligencia crítica"
         },
         "pesos": {
-          "digestion": 19,
-          "sanity": 2,
-          "suspicion": 0
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 6
         },
-        "effectKey": "SPECTATOR_QUIET_ANALYSIS"
+        "effectKey": "SPECTATOR_QUIET_ANALYSIS",
+        "narrativeOutcome": "Inmóvil en la esquina del quirófano, observas la pupila dilatada del cirujano y el ritmo entrecortado de su respiración sobre el cloroformo. Desarmas la psicología del colapso humano sin intervenir, nutriendo la fría lucidez del Espectador."
       },
       {
         "id": "CHOICE_SPECTATOR_9_HOLD_HAND",
@@ -161,14 +161,14 @@
           "riesgo": "Gritos del personal médico y expulsión de la sala"
         },
         "pesos": {
-          "digestion": 5,
-          "sanity": 3,
-          "suspicion": 3
+          "alignment": 0.3,
+          "actingWeight": 0.6
         },
         "costes": {
           "spirituality": 0
         },
-        "effectKey": "ACTING_PRUDENT_RITUAL"
+        "effectKey": "SPECTATOR_COVERT_INQUIRY",
+        "narrativeOutcome": "Detienes el bisturí en seco con un apretón firme en su muñeca. El médico parpadea aturdido y agradece el rescate ético; salvas la carne del herido, pero la necesidad de actuar como salvador enturbia la pura contemplación de la vía."
       }
     ],
     "antiExploit": {
@@ -198,14 +198,14 @@
           "riesgo": "Sentimiento de cinismo y aislamiento psicológico"
         },
         "pesos": {
-          "digestion": 20,
-          "sanity": 3,
-          "suspicion": -1
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 5
         },
-        "effectKey": "SPECTATOR_QUIET_ANALYSIS"
+        "effectKey": "SPECTATOR_QUIET_ANALYSIS",
+        "narrativeOutcome": "Sigues con mirada clínica el pulgar del anfitrión bajo el mantel de seda que empuja la aguja hacia las letras de respuesta. Saboreas el placer cerebral de desmantelar la farsa humana en silencio; tu espiritualidad resuena con comprensión serena."
       },
       {
         "id": "CHOICE_SPECTATOR_9_CALL_OUT_FRAUD",
@@ -216,14 +216,14 @@
           "riesgo": "Enemistad duradera con una familia noble influyente de Backlund"
         },
         "pesos": {
-          "digestion": 3,
-          "sanity": -3,
-          "suspicion": 8
+          "alignment": -1,
+          "actingWeight": 0.8
         },
         "costes": {
           "spirituality": 0
         },
-        "effectKey": "ACTING_VIOLATION_DISSOCIATION"
+        "effectKey": "SPECTATOR_VULGAR_EXPOSURE",
+        "narrativeOutcome": "Tu voz denuncia el alambre oculto y el salón estalla en reproches e insultos aristocráticos. El mayordomo te escolta a la puerta con desdén; has alimentado el ego civil a costa de romper la regla áurea del Espectador silencioso."
       }
     ],
     "antiExploit": {
@@ -253,14 +253,14 @@
           "riesgo": "Filtración leve del trauma bélico hacia tu propia psique"
         },
         "pesos": {
-          "digestion": 22,
-          "sanity": 4,
-          "suspicion": -1
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 15
         },
-        "effectKey": "TELEPATH_EMPATHIC_RESONANCE"
+        "effectKey": "TELEPATH_EMPATHIC_RESONANCE",
+        "narrativeOutcome": "Extiendes un susurro psíquico invisible que calma las crestas de pánico en la mente del artillero como aceite sobre olas bravías. El hombre exhala con alivio y la poción de Telépata se expande como un manto sobre las almas quebradas."
       },
       {
         "id": "CHOICE_TELEPATH_8_FORCE_SLEEP",
@@ -271,14 +271,14 @@
           "riesgo": "El hombre convulsiona ante los transeúntes asustados"
         },
         "pesos": {
-          "digestion": 9,
-          "sanity": -5,
-          "suspicion": 6
+          "alignment": -0.7,
+          "actingWeight": 0.7
         },
         "costes": {
           "spirituality": 20
         },
-        "effectKey": "TELEPATH_FORCED_PROBE"
+        "effectKey": "TELEPATH_FORCED_PROBE",
+        "narrativeOutcome": "Descargas un martillazo mental tosco que derriba al veterano de bruces contra las baldosas de la estación. Los transeúntes retroceden horrorizados al ver sangrar su nariz; has impuesto orden por la fuerza bruta, desgarrando la finura de tu propia vía."
       }
     ],
     "antiExploit": {
@@ -308,14 +308,14 @@
           "riesgo": "Jaqueca temporal por absorber datos mercantiles densos"
         },
         "pesos": {
-          "digestion": 20,
-          "sanity": 3,
-          "suspicion": 0
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 12
         },
-        "effectKey": "TELEPATH_EMPATHIC_RESONANCE"
+        "effectKey": "TELEPATH_EMPATHIC_RESONANCE",
+        "narrativeOutcome": "Tus tentáculos de conciencia rozan la superficie mental de los directores mercantiles, extrayendo las cifras de los barcos de carbón sin dejar huella. La información fluye con elegancia telepática y la poción se asimila con gozo intelectual."
       },
       {
         "id": "CHOICE_TELEPATH_8_CONFRONT_DIRECTOR",
@@ -326,14 +326,14 @@
           "riesgo": "El gremio contrata sicarios de la Vía del Asesino para eliminarte"
         },
         "pesos": {
-          "digestion": 8,
-          "sanity": -3,
-          "suspicion": 8
+          "alignment": -0.8,
+          "actingWeight": 0.8
         },
         "costes": {
           "spirituality": 10
         },
-        "effectKey": "ACTING_BOLD_OVERREACH"
+        "effectKey": "TELEPATH_RISKY_SOUL_TOUCH",
+        "narrativeOutcome": "Clavas la mirada en el presidente del gremio y proyectas un murmullo de acusación directa en su mente. El hombre palidece y accede aterrorizado, pero su guardia privada nota tu postura fija y memoriza tu silueta para cazar al hechicero."
       }
     ],
     "antiExploit": {
@@ -363,14 +363,14 @@
           "riesgo": "La monja vigilante puede notar tu proximidad al lecho"
         },
         "pesos": {
-          "digestion": 21,
-          "sanity": 5,
-          "suspicion": 0
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 14
         },
-        "effectKey": "TELEPATH_PACIFY_MINDS"
+        "effectKey": "TELEPATH_PACIFY_MINDS",
+        "narrativeOutcome": "Tejes una sugestión de hogar cálido y leche tibia sobre el lecho del huérfano angustiado. Su llanto se transforma en respiración acompasada, y la poción de Telépata resuena con la belleza de guiar la mente hacia el descanso."
       },
       {
         "id": "CHOICE_TELEPATH_8_LEAVE_NURSE",
@@ -381,14 +381,14 @@
           "riesgo": "El niño despierta con secuelas tóxicas por bromuro"
         },
         "pesos": {
-          "digestion": 4,
-          "sanity": 1,
-          "suspicion": 0
+          "alignment": 0.2,
+          "actingWeight": 0.4
         },
         "costes": {
           "spirituality": 0
         },
-        "effectKey": "TELEPATH_SHIELD_EGO"
+        "effectKey": "TELEPATH_SHIELD_EGO",
+        "narrativeOutcome": "Llamas a la monja de guardia y te apartas mientras administran gotas de láudano al pequeño. Cumples con el orden civil de la institución, mas tu poder psíquico permanece enclaustrado como un talento ocioso que nada transforma."
       }
     ],
     "antiExploit": {
@@ -418,14 +418,14 @@
           "riesgo": "Si el inspector posee artefactos de detección de mentiras puede notar la barrera"
         },
         "pesos": {
-          "digestion": 23,
-          "sanity": 3,
-          "suspicion": -2
+          "alignment": 1,
+          "actingWeight": 1
         },
         "costes": {
           "spirituality": 18
         },
-        "effectKey": "TELEPATH_EMPATHIC_RESONANCE"
+        "effectKey": "TELEPATH_EMPATHIC_RESONANCE",
+        "narrativeOutcome": "Edificas una muralla de pensamientos anodinos sobre precios de carbón y alquileres atrasados que confunden la sonda del inspector de MI9. El oficial no halla nada sospechoso y firma el pase; tu maestría en escudos cognitivos se consolida magistralmente."
       },
       {
         "id": "CHOICE_TELEPATH_8_PANIC_CONFESS",
@@ -436,14 +436,14 @@
           "riesgo": "El inspector abre un expediente formal de seguimiento sobre ti"
         },
         "pesos": {
-          "digestion": 4,
-          "sanity": -4,
-          "suspicion": 8
+          "alignment": -1,
+          "actingWeight": 0.9
         },
         "costes": {
           "spirituality": 0
         },
-        "effectKey": "ACTING_VIOLATION_DISSOCIATION"
+        "effectKey": "TELEPATH_INTERROGATION_BLUNDER",
+        "narrativeOutcome": "Bajas la mirada y respondes con titubeos contradictorios que hacen sonar las alarmas del inquisidor militar. El expediente queda abierto y los agentes toman nota de tu domicilio; la poción de Telépata sufre la humillación del engaño fallido."
       }
     ],
     "antiExploit": {

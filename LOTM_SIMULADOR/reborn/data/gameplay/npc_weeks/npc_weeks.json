@@ -263,9 +263,9 @@
   },
   {
     "id": "NPC_006",
-    "name": "Hvin Rambis",
-    "isCanonical": true,
-    "eraCoherenceNote": "Canónico R2 (ANACRONISMO): Hvin Rambis falleció en 1350 en la novela. En 1353 solo puede existir como eco psíquico o requiere sustitución por NPC original en HUMAN_REVIEW.",
+    "name": "Evaluador de los Alquimistas (Sucesor de Rambis)",
+    "isCanonical": false,
+    "eraCoherenceNote": "Sustitución canónica aprobada: Hvin Rambis falleció ~1350; sustituido por el nuevo Evaluador de los Alquimistas Psicológicos en Backlund (~1353).",
     "canonicalRef": "reborn/data/content/bestiary_npcs/npc.json#NPC_006",
     "schedule": {
       "lunes": {
@@ -369,9 +369,9 @@
   },
   {
     "id": "NPC_008",
-    "name": "Mr. X",
-    "isCanonical": true,
-    "eraCoherenceNote": "Canónico R2 (ANACRONISMO): Lewis Wien (Mr. X) falleció en 1350. Requiere reemplazo por nuevo Oráculo de la Aurora en HUMAN_REVIEW.",
+    "name": "Nuevo Oráculo de la Aurora (Sucesor de Mr. X)",
+    "isCanonical": false,
+    "eraCoherenceNote": "Sustitución canónica aprobada: Lewis Wien falleció ~1350; sustituido por el nuevo emisario de la Orden Aurora en Backlund (~1353).",
     "canonicalRef": "reborn/data/content/bestiary_npcs/npc.json#NPC_008",
     "schedule": {
       "lunes": {
@@ -423,9 +423,9 @@
   },
   {
     "id": "NPC_009",
-    "name": "Old Neil",
-    "isCanonical": true,
-    "eraCoherenceNote": "Canónico R2 (ANACRONISMO): Old Neil falleció en Tingen en 1349. Requiere reemplazo o clasificación como memoria/fantasma en HUMAN_REVIEW.",
+    "name": "Erudito Archivista de Medianoche",
+    "isCanonical": false,
+    "eraCoherenceNote": "Sustitución canónica aprobada: Old Neil falleció en Tingen 1349; sustituido por el Erudito Archivista de la Iglesia de Medianoche en Backlund (~1353).",
     "canonicalRef": "reborn/data/content/bestiary_npcs/npc.json#NPC_009",
     "schedule": {
       "lunes": {

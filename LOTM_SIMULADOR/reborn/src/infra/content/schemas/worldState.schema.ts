@@ -70,7 +70,8 @@ export const ReglasDeEraSchema = z.object({
   R1: z.string().min(1),
   R2: z.string().min(1),
   R3: z.string().min(1),
-  R4: z.string().min(1)
+  R4: z.string().min(1),
+  R5: z.string().min(1).optional()
 });
 
 export const WorldStateRootSchema = z.object({

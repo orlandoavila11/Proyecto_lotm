@@ -34,6 +34,22 @@
       "penceReward": 10,
       "spiritualityCost": 0
     },
+    "SEER_PRUDENT_DIVINATION": {
+      "digestion": 16,
+      "sanity": 3,
+      "policeSuspicion": 0,
+      "churchSuspicion": 1,
+      "penceReward": 40,
+      "spiritualityCost": 10
+    },
+    "SEER_DISCREET_RETREAT": {
+      "digestion": 6,
+      "sanity": 4,
+      "policeSuspicion": -1,
+      "churchSuspicion": 0,
+      "penceReward": 10,
+      "spiritualityCost": 0
+    },
     "CLOWN_STAGE_LAUGHTER": {
       "digestion": 22,
       "sanity": 5,
@@ -66,6 +82,22 @@
       "penceReward": 40,
       "spiritualityCost": 15
     },
+    "CLOWN_BOLD_PERFORMANCE": {
+      "digestion": 23,
+      "sanity": -6,
+      "policeSuspicion": 4,
+      "churchSuspicion": 1,
+      "penceReward": 80,
+      "spiritualityCost": 20
+    },
+    "CLOWN_PAIN_ENDURANCE": {
+      "digestion": 21,
+      "sanity": 2,
+      "policeSuspicion": 0,
+      "churchSuspicion": 0,
+      "penceReward": 30,
+      "spiritualityCost": 12
+    },
     "SPECTATOR_QUIET_ANALYSIS": {
       "digestion": 20,
       "sanity": 3,
@@ -96,6 +128,22 @@
       "policeSuspicion": -1,
       "churchSuspicion": 1,
       "penceReward": 50,
+      "spiritualityCost": 8
+    },
+    "SPECTATOR_AUDACIOUS_OBSERVE": {
+      "digestion": 22,
+      "sanity": -3,
+      "policeSuspicion": 3,
+      "churchSuspicion": 2,
+      "penceReward": 70,
+      "spiritualityCost": 15
+    },
+    "SPECTATOR_COVERT_INQUIRY": {
+      "digestion": 15,
+      "sanity": 2,
+      "policeSuspicion": 1,
+      "churchSuspicion": 0,
+      "penceReward": 45,
       "spiritualityCost": 8
     },
     "TELEPATH_EMPATHIC_RESONANCE": {
@@ -130,45 +178,38 @@
       "penceReward": 15,
       "spiritualityCost": 5
     },
-    "ACTING_PRUDENT_RITUAL": {
-      "digestion": 16,
-      "sanity": 3,
-      "policeSuspicion": 0,
-      "churchSuspicion": 1,
-      "penceReward": 40,
-      "spiritualityCost": 10
-    },
-    "ACTING_BOLD_OVERREACH": {
+    "TELEPATH_RISKY_SOUL_TOUCH": {
       "digestion": 24,
       "sanity": -7,
-      "policeSuspicion": 6,
+      "policeSuspicion": 5,
       "churchSuspicion": 3,
-      "penceReward": 100,
-      "spiritualityCost": 25
+      "penceReward": 90,
+      "spiritualityCost": 20
     },
-    "ACTING_SHADOW_RETREAT": {
-      "digestion": 6,
-      "sanity": 4,
-      "policeSuspicion": -1,
-      "churchSuspicion": 0,
-      "penceReward": 10,
-      "spiritualityCost": 0
-    },
-    "ACTING_COVERT_INVESTIGATION": {
+    "TELEPATH_SACRIFICIAL_SEAL": {
       "digestion": 14,
-      "sanity": 2,
-      "policeSuspicion": 2,
-      "churchSuspicion": 0,
-      "penceReward": 50,
-      "spiritualityCost": 10
-    },
-    "ACTING_SACRIFICIAL_CONCEAL": {
-      "digestion": 12,
-      "sanity": 5,
+      "sanity": 4,
       "policeSuspicion": -2,
       "churchSuspicion": -1,
       "penceReward": 0,
-      "spiritualityCost": 5
+      "spiritualityCost": 10
+    },
+    "SPECTATOR_VULGAR_EXPOSURE": {
+      "digestion": 3,
+      "sanity": -4,
+      "policeSuspicion": 6,
+      "churchSuspicion": 2,
+      "penceReward": 0,
+      "spiritualityCost": 0
+    },
+    "TELEPATH_INTERROGATION_BLUNDER": {
+      "digestion": 4,
+      "sanity": -5,
+      "policeSuspicion": 8,
+      "churchSuspicion": 3,
+      "penceReward": 0,
+      "spiritualityCost": 0
     }
   }
 }
+

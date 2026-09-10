@@ -29,13 +29,14 @@ describe('Brief 02.3-bis: World State Canónico (Post-LOTM · Pre-COI, ~1353 Qui
     assert.strictEqual(data.anclaTemporal.sealStatus, 'SEALED_DIRECTOR_1353', 'El ancla temporal 1353 debe estar sellada por el Director');
   });
 
-  it('3. Reglas de Era R1-R4 están formalizadas', () => {
+  it('3. Reglas de Era R1-R5 están formalizadas', () => {
     const data = JSON.parse(fs.readFileSync(worldStatePath, 'utf-8'));
     assert.ok(data.reglasDeEra.R1 && data.reglasDeEra.R1.includes('HISTORIA'));
     assert.ok(data.reglasDeEra.R2 && data.reglasDeEra.R2.includes('LEYENDA'));
     assert.ok(data.reglasDeEra.R3 && data.reglasDeEra.R3.includes('semillas'));
     assert.ok(data.reglasDeEra.R4 && data.reglasDeEra.R4.includes('El Loco'));
     assert.ok(data.reglasDeEra.R4.includes('LORE-ONLY'), 'Ruling R4 permanente: la Iglesia del Loco debe ser LORE-ONLY');
+    assert.ok(data.reglasDeEra.R5 && data.reglasDeEra.R5.includes('Club de Tarot'), 'Ruling R5 permanente: Niveles del Club de Tarot al final de novela');
   });
 
   it('4. Coherencia de Deidades: Vivas, Muertas, Absorbidas y Cambiadas', () => {

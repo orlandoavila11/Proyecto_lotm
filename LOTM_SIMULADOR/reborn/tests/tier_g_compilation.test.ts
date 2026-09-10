@@ -14,12 +14,23 @@ describe('Brief 02.4: Compilación Tier G (Fool + Visionary)', () => {
   const casePath = path.join(packageRoot, 'data', 'gameplay', 'cases', 'case_cherwood_heirloom.json');
   const forcesPath = path.join(packageRoot, 'data', 'gameplay', 'convergence_forces.json');
 
-  it('1. DILEMMA_G: 0 dilemas telegrafiados (ningún payload expone alineación correcta)', () => {
+  it('1. DILEMMA_G: 0 dilemas telegrafiados, narrativeOutcome y anti dual authority', () => {
     const foolDilemmas = JSON.parse(fs.readFileSync(path.join(dilemmasDir, 'fool.json'), 'utf-8'));
     const visDilemmas = JSON.parse(fs.readFileSync(path.join(dilemmasDir, 'visionary.json'), 'utf-8'));
+    const effectsData = JSON.parse(fs.readFileSync(path.join(packageRoot, 'data', 'gameplay', 'balance', 'dilemma_effects.json'), 'utf-8'));
+    const validEffectKeys = new Set(Object.keys(effectsData.profiles));
     const all = [...foolDilemmas, ...visDilemmas];
 
     assert.ok(all.length >= 16, `Deben existir al menos 16 dilemas (obtenidos: ${all.length})`);
+
+    const FORBIDDEN_PESOS_KEYS = [
+      'digestion', 'digestionGain', 'sanity', 'sanityDelta',
+      'policeSuspicion', 'churchSuspicion', 'suspicion',
+      'pence', 'penceReward', 'spirituality', 'spiritualityCost',
+      'health', 'hp'
+    ];
+
+    let narrativeOutcomeCount = 0;
 
     for (const dilemma of all) {
       assert.ok(dilemma.options.length >= 2 && dilemma.options.length <= 3, `Dilema ${dilemma.id} debe tener 2 o 3 opciones`);
@@ -35,10 +46,32 @@ describe('Brief 02.4: Compilación Tier G (Fool + Visionary)', () => {
           `PROHIBIDO telegrafiar corrección: opción ${opt.id} contiene isCorrect`
         );
         assert.ok(opt.pesos && typeof opt.pesos === 'object', `Opción ${opt.id} debe tener perfil interno de pesos`);
+        
+        // Anti dual authority check:
+        const pesosKeys = Object.keys(opt.pesos);
+        const forbiddenFound = pesosKeys.filter(k => FORBIDDEN_PESOS_KEYS.includes(k));
+        assert.deepStrictEqual(
+          forbiddenFound,
+          [],
+          `DUAL AUTHORITY FAIL: Opción ${opt.id} en ${dilemma.id} duplica stats en pesos: ${forbiddenFound.join(', ')}`
+        );
+
         assert.ok(opt.tradeOffs, `Opción ${opt.id} debe declarar tradeOffs`);
         assert.ok(opt.effectKey, `Opción ${opt.id} debe referenciar effectKey de balance`);
+        assert.ok(
+          validEffectKeys.has(opt.effectKey),
+          `Opción ${opt.id} referencia effectKey '${opt.effectKey}' ausente en dilemma_effects.json`
+        );
+
+        assert.ok(
+          typeof opt.narrativeOutcome === 'string' && opt.narrativeOutcome.length >= 10,
+          `Opción ${opt.id} debe contener narrativeOutcome de al menos 10 caracteres`
+        );
+        narrativeOutcomeCount++;
       }
     }
+
+    assert.strictEqual(narrativeOutcomeCount, 34, 'Deben existir exactamente 34 narrativeOutcomes (17 en fool + 17 en visionary)');
   });
 
   it('2. DILEMMA_G: Unicidad de choiceText y sin repetición de plantillas genéricas (Test 5)', () => {
@@ -141,12 +174,28 @@ describe('Brief 02.4: Compilación Tier G (Fool + Visionary)', () => {
     assert.strictEqual(caseData.truthModel.status, 'DRAFT', 'truthModel debe estar marcado como DRAFT esperando pluma del Director');
   });
 
-  it('6. NPC_WEEK_G: 30 rutinas semanales completas (7 días x 3 turnos) y clasificación R2', () => {
+  it('6. NPC_WEEK_G: 30 rutinas semanales, Sharron/Xio canónicas y 3 sustituciones ejecutadas', () => {
     const npcs = JSON.parse(fs.readFileSync(npcWeeksPath, 'utf-8'));
     assert.strictEqual(npcs.length, 30, 'Deben compilarse exactamente 30 rutinas de NPC');
 
     const canonicalNpcs = npcs.filter((n: any) => n.isCanonical);
-    assert.ok(canonicalNpcs.length > 0, 'Deben identificarse NPCs canónicos para la cola HUMAN_REVIEW');
+    assert.strictEqual(canonicalNpcs.length, 2, 'Solo Sharron (NPC_004) y Xio (NPC_010) permanecen como canónicas vivas');
+
+    const sharron = npcs.find((n: any) => n.id === 'NPC_004');
+    assert.ok(sharron && sharron.name.includes('Sharron') && sharron.isCanonical, 'Sharron debe estar viva y activa');
+
+    const xio = npcs.find((n: any) => n.id === 'NPC_010');
+    assert.ok(xio && xio.name === 'Xio Derecha' && xio.isCanonical, 'Xio debe estar viva y activa');
+
+    // Comprobación de las 3 sustituciones aprobadas por el Director:
+    const npc006 = npcs.find((n: any) => n.id === 'NPC_006');
+    assert.ok(npc006 && npc006.name.includes('Evaluador') && !npc006.isCanonical, 'Hvin Rambis debe estar sustituido');
+
+    const npc008 = npcs.find((n: any) => n.id === 'NPC_008');
+    assert.ok(npc008 && npc008.name.includes('Oráculo') && !npc008.isCanonical, 'Mr. X debe estar sustituido');
+
+    const npc009 = npcs.find((n: any) => n.id === 'NPC_009');
+    assert.ok(npc009 && npc009.name.includes('Archivista') && !npc009.isCanonical, 'Old Neil debe estar sustituido');
 
     for (const n of npcs) {
       assert.ok(n.schedule, `NPC ${n.id} debe tener schedule`);
@@ -181,6 +230,17 @@ describe('Brief 02.4: Compilación Tier G (Fool + Visionary)', () => {
     assert.strictEqual(counts['LOTM'], 8, 'Pool LOTM debe tener 8 combatientes en el slice');
     assert.strictEqual(counts['GOD_ALMIGHTY'], 8, 'Pool GOD_ALMIGHTY debe tener 8 combatientes en el slice');
     assert.ok(counts['CALAMITY_CLUSTER'] < 8, 'Pool CALAMITY_CLUSTER reporta gap legítimo');
+  });
+
+  it('8. ARTIFACT_G: Distribución canónica de artefactos (7 canon de novela, 8 library)', () => {
+    const artifacts = JSON.parse(fs.readFileSync(artifactsPath, 'utf-8'));
+    assert.strictEqual(artifacts.length, 15, 'Deben existir exactamente 15 artefactos');
+
+    const canonArtifacts = artifacts.filter((a: any) => a.canonConfidence === 'canon');
+    const libraryArtifacts = artifacts.filter((a: any) => a.canonConfidence === 'library');
+
+    assert.strictEqual(canonArtifacts.length, 7, 'Deben existir exactamente 7 artefactos canon provenientes de grade_0..3');
+    assert.strictEqual(libraryArtifacts.length, 8, 'Deben existir exactamente 8 artefactos clasificados como library');
   });
 });
 

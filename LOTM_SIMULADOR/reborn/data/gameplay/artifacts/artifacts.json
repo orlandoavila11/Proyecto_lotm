@@ -19,7 +19,7 @@
       "mirada": "La tinta parece coagularse como sangre fresca mientras murmullos describen tu muerte prematura."
     },
     "grade": "GRADE_0",
-    "canonConfidence": "CANON"
+    "canonConfidence": "canon"
   },
   {
     "id": "ART_0_02",
@@ -37,7 +37,7 @@
       "mirada": "Letras plateadas flotan en tu campo visual dictando condenas sumarias."
     },
     "grade": "GRADE_0",
-    "canonConfidence": "CANON"
+    "canonConfidence": "canon"
   },
   {
     "id": "ART_0_17",
@@ -54,7 +54,7 @@
       "mirada": "Un parpadeo de plumas de bronce en la penumbra te hiela la sangre."
     },
     "grade": "GRADE_0",
-    "canonConfidence": "CANON"
+    "canonConfidence": "canon"
   },
   {
     "id": "ART_1_42",
@@ -75,7 +75,7 @@
       "mirada": "Las páginas parecen hechas de piel humana tersa que late tenuemente."
     },
     "grade": "GRADE_1",
-    "canonConfidence": "CANON"
+    "canonConfidence": "canon"
   },
   {
     "id": "ART_1_63",
@@ -96,7 +96,7 @@
       "mirada": "El cristal te devuelve la mirada con una reverencia zalamera hacia lo que percibe tras tu espalda."
     },
     "grade": "GRADE_1",
-    "canonConfidence": "CANON"
+    "canonConfidence": "canon"
   },
   {
     "id": "ART_2_111",
@@ -117,7 +117,7 @@
       "mirada": "Los agujeros de la flauta exhalan un hedor a tierra removida y cripta milenaria."
     },
     "grade": "GRADE_2",
-    "canonConfidence": "CANON"
+    "canonConfidence": "canon"
   },
   {
     "id": "ART_2_049",
@@ -138,7 +138,7 @@
       "mirada": "Un rumor distante de campanadas cósmicas resuena cada vez que se abre el broche."
     },
     "grade": "GRADE_2",
-    "canonConfidence": "CANON"
+    "canonConfidence": "canon"
   },
   {
     "id": "ART_2_077",
@@ -160,7 +160,7 @@
       "mirada": "La esmeralda tallada parece una pupila voraz que se dilata al contacto con el metal."
     },
     "grade": "GRADE_2",
-    "canonConfidence": "HIGH_CONFIDENCE"
+    "canonConfidence": "library"
   },
   {
     "id": "ART_2_099",
@@ -181,7 +181,7 @@
       "mirada": "Los botones que forman sus ojos parpadean cuando no la miras de frente."
     },
     "grade": "GRADE_2",
-    "canonConfidence": "HIGH_CONFIDENCE"
+    "canonConfidence": "library"
   },
   {
     "id": "ART_3_ALCOHOL_NEMESIS",
@@ -202,7 +202,7 @@
       "mirada": "El frasco de cristal emite un olor acre a hierbas maceradas y alcanfor."
     },
     "grade": "GRADE_3",
-    "canonConfidence": "CANON"
+    "canonConfidence": "library"
   },
   {
     "id": "ART_3_0214",
@@ -223,7 +223,7 @@
       "mirada": "El oro pulido refleja una luz dorada incluso en la oscuridad total de un sótano."
     },
     "grade": "GRADE_3",
-    "canonConfidence": "CANON"
+    "canonConfidence": "library"
   },
   {
     "id": "ART_3_0782",
@@ -244,7 +244,7 @@
       "mirada": "El cuarzo ahumado parece empañarse con formas de rostros agonizantes."
     },
     "grade": "GRADE_3",
-    "canonConfidence": "HIGH_CONFIDENCE"
+    "canonConfidence": "library"
   },
   {
     "id": "ART_3_0451",
@@ -265,7 +265,7 @@
       "mirada": "El acero azulado refleja la luz como hielo milenario de los glaciares del norte."
     },
     "grade": "GRADE_3",
-    "canonConfidence": "HIGH_CONFIDENCE"
+    "canonConfidence": "library"
   },
   {
     "id": "ART_3_0612",
@@ -282,7 +282,7 @@
       "mirada": "Las figuras grabadas en sus dos caras parecen guiñar el ojo en la penumbra."
     },
     "grade": "GRADE_3",
-    "canonConfidence": "HIGH_CONFIDENCE"
+    "canonConfidence": "library"
   },
   {
     "id": "ART_3_0899",
@@ -299,6 +299,7 @@
       "mirada": "La punta de acero no requiere tinta y rasga el papel con una precisión geométrica inhumana."
     },
     "grade": "GRADE_3",
-    "canonConfidence": "HIGH_CONFIDENCE"
+    "canonConfidence": "library"
   }
 ]
+
