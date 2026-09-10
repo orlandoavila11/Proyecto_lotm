@@ -64,16 +64,7 @@ export class CanonicalDataLoader {
     let dir = customPath;
     if (!dir) {
       const packageRoot = fileURLToPath(new URL('../../..', import.meta.url));
-      const candidates = [
-        path.join(packageRoot, 'data', 'canonical', 'pathways'),
-        path.join(packageRoot, 'data', 'content', 'pathways')
-      ];
-      for (const c of candidates) {
-        if (fs.existsSync(c)) {
-          dir = c;
-          break;
-        }
-      }
+      dir = path.join(packageRoot, 'data', 'content', 'pathways');
     }
 
     if (!dir || !fs.existsSync(dir)) {

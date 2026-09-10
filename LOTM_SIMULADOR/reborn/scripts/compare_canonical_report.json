@@ -1,0 +1,183 @@
+{
+  "canonicalTotal": 29,
+  "contentTotal": 68,
+  "identicalCount": 29,
+  "mismatchCount": 0,
+  "missingInContent": 0,
+  "comparison": [
+    {
+      "file": "artifacts/grade_0.json",
+      "matchedContentFile": "artifacts/grade_0.json",
+      "status": "IDENTICAL",
+      "hash": "1875852a6b94305c20e58f5d64568142f8ecdb762cabee8331848be3f45f9b44"
+    },
+    {
+      "file": "artifacts/grade_1.json",
+      "matchedContentFile": "artifacts/grade_1.json",
+      "status": "IDENTICAL",
+      "hash": "104efe93056ec92abf21c6246e7d431a64032f6542eec2c68ace1d3d7a30fda8"
+    },
+    {
+      "file": "artifacts/grade_2.json",
+      "matchedContentFile": "artifacts/grade_2.json",
+      "status": "IDENTICAL",
+      "hash": "f10159700087d84b9de832e570253f97c6d2f6c763fb21f17cb7a334c1aa8b1b"
+    },
+    {
+      "file": "artifacts/grade_3.json",
+      "matchedContentFile": "artifacts/grade_3.json",
+      "status": "IDENTICAL",
+      "hash": "9e3b610846d7698a76d6b6df713031d97e804dd30df4a32cba1e347b9d0c0514"
+    },
+    {
+      "file": "monsters/elite_monsters.json",
+      "matchedContentFile": "bestiary_npcs/elite_monsters.json",
+      "status": "IDENTICAL",
+      "hash": "dc98641a7eb81692fa082ba43bc558fe40a5f4b0cb461aad4c910f5caa2555da"
+    },
+    {
+      "file": "monsters/low_level_monsters.json",
+      "matchedContentFile": "bestiary_npcs/low_level_monsters.json",
+      "status": "IDENTICAL",
+      "hash": "abcc5cf850cbd9d0be0e675e17f35d7a1bf7daebbb958801f2dd239d7c150325"
+    },
+    {
+      "file": "monsters/monsters.json",
+      "matchedContentFile": "bestiary_npcs/monsters.json",
+      "status": "IDENTICAL",
+      "hash": "774766179073df9b881e24482cbbc701962f5d51da35e834fd3e7f8af0590f1f"
+    },
+    {
+      "file": "pathways/apothecary.json",
+      "matchedContentFile": "pathways/apothecary.json",
+      "status": "IDENTICAL",
+      "hash": "5b0f68a777f098aab2f2ed603f3520f0e53b0bd9edc3225ab4238839c2c3a140"
+    },
+    {
+      "file": "pathways/apprentice.json",
+      "matchedContentFile": "pathways/apprentice.json",
+      "status": "IDENTICAL",
+      "hash": "fbda4a9d732657cda0c890ed00d96db9e64e33be5a7ca5793f6817a40832e15a"
+    },
+    {
+      "file": "pathways/arbiter.json",
+      "matchedContentFile": "pathways/arbiter.json",
+      "status": "IDENTICAL",
+      "hash": "e0c6e66c70076e00433448b709de02cbbf41afa68a4fcf4edf69f9260b6e3cba"
+    },
+    {
+      "file": "pathways/assassin.json",
+      "matchedContentFile": "pathways/assassin.json",
+      "status": "IDENTICAL",
+      "hash": "032db1baac69d58ed2db3e7ef760616e457885751b0a9ffa408bb2356b2c3e5b"
+    },
+    {
+      "file": "pathways/bard.json",
+      "matchedContentFile": "pathways/bard.json",
+      "status": "IDENTICAL",
+      "hash": "a2e129abc61cdb8acf46a58c93bb2d3fd780c13f4fea53bc6ef45f4d95bac0ff"
+    },
+    {
+      "file": "pathways/corpse_collector.json",
+      "matchedContentFile": "pathways/corpse_collector.json",
+      "status": "IDENTICAL",
+      "hash": "24584378f2dca9490dfffbae27583e11aefbf808f802d5dbf67d37ce631edd17"
+    },
+    {
+      "file": "pathways/criminal.json",
+      "matchedContentFile": "pathways/criminal.json",
+      "status": "IDENTICAL",
+      "hash": "929a1f764e4c0f7e2322301a2a86502f9a3c8351a524ef5c1fe5179c5d597be1"
+    },
+    {
+      "file": "pathways/hunter.json",
+      "matchedContentFile": "pathways/hunter.json",
+      "status": "IDENTICAL",
+      "hash": "e6dbc55ef3cbac84646d3ab346c10b672a44572f0a4cba2b5f06360bc7a116cf"
+    },
+    {
+      "file": "pathways/lawyer.json",
+      "matchedContentFile": "pathways/lawyer.json",
+      "status": "IDENTICAL",
+      "hash": "2303b0b5d8de572b78b2af18161f17a208b09893286e17e67e74fd17449a0e89"
+    },
+    {
+      "file": "pathways/marauder.json",
+      "matchedContentFile": "pathways/marauder.json",
+      "status": "IDENTICAL",
+      "hash": "e73a4b043fb5ac4eaa2c1e7030ef28c8c05415a906a05caff0f5969e5a8bb305"
+    },
+    {
+      "file": "pathways/monster.json",
+      "matchedContentFile": "pathways/monster.json",
+      "status": "IDENTICAL",
+      "hash": "d33744c99aa0723d657a3ac59bccaef026815adf40b92a48db37c79768dee42f"
+    },
+    {
+      "file": "pathways/mystery_pryer.json",
+      "matchedContentFile": "pathways/mystery_pryer.json",
+      "status": "IDENTICAL",
+      "hash": "68cb14d2c09d6fa7011e4912d03604784380dbf8625788b06cd01bfe562e88cf"
+    },
+    {
+      "file": "pathways/planter.json",
+      "matchedContentFile": "pathways/planter.json",
+      "status": "IDENTICAL",
+      "hash": "31b3ac564b6bd6afe73cf05c6af33932b92715ea7e77c1110541c8a8022df96f"
+    },
+    {
+      "file": "pathways/prisoner.json",
+      "matchedContentFile": "pathways/prisoner.json",
+      "status": "IDENTICAL",
+      "hash": "1d27723327506d5b74c658996840cb543551c7773cb1f8891ae152eb7e1daf1c"
+    },
+    {
+      "file": "pathways/reader.json",
+      "matchedContentFile": "pathways/reader.json",
+      "status": "IDENTICAL",
+      "hash": "e44d7807c62e18a81434adf94711fa42e9b47f49d7a795e1ed4ce28d0dc6eb93"
+    },
+    {
+      "file": "pathways/sailor.json",
+      "matchedContentFile": "pathways/sailor.json",
+      "status": "IDENTICAL",
+      "hash": "aec20b4494ce5d1fdd4ed20b3b9f7af013fa4d4759f99484f4aad69913a47789"
+    },
+    {
+      "file": "pathways/savant.json",
+      "matchedContentFile": "pathways/savant.json",
+      "status": "IDENTICAL",
+      "hash": "8610c1bd1fa185bc5ebeba1871b6ae7966d64ebff756185104078434786ac349"
+    },
+    {
+      "file": "pathways/secrets_suppliant.json",
+      "matchedContentFile": "pathways/secrets_suppliant.json",
+      "status": "IDENTICAL",
+      "hash": "518ede62f97bd2c0724ecf9add203108bb05bf5336873c2654a9f976dbf4283c"
+    },
+    {
+      "file": "pathways/seer.json",
+      "matchedContentFile": "pathways/seer.json",
+      "status": "IDENTICAL",
+      "hash": "5e26820ceeba9abe5928a2db9468adecbe542b84f9846bbe2ab4ffd4af44ee12"
+    },
+    {
+      "file": "pathways/sleepless.json",
+      "matchedContentFile": "pathways/sleepless.json",
+      "status": "IDENTICAL",
+      "hash": "79b1e3ca2216e7a5d6abf366f4cf3d0a5b9968c622dcc1b72c70261819cac2cf"
+    },
+    {
+      "file": "pathways/spectator.json",
+      "matchedContentFile": "pathways/spectator.json",
+      "status": "IDENTICAL",
+      "hash": "f30aa35768634b2e77c8c287cd79df6c84b253cb3b5157014bc0367192ed3304"
+    },
+    {
+      "file": "pathways/warrior.json",
+      "matchedContentFile": "pathways/warrior.json",
+      "status": "IDENTICAL",
+      "hash": "45ae3d9c33ada68ae6bc8e6fd9c6ab136ec98068bb2b9dbb6bfd8059cfad5ba9"
+    }
+  ]
+}
