@@ -7,3 +7,4 @@ export * from './npcWeek.schema.js';
 export * from './convergenceForce.schema.js';
 export * from './sefiraGroups.schema.js';
 export * from './pathwaysManifest.schema.js';
+export * from './worldState.schema.js';

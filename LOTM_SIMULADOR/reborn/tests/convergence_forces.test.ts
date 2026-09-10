@@ -192,7 +192,9 @@ describe('Brief 02.2-bis: Convergence Forces por Séfira (Validación Fail-Loud 
     }
 
     assert.ok(verifiedCount > 70, `Al menos 70 fuerzas deben estar verificadas en era (obtenidas: ${verifiedCount})`);
-    assert.ok(pendingReviewQueue.length > 0, 'La cola HUMAN_REVIEW debe contener elementos legítimos pendientes de auditoría (§3.8)');
+    assert.strictEqual(pendingReviewQueue.length, 3, 'La cola HUMAN_REVIEW debe contener exactamente las 3 familias pendientes (§3.8)');
+    const pendingIds = pendingReviewQueue.map(p => p.id).sort();
+    assert.deepStrictEqual(pendingIds, ['FAM_BERIA', 'FAM_CASTIYA', 'FAM_EINHORN']);
 
     // Imprimir para el reporte §12
     console.log(`[ERA_AUDIT] Verificadas en era: ${verifiedCount} fuerzas`);
@@ -200,6 +202,50 @@ describe('Brief 02.2-bis: Convergence Forces por Séfira (Validación Fail-Loud 
     for (const item of pendingReviewQueue) {
       console.log(`  - ${item.id} (${item.sefirahId}) -> ref: ${item.canonRef}`);
     }
+  });
+
+  it('Validación 7: Directivas del Director BRIEF-02.3-BIS (84 fuerzas, 20 míticos, Roselle sellado, Sol Eterno, Dancers precursor, exclusión de Combat)', () => {
+    const forcesData = JSON.parse(fs.readFileSync(forcesPath, 'utf-8'));
+    let totalForces = 0;
+    const mythics: string[] = [];
+
+    for (const sefirahObj of Object.values(forcesData.sefirot) as Array<{ forces: any[] }>) {
+      totalForces += sefirahObj.forces.length;
+      for (const force of sefirahObj.forces) {
+        if (force.powerTier === 'mythic') {
+          mythics.push(force.id);
+        }
+      }
+    }
+
+    assert.strictEqual(totalForces, 84, 'Total de fuerzas debe mantenerse exactamente en 84');
+    assert.strictEqual(mythics.length, 20, 'Deben existir exactamente 20 seres míticos');
+
+    // Roselle sellado
+    const roselle = forcesData.sefirot.nation_of_disorder.forces.find((f: any) => f.id === 'GOD_ROSELLE_BLACK_EMPEROR');
+    assert.ok(roselle, 'GOD_ROSELLE_BLACK_EMPEROR debe existir en nation_of_disorder');
+    assert.strictEqual(roselle.status, 'SEALED_MAUSOLEUM');
+    assert.strictEqual(roselle.powerTier, 'mythic');
+    assert.deepStrictEqual(roselle.interactionModes, ['narrative', 'lore', 'telar_root']);
+    assert.ok(roselle.nota && roselle.nota.includes('HISTORICAL_EMPEROR_CORRUPTED'));
+
+    // ORG_DANCERS_PRECURSOR
+    const dancers = forcesData.sefirot.key_of_light.forces.find((f: any) => f.id === 'ORG_DANCERS_PRECURSOR');
+    assert.ok(dancers, 'ORG_DANCERS_PRECURSOR debe existir en key_of_light');
+    assert.strictEqual(dancers.powerTier, 'telar');
+    assert.ok(dancers.nota && dancers.nota.includes('semilla pre-CoI (R3)'));
+
+    // Exclusión de CHURCH_COMBAT
+    for (const sefirahObj of Object.values(forcesData.sefirot) as Array<{ forces: any[] }>) {
+      const combatFound = sefirahObj.forces.find((f: any) => f.id === 'CHURCH_COMBAT');
+      assert.strictEqual(combatFound, undefined, 'CHURCH_COMBAT no debe existir como fuerza activa');
+    }
+
+    // GOD_ETERNAL_BLAZING_SUN
+    const sunGod = forcesData.sefirot.chaos_sea.forces.find((f: any) => f.id === 'GOD_ETERNAL_BLAZING_SUN');
+    assert.ok(sunGod, 'GOD_ETERNAL_BLAZING_SUN debe existir en chaos_sea');
+    assert.strictEqual(sunGod.powerTier, 'mythic');
+    assert.strictEqual(sunGod.canonRef, 'reborn/data/content/world/gods.json');
   });
 });
 

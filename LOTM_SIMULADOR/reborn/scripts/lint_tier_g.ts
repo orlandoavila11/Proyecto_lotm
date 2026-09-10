@@ -10,7 +10,8 @@ import {
   NpcWeekGSchema,
   ConvergenceForcesRootGSchema,
   SefiraGroupsGSchema,
-  PathwaysManifestGSchema
+  PathwaysManifestGSchema,
+  WorldStateRootSchema
 } from '../src/infra/content/schemas/index.js';
 
 interface SchemaTarget {
@@ -38,6 +39,11 @@ const TARGETS: SchemaTarget[] = [
     name: 'CONVERGENCE_FORCES_G',
     pattern: 'convergence_forces.json',
     schema: ConvergenceForcesRootGSchema
+  },
+  {
+    name: 'WORLD_STATE_G',
+    pattern: 'world_state.json',
+    schema: WorldStateRootSchema
   },
   {
     name: 'DILEMMA_G',

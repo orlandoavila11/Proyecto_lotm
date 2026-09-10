@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Verify Tier L Integrity (manifest v1.1)
+      - name: Verify Tier L Integrity (manifest v2.0)
         run: npm run verify:tier-l
 
       - name: Lint Tier G Contracts (Zod Schemas)

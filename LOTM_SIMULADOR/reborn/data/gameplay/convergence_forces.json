@@ -3,7 +3,7 @@
   "schema_version": "1.0",
   "sealedBy": "Director",
   "generatedAt": "2026-09-10T16:30:00.000Z",
-  "description": "Layer 1 Convergence Forces autorizadas por Séfira (era: una década pre-novela). Autoridad única de convergencia.",
+  "description": "Layer 1 Convergence Forces autorizadas por Séfira (era: POST-LOTM · PRE-COI, ~1353 Quinta Época). Autoridad única de convergencia.",
   "sefirot": {
     "sefirah_castle": {
       "group": "LOTM",
@@ -425,6 +425,20 @@
             "investigation",
             "telar"
           ]
+        },
+        {
+          "id": "GOD_ETERNAL_BLAZING_SUN",
+          "sefirahId": "chaos_sea",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         }
       ]
     },
@@ -514,21 +528,6 @@
           "powerTier": "encounter",
           "eraVerified": true,
           "canonRef": "reborn/data/content/world/secret_organizations.json",
-          "sefiraGroupRef": "DEATH_CLUSTER",
-          "interactionModes": [
-            "encounter",
-            "investigation",
-            "event",
-            "case"
-          ]
-        },
-        {
-          "id": "CHURCH_COMBAT",
-          "sefirahId": "river_of_eternal_darkness",
-          "type": "organization",
-          "powerTier": "encounter",
-          "eraVerified": "PENDING_ERA_REVIEW",
-          "canonRef": "reborn/data/content/world/cities.json",
           "sefiraGroupRef": "DEATH_CLUSTER",
           "interactionModes": [
             "encounter",
@@ -781,7 +780,9 @@
             "narrative",
             "lore",
             "telar_root"
-          ]
+          ],
+          "status": "SEALED_MAUSOLEUM",
+          "nota": "HISTORICAL_EMPEROR_CORRUPTED · vía del Emperador Negro sin características · influye solo por telar_root"
         },
         {
           "id": "ART_0_02",
@@ -1233,11 +1234,11 @@
           ]
         },
         {
-          "id": "ORG_COI_DANCERS",
+          "id": "ORG_DANCERS_PRECURSOR",
           "sefirahId": "key_of_light",
           "type": "organization",
           "powerTier": "telar",
-          "eraVerified": "PENDING_ERA_REVIEW",
+          "eraVerified": true,
           "canonRef": "reborn/data/content/world/secret_organizations.json",
           "sefiraGroupRef": "FATE_CLUSTER",
           "interactionModes": [
@@ -1245,7 +1246,8 @@
             "event",
             "case",
             "telar"
-          ]
+          ],
+          "nota": "semilla pre-CoI (R3); manifestación plena fuera de era"
         },
         {
           "id": "KOA_OUROBOROS",

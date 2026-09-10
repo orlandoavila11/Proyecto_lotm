@@ -48,7 +48,9 @@ export const ConvergenceForceGSchema = z.object({
   powerTier: z.enum(POWER_TIERS),
   eraVerified: z.union([z.boolean(), z.literal('PENDING_ERA_REVIEW')]),
   canonRef: z.string().min(1),
-  interactionModes: z.array(z.string()).min(1)
+  interactionModes: z.array(z.string()).min(1),
+  status: z.string().optional(),
+  nota: z.string().optional()
 }).superRefine((force, ctx) => {
   const allowed = force.powerTier === 'encounter'
     ? ENCOUNTER_ALLOWED_MODES

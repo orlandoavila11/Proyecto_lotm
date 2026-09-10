@@ -83,3 +83,13 @@ LOTM_SIMULADOR/
 > `reborn/data/content/` es la **única instancia superviviente** del estado final y la autoridad canónica de Tier L, congelada bajo `manifest.json` v1.1.
 > El script `export_content_and_generate_manifest.cjs` es exclusivamente evidencia forense histórica: el manifest v1.1 es la autoridad inmutable y **no se regenera jamás**.
 
+---
+
+## 5. REGLAS DE ERA (POST-LOTM · PRE-COI) — BIBLIA CANÓNICA
+
+- **Era Oficial:** **POST-LOTM · PRE-COI** (~1353 Quinta Época, ~1 año post-Guerra de los Dioses, Klein en letargo, previo a CoI 1358). Toda referencia previa a "era pre-novela / ~1339" queda OBSOLETA.
+- **R1 (Historia):** Los eventos canónicos de la novela son **HISTORIA** (world-state utilizable).
+- **R2 (Leyenda):** Los personajes canónicos mayores son **LEYENDA** (mythic/lore/telar_root; jamás NPCs operativos ni líderes visibles). Excepción controlada: personajes canónicos de nivel medio de `npc.json` pueden existir como NPC de fondo SOLO con nota de coherencia de era (edad/secuencia/rango) y firma del Director caso por caso (`HUMAN_REVIEW`). Textura diegética, nunca sustitutos de contenido jugable.
+- **R3 (Semillas Cósmicas):** Nada de *Circle of Inevitability* (CoI) ha ocurrido: su contenido existe únicamente como semillas cósmicas latentes (precursores), no como facciones activas ni poderes jugables.
+- **R4 (El Loco):** Su existencia es un misterio reciente; sus creyentes son pocos; la Iglesia del Loco es embrionaria; Klein está durmiendo. `ENTITY_LORD_OF_MYSTERIES` existe como historia oculta reciente en mythic/lore, jamás como presencia activa directa.
+

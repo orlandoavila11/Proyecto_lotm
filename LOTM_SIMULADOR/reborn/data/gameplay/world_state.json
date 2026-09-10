@@ -1,0 +1,362 @@
+{
+  "$schema": "./schemas/world_state.schema.json",
+  "schema_version": "1.0",
+  "era": "POST-LOTM · PRE-COI",
+  "anclaTemporal": {
+    "year": 1353,
+    "epoch": "FIFTH_EPOCH",
+    "context": "Aproximadamente 1 año después de la Guerra de los Dioses y el letargo de Klein Moretti (El Loco), y ~5 años antes del despertar de los eventos en Trier (Circle of Inevitability, 1358).",
+    "sealStatus": "CONFIRMED_DIRECTOR_ERA"
+  },
+  "reglasDeEra": {
+    "R1": "Los eventos canónicos de la novela son HISTORIA (world-state utilizable).",
+    "R2": "Los personajes canónicos mayores son LEYENDA (mythic/lore/telar_root; jamás NPCs operativos ni líderes visibles). Excepción controlada: personajes canónicos de nivel medio de npc.json pueden existir como NPC de fondo SOLO con nota de coherencia de era (edad/secuencia/rango) y firma del Director caso por caso (HUMAN_REVIEW). Textura diegética, nunca sustitutos de contenido jugable.",
+    "R3": "Nada de Circle of Inevitability (CoI) ha ocurrido: su contenido existe únicamente como semillas cósmicas latentes (precursores), no como facciones activas ni poderes jugables.",
+    "R4": "El Loco: su existencia es un misterio reciente; sus creyentes son pocos; la Iglesia del Loco es embrionaria; Klein está durmiendo. ENTITY_LORD_OF_MYSTERIES existe como historia oculta reciente en mythic/lore, jamás como presencia activa directa."
+  },
+  "dioses": {
+    "vivos": [
+      {
+        "id": "GOD_EVERNIGHT",
+        "name": "Evernight Goddess (Amanises)",
+        "status": "ALIVE_ACTIVE",
+        "notes": "Máxima deidad triunfante en Loen y Feysac tras la Guerra de los Dioses; reforzando activamente la barrera mundial."
+      },
+      {
+        "id": "GOD_LORD_STORMS",
+        "name": "Lord of Storms (Leodero)",
+        "status": "ALIVE_ACTIVE",
+        "notes": "Activo, guardián tempestuoso de los mares y las flotas marítimas de Loen."
+      },
+      {
+        "id": "GOD_ETERNAL_BLAZING_SUN",
+        "name": "Eternal Blazing Sun (Aucuses)",
+        "status": "ALIVE_ACTIVE",
+        "notes": "Activo, deidad protectora hegemónica en la República de Intis."
+      },
+      {
+        "id": "GOD_WISDOM",
+        "name": "God of Knowledge and Wisdom (Herabergen)",
+        "status": "ALIVE_ACTIVE",
+        "notes": "Activo, protector del Reino de Lenburg y custodio del saber arcano."
+      },
+      {
+        "id": "GOD_EARTH_MOTHER",
+        "name": "Earth Mother (Lilith / Omebella)",
+        "status": "ALIVE_ACTIVE",
+        "notes": "Activa, deidad suprema en Fenepot, velando por la fertilidad, las plantas y la vida."
+      },
+      {
+        "id": "GOD_STEAM_MACHINERY",
+        "name": "God of Steam and Machinery",
+        "status": "ALIVE_ACTIVE",
+        "notes": "Activo, patrón del desarrollo industrial, la mecánica y la tecnología en Loen e Intis."
+      },
+      {
+        "id": "GOD_THE_FOOL_KLEIN",
+        "name": "The Fool (Klein Moretti)",
+        "status": "SLUMBER_CONTESTED",
+        "notes": "En letargo profundo en Sefirah Castle, disputando el control mental contra el Señor de los Misterios original."
+      },
+      {
+        "id": "GOD_CHEEK_DEMONESS",
+        "name": "Primordial Demoness (Cheek)",
+        "status": "ALIVE_RECOVERING",
+        "notes": "Latente y recuperándose en el Mundo Espiritual tras el revés sufrido durante la Guerra de los Dioses."
+      },
+      {
+        "id": "GOD_DARK_SIDE_UNIVERSE",
+        "name": "Chained God (Tolzna)",
+        "status": "ALIVE_CORRUPTED",
+        "notes": "Vivo pero profundamente corrompido y aprisionado bajo el influjo del Árbol Madre del Deseo (MTOD)."
+      },
+      {
+        "id": "GOD_HIDDEN_SAGE",
+        "name": "The Hidden Sage",
+        "status": "ALIVE_SENTIENT_UNIQUENESS",
+        "notes": "Unicidad viviente del Ermitaño activa, infundiendo susurros de conocimiento salvaje."
+      },
+      {
+        "id": "GOD_ROSELLE_BLACK_EMPEROR",
+        "name": "Roselle Gustav",
+        "status": "SEALED_MAUSOLEUM",
+        "notes": "HISTORICAL_EMPEROR_CORRUPTED · vía del Emperador Negro sin características · influye solo por telar_root."
+      }
+    ],
+    "muertos": [
+      {
+        "id": "GOD_COMBAT_BADHEIL",
+        "name": "God of Combat (Badheil)",
+        "cause": "Caído en la Guerra de los Dioses ante la Diosa de la Noche tras la traición de la Madre Tierra (Lilith).",
+        "absorbedBy": "GOD_EVERNIGHT"
+      },
+      {
+        "id": "GOD_DEATH_SALINGER",
+        "name": "Death (Salinger)",
+        "cause": "Caído en el Desastre Pálido al final de la Cuarta Época.",
+        "absorbedBy": "GOD_EVERNIGHT"
+      }
+    ],
+    "absorbidos": [
+      {
+        "authorityId": "AUTHORITY_TWILIGHT_GIANT",
+        "name": "Unicidad y Características de Secuencia 1 del Gigante del Crepúsculo",
+        "absorbedBy": "GOD_EVERNIGHT",
+        "notes": "Absorbidas tras la muerte de Badheil, consolidando el control sobre el Crepúsculo."
+      },
+      {
+        "authorityId": "AUTHORITY_DEATH",
+        "name": "Unicidad y Características de Secuencia 1 de la Muerte",
+        "absorbedBy": "GOD_EVERNIGHT",
+        "notes": "Consolidadas progresivamente desde la Cuarta Época hacia el Río de la Oscuridad Eterna."
+      }
+    ],
+    "cambiados": [
+      {
+        "id": "GOD_ADAM_TRUE_CREATOR",
+        "name": "Adam / True Creator",
+        "transformation": "Fusión dual de personalidades y acumulación de unicidades hacia el estado de semi-pilar de Dios Todopoderoso.",
+        "notes": "Retirado a la contemplación cósmica en el Mar del Caos preparando la resistencia ante el Apocalipsis."
+      }
+    ]
+  },
+  "iglesiasEnPie": [
+    {
+      "id": "CHURCH_EVERNIGHT",
+      "name": "Church of the Evernight Goddess",
+      "status": "TRIUMPHANT_EXPANSION",
+      "territories": ["Loen Kingdom", "Feysac Empire (zona ocupada/pacificada)", "Colonias del Mar Medio"],
+      "notes": "Mayor cuerpo clerical ortodoxo en el norte; control de los Nighthawks."
+    },
+    {
+      "id": "CHURCH_STORMS",
+      "name": "Church of the Lord of Storms",
+      "status": "ACTIVE_ORTHODOX",
+      "territories": ["Loen Kingdom (costas)", "Rorsted Archipelago", "Colonias marítimas"],
+      "notes": "Poderío naval incontestable; ejecutores de los Mandatoris de los Castigadores Mandados."
+    },
+    {
+      "id": "CHURCH_STEAM",
+      "name": "Church of the God of Steam and Machinery",
+      "status": "ACTIVE_ORTHODOX",
+      "territories": ["Loen Kingdom", "Intis Republic"],
+      "notes": "Control de gremios mecánicos, maquinaria bélica e investigación de artefactos a vapor."
+    },
+    {
+      "id": "CHURCH_SUN",
+      "name": "Church of the Eternal Blazing Sun",
+      "status": "ACTIVE_ORTHODOX",
+      "territories": ["Intis Republic"],
+      "notes": "Columna vertebral moral y política de la sociedad de Intis; inquisidores de la luz."
+    },
+    {
+      "id": "CHURCH_WISDOM",
+      "name": "Church of the God of Knowledge and Wisdom",
+      "status": "ACTIVE_ORTHODOX",
+      "territories": ["Lenburg"],
+      "notes": "Custodios de universidades, bibliotecas secretas y preservación de historia pre-cataclísmica."
+    },
+    {
+      "id": "CHURCH_EARTH_MOTHER",
+      "name": "Church of the Earth Mother",
+      "status": "ACTIVE_ORTHODOX",
+      "territories": ["Fenepot Kingdom"],
+      "notes": "Teocracia agrícola y sacerdotes curadores de la tierra y los ciclos biológicos."
+    },
+    {
+      "id": "CHURCH_FOOL",
+      "name": "Church of The Fool",
+      "status": "EMBRYONIC_NASCENT",
+      "territories": ["Rorsted Archipelago (City of Generosity)", "New City of Silver", "Moon City"],
+      "notes": "Estatus embrionario en el Continente Norte; culto abierto y reverencia mesiánica en el mar del sur y supervivientes de la Tierra Abandonada de los Dioses."
+    }
+  ],
+  "iglesiasAbsorbidas": [
+    {
+      "id": "CHURCH_COMBAT",
+      "name": "Church of the God of Combat",
+      "absorbedBy": "CHURCH_EVERNIGHT",
+      "status": "ABSORBED_AND_DISMANTLED",
+      "notes": "Tras la muerte de Badheil y la rendición de Feysac, sus templos fueron secularizados o transferidos al culto de Evernight. Sus guerreros crepusculares fueron integrados o dispersados."
+    }
+  ],
+  "nacionesPostGuerra": [
+    {
+      "id": "COUN_LOEN",
+      "name": "Loen Kingdom",
+      "capital": "REG_BACKLUND",
+      "postWarCondition": "Victoria pírrica; Backlund severamente dañada por la niebla química y los bombardeos de dirigibles; hambruna en los distritos obreros y reconstrucción febril.",
+      "dominantFactions": ["CHURCH_EVERNIGHT", "CHURCH_STORMS", "CHURCH_STEAM", "FAM_AUGUSTUS", "ORG_MI9"]
+    },
+    {
+      "id": "COUN_INTIS",
+      "name": "Intis Republic",
+      "capital": "Trier",
+      "postWarCondition": "Régimen republicano reinstaurado con alta fragilidad institucional; efervescencia bohemia, auge financiero e infiltraciones de sociedades secretas.",
+      "dominantFactions": ["CHURCH_SUN", "CHURCH_STEAM", "ORG_SAURON_REMNANTS"]
+    },
+    {
+      "id": "COUN_FEYSAC",
+      "name": "Feysac Empire",
+      "capital": "San Petersburgo",
+      "postWarCondition": "Imperio militar quebrantado tras la muerte de su deidad patrona; territorio ocupado, pérdida de colonias y rencor latente en la nobleza militar.",
+      "dominantFactions": ["FAM_EINHORN", "CHURCH_EVERNIGHT"]
+    },
+    {
+      "id": "COUN_FEYNABOTTER",
+      "name": "Fenepot Kingdom",
+      "capital": "Ciudad de la Cosecha",
+      "postWarCondition": "Nación continental intacta; neutralidad armada y bonanza agrícola gracias a las bendiciones de la Madre Tierra.",
+      "dominantFactions": ["CHURCH_EARTH_MOTHER", "FAM_CASTIYA"]
+    },
+    {
+      "id": "COUN_LENBURG",
+      "name": "Lenburg",
+      "capital": "Lenburg City",
+      "postWarCondition": "Pequeño estado neutral dedicado al saber académico y la imprenta, libre de las peores secuelas del conflicto bélico.",
+      "dominantFactions": ["CHURCH_WISDOM"]
+    }
+  ],
+  "mitosActivos": [
+    {
+      "id": "KOA_AMON",
+      "name": "Amon (Blasphemer)",
+      "sefiraGroupRef": "LOTM",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Exiliado en las profundidades del cosmos tras su derrota en la batalla por Sefirah Castle."
+    },
+    {
+      "id": "KOA_BETHEL_ABRAHAM",
+      "name": "Bethel Abraham (Mr. Door)",
+      "sefiraGroupRef": "LOTM",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Mártir sellado y muerto para evitar que la corrupción de la Madre Luna rompiera la barrera terrestre."
+    },
+    {
+      "id": "KOA_ANTIGONUS",
+      "name": "Antigonus (The Half-Fool)",
+      "sefiraGroupRef": "LOTM",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Dormido y pacificado en la cumbre de la Cordillera Hornacis bajo el velo protector de Evernight."
+    },
+    {
+      "id": "ENTITY_LORD_OF_MYSTERIES",
+      "name": "Lord of the Mysteries (Celestial Worthy)",
+      "sefiraGroupRef": "LOTM",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Consciencia primordial disputando el despertar en Sefirah Castle contra Klein Moretti."
+    },
+    {
+      "id": "KOA_SASRIR",
+      "name": "Sasrir (The Dark Angel)",
+      "sefiraGroupRef": "GOD_ALMIGHTY",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Remanente mítico de la Corte del Rey Gigante y el Mar del Caos, eco de la Mano Derecha de Dios."
+    },
+    {
+      "id": "GOD_ADAM_TRUE_CREATOR",
+      "name": "Adam / True Creator",
+      "sefiraGroupRef": "GOD_ALMIGHTY",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Semi-pilar unificado en el Mar del Caos, orquestador silencioso de la defensa ante el cosmos."
+    },
+    {
+      "id": "GOD_LORD_STORMS",
+      "name": "Lord of Storms (Leodero)",
+      "sefiraGroupRef": "GOD_ALMIGHTY",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Deidad ortodoxa de la Vía del Marinero, vigilando las costas y la barrera del cielo."
+    },
+    {
+      "id": "GOD_ETERNAL_BLAZING_SUN",
+      "name": "Eternal Blazing Sun (Aucuses)",
+      "sefiraGroupRef": "GOD_ALMIGHTY",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Deidad ortodoxa de la Vía del Sol, baluarte purificador contra la oscuridad cósmica."
+    },
+    {
+      "id": "GOD_EVERNIGHT",
+      "name": "Evernight Goddess (Amanises)",
+      "sefiraGroupRef": "DEATH_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Triunfadora suprema de la Guerra de los Dioses, reuniendo las tres vías de la Oscuridad Eterna."
+    },
+    {
+      "id": "ANGEL_AZIK_EGGER",
+      "name": "Azik Eggers (Death Consul)",
+      "sefiraGroupRef": "DEATH_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Ángel del Inframundo en letargo sanador, aguardando el fin de su amnesia milenaria."
+    },
+    {
+      "id": "GOD_EARTH_MOTHER",
+      "name": "Earth Mother (Lilith)",
+      "sefiraGroupRef": "MOTHER_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Reina de los vampiros y deidad de la Vía de la Luna/Madre, guardiana de la fertilidad."
+    },
+    {
+      "id": "GOD_ROSELLE_BLACK_EMPEROR",
+      "name": "Roselle Gustav (Corrupted Black Emperor)",
+      "sefiraGroupRef": "ORDER_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Sellado en su mausoleo insular; fuente de presagios y resonancias de distorsión del orden."
+    },
+    {
+      "id": "GOD_DARK_SIDE_UNIVERSE",
+      "name": "The Dark Side of the Universe (Farbauti)",
+      "sefiraGroupRef": "ABYSS_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Deidad del Abismo corrompida, gobernando a los demonios y linajes criminales."
+    },
+    {
+      "id": "ENTITY_CHAINED_GOD",
+      "name": "The Chained God (Tolzna)",
+      "sefiraGroupRef": "ABYSS_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Entidad encadenada y torturada por el Árbol Madre del Deseo en el Mundo Espiritual."
+    },
+    {
+      "id": "GOD_STEAM_MACHINERY",
+      "name": "God of Steam and Machinery",
+      "sefiraGroupRef": "HERMIT_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Deidad ortodoxa de la Vía del Sabio, acelerando el progreso tecno-mágico."
+    },
+    {
+      "id": "GOD_HIDDEN_SAGE",
+      "name": "The Hidden Sage",
+      "sefiraGroupRef": "HERMIT_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Unicidad viviente del Ermitaño, emitiendo susurros de iluminación y locura cognoscitiva."
+    },
+    {
+      "id": "KOA_MEDICI",
+      "name": "Medici (Red Angel Evil Spirit)",
+      "sefiraGroupRef": "CALAMITY_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Ángel Rojo resucitado conspirando en las ruinas de Backlund para reconstruir la vía del Cazador."
+    },
+    {
+      "id": "GOD_CHEEK_DEMONESS",
+      "name": "Primordial Demoness (Cheek)",
+      "sefiraGroupRef": "CALAMITY_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Deidad oscura de las Demonias, herida en la guerra y latente en el vórtice de la calamidad."
+    },
+    {
+      "id": "KOA_OUROBOROS",
+      "name": "Ouroboros (Tail Devourer)",
+      "sefiraGroupRef": "FATE_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Ángel del Destino deambulando en los ciclos del tiempo en devoción eterna al Creador."
+    },
+    {
+      "id": "ANGEL_WILL_AUCEPTIN",
+      "name": "Will Auceptin (Will Ceres)",
+      "sefiraGroupRef": "FATE_CLUSTER",
+      "interactionModes": ["narrative", "lore", "telar_root"],
+      "postWarRole": "Serpiente de Mercurio reencarnada como infante en Backlund bajo la protección tácita de El Loco."
+    }
+  ]
+}
