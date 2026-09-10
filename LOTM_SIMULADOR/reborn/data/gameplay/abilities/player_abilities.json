@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "abilities": [
+    {
+      "id": "PLAYER_FOOL_9_SPIRIT_VISION",
+      "name": "Visión Espiritual & Adivinación Astral",
+      "pathway": "FOOL",
+      "sequence": 9,
+      "description": "Abre el tercer ojo para discernir los colores del aura y desvelar las intenciones de combate del oponente.",
+      "apCost": 1,
+      "spiritualityCost": 10,
+      "attentionCost": 0,
+      "range": 6,
+      "targetType": "SINGLE_ENEMY",
+      "atoms": [
+        { "atomId": "ATOM_SCRUTINIZE", "params": { "revealCount": 1 } },
+        { "atomId": "ATOM_ATTENTION_EXCHANGE", "params": { "apCost": 1, "attentionGained": 1 } }
+      ],
+      "canonConfidence": "canon",
+      "derivationNote": "Canónica de la novela (seer.json). Apertura de visión espiritual para percibir el flujo astral."
+    },
+    {
+      "id": "PLAYER_FOOL_9_TAROT_DIVINATION",
+      "name": "Adivinación con Cartas de Tarot",
+      "pathway": "FOOL",
+      "sequence": 9,
+      "description": "Lanza cartas de adivinación impregnadas de espiritualidad que golpean los meridianos astrales e inducen vulnerabilidad.",
+      "apCost": 2,
+      "spiritualityCost": 15,
+      "attentionCost": 0,
+      "range": 5,
+      "targetType": "SINGLE_ENEMY",
+      "atoms": [
+        { "atomId": "ATOM_DAMAGE_SPIRITUAL", "params": { "baseDamage": 18 } },
+        { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "WEAKENED", "durationTurns": 2 } }
+      ],
+      "canonConfidence": "canon",
+      "derivationNote": "Canónica de la novela (seer.json). Cartomancia ofensiva mística de Vidente."
+    },
+    {
+      "id": "PLAYER_FOOL_9_DANGER_INTUITION",
+      "name": "Intuición de Peligro Premonitoria",
+      "pathway": "FOOL",
+      "sequence": 9,
+      "description": "Reacciona al hormigueo astral de peligro inminente, adoptando una postura evasiva velada.",
+      "apCost": 1,
+      "spiritualityCost": 10,
+      "attentionCost": 0,
+      "range": 1,
+      "targetType": "SELF",
+      "atoms": [
+        { "atomId": "ATOM_ATTENTION_EXCHANGE", "params": { "apCost": 1, "attentionGained": 2 } },
+        { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "CONCEALED", "durationTurns": 1 } }
+      ],
+      "canonConfidence": "canon",
+      "derivationNote": "Canónica de la novela (seer.json). Premonición de peligro pasiva convertida en maniobra reactiva."
+    },
+    {
+      "id": "PLAYER_FOOL_8_PAPER_PROJECTILE",
+      "name": "Dagas de Papel Arrojadizas",
+      "pathway": "FOOL",
+      "sequence": 8,
+      "description": "Imbuye cartas o fragmentos de papel con espiritualidad rígida, proyectándolos como cuchillas que empujan al adversario.",
+      "apCost": 2,
+      "spiritualityCost": 15,
+      "attentionCost": 0,
+      "range": 5,
+      "targetType": "SINGLE_ENEMY",
+      "atoms": [
+        { "atomId": "ATOM_DAMAGE_PHYSICAL", "params": { "baseDamage": 24 } },
+        { "atomId": "ATOM_DISPLACE_PUSH", "params": { "distance": 1, "direction": "away" } }
+      ],
+      "canonConfidence": "canon",
+      "derivationNote": "Canónica de la novela (seer.json - Paper Projectile Mastery). Papel templado que corta como metal quirúrgico."
+    },
+    {
+      "id": "PLAYER_FOOL_8_ACROBATIC_TUMBLE",
+      "name": "Salto y Finta Acrobática",
+      "pathway": "FOOL",
+      "sequence": 8,
+      "description": "Aprovecha el equilibrio y agilidad sobrehumanos de Payaso para cambiar rápidamente de celda y recuperar ritmo de combate.",
+      "apCost": 1,
+      "spiritualityCost": 10,
+      "attentionCost": 0,
+      "range": 2,
+      "targetType": "GRID_CELL",
+      "atoms": [
+        { "atomId": "ATOM_DISPLACE_MOVE", "params": { "maxDistance": 2 } },
+        { "atomId": "ATOM_GAIN_AP", "params": { "amount": 1 } }
+      ],
+      "canonConfidence": "canon",
+      "derivationNote": "Canónica de la novela (seer.json - Enhanced Agility, Balance & Coordination). Gimnasia táctica de Payaso."
+    },
+    {
+      "id": "PLAYER_FOOL_8_GROTESQUE_GRIN",
+      "name": "Mueca Grotesca Desconcertante",
+      "pathway": "FOOL",
+      "sequence": 8,
+      "description": "Tuerce los músculos faciales en una sonrisa trágica y desconcertante que proyecta una farsa hipnótica e induce pavor.",
+      "apCost": 1,
+      "spiritualityCost": 15,
+      "attentionCost": 0,
+      "range": 4,
+      "targetType": "SINGLE_ENEMY",
+      "atoms": [
+        { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "FEAR", "durationTurns": 2 } },
+        { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "ILLUSION", "durationTurns": 1 } }
+      ],
+      "canonConfidence": "library",
+      "derivationNote": "Control facial y emocional de Payaso adaptado como farsa intimidatoria. En duda de sabor S8 vs S7 (decisión Director: library + cola 1c)."
+    },
+    {
+      "id": "PLAYER_VISIONARY_9_ACUTE_OBSERVATION",
+      "name": "Observación Aguda y Calibración Psicológica",
+      "pathway": "VISIONARY",
+      "sequence": 9,
+      "description": "Examina la postura, dilatación pupilar y microexpresiones del adversario, descifrando su repertorio y ganando foco.",
+      "apCost": 1,
+      "spiritualityCost": 10,
+      "attentionCost": 0,
+      "range": 6,
+      "targetType": "SINGLE_ENEMY",
+      "atoms": [
+        { "atomId": "ATOM_SCRUTINIZE", "params": { "revealCount": 2 } },
+        { "atomId": "ATOM_ATTENTION_EXCHANGE", "params": { "apCost": 1, "attentionGained": 1 } }
+      ],
+      "canonConfidence": "canon",
+      "derivationNote": "Canónica de la novela (spectator.json). Deducir secretos y estado emocional mediante observación pasiva."
+    },
+    {
+      "id": "PLAYER_VISIONARY_9_PSYCHOLOGICAL_HINT",
+      "name": "Insinuación Psicológica Enervante",
+      "pathway": "VISIONARY",
+      "sequence": 9,
+      "description": "Susurra una frase calculada o modula la mirada para sembrar dudas subconscientes, desgastando la resistencia espiritual.",
+      "apCost": 2,
+      "spiritualityCost": 15,
+      "attentionCost": 0,
+      "range": 5,
+      "targetType": "SINGLE_ENEMY",
+      "atoms": [
+        { "atomId": "ATOM_DAMAGE_SPIRITUAL", "params": { "baseDamage": 16 } },
+        { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "WEAKENED", "durationTurns": 2 } }
+      ],
+      "canonConfidence": "canon",
+      "derivationNote": "Canónica de la novela (spectator.json). Sugestión verbal sutil que quiebra la determinación."
+    },
+    {
+      "id": "PLAYER_VISIONARY_9_DETACHED_CALM",
+      "name": "Sosiego Desapegado del Espectador",
+      "pathway": "VISIONARY",
+      "sequence": 9,
+      "description": "Adopta la mentalidad de un espectador fuera del escenario teatral, blindando su psique contra el frenesí y el miedo.",
+      "apCost": 1,
+      "spiritualityCost": 12,
+      "attentionCost": 0,
+      "range": 1,
+      "targetType": "SELF",
+      "atoms": [
+        { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "BLESSING", "durationTurns": 3 } },
+        { "atomId": "ATOM_HEAL_SANITY", "params": { "amount": 5 } }
+      ],
+      "canonConfidence": "canon",
+      "derivationNote": "Canónica de la novela (spectator.json). Estado meditativo de Espectador que anula perturbaciones psíquicas."
+    },
+    {
+      "id": "PLAYER_VISIONARY_8_MIND_PROBE",
+      "name": "Sonda Mental Telepática",
+      "pathway": "VISIONARY",
+      "sequence": 8,
+      "description": "Penetra con fuerza psíquica en el mar subconsciente del blanco, arrancando sus intenciones ocultas y desgarrando su mente.",
+      "apCost": 2,
+      "spiritualityCost": 20,
+      "attentionCost": 0,
+      "range": 5,
+      "targetType": "SINGLE_ENEMY",
+      "atoms": [
+        { "atomId": "ATOM_SCRUTINIZE", "params": { "revealCount": 3 } },
+        { "atomId": "ATOM_DAMAGE_SPIRITUAL", "params": { "baseDamage": 22 } }
+      ],
+      "canonConfidence": "canon",
+      "derivationNote": "Canónica de la novela (spectator.json - Telepathist). Lectura e intrusión mental profunda."
+    },
+    {
+      "id": "PLAYER_VISIONARY_8_MENTAL_SUGGESTION",
+      "name": "Sugestión Compulsiva Coercitiva",
+      "pathway": "VISIONARY",
+      "sequence": 8,
+      "description": "Implanta un impulso forzado en los nervios del adversario, aturdiéndolo por un instante y haciéndolo avanzar un paso.",
+      "apCost": 2,
+      "spiritualityCost": 20,
+      "attentionCost": 0,
+      "range": 4,
+      "targetType": "SINGLE_ENEMY",
+      "atoms": [
+        { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "STUN", "durationTurns": 1 } },
+        { "atomId": "ATOM_DISPLACE_PULL", "params": { "distance": 1 } }
+      ],
+      "canonConfidence": "canon",
+      "derivationNote": "Canónica de la novela (spectator.json - Telepathist). Orden hipnótica que subyuga el control motor."
+    },
+    {
+      "id": "PLAYER_VISIONARY_8_PLACATE",
+      "name": "Apaciguamiento de Furia Astral",
+      "pathway": "VISIONARY",
+      "sequence": 8,
+      "description": "Emite ondas reconfortantes que disuelven la hostilidad berserker, sofocan el frenesí y abren la puerta a la negociación.",
+      "apCost": 2,
+      "spiritualityCost": 18,
+      "attentionCost": 0,
+      "range": 5,
+      "targetType": "SINGLE_ENEMY",
+      "atoms": [
+        { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "BLESSING", "durationTurns": 2 } },
+        { "atomId": "ATOM_REMOVE_STATUS", "params": { "status": "FRENZY" } },
+        { "atomId": "ATOM_HEAL_HP", "params": { "amount": 15 } }
+      ],
+      "canonConfidence": "canon",
+      "derivationNote": "Canónica de la novela (spectator.json - Telepathist / Placate). Desactiva hostilidad homicida y purga frenesí."
+    }
+  ]
+}

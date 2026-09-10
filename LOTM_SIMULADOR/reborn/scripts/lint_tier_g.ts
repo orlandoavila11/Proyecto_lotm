@@ -12,7 +12,10 @@ import {
   SefiraGroupsGSchema,
   PathwaysManifestGSchema,
   WorldStateRootSchema,
-  DilemmaEffectsTableSchema
+  DilemmaEffectsTableSchema,
+  AtomVocabularySchema,
+  StatusMatrixSchema,
+  PlayerAbilitiesFileSchema
 } from '../src/infra/content/schemas/index.js';
 
 interface SchemaTarget {
@@ -80,6 +83,21 @@ const TARGETS: SchemaTarget[] = [
     name: 'DILEMMA_EFFECTS_BALANCE',
     pattern: 'balance/dilemma_effects.json',
     schema: DilemmaEffectsTableSchema
+  },
+  {
+    name: 'ATOM_VOCABULARY_BALANCE',
+    pattern: 'balance/atom_vocabulary.json',
+    schema: AtomVocabularySchema
+  },
+  {
+    name: 'STATUS_MATRIX_BALANCE',
+    pattern: 'balance/status_matrix.json',
+    schema: StatusMatrixSchema
+  },
+  {
+    name: 'PLAYER_ABILITIES_G',
+    pattern: 'abilities/player_abilities.json',
+    schema: PlayerAbilitiesFileSchema
   }
 ];
 
@@ -98,6 +116,23 @@ function runLint(): void {
   const summaries: LintSummary[] = [];
   let totalFilesScanned = 0;
   let totalPendingEraCount = 0;
+
+  // Cargar átomos de vocabulario para validaciones cruzadas
+  const vocabPath = path.join(gameplayDir, 'balance', 'atom_vocabulary.json');
+  let validAtomIds: Set<string> = new Set();
+  let economyAtomIds: Set<string> = new Set(['ATOM_DRAIN_AP', 'ATOM_GAIN_AP', 'ATOM_ATTENTION_EXCHANGE']);
+  if (fs.existsSync(vocabPath)) {
+    try {
+      const vJson = JSON.parse(fs.readFileSync(vocabPath, 'utf-8'));
+      if (Array.isArray(vJson.atoms)) {
+        validAtomIds = new Set(vJson.atoms.map((a: any) => a.id));
+        const econ = vJson.atoms.filter((a: any) => a.category === 'ECONOMY').map((a: any) => a.id);
+        if (econ.length > 0) {
+          economyAtomIds = new Set(econ);
+        }
+      }
+    } catch {}
+  }
 
   for (const target of TARGETS) {
     const targetPath = path.join(gameplayDir, target.pattern);
@@ -212,6 +247,62 @@ function runLint(): void {
 
               if (opt.effectKey && !validEffectKeys.has(opt.effectKey)) {
                 targetErrors.push(`[ORPHAN_EFFECT_KEY] ${relPath}: En dilema '${dilemma.id}', opción '${opt.id}': effectKey '${opt.effectKey}' no existe en dilemma_effects.json.`);
+              }
+            }
+          }
+        }
+      }
+
+      // Validación de habilidades y economía para COMBATANT_G (Regla del Director BRIEF-03)
+      if (target.name === 'COMBATANT_G' && Array.isArray(rawJson)) {
+        for (const combatant of rawJson) {
+          if (Array.isArray(combatant.abilities)) {
+            for (const ability of combatant.abilities) {
+              let economyCount = 0;
+              if (Array.isArray(ability.atoms)) {
+                for (const atomInv of ability.atoms) {
+                  if (!validAtomIds.has(atomInv.atomId)) {
+                    targetErrors.push(`[ORPHAN_ATOM] ${relPath}: Combatiente '${combatant.id}', habilidad '${ability.id}' referencia átomo desconocido '${atomInv.atomId}'.`);
+                  }
+
+                  if (atomInv.atomId === 'ATOM_ATTENTION_EXCHANGE') {
+                    targetErrors.push(`[ILLEGAL_ATOM] ${relPath}: Combatiente '${combatant.id}', habilidad '${ability.id}': ATOM_ATTENTION_EXCHANGE solo está permitido en player abilities.`);
+                  }
+
+                  if (economyAtomIds.has(atomInv.atomId)) {
+                    economyCount++;
+                  }
+                }
+              }
+
+              if (economyCount > 1) {
+                targetErrors.push(`[ECONOMY_RULE_VIOLATION] ${relPath}: Combatiente '${combatant.id}', habilidad '${ability.id}' tiene ${economyCount} átomos de economía (máximo 1 permitido).`);
+              }
+            }
+          }
+        }
+      }
+
+      // Validación de player abilities contra vocabulario de átomos
+      if (target.name === 'PLAYER_ABILITIES_G' && rawJson.abilities) {
+        for (const ability of rawJson.abilities) {
+          if (Array.isArray(ability.atoms)) {
+            for (const atomInv of ability.atoms) {
+              if (!validAtomIds.has(atomInv.atomId)) {
+                targetErrors.push(`[ORPHAN_ATOM] ${relPath}: Player ability '${ability.id}' referencia átomo desconocido '${atomInv.atomId}'.`);
+              }
+            }
+          }
+        }
+      }
+
+      // Validación de atomEffects en ARTIFACT_G
+      if (target.name === 'ARTIFACT_G' && Array.isArray(rawJson)) {
+        for (const artifact of rawJson) {
+          if (Array.isArray(artifact.atomEffects)) {
+            for (const eff of artifact.atomEffects) {
+              if (!validAtomIds.has(eff.atomId)) {
+                targetErrors.push(`[ORPHAN_ATOM] ${relPath}: Artefacto '${artifact.id}' referencia átomo desconocido '${eff.atomId}'.`);
               }
             }
           }

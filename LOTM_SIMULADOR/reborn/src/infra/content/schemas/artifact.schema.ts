@@ -6,10 +6,17 @@ export const ArtifactPresagioSchema = z.object({
   mirada: z.string().min(1)
 });
 
+export const ArtifactAtomEffectSchema = z.object({
+  atomId: z.string().min(1),
+  params: z.record(z.any()).default({}),
+  trigger: z.string().min(1).default('ON_EQUIP'),
+  description: z.string().min(5).optional()
+});
+
 export const ArtifactGSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
-  atomEffects: z.array(z.any()),
+  atomEffects: z.array(ArtifactAtomEffectSchema).min(1),
   presagio: ArtifactPresagioSchema,
   grade: z.union([
     z.enum(['GRADE_0', 'GRADE_1', 'GRADE_2', 'GRADE_3']),
@@ -21,4 +28,5 @@ export const ArtifactGSchema = z.object({
   ])
 });
 
+export type ArtifactAtomEffect = z.infer<typeof ArtifactAtomEffectSchema>;
 export type ArtifactG = z.infer<typeof ArtifactGSchema>;

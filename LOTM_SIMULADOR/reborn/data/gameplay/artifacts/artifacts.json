@@ -4,13 +4,21 @@
     "name": "Pluma de Alzod (0-08)",
     "atomEffects": [
       {
-        "type": "NARRATIVE_COINCIDENCE",
-        "scope": "GLOBAL",
-        "trigger": "WRITTEN_PROPHECY"
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 45
+        },
+        "trigger": "PASSIVE_WRITTEN_FATE",
+        "description": "Las coincidencias letales asestan daño espiritual inevitable."
       },
       {
-        "type": "CORRUPTION_LEAK",
-        "drainRatePerDay": 15
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "WEAKENED",
+          "durationTurns": 3
+        },
+        "trigger": "PASSIVE_AURA",
+        "description": "El aura de fatalidad debilita a todos los seres circundantes."
       }
     ],
     "presagio": {
@@ -26,9 +34,21 @@
     "name": "Regla de Trunsoest (0-02)",
     "atomEffects": [
       {
-        "type": "ZONE_PROHIBITION",
-        "scope": "REGIONAL",
-        "enforcement": "LETHAL"
+        "atomId": "ATOM_DRAIN_AP",
+        "params": {
+          "amount": 2
+        },
+        "trigger": "PROHIBITION_ZONE",
+        "description": "Cualquier acción no legislada confisca Puntos de Acción."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "STUN",
+          "durationTurns": 1
+        },
+        "trigger": "CRIMINAL_VERDICT",
+        "description": "Inmovilización judicial sumaria ante infracción."
       }
     ],
     "presagio": {
@@ -44,8 +64,21 @@
     "name": "El Ángel Sellado (0-17)",
     "atomEffects": [
       {
-        "type": "DIVINE_BARRIER",
-        "intensity": 100
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "BLESSING",
+          "durationTurns": 5
+        },
+        "trigger": "DIVINE_BARRIER",
+        "description": "Barrera sagrada que purifica la corrupción circundante."
+      },
+      {
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 40
+        },
+        "trigger": "SACRED_PULSE",
+        "description": "Onda expansiva que quema cuerpos astrales impuros."
       }
     ],
     "presagio": {
@@ -61,12 +94,22 @@
     "name": "Cuaderno de la Familia Antigonus",
     "atomEffects": [
       {
-        "type": "OCCULT_KNOWLEDGE_POISON",
-        "knowledgeTier": 5
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "FEAR",
+          "durationTurns": 3
+        },
+        "trigger": "ANTIGONUS_TERROR",
+        "description": "La presencia de la Familia Antigonus infunde terror ancestral."
       },
       {
-        "type": "PUPPET_INDUCEMENT",
-        "sanityThreshold": 40
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "FRENZY",
+          "durationTurns": 2
+        },
+        "trigger": "PUPPET_MADNESS",
+        "description": "El susurro de los hilos astrales induce frenesí caótico."
       }
     ],
     "presagio": {
@@ -82,12 +125,20 @@
     "name": "Espejo Mágico Arrodes",
     "atomEffects": [
       {
-        "type": "OMNISCIENT_INTERROGATION",
-        "accuracy": 98
+        "atomId": "ATOM_SCRUTINIZE",
+        "params": {
+          "revealCount": 3
+        },
+        "trigger": "TRUTH_INQUIRY",
+        "description": "Arranca respuestas veraces del subconsciente revelando habilidades."
       },
       {
-        "type": "HUMILIATION_LIGHTNING",
-        "damageType": "HOLY_ELECTRIC"
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 25
+        },
+        "trigger": "FALSEHOOD_RETRIBUTION",
+        "description": "Rayo fulminante de castigo espiritual si se miente al espejo."
       }
     ],
     "presagio": {
@@ -103,12 +154,21 @@
     "name": "Flauta de Hueso del Cónsul",
     "atomEffects": [
       {
-        "type": "SUMMON_UNDEAD",
-        "entityPool": "SPIRIT_WORLD_CORPSES"
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "STUN",
+          "durationTurns": 1
+        },
+        "trigger": "NIGHT_TOLL",
+        "description": "El tañido de campana sume la sala en letargo paralizante."
       },
       {
-        "type": "TEMPERATURE_DROP",
-        "radiusMeters": 30
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 18
+        },
+        "trigger": "SOUL_ECHO",
+        "description": "Ondas sonoras astrales que reverberan en la mente."
       }
     ],
     "presagio": {
@@ -124,12 +184,20 @@
     "name": "Bolsa de Viajero de los Abraham",
     "atomEffects": [
       {
-        "type": "SPATIAL_STORAGE",
-        "capacitySlots": 24
+        "atomId": "ATOM_DISPLACE_TELEPORT",
+        "params": {
+          "maxDistance": 3
+        },
+        "trigger": "SPATIAL_POCKET",
+        "description": "Abre un pliegue dimensional permitiendo reubicación instantánea."
       },
       {
-        "type": "COSMIC_WHISPER_RISK",
-        "chancePerOpening": 0.05
+        "atomId": "ATOM_GAIN_AP",
+        "params": {
+          "amount": 1
+        },
+        "trigger": "TRAVELER_FLOW",
+        "description": "Concede fluidez de movimiento y ritmo de combate."
       }
     ],
     "presagio": {
@@ -145,13 +213,20 @@
     "name": "Anillo de la Avaricia",
     "atomEffects": [
       {
-        "type": "STAT_MOD",
-        "stat": "penceRewardMultiplier",
-        "multiplier": 1.5
+        "atomId": "ATOM_DRAIN_AP",
+        "params": {
+          "amount": 1
+        },
+        "trigger": "GREED_SIPHON",
+        "description": "Roba 1 Punto de Acción del objetivo."
       },
       {
-        "type": "KLEPTOMANIA_COMPULSION",
-        "intensity": 3
+        "atomId": "ATOM_HEAL_HP",
+        "params": {
+          "amount": 15
+        },
+        "trigger": "AVARICE_RESTORE",
+        "description": "Transmuta la energía robada en regeneración física."
       }
     ],
     "presagio": {
@@ -167,12 +242,21 @@
     "name": "Muñeca de Trapo con Maldición de Sangre",
     "atomEffects": [
       {
-        "type": "REMOTE_CURSE",
-        "targetRequired": "HAIR_OR_BLOOD"
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 20
+        },
+        "trigger": "BLOOD_NEEDLE",
+        "description": "Alfileres astrales que perforan el alma a través de la muñeca."
       },
       {
-        "type": "BACKLASH_PAIN",
-        "userHpDrain": 10
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "POISON",
+          "durationTurns": 3
+        },
+        "trigger": "MALEDICTION_SEEP",
+        "description": "Maldición de sangre supurante que corroe el organismo."
       }
     ],
     "presagio": {
@@ -188,12 +272,20 @@
     "name": "Némesis del Alcohol (3-Alcohol)",
     "atomEffects": [
       {
-        "type": "POISON_NEUTRALIZATION",
-        "target": "ALCOHOL_AND_SEDATIVES"
+        "atomId": "ATOM_REMOVE_STATUS",
+        "params": {
+          "status": "POISON"
+        },
+        "trigger": "SOBER_CLEANSE",
+        "description": "Purga de inmediato intoxicaciones etílicas y venenos."
       },
       {
-        "type": "INSOMNIA_STATUS",
-        "durationHours": 12
+        "atomId": "ATOM_HEAL_SANITY",
+        "params": {
+          "amount": 5
+        },
+        "trigger": "LUCID_MIND",
+        "description": "Despeja la bruma mental restaurando estabilidad."
       }
     ],
     "presagio": {
@@ -209,12 +301,22 @@
     "name": "Amuleto del Sol Purificador",
     "atomEffects": [
       {
-        "type": "HOLY_LIGHT_EMISSION",
-        "intensity": 30
+        "atomId": "ATOM_DAMAGE_ELEMENTAL",
+        "params": {
+          "baseDamage": 20,
+          "element": "holy"
+        },
+        "trigger": "SOLAR_BURST",
+        "description": "Destello de luz solar que calcina espectros."
       },
       {
-        "type": "GHOST_REPULSION",
-        "radiusMeters": 15
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "BLESSING",
+          "durationTurns": 2
+        },
+        "trigger": "HOLY_AURA",
+        "description": "Consagración solar protectora."
       }
     ],
     "presagio": {
@@ -230,12 +332,21 @@
     "name": "Gafas de Cuarzo de Visión Espiritual",
     "atomEffects": [
       {
-        "type": "ENABLE_AURA_SIGHT",
-        "clarityBonus": 25
+        "atomId": "ATOM_SCRUTINIZE",
+        "params": {
+          "revealCount": 2
+        },
+        "trigger": "ASTRAL_OPTICS",
+        "description": "Aumenta la agudeza óptica revelando cartas y estados del oponente."
       },
       {
-        "type": "HEADACHE_STATUS",
-        "sanityDrainPerHour": 2
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "WEAKENED",
+          "durationTurns": 1
+        },
+        "trigger": "EXPOSURE",
+        "description": "Revela el punto débil inmediato del adversario."
       }
     ],
     "presagio": {
@@ -251,12 +362,22 @@
     "name": "Daga de Escarcha Sombría",
     "atomEffects": [
       {
-        "type": "FROST_DAMAGE",
-        "coldLevel": 2
+        "atomId": "ATOM_DAMAGE_ELEMENTAL",
+        "params": {
+          "baseDamage": 18,
+          "element": "ice"
+        },
+        "trigger": "FROST_STAB",
+        "description": "Cuchillada de escarcha helada que muerde la carne."
       },
       {
-        "type": "SLOW_TARGET",
-        "speedReduction": 4
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "WEAKENED",
+          "durationTurns": 2
+        },
+        "trigger": "CHILL_NUMB",
+        "description": "Entumecimiento muscular que ralentiza al objetivo."
       }
     ],
     "presagio": {
@@ -272,8 +393,21 @@
     "name": "Moneda del Azar Ciego",
     "atomEffects": [
       {
-        "type": "LUCK_GAMBLE",
-        "successChance": 0.5
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "BLESSING",
+          "durationTurns": 2
+        },
+        "trigger": "LUCKY_FLIP",
+        "description": "La moneda concede fortuna favorable y protección."
+      },
+      {
+        "atomId": "ATOM_GAIN_AP",
+        "params": {
+          "amount": 1
+        },
+        "trigger": "FORTUNE_SURGE",
+        "description": "Un giro de suerte otorga una oportunidad de acción adicional."
       }
     ],
     "presagio": {
@@ -289,8 +423,21 @@
     "name": "Pluma de Escriba de Leyes",
     "atomEffects": [
       {
-        "type": "BINDING_CONTRACT",
-        "breachPenalty": "LEGAL_BACKLASH"
+        "atomId": "ATOM_DRAIN_AP",
+        "params": {
+          "amount": 1
+        },
+        "trigger": "STATUTORY_RESTRAINT",
+        "description": "Escribe un decreto de embargo restando acción al infractor."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "WEAKENED",
+          "durationTurns": 2
+        },
+        "trigger": "LEGAL_PRESSURE",
+        "description": "Apremio legal que debilita la postura del blanco."
       }
     ],
     "presagio": {
@@ -302,4 +449,3 @@
     "canonConfidence": "library"
   }
 ]
-

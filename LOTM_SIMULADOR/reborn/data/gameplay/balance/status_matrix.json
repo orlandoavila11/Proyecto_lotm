@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "statuses": [
+    "FEAR",
+    "BLESSING",
+    "STUN",
+    "POISON",
+    "CONCEALED",
+    "FRENZY",
+    "WEAKENED",
+    "ILLUSION"
+  ],
+  "interactions": [
+    {
+      "statusA": "FEAR",
+      "statusB": "BLESSING",
+      "resolution": "MUTUAL_CANCELLATION",
+      "description": "La Bendición serena la psique neutralizando el Miedo; el influjo protector se consume en el choque."
+    },
+    {
+      "statusA": "FRENZY",
+      "statusB": "BLESSING",
+      "resolution": "REMOVE_A",
+      "description": "La Bendición purga el Frenesí restaurando el control racional del combatiente."
+    },
+    {
+      "statusA": "WEAKENED",
+      "statusB": "BLESSING",
+      "resolution": "REMOVE_A",
+      "description": "La Bendición purifica la debilidad corporal devolviendo el vigor íntegro."
+    },
+    {
+      "statusA": "CONCEALED",
+      "statusB": "POISON",
+      "resolution": "REMOVE_A",
+      "description": "El daño corrosivo continuo del Veneno rompe el sigilo y revela al combatiente oculto."
+    },
+    {
+      "statusA": "FRENZY",
+      "statusB": "FEAR",
+      "resolution": "A_IMMUNE_TO_B",
+      "description": "El Frenesí salvaje vuelve al combatiente inmune a los efectos del Miedo o la intimidación."
+    },
+    {
+      "statusA": "FRENZY",
+      "statusB": "WEAKENED",
+      "resolution": "A_IMMUNE_TO_B",
+      "description": "El Frenesí ignora la fatiga o debilidad muscular canalizando rabia pura."
+    },
+    {
+      "statusA": "ILLUSION",
+      "statusB": "STUN",
+      "resolution": "REMOVE_A",
+      "description": "Un impacto aturdidor directo disipa la proyección ilusoria al colapsar su ancla astral."
+    }
+  ]
+}

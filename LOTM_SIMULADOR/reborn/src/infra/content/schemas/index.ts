@@ -8,3 +8,6 @@ export * from './convergenceForce.schema.js';
 export * from './sefiraGroups.schema.js';
 export * from './pathwaysManifest.schema.js';
 export * from './worldState.schema.js';
+export * from './atomVocabulary.schema.js';
+export * from './statusMatrix.schema.js';
+export * from './playerAbilities.schema.js';
