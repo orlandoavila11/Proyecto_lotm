@@ -19,6 +19,9 @@
     "test:ui": "npm --prefix ui run build",
     "verify:tier-l": "npm --prefix reborn run verify:tier-l"
   },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
   "keywords": [
     "lotm",
     "lord-of-the-mysteries",

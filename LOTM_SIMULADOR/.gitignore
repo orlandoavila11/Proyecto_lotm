@@ -21,3 +21,5 @@ saves/
 .idea/
 .DS_Store
 
+
+*.tsbuildinfo

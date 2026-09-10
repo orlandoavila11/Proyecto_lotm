@@ -32,7 +32,7 @@ jobs:
           cache-dependency-path: LOTM_SIMULADOR/package-lock.json
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Verify Tier L Integrity (manifest v1.1)
         run: npm run verify:tier-l
