@@ -7,7 +7,8 @@
     "start": "node dist/server/server.js",
     "dev": "tsx watch src/server/server.ts",
     "test": "tsx --test tests/**/*.test.ts",
-    "verify:tier-l": "node scripts/verify_tier_l.cjs"
+    "verify:tier-l": "node scripts/verify_tier_l.cjs",
+    "lint:tier-g": "tsx scripts/lint_tier_g.ts"
   },
   "dependencies": {
     "fastify": "^5.2.1",

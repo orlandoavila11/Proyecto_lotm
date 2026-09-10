@@ -74,10 +74,28 @@ describe('Brief 02.2-bis: Convergence Forces por Séfira (Validación Fail-Loud 
           `eraVerified inválido en fuerza ${force.id}: ${force.eraVerified}`
         );
 
+        assert.strictEqual(force.sefiraGroupRef, sefirahObj.group, `sefiraGroupRef en ${force.id} debe coincidir con el grupo de la séfira`);
+
         assert.ok(
           typeof force.canonRef === 'string' && force.canonRef.length > 0,
           `canonRef obligatorio en fuerza ${force.id}`
         );
+
+        // Coherencia tier <-> modes
+        assert.ok(Array.isArray(force.interactionModes) && force.interactionModes.length > 0, `interactionModes obligatorio en ${force.id}`);
+        const allowedModes = force.powerTier === 'encounter'
+          ? new Set(['encounter', 'investigation', 'event', 'case', 'artifact', 'narrative', 'telar'])
+          : force.powerTier === 'telar'
+            ? new Set(['investigation', 'event', 'case', 'artifact', 'narrative', 'telar'])
+            : new Set(['narrative', 'lore', 'telar_root']);
+
+        for (const mode of force.interactionModes) {
+          assert.strictEqual(
+            allowedModes.has(mode),
+            true,
+            `Modo de interacción incoherente '${mode}' para powerTier '${force.powerTier}' en fuerza ${force.id}`
+          );
+        }
       }
     }
   });
@@ -184,3 +202,4 @@ describe('Brief 02.2-bis: Convergence Forces por Séfira (Validación Fail-Loud 
     }
   });
 });
+

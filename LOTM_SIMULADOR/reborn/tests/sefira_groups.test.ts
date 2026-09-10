@@ -8,7 +8,7 @@ import { CANONICAL_PATHWAYS, CanonicalPathwayId } from '../src/core/types/pathwa
 describe('Sefira Groups & Convergence Pools: Validación Estructural Fail-Loud', () => {
   const packageRoot = fileURLToPath(new URL('..', import.meta.url));
   const sefiraPath = path.join(packageRoot, 'data', 'gameplay', 'sefira_groups.json');
-  const draftPoolsPath = path.join(packageRoot, 'data', 'gameplay', 'convergence_pools.draft.json');
+  const forcesPath = path.join(packageRoot, 'data', 'gameplay', 'convergence_forces.json');
 
   it('el archivo sefira_groups.json existe, está firmado por el Director y contiene los 9 grupos', () => {
     assert.strictEqual(fs.existsSync(sefiraPath), true, 'sefira_groups.json debe existir en Tier G');
@@ -100,31 +100,14 @@ describe('Sefira Groups & Convergence Pools: Validación Estructural Fail-Loud',
     assert.deepStrictEqual(orphans, [], 'No debe haber ningún ID huérfano no canónico');
   });
 
-  it('DRAFT Convergence Pools: Los pools de afinidad de las 6 vías jugables coinciden con los hermanos de su grupo excluyéndose a sí mismas', () => {
-    assert.strictEqual(fs.existsSync(draftPoolsPath), true, 'convergence_pools.draft.json debe existir');
-    const sefiraData = JSON.parse(fs.readFileSync(sefiraPath, 'utf-8'));
-    const poolsData = JSON.parse(fs.readFileSync(draftPoolsPath, 'utf-8'));
+  it('Autoridad de Convergencia: convergence_pools.draft.json ha sido superseded por convergence_forces.json', () => {
+    const draftPoolsPath = path.join(packageRoot, 'data', 'gameplay', 'convergence_pools.draft.json');
+    assert.strictEqual(fs.existsSync(draftPoolsPath), false, 'convergence_pools.draft.json debe haber sido eliminado (superseded)');
+    assert.strictEqual(fs.existsSync(forcesPath), true, 'convergence_forces.json es la autoridad única');
 
-    assert.strictEqual(poolsData.status, 'DRAFT');
-
-    const playablePathways: CanonicalPathwayId[] = ['FOOL', 'VISIONARY', 'CHAINED', 'JUSTICIAR', 'MOON', 'DEMONESS'];
-
-    for (const p of playablePathways) {
-      const draft = poolsData.pools[p];
-      assert.ok(draft, `Debe existir pool para ${p}`);
-      assert.deepStrictEqual(draft.thematic_extensions, [], 'thematic_extensions no deben ser inventadas (deben estar vacías)');
-
-      // Buscar hermanos en sefira_groups
-      const group = sefiraData.groups[draft.group];
-      assert.ok(group, `Grupo ${draft.group} debe existir en sefira_groups`);
-      const expectedSiblings = group.pathways.filter((id: string) => id !== p);
-
-      assert.deepStrictEqual(
-        draft.affinity_pool.sort(),
-        expectedSiblings.sort(),
-        `El pool de afinidad para ${p} debe ser exactamente los hermanos de grupo`
-      );
-    }
+    const forcesData = JSON.parse(fs.readFileSync(forcesPath, 'utf-8'));
+    assert.strictEqual(forcesData.sealedBy, 'Director');
+    assert.strictEqual(Object.keys(forcesData.sefirot).length, 9);
   });
 });
 

@@ -1,0 +1,24 @@
+import { z } from 'zod';
+
+export const ArtifactPresagioSchema = z.object({
+  pasivo: z.string().min(1),
+  tabú: z.string().min(1),
+  mirada: z.string().min(1)
+});
+
+export const ArtifactGSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  atomEffects: z.array(z.any()),
+  presagio: ArtifactPresagioSchema,
+  grade: z.union([
+    z.enum(['GRADE_0', 'GRADE_1', 'GRADE_2', 'GRADE_3']),
+    z.string().min(1)
+  ]),
+  canonConfidence: z.union([
+    z.number().min(0).max(1),
+    z.enum(['CANON', 'HIGH_CONFIDENCE', 'LEGEND', 'HUMAN_REVIEW', 'APOCRYPHAL'])
+  ])
+});
+
+export type ArtifactG = z.infer<typeof ArtifactGSchema>;

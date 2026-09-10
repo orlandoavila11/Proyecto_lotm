@@ -37,6 +37,9 @@ jobs:
       - name: Verify Tier L Integrity (manifest v1.1)
         run: npm run verify:tier-l
 
+      - name: Lint Tier G Contracts (Zod Schemas)
+        run: npm run lint:tier-g
+
       - name: Build Server & UI
         run: npm run build
 

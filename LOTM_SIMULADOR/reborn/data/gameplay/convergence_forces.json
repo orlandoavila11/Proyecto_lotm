@@ -16,7 +16,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/fool.json"
+          "canonRef": "reborn/data/content/pathways/fool.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_ERROR",
@@ -25,7 +31,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/error.json"
+          "canonRef": "reborn/data/content/pathways/error.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_DOOR",
@@ -34,7 +46,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/door.json"
+          "canonRef": "reborn/data/content/pathways/door.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "ORG_SECRET_ORDER",
@@ -42,7 +60,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_TAMARA_REMNANTS",
@@ -50,7 +75,14 @@
           "type": "family",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
         },
         {
           "id": "FAM_ABRAHAM",
@@ -58,7 +90,14 @@
           "type": "family",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
         },
         {
           "id": "FAM_ZOROAST",
@@ -66,7 +105,14 @@
           "type": "family",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/angels.json"
+          "canonRef": "reborn/data/content/world/angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
         },
         {
           "id": "FAM_ANTIGONUS",
@@ -74,7 +120,14 @@
           "type": "lineage",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
         },
         {
           "id": "KOA_AMON",
@@ -82,7 +135,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "KOA_BETHEL_ABRAHAM",
@@ -90,7 +149,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "KOA_ANTIGONUS",
@@ -98,7 +163,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "ENTITY_LORD_OF_MYSTERIES",
@@ -106,7 +177,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "legend"
+          "canonRef": "legend",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "ART_0_STAFF_STARS",
@@ -114,7 +191,13 @@
           "type": "artifact",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
         }
       ]
     },
@@ -129,7 +212,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/visionary.json"
+          "canonRef": "reborn/data/content/pathways/visionary.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_WHITE_TOWER",
@@ -138,7 +227,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/white_tower.json"
+          "canonRef": "reborn/data/content/pathways/white_tower.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_HANGED_MAN",
@@ -147,7 +242,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/hanged_man.json"
+          "canonRef": "reborn/data/content/pathways/hanged_man.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_SUN",
@@ -156,7 +257,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/sun.json"
+          "canonRef": "reborn/data/content/pathways/sun.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_TYRANT",
@@ -165,7 +272,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/tyrant.json"
+          "canonRef": "reborn/data/content/pathways/tyrant.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "ORG_AURORA_ORDER",
@@ -173,7 +286,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_PSYCHOLOGY_ALCHEMISTS",
@@ -181,7 +301,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "CHURCH_STORMS",
@@ -189,7 +316,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/churches.json"
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "CHURCH_SUN",
@@ -197,7 +331,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/churches.json"
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "CHURCH_WISDOM",
@@ -205,7 +346,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/churches.json"
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_STELLAR_FLAME",
@@ -213,7 +361,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "KOA_SASRIR",
@@ -221,7 +376,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "GOD_ADAM_TRUE_CREATOR",
@@ -229,7 +390,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/gods.json"
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "GOD_LORD_STORMS",
@@ -237,7 +404,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/gods.json"
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "ART_0_08",
@@ -245,7 +418,13 @@
           "type": "artifact",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
         }
       ]
     },
@@ -260,7 +439,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/death.json"
+          "canonRef": "reborn/data/content/pathways/death.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_DARKNESS",
@@ -269,7 +454,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/darkness.json"
+          "canonRef": "reborn/data/content/pathways/darkness.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_TWILIGHT_GIANT",
@@ -278,7 +469,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/twilight_giant.json"
+          "canonRef": "reborn/data/content/pathways/twilight_giant.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "CHURCH_EVERNIGHT",
@@ -286,7 +483,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/churches.json"
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_NUMIS_EPISCOPATE",
@@ -294,7 +498,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_NIGHT_COLLECTORS",
@@ -302,7 +513,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "CHURCH_COMBAT",
@@ -310,7 +528,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": "PENDING_ERA_REVIEW",
-          "canonRef": "reborn/data/content/world/cities.json"
+          "canonRef": "reborn/data/content/world/cities.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "FAM_EGGER",
@@ -318,7 +543,14 @@
           "type": "family",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/angels.json"
+          "canonRef": "reborn/data/content/world/angels.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
         },
         {
           "id": "GOD_EVERNIGHT",
@@ -326,7 +558,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/gods.json"
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "ANGEL_AZIK_EGGER",
@@ -334,7 +572,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/angels.json"
+          "canonRef": "reborn/data/content/world/angels.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "ART_0_PALE_DEATH",
@@ -342,7 +586,13 @@
           "type": "artifact",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
         }
       ]
     },
@@ -357,7 +607,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/mother.json"
+          "canonRef": "reborn/data/content/pathways/mother.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_MOON",
@@ -366,7 +622,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/moon.json"
+          "canonRef": "reborn/data/content/pathways/moon.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "CHURCH_EARTH_MOTHER",
@@ -374,7 +636,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/churches.json"
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_SANGUINE_COUNCIL",
@@ -382,7 +651,14 @@
           "type": "organization",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "case",
+            "telar"
+          ]
         },
         {
           "id": "LINEAGE_SANGUINE",
@@ -390,7 +666,13 @@
           "type": "lineage",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "GOD_EARTH_MOTHER",
@@ -398,7 +680,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/gods.json"
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         }
       ]
     },
@@ -413,7 +701,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/black_emperor.json"
+          "canonRef": "reborn/data/content/pathways/black_emperor.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_JUSTICIAR",
@@ -422,7 +716,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/justiciar.json"
+          "canonRef": "reborn/data/content/pathways/justiciar.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "ORG_MI9",
@@ -430,7 +730,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "FAM_AUGUSTUS",
@@ -438,7 +745,14 @@
           "type": "family",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/organizations_expanded.json"
+          "canonRef": "reborn/data/content/world/organizations_expanded.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
         },
         {
           "id": "FAM_CASTIYA",
@@ -446,7 +760,14 @@
           "type": "family",
           "powerTier": "telar",
           "eraVerified": "PENDING_ERA_REVIEW",
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
         },
         {
           "id": "GOD_ROSELLE_BLACK_EMPEROR",
@@ -454,7 +775,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/great_old_ones.json"
+          "canonRef": "reborn/data/content/world/great_old_ones.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "ART_0_02",
@@ -462,7 +789,13 @@
           "type": "artifact",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
         },
         {
           "id": "ART_0_BLACK_EMPEROR_CROWN",
@@ -470,7 +803,13 @@
           "type": "artifact",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
         }
       ]
     },
@@ -485,7 +824,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/chained.json"
+          "canonRef": "reborn/data/content/pathways/chained.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_ABYSS",
@@ -494,7 +839,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/abyss.json"
+          "canonRef": "reborn/data/content/pathways/abyss.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "ORG_ROSE_SCHOOL",
@@ -502,7 +853,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_ROSE_TEMPERANCE",
@@ -510,7 +868,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/organizations_expanded.json"
+          "canonRef": "reborn/data/content/world/organizations_expanded.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "FAM_BERIA",
@@ -518,7 +883,14 @@
           "type": "family",
           "powerTier": "telar",
           "eraVerified": "PENDING_ERA_REVIEW",
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
         },
         {
           "id": "GOD_DARK_SIDE_UNIVERSE",
@@ -526,7 +898,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/gods.json"
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "ENTITY_CHAINED_GOD",
@@ -534,7 +912,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/gods.json"
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         }
       ]
     },
@@ -549,7 +933,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/hermit.json"
+          "canonRef": "reborn/data/content/pathways/hermit.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_PARAGON",
@@ -558,7 +948,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/paragon.json"
+          "canonRef": "reborn/data/content/pathways/paragon.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "CHURCH_STEAM",
@@ -566,7 +962,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/churches.json"
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_MOSES_ORDER",
@@ -574,7 +977,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_ELEMENT_DAWN",
@@ -582,7 +992,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_COSMIC_WAVES",
@@ -590,7 +1007,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "GOD_STEAM_MACHINERY",
@@ -598,7 +1022,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/gods.json"
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "GOD_HIDDEN_SAGE",
@@ -606,7 +1036,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/gods.json"
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "ART_0_SAGE_FRONTLET",
@@ -614,7 +1050,13 @@
           "type": "artifact",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
         }
       ]
     },
@@ -629,7 +1071,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/demoness.json"
+          "canonRef": "reborn/data/content/pathways/demoness.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "PATHWAY_RED_PRIEST",
@@ -638,7 +1086,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/red_priest.json"
+          "canonRef": "reborn/data/content/pathways/red_priest.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "ORG_DEMONESS_SECT",
@@ -646,7 +1100,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_IRON_BLOOD",
@@ -654,7 +1115,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_SAURON_REMNANTS",
@@ -662,7 +1130,14 @@
           "type": "family",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
         },
         {
           "id": "FAM_EINHORN",
@@ -670,7 +1145,14 @@
           "type": "family",
           "powerTier": "telar",
           "eraVerified": "PENDING_ERA_REVIEW",
-          "canonRef": "reborn/data/content/lore_knowledge/rumors.json"
+          "canonRef": "reborn/data/content/lore_knowledge/rumors.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
         },
         {
           "id": "KOA_MEDICI",
@@ -678,7 +1160,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "GOD_CHEEK_DEMONESS",
@@ -686,7 +1174,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/gods.json"
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "ART_0_CHEEK_RINGS",
@@ -694,7 +1188,13 @@
           "type": "artifact",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
         }
       ]
     },
@@ -709,7 +1209,13 @@
           "type": "pathway",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/pathways/wheel_of_fortune.json"
+          "canonRef": "reborn/data/content/pathways/wheel_of_fortune.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
         },
         {
           "id": "ORG_LIFE_SCHOOL",
@@ -717,7 +1223,14 @@
           "type": "organization",
           "powerTier": "encounter",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
         },
         {
           "id": "ORG_COI_DANCERS",
@@ -725,7 +1238,14 @@
           "type": "organization",
           "powerTier": "telar",
           "eraVerified": "PENDING_ERA_REVIEW",
-          "canonRef": "reborn/data/content/world/secret_organizations.json"
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "case",
+            "telar"
+          ]
         },
         {
           "id": "KOA_OUROBOROS",
@@ -733,7 +1253,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "ANGEL_WILL_AUCEPTIN",
@@ -741,7 +1267,13 @@
           "type": "entity",
           "powerTier": "mythic",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/world/angels.json"
+          "canonRef": "reborn/data/content/world/angels.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
         },
         {
           "id": "ART_DADO_PROBABILITY",
@@ -749,7 +1281,13 @@
           "type": "artifact",
           "powerTier": "telar",
           "eraVerified": true,
-          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
         }
       ]
     }

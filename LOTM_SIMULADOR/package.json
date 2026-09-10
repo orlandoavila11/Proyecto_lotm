@@ -17,7 +17,8 @@
     "test": "npm --prefix reborn run test",
     "test:server": "npm --prefix reborn run test",
     "test:ui": "npm --prefix ui run build",
-    "verify:tier-l": "npm --prefix reborn run verify:tier-l"
+    "verify:tier-l": "npm --prefix reborn run verify:tier-l",
+    "lint:tier-g": "npm --prefix reborn run lint:tier-g"
   },
   "devDependencies": {
     "typescript": "^5.7.3"
