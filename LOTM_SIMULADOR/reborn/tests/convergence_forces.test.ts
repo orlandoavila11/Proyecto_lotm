@@ -191,17 +191,11 @@ describe('Brief 02.2-bis: Convergence Forces por Séfira (Validación Fail-Loud 
       }
     }
 
-    assert.ok(verifiedCount > 70, `Al menos 70 fuerzas deben estar verificadas en era (obtenidas: ${verifiedCount})`);
-    assert.strictEqual(pendingReviewQueue.length, 3, 'La cola HUMAN_REVIEW debe contener exactamente las 3 familias pendientes (§3.8)');
-    const pendingIds = pendingReviewQueue.map(p => p.id).sort();
-    assert.deepStrictEqual(pendingIds, ['FAM_BERIA', 'FAM_CASTIYA', 'FAM_EINHORN']);
+    assert.strictEqual(verifiedCount, 84, 'Todas las 84 fuerzas deben estar verificadas en era tras la firma del Director');
+    assert.strictEqual(pendingReviewQueue.length, 0, 'La cola HUMAN_REVIEW de fuerzas de convergencia debe tener 0 pendientes tras ratificación del Director');
 
     // Imprimir para el reporte §12
-    console.log(`[ERA_AUDIT] Verificadas en era: ${verifiedCount} fuerzas`);
-    console.log(`[HUMAN_REVIEW_QUEUE] Elementos en cola (${pendingReviewQueue.length}):`);
-    for (const item of pendingReviewQueue) {
-      console.log(`  - ${item.id} (${item.sefirahId}) -> ref: ${item.canonRef}`);
-    }
+    console.log(`[ERA_AUDIT] Verificadas en era: ${verifiedCount}/84 fuerzas (100% verificadas, 0 PENDING)`);
   });
 
   it('Validación 7: Directivas del Director BRIEF-02.3-BIS (84 fuerzas, 20 míticos, Roselle sellado, Sol Eterno, Dancers precursor, exclusión de Combat)', () => {

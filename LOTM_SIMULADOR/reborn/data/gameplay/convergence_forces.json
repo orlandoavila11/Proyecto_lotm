@@ -758,7 +758,7 @@
           "sefirahId": "nation_of_disorder",
           "type": "family",
           "powerTier": "telar",
-          "eraVerified": "PENDING_ERA_REVIEW",
+          "eraVerified": true,
           "canonRef": "reborn/data/content/world/secret_organizations.json",
           "sefiraGroupRef": "ORDER_CLUSTER",
           "interactionModes": [
@@ -883,7 +883,7 @@
           "sefirahId": "tenebrous_world",
           "type": "family",
           "powerTier": "telar",
-          "eraVerified": "PENDING_ERA_REVIEW",
+          "eraVerified": true,
           "canonRef": "reborn/data/content/world/secret_organizations.json",
           "sefiraGroupRef": "ABYSS_CLUSTER",
           "interactionModes": [
@@ -1145,7 +1145,7 @@
           "sefirahId": "city_of_calamity",
           "type": "family",
           "powerTier": "telar",
-          "eraVerified": "PENDING_ERA_REVIEW",
+          "eraVerified": true,
           "canonRef": "reborn/data/content/lore_knowledge/rumors.json",
           "sefiraGroupRef": "CALAMITY_CLUSTER",
           "interactionModes": [

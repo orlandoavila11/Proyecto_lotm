@@ -6,7 +6,8 @@ export const DilemmaOptionSchema = z.object({
   texto: z.string().min(1),
   tradeOffs: z.union([z.record(z.any()), z.array(z.any())]),
   pesos: z.record(z.number()),
-  costes: z.union([z.record(z.number()), z.record(z.any())])
+  costes: z.union([z.record(z.number()), z.record(z.any())]),
+  effectKey: z.string().optional()
 });
 
 export const AntiExploitSchema = z.object({
@@ -15,12 +16,21 @@ export const AntiExploitSchema = z.object({
   variety: z.union([z.number(), z.string()])
 });
 
+export const DilemmaDerivationNoteSchema = z.object({
+  source: z.string().min(1),
+  eraAdaptations: z.string().min(1)
+});
+
 export const DilemmaGSchema = z.object({
   id: z.string().min(1),
+  title: z.string().optional(),
+  situation: z.string().optional(),
   pathway: z.enum(CANONICAL_PATHWAYS as unknown as [string, ...string[]]),
   sequence: z.number().int().min(8).max(9),
   options: z.array(DilemmaOptionSchema).min(2).max(3),
-  antiExploit: AntiExploitSchema
+  antiExploit: AntiExploitSchema,
+  derivationNote: DilemmaDerivationNoteSchema.optional(),
+  canonConfidence: z.enum(['canon', 'library', 'adapted']).optional()
 });
 
 export type DilemmaG = z.infer<typeof DilemmaGSchema>;

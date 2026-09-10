@@ -1,0 +1,460 @@
+[
+  {
+    "id": "DIL_FOOL_9_1",
+    "title": "El Presagio de la Flota de Bayam",
+    "situation": "Un comerciante de ultramar te pide consultar las cartas del tarot sobre una flota mercante que zarpó de Bayam. Las cartas revelan naufragio inminente por temporal.",
+    "pathway": "FOOL",
+    "sequence": 9,
+    "options": [
+      {
+        "id": "CHOICE_FOOL_9_TRUTH",
+        "texto": "Interpretar la revelación con sobriedad y comunicar el peligro real",
+        "tradeOffs": {
+          "ganancia": "Alta asimilación de la poción de Vidente",
+          "coste": "Atención eclesiástica por acierto profético",
+          "riesgo": "Pérdida de clientela si la verdad resulta desagradable"
+        },
+        "pesos": {
+          "digestion": 20,
+          "sanity": 2,
+          "suspicion": 2
+        },
+        "costes": {
+          "spirituality": 5
+        },
+        "effectKey": "SEER_TRUTH_RIGOR"
+      },
+      {
+        "id": "CHOICE_FOOL_9_LIE",
+        "texto": "Suavizar el augurio prometiendo un viaje tranquilo a cambio de propina",
+        "tradeOffs": {
+          "ganancia": "Propina inmediata sin confrontación",
+          "coste": "Disonancia espiritual y retroceso de digestión",
+          "riesgo": "Violación flagrante del principio de actuar"
+        },
+        "pesos": {
+          "digestion": 2,
+          "sanity": -5,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 0
+        },
+        "effectKey": "SEER_FALSEHOOD_TRANSGRESSION"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.2,
+      "minCost": 5,
+      "variety": "TAROT_TRUTH_VS_DECEIT"
+    },
+    "derivationNote": {
+      "source": "ActingDilemmaEngine:DIL_FOOL_9_1",
+      "eraAdaptations": "Adaptado a 1353: rutas comerciales de Bayam restablecidas tras la Guerra de los Dioses."
+    },
+    "canonConfidence": "canon"
+  },
+  {
+    "id": "DIL_FOOL_9_2",
+    "title": "La Aguja Zahorí en el Pozo de Cherwood",
+    "situation": "Vecinos de una barriada empobrecida en Cherwood temen que el pozo comunal haya sido envenenado con efluvios de alquimia clandestina tras los bombardeos.",
+    "pathway": "FOOL",
+    "sequence": 9,
+    "options": [
+      {
+        "id": "CHOICE_FOOL_9_DOWSING_PUBLIC",
+        "texto": "Suspender el péndulo de cuarzo ante los vecinos para señalar el manantial puro",
+        "tradeOffs": {
+          "ganancia": "Asimilación mística por actuar como guía intuitivo",
+          "coste": "Desgaste de concentración espiritual",
+          "riesgo": "Exposición ante vigilantes barriales"
+        },
+        "pesos": {
+          "digestion": 18,
+          "sanity": 1,
+          "suspicion": 1
+        },
+        "costes": {
+          "spirituality": 8
+        },
+        "effectKey": "SEER_DIVINE_OMEN_DEEP"
+      },
+      {
+        "id": "CHOICE_FOOL_9_SAMPLE_CHEMICAL",
+        "texto": "Tomar discretamente una muestra de barro y dejar que las autoridades sanitarias decidan",
+        "tradeOffs": {
+          "ganancia": "Cero sospecha y preservación del anonimato",
+          "coste": "Nula asimilación de la vía",
+          "riesgo": "La comunidad sigue consumiendo agua turbia"
+        },
+        "pesos": {
+          "digestion": 5,
+          "sanity": 3,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 0
+        },
+        "effectKey": "SEER_CAUTIOUS_ABSTAIN"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.25,
+      "minCost": 8,
+      "variety": "DOWSING_INVESTIGATION"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_FOOL_DIGESTIÓN_01",
+      "eraAdaptations": "Contaminación química contextualizada en la posguerra aérea de Backlund (1353)."
+    },
+    "canonConfidence": "library"
+  },
+  {
+    "id": "DIL_FOOL_9_3",
+    "title": "Visión Espiritual en la Pensión de East Borough",
+    "situation": "Tu casera afirma escuchar llantos desde una habitación cerrada donde falleció un soldado feysakiano capturado durante la guerra.",
+    "pathway": "FOOL",
+    "sequence": 9,
+    "options": [
+      {
+        "id": "CHOICE_FOOL_9_SPIRIT_VISION_ACTIVE",
+        "texto": "Abrir la Visión Espiritual y descifrar los colores aurales del remanente",
+        "tradeOffs": {
+          "ganancia": "Comprensión directa del mundo incorpóreo y progreso de digestión",
+          "coste": "Fatiga ocular y roce con el plano astral",
+          "riesgo": "Ver entidades más allá de tu tolerancia mental"
+        },
+        "pesos": {
+          "digestion": 18,
+          "sanity": 1,
+          "suspicion": 2
+        },
+        "costes": {
+          "spirituality": 10
+        },
+        "effectKey": "SEER_DIVINE_OMEN_DEEP"
+      },
+      {
+        "id": "CHOICE_FOOL_9_RITUAL_PURIFY",
+        "texto": "Encender polvo de lavanda y manzanilla para apaciguar el ambiente sin mirar",
+        "tradeOffs": {
+          "ganancia": "Estabilidad psicológica y gratitud de la casera",
+          "coste": "Gasto de ingredientes mundanos",
+          "riesgo": "El residuo espiritual no se resuelve y volverá"
+        },
+        "pesos": {
+          "digestion": 8,
+          "sanity": 4,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 4
+        },
+        "effectKey": "ACTING_PRUDENT_RITUAL"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.2,
+      "minCost": 6,
+      "variety": "SPIRIT_VISION_ROOM"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_FOOL_PELIGRO_09",
+      "eraAdaptations": "Remanente espectral derivado de bajas de la guerra continental en Backlund (1353)."
+    },
+    "canonConfidence": "library"
+  },
+  {
+    "id": "DIL_FOOL_9_4",
+    "title": "La Dama Desesperada del Puente de Backlund",
+    "situation": "Una joven viuda con un niño en brazos te implora una lectura sobre el paradero de su hermano, desaparecido en la batalla de la cordillera Amantha.",
+    "pathway": "FOOL",
+    "sequence": 9,
+    "options": [
+      {
+        "id": "CHOICE_FOOL_9_CARDS_SOLEMN",
+        "texto": "Disponer las cartas del tarot con dignidad e informarle con tacto de su reposo eterno",
+        "tradeOffs": {
+          "ganancia": "Digestión de Vidente por encarar el destino con compasión objetiva",
+          "coste": "Pequeño desgaste emocional",
+          "riesgo": "Rechazo del honorario por parte de la indigente"
+        },
+        "pesos": {
+          "digestion": 20,
+          "sanity": 2,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 5
+        },
+        "effectKey": "SEER_TRUTH_RIGOR"
+      },
+      {
+        "id": "CHOICE_FOOL_9_DIRECT_REFUSAL",
+        "texto": "Rechazar la consulta alegando que las cartas no deben interrogar a los muertos de guerra",
+        "tradeOffs": {
+          "ganancia": "Protección ante posibles ataduras fantasmales",
+          "coste": "Nula asimilación de la vía",
+          "riesgo": "La mujer cae en manos de charlatanes maliciosos"
+        },
+        "pesos": {
+          "digestion": 4,
+          "sanity": 2,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 0
+        },
+        "effectKey": "SEER_CAUTIOUS_ABSTAIN"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.3,
+      "minCost": 5,
+      "variety": "WAR_LOSS_CONSULT"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_FOOL_IDENTIDAD_17",
+      "eraAdaptations": "Bajas de la cordillera Amantha (combates de la Quinta Época ~1352)."
+    },
+    "canonConfidence": "library"
+  },
+  {
+    "id": "DIL_FOOL_8_1",
+    "title": "La Máscara Rota del Circo de Barrio Este",
+    "situation": "Durante un número acrobático en una carpa improvisada de Backlund, recuerdas una escena de muerte atroz. La locura aprieta tus sienes ante una multitud de niños.",
+    "pathway": "FOOL",
+    "sequence": 8,
+    "options": [
+      {
+        "id": "CHOICE_FOOL_8_SMILE",
+        "texto": "Forzar una mueca cómica exagerada y rematar la escena con una voltereta ridícula",
+        "tradeOffs": {
+          "ganancia": "Máxima digestión de Payaso por esconder el dolor tras la farsa",
+          "coste": "Tensión neuromuscular extrema",
+          "riesgo": "La risa forzada roza la histeria"
+        },
+        "pesos": {
+          "digestion": 22,
+          "sanity": 5,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 10
+        },
+        "effectKey": "CLOWN_STAGE_LAUGHTER"
+      },
+      {
+        "id": "CHOICE_FOOL_8_BREAKDOWN",
+        "texto": "Paralizarse en la pista y dejar que las lágrimas arruinen el maquillaje ante el público",
+        "tradeOffs": {
+          "ganancia": "Alivio temporal del ahogo emocional",
+          "coste": "Severa pérdida de cordura y disonancia de la poción",
+          "riesgo": "Escándalo público y sospechas de los vigilantes locales"
+        },
+        "pesos": {
+          "digestion": 3,
+          "sanity": -8,
+          "suspicion": 5
+        },
+        "costes": {
+          "spirituality": 0
+        },
+        "effectKey": "CLOWN_BREAKDOWN_TEARS"
+      },
+      {
+        "id": "CHOICE_FOOL_8_ABRUPT_EXIT",
+        "texto": "Fingir un tropiezo hacia los bastidores y escapar del escenario sin mirar atrás",
+        "tradeOffs": {
+          "ganancia": "Evitas el colapso total en escena",
+          "coste": "Digestión mínima y pérdida de la paga del día",
+          "riesgo": "Despido del espectáculo y rumores entre los tramoyistas"
+        },
+        "pesos": {
+          "digestion": 5,
+          "sanity": 1,
+          "suspicion": 2
+        },
+        "costes": {
+          "spirituality": 0
+        },
+        "effectKey": "CLOWN_CYNICAL_FLEE"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.25,
+      "minCost": 10,
+      "variety": "CIRCUS_STAGE_TRAUMA"
+    },
+    "derivationNote": {
+      "source": "ActingDilemmaEngine:DIL_FOOL_8_1",
+      "eraAdaptations": "Opciones B y C redactadas por el compilador para reparar dilema roto; entra a cola 1b."
+    },
+    "canonConfidence": "adapted"
+  },
+  {
+    "id": "DIL_FOOL_8_2",
+    "title": "El Duelo de Muecas en la Taberna del Jabalí",
+    "situation": "Un estibador borracho y violento te arroja una jarra de cerveza a la cara en una taberna portuaria, exigiendo que dejes de reírte de su miseria.",
+    "pathway": "FOOL",
+    "sequence": 8,
+    "options": [
+      {
+        "id": "CHOICE_FOOL_8_DODGE_MOCK",
+        "texto": "Esquivar la jarra con torsión acrobática y responder con reverencia burlesca",
+        "tradeOffs": {
+          "ganancia": "Asimilación motora de Payaso y ovación de la clientela",
+          "coste": "Gasto de reflejos sobrenaturales",
+          "riesgo": "Enfurecer aún más al agresor"
+        },
+        "pesos": {
+          "digestion": 19,
+          "sanity": 3,
+          "suspicion": 1
+        },
+        "costes": {
+          "spirituality": 12
+        },
+        "effectKey": "CLOWN_ACROBATIC_DEFLECTION"
+      },
+      {
+        "id": "CHOICE_FOOL_8_BRAWL_FISTS",
+        "texto": "Engancharse en una pelea callejera a puñetazos limpia para probar tu fuerza física",
+        "tradeOffs": {
+          "ganancia": "Resuelve la amenaza por vía violenta directa",
+          "coste": "Dañar la máscara de Payaso y contusiones",
+          "riesgo": "Intervención de la policía fluvial"
+        },
+        "pesos": {
+          "digestion": 6,
+          "sanity": -2,
+          "suspicion": 6
+        },
+        "costes": {
+          "spirituality": 5
+        },
+        "effectKey": "ACTING_BOLD_OVERREACH"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.2,
+      "minCost": 8,
+      "variety": "TAVERN_AGILITY_CLOWN"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_FOOL_ACTING_03",
+      "eraAdaptations": "Distrito portuario de Backlund bajo racionamiento y desempleo posguerra (1353)."
+    },
+    "canonConfidence": "library"
+  },
+  {
+    "id": "DIL_FOOL_8_3",
+    "title": "El Control de los Nighthawks en la Calle Williams",
+    "situation": "Un equipo de patrulla del Nighthawk detiene a los transeúntes tras un incidente sobrenatural en una joyería cercana. Un sabueso de la policía olfatea tu abrigo.",
+    "pathway": "FOOL",
+    "sequence": 8,
+    "options": [
+      {
+        "id": "CHOICE_FOOL_8_CONTROL_HEARTBEAT",
+        "texto": "Manipular la expresión facial y pulso cardíaco para fingir ser un civil aturdido",
+        "tradeOffs": {
+          "ganancia": "Maestría en control biológico de Payaso y escape ileso",
+          "coste": "Estrés psíquico por engañar a sabuesos más allá de lo normal",
+          "riesgo": "Si el inquisidor usa adivinación directa puede notar la disonancia"
+        },
+        "pesos": {
+          "digestion": 21,
+          "sanity": 4,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 15
+        },
+        "effectKey": "CLOWN_STAGE_LAUGHTER"
+      },
+      {
+        "id": "CHOICE_FOOL_8_RUN_ROOFTOPS",
+        "texto": "Saltar al callejón lateral y huir trepando canalones con agilidad sobrehumana",
+        "tradeOffs": {
+          "ganancia": "Evasión garantizada del interrogatorio presencial",
+          "coste": "Sospecha policial inmediata disparada",
+          "riesgo": "Persecución activa con orden de captura en Backlund"
+        },
+        "pesos": {
+          "digestion": 8,
+          "sanity": -4,
+          "suspicion": 12
+        },
+        "costes": {
+          "spirituality": 20
+        },
+        "effectKey": "ACTING_BOLD_OVERREACH"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.3,
+      "minCost": 12,
+      "variety": "CHECKPOINT_DECEPTION"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_FOOL_ORGANIZACIÓN_11",
+      "eraAdaptations": "Vigilancia reforzada de Evernight Nighthawks en Backlund tras la guerra (1353)."
+    },
+    "canonConfidence": "library"
+  },
+  {
+    "id": "DIL_FOOL_8_4",
+    "title": "El Funeral del Viejo Ilusionista",
+    "situation": "Asistes al sepelio de un colega veterano del espectáculo que murió en la indigencia. Su viuda solloza mientras los acreedores murmuran reclamos frente al féretro.",
+    "pathway": "FOOL",
+    "sequence": 8,
+    "options": [
+      {
+        "id": "CHOICE_FOOL_8_EULOGY_JEST",
+        "texto": "Ofrecer un discurso fúnebre cargado de anécdotas cómicas que arranque sonrisas entre las lágrimas",
+        "tradeOffs": {
+          "ganancia": "Profunda digestión del principio de actuar del Payaso ante la muerte",
+          "coste": "Sobrecarga de autocontrol para no quebrarse",
+          "riesgo": "Miradas de escándalo por parte de vecinos conservadores"
+        },
+        "pesos": {
+          "digestion": 23,
+          "sanity": 6,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 10
+        },
+        "effectKey": "CLOWN_STAGE_LAUGHTER"
+      },
+      {
+        "id": "CHOICE_FOOL_8_SILENT_MONEY",
+        "texto": "Depositar un sobre con chelines en el abrigo de la viuda y marcharte en silencio sombrío",
+        "tradeOffs": {
+          "ganancia": "Alivio moral civil y mantenimiento del perfil bajo",
+          "coste": "Gasto económico personal",
+          "riesgo": "Poco avance en la digestión sobrenatural de la fórmula"
+        },
+        "pesos": {
+          "digestion": 6,
+          "sanity": 3,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 0
+        },
+        "effectKey": "ACTING_SHADOW_RETREAT"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.2,
+      "minCost": 10,
+      "variety": "FUNERAL_LAUGHTER_HONOR"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_FOOL_DESTINO_19",
+      "eraAdaptations": "Pobreza urbana y entierros colectivos en los suburbios de Backlund (1353)."
+    },
+    "canonConfidence": "library"
+  }
+]

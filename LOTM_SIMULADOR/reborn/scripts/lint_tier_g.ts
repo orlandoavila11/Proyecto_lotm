@@ -152,12 +152,24 @@ function runLint(): void {
         }
       }
 
-      // Validación de Schema Zod
-      const parseResult = target.schema.safeParse(rawJson);
-      if (!parseResult.success) {
-        for (const issue of parseResult.error.issues) {
-          const fieldPath = issue.path.length > 0 ? issue.path.join('.') : '(root)';
-          targetErrors.push(`[SCHEMA_FAIL] ${relPath} -> Campo "${fieldPath}": ${issue.message}`);
+      // Validación de Schema Zod (soporta tanto objeto individual como colección/array)
+      if (Array.isArray(rawJson)) {
+        for (let idx = 0; idx < rawJson.length; idx++) {
+          const parseResult = target.schema.safeParse(rawJson[idx]);
+          if (!parseResult.success) {
+            for (const issue of parseResult.error.issues) {
+              const fieldPath = issue.path.length > 0 ? issue.path.join('.') : '(root)';
+              targetErrors.push(`[SCHEMA_FAIL] ${relPath}[${idx}] -> Campo "${fieldPath}": ${issue.message}`);
+            }
+          }
+        }
+      } else {
+        const parseResult = target.schema.safeParse(rawJson);
+        if (!parseResult.success) {
+          for (const issue of parseResult.error.issues) {
+            const fieldPath = issue.path.length > 0 ? issue.path.join('.') : '(root)';
+            targetErrors.push(`[SCHEMA_FAIL] ${relPath} -> Campo "${fieldPath}": ${issue.message}`);
+          }
         }
       }
     }

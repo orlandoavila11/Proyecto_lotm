@@ -91,5 +91,5 @@ LOTM_SIMULADOR/
 - **R1 (Historia):** Los eventos canónicos de la novela son **HISTORIA** (world-state utilizable).
 - **R2 (Leyenda):** Los personajes canónicos mayores son **LEYENDA** (mythic/lore/telar_root; jamás NPCs operativos ni líderes visibles). Excepción controlada: personajes canónicos de nivel medio de `npc.json` pueden existir como NPC de fondo SOLO con nota de coherencia de era (edad/secuencia/rango) y firma del Director caso por caso (`HUMAN_REVIEW`). Textura diegética, nunca sustitutos de contenido jugable.
 - **R3 (Semillas Cósmicas):** Nada de *Circle of Inevitability* (CoI) ha ocurrido: su contenido existe únicamente como semillas cósmicas latentes (precursores), no como facciones activas ni poderes jugables.
-- **R4 (El Loco):** Su existencia es un misterio reciente; sus creyentes son pocos; la Iglesia del Loco es embrionaria; Klein está durmiendo. `ENTITY_LORD_OF_MYSTERIES` existe como historia oculta reciente en mythic/lore, jamás como presencia activa directa.
+- **R4 (El Loco):** Su existencia es un misterio reciente; sus creyentes son pocos; la Iglesia del Loco es embrionaria y LORE-ONLY (rumor distante en el Continente Norte, jamás organización funcional ni NPC operativo); Klein está durmiendo. `ENTITY_LORD_OF_MYSTERIES` existe como historia oculta reciente en mythic/lore, jamás como presencia activa directa.
 

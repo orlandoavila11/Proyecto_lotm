@@ -15,6 +15,10 @@ export const Schedule7dSchema = z.union([
 
 export const NpcWeekGSchema = z.object({
   id: z.string().min(1),
+  name: z.string().optional(),
+  canonicalRef: z.string().optional(),
+  isCanonical: z.boolean().optional(),
+  eraCoherenceNote: z.string().optional(),
   schedule: Schedule7dSchema,
   memoryHooks: z.array(z.string()),
   opinionPorIdentidad: z.record(z.any())

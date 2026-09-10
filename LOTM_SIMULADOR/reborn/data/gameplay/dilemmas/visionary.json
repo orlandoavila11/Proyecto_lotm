@@ -1,0 +1,460 @@
+[
+  {
+    "id": "DIL_VISIONARY_9_1",
+    "title": "La Partida de Ajedrez en el Salón Glacis",
+    "situation": "Dos diplomáticos de Feysac e Intis discuten en voz baja mientras fingen jugar al ajedrez en un rincón del salón de té. Sospechas que uno de ellos planea un sabotaje.",
+    "pathway": "VISIONARY",
+    "sequence": 9,
+    "options": [
+      {
+        "id": "CHOICE_SPECTATOR_9_OBSERVE",
+        "texto": "Permanecer inmóvil degustando el té y leyendo sus microexpresiones y respiración",
+        "tradeOffs": {
+          "ganancia": "Digestión de Espectador impecable al mantenerte fuera del escenario",
+          "coste": "Gasto sutil de concentración ocular",
+          "riesgo": "No intervienes aunque preveas una traición inminente"
+        },
+        "pesos": {
+          "digestion": 20,
+          "sanity": 3,
+          "suspicion": -2
+        },
+        "costes": {
+          "spirituality": 5
+        },
+        "effectKey": "SPECTATOR_QUIET_ANALYSIS"
+      },
+      {
+        "id": "CHOICE_SPECTATOR_9_INTERVENE_CHESS",
+        "texto": "Acercarse fingiendo sugerir una jugada maestra para interrumpir su conspiración",
+        "tradeOffs": {
+          "ganancia": "Neutraliza el acuerdo secreto de inmediato",
+          "coste": "Violación del rol de observador pasivo y disonancia de vía",
+          "riesgo": "Ambos diplomáticos centran su sospecha en ti"
+        },
+        "pesos": {
+          "digestion": 2,
+          "sanity": -4,
+          "suspicion": 6
+        },
+        "costes": {
+          "spirituality": 8
+        },
+        "effectKey": "SPECTATOR_IMPULSIVE_ACT"
+      },
+      {
+        "id": "CHOICE_SPECTATOR_9_LEAVE_EARLY",
+        "texto": "Pagar la cuenta apresuradamente y abandonar el establecimiento para no involucrarse",
+        "tradeOffs": {
+          "ganancia": "Seguridad civil absoluta y anonimato",
+          "coste": "Progreso mínimo de digestión",
+          "riesgo": "Pérdida de información geopolítica valiosa"
+        },
+        "pesos": {
+          "digestion": 6,
+          "sanity": 2,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 0
+        },
+        "effectKey": "SPECTATOR_COLD_WITHDRAWAL"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.25,
+      "minCost": 5,
+      "variety": "TEA_SALON_DIPLOMATS"
+    },
+    "derivationNote": {
+      "source": "ActingDilemmaEngine:DIL_VISIONARY_9_1",
+      "eraAdaptations": "Opciones B y C redactadas para completar dilema roto; tensiones diplomáticas Feysac-Intis en Backlund (1353). Entra a cola 1b."
+    },
+    "canonConfidence": "adapted"
+  },
+  {
+    "id": "DIL_VISIONARY_9_2",
+    "title": "El Pánico en la Bolsa de Cereales",
+    "situation": "En el parqué de la Bolsa de Backlund, corredores de comercio gritan aterrados ante los rumores de escasez de trigo proveniente de Fenepot tras la guerra.",
+    "pathway": "VISIONARY",
+    "sequence": 9,
+    "options": [
+      {
+        "id": "CHOICE_SPECTATOR_9_ANALYZE_PANIC",
+        "texto": "Subir a la galería superior para observar el flujo de histeria colectiva y gestos de avaricia",
+        "tradeOffs": {
+          "ganancia": "Excelente asimilación de la psicología de masas sin participar en la compra",
+          "coste": "Esfuerzo mental por no dejarse contagiar por el estrés ambiental",
+          "riesgo": "Empujones o extravío de pertenencias personales en la masa"
+        },
+        "pesos": {
+          "digestion": 18,
+          "sanity": 2,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 8
+        },
+        "effectKey": "SPECTATOR_DECIPHER_MOTIVE"
+      },
+      {
+        "id": "CHOICE_SPECTATOR_9_SPECULATE_GOLD",
+        "texto": "Descender al tumulto y usar la ventaja de lectura gestual para especular con contratos",
+        "tradeOffs": {
+          "ganancia": "Ganancia monetaria significativa en chelines y libras",
+          "coste": "Inmersión como actor egoísta que enturbia la serenidad de Espectador",
+          "riesgo": "Rencor de corredores arruinados que memorizan tu rostro"
+        },
+        "pesos": {
+          "digestion": 8,
+          "sanity": -2,
+          "suspicion": 4
+        },
+        "costes": {
+          "spirituality": 10
+        },
+        "effectKey": "ACTING_BOLD_OVERREACH"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.2,
+      "minCost": 8,
+      "variety": "GRAIN_EXCHANGE_PANIC"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_VISIONARY_DIGESTIÓN_01",
+      "eraAdaptations": "Racionamiento y crisis de granos en Loen posguerra (1353)."
+    },
+    "canonConfidence": "library"
+  },
+  {
+    "id": "DIL_VISIONARY_9_3",
+    "title": "El Cirujano Temblando en el Dispensario",
+    "situation": "Un médico de caridad en Cherwood atiende amputados de guerra. Notas que sus manos tiemblan y sus pupilas se dilatan de forma no natural antes de operar.",
+    "pathway": "VISIONARY",
+    "sequence": 9,
+    "options": [
+      {
+        "id": "CHOICE_SPECTATOR_9_STUDY_SURGEON",
+        "texto": "Observar en penumbra el temblor de sus dedos y el ritmo respiratorio para evaluar su colapso",
+        "tradeOffs": {
+          "ganancia": "Comprensión clínica de la degradación nerviosa humana y digestión constante",
+          "coste": "Sobrecarga de empatía contenida",
+          "riesgo": "El paciente corre peligro si el médico comete una negligencia crítica"
+        },
+        "pesos": {
+          "digestion": 19,
+          "sanity": 2,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 6
+        },
+        "effectKey": "SPECTATOR_QUIET_ANALYSIS"
+      },
+      {
+        "id": "CHOICE_SPECTATOR_9_HOLD_HAND",
+        "texto": "Sujetar el brazo del médico con firmeza civil y exigirle que descanse antes de cortar",
+        "tradeOffs": {
+          "ganancia": "Salva la vida del paciente herido",
+          "coste": "Pérdida de la postura de observador distanciado",
+          "riesgo": "Gritos del personal médico y expulsión de la sala"
+        },
+        "pesos": {
+          "digestion": 5,
+          "sanity": 3,
+          "suspicion": 3
+        },
+        "costes": {
+          "spirituality": 0
+        },
+        "effectKey": "ACTING_PRUDENT_RITUAL"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.2,
+      "minCost": 6,
+      "variety": "CHARITY_DOCTOR_TREMOR"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_VISIONARY_PELIGRO_09",
+      "eraAdaptations": "Hospitales saturados de veteranos mutilados en Backlund (1353)."
+    },
+    "canonConfidence": "library"
+  },
+  {
+    "id": "DIL_VISIONARY_9_4",
+    "title": "La Tertulia Ocultista de Empress Borough",
+    "situation": "Asistes como invitado menor a una velada aristocrática donde nobles ociosos juegan con una tabla de espiritismo comprada a un buhonero.",
+    "pathway": "VISIONARY",
+    "sequence": 9,
+    "options": [
+      {
+        "id": "CHOICE_SPECTATOR_9_DISSECT_FAKES",
+        "texto": "Mapear los micromovimientos musculares del anfitrión para confirmar que manipula la aguja",
+        "tradeOffs": {
+          "ganancia": "Perfección en el discernimiento del autoengaño y asimilación de la fórmula",
+          "coste": "Fatiga de atención perceptual continua",
+          "riesgo": "Sentimiento de cinismo y aislamiento psicológico"
+        },
+        "pesos": {
+          "digestion": 20,
+          "sanity": 3,
+          "suspicion": -1
+        },
+        "costes": {
+          "spirituality": 5
+        },
+        "effectKey": "SPECTATOR_QUIET_ANALYSIS"
+      },
+      {
+        "id": "CHOICE_SPECTATOR_9_CALL_OUT_FRAUD",
+        "texto": "Denunciar públicamente el truco mecánico dejando en ridículo a la nobleza anfitriona",
+        "tradeOffs": {
+          "ganancia": "Satisfacción de orgullo civil intelectual",
+          "coste": "Quiebre absoluto de la discreción de Espectador",
+          "riesgo": "Enemistad duradera con una familia noble influyente de Backlund"
+        },
+        "pesos": {
+          "digestion": 3,
+          "sanity": -3,
+          "suspicion": 8
+        },
+        "costes": {
+          "spirituality": 0
+        },
+        "effectKey": "ACTING_VIOLATION_DISSOCIATION"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.25,
+      "minCost": 5,
+      "variety": "ARISTOCRATIC_SEANCE_DISSECT"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_VISIONARY_IDENTIDAD_17",
+      "eraAdaptations": "Salones nobiliarios de Loen buscando consuelo en modas espiritistas tras la guerra."
+    },
+    "canonConfidence": "library"
+  },
+  {
+    "id": "DIL_VISIONARY_8_1",
+    "title": "El Eco del Bombardeo en la Mente del Artillero",
+    "situation": "Un exartillero del ejército de Loen sufre un ataque de pánico en la estación de tren al escuchar el silbato de la locomotora, creyendo que es una bomba aérea.",
+    "pathway": "VISIONARY",
+    "sequence": 8,
+    "options": [
+      {
+        "id": "CHOICE_TELEPATH_8_PACIFY_TRAUMA",
+        "texto": "Extender una onda de apaciguamiento telepático que sincronice sus pensamientos con calma",
+        "tradeOffs": {
+          "ganancia": "Máxima digestión de Telépata por moldear serenidad en un mar mental turbulento",
+          "coste": "Gasto notable de energía espiritual",
+          "riesgo": "Filtración leve del trauma bélico hacia tu propia psique"
+        },
+        "pesos": {
+          "digestion": 22,
+          "sanity": 4,
+          "suspicion": -1
+        },
+        "costes": {
+          "spirituality": 15
+        },
+        "effectKey": "TELEPATH_EMPATHIC_RESONANCE"
+      },
+      {
+        "id": "CHOICE_TELEPATH_8_FORCE_SLEEP",
+        "texto": "Golpear su corteza superficial con un choque mental tosco para noquearlo al instante",
+        "tradeOffs": {
+          "ganancia": "Detiene el escándalo público de forma fulminante",
+          "coste": "Dañar el tejido mental ajeno y disonancia de vía",
+          "riesgo": "El hombre convulsiona ante los transeúntes asustados"
+        },
+        "pesos": {
+          "digestion": 9,
+          "sanity": -5,
+          "suspicion": 6
+        },
+        "costes": {
+          "spirituality": 20
+        },
+        "effectKey": "TELEPATH_FORCED_PROBE"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.2,
+      "minCost": 15,
+      "variety": "SHELLSHOCK_TELEPATHY"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_VISIONARY_ACTING_03",
+      "eraAdaptations": "Trauma psicológico por bombardeos de dirigibles en la Quinta Época (1353)."
+    },
+    "canonConfidence": "library"
+  },
+  {
+    "id": "DIL_VISIONARY_8_2",
+    "title": "La Conspiración del Gremio del Carbón",
+    "situation": "Durante una reunión en la Cámara de Comercio, sondeas los pensamientos superficiales de los directores y detectas un plan para desviar carbón destinado a calefacción de hospitales.",
+    "pathway": "VISIONARY",
+    "sequence": 8,
+    "options": [
+      {
+        "id": "CHOICE_TELEPATH_8_SKIM_MEMORIES",
+        "texto": "Leer con sigilo los nombres de los intermediarios en su memoria superficial sin alertarlos",
+        "tradeOffs": {
+          "ganancia": "Información investigativa crítica y asimilación de Telépata",
+          "coste": "Riesgo de que un Beyonder protector sienta la intrusión mental",
+          "riesgo": "Jaqueca temporal por absorber datos mercantiles densos"
+        },
+        "pesos": {
+          "digestion": 20,
+          "sanity": 3,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 12
+        },
+        "effectKey": "TELEPATH_EMPATHIC_RESONANCE"
+      },
+      {
+        "id": "CHOICE_TELEPATH_8_CONFRONT_DIRECTOR",
+        "texto": "Mirar fijamente al cabecilla y amenazarlo susurrando detalles que solo él conoce",
+        "tradeOffs": {
+          "ganancia": "Aterroriza al culpable forzando una concesión inmediata",
+          "coste": "Delatas tu condición de Beyonder mental ante extraños",
+          "riesgo": "El gremio contrata sicarios de la Vía del Asesino para eliminarte"
+        },
+        "pesos": {
+          "digestion": 8,
+          "sanity": -3,
+          "suspicion": 8
+        },
+        "costes": {
+          "spirituality": 10
+        },
+        "effectKey": "ACTING_BOLD_OVERREACH"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.2,
+      "minCost": 12,
+      "variety": "COAL_GUILD_INTRUSION"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_VISIONARY_ORGANIZACIÓN_11",
+      "eraAdaptations": "Crisis de combustible y carbón mineral durante el invierno posguerra en Backlund."
+    },
+    "canonConfidence": "library"
+  },
+  {
+    "id": "DIL_VISIONARY_8_3",
+    "title": "La Pesadilla del Niño Huérfano",
+    "situation": "En un orfanato de caridad patrocinado por la Iglesia de Steam, un niño huérfano de guerra grita en sueños proyectando terrores que perturban el descanso de toda la sala.",
+    "pathway": "VISIONARY",
+    "sequence": 8,
+    "options": [
+      {
+        "id": "CHOICE_TELEPATH_8_WEAVE_DREAM_CALM",
+        "texto": "Tejer una ilusión de luz cálida en el umbral de su sueño guiando su mente hacia la serenidad",
+        "tradeOffs": {
+          "ganancia": "Elevada asimilación de la compasión y control psíquico de Telépata",
+          "coste": "Vínculo mental delicado que requiere quietud prolongada",
+          "riesgo": "La monja vigilante puede notar tu proximidad al lecho"
+        },
+        "pesos": {
+          "digestion": 21,
+          "sanity": 5,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 14
+        },
+        "effectKey": "TELEPATH_PACIFY_MINDS"
+      },
+      {
+        "id": "CHOICE_TELEPATH_8_LEAVE_NURSE",
+        "texto": "Avisar a la enfermera de turno para que le administre un sedante químico ordinario",
+        "tradeOffs": {
+          "ganancia": "Procedimiento institucional sin uso de espiritualidad",
+          "coste": "Nulo beneficio místico para tu poción",
+          "riesgo": "El niño despierta con secuelas tóxicas por bromuro"
+        },
+        "pesos": {
+          "digestion": 4,
+          "sanity": 1,
+          "suspicion": 0
+        },
+        "costes": {
+          "spirituality": 0
+        },
+        "effectKey": "TELEPATH_SHIELD_EGO"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.25,
+      "minCost": 12,
+      "variety": "ORPHAN_NIGHTMARE_SOOTHE"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_VISIONARY_DESTINO_19",
+      "eraAdaptations": "Orfanatos abarrotados por hijos de conscriptos fallecidos en el conflicto de los dioses."
+    },
+    "canonConfidence": "library"
+  },
+  {
+    "id": "DIL_VISIONARY_8_4",
+    "title": "El Interrogatorio del Inspector de MI9",
+    "situation": "Un agente del Servicio de Inteligencia Militar (MI9) te cita como testigo de una explosión en una imprenta. Notas que el agente intenta leer tus microreacciones.",
+    "pathway": "VISIONARY",
+    "sequence": 8,
+    "options": [
+      {
+        "id": "CHOICE_TELEPATH_8_PROJECT_FALSE_THOUGHT",
+        "texto": "Construir una capa superficial de pensamientos triviales sobre deudas y frío para engañar su sondeo",
+        "tradeOffs": {
+          "ganancia": "Triunfo absoluto en el contraespionaje mental y progreso de vía",
+          "coste": "Doble esfuerzo cognitivo: sostener la mentira mental mientras respondes",
+          "riesgo": "Si el inspector posee artefactos de detección de mentiras puede notar la barrera"
+        },
+        "pesos": {
+          "digestion": 23,
+          "sanity": 3,
+          "suspicion": -2
+        },
+        "costes": {
+          "spirituality": 18
+        },
+        "effectKey": "TELEPATH_EMPATHIC_RESONANCE"
+      },
+      {
+        "id": "CHOICE_TELEPATH_8_PANIC_CONFESS",
+        "texto": "Romper el contacto visual y titubear fingiendo ignorancia de forma torpe",
+        "tradeOffs": {
+          "ganancia": "Evitas el choque psíquico frontal contra el oficial",
+          "coste": "Pérdida de dignidad de Telépata y sospecha policial aumentada",
+          "riesgo": "El inspector abre un expediente formal de seguimiento sobre ti"
+        },
+        "pesos": {
+          "digestion": 4,
+          "sanity": -4,
+          "suspicion": 8
+        },
+        "costes": {
+          "spirituality": 0
+        },
+        "effectKey": "ACTING_VIOLATION_DISSOCIATION"
+      }
+    ],
+    "antiExploit": {
+      "decay": 0.3,
+      "minCost": 15,
+      "variety": "MI9_SURFACE_DUEL"
+    },
+    "derivationNote": {
+      "source": "pathway_events:EV_VISIONARY_ORGANIZACIÓN_12",
+      "eraAdaptations": "Interrogatorios de MI9 en Backlund vigilando infiltrados de Feysac e Intis (1353)."
+    },
+    "canonConfidence": "library"
+  }
+]

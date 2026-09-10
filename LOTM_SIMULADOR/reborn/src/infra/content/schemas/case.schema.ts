@@ -3,13 +3,16 @@ import { z } from 'zod';
 export const CaseTruthModelSchema = z.object({
   culpable: z.string().min(1),
   metodo: z.string().min(1),
-  motivo: z.string().min(1)
+  motivo: z.string().min(1),
+  status: z.string().optional(),
+  nota: z.string().optional()
 });
 
 export const CaseClueSchema = z.object({
   id: z.string().min(1),
   fuentes: z.array(z.string().min(1)).min(2),
-  gating: z.union([z.string(), z.record(z.any()), z.array(z.string())])
+  gating: z.union([z.string(), z.record(z.any()), z.array(z.string())]),
+  descripcion: z.string().optional()
 });
 
 export const CaseVectorsSchema = z.object({
@@ -26,6 +29,8 @@ export const CaseExpirySchema = z.object({
 
 export const CaseGSchema = z.object({
   id: z.string().min(1),
+  title: z.string().optional(),
+  description: z.string().optional(),
   truthModel: CaseTruthModelSchema,
   clues: z.array(CaseClueSchema).min(6).max(8),
   vectors: CaseVectorsSchema,

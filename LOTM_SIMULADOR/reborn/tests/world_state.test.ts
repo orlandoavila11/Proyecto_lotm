@@ -26,6 +26,7 @@ describe('Brief 02.3-bis: World State Canónico (Post-LOTM · Pre-COI, ~1353 Qui
     assert.strictEqual(data.anclaTemporal.year, 1353);
     assert.strictEqual(data.anclaTemporal.epoch, 'FIFTH_EPOCH');
     assert.ok(data.anclaTemporal.context.includes('1 año después de la Guerra de los Dioses'));
+    assert.strictEqual(data.anclaTemporal.sealStatus, 'SEALED_DIRECTOR_1353', 'El ancla temporal 1353 debe estar sellada por el Director');
   });
 
   it('3. Reglas de Era R1-R4 están formalizadas', () => {
@@ -34,6 +35,7 @@ describe('Brief 02.3-bis: World State Canónico (Post-LOTM · Pre-COI, ~1353 Qui
     assert.ok(data.reglasDeEra.R2 && data.reglasDeEra.R2.includes('LEYENDA'));
     assert.ok(data.reglasDeEra.R3 && data.reglasDeEra.R3.includes('semillas'));
     assert.ok(data.reglasDeEra.R4 && data.reglasDeEra.R4.includes('El Loco'));
+    assert.ok(data.reglasDeEra.R4.includes('LORE-ONLY'), 'Ruling R4 permanente: la Iglesia del Loco debe ser LORE-ONLY');
   });
 
   it('4. Coherencia de Deidades: Vivas, Muertas, Absorbidas y Cambiadas', () => {
@@ -121,3 +123,4 @@ describe('Brief 02.3-bis: World State Canónico (Post-LOTM · Pre-COI, ~1353 Qui
     assert.deepStrictEqual(worldMythicIds, forcesMythics, 'La lista de mitos activos en world_state debe ser idéntica a los míticos de convergence_forces');
   });
 });
+
