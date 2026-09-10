@@ -26,13 +26,18 @@ export interface BattleActor extends CombatActor {
   harvestQuality?: HarvestQuality;
 }
 
+export interface BattleSides {
+  player: string[];
+  enemy: string[];
+}
+
 export interface BattleState {
   grid: { width: number; height: number };
   preparation_score: number;
   alertness_score: number;
   initiativeWinner: 'PLAYER' | 'ENEMY';
-  player: BattleActor;
-  enemy: BattleActor;
+  actors: BattleActor[];
+  sides: BattleSides;
   turnCount: number;
   turnLog: string[];
 }
@@ -73,12 +78,16 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
     const skills = char
       ? TacticalCombatEngine.getSkillsForPathway(char.pathway as CanonicalPathwayId, char.sequence)
       : [];
+    const player = battleState.actors ? battleState.actors.find(a => battleState.sides.player.includes(a.id))! : (battleState as any).player;
+    const enemy = battleState.actors ? battleState.actors.find(a => battleState.sides.enemy.includes(a.id))! : (battleState as any).enemy;
 
     return reply.send({
       battleId: battleRow.id,
       status: battleRow.status,
-      player: battleState.player,
-      enemy: battleState.enemy,
+      player,
+      enemy,
+      actors: battleState.actors,
+      sides: battleState.sides,
       grid: battleState.grid,
       preparation_score: battleState.preparation_score,
       alertness_score: battleState.alertness_score,
@@ -182,8 +191,11 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
       preparation_score,
       alertness_score,
       initiativeWinner,
-      player: playerActor,
-      enemy: enemyActor,
+      actors: [playerActor, enemyActor],
+      sides: {
+        player: [playerActor.id],
+        enemy: [enemyActor.id]
+      },
       turnCount: 1,
       turnLog: [
         `Inicia confrontación táctica en rejilla 5x7 contra [${enemyName}].`,
@@ -201,6 +213,8 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
       message: `¡Ha comenzado una confrontación mística contra [${enemyName}]!`,
       player: playerActor,
       enemy: enemyActor,
+      actors: [playerActor, enemyActor],
+      sides: { player: [playerActor.id], enemy: [enemyActor.id] },
       grid: initialState.grid,
       preparation_score,
       alertness_score,
@@ -223,7 +237,8 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
     }
 
     const battle: BattleState = JSON.parse(battleRow.state_json);
-    const { player, enemy } = battle;
+    const player = battle.actors ? battle.actors.find(a => battle.sides.player.includes(a.id))! : (battle as any).player;
+    const enemy = battle.actors ? battle.actors.find(a => battle.sides.enemy.includes(a.id))! : (battle as any).enemy;
 
     // Asegurar retrocompatibilidad de propiedades si no estaban inicializadas
     if (!player.position) player.position = { x: 0, y: 2 };
@@ -364,8 +379,8 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
       } else {
         harvestQuality = 'PRISTINE';
       }
-      enemy.harvestQuality = harvestQuality;
-
+      battle.actors = [player, enemy];
+      battle.sides = { player: [player.id], enemy: [enemy.id] };
       db.updateBattle(battleRow.id, battle, 'VICTORY');
       db.updateCharacterSomatics(characterId, {
         health: player.currentHp,
@@ -432,6 +447,8 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
 
     // Si el jugador es derrotado
     if (enemyResult.isTargetDefeated || player.currentHp <= 0) {
+      battle.actors = [player, enemy];
+      battle.sides = { player: [player.id], enemy: [enemy.id] };
       db.updateBattle(battleRow.id, battle, 'DEFEAT');
       db.updateCharacterSomatics(characterId, {
         health: 0,
@@ -450,6 +467,8 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
     }
 
     // Persistir estado de combate actualizado en SQLite (CERO estado en memoria volátil)
+    battle.actors = [player, enemy];
+    battle.sides = { player: [player.id], enemy: [enemy.id] };
     db.updateBattle(battleRow.id, battle, 'ONGOING');
 
     // Persistir somática del jugador

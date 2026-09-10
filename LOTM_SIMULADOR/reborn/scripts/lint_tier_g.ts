@@ -283,7 +283,7 @@ function runLint(): void {
         }
       }
 
-      // Validación de player abilities contra vocabulario de átomos
+      // Validación de player abilities contra vocabulario de átomos y regla anti-doble cobro
       if (target.name === 'PLAYER_ABILITIES_G' && rawJson.abilities) {
         for (const ability of rawJson.abilities) {
           if (Array.isArray(ability.atoms)) {
@@ -291,6 +291,15 @@ function runLint(): void {
               if (!validAtomIds.has(atomInv.atomId)) {
                 targetErrors.push(`[ORPHAN_ATOM] ${relPath}: Player ability '${ability.id}' referencia átomo desconocido '${atomInv.atomId}'.`);
               }
+            }
+
+            const hasAuthoritativeEconomy = ability.atoms.some(
+              (atomInv: any) => economyAtomIds.has(atomInv.atomId) && atomInv.params?.apCost !== undefined && atomInv.params?.apCost > 0
+            );
+            if (hasAuthoritativeEconomy && ability.apCost > 0) {
+              targetErrors.push(
+                `[DOUBLE_CHARGE_VIOLATION] ${relPath}: Habilidad '${ability.id}' declara apCost: ${ability.apCost} pero contiene un átomo de economía autoritativo con apCost. La habilidad contenedora debe tener apCost: 0 para evitar doble cobro.`
+              );
             }
           }
         }

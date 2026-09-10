@@ -5,6 +5,7 @@ import { CanonicalPathwayId } from '../types/pathway.js';
 import { SeededRNG } from '../rng/SeededRNG.js';
 import { AtomRuntime, RuntimeCombatant, RuntimeStatus, RuntimeDamageSource } from './AtomRuntime.js';
 import { StatusType } from '../../infra/content/schemas/statusMatrix.schema.js';
+import { DomainRuleViolationError } from '../errors/DomainError.js';
 
 export type HarvestQuality = 'PRISTINE' | 'DAMAGED' | 'CONTAMINADO';
 
@@ -45,8 +46,14 @@ export interface GridActor {
   statuses: RuntimeStatus[];
   revealedAbilities: string[]; // Habilidades del oponente conocidas por este actor
   allAbilities: CombatAbility[];
+  observationChance: number;   // Probabilidad data-driven de observación (0..100)
   lastDamageSource?: RuntimeDamageSource;
   harvestQuality?: HarvestQuality;
+}
+
+export interface GridBattleSides {
+  player: string[]; // IDs de actores del bando del jugador
+  enemy: string[];  // IDs de actores del bando enemigo
 }
 
 export interface GridBattleState {
@@ -55,8 +62,8 @@ export interface GridBattleState {
   preparation_score: number;
   alertness_score: number;
   initiativeWinner: 'PLAYER' | 'ENEMY';
-  player: GridActor;
-  enemy: GridActor;
+  actors: GridActor[];
+  sides: GridBattleSides;
   turnCount: number;
   status: 'ONGOING' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'NEGOTIATED';
   turnLog: string[];
@@ -82,6 +89,8 @@ export class GridCombatEngine {
   private atomRuntime: AtomRuntime;
   private playerAbilitiesCache: Map<string, CombatAbility> = new Map();
   private monsterAbilitiesCache: Map<string, CombatAbility[]> = new Map();
+
+  private combatantsCatalog: Map<string, any> = new Map();
 
   private constructor() {
     this.atomRuntime = AtomRuntime.getInstance();
@@ -110,6 +119,7 @@ export class GridCombatEngine {
     if (fs.existsSync(combatantsPath)) {
       const cData = JSON.parse(fs.readFileSync(combatantsPath, 'utf-8'));
       for (const c of cData) {
+        this.combatantsCatalog.set(c.id, c);
         if (Array.isArray(c.abilities)) {
           this.monsterAbilitiesCache.set(c.id, c.abilities);
         }
@@ -129,6 +139,30 @@ export class GridCombatEngine {
 
   public getMonsterAbilities(monsterId: string): CombatAbility[] {
     return this.monsterAbilitiesCache.get(monsterId) || [];
+  }
+
+  public getPlayer(battle: GridBattleState): GridActor {
+    const actor = battle.actors.find(a => battle.sides.player.includes(a.id));
+    if (!actor) {
+      throw new DomainRuleViolationError(`No se encontró actor del bando del jugador en el encuentro '${battle.battleId}'.`);
+    }
+    return actor;
+  }
+
+  public getPrimaryEnemy(battle: GridBattleState): GridActor {
+    const actor = battle.actors.find(a => battle.sides.enemy.includes(a.id));
+    if (!actor) {
+      throw new DomainRuleViolationError(`No se encontró actor enemigo en el encuentro '${battle.battleId}'.`);
+    }
+    return actor;
+  }
+
+  public getActor(battle: GridBattleState, actorId: string): GridActor | undefined {
+    return battle.actors.find(a => a.id === actorId);
+  }
+
+  public getSides(battle: GridBattleState): GridBattleSides {
+    return battle.sides;
   }
 
   /**
@@ -165,32 +199,11 @@ export class GridCombatEngine {
     const playerAbilities = this.getPlayerAbilities(playerInit.pathway, playerInit.sequence);
     let enemyAbilities = enemyInit.abilities || this.getMonsterAbilities(enemyInit.id);
 
+    // Eliminación de fallback genérico (§3.8 Regla del Hueco)
     if (enemyAbilities.length === 0) {
-      // Fallback a habilidades estándar de monstruo
-      enemyAbilities = [
-        {
-          id: 'ABILITY_GENERIC_STRIKE',
-          name: 'Zarpazo de Sombra',
-          description: 'Ataque físico directo de garra.',
-          apCost: 1,
-          spiritualityCost: 0,
-          attentionCost: 0,
-          range: 2,
-          targetType: 'SINGLE_ENEMY',
-          atoms: [{ atomId: 'ATOM_DAMAGE_PHYSICAL', params: { baseDamage: 14 } }]
-        },
-        {
-          id: 'ABILITY_GENERIC_CORRUPT',
-          name: 'Emisión Corrosiva',
-          description: 'Ráfaga que debilita el cuerpo astral.',
-          apCost: 2,
-          spiritualityCost: 10,
-          attentionCost: 0,
-          range: 4,
-          targetType: 'SINGLE_ENEMY',
-          atoms: [{ atomId: 'ATOM_DAMAGE_SPIRITUAL', params: { baseDamage: 16 } }, { atomId: 'ATOM_APPLY_STATUS', params: { status: 'WEAKENED', durationTurns: 2 } }]
-        }
-      ];
+      throw new DomainRuleViolationError(
+        `Monstruo '${enemyInit.id}' carece de habilidades canónicas compiladas en Tier G (§3.8 Regla del Hueco).`
+      );
     }
 
     // Cálculo explícito de iniciativa neutral (Directiva d: preparation_score serializado)
@@ -213,6 +226,15 @@ export class GridCombatEngine {
       initiativeWinner = preparation_score >= alertness_score ? 'PLAYER' : 'ENEMY';
     }
 
+    // Observación enemiga data-driven
+    let enemyObsChance = 35;
+    const monsterDef = this.combatantsCatalog.get(enemyInit.id);
+    if (monsterDef?.observationChance !== undefined) {
+      enemyObsChance = monsterDef.observationChance;
+    } else if ((enemyInit as any).observationChance !== undefined) {
+      enemyObsChance = (enemyInit as any).observationChance;
+    }
+
     const playerActor: GridActor = {
       id: playerInit.id,
       name: playerInit.name,
@@ -230,7 +252,8 @@ export class GridCombatEngine {
       position: { x: 0, y: 2 }, // Lado izquierdo (x: 0, centro y: 2)
       statuses: playerInit.isConcealed ? [{ status: 'CONCEALED', durationTurns: 2 }] : [],
       revealedAbilities: [], // Inicia opaco hacia el enemigo
-      allAbilities: playerAbilities
+      allAbilities: playerAbilities,
+      observationChance: 50
     };
 
     const enemyActor: GridActor = {
@@ -249,7 +272,8 @@ export class GridCombatEngine {
       position: { x: 6, y: 2 }, // Lado derecho (x: 6, centro y: 2)
       statuses: [],
       revealedAbilities: [], // Inicia opaco hacia el jugador
-      allAbilities: enemyAbilities
+      allAbilities: enemyAbilities,
+      observationChance: enemyObsChance
     };
 
     const battleState: GridBattleState = {
@@ -258,8 +282,11 @@ export class GridCombatEngine {
       preparation_score,
       alertness_score,
       initiativeWinner,
-      player: playerActor,
-      enemy: enemyActor,
+      actors: [playerActor, enemyActor],
+      sides: {
+        player: [playerActor.id],
+        enemy: [enemyActor.id]
+      },
       turnCount: 1,
       status: 'ONGOING',
       turnLog: [
@@ -310,10 +337,14 @@ export class GridCombatEngine {
       type: 'SKILL' | 'MOVE' | 'SCRUTINIZE' | 'NEGOTIATE' | 'FLEE';
       skillId?: string;
       targetPosition?: GridCoord;
+      targetActorId?: string;
     },
     rng: SeededRNG = new SeededRNG(Date.now())
   ): GridActionResult {
-    const { player, enemy } = battle;
+    const player = this.getPlayer(battle);
+    const enemy = action.targetActorId
+      ? (this.getActor(battle, action.targetActorId) || this.getPrimaryEnemy(battle))
+      : this.getPrimaryEnemy(battle);
 
     if (battle.status !== 'ONGOING') {
       return {
@@ -451,9 +482,12 @@ export class GridCombatEngine {
           return result;
         }
 
-        if (player.ap < skill.apCost) {
+        const ecoAtom = skill.atoms.find(a => a.params?.apCost !== undefined);
+        const requiredAp = (skill.apCost || 0) + (ecoAtom?.params?.apCost || 0);
+
+        if (player.ap < requiredAp) {
           result.success = false;
-          result.message = `Puntos de Acción insuficientes (${player.ap}/${skill.apCost} PA requeridos).`;
+          result.message = `Puntos de Acción insuficientes (${player.ap}/${requiredAp} PA requeridos).`;
           return result;
         }
 
@@ -472,11 +506,11 @@ export class GridCombatEngine {
 
         player.ap -= skill.apCost;
         player.spirituality -= skill.spiritualityCost;
-        result.apSpent = skill.apCost;
+        result.apSpent = requiredAp;
         result.spiritualitySpent = skill.spiritualityCost;
 
-        // Simetría: el enemigo puede observar y revelar la habilidad usada
-        if (!enemy.revealedAbilities.includes(skill.id) && rng.checkChance(50)) {
+        // Simetría: el enemigo puede observar y revelar la habilidad usada según su observationChance data-driven
+        if (!enemy.revealedAbilities.includes(skill.id) && rng.checkChance(enemy.observationChance)) {
           enemy.revealedAbilities.push(skill.id);
         }
 
@@ -541,7 +575,8 @@ export class GridCombatEngine {
     victory?: boolean;
     status?: string;
   } {
-    const { player, enemy } = battle;
+    const player = this.getPlayer(battle);
+    const enemy = this.getPrimaryEnemy(battle);
 
     if (battle.status !== 'ONGOING') {
       return { message: 'El combate ya no está activo.', damageDealt: 0, isBattleOver: true };

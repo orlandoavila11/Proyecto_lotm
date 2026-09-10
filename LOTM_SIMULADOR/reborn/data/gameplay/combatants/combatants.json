@@ -64,7 +64,8 @@
         "canonConfidence": "canon",
         "derivationNote": "Capacidad de distorsión sensorial de la vía Fool en monstruos de secuencia baja."
       }
-    ]
+    ],
+    "observationChance": 28
   },
   {
     "id": "fog_wolf",
@@ -161,7 +162,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Presión mental y ralentización por niebla espiritual."
       }
-    ]
+    ],
+    "observationChance": 49
   },
   {
     "id": "faceless_hound",
@@ -229,7 +231,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Efecto psicológico de choque visual ante la falta de rostro."
       }
-    ]
+    ],
+    "observationChance": 39
   },
   {
     "id": "spirit_paper_wraith",
@@ -305,7 +308,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Maniobra evasiva derivada del sustituto de papel y sigilo de payaso."
       }
-    ]
+    ],
+    "observationChance": 42
   },
   {
     "id": "shadow_rat",
@@ -379,7 +383,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Movimiento evasivo menor de roedor astral."
       }
-    ]
+    ],
+    "observationChance": 35
   },
   {
     "id": "trickster_crow",
@@ -446,7 +451,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Distracción auditiva de córvido místico."
       }
-    ]
+    ],
+    "observationChance": 46
   },
   {
     "id": "astral_moth",
@@ -513,7 +519,8 @@
         "canonConfidence": "canon",
         "derivationNote": "Capacidad de teletransporte menor de la vía Aprendiz."
       }
-    ]
+    ],
+    "observationChance": 32
   },
   {
     "id": "gatekeeper_beetle",
@@ -589,7 +596,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Blindaje pasivo de insecto de portal."
       }
-    ]
+    ],
+    "observationChance": 25
   },
   {
     "id": "dusk_specter",
@@ -659,7 +667,8 @@
         "canonConfidence": "canon",
         "derivationNote": "Efecto de Slumber Poema de Medianoche (Darkness S8)."
       }
-    ]
+    ],
+    "observationChance": 32
   },
   {
     "id": "mind_dragon_whelp",
@@ -736,7 +745,8 @@
         "canonConfidence": "canon",
         "derivationNote": "Habilidad de Pavor Hipnótico (Awe) de dragón mental."
       }
-    ]
+    ],
+    "observationChance": 35
   },
   {
     "id": "hallucination_leech",
@@ -810,7 +820,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Distorsión de percepción causada por secreciones alucinógenas."
       }
-    ]
+    ],
+    "observationChance": 28
   },
   {
     "id": "pure_sun_hound",
@@ -886,7 +897,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Purificación biológica mediante radiación solar."
       }
-    ]
+    ],
+    "observationChance": 39
   },
   {
     "id": "radiant_spirit",
@@ -956,7 +968,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Efecto curativo y fortalecedor de la vía Solar."
       }
-    ]
+    ],
+    "observationChance": 35
   },
   {
     "id": "lightning_vessel",
@@ -1027,7 +1040,8 @@
         "canonConfidence": "canon",
         "derivationNote": "Conmoción sónica propia de tormentas marítimas."
       }
-    ]
+    ],
+    "observationChance": 46
   },
   {
     "id": "storm_gull",
@@ -1094,7 +1108,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Impulso de viento que concede ritmo de combate adicional."
       }
-    ]
+    ],
+    "observationChance": 49
   },
   {
     "id": "logic_gargoyle",
@@ -1163,7 +1178,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Deducción silogística que frustra la táctica rival."
       }
-    ]
+    ],
+    "observationChance": 25
   },
   {
     "id": "flame_devourer",
@@ -1233,7 +1249,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Provocación e inflamación emocional de combatiente ígneo."
       }
-    ]
+    ],
+    "observationChance": 35
   },
   {
     "id": "iron_blood_hound",
@@ -1307,7 +1324,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Dureza férrea de combatiente crepuscular."
       }
-    ]
+    ],
+    "observationChance": 39
   },
   {
     "id": "frost_witch_shade",
@@ -1378,7 +1396,8 @@
         "canonConfidence": "canon",
         "derivationNote": "Sigilo de Asesino / Demoness."
       }
-    ]
+    ],
+    "observationChance": 32
   },
   {
     "id": "blood_rose_parasite",
@@ -1453,7 +1472,8 @@
         "canonConfidence": "canon",
         "derivationNote": "Vampirismo biológico de la vía Moon."
       }
-    ]
+    ],
+    "observationChance": 28
   },
   {
     "id": "mutated_black_hound",
@@ -1528,7 +1548,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Esporas botánicas asfixiantes de secuencia baja."
       }
-    ]
+    ],
+    "observationChance": 35
   },
   {
     "id": "abyssal_crawler",
@@ -1604,7 +1625,8 @@
         "canonConfidence": "high_confidence",
         "derivationNote": "Embestida de reptador del abismo."
       }
-    ]
+    ],
+    "observationChance": 32
   },
   {
     "id": "chained_ghoul",
@@ -1679,7 +1701,8 @@
         "canonConfidence": "canon",
         "derivationNote": "Deseo de desahogo y locura liberada propia de Mutante/Prisionero."
       }
-    ]
+    ],
+    "observationChance": 25
   },
   {
     "id": "shadow_enforcer",
@@ -1755,7 +1778,8 @@
         "canonConfidence": "canon",
         "derivationNote": "Mandato de Prohibición canónico de Árbitro."
       }
-    ]
+    ],
+    "observationChance": 35
   },
   {
     "id": "bribery_specter",
@@ -1830,6 +1854,7 @@
         "canonConfidence": "canon",
         "derivationNote": "Mecánica de Soborno (Bribe) de la vía Abogado."
       }
-    ]
+    ],
+    "observationChance": 32
   }
 ]

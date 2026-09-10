@@ -40,6 +40,7 @@ export const CombatantGSchema = z.object({
   opacity: CombatantOpacitySchema,
   pathwayTag: z.string().min(1),
   sefiraGroupRef: z.string().min(1),
+  observationChance: z.number().min(0).max(100).default(35),
   abilities: z.array(CombatantAbilitySchema).min(2).max(3)
 });
 
