@@ -127,3 +127,4 @@ describe('Sefira Groups & Convergence Pools: Validación Estructural Fail-Loud',
     }
   });
 });
+
