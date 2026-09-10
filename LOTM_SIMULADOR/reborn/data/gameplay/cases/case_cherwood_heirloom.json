@@ -1,0 +1,130 @@
+{
+  "id": "CASE_CHERWOOD_HEIRLOOM",
+  "title": "El Relicario Perdido de la Mansión Cherwood",
+  "description": "Durante una noche de niebla densa y bombardeo en el distrito de Cherwood, un relicario de plata con una gema amatista tallada de la Cuarta Época desapareció de la caja fuerte del Vizconde Conrad.",
+  "truthModel": {
+    "culpable": "DRAFT_SUSPECT_BUTLER_OR_ANTIQUE_DEALER",
+    "metodo": "DRAFT_OPENING_VIA_APPRENTICE_TRICK_OR_DUPLICATE_KEY",
+    "motivo": "DRAFT_SETTLING_WAR_DEBTS_TO_SMUGGLERS",
+    "status": "DRAFT",
+    "nota": "Borrador provisional esperando la autoría y firma del Director Humano (§HUMAN_REVIEW)."
+  },
+  "clues": [
+    {
+      "id": "CLUE_HEIRLOOM_SAFE_SCRATCH",
+      "fuentes": [
+        "INSPECCION_OCULAR_CAJA_FUERTE",
+        "DECLARACION_MAYORDOMO"
+      ],
+      "gating": {
+        "profession": "DETECTIVE_OR_POLICE",
+        "minSequence": 9
+      },
+      "descripcion": "Arañazos microscópicos en la cerradura mecánica sugieren ganzúa fina o intento de duplicación."
+    },
+    {
+      "id": "CLUE_AMETHYST_AURA_RESONANCE",
+      "fuentes": [
+        "ADIVINACION_TAROT_PENDULO",
+        "VISION_ESPIRITUAL_HABITACION"
+      ],
+      "gating": {
+        "pathway": "FOOL",
+        "minSequence": 9,
+        "vector": "esotérico"
+      },
+      "descripcion": "Residuo etéreo color violeta persistente que apunta hacia la alcantarilla este."
+    },
+    {
+      "id": "CLUE_SINGER_MICRO_TREMOR",
+      "fuentes": [
+        "INTERROGATORIO_SALON_TE",
+        "SONDEO_GESTUAL_SPECTATOR"
+      ],
+      "gating": {
+        "pathway": "VISIONARY",
+        "minSequence": 9,
+        "vector": "social"
+      },
+      "descripcion": "La cantante Madame Elaine parpadea compulsivamente y traga saliva cada vez que se menciona el muelle sur."
+    },
+    {
+      "id": "CLUE_PAWNSHOP_RECEIPT",
+      "fuentes": [
+        "REGISTRO_CASA_EMPEÑO_EAST",
+        "CONFIDENCIA_BUHONERO"
+      ],
+      "gating": {
+        "hourRange": [
+          "20:00",
+          "04:00"
+        ],
+        "location": "EAST_BOROUGH"
+      },
+      "descripcion": "Pagaré a nombre ficticio por una joya de amatista empeñada dos horas después del robo."
+    },
+    {
+      "id": "CLUE_BLOODSTAIN_VELVET",
+      "fuentes": [
+        "EXAMEN_FORENSE_ALFOMBRA",
+        "TESTIMONIO_DONCELLA"
+      ],
+      "gating": {
+        "time": "DAY",
+        "profession": "MEDIC_OR_SCHOLAR"
+      },
+      "descripcion": "Una gota de sangre seca mezclada con polvillo de carbón industrial de las vías del tren."
+    },
+    {
+      "id": "CLUE_BUTLER_SECRET_CORRESPONDENCE",
+      "fuentes": [
+        "ALLANAMIENTO_DESPACHO_MAYORDOMO",
+        "INTERCEPCION_CORREO"
+      ],
+      "gating": {
+        "vector": "investigativo",
+        "minSequence": 9
+      },
+      "descripcion": "Cartas amenazantes de prestamistas de la familia Beria exigiendo 500 libras."
+    },
+    {
+      "id": "CLUE_SHADOW_FOOTPRINTS_GARDEN",
+      "fuentes": [
+        "RASTREO_HUELLAS_LLUVIA",
+        "INTERROGATORIO_JARDINERO"
+      ],
+      "gating": {
+        "vector": "violento",
+        "skill": "TRACKING"
+      },
+      "descripcion": "Huellas de botas de suela militar feysakiana saltando el muro perimetral hacia la calle."
+    }
+  ],
+  "vectors": {
+    "esotérico": {
+      "dominantPathway": "FOOL",
+      "bonus": "Adivinación con tarot o péndulo revela dirección de la joya (+30% eficacia mística)",
+      "tool": "TAROT_OR_DOWSING"
+    },
+    "social": {
+      "dominantPathway": "VISIONARY",
+      "bonus": "Lectura gestual de Espectador decodifica contradicciones emocionales y desmorona coartadas",
+      "tool": "SPECTATOR_MICROEXPRESSION"
+    },
+    "investigativo": {
+      "bonus": "Examen forense de cerraduras y correlación de manifiestos aduaneros",
+      "tool": "FORENSIC_KIT"
+    },
+    "violento": {
+      "bonus": "Coerción de sospechosos callejeros en callejones oscuros y seguimiento de huellas",
+      "tool": "FORCE_OR_TRACKING"
+    }
+  },
+  "hypothesisSlots": 3,
+  "expiry": {
+    "dias": 6,
+    "resultado_malo": "La amatista es sacada de contrabando en un vapor hacia Intis; el mayordomo aparece degollado en los muelles de East Borough."
+  },
+  "rewards_ref": "REWARD_CHERWOOD_CASE_STANDARD"
+}
+
