@@ -1,0 +1,776 @@
+const fs = require('fs');
+const path = require('path');
+
+const packageRoot = path.resolve('d:/Users/sammy.avila/Documents/GitHub/LOTM_SIMULADOR Gemini/Simulador/LOTM_SIMULADOR/reborn');
+const sefiraGroupsPath = path.join(packageRoot, 'data', 'gameplay', 'sefira_groups.json');
+const sefiraGroups = JSON.parse(fs.readFileSync(sefiraGroupsPath, 'utf8'));
+
+const convergenceForces = {
+  "$schema": "./schemas/convergence_forces.schema.json",
+  "schema_version": "1.0",
+  "sealedBy": "Director",
+  "generatedAt": "2026-09-10T16:30:00.000Z",
+  "description": "Layer 1 Convergence Forces autorizadas por Séfira (era: una década pre-novela). Autoridad única de convergencia.",
+  "sefirot": {
+    "sefirah_castle": {
+      "group": "LOTM",
+      "name": "Sefirah Castle",
+      "forces": [
+        {
+          "id": "PATHWAY_FOOL",
+          "pathwayId": "FOOL",
+          "sefirahId": "sefirah_castle",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/fool.json"
+        },
+        {
+          "id": "PATHWAY_ERROR",
+          "pathwayId": "ERROR",
+          "sefirahId": "sefirah_castle",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/error.json"
+        },
+        {
+          "id": "PATHWAY_DOOR",
+          "pathwayId": "DOOR",
+          "sefirahId": "sefirah_castle",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/door.json"
+        },
+        {
+          "id": "ORG_SECRET_ORDER",
+          "sefirahId": "sefirah_castle",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "ORG_TAMARA_REMNANTS",
+          "sefirahId": "sefirah_castle",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "FAM_ABRAHAM",
+          "sefirahId": "sefirah_castle",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+        },
+        {
+          "id": "FAM_ZOROAST",
+          "sefirahId": "sefirah_castle",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/angels.json"
+        },
+        {
+          "id": "FAM_ANTIGONUS",
+          "sefirahId": "sefirah_castle",
+          "type": "lineage",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+        },
+        {
+          "id": "KOA_AMON",
+          "sefirahId": "sefirah_castle",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+        },
+        {
+          "id": "KOA_BETHEL_ABRAHAM",
+          "sefirahId": "sefirah_castle",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+        },
+        {
+          "id": "KOA_ANTIGONUS",
+          "sefirahId": "sefirah_castle",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+        },
+        {
+          "id": "ENTITY_LORD_OF_MYSTERIES",
+          "sefirahId": "sefirah_castle",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "legend"
+        },
+        {
+          "id": "ART_0_STAFF_STARS",
+          "sefirahId": "sefirah_castle",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+        }
+      ]
+    },
+    "chaos_sea": {
+      "group": "GOD_ALMIGHTY",
+      "name": "Chaos Sea",
+      "forces": [
+        {
+          "id": "PATHWAY_VISIONARY",
+          "pathwayId": "VISIONARY",
+          "sefirahId": "chaos_sea",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/visionary.json"
+        },
+        {
+          "id": "PATHWAY_WHITE_TOWER",
+          "pathwayId": "WHITE_TOWER",
+          "sefirahId": "chaos_sea",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/white_tower.json"
+        },
+        {
+          "id": "PATHWAY_HANGED_MAN",
+          "pathwayId": "HANGED_MAN",
+          "sefirahId": "chaos_sea",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/hanged_man.json"
+        },
+        {
+          "id": "PATHWAY_SUN",
+          "pathwayId": "SUN",
+          "sefirahId": "chaos_sea",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/sun.json"
+        },
+        {
+          "id": "PATHWAY_TYRANT",
+          "pathwayId": "TYRANT",
+          "sefirahId": "chaos_sea",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/tyrant.json"
+        },
+        {
+          "id": "ORG_AURORA_ORDER",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "ORG_PSYCHOLOGY_ALCHEMISTS",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "CHURCH_STORMS",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json"
+        },
+        {
+          "id": "CHURCH_SUN",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json"
+        },
+        {
+          "id": "CHURCH_WISDOM",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json"
+        },
+        {
+          "id": "ORG_STELLAR_FLAME",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "KOA_SASRIR",
+          "sefirahId": "chaos_sea",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+        },
+        {
+          "id": "GOD_ADAM_TRUE_CREATOR",
+          "sefirahId": "chaos_sea",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json"
+        },
+        {
+          "id": "GOD_LORD_STORMS",
+          "sefirahId": "chaos_sea",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json"
+        },
+        {
+          "id": "ART_0_08",
+          "sefirahId": "chaos_sea",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+        }
+      ]
+    },
+    "river_of_eternal_darkness": {
+      "group": "DEATH_CLUSTER",
+      "name": "River of Eternal Darkness",
+      "forces": [
+        {
+          "id": "PATHWAY_DEATH",
+          "pathwayId": "DEATH",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/death.json"
+        },
+        {
+          "id": "PATHWAY_DARKNESS",
+          "pathwayId": "DARKNESS",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/darkness.json"
+        },
+        {
+          "id": "PATHWAY_TWILIGHT_GIANT",
+          "pathwayId": "TWILIGHT_GIANT",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/twilight_giant.json"
+        },
+        {
+          "id": "CHURCH_EVERNIGHT",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json"
+        },
+        {
+          "id": "ORG_NUMIS_EPISCOPATE",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "ORG_NIGHT_COLLECTORS",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "CHURCH_COMBAT",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": "PENDING_ERA_REVIEW",
+          "canonRef": "reborn/data/content/world/cities.json"
+        },
+        {
+          "id": "FAM_EGGER",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/angels.json"
+        },
+        {
+          "id": "GOD_EVERNIGHT",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json"
+        },
+        {
+          "id": "ANGEL_AZIK_EGGER",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/angels.json"
+        },
+        {
+          "id": "ART_0_PALE_DEATH",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+        }
+      ]
+    },
+    "brood_hive": {
+      "group": "MOTHER_CLUSTER",
+      "name": "Brood Hive",
+      "forces": [
+        {
+          "id": "PATHWAY_MOTHER",
+          "pathwayId": "MOTHER",
+          "sefirahId": "brood_hive",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/mother.json"
+        },
+        {
+          "id": "PATHWAY_MOON",
+          "pathwayId": "MOON",
+          "sefirahId": "brood_hive",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/moon.json"
+        },
+        {
+          "id": "CHURCH_EARTH_MOTHER",
+          "sefirahId": "brood_hive",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json"
+        },
+        {
+          "id": "ORG_SANGUINE_COUNCIL",
+          "sefirahId": "brood_hive",
+          "type": "organization",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "LINEAGE_SANGUINE",
+          "sefirahId": "brood_hive",
+          "type": "lineage",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "GOD_EARTH_MOTHER",
+          "sefirahId": "brood_hive",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json"
+        }
+      ]
+    },
+    "nation_of_disorder": {
+      "group": "ORDER_CLUSTER",
+      "name": "Nation of Disorder",
+      "forces": [
+        {
+          "id": "PATHWAY_BLACK_EMPEROR",
+          "pathwayId": "BLACK_EMPEROR",
+          "sefirahId": "nation_of_disorder",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/black_emperor.json"
+        },
+        {
+          "id": "PATHWAY_JUSTICIAR",
+          "pathwayId": "JUSTICIAR",
+          "sefirahId": "nation_of_disorder",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/justiciar.json"
+        },
+        {
+          "id": "ORG_MI9",
+          "sefirahId": "nation_of_disorder",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "FAM_AUGUSTUS",
+          "sefirahId": "nation_of_disorder",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/organizations_expanded.json"
+        },
+        {
+          "id": "FAM_CASTIYA",
+          "sefirahId": "nation_of_disorder",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": "PENDING_ERA_REVIEW",
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "GOD_ROSELLE_BLACK_EMPEROR",
+          "sefirahId": "nation_of_disorder",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/great_old_ones.json"
+        },
+        {
+          "id": "ART_0_02",
+          "sefirahId": "nation_of_disorder",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+        },
+        {
+          "id": "ART_0_BLACK_EMPEROR_CROWN",
+          "sefirahId": "nation_of_disorder",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+        }
+      ]
+    },
+    "tenebrous_world": {
+      "group": "ABYSS_CLUSTER",
+      "name": "Tenebrous World",
+      "forces": [
+        {
+          "id": "PATHWAY_CHAINED",
+          "pathwayId": "CHAINED",
+          "sefirahId": "tenebrous_world",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/chained.json"
+        },
+        {
+          "id": "PATHWAY_ABYSS",
+          "pathwayId": "ABYSS",
+          "sefirahId": "tenebrous_world",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/abyss.json"
+        },
+        {
+          "id": "ORG_ROSE_SCHOOL",
+          "sefirahId": "tenebrous_world",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "ORG_ROSE_TEMPERANCE",
+          "sefirahId": "tenebrous_world",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/organizations_expanded.json"
+        },
+        {
+          "id": "FAM_BERIA",
+          "sefirahId": "tenebrous_world",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": "PENDING_ERA_REVIEW",
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "GOD_DARK_SIDE_UNIVERSE",
+          "sefirahId": "tenebrous_world",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json"
+        },
+        {
+          "id": "ENTITY_CHAINED_GOD",
+          "sefirahId": "tenebrous_world",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json"
+        }
+      ]
+    },
+    "knowledge_moor": {
+      "group": "HERMIT_CLUSTER",
+      "name": "Knowledge Moor",
+      "forces": [
+        {
+          "id": "PATHWAY_HERMIT",
+          "pathwayId": "HERMIT",
+          "sefirahId": "knowledge_moor",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/hermit.json"
+        },
+        {
+          "id": "PATHWAY_PARAGON",
+          "pathwayId": "PARAGON",
+          "sefirahId": "knowledge_moor",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/paragon.json"
+        },
+        {
+          "id": "CHURCH_STEAM",
+          "sefirahId": "knowledge_moor",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json"
+        },
+        {
+          "id": "ORG_MOSES_ORDER",
+          "sefirahId": "knowledge_moor",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "ORG_ELEMENT_DAWN",
+          "sefirahId": "knowledge_moor",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "ORG_COSMIC_WAVES",
+          "sefirahId": "knowledge_moor",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "GOD_STEAM_MACHINERY",
+          "sefirahId": "knowledge_moor",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json"
+        },
+        {
+          "id": "GOD_HIDDEN_SAGE",
+          "sefirahId": "knowledge_moor",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json"
+        },
+        {
+          "id": "ART_0_SAGE_FRONTLET",
+          "sefirahId": "knowledge_moor",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+        }
+      ]
+    },
+    "city_of_calamity": {
+      "group": "CALAMITY_CLUSTER",
+      "name": "City of Calamity",
+      "forces": [
+        {
+          "id": "PATHWAY_DEMONESS",
+          "pathwayId": "DEMONESS",
+          "sefirahId": "city_of_calamity",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/demoness.json"
+        },
+        {
+          "id": "PATHWAY_RED_PRIEST",
+          "pathwayId": "RED_PRIEST",
+          "sefirahId": "city_of_calamity",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/red_priest.json"
+        },
+        {
+          "id": "ORG_DEMONESS_SECT",
+          "sefirahId": "city_of_calamity",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "ORG_IRON_BLOOD",
+          "sefirahId": "city_of_calamity",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "ORG_SAURON_REMNANTS",
+          "sefirahId": "city_of_calamity",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "FAM_EINHORN",
+          "sefirahId": "city_of_calamity",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": "PENDING_ERA_REVIEW",
+          "canonRef": "reborn/data/content/lore_knowledge/rumors.json"
+        },
+        {
+          "id": "KOA_MEDICI",
+          "sefirahId": "city_of_calamity",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+        },
+        {
+          "id": "GOD_CHEEK_DEMONESS",
+          "sefirahId": "city_of_calamity",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json"
+        },
+        {
+          "id": "ART_0_CHEEK_RINGS",
+          "sefirahId": "city_of_calamity",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+        }
+      ]
+    },
+    "key_of_light": {
+      "group": "FATE_CLUSTER",
+      "name": "Key of Light",
+      "forces": [
+        {
+          "id": "PATHWAY_WHEEL_OF_FORTUNE",
+          "pathwayId": "WHEEL_OF_FORTUNE",
+          "sefirahId": "key_of_light",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/wheel_of_fortune.json"
+        },
+        {
+          "id": "ORG_LIFE_SCHOOL",
+          "sefirahId": "key_of_light",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "ORG_COI_DANCERS",
+          "sefirahId": "key_of_light",
+          "type": "organization",
+          "powerTier": "telar",
+          "eraVerified": "PENDING_ERA_REVIEW",
+          "canonRef": "reborn/data/content/world/secret_organizations.json"
+        },
+        {
+          "id": "KOA_OUROBOROS",
+          "sefirahId": "key_of_light",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json"
+        },
+        {
+          "id": "ANGEL_WILL_AUCEPTIN",
+          "sefirahId": "key_of_light",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/angels.json"
+        },
+        {
+          "id": "ART_DADO_PROBABILITY",
+          "sefirahId": "key_of_light",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json"
+        }
+      ]
+    }
+  }
+};
+
+const outputPath = path.join(packageRoot, 'data', 'gameplay', 'convergence_forces.json');
+fs.writeFileSync(outputPath, JSON.stringify(convergenceForces, null, 2) + '\n', 'utf8');
+console.log('convergence_forces.json escrito con éxito en:', outputPath);
+
+// Contar fuerzas por séfira
+let total = 0;
+for (const [sId, s] of Object.entries(convergenceForces.sefirot)) {
+  console.log(`- ${sId} (${s.name}): ${s.forces.length} fuerzas`);
+  total += s.forces.length;
+}
+console.log(`Total fuerzas: ${total}`);
