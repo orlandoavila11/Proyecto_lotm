@@ -134,6 +134,18 @@ function runLint(): void {
     } catch {}
   }
 
+  // Cargar estados canónicos de status_matrix.json para validación estricta
+  const matrixPath = path.join(gameplayDir, 'balance', 'status_matrix.json');
+  let validStatuses: Set<string> = new Set();
+  if (fs.existsSync(matrixPath)) {
+    try {
+      const mJson = JSON.parse(fs.readFileSync(matrixPath, 'utf-8'));
+      if (Array.isArray(mJson.statuses)) {
+        validStatuses = new Set(mJson.statuses);
+      }
+    } catch {}
+  }
+
   for (const target of TARGETS) {
     const targetPath = path.join(gameplayDir, target.pattern);
 
@@ -269,6 +281,13 @@ function runLint(): void {
                     targetErrors.push(`[ILLEGAL_ATOM] ${relPath}: Combatiente '${combatant.id}', habilidad '${ability.id}': ATOM_ATTENTION_EXCHANGE solo está permitido en player abilities.`);
                   }
 
+                  if (atomInv.atomId === 'ATOM_APPLY_STATUS' || atomInv.atomId === 'ATOM_REMOVE_STATUS') {
+                    const statusParam = atomInv.params?.status;
+                    if (!statusParam || !validStatuses.has(statusParam)) {
+                      targetErrors.push(`[INVALID_STATUS_REFERENCE] ${relPath}: Combatiente '${combatant.id}', habilidad '${ability.id}' referencia status no canónico '${statusParam}'. Estados válidos: ${Array.from(validStatuses).join(', ')}.`);
+                    }
+                  }
+
                   if (economyAtomIds.has(atomInv.atomId)) {
                     economyCount++;
                   }
@@ -291,6 +310,13 @@ function runLint(): void {
               if (!validAtomIds.has(atomInv.atomId)) {
                 targetErrors.push(`[ORPHAN_ATOM] ${relPath}: Player ability '${ability.id}' referencia átomo desconocido '${atomInv.atomId}'.`);
               }
+
+              if (atomInv.atomId === 'ATOM_APPLY_STATUS' || atomInv.atomId === 'ATOM_REMOVE_STATUS') {
+                const statusParam = atomInv.params?.status;
+                if (!statusParam || !validStatuses.has(statusParam)) {
+                  targetErrors.push(`[INVALID_STATUS_REFERENCE] ${relPath}: Player ability '${ability.id}' referencia status no canónico '${statusParam}'. Estados válidos: ${Array.from(validStatuses).join(', ')}.`);
+                }
+              }
             }
 
             const hasAuthoritativeEconomy = ability.atoms.some(
@@ -312,6 +338,13 @@ function runLint(): void {
             for (const eff of artifact.atomEffects) {
               if (!validAtomIds.has(eff.atomId)) {
                 targetErrors.push(`[ORPHAN_ATOM] ${relPath}: Artefacto '${artifact.id}' referencia átomo desconocido '${eff.atomId}'.`);
+              }
+
+              if (eff.atomId === 'ATOM_APPLY_STATUS' || eff.atomId === 'ATOM_REMOVE_STATUS') {
+                const statusParam = eff.params?.status;
+                if (!statusParam || !validStatuses.has(statusParam)) {
+                  targetErrors.push(`[INVALID_STATUS_REFERENCE] ${relPath}: Artefacto '${artifact.id}' referencia status no canónico '${statusParam}'. Estados válidos: ${Array.from(validStatuses).join(', ')}.`);
+                }
               }
             }
           }

@@ -19,7 +19,8 @@ export const PlayerAbilitySchema = z.object({
   targetType: z.enum(['SELF', 'SINGLE_ENEMY', 'SINGLE_ALLY', 'AREA', 'GRID_CELL']),
   atoms: z.array(PlayerAbilityAtomSchema).min(1),
   canonConfidence: z.enum(['canon', 'library', 'CANON', 'HIGH_CONFIDENCE', 'LEGEND', 'HUMAN_REVIEW', 'APOCRYPHAL']),
-  derivationNote: z.string().min(5)
+  derivationNote: z.string().min(5),
+  directorApproved: z.boolean().optional()
 });
 
 export const PlayerAbilitiesFileSchema = z.object({

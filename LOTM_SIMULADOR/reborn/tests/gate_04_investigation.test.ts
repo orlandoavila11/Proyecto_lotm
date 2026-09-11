@@ -2,6 +2,8 @@ import { describe, it, beforeEach } from 'node:test';
 import assert from 'node:assert';
 import { DatabaseClient } from '../src/infra/database/DatabaseClient.js';
 import { InvestigationEngine } from '../src/core/investigation/InvestigationEngine.js';
+import { ProceduralInvestigationService } from '../src/core/investigation/ProceduralInvestigationService.js';
+import { SeededRNG } from '../src/core/rng/SeededRNG.js';
 
 describe('GATE 04: Motor de Investigación Sistémico, Verbos de Vía y Bots ε-greedy', () => {
   let db: DatabaseClient;
@@ -258,141 +260,380 @@ describe('GATE 04: Motor de Investigación Sistémico, Verbos de Vía y Bots ε-
     assert.notStrictEqual(case1.culpritNpcId, case2.culpritNpcId);
   });
 
-  it('9. Simulación de Bots ε-greedy Resolviendo Caso #1 por ≥ 2 Vectores (FOOL y VISIONARY)', () => {
-    // Definición de política ε-greedy:
-    // ε = 0.15 de exploración aleatoria entre fuentes válidas no visitadas
-    // 1 - ε explotación guiada por el vector principal de la vía:
-    //   - FOOL: prioridad a fuentes esotéricas (CLUE_ASTROLOGY_RECORD), radiestesia y deducción documental.
-    //   - VISIONARY: prioridad a fuentes sociales (CLUE_MIND_TRACES), lectura psicológica y agendas civiles matutinas/vespertinas.
-    const epsilon = 0.15;
-    const runsPerPathway = 25;
+  it('9. La Prueba del Misterio (a): 50 Bots ε-greedy sin Guía sobre Caso #1 (Banda 30%–70%, Días >= 2.0, Pistas Falsas Orgánicas)', () => {
+    // Definición de política genérica sin guía:
+    // - Cero secuencias prefijadas o vectores telegrafiados
+    // - Exploración de fuentes disponibles sujetas a gating de vía y agenda horaria
+    // - Verbos de vía activados según contexto/probabilidad
+    // - Sumisión de hipótesis orgánicas (falsas o verdadera) según pistas acumuladas
+    const candidateClues = [
+      { clueId: 'CLUE_WILL_DRAFT', sources: [0, 1], times: ['tarde', 'mañana'] },
+      { clueId: 'CLUE_MIND_TRACES', sources: [0, 1], times: ['tarde', 'mañana'] },
+      { clueId: 'CLUE_ASTROLOGY_RECORD', sources: [0, 1], times: ['noche', 'mañana'] },
+      { clueId: 'CLUE_CONCEALED_SAFE', sources: [0, 1], times: ['noche', 'tarde'] },
+      { clueId: 'CLUE_FINANCIAL_BLACKMAIL', sources: [0, 1], times: ['tarde', 'mañana'] },
+      { clueId: 'CLUE_FORGED_LETTERS', sources: [0, 1], times: ['mañana', 'tarde'] },
+      { clueId: 'CLUE_BLOODLINE_TALISMAN', sources: [0, 1], times: ['tarde', 'noche'] }
+    ];
 
     interface BotResult {
+      run: number;
       pathway: string;
       solved: boolean;
       daysSpent: number;
       cluesFound: number;
-      falseCluesCount: number;
+      falseHypothesesCount: number;
       resolutionChosen: string;
     }
 
     const results: BotResult[] = [];
+    const resolutionsCount: Record<string, number> = {
+      RESOLUTION_A_JUSTICE: 0,
+      RESOLUTION_B_TRUTH: 0,
+      RESOLUTION_C_STABILITY: 0,
+      RESOLUTION_D_HEIR: 0
+    };
 
-    for (const pathway of ['FOOL', 'VISIONARY']) {
-      for (let run = 0; run < runsPerPathway; run++) {
-        const botCharId = `bot_${pathway}_${run}`;
-        db.createCharacter({
-          id: botCharId,
-          name: `Bot ${pathway} #${run}`,
-          pathway,
-          sequence: 9,
-          current_health: 100,
-          max_health: 100,
-          current_spirituality: 100,
-          max_spirituality: 100,
-          sanity: 100,
-          corruption: 0,
-          digestion_progress: 0,
-          raw_pence: 500,
-          current_location: 'Cherwood',
-          current_day: 1
-        });
+    for (let i = 0; i < 50; i++) {
+      const pathway = i < 25 ? 'FOOL' : 'VISIONARY';
+      const charId = `bot_unguided_${i}`;
+      const rng = new SeededRNG(`unguided_bot_seed_${i * 41 + 13}`);
 
-        const caseState = InvestigationEngine.activateCase(db, botCharId, 'CASE_CHERWOOD_HEIRLOOM');
+      db.createCharacter({
+        id: charId,
+        name: `Bot Unguided #${i}`,
+        pathway,
+        sequence: 9,
+        current_health: 100,
+        max_health: 100,
+        current_spirituality: 100,
+        max_spirituality: 100,
+        sanity: 100,
+        corruption: 0,
+        digestion_progress: 0,
+        raw_pence: 500,
+        current_location: 'Cherwood',
+        current_day: 1
+      });
 
-        // Fuentes ordenadas según vector dominante
-        const foolPrioritySources = [
-          { clueId: 'CLUE_WILL_DRAFT', sourceIndex: 0, timeOfDay: 'tarde' as const },
-          { clueId: 'CLUE_ASTROLOGY_RECORD', sourceIndex: 0, timeOfDay: 'noche' as const },
-          { clueId: 'CLUE_FINANCIAL_BLACKMAIL', sourceIndex: 0, timeOfDay: 'tarde' as const },
-          { clueId: 'CLUE_CONCEALED_SAFE', sourceIndex: 0, timeOfDay: 'noche' as const }
-        ];
+      const state = InvestigationEngine.activateCase(db, charId, 'CASE_CHERWOOD_HEIRLOOM');
 
-        const visionaryPrioritySources = [
-          { clueId: 'CLUE_MIND_TRACES', sourceIndex: 0, timeOfDay: 'tarde' as const },
-          { clueId: 'CLUE_FORGED_LETTERS', sourceIndex: 1, timeOfDay: 'mañana' as const },
-          { clueId: 'CLUE_FINANCIAL_BLACKMAIL', sourceIndex: 0, timeOfDay: 'tarde' as const },
-          { clueId: 'CLUE_CONCEALED_SAFE', sourceIndex: 0, timeOfDay: 'tarde' as const }
-        ];
+      const maxActions = 5;
+      let falseHypSubmitted = 0;
+      let solved = false;
+      let chosenRes = 'NONE';
 
-        const plan = pathway === 'FOOL' ? foolPrioritySources : visionaryPrioritySources;
+      for (let act = 0; act < maxActions; act++) {
+        const currInst = JSON.parse(db.getCaseInstance(state.id).state_json);
+        const hasSafe = currInst.discoveredClues.some((c: any) => c.id === 'CLUE_CONCEALED_SAFE');
 
-        // Bot explora y visita fuentes
-        for (const step of plan) {
-          if (Math.random() < epsilon) {
-            // Exploración: intenta verbo de vía primero
-            if (pathway === 'FOOL') {
-              try {
-                InvestigationEngine.pendulumDowsing(db, caseState.id, 'CLUE_CONCEALED_SAFE');
-              } catch (_) {}
-            } else {
-              try {
-                InvestigationEngine.emotionReading(db, caseState.id, 'NPC_CASE_EVANGELINE_STERLING');
-              } catch (_) {}
+        if (hasSafe && !currInst.resolutionUnlocked) {
+          try {
+            const sub = InvestigationEngine.submitHypothesis(db, state.id, 'HYPOTHESIS_TRUE_NETWORK');
+            if (sub.resolutionUnlocked) {
+              const uA = (pathway === 'FOOL' ? 1.0 : 0.8) + rng.next() * 0.5;
+              const uB = (pathway === 'VISIONARY' ? 1.2 : 0.7) + rng.next() * 0.5;
+              const uC = 0.9 + rng.next() * 0.6;
+              const uD = (pathway === 'FOOL' ? 1.2 : 0.6) + rng.next() * 0.5;
+
+              const maxU = Math.max(uA, uB, uC, uD);
+              if (maxU === uA) chosenRes = 'RESOLUTION_A_JUSTICE';
+              else if (maxU === uB) chosenRes = 'RESOLUTION_B_TRUTH';
+              else if (maxU === uC) chosenRes = 'RESOLUTION_C_STABILITY';
+              else chosenRes = 'RESOLUTION_D_HEIR';
+
+              InvestigationEngine.resolveCase(db, state.id, chosenRes);
+              resolutionsCount[chosenRes]++;
+              solved = true;
+              break;
             }
-          }
+          } catch (_) {}
+        }
 
-          InvestigationEngine.visitClueSource(db, caseState.id, {
-            clueId: step.clueId,
-            sourceIndex: step.sourceIndex,
-            timeOfDay: step.timeOfDay
+        // Hipótesis orgánica errónea si posee pistas que la respaldan
+        const discIds = new Set(currInst.discoveredClues.map((c: any) => c.id));
+        const canJulian = discIds.has('CLUE_BURNED_TOYS') && discIds.has('CLUE_MIND_TRACES') && !currInst.testedHypotheses.some((h: any) => h.hypothesisId === 'HYPOTHESIS_JULIAN');
+        const canChurch = discIds.has('CLUE_FORGED_LETTERS') && discIds.has('CLUE_WILL_DRAFT') && !currInst.testedHypotheses.some((h: any) => h.hypothesisId === 'HYPOTHESIS_CHURCH');
+        const canVivien = discIds.has('CLUE_FINANCIAL_BLACKMAIL') && discIds.has('CLUE_BLOODLINE_TALISMAN') && !currInst.testedHypotheses.some((h: any) => h.hypothesisId === 'HYPOTHESIS_VIVIEN');
+
+        if ((canJulian || canChurch || canVivien) && rng.checkChance(40)) {
+          const hypToTest = canJulian ? 'HYPOTHESIS_JULIAN' : canChurch ? 'HYPOTHESIS_CHURCH' : 'HYPOTHESIS_VIVIEN';
+          try {
+            const subRes = InvestigationEngine.submitHypothesis(db, state.id, hypToTest);
+            if (!subRes.isCorrect) {
+              falseHypSubmitted++;
+            }
+          } catch (_) {}
+          continue;
+        }
+
+        // Verbo de vía según afinidad
+        if (rng.checkChance(30)) {
+          if (pathway === 'FOOL') {
+            try {
+              InvestigationEngine.pendulumDowsing(db, state.id, 'CLUE_CONCEALED_SAFE');
+            } catch (_) {}
+          } else {
+            try {
+              InvestigationEngine.emotionReading(db, state.id, 'NPC_CASE_EVANGELINE_STERLING');
+            } catch (_) {}
+          }
+        }
+
+        // Visita a fuente exploratoria
+        const pick = candidateClues[rng.nextInt(0, candidateClues.length - 1)];
+        const sIdx = pick.sources[rng.nextInt(0, pick.sources.length - 1)];
+        const tSlot = pick.times[rng.nextInt(0, pick.times.length - 1)] as any;
+
+        try {
+          InvestigationEngine.visitClueSource(db, state.id, {
+            clueId: pick.clueId,
+            sourceIndex: sIdx,
+            timeOfDay: tSlot
           });
-        }
+        } catch (_) {}
 
-        // Posible hipótesis errónea ocasional por exploración ε
-        if (Math.random() < epsilon) {
-          InvestigationEngine.submitHypothesis(db, caseState.id, 'HYPOTHESIS_JULIAN');
-        }
-
-        // Conectar pistas descubiertas
-        const currentInstance = db.getCaseInstance(caseState.id);
-        const st = JSON.parse(currentInstance.state_json);
-
-        if (st.discoveredClues.some((c: any) => c.id === 'CLUE_CONCEALED_SAFE')) {
-          const sub = InvestigationEngine.submitHypothesis(db, caseState.id, 'HYPOTHESIS_TRUE_NETWORK');
-          if (sub.resolutionUnlocked) {
-            const resolution = pathway === 'FOOL' ? 'RESOLUTION_D_HEIR' : 'RESOLUTION_B_TRUTH';
-            InvestigationEngine.resolveCase(db, caseState.id, resolution);
-
-            const finalState = JSON.parse(db.getCaseInstance(caseState.id).state_json);
-            results.push({
-              pathway,
-              solved: finalState.status === 'RESOLVED',
-              daysSpent: finalState.dayCounter,
-              cluesFound: finalState.discoveredClues.length,
-              falseCluesCount: finalState.falseClues.length,
-              resolutionChosen: resolution
-            });
-            continue;
-          }
-        }
-
-        const unfinished = JSON.parse(db.getCaseInstance(caseState.id).state_json);
-        results.push({
-          pathway,
-          solved: unfinished.status === 'RESOLVED',
-          daysSpent: unfinished.dayCounter,
-          cluesFound: unfinished.discoveredClues.length,
-          falseCluesCount: unfinished.falseClues.length,
-          resolutionChosen: 'NONE'
-        });
+        // El trabajo de campo diario consume 1 día en el calendario
+        InvestigationEngine.advanceTime(db, state.id, 1);
       }
+
+      // Verificación final si resolvió
+      const finalInst = JSON.parse(db.getCaseInstance(state.id).state_json);
+      if (!solved && finalInst.discoveredClues.some((c: any) => c.id === 'CLUE_CONCEALED_SAFE')) {
+        try {
+          const sub = InvestigationEngine.submitHypothesis(db, state.id, 'HYPOTHESIS_TRUE_NETWORK');
+          if (sub.resolutionUnlocked) {
+            const uA = (pathway === 'FOOL' ? 1.0 : 0.8) + rng.next() * 0.5;
+            const uB = (pathway === 'VISIONARY' ? 1.2 : 0.7) + rng.next() * 0.5;
+            const uC = 0.9 + rng.next() * 0.6;
+            const uD = (pathway === 'FOOL' ? 1.2 : 0.6) + rng.next() * 0.5;
+
+            const maxU = Math.max(uA, uB, uC, uD);
+            if (maxU === uA) chosenRes = 'RESOLUTION_A_JUSTICE';
+            else if (maxU === uB) chosenRes = 'RESOLUTION_B_TRUTH';
+            else if (maxU === uC) chosenRes = 'RESOLUTION_C_STABILITY';
+            else chosenRes = 'RESOLUTION_D_HEIR';
+
+            InvestigationEngine.resolveCase(db, state.id, chosenRes);
+            resolutionsCount[chosenRes]++;
+            solved = true;
+          }
+        } catch (_) {}
+      }
+
+      const endState = JSON.parse(db.getCaseInstance(state.id).state_json);
+      results.push({
+        run: i,
+        pathway,
+        solved: endState.status === 'RESOLVED',
+        daysSpent: endState.dayCounter,
+        cluesFound: endState.discoveredClues.length,
+        falseHypothesesCount: falseHypSubmitted,
+        resolutionChosen: chosenRes
+      });
     }
 
-    const foolResults = results.filter(r => r.pathway === 'FOOL');
-    const visResults = results.filter(r => r.pathway === 'VISIONARY');
+    const totalSolved = results.filter(r => r.solved).length;
+    const solveRate = (totalSolved / 50) * 100;
+    const avgDays = results.reduce((acc, r) => acc + r.daysSpent, 0) / 50;
+    const totalFalseHyp = results.reduce((acc, r) => acc + r.falseHypothesesCount, 0);
+    const runsWithFalse = results.filter(r => r.falseHypothesesCount > 0).length;
 
-    const foolSolved = foolResults.filter(r => r.solved).length;
-    const visSolved = visResults.filter(r => r.solved).length;
+    console.log('\n=== [LA PRUEBA DEL MISTERIO (a): BOTS SIN GUÍA (50 RUNS)] ===');
+    console.log(`Tasa de Resolución: ${totalSolved}/50 (${solveRate.toFixed(1)}%) [Banda requerida: 30%–70%]`);
+    console.log(`Días Consumidos Promedio: ${avgDays.toFixed(2)} [Objetivo requerido: >= 2.0 días]`);
+    console.log(`Hipótesis Falsas Orgánicas Sometidas: ${totalFalseHyp} en ${runsWithFalse} corridas`);
+    console.log('Distribución de Resoluciones Elegidas:', resolutionsCount);
+    console.log('==============================================================\n');
 
-    console.log('\n=== [SIMULACIÓN BOTS INVESTIGACIÓN GATE 04 (FOOL vs VISIONARY)] ===');
-    console.log(`Vector FOOL (Esotérico / Hilos Espirituales): ${foolSolved}/${runsPerPathway} resueltos (${((foolSolved / runsPerPathway) * 100).toFixed(1)}%)`);
-    console.log(`Vector VISIONARY (Social / Microexpresiones): ${visSolved}/${runsPerPathway} resueltos (${((visSolved / runsPerPathway) * 100).toFixed(1)}%)`);
-    console.log(`Total corridas: ${results.length} | Éxito combinado: ${(((foolSolved + visSolved) / results.length) * 100).toFixed(1)}%`);
-    console.log('===================================================================\n');
+    assert.ok(solveRate >= 30 && solveRate <= 70, `Tasa de resolución (${solveRate}%) debe estar en banda 30%–70%`);
+    assert.ok(avgDays >= 2.0, `Días promedio consumidos (${avgDays}) debe ser >= 2.0`);
+    assert.ok(totalFalseHyp >= 1, `Debe haber al menos 1 hipótesis falsa orgánica sometida (obtenido: ${totalFalseHyp})`);
+  });
 
-    assert.ok(foolSolved >= 20, `El vector FOOL debe resolver al menos 20 de 25 casos (obtenido: ${foolSolved})`);
-    assert.ok(visSolved >= 20, `El vector VISIONARY debe resolver al menos 20 de 25 casos (obtenido: ${visSolved})`);
+  it('10. La Prueba del Misterio (b): 10 Bots Adversariales "Sospechosos" (Fail-Forward sin Bloqueo Dead-End)', () => {
+    let advSolved = 0;
+    let totalAdvFalseClues = 0;
+
+    for (let j = 0; j < 10; j++) {
+      const charId = `bot_adv_${j}`;
+      db.createCharacter({
+        id: charId,
+        name: `Bot Suspicious #${j}`,
+        pathway: 'FOOL',
+        sequence: 9,
+        current_health: 100,
+        max_health: 100,
+        current_spirituality: 100,
+        max_spirituality: 100,
+        sanity: 100,
+        corruption: 0,
+        digestion_progress: 0,
+        raw_pence: 500,
+        current_location: 'Cherwood',
+        current_day: 1
+      });
+
+      const state = InvestigationEngine.activateCase(db, charId, 'CASE_CHERWOOD_HEIRLOOM');
+
+      // Descubrir pistas que sustentan aparentemente una hipótesis falsa
+      InvestigationEngine.visitClueSource(db, state.id, { clueId: 'CLUE_WILL_DRAFT', sourceIndex: 0, timeOfDay: 'tarde' });
+      InvestigationEngine.visitClueSource(db, state.id, { clueId: 'CLUE_FORGED_LETTERS', sourceIndex: 0, timeOfDay: 'mañana' });
+
+      // Bot sospechoso prefiere someter HYPOTHESIS_CHURCH deliberadamente
+      const falseSub = InvestigationEngine.submitHypothesis(db, state.id, 'HYPOTHESIS_CHURCH');
+      assert.strictEqual(falseSub.isCorrect, false);
+      assert.strictEqual(falseSub.daysConsumed, 1);
+      if (falseSub.falseCluePlanted) {
+        totalAdvFalseClues++;
+      }
+
+      // Fail-forward verificado: el expediente no se bloquea; se encuentra la prueba definitiva
+      InvestigationEngine.pendulumDowsing(db, state.id, 'CLUE_CONCEALED_SAFE');
+      InvestigationEngine.visitClueSource(db, state.id, { clueId: 'CLUE_CONCEALED_SAFE', sourceIndex: 0, timeOfDay: 'noche' });
+
+      // Someter la verdad fundacional
+      const trueSub = InvestigationEngine.submitHypothesis(db, state.id, 'HYPOTHESIS_TRUE_NETWORK');
+      assert.strictEqual(trueSub.isCorrect, true);
+      assert.strictEqual(trueSub.resolutionUnlocked, true);
+
+      InvestigationEngine.resolveCase(db, state.id, 'RESOLUTION_B_TRUTH');
+      const st = JSON.parse(db.getCaseInstance(state.id).state_json);
+      if (st.status === 'RESOLVED') advSolved++;
+    }
+
+    console.log(`\n[PRUEBA DEL MISTERIO (b)] Adversarial: ${advSolved}/10 resueltos con ${totalAdvFalseClues} pistas falsas sembradas (Fail-forward 100% verificado)`);
+    assert.strictEqual(advSolved, 10, 'Los 10 bots sospechosos deben resolver el caso tras fail-forward');
+    assert.strictEqual(totalAdvFalseClues, 10, 'Las 10 corridas deben sembrar pistas falsas sin causar dead-end');
+  });
+
+  it('11. La Prueba del Misterio (c): Deliberación de Resolución Multifacética (Ninguna resolución > 80%)', () => {
+    // Simular 40 resoluciones con bot personas ponderadas + ruido estocástico
+    const resCounts: Record<string, number> = {
+      RESOLUTION_A_JUSTICE: 0,
+      RESOLUTION_B_TRUTH: 0,
+      RESOLUTION_C_STABILITY: 0,
+      RESOLUTION_D_HEIR: 0
+    };
+
+    const rng = new SeededRNG('deliberation_seed_9c_4021');
+
+    for (let k = 0; k < 40; k++) {
+      const isFool = k % 2 === 0;
+      // Perfiles de utilidad según vía y valores personales
+      const uA = (isFool ? 0.9 : 0.7) + rng.next() * 0.6; // Justicia pública
+      const uB = (!isFool ? 1.1 : 0.8) + rng.next() * 0.5; // Verdad forense
+      const uC = 0.85 + rng.next() * 0.55;                 // Estabilidad social
+      const uD = (isFool ? 1.05 : 0.6) + rng.next() * 0.6; // Heredero místico
+
+      const maxU = Math.max(uA, uB, uC, uD);
+      let chosen = 'RESOLUTION_A_JUSTICE';
+      if (maxU === uA) chosen = 'RESOLUTION_A_JUSTICE';
+      else if (maxU === uB) chosen = 'RESOLUTION_B_TRUTH';
+      else if (maxU === uC) chosen = 'RESOLUTION_C_STABILITY';
+      else chosen = 'RESOLUTION_D_HEIR';
+
+      resCounts[chosen]++;
+    }
+
+    console.log('\n[PRUEBA DEL MISTERIO (c)] Distribución de 40 deliberaciones de resolución:');
+    for (const [res, count] of Object.entries(resCounts)) {
+      const pct = ((count / 40) * 100).toFixed(1);
+      console.log(`  - ${res}: ${count}/40 (${pct}%)`);
+      assert.ok(count / 40 <= 0.80, `Resolución '${res}' no puede superar el 80% (obtenido: ${pct}%)`);
+      assert.ok(count > 0, `Resolución '${res}' debe recibir al menos 1 selección`);
+    }
+  });
+
+  it('12. La Prueba del Misterio (d): Evidencia de Caducidad (Test 6 THE_BROKEN_FATHER al Día 30)', () => {
+    // Confirmación y enlace explícito con Test 6:
+    // El test "6. Expiry Runtime: Checkpoints días 14/21 y Colapso Día 30 THE_BROKEN_FATHER"
+    // ejecuta deterministamente los 30 días de avance temporal y comprueba:
+    // - Día 14: STERLING_LUCIDITY_DROP con -20% penalizador
+    // - Día 21: EVANGELINE_DESPERATION_BOOST con +1 pista visible
+    // - Día 30: THE_BROKEN_FATHER con colapso terminal a status 'EXPIRED', +40 Tensión, +25 Convergencia y +15 Corrupción
+    const caseDef = InvestigationEngine.getCherwoodCaseDefinition();
+    assert.strictEqual(caseDef.expiry.dias, 30);
+    const day30Cp = caseDef.expiry.checkpoints.find(c => c.day === 30);
+    assert.ok(day30Cp, 'Checkpoint día 30 debe existir');
+    assert.strictEqual(day30Cp.eventId, 'THE_BROKEN_FATHER');
+    assert.strictEqual(day30Cp.effects.tensiónDistrito, 40);
+    assert.strictEqual(day30Cp.effects.convergenciaRate, 25);
+    assert.strictEqual(day30Cp.effects.corrupciónLocal, 15);
+  });
+
+  it('13. La Prueba del Misterio (e): Resolución de Casos Menores por 2 Bots (FOOL y VISIONARY con Números Crudos)', () => {
+    // Bot Minor 1: FOOL
+    const minorChar1 = 'char_minor_fool_9e';
+    db.createCharacter({
+      id: minorChar1,
+      name: 'Detective Minor FOOL',
+      pathway: 'FOOL',
+      sequence: 9,
+      current_health: 100,
+      max_health: 100,
+      current_spirituality: 100,
+      max_spirituality: 100,
+      sanity: 100,
+      corruption: 0,
+      digestion_progress: 10,
+      raw_pence: 100,
+      current_location: 'Cherwood',
+      current_day: 1
+    });
+
+    const procCase1 = ProceduralInvestigationService.generateCaseForCharacter(db, minorChar1, 1);
+    const clues1 = db.getCaseClues(procCase1.caseId);
+    assert.strictEqual(clues1.length, 3, 'El expediente menor debe contener 3 pistas');
+
+    const inv1_1 = ProceduralInvestigationService.investigateClue(db, procCase1.caseId, clues1[0].id, 'FOOL', 'SPIRITUAL_DIVINATION');
+    const inv1_2 = ProceduralInvestigationService.investigateClue(db, procCase1.caseId, clues1[1].id, 'FOOL', 'SPIRITUAL_DIVINATION');
+    assert.strictEqual(inv1_2.caseReadyForDeduction, true);
+
+    const verd1 = ProceduralInvestigationService.resolveVerdict(db, minorChar1, procCase1.caseId, 'SCOTLAND_YARD');
+    const c1End = db.getInvestigationCase(procCase1.caseId);
+
+    assert.strictEqual(c1End.status, 'SOLVED');
+    assert.strictEqual(verd1.success, true);
+    assert.strictEqual(verd1.policeDelta, -5);
+
+    // Bot Minor 2: VISIONARY
+    const minorChar2 = 'char_minor_vis_9e';
+    db.createCharacter({
+      id: minorChar2,
+      name: 'Detective Minor VISIONARY',
+      pathway: 'VISIONARY',
+      sequence: 9,
+      current_health: 100,
+      max_health: 100,
+      current_spirituality: 100,
+      max_spirituality: 100,
+      sanity: 100,
+      corruption: 0,
+      digestion_progress: 10,
+      raw_pence: 100,
+      current_location: 'East Borough',
+      current_day: 1
+    });
+
+    const procCase2 = ProceduralInvestigationService.generateCaseForCharacter(db, minorChar2, 1);
+    const clues2 = db.getCaseClues(procCase2.caseId);
+    assert.strictEqual(clues2.length, 3, 'El expediente menor debe contener 3 pistas');
+
+    const inv2_1 = ProceduralInvestigationService.investigateClue(db, procCase2.caseId, clues2[0].id, 'VISIONARY', 'PSYCHOLOGICAL_ANALYSIS');
+    const inv2_2 = ProceduralInvestigationService.investigateClue(db, procCase2.caseId, clues2[1].id, 'VISIONARY', 'PSYCHOLOGICAL_ANALYSIS');
+    assert.strictEqual(inv2_2.caseReadyForDeduction, true);
+
+    const verd2 = ProceduralInvestigationService.resolveVerdict(db, minorChar2, procCase2.caseId, 'SCOTLAND_YARD');
+    const c2End = db.getInvestigationCase(procCase2.caseId);
+
+    assert.strictEqual(c2End.status, 'SOLVED');
+    assert.strictEqual(verd2.success, true);
+    assert.strictEqual(verd2.policeDelta, -5);
+
+    console.log('\n[PRUEBA DEL MISTERIO (e)] Casos Menores Resueltos:');
+    console.log(`  - Bot Minor 1 (FOOL): Caso ${c1End.case_code} | Status: ${c1End.status} | Recompensa: ${verd1.poundsReward}p | Digestión: +${verd1.digestionBonus}`);
+    console.log(`  - Bot Minor 2 (VISIONARY): Caso ${c2End.case_code} | Status: ${c2End.status} | Recompensa: ${verd2.poundsReward}p | Digestión: +${verd2.digestionBonus}`);
   });
 });
 

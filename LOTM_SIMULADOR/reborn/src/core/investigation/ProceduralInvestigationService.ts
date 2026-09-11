@@ -1,5 +1,6 @@
 import { CanonicalPathwayId } from '../types/pathway.js';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
+import { SeededRNG } from '../rng/SeededRNG.js';
 
 export type InvestigationMethod = 
   | 'SPIRITUAL_DIVINATION'
@@ -134,7 +135,9 @@ export class ProceduralInvestigationService {
       throw new Error('No hay nuevos expedientes disponibles en Backlund para investigar en este momento.');
     }
     const template = available[0];
-    const caseId = `case_${characterId}_${template.code}_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+    const seedRng = new SeededRNG(`case_${characterId}_${template.code}_${Date.now()}`);
+    const suffix = seedRng.nextInt(10000, 99999);
+    const caseId = `case_${characterId}_${template.code}_${Date.now()}_${suffix}`;
 
     // 1. Crear caso en base de datos
     db.createInvestigationCase({
@@ -278,8 +281,10 @@ export class ProceduralInvestigationService {
         db.updateCaseStatus(caseId, 'COVERED_UP', action);
         reward = Math.floor(reward * 0.5);
         digestion = 8.0;
+        const anchorRng = new SeededRNG(`anchor_case_${caseId}_${characterId}`);
+        const anchorSuffix = anchorRng.nextInt(10000, 99999);
         db.addAnchor({
-          id: `anchor_case_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
+          id: `anchor_case_${caseId}_${anchorSuffix}`,
           character_id: characterId,
           title: `Pacto Clandestino de Cherwood (${caseData.culprit_name})`,
           strength: 35,

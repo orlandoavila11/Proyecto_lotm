@@ -70,7 +70,8 @@
       "source": "ActingDilemmaEngine:DIL_VISIONARY_9_1",
       "eraAdaptations": "Opciones B y C redactadas para completar dilema roto; tensiones diplomáticas Feysac-Intis en Backlund (1353). Entra a cola 1b."
     },
-    "canonConfidence": "adapted"
+    "canonConfidence": "adapted",
+    "directorApproved": true
   },
   {
     "id": "DIL_VISIONARY_9_2",
@@ -125,7 +126,8 @@
       "source": "pathway_events:EV_VISIONARY_DIGESTIÓN_01",
       "eraAdaptations": "Racionamiento y crisis de granos en Loen posguerra (1353)."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   },
   {
     "id": "DIL_VISIONARY_9_3",
@@ -180,7 +182,8 @@
       "source": "pathway_events:EV_VISIONARY_PELIGRO_09",
       "eraAdaptations": "Hospitales saturados de veteranos mutilados en Backlund (1353)."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   },
   {
     "id": "DIL_VISIONARY_9_4",
@@ -235,7 +238,8 @@
       "source": "pathway_events:EV_VISIONARY_IDENTIDAD_17",
       "eraAdaptations": "Salones nobiliarios de Loen buscando consuelo en modas espiritistas tras la guerra."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   },
   {
     "id": "DIL_VISIONARY_8_1",
@@ -290,7 +294,8 @@
       "source": "pathway_events:EV_VISIONARY_ACTING_03",
       "eraAdaptations": "Trauma psicológico por bombardeos de dirigibles en la Quinta Época (1353)."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   },
   {
     "id": "DIL_VISIONARY_8_2",
@@ -345,7 +350,8 @@
       "source": "pathway_events:EV_VISIONARY_ORGANIZACIÓN_11",
       "eraAdaptations": "Crisis de combustible y carbón mineral durante el invierno posguerra en Backlund."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   },
   {
     "id": "DIL_VISIONARY_8_3",
@@ -418,7 +424,8 @@
       "source": "pathway_events:EV_VISIONARY_DESTINO_19",
       "eraAdaptations": "Orfanatos abarrotados por hijos de conscriptos fallecidos en el conflicto de los dioses."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   },
   {
     "id": "DIL_VISIONARY_8_4",
@@ -473,6 +480,7 @@
       "source": "pathway_events:EV_VISIONARY_ORGANIZACIÓN_12",
       "eraAdaptations": "Interrogatorios de MI9 en Backlund vigilando infiltrados de Feysac e Intis (1353)."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   }
 ]

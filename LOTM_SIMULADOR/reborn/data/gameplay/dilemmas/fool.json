@@ -52,7 +52,8 @@
       "source": "ActingDilemmaEngine:DIL_FOOL_9_1",
       "eraAdaptations": "Adaptado a 1353: rutas comerciales de Bayam restablecidas tras la Guerra de los Dioses."
     },
-    "canonConfidence": "canon"
+    "canonConfidence": "canon",
+    "directorApproved": true
   },
   {
     "id": "DIL_FOOL_9_2",
@@ -107,7 +108,8 @@
       "source": "pathway_events:EV_FOOL_DIGESTIÓN_01",
       "eraAdaptations": "Contaminación química contextualizada en la posguerra aérea de Backlund (1353)."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   },
   {
     "id": "DIL_FOOL_9_3",
@@ -162,7 +164,8 @@
       "source": "pathway_events:EV_FOOL_PELIGRO_09",
       "eraAdaptations": "Remanente espectral derivado de bajas de la guerra continental en Backlund (1353)."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   },
   {
     "id": "DIL_FOOL_9_4",
@@ -217,7 +220,8 @@
       "source": "pathway_events:EV_FOOL_IDENTIDAD_17",
       "eraAdaptations": "Bajas de la cordillera Amantha (combates de la Quinta Época ~1352)."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   },
   {
     "id": "DIL_FOOL_8_1",
@@ -290,7 +294,8 @@
       "source": "ActingDilemmaEngine:DIL_FOOL_8_1",
       "eraAdaptations": "Opciones B y C redactadas por el compilador para reparar dilema roto; entra a cola 1b."
     },
-    "canonConfidence": "adapted"
+    "canonConfidence": "adapted",
+    "directorApproved": true
   },
   {
     "id": "DIL_FOOL_8_2",
@@ -345,7 +350,8 @@
       "source": "pathway_events:EV_FOOL_ACTING_03",
       "eraAdaptations": "Distrito portuario de Backlund bajo racionamiento y desempleo posguerra (1353)."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   },
   {
     "id": "DIL_FOOL_8_3",
@@ -400,7 +406,8 @@
       "source": "pathway_events:EV_FOOL_ORGANIZACIÓN_11",
       "eraAdaptations": "Vigilancia reforzada de Evernight Nighthawks en Backlund tras la guerra (1353)."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   },
   {
     "id": "DIL_FOOL_8_4",
@@ -455,6 +462,7 @@
       "source": "pathway_events:EV_FOOL_DESTINO_19",
       "eraAdaptations": "Pobreza urbana y entierros colectivos en los suburbios de Backlund (1353)."
     },
-    "canonConfidence": "library"
+    "canonConfidence": "library",
+    "directorApproved": true
   }
 ]

@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { CanonicalPathwayId } from '../types/pathway.js';
 import { CaseG, CaseClue } from '../../infra/content/schemas/case.schema.js';
+import { SeededRNG } from '../rng/SeededRNG.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, '../../..');
@@ -875,9 +876,11 @@ export class InvestigationEngine {
     if (resolutionId === 'RESOLUTION_D_HEIR') {
       const char = db.getCharacter(state.characterId);
       if (char) {
+        const seedRng = new SeededRNG(`anchor_trait_${state.id}_${char.id}`);
+        const suffix = seedRng.nextInt(100000, 999999);
         // Asignar ancla mística o registrar trait en somatics
         db.addAnchor({
-          id: `anchor_trait_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`,
+          id: `anchor_trait_${state.id}_${suffix}`,
           character_id: char.id,
           title: 'Trait Permanente: Los Susurros del Nido (-15% Sanity Cap)',
           strength: 40,

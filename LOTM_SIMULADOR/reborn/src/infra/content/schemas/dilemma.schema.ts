@@ -31,7 +31,8 @@ export const DilemmaGSchema = z.object({
   options: z.array(DilemmaOptionSchema).min(2).max(3),
   antiExploit: AntiExploitSchema,
   derivationNote: DilemmaDerivationNoteSchema.optional(),
-  canonConfidence: z.enum(['canon', 'library', 'adapted']).optional()
+  canonConfidence: z.enum(['canon', 'library', 'adapted']).optional(),
+  directorApproved: z.boolean().optional()
 });
 
 export type DilemmaG = z.infer<typeof DilemmaGSchema>;

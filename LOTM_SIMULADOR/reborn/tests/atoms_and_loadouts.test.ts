@@ -188,11 +188,16 @@ describe('Brief 03.a: Runtime de Átomos, Loadouts y Matriz de Estados', () => {
     }
 
     assert.strictEqual(canonCount, 11, '11 habilidades deben ser canon');
-    assert.strictEqual(libraryCount, 1, '1 habilidad (Grotesque Grin) debe ser library (Cola 1c)');
-    const grin = data.abilities.find((a: any) => a.id === 'PLAYER_FOOL_8_GROTESQUE_GRIN');
-    assert.ok(grin, 'Grotesque Grin debe existir');
-    assert.strictEqual(grin.canonConfidence, 'library');
-    assert.ok(grin.derivationNote.includes('1c'), 'Nota de derivación debe referenciar cola 1c');
+    assert.strictEqual(libraryCount, 1, '1 habilidad (Stage Performance) debe ser library (Cola 1c)');
+    const perf = data.abilities.find((a: any) => a.id === 'PLAYER_FOOL_8_STAGE_PERFORMANCE');
+    assert.ok(perf, 'Stage Performance debe existir');
+    assert.strictEqual(perf.canonConfidence, 'library');
+    assert.ok(perf.derivationNote.includes('máscara del Payaso'), 'Nota de derivación debe referenciar la máscara del payaso');
+    assert.strictEqual(perf.directorApproved, true, 'Debe contar con aprobación del Director');
+
+    // Verificar las 12 aprobaciones del Director
+    const approvedCount = data.abilities.filter((a: any) => a.directorApproved === true).length;
+    assert.strictEqual(approvedCount, 12, 'Las 12 habilidades de jugador deben estar aprobadas por el Director');
   });
 
   it('6. Artefactos Atados al Vocabulario: 16/16 con atomEffects válidos (incluido G3-0711)', () => {

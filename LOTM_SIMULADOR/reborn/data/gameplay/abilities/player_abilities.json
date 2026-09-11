@@ -17,7 +17,8 @@
         { "atomId": "ATOM_ATTENTION_EXCHANGE", "params": { "apCost": 1, "attentionGained": 1 } }
       ],
       "canonConfidence": "canon",
-      "derivationNote": "Canónica de la novela (seer.json). Apertura de visión espiritual para percibir el flujo astral."
+      "derivationNote": "Canónica de la novela (seer.json). Apertura de visión espiritual para percibir el flujo astral.",
+      "directorApproved": true
     },
     {
       "id": "PLAYER_FOOL_9_TAROT_DIVINATION",
@@ -35,7 +36,8 @@
         { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "WEAKENED", "durationTurns": 2 } }
       ],
       "canonConfidence": "canon",
-      "derivationNote": "Canónica de la novela (seer.json). Cartomancia ofensiva mística de Vidente."
+      "derivationNote": "Canónica de la novela (seer.json). Cartomancia ofensiva mística de Vidente.",
+      "directorApproved": true
     },
     {
       "id": "PLAYER_FOOL_9_DANGER_INTUITION",
@@ -53,7 +55,8 @@
         { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "CONCEALED", "durationTurns": 1 } }
       ],
       "canonConfidence": "canon",
-      "derivationNote": "Canónica de la novela (seer.json). Premonición de peligro pasiva convertida en maniobra reactiva."
+      "derivationNote": "Canónica de la novela (seer.json). Premonición de peligro pasiva convertida en maniobra reactiva.",
+      "directorApproved": true
     },
     {
       "id": "PLAYER_FOOL_8_PAPER_PROJECTILE",
@@ -71,7 +74,8 @@
         { "atomId": "ATOM_DISPLACE_PUSH", "params": { "distance": 1, "direction": "away" } }
       ],
       "canonConfidence": "canon",
-      "derivationNote": "Canónica de la novela (seer.json - Paper Projectile Mastery). Papel templado que corta como metal quirúrgico."
+      "derivationNote": "Canónica de la novela (seer.json - Paper Projectile Mastery). Papel templado que corta como metal quirúrgico.",
+      "directorApproved": true
     },
     {
       "id": "PLAYER_FOOL_8_ACROBATIC_TUMBLE",
@@ -89,25 +93,27 @@
         { "atomId": "ATOM_GAIN_AP", "params": { "amount": 1 } }
       ],
       "canonConfidence": "canon",
-      "derivationNote": "Canónica de la novela (seer.json - Enhanced Agility, Balance & Coordination). Gimnasia táctica de Payaso."
+      "derivationNote": "Canónica de la novela (seer.json - Enhanced Agility, Balance & Coordination). Gimnasia táctica de Payaso.",
+      "directorApproved": true
     },
     {
-      "id": "PLAYER_FOOL_8_GROTESQUE_GRIN",
-      "name": "Mueca Grotesca Desconcertante",
+      "id": "PLAYER_FOOL_8_STAGE_PERFORMANCE",
+      "name": "Actuación Escénica del Payaso",
       "pathway": "FOOL",
       "sequence": 8,
-      "description": "Tuerce los músculos faciales en una sonrisa trágica y desconcertante que proyecta una farsa hipnótica e induce pavor.",
+      "description": "Porta la máscara imperturbable del Payaso, disipando el terror y consagrando su mente bajo una bendición de entereza.",
       "apCost": 1,
-      "spiritualityCost": 15,
+      "spiritualityCost": 12,
       "attentionCost": 0,
-      "range": 4,
-      "targetType": "SINGLE_ENEMY",
+      "range": 1,
+      "targetType": "SELF",
       "atoms": [
-        { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "FEAR", "durationTurns": 2 } },
-        { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "ILLUSION", "durationTurns": 1 } }
+        { "atomId": "ATOM_REMOVE_STATUS", "params": { "status": "FEAR" } },
+        { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "BLESSING", "durationTurns": 2 } }
       ],
       "canonConfidence": "library",
-      "derivationNote": "Control facial y emocional de Payaso adaptado como farsa intimidatoria. En duda de sabor S8 vs S7 (decisión Director: library + cola 1c)."
+      "derivationNote": "máscara del Payaso; backlog: CONCEALED bloqueando observación enemiga como regla futura",
+      "directorApproved": true
     },
     {
       "id": "PLAYER_VISIONARY_9_ACUTE_OBSERVATION",
@@ -125,7 +131,8 @@
         { "atomId": "ATOM_ATTENTION_EXCHANGE", "params": { "apCost": 1, "attentionGained": 1 } }
       ],
       "canonConfidence": "canon",
-      "derivationNote": "Canónica de la novela (spectator.json). Deducir secretos y estado emocional mediante observación pasiva."
+      "derivationNote": "Canónica de la novela (spectator.json). Deducir secretos y estado emocional mediante observación pasiva.",
+      "directorApproved": true
     },
     {
       "id": "PLAYER_VISIONARY_9_PSYCHOLOGICAL_HINT",
@@ -143,7 +150,8 @@
         { "atomId": "ATOM_APPLY_STATUS", "params": { "status": "WEAKENED", "durationTurns": 2 } }
       ],
       "canonConfidence": "canon",
-      "derivationNote": "Canónica de la novela (spectator.json). Sugestión verbal sutil que quiebra la determinación."
+      "derivationNote": "Canónica de la novela (spectator.json). Sugestión verbal sutil que quiebra la determinación.",
+      "directorApproved": true
     },
     {
       "id": "PLAYER_VISIONARY_9_DETACHED_CALM",
@@ -161,7 +169,8 @@
         { "atomId": "ATOM_HEAL_SANITY", "params": { "amount": 5 } }
       ],
       "canonConfidence": "canon",
-      "derivationNote": "Canónica de la novela (spectator.json). Estado meditativo de Espectador que anula perturbaciones psíquicas."
+      "derivationNote": "Canónica de la novela (spectator.json). Estado meditativo de Espectador que anula perturbaciones psíquicas.",
+      "directorApproved": true
     },
     {
       "id": "PLAYER_VISIONARY_8_MIND_PROBE",
@@ -179,7 +188,8 @@
         { "atomId": "ATOM_DAMAGE_SPIRITUAL", "params": { "baseDamage": 22 } }
       ],
       "canonConfidence": "canon",
-      "derivationNote": "Canónica de la novela (spectator.json - Telepathist). Lectura e intrusión mental profunda."
+      "derivationNote": "Canónica de la novela (spectator.json - Telepathist). Lectura e intrusión mental profunda.",
+      "directorApproved": true
     },
     {
       "id": "PLAYER_VISIONARY_8_MENTAL_SUGGESTION",
@@ -197,7 +207,8 @@
         { "atomId": "ATOM_DISPLACE_PULL", "params": { "distance": 1 } }
       ],
       "canonConfidence": "canon",
-      "derivationNote": "Canónica de la novela (spectator.json - Telepathist). Orden hipnótica que subyuga el control motor."
+      "derivationNote": "Canónica de la novela (spectator.json - Telepathist). Orden hipnótica que subyuga el control motor.",
+      "directorApproved": true
     },
     {
       "id": "PLAYER_VISIONARY_8_PLACATE",
@@ -216,7 +227,8 @@
         { "atomId": "ATOM_HEAL_HP", "params": { "amount": 15 } }
       ],
       "canonConfidence": "canon",
-      "derivationNote": "Canónica de la novela (spectator.json - Telepathist / Placate). Desactiva hostilidad homicida y purga frenesí."
+      "derivationNote": "Canónica de la novela (spectator.json - Telepathist / Placate). Desactiva hostilidad homicida y purga frenesí.",
+      "directorApproved": true
     }
   ]
 }
