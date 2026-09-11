@@ -301,10 +301,10 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
 
     if (actionType === 'NEGOTIATE') {
       // Directiva e: Check con condición visible
-      const isWeakened = enemy.statuses.some(s => s.status === 'WEAKENED' || s === 'WEAKENED');
-      const isStunned = enemy.isStunned || enemy.statuses.some(s => s.status === 'STUN' || s === 'STUN');
-      const isPacified = enemy.statuses.some(s => s.status === 'BLESSING' || s === 'BLESSING');
-      const isFrenzy = enemy.statuses.some(s => s.status === 'FRENZY' || s === 'FRENZY');
+      const isWeakened = enemy.statuses.some((s: any) => s.status === 'WEAKENED' || s === 'WEAKENED');
+      const isStunned = enemy.isStunned || enemy.statuses.some((s: any) => s.status === 'STUN' || s === 'STUN');
+      const isPacified = enemy.statuses.some((s: any) => s.status === 'BLESSING' || s === 'BLESSING');
+      const isFrenzy = enemy.statuses.some((s: any) => s.status === 'FRENZY' || s === 'FRENZY');
 
       if (isFrenzy) {
         return reply.status(400).send({
@@ -372,7 +372,7 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
     if (playerResult.isTargetDefeated || enemy.currentHp <= 0) {
       // Determinación de calidad de recolección (Directiva c)
       let harvestQuality: HarvestQuality = 'PRISTINE';
-      if (enemy.statuses.some(s => s.status === 'FRENZY' || s === 'FRENZY')) {
+      if (enemy.statuses.some((s: any) => s.status === 'FRENZY' || s === 'FRENZY')) {
         harvestQuality = 'CONTAMINADO';
       } else if (enemy.lastDamageSource?.type === 'ELEMENTAL' || enemy.lastDamageSource?.type === 'POISON') {
         harvestQuality = 'DAMAGED';
