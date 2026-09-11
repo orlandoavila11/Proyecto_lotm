@@ -67,3 +67,4 @@ export const GrimoiresFileSchema = z.object({
 export type GrimoireSection = z.infer<typeof GrimoireSectionSchema>;
 export type GrimoireG = z.infer<typeof GrimoireGSchema>;
 export type GrimoiresFile = z.infer<typeof GrimoiresFileSchema>;
+

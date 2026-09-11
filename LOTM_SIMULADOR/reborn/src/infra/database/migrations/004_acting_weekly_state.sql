@@ -17,3 +17,4 @@ CREATE TABLE IF NOT EXISTS acting_weekly_states (
 );
 
 CREATE INDEX IF NOT EXISTS idx_acting_records_char_day ON acting_records(character_id, day);
+
