@@ -68,7 +68,8 @@ export const CaseResolutionStateSchema = z.object({
     variable: z.literal('TRUTH_VS_STABILITY'),
     deltaTruth: z.number(),
     deltaStability: z.number(),
-    traitUnlocked: z.string().optional()
+    traitUnlocked: z.string().optional(),
+    traitEffects: z.record(z.any()).optional()
   })
 });
 

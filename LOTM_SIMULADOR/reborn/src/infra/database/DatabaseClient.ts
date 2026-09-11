@@ -338,6 +338,58 @@ export class DatabaseClient {
     this.db.prepare('UPDATE investigation_clues SET is_discovered = 1 WHERE id = ?').run(clueId);
   }
 
+  // --- MÉTODOS DE INSTANCIAS DE CASO (Fase 1 · Brief-04) ---
+  public saveCaseInstance(instance: {
+    id: string;
+    character_id: string;
+    case_id: string;
+    status: 'DORMANT' | 'ACTIVE' | 'RESOLVED' | 'EXPIRED';
+    state_json: string;
+  }): void {
+    const existing = this.db.prepare('SELECT id FROM investigation_case_instances WHERE id = ?').get(instance.id);
+    if (existing) {
+      this.db.prepare(`
+        UPDATE investigation_case_instances
+        SET status = ?, state_json = ?, updated_at = datetime('now')
+        WHERE id = ?
+      `).run(instance.status, instance.state_json, instance.id);
+    } else {
+      this.db.prepare(`
+        INSERT INTO investigation_case_instances (id, character_id, case_id, status, state_json, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?, datetime('now'), datetime('now'))
+      `).run(instance.id, instance.character_id, instance.case_id, instance.status, instance.state_json);
+    }
+  }
+
+  public getCaseInstance(id: string): any {
+    return this.db.prepare('SELECT * FROM investigation_case_instances WHERE id = ?').get(id);
+  }
+
+  public getActiveCaseForCharacter(characterId: string, caseId?: string): any {
+    if (caseId) {
+      return this.db.prepare(`
+        SELECT * FROM investigation_case_instances
+        WHERE character_id = ? AND case_id = ? AND status = 'ACTIVE'
+        ORDER BY updated_at DESC
+        LIMIT 1
+      `).get(characterId, caseId);
+    }
+    return this.db.prepare(`
+      SELECT * FROM investigation_case_instances
+      WHERE character_id = ? AND status = 'ACTIVE'
+      ORDER BY updated_at DESC
+      LIMIT 1
+    `).get(characterId);
+  }
+
+  public getCharacterCaseInstances(characterId: string): any[] {
+    return this.db.prepare(`
+      SELECT * FROM investigation_case_instances
+      WHERE character_id = ?
+      ORDER BY updated_at DESC
+    `).all(characterId);
+  }
+
   // --- MÉTODOS DE BATALLA Y COMBATE ---
   public createBattle(characterId: string, state: any): BattleRow {
     const battleId = `battle_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;

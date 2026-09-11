@@ -284,7 +284,10 @@
         "variable": "TRUTH_VS_STABILITY",
         "deltaTruth": 2,
         "deltaStability": 3,
-        "traitUnlocked": "LOS_SUSURROS_DEL_NIDO"
+        "traitUnlocked": "LOS_SUSURROS_DEL_NIDO",
+        "traitEffects": {
+          "SANITY_CAP_MODIFIER": -0.15
+        }
       }
     }
   ],
