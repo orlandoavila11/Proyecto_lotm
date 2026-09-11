@@ -6,6 +6,7 @@ import { SeededRNG } from '../rng/SeededRNG.js';
 import { AtomRuntime, RuntimeCombatant, RuntimeStatus, RuntimeDamageSource } from './AtomRuntime.js';
 import { StatusType } from '../../infra/content/schemas/statusMatrix.schema.js';
 import { DomainRuleViolationError } from '../errors/DomainError.js';
+import { ActingDilemmaEngine } from '../acting/ActingDilemmaEngine.js';
 
 export type HarvestQuality = 'PRISTINE' | 'DAMAGED' | 'CONTAMINADO';
 
@@ -518,7 +519,8 @@ export class GridCombatEngine {
         }
 
         // Check for spiritual instability misfire (Gate 2f)
-        if (player.hasInstability && rng.checkChance(35)) {
+        const misfireChance = ActingDilemmaEngine.getActingBalance().misfire_chance;
+        if (player.hasInstability && rng.checkChance(misfireChance)) {
           result.message = `¡Fallo por Inestabilidad Espiritual! La disonancia de tu interpretación hace que [${skill.name}] se disipe en el aire.`;
           battle.turnLog.push(result.message);
           return result;

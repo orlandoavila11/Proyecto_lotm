@@ -16,7 +16,8 @@ import {
   AtomVocabularySchema,
   StatusMatrixSchema,
   PlayerAbilitiesFileSchema,
-  GrimoiresFileSchema
+  GrimoiresFileSchema,
+  ActingBalanceSchema
 } from '../src/infra/content/schemas/index.js';
 
 interface SchemaTarget {
@@ -104,6 +105,11 @@ const TARGETS: SchemaTarget[] = [
     name: 'LORE_G',
     pattern: 'lore/grimoires.json',
     schema: GrimoiresFileSchema
+  },
+  {
+    name: 'ACTING_BALANCE',
+    pattern: 'balance/acting.json',
+    schema: ActingBalanceSchema
   }
 ];
 

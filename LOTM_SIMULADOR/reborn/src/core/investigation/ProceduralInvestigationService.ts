@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { CanonicalPathwayId } from '../types/pathway.js';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { SeededRNG } from '../rng/SeededRNG.js';
+import { ActingDilemmaEngine } from '../acting/ActingDilemmaEngine.js';
 
 export type InvestigationMethod = 
   | 'SPIRITUAL_DIVINATION'
@@ -183,12 +184,12 @@ export class ProceduralInvestigationService {
       db.updateCaseStatus(caseId, 'READY_FOR_DEDUCTION');
     }
 
-    const digestionGain = Number((5.0 * affinityBonus).toFixed(1));
+    const digestionGain = 0; // REGLA 1.b: Las pistas ya no otorgan digestión directa
 
     return {
       success: true,
       discoveredClue: { ...clue, is_discovered: 1 },
-      digestionBonus: digestionGain,
+      digestionBonus: 0,
       message: `¡Pista decodificada con éxito mediante [${method}]! Revelación: ${clue.title}.`,
       caseReadyForDeduction: readyForDeduction
     };
@@ -211,7 +212,6 @@ export class ProceduralInvestigationService {
     if (!caseData) throw new Error('Caso no encontrado');
 
     let reward = caseData.reward_pence;
-    let digestion = 10.0;
     let policeDelta = 0;
     let churchDelta = 0;
     let msg = '';
@@ -231,13 +231,11 @@ export class ProceduralInvestigationService {
         reward = Math.floor(reward * 2.5); // Extorsión rinde más dinero
         policeDelta = 8;
         churchDelta = 2;
-        digestion = 4.0;
         msg = `Has chantajeado al culpable [${caseData.culprit_name}]. Obtuviste una suma considerable de libras a cambio de quemar las pruebas comprometedoras.`;
         break;
 
       case 'EXECUTE_SHADOWS':
         db.updateCaseStatus(caseId, 'SOLVED', action);
-        digestion = 18.0;
         churchDelta = 6;
         policeDelta = 4;
         msg = `Has ejecutado justicia sumaria en las sombras de Backlund contra [${caseData.culprit_name}]. La característica espiritual residual se asienta en tu cuerpo astral.`;
@@ -246,7 +244,6 @@ export class ProceduralInvestigationService {
       case 'COVER_UP_ALLIANCE':
         db.updateCaseStatus(caseId, 'COVERED_UP', action);
         reward = Math.floor(reward * 0.5);
-        digestion = 8.0;
         const anchorRng = new SeededRNG(`anchor_case_${caseId}_${characterId}`);
         const anchorSuffix = anchorRng.nextInt(10000, 99999);
         db.addAnchor({
@@ -260,14 +257,34 @@ export class ProceduralInvestigationService {
         break;
     }
 
-    // Recompensas financieras y digestión
+    // Recompensas financieras (sin tocar digestión directa: UN SOLO ESCRITOR)
     if (reward > 0) {
       db.updateCharacterWealth(characterId, reward);
     }
     const char = db.getCharacter(characterId);
     if (char) {
-      db.updateCharacterSomatics(characterId, {
-        digestion: Math.min(100.0, char.digestion_progress + digestion)
+      // REGLA 1.b: El VEREDICTO genera una entrada actoral en la ventana semanal
+      const actingConfig = ActingDilemmaEngine.getActingBalance();
+      const records = db.getActingRecords(characterId);
+      const repeats = records.filter(r => r.dilemma_id === `VERDICT_${caseId}`).length;
+      const decayIndex = Math.min(repeats, actingConfig.decay_ladder.length - 1);
+      const decayApplied = actingConfig.decay_ladder[decayIndex];
+
+      const recordId = `act_verdict_${caseId}_${characterId}_${Date.now()}`;
+      db.logActing({
+        id: recordId,
+        character_id: characterId,
+        pathway: char.pathway,
+        sequence: char.sequence,
+        dilemma_id: `VERDICT_${caseId}`,
+        choice_id: action,
+        digestion_gained: 0,
+        sanity_delta: 0,
+        alignment: 1,
+        acting_weight: actingConfig.verdicts.minor_case.acting_weight,
+        decay_applied: decayApplied,
+        day: char.current_day,
+        narrative_log: msg
       });
     }
     if (activePersona && (policeDelta !== 0 || churchDelta !== 0)) {
@@ -278,7 +295,7 @@ export class ProceduralInvestigationService {
       success: true,
       verdictMessage: msg,
       poundsReward: Math.floor(reward / 240),
-      digestionBonus: digestion,
+      digestionBonus: 0,
       policeDelta,
       churchDelta
     };

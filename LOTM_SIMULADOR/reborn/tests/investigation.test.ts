@@ -53,7 +53,7 @@ test('Investigation API: Generación de casos procedurales, investigación de pi
     assert.strictEqual(inv1Res.statusCode, 200);
     const inv1Data = JSON.parse(inv1Res.body);
     assert.strictEqual(inv1Data.success, true);
-    assert.strictEqual(inv1Data.digestionBonus, 7.5); // 5.0 * 1.5
+    assert.strictEqual(inv1Data.digestionBonus, 0); // BRIEF-05.ECO: 0 digestión directa por pista
     assert.strictEqual(inv1Data.caseReadyForDeduction, false);
 
     // 4. Investigar segunda pista (ahora cumple >= 2 pistas y pasa a READY_FOR_DEDUCTION)
@@ -85,7 +85,9 @@ test('Investigation API: Generación de casos procedurales, investigación de pi
     const verdictData = JSON.parse(verdictRes.body);
     assert.strictEqual(verdictData.success, true);
     assert.strictEqual(verdictData.policeDelta, -5);
-    assert.strictEqual(verdictData.digestionBonus, 10.0);
+    assert.strictEqual(verdictData.digestionBonus, 0); // BRIEF-05.ECO: Veredicto va a ventana actoral, 0 digestión directa
+    const actingRecords = db.getActingRecords(charId);
+    assert.ok(actingRecords.some((r: any) => r.dilemma_id === `VERDICT_${caseId}`));
 
     // 6. Consultar casos del personaje
     const casesRes = await app.inject({

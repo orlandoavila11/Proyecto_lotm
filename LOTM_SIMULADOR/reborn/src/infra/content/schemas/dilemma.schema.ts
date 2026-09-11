@@ -39,7 +39,6 @@ export const DilemmaGSchema = z.object({
 export type DilemmaG = z.infer<typeof DilemmaGSchema>;
 
 export const DilemmaEffectProfileSchema = z.object({
-  digestion: z.number(),
   sanity: z.number(),
   policeSuspicion: z.number().int(),
   churchSuspicion: z.number().int(),

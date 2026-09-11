@@ -347,14 +347,9 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
         method as InvestigationMethod
       );
 
-      const currentDigestion = char.digestion_progress + result.digestionBonus;
-      db.updateCharacterSomatics(characterId, {
-        digestion: Math.min(100.0, currentDigestion)
-      });
-
       return reply.send({
         ...result,
-        newDigestion: Math.min(100.0, currentDigestion)
+        newDigestion: char.digestion_progress
       });
     } catch (err: any) {
       return reply.status(400).send({ error: err.message });

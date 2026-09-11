@@ -12,3 +12,4 @@ export * from './atomVocabulary.schema.js';
 export * from './statusMatrix.schema.js';
 export * from './playerAbilities.schema.js';
 export * from './lore.schema.js';
+export * from './actingBalance.schema.js';

@@ -3,7 +3,6 @@
   "description": "Vocabulario centralizado de perfiles de efecto para DILEMMA_G. Cero números inline en contenido nuevo.",
   "profiles": {
     "SEER_TRUTH_RIGOR": {
-      "digestion": 20,
       "sanity": 2,
       "policeSuspicion": 0,
       "churchSuspicion": 2,
@@ -11,7 +10,6 @@
       "spiritualityCost": 5
     },
     "SEER_FALSEHOOD_TRANSGRESSION": {
-      "digestion": 2,
       "sanity": -5,
       "policeSuspicion": 0,
       "churchSuspicion": 0,
@@ -19,7 +17,6 @@
       "spiritualityCost": 0
     },
     "SEER_DIVINE_OMEN_DEEP": {
-      "digestion": 18,
       "sanity": 1,
       "policeSuspicion": 0,
       "churchSuspicion": 3,
@@ -27,7 +24,6 @@
       "spiritualityCost": 15
     },
     "SEER_CAUTIOUS_ABSTAIN": {
-      "digestion": 5,
       "sanity": 3,
       "policeSuspicion": 0,
       "churchSuspicion": 0,
@@ -35,7 +31,6 @@
       "spiritualityCost": 0
     },
     "SEER_PRUDENT_DIVINATION": {
-      "digestion": 16,
       "sanity": 3,
       "policeSuspicion": 0,
       "churchSuspicion": 1,
@@ -43,7 +38,6 @@
       "spiritualityCost": 10
     },
     "SEER_DISCREET_RETREAT": {
-      "digestion": 6,
       "sanity": 4,
       "policeSuspicion": -1,
       "churchSuspicion": 0,
@@ -51,7 +45,6 @@
       "spiritualityCost": 0
     },
     "CLOWN_STAGE_LAUGHTER": {
-      "digestion": 22,
       "sanity": 5,
       "policeSuspicion": 0,
       "churchSuspicion": 0,
@@ -59,7 +52,6 @@
       "spiritualityCost": 10
     },
     "CLOWN_BREAKDOWN_TEARS": {
-      "digestion": 3,
       "sanity": -8,
       "policeSuspicion": 5,
       "churchSuspicion": 1,
@@ -67,7 +59,6 @@
       "spiritualityCost": 0
     },
     "CLOWN_CYNICAL_FLEE": {
-      "digestion": 5,
       "sanity": 1,
       "policeSuspicion": 2,
       "churchSuspicion": 0,
@@ -75,7 +66,6 @@
       "spiritualityCost": 0
     },
     "CLOWN_ACROBATIC_DEFLECTION": {
-      "digestion": 19,
       "sanity": 3,
       "policeSuspicion": 1,
       "churchSuspicion": 0,
@@ -83,7 +73,6 @@
       "spiritualityCost": 15
     },
     "CLOWN_BOLD_PERFORMANCE": {
-      "digestion": 23,
       "sanity": -6,
       "policeSuspicion": 4,
       "churchSuspicion": 1,
@@ -91,7 +80,6 @@
       "spiritualityCost": 20
     },
     "CLOWN_PAIN_ENDURANCE": {
-      "digestion": 21,
       "sanity": 2,
       "policeSuspicion": 0,
       "churchSuspicion": 0,
@@ -99,7 +87,6 @@
       "spiritualityCost": 12
     },
     "SPECTATOR_QUIET_ANALYSIS": {
-      "digestion": 20,
       "sanity": 3,
       "policeSuspicion": -2,
       "churchSuspicion": 0,
@@ -107,7 +94,6 @@
       "spiritualityCost": 5
     },
     "SPECTATOR_IMPULSIVE_ACT": {
-      "digestion": 2,
       "sanity": -4,
       "policeSuspicion": 6,
       "churchSuspicion": 2,
@@ -115,7 +101,6 @@
       "spiritualityCost": 10
     },
     "SPECTATOR_COLD_WITHDRAWAL": {
-      "digestion": 6,
       "sanity": 2,
       "policeSuspicion": 0,
       "churchSuspicion": 0,
@@ -123,7 +108,6 @@
       "spiritualityCost": 0
     },
     "SPECTATOR_DECIPHER_MOTIVE": {
-      "digestion": 18,
       "sanity": 2,
       "policeSuspicion": -1,
       "churchSuspicion": 1,
@@ -131,7 +115,6 @@
       "spiritualityCost": 8
     },
     "SPECTATOR_AUDACIOUS_OBSERVE": {
-      "digestion": 22,
       "sanity": -3,
       "policeSuspicion": 3,
       "churchSuspicion": 2,
@@ -139,7 +122,6 @@
       "spiritualityCost": 15
     },
     "SPECTATOR_COVERT_INQUIRY": {
-      "digestion": 15,
       "sanity": 2,
       "policeSuspicion": 1,
       "churchSuspicion": 0,
@@ -147,7 +129,6 @@
       "spiritualityCost": 8
     },
     "TELEPATH_EMPATHIC_RESONANCE": {
-      "digestion": 22,
       "sanity": 4,
       "policeSuspicion": -1,
       "churchSuspicion": 0,
@@ -155,7 +136,6 @@
       "spiritualityCost": 15
     },
     "TELEPATH_FORCED_PROBE": {
-      "digestion": 10,
       "sanity": -6,
       "policeSuspicion": 8,
       "churchSuspicion": 4,
@@ -163,7 +143,6 @@
       "spiritualityCost": 25
     },
     "TELEPATH_PACIFY_MINDS": {
-      "digestion": 18,
       "sanity": 2,
       "policeSuspicion": 0,
       "churchSuspicion": 1,
@@ -171,7 +150,6 @@
       "spiritualityCost": 12
     },
     "TELEPATH_SHIELD_EGO": {
-      "digestion": 7,
       "sanity": 5,
       "policeSuspicion": -1,
       "churchSuspicion": 0,
@@ -179,7 +157,6 @@
       "spiritualityCost": 5
     },
     "TELEPATH_RISKY_SOUL_TOUCH": {
-      "digestion": 24,
       "sanity": -7,
       "policeSuspicion": 5,
       "churchSuspicion": 3,
@@ -187,7 +164,6 @@
       "spiritualityCost": 20
     },
     "TELEPATH_SACRIFICIAL_SEAL": {
-      "digestion": 14,
       "sanity": 4,
       "policeSuspicion": -2,
       "churchSuspicion": -1,
@@ -195,7 +171,6 @@
       "spiritualityCost": 10
     },
     "SPECTATOR_VULGAR_EXPOSURE": {
-      "digestion": 3,
       "sanity": -4,
       "policeSuspicion": 6,
       "churchSuspicion": 2,
@@ -203,7 +178,6 @@
       "spiritualityCost": 0
     },
     "TELEPATH_INTERROGATION_BLUNDER": {
-      "digestion": 4,
       "sanity": -5,
       "policeSuspicion": 8,
       "churchSuspicion": 3,
@@ -212,4 +186,3 @@
     }
   }
 }
-

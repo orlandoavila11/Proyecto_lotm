@@ -120,11 +120,9 @@ export const actingRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
       return reply.status(400).send({ error: `Elección '${choiceId}' no válida para este dilema.` });
     }
 
-    const newDigestion = Math.min(100.0, char.digestion_progress + choice.digestionGain);
     const newSanity = Math.max(0, Math.min(100, char.sanity + choice.sanityDelta));
 
     db.updateCharacterSomatics(characterId, {
-      digestion: newDigestion,
       sanity: newSanity
     });
 
@@ -154,8 +152,8 @@ export const actingRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
       success: true,
       message: choice.narrativeOutcome,
       isAligned: choice.isAlignedWithPrinciple,
-      digestionProgress: newDigestion,
-      isFullyDigested: newDigestion >= 100.0,
+      digestionProgress: char.digestion_progress,
+      isFullyDigested: char.digestion_progress >= 100.0,
       sanityDelta: choice.sanityDelta,
       penceRewarded: choice.penceReward
     });

@@ -5,6 +5,7 @@ import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { CanonicalPathwayId } from '../types/pathway.js';
 import { CaseG, CaseClue } from '../../infra/content/schemas/case.schema.js';
 import { SeededRNG } from '../rng/SeededRNG.js';
+import { ActingDilemmaEngine } from '../acting/ActingDilemmaEngine.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, '../../..');
@@ -887,6 +888,33 @@ export class InvestigationEngine {
           category: 'BOND'
         });
       }
+    }
+
+    // REGLA 1.b: El VEREDICTO del caso genera una entrada actoral en la ventana semanal
+    const caseChar = db.getCharacter(state.characterId);
+    if (caseChar) {
+      const actingConfig = ActingDilemmaEngine.getActingBalance();
+      const records = db.getActingRecords(caseChar.id);
+      const repeats = records.filter(r => r.dilemma_id === `VERDICT_${state.caseId}`).length;
+      const decayIndex = Math.min(repeats, actingConfig.decay_ladder.length - 1);
+      const decayApplied = actingConfig.decay_ladder[decayIndex];
+
+      const recordId = `act_verdict_${state.caseId}_${caseChar.id}_${Date.now()}`;
+      db.logActing({
+        id: recordId,
+        character_id: caseChar.id,
+        pathway: caseChar.pathway,
+        sequence: caseChar.sequence,
+        dilemma_id: `VERDICT_${state.caseId}`,
+        choice_id: resolutionId,
+        digestion_gained: 0,
+        sanity_delta: 0,
+        alignment: 1,
+        acting_weight: actingConfig.verdicts.major_case.acting_weight,
+        decay_applied: decayApplied,
+        day: caseChar.current_day,
+        narrative_log: `Resolución del Caso Mayor: ${resDef.nombre}`
+      });
     }
 
     db.saveCaseInstance({

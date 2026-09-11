@@ -124,7 +124,7 @@ describe('GATE 05: Acting (El Método del Papel), Susurros [S], Ticks Semanales 
     }
   });
 
-  it('2b. Gate de Farmeo: Misma opción x5 produce decaimiento marginal (x1, x0.5, x0.25, x0.1, 0) y Total != 5x Base', () => {
+  it('2b. Gate de Farmeo: Misma opción x5 produce decaimiento marginal (x1, x0.5, x0.25, x0.1, 0) y 0 digestión directa', () => {
     const farmCharId = 'char_acting_farm_tester';
     db.createCharacter({
       id: farmCharId,
@@ -159,13 +159,11 @@ describe('GATE 05: Acting (El Método del Papel), Susurros [S], Ticks Semanales 
     assert.strictEqual(results[3].decayApplied, 0.1, 'Intento 4: multiplicador 0.1');
     assert.strictEqual(results[4].decayApplied, 0.0, 'Intento 5: multiplicador 0.0');
 
-    // Ganancia de digestión acumulada
-    const totalDigestionGained = results.reduce((acc, r) => acc + r.digestionGained, 0);
-    const baseDigestion = 20.0; // SEER_TRUTH_RIGOR
-    const expectedTotal = baseDigestion * (1.0 + 0.5 + 0.25 + 0.1 + 0.0); // 20 * 1.85 = 37.0
-
-    assert.strictEqual(Number(totalDigestionGained.toFixed(1)), expectedTotal);
-    assert.notStrictEqual(totalDigestionGained, 5 * baseDigestion, 'El total acumulado NO debe ser 5x base (Gate anti-exploit)');
+    // REGLA 1: UN ESCRITOR (0 digestión directa en resolveDilemma)
+    const totalDirect = results.reduce((acc, r) => acc + r.digestionGained, 0);
+    assert.strictEqual(totalDirect, 0, 'resolveDilemma NO debe otorgar digestión directa');
+    const charAfterFarm = db.getCharacter(farmCharId);
+    assert.strictEqual(charAfterFarm.digestion_progress, 0, 'digestion_progress permanece intacto hasta el tick semanal');
   });
 
   it('2c. Gate de Transgresión: Alineamiento negativo (-1) x3 produce incremento medible de corrupción', () => {

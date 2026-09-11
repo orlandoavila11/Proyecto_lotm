@@ -66,8 +66,19 @@ test('Integration Test: Ciclo completo de Creación, Acting, Viaje y Somática e
     assert.strictEqual(resolveRes.statusCode, 200);
     const resolveData = JSON.parse(resolveRes.body);
     assert.strictEqual(resolveData.isAligned, true);
-    assert.ok(resolveData.digestionProgress > 10.0);
+    assert.strictEqual(resolveData.digestionProgress, 10.0); // No cambia hasta el tick semanal
     assert.strictEqual(resolveData.penceRewarded, 240); // +£1 libra
+
+    // 4b. Tick Semanal: ÚNICO escritor de la digestión
+    const tickRes = await app.inject({
+      method: 'POST',
+      url: '/api/acting/weekly-tick',
+      payload: { characterId: charId }
+    });
+    assert.strictEqual(tickRes.statusCode, 200);
+    const tickData = JSON.parse(tickRes.body);
+    assert.strictEqual(tickData.success, true);
+    assert.ok(tickData.tickResult.assimilationGain > 0);
 
     // 5. Viajar a otro distrito
     const travelRes = await app.inject({
@@ -95,7 +106,7 @@ test('Integration Test: Ciclo completo de Creación, Acting, Viaje y Somática e
     assert.strictEqual(finalData.wallet.pounds, 30); // 7200 + 240 - 24 = 7416 -> £30 18s
     assert.strictEqual(finalData.wallet.soli, 18);
     assert.strictEqual(finalData.somatics.sanityTier, 'LUCID');
-    assert.strictEqual(finalData.character.digestion_progress, 30.0);
+    assert.ok(finalData.character.digestion_progress > 10.0);
     assert.strictEqual(finalData.inventoryCount, 2);
 
   } finally {

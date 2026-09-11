@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "description": "Tabla centralizada de balance para el sistema de Acting, digestión semanal y estabilidad ontológica",
+  "window_acts_cap_k": 3.5,
+  "assimilation_multiplier": 34.0,
+  "max_coherence_clamp": 1.2,
+  "stagnation_threshold": 0.35,
+  "overacting_threshold": 1.0,
+  "variety_penalty": 0.40,
+  "misfire_chance": 35,
+  "transgression_corruption": 3,
+  "decay_ladder": [
+    1.0,
+    0.5,
+    0.25,
+    0.1,
+    0.0
+  ],
+  "verdicts": {
+    "major_case": {
+      "acting_weight": 2.5,
+      "variety": "INVESTIGATION_VERDICT_MAJOR"
+    },
+    "minor_case": {
+      "acting_weight": 1.8,
+      "variety": "INVESTIGATION_VERDICT_MINOR"
+    }
+  },
+  "cost_factors": {
+    "high_sp_threshold": 10,
+    "high_cost_factor": 1.15,
+    "low_cost_factor": 1.05,
+    "base_factor": 1.0
+  },
+  "witness_factor": 1.0
+}

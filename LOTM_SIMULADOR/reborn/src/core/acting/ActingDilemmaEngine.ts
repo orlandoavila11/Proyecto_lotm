@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { CanonicalPathwayId } from '../types/pathway.js';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { DilemmaG } from '../../infra/content/schemas/dilemma.schema.js';
+import { ActingBalance } from '../../infra/content/schemas/actingBalance.schema.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, '../../..');
@@ -50,6 +51,7 @@ export class ActingDilemmaEngine {
   private static dilemmas: Map<string, ActingDilemma[]> = new Map();
   private static tierGDilemmas: Map<string, DilemmaG[]> = new Map();
   private static effectProfiles: Map<string, any> = new Map();
+  private static actingBalance: ActingBalance | null = null;
   private static initializedTierG: boolean = false;
 
   static {
@@ -785,7 +787,13 @@ export class ActingDilemmaEngine {
       }
     }
 
-    // 2. Cargar dilemas Tier G desde data/gameplay/dilemmas/*.json
+    // 2. Cargar tabla de balance de acting y digestión (acting.json)
+    const actingPath = path.join(ROOT_DIR, 'data/gameplay/balance/acting.json');
+    if (fs.existsSync(actingPath)) {
+      this.actingBalance = JSON.parse(fs.readFileSync(actingPath, 'utf8')) as ActingBalance;
+    }
+
+    // 3. Cargar dilemas Tier G desde data/gameplay/dilemmas/*.json
     const dilemmasDir = path.join(ROOT_DIR, 'data/gameplay/dilemmas');
     if (fs.existsSync(dilemmasDir)) {
       const files = fs.readdirSync(dilemmasDir).filter(f => f.endsWith('.json'));
@@ -800,6 +808,15 @@ export class ActingDilemmaEngine {
         }
       }
     }
+  }
+
+  public static getActingBalance(): ActingBalance {
+    this.ensureTierGLoaded();
+    if (!this.actingBalance) {
+      const actingPath = path.join(ROOT_DIR, 'data/gameplay/balance/acting.json');
+      this.actingBalance = JSON.parse(fs.readFileSync(actingPath, 'utf8')) as ActingBalance;
+    }
+    return this.actingBalance;
   }
 
   public static findDilemma(dilemmaId: string): DilemmaG | null {
@@ -908,18 +925,15 @@ export class ActingDilemmaEngine {
       throw new Error(`Dilema o elección no encontrada: ${dilemmaId} / ${choiceId}`);
     }
 
-    // 2. Decaimiento por farmeo repetido (Gate 2b: x1, x0.5, x0.25, x0.1, 0)
+    // 2. Decaimiento por farmeo repetido desde tabla de balance (acting.json)
+    const balance = this.getActingBalance();
     const records = db.getActingRecords(characterId);
     const repeats = records.filter(r => r.dilemma_id === dilemmaId).length;
-    let decayApplied = 1.0;
-    if (repeats === 1) decayApplied = 0.5;
-    else if (repeats === 2) decayApplied = 0.25;
-    else if (repeats === 3) decayApplied = 0.1;
-    else if (repeats >= 4) decayApplied = 0.0;
+    const decayIndex = Math.min(repeats, balance.decay_ladder.length - 1);
+    const decayApplied = balance.decay_ladder[decayIndex];
 
     // 3. Perfil de efectos desde dilemma_effects.json
     const effectProfile = this.effectProfiles.get(matchedOption.effectKey) || {
-      digestion: 10,
       sanity: 0,
       policeSuspicion: 0,
       churchSuspicion: 0,
@@ -929,13 +943,12 @@ export class ActingDilemmaEngine {
 
     const alignment = matchedOption.pesos?.alignment ?? 0;
     const actingWeight = matchedOption.pesos?.actingWeight ?? 1.0;
-    const baseDigestion = effectProfile.digestion ?? 10;
-    const digestionGained = Number((baseDigestion * decayApplied).toFixed(1));
+    const digestionGained = 0; // REGLA DE ORO: Un único escritor de digestión (processWeeklyTick)
 
-    // Transgresión causa ganancia medible de corrupción (Gate 2c)
+    // Transgresión causa ganancia medible de corrupción inmediata (Gate 2c)
     let corruptionDelta = 0;
     if (alignment < 0) {
-      corruptionDelta = 3;
+      corruptionDelta = balance.transgression_corruption; // +3
     }
 
     // Coste de espiritualidad
@@ -944,14 +957,12 @@ export class ActingDilemmaEngine {
       throw new Error(`Espiritualidad insuficiente (${char.current_spirituality}/${spCost} requerida).`);
     }
 
-    // 4. Aplicar cambios a personaje y persona activa
-    const newDigestion = Math.min(100.0, Number((char.digestion_progress + digestionGained).toFixed(1)));
+    // 4. Aplicar cambios a personaje y persona activa (SIN TOCAR DIGESTIÓN)
     const newSanity = Math.max(0, Math.min(100, char.sanity + (effectProfile.sanity || 0)));
     const newCorruption = Math.min(100, (char.corruption || 0) + corruptionDelta);
     const newSpirituality = char.current_spirituality - spCost;
 
     db.updateCharacterSomatics(characterId, {
-      digestion: newDigestion,
       sanity: newSanity,
       corruption: newCorruption,
       spirituality: newSpirituality
@@ -966,28 +977,31 @@ export class ActingDilemmaEngine {
       db.updatePersonaSuspicion(activePersona.id, effectProfile.policeSuspicion, effectProfile.churchSuspicion);
     }
 
-    // 5. Registrar en acting_records
-    const randomSuffix = Math.random().toString(36).substring(2, 9);
-    const recordId = `act_${characterId}_${dilemmaId}_${Date.now()}_${randomSuffix}`;
-    db.logActing({
-      id: recordId,
-      character_id: characterId,
-      pathway: char.pathway,
-      sequence: char.sequence,
-      dilemma_id: dilemmaId,
-      choice_id: choiceId,
-      digestion_gained: digestionGained,
-      sanity_delta: effectProfile.sanity || 0,
-      alignment,
-      acting_weight: actingWeight,
-      decay_applied: decayApplied,
-      day: char.current_day,
-      narrative_log: matchedOption.narrativeOutcome
-    });
+    // 5. Registrar en acting_records:
+    // REGLA 1.c: Transgresión (alignment < 0) SIN entrada en la ventana actoral
+    if (alignment >= 0) {
+      const randomSuffix = Math.random().toString(36).substring(2, 9);
+      const recordId = `act_${characterId}_${dilemmaId}_${Date.now()}_${randomSuffix}`;
+      db.logActing({
+        id: recordId,
+        character_id: characterId,
+        pathway: char.pathway,
+        sequence: char.sequence,
+        dilemma_id: dilemmaId,
+        choice_id: choiceId,
+        digestion_gained: 0,
+        sanity_delta: effectProfile.sanity || 0,
+        alignment,
+        acting_weight: actingWeight,
+        decay_applied: decayApplied,
+        day: char.current_day,
+        narrative_log: matchedOption.narrativeOutcome
+      });
+    }
 
     return {
       success: true,
-      digestionGained,
+      digestionGained: 0,
       sanityDelta: effectProfile.sanity || 0,
       corruptionDelta,
       decayApplied,
@@ -1000,12 +1014,12 @@ export class ActingDilemmaEngine {
 
   /**
    * Tick Semanal (cada 7 días):
-   * COHERENCIA = media(actingWeight * decay * costFactor * witnessFactor)
+   * COHERENCIA = clamp(Σ(actingWeight * decay * costFactor * witnessFactor) / K, 0, 1.2)
    * VARIEDAD = penalizador si la ventana cae en una sola categoría
-   * ASIMILACIÓN += g(Coherence)
-   * TRANSGRESIÓN -> incremento de corrupción
-   * ESTANCAMIENTO (Coherence < 0.35) -> instability_flag
-   * SOBRE-ACTUACIÓN (Coherence > 1.0 && anchor < 50) -> loss_of_self_risk_flag
+   * ASIMILACIÓN += g(Coherence) * assimilationMultiplier (ÚNICO ESCRITOR DE DIGESTIÓN)
+   * TRANSGRESIÓN -> Corrupción inmediata aplicada en somatics, eliminada del tick
+   * ESTANCAMIENTO (Coherence < stagnation_threshold) -> instability_flag
+   * SOBRE-ACTUACIÓN (Coherence > overacting_threshold && anchor < 50) -> loss_of_self_risk_flag
    */
   public static processWeeklyTick(
     db: DatabaseClient,
@@ -1020,6 +1034,7 @@ export class ActingDilemmaEngine {
     lossOfSelfRiskFlag: boolean;
   } {
     this.ensureTierGLoaded();
+    const balance = this.getActingBalance();
     const char = db.getCharacter(characterId);
     if (!char) {
       throw new Error(`Personaje no encontrado: ${characterId}`);
@@ -1036,59 +1051,77 @@ export class ActingDilemmaEngine {
       weekRecords = allRecords.slice(-7);
     }
 
+    // Regla 1.c: Transgresiones jamás entran en la ventana actoral
+    weekRecords = weekRecords.filter(r => (r.alignment ?? 0) >= 0);
+
     let coherence = 0.0;
     let varietyPenalty = 0.0;
     let assimilationGain = 0.0;
-    let transgressionCorruptionGain = 0;
+    let transgressionCorruptionGain = 0; // REGLA 1.c: Eliminado el +2 semanal no ordenado
 
     if (weekRecords.length > 0) {
-      // 1. Variedad: monocategoría recibe 40% de penalizador
+      // 1. Variedad: monocategoría recibe penalizador de variedad
       const varieties = new Set<string>();
       for (const r of weekRecords) {
-        const dDef = this.findDilemma(r.dilemma_id);
-        const v = dDef?.antiExploit?.variety ? String(dDef.antiExploit.variety) : r.dilemma_id;
-        varieties.add(v);
+        if (r.dilemma_id.startsWith('VERDICT_') || r.dilemma_id.includes('VERDICT')) {
+          if (r.dilemma_id.includes('CHERWOOD') || r.dilemma_id.includes('major')) {
+            varieties.add(balance.verdicts.major_case.variety);
+          } else {
+            varieties.add(balance.verdicts.minor_case.variety);
+          }
+        } else {
+          const dDef = this.findDilemma(r.dilemma_id);
+          const v = dDef?.antiExploit?.variety ? String(dDef.antiExploit.variety) : r.dilemma_id;
+          varieties.add(v);
+        }
       }
 
       if (weekRecords.length >= 2 && varieties.size === 1) {
-        varietyPenalty = 0.40;
+        varietyPenalty = balance.variety_penalty;
       }
 
-      // 2. Coherencia
+      // 2. Coherencia: Σ(actingWeight × decay × costFactor × witnessFactor) / K
       let sumWeight = 0;
       for (const r of weekRecords) {
-        const dDef = this.findDilemma(r.dilemma_id);
-        const opt = dDef?.options.find(o => o.id === r.choice_id);
-        const spCost = opt?.costes?.spirituality || 0;
-        const costFactor = spCost >= 10 ? 1.15 : (spCost > 0 ? 1.05 : 1.0);
-        const witnessFactor = 1.0;
-        sumWeight += (r.acting_weight * r.decay_applied * costFactor * witnessFactor);
+        let costFactor = balance.cost_factors?.base_factor ?? 1.0;
+        if (r.dilemma_id.startsWith('VERDICT_') || r.dilemma_id.includes('VERDICT')) {
+          costFactor = balance.cost_factors?.base_factor ?? 1.0;
+        } else {
+          const dDef = this.findDilemma(r.dilemma_id);
+          const opt = dDef?.options.find(o => o.id === r.choice_id);
+          const spCost = opt?.costes?.spirituality || 0;
+          const highSp = balance.cost_factors?.high_sp_threshold ?? 10;
+          if (spCost >= highSp) {
+            costFactor = balance.cost_factors?.high_cost_factor ?? 1.15;
+          } else if (spCost > 0) {
+            costFactor = balance.cost_factors?.low_cost_factor ?? 1.05;
+          }
+        }
+        const witnessFactor = balance.witness_factor ?? 1.0;
+        sumWeight += ((r.acting_weight ?? 1.0) * (r.decay_applied ?? 1.0) * costFactor * witnessFactor);
       }
 
-      const rawCoherence = sumWeight / weekRecords.length;
-      coherence = Number((rawCoherence * (1.0 - varietyPenalty)).toFixed(3));
+      const K = balance.window_acts_cap_k;
+      const rawCoherence = sumWeight / K;
+      const maxClamp = balance.max_coherence_clamp ?? 1.2;
+      coherence = Number(Math.max(0, Math.min(maxClamp, rawCoherence * (1.0 - varietyPenalty))).toFixed(3));
 
-      // 3. Asimilación += g(Coherence)
-      assimilationGain = Number((coherence * 15).toFixed(1));
+      // 3. Asimilación (EL ÚNICO ESCRITOR DE DIGESTIÓN)
+      assimilationGain = Number((coherence * balance.assimilation_multiplier).toFixed(1));
       const newDigestion = Math.min(100.0, Number((char.digestion_progress + assimilationGain).toFixed(1)));
 
-      // 4. Transgresión
-      const negativeCount = weekRecords.filter(r => r.alignment < 0).length;
-      transgressionCorruptionGain = negativeCount * 2;
-      const newCorruption = Math.min(100, (char.corruption || 0) + transgressionCorruptionGain);
-
+      // 4. Somatics update (ÚNICO ESCRITOR DE DIGESTIÓN)
       db.updateCharacterSomatics(characterId, {
-        digestion: newDigestion,
-        corruption: newCorruption
+        digestion: newDigestion
       });
     }
 
-    // 5. Estancamiento (Coherence < 0.35) -> instability_flag
-    const instabilityFlag = coherence < 0.35;
+    // 5. Estancamiento (Coherence < stagnation_threshold) -> instability_flag
+    const instabilityFlag = coherence < balance.stagnation_threshold;
 
-    // 6. Sobre-actuación (Coherence > 1.0 && anchor < 50) -> loss_of_self_risk_flag
+    // 6. Sobre-actuación (Coherence > overacting_threshold && anchor < 50) -> loss_of_self_risk_flag
     const totalAnchorStrength = db.getTotalAnchorStrength(characterId);
-    const lossOfSelfRiskFlag = (coherence > 1.0 && totalAnchorStrength < 50);
+    const lossOfSelfRiskFlag = (coherence > balance.overacting_threshold && totalAnchorStrength < 50);
 
     // 7. Persistir estado semanal en SQLite
     db.saveActingWeeklyState({
