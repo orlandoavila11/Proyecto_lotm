@@ -355,30 +355,48 @@
     "sequence": 8,
     "options": [
       {
-        "id": "CHOICE_TELEPATH_8_WEAVE_DREAM_CALM",
-        "texto": "Tejer una ilusión de luz cálida en el umbral de su sueño guiando su mente hacia la serenidad",
+        "id": "CHOICE_TELEPATH_8_PACIFY_EMOTIONAL",
+        "texto": "Extender una onda de apaciguamiento telepático directo para disolver el pánico en su mente",
         "tradeOffs": {
-          "ganancia": "Elevada asimilación de la compasión y control psíquico de Telépata",
-          "coste": "Vínculo mental delicado que requiere quietud prolongada",
-          "riesgo": "La monja vigilante puede notar tu proximidad al lecho"
+          "ganancia": "Alta asimilación de la poción de Telépata por aliviar el sufrimiento psíquico",
+          "coste": "Gasto considerable de espiritualidad y fatiga empática",
+          "riesgo": "Riesgo de absorción involuntaria y filtración del trauma bélico hacia tu propia psique"
         },
         "pesos": {
           "alignment": 1,
           "actingWeight": 1
         },
         "costes": {
-          "spirituality": 14
+          "spirituality": 12
         },
         "effectKey": "TELEPATH_PACIFY_MINDS",
-        "narrativeOutcome": "Tejes una sugestión de hogar cálido y leche tibia sobre el lecho del huérfano angustiado. Su llanto se transforma en respiración acompasada, y la poción de Telépata resuena con la belleza de guiar la mente hacia el descanso."
+        "narrativeOutcome": "Sincronizas tu respiración con la suya y proyectas un bálsamo de calma psíquica que disuelve el nudo de terror en su pecho. El niño afloja las manos y duerme plácidamente, pero un eco sordo de metralla resuena en tus sienes: has cargado con parte de su espanto."
       },
       {
-        "id": "CHOICE_TELEPATH_8_LEAVE_NURSE",
-        "texto": "Avisar a la enfermera de turno para que le administre un sedante químico ordinario",
+        "id": "CHOICE_TELEPATH_8_CLINICAL_OBSERVE",
+        "texto": "Permanecer en penumbra analizando clínicamente el patrón de espasmos y proyecciones del terror",
         "tradeOffs": {
-          "ganancia": "Procedimiento institucional sin uso de espiritualidad",
-          "coste": "Nulo beneficio místico para tu poción",
-          "riesgo": "El niño despierta con secuelas tóxicas por bromuro"
+          "ganancia": "Obtención de conocimiento profundo sobre la anatomía del trauma en la mente infantil",
+          "coste": "Cero intervención compasiva",
+          "riesgo": "Riesgo de daño psicológico prolongado y convulsiones febriles para el huérfano"
+        },
+        "pesos": {
+          "alignment": 0.5,
+          "actingWeight": 0.8
+        },
+        "costes": {
+          "spirituality": 5
+        },
+        "effectKey": "SPECTATOR_QUIET_ANALYSIS",
+        "narrativeOutcome": "Observas inmóvil desde el vano de la puerta, registrando cada contracción de sus párpados y la cadencia de sus quejidos. Desentrañas los mecanismos del miedo con frialdad científica, asimilando datos invaluables mientras el huérfano gime exhausto hasta el amanecer."
+      },
+      {
+        "id": "CHOICE_TELEPATH_8_INSTITUTIONAL_CARE",
+        "texto": "Avisar a la enfermera de guardia para que aplique el protocolo institucional de sedantes",
+        "tradeOffs": {
+          "ganancia": "Resolución externa reglamentaria sin exponerte ante la institución",
+          "coste": "Digestión mínima de la poción por delegar la acción mística",
+          "riesgo": "Efectos secundarios nocivos del bromuro y láudano en la salud del menor"
         },
         "pesos": {
           "alignment": 0.2,
@@ -388,7 +406,7 @@
           "spirituality": 0
         },
         "effectKey": "TELEPATH_SHIELD_EGO",
-        "narrativeOutcome": "Llamas a la monja de guardia y te apartas mientras administran gotas de láudano al pequeño. Cumples con el orden civil de la institución, mas tu poder psíquico permanece enclaustrado como un talento ocioso que nada transforma."
+        "narrativeOutcome": "Avisas a la monja de guardia y contemplas cómo fuerzan al niño a tragar una cucharada de jarabe amargo. El infante queda aletargado en un estupor químico; preservas tu reserva espiritual y la neutralidad civil, pero el procedimiento deja un rastro de frialdad estéril."
       }
     ],
     "antiExploit": {

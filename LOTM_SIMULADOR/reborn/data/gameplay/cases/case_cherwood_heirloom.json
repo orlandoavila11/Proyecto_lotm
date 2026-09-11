@@ -1,130 +1,292 @@
 {
   "id": "CASE_CHERWOOD_HEIRLOOM",
-  "title": "El Relicario Perdido de la Mansión Cherwood",
-  "description": "Durante una noche de niebla densa y bombardeo en el distrito de Cherwood, un relicario de plata con una gema amatista tallada de la Cuarta Época desapareció de la caja fuerte del Vizconde Conrad.",
+  "title": "El Eco en el Nido Vacío",
+  "description": "Durante la posguerra de Backlund (~1353), los orfanatos de Cherwood comienzan a producir niños extraños que olvidan recuerdos felices sin mostrar sufrimiento. Al mismo tiempo, el venerado Dr. Avery Sterling vive enclaustrado tallando y quemando juguetes de madera cada medianoche.",
   "truthModel": {
-    "culpable": "DRAFT_SUSPECT_BUTLER_OR_ANTIQUE_DEALER",
-    "metodo": "DRAFT_OPENING_VIA_APPRENTICE_TRICK_OR_DUPLICATE_KEY",
-    "motivo": "DRAFT_SETTLING_WAR_DEBTS_TO_SMUGGLERS",
-    "status": "DRAFT",
-    "nota": "Borrador provisional esperando la autoría y firma del Director Humano (§HUMAN_REVIEW)."
+    "nucleo": "Dr. Avery Sterling",
+    "operador": "Evangeline Sterling",
+    "complices": [
+      {
+        "id": "NPC_CASE_JULIAN_VANCE",
+        "gradiente": "Facilitación involuntaria (mitigación de pesadillas debilita defensas mentales infantiles)"
+      },
+      {
+        "id": "NPC_CASE_SISTER_BEATRICE",
+        "gradiente": "Encubrimiento compasivo trágico (oculta registros para evitar purga letal eclesiástica)"
+      },
+      {
+        "id": "NPC_CASE_MADAME_VIVIEN",
+        "gradiente": "Facilitación consciente (suministró el Espejo G3-0711 conociendo su capacidad de extracción ontológica)"
+      }
+    ],
+    "metodo": "Red de amortiguación espiritual que drena trauma hacia Sterling, combinada con extracción de fragmentos de identidad mediante el Artefacto Sellado G3-0711 para sustentar el nodo central.",
+    "motivoOriginal": "Salvar a los niños de Cherwood de la locura, el suicidio y la contaminación espiritual colectiva.",
+    "motivoActual": "Mantener con vida a Sterling y evitar la fractura catastrófica de la red que desataría veinte años de sufrimiento acumulado.",
+    "culpable": "Dr. Avery Sterling & Evangeline Sterling",
+    "motivo": "Contener el colapso del nodo central de absorción psíquica de Cherwood.",
+    "status": "APPROVED_BY_DIRECTOR",
+    "nota": "Truth Model Fundador sellado canónicamente para el Acto I."
   },
   "clues": [
     {
-      "id": "CLUE_HEIRLOOM_SAFE_SCRATCH",
+      "id": "CLUE_BURNED_TOYS",
+      "nombre": "Juguetes de Madera Quemados",
       "fuentes": [
-        "INSPECCION_OCULAR_CAJA_FUERTE",
-        "DECLARACION_MAYORDOMO"
+        "CENIZAS_CHIMENEA_EXTERIOR_MANSION",
+        "AGENDA_WENDY_CLARK_COMPRAS"
       ],
       "gating": {
-        "profession": "DETECTIVE_OR_POLICE",
+        "visibility": "PUBLIC_DAY_0"
+      },
+      "descripcion": "Figuritas de animales de pino talladas a mano con nombres grabados de niños huérfanos, rescatadas semicalcinadas de la pira de la chimenea."
+    },
+    {
+      "id": "CLUE_WILL_DRAFT",
+      "nombre": "Borrador de Directivas de Sterling",
+      "fuentes": [
+        "DESPACHO_PRIVADO_MANSION_STERLING",
+        "AGENDA_ARTHUR_HALE_CONTABLE"
+      ],
+      "gating": {
+        "vector": "investigativo",
         "minSequence": 9
       },
-      "descripcion": "Arañazos microscópicos en la cerradura mecánica sugieren ganzúa fina o intento de duplicación."
+      "descripcion": "Borrador legal fechado hace 14 años donde Sterling formaliza la red de amortiguación espiritual instituyendo su propia persona como fianza irrevocable."
     },
     {
-      "id": "CLUE_AMETHYST_AURA_RESONANCE",
+      "id": "CLUE_MIND_TRACES",
+      "nombre": "Microexpresiones de Agotamiento de Evangeline",
       "fuentes": [
-        "ADIVINACION_TAROT_PENDULO",
-        "VISION_ESPIRITUAL_HABITACION"
-      ],
-      "gating": {
-        "pathway": "FOOL",
-        "minSequence": 9,
-        "vector": "esotérico"
-      },
-      "descripcion": "Residuo etéreo color violeta persistente que apunta hacia la alcantarilla este."
-    },
-    {
-      "id": "CLUE_SINGER_MICRO_TREMOR",
-      "fuentes": [
-        "INTERROGATORIO_SALON_TE",
-        "SONDEO_GESTUAL_SPECTATOR"
+        "DIARIO_INTIMO_TOCADOR_EVANGELINE",
+        "AGENDA_EVANGELINE_FARMACIA_CHERWOOD"
       ],
       "gating": {
         "pathway": "VISIONARY",
         "minSequence": 9,
         "vector": "social"
       },
-      "descripcion": "La cantante Madame Elaine parpadea compulsivamente y traga saliva cada vez que se menciona el muelle sur."
+      "descripcion": "La lectura gestual revela que Evangeline no muestra soberbia criminal, sino el colapso neuromuscular de una mártir cuya mente se desintegra por sostener a su padre."
     },
     {
-      "id": "CLUE_PAWNSHOP_RECEIPT",
+      "id": "CLUE_ASTROLOGY_RECORD",
+      "nombre": "Convergencia de Hilos Espirituales",
       "fuentes": [
-        "REGISTRO_CASA_EMPEÑO_EAST",
-        "CONFIDENCIA_BUHONERO"
+        "MARCAS_TIZA_DESVAN_ORFANATO_SAN_DIONISIO",
+        "AGENDA_VIGILIA_NOCTURNA_MANSION"
       ],
       "gating": {
-        "hourRange": [
-          "20:00",
-          "04:00"
-        ],
-        "location": "EAST_BOROUGH"
+        "pathway": "FOOL",
+        "minSequence": 9,
+        "vector": "esotérico"
       },
-      "descripcion": "Pagaré a nombre ficticio por una joya de amatista empeñada dos horas después del robo."
+      "descripcion": "La Visión Espiritual y el péndulo revelan filamentos etéreos que enlazan las sienes de los niños huérfanos directamente con el sótano de la mansión Sterling."
     },
     {
-      "id": "CLUE_BLOODSTAIN_VELVET",
+      "id": "CLUE_CONCEALED_SAFE",
+      "nombre": "El Libro de Transferencias de Sterling",
       "fuentes": [
-        "EXAMEN_FORENSE_ALFOMBRA",
-        "TESTIMONIO_DONCELLA"
-      ],
-      "gating": {
-        "time": "DAY",
-        "profession": "MEDIC_OR_SCHOLAR"
-      },
-      "descripcion": "Una gota de sangre seca mezclada con polvillo de carbón industrial de las vías del tren."
-    },
-    {
-      "id": "CLUE_BUTLER_SECRET_CORRESPONDENCE",
-      "fuentes": [
-        "ALLANAMIENTO_DESPACHO_MAYORDOMO",
-        "INTERCEPCION_CORREO"
+        "CAJA_FUERTE_TRAS_RETRATO_FAMILIAR",
+        "AGENDA_EVANGELINE_DECLARACION_ACORRALADA"
       ],
       "gating": {
         "vector": "investigativo",
-        "minSequence": 9
+        "minSequence": 9,
+        "isConcealed": true
       },
-      "descripcion": "Cartas amenazantes de prestamistas de la familia Beria exigiendo 500 libras."
+      "descripcion": "Registro clínico secreto donde Sterling anota con precisión milimétrica el dolor absorbido por infante, la sobrecarga acumulada y los fragmentos de memoria felices sustraídos.",
+      "esPruebaDefinitiva": true,
+      "isConcealed": true
     },
     {
-      "id": "CLUE_SHADOW_FOOTPRINTS_GARDEN",
+      "id": "CLUE_FINANCIAL_BLACKMAIL",
+      "nombre": "Transferencias a Madame Vivien",
       "fuentes": [
-        "RASTREO_HUELLAS_LLUVIA",
-        "INTERROGATORIO_JARDINERO"
+        "LIBRO_MAYOR_BANCO_BACKLUND_CHERWOOD",
+        "AGENDA_VIVIEN_SALON_ESPIRITISMO"
       ],
       "gating": {
-        "vector": "violento",
-        "skill": "TRACKING"
+        "vector": "investigativo"
       },
-      "descripcion": "Huellas de botas de suela militar feysakiana saltando el muro perimetral hacia la calle."
+      "descripcion": "Comprobantes bancarios de 450 libras esterlinas libradas por Sterling a favor de Vivien bajo el epígrafe de reliquia de compensación psíquica."
+    },
+    {
+      "id": "CLUE_FORGED_LETTERS",
+      "nombre": "Registros de Sanidad Parroquial Alterados",
+      "fuentes": [
+        "CRIPTA_ARCHIVOS_PARROQUIA_SAN_DIONISIO",
+        "AGENDA_BEATRICE_MISA_MATUTINA"
+      ],
+      "gating": {
+        "vector": "social"
+      },
+      "descripcion": "Expedientes de orfanatos con raspaduras intencionadas y correspondencia oficial que desvía inspecciones de la Iglesia de la Noche Eterna."
+    },
+    {
+      "id": "CLUE_BLOODLINE_TALISMAN",
+      "nombre": "El Espejo del Huérfano (Artefacto G3-0711)",
+      "fuentes": [
+        "ESTUCHE_PLOMO_SOTANO_MANSION_STERLING",
+        "AGENDA_EDWARD_ROWE_ADUANA_CLANDESTINA"
+      ],
+      "gating": {
+        "vector": "esotérico",
+        "minSequence": 8
+      },
+      "descripcion": "Espejo de plata oxidada de la Vía del Error cuyo cristal opaco drena recuerdos y conceptos de identidad a cambio de despojar de memorias al propio portador."
     }
   ],
   "vectors": {
-    "esotérico": {
-      "dominantPathway": "FOOL",
-      "bonus": "Adivinación con tarot o péndulo revela dirección de la joya (+30% eficacia mística)",
-      "tool": "TAROT_OR_DOWSING"
+    "investigativo": {
+      "bonus": "Examen forense de archivos clínicos, libros mayores bancarios y apertura de cerraduras ocultas.",
+      "tool": "FORENSIC_KIT_AND_ARCHIVES"
     },
     "social": {
       "dominantPathway": "VISIONARY",
-      "bonus": "Lectura gestual de Espectador decodifica contradicciones emocionales y desmorona coartadas",
-      "tool": "SPECTATOR_MICROEXPRESSION"
+      "bonus": "Lectura psicológica de microexpresiones y confrontación de contradicciones en agendas de sospechosos.",
+      "tool": "SPECTATOR_PSYCHOLOGICAL_ANALYSIS"
     },
-    "investigativo": {
-      "bonus": "Examen forense de cerraduras y correlación de manifiestos aduaneros",
-      "tool": "FORENSIC_KIT"
+    "esotérico": {
+      "dominantPathway": "FOOL",
+      "bonus": "Adivinación con cartas del tarot, radiestesia de péndulo y rastreo directo de Hilos del Cuerpo Espiritual.",
+      "tool": "SPIRIT_VISION_AND_DIVINATION"
     },
     "violento": {
-      "bonus": "Coerción de sospechosos callejeros en callejones oscuros y seguimiento de huellas",
-      "tool": "FORCE_OR_TRACKING"
+      "bonus": "Allanamiento forzoso y coerción directa en la mansión.",
+      "tool": "FORCE_AND_COERCION",
+      "risk": "Riesgo crítico de fractura prematura de la Red espiritual ('Fractura del Nido'): convulsiones en huérfanos, +20 de Tensión de Distrito y bloqueo de aproximación diplomática."
     }
   },
-  "hypothesisSlots": 3,
+  "hypothesisSlots": [
+    {
+      "id": "HYPOTHESIS_JULIAN",
+      "name": "Julian Vance es el ladrón de recuerdos",
+      "teoria": "Julian aprovecha su condición de Nightmare y sus visitas nocturnas a los orfanatos para robar los recuerdos de los huérfanos durante el sueño.",
+      "pistasSoporte": [
+        "CLUE_BURNED_TOYS",
+        "CLUE_MIND_TRACES"
+      ],
+      "disparadorFalsacion": "Insuficiencia Mecánica: Julian carece de cualquier vector de sustracción o almacenamiento ontológico; sus poderes solo inducen sueño y mitigan pesadillas.",
+      "colapsoAnte": "CLUE_CONCEALED_SAFE",
+      "status": "APPARENTLY_VALID"
+    },
+    {
+      "id": "HYPOTHESIS_CHURCH",
+      "name": "La Iglesia de la Noche Eterna experimenta con los niños",
+      "teoria": "La Iglesia orquesta una operación encubierta para insensibilizar a los huérfanos y convertirlos en recipientes sin miedo.",
+      "pistasSoporte": [
+        "CLUE_FORGED_LETTERS",
+        "CLUE_WILL_DRAFT"
+      ],
+      "disparadorFalsacion": "Intención Protectora Trágica: La Hermana Beatrice encubrió las anomalías para impedir que una purga eclesiástica provocara la muerte de los infantes vinculados.",
+      "colapsoAnte": "CLUE_CONCEALED_SAFE",
+      "status": "APPARENTLY_VALID"
+    },
+    {
+      "id": "HYPOTHESIS_VIVIEN",
+      "name": "Madame Vivien comercia recuerdos en el mercado negro",
+      "teoria": "Vivien utiliza el espejo para sustraer memorias infantiles y venderlas como exquisiteces a clientes adinerados de Backlund.",
+      "pistasSoporte": [
+        "CLUE_FINANCIAL_BLACKMAIL",
+        "CLUE_BLOODLINE_TALISMAN"
+      ],
+      "disparadorFalsacion": "Rol de Proveedor Pasivo: Vivien suministró el artefacto por dinero pero no tiene acceso a los huérfanos ni controla la red de Sterling.",
+      "colapsoAnte": "CLUE_CONCEALED_SAFE",
+      "status": "APPARENTLY_VALID"
+    },
+    {
+      "id": "HYPOTHESIS_TRUE_NETWORK",
+      "name": "La Red de Amortiguación de Sterling",
+      "teoria": "El Dr. Avery Sterling sostiene como nodo central el dolor de Cherwood desde hace veinte años, mientras Evangeline extrae recuerdos felices con el Espejo G3-0711 para impedir que su padre enloquezca.",
+      "pistasSoporte": [
+        "CLUE_CONCEALED_SAFE",
+        "CLUE_ASTROLOGY_RECORD",
+        "CLUE_MIND_TRACES",
+        "CLUE_BLOODLINE_TALISMAN"
+      ],
+      "disparadorFalsacion": "N/A - Verdad Fundacional del Caso",
+      "colapsoAnte": "N/A",
+      "status": "TRUE_STRUCTURE"
+    }
+  ],
   "expiry": {
-    "dias": 6,
-    "resultado_malo": "La amatista es sacada de contrabando en un vapor hacia Intis; el mayordomo aparece degollado en los muelles de East Borough."
+    "dias": 30,
+    "checkpoints": [
+      {
+        "day": 14,
+        "eventId": "STERLING_LUCIDITY_DROP",
+        "description": "Sterling sufre episodios graves de desorientación; la pira de juguetes se intensifica y se impone penalizador del -20% a interrogatorios civiles.",
+        "effects": {
+          "interrogationPenalty": 0.2
+        }
+      },
+      {
+        "day": 21,
+        "eventId": "EVANGELINE_DESPERATION_BOOST",
+        "description": "Evangeline incrementa la extracción del Espejo; tres nuevos huérfanos sufren amnesia severa y surge evidencia física involuntaria.",
+        "effects": {
+          "visibleCluesIncrement": 1
+        }
+      },
+      {
+        "day": 30,
+        "eventId": "THE_BROKEN_FATHER",
+        "description": "Colapso catastrófico e irreversible de la Red por muerte agónica de Sterling. Veinte años de dolor acumulado inundan instantáneamente a los 57 huérfanos.",
+        "effects": {
+          "tensiónDistrito": 40,
+          "convergenciaRate": 25,
+          "corrupciónLocal": 15,
+          "questLock": "CHERWOOD_RECOVERY_CONTENT"
+        }
+      }
+    ],
+    "resultado_malo": "Colapso catastrófico de la Red ('The Broken Father'): Sterling fallece, la presa psíquica revienta inundando de trauma a los huérfanos y Cherwood queda sumido en crisis espiritual (+40 Tensión, +25 Convergencia)."
   },
-  "rewards_ref": "REWARD_CHERWOOD_CASE_STANDARD"
+  "resolutionStates": [
+    {
+      "id": "RESOLUTION_A_JUSTICE",
+      "nombre": "Resolución A · JUSTICIA",
+      "accion": "Exponer públicamente a los Sterling y destruir el Espejo ante las autoridades policiales.",
+      "consecuenciasLocales": "Sterling fallece pacificado; la red se disuelve. Los niños recuperan sus recuerdos felices pero también el trauma crudo de la guerra, sufriendo crisis severas.",
+      "telarDeclared": {
+        "variable": "TRUTH_VS_STABILITY",
+        "deltaTruth": 5,
+        "deltaStability": -5
+      }
+    },
+    {
+      "id": "RESOLUTION_B_TRUTH",
+      "nombre": "Resolución B · VERDAD",
+      "accion": "Entregar el caso y los diarios clínicos a la Iglesia de la Noche Eterna para desmantelamiento controlado.",
+      "consecuenciasLocales": "Desmantelamiento ritual eclesiástico; menor mortalidad pero huérfanos en cuarentena perpetua y Evangeline recluida en un asilo.",
+      "telarDeclared": {
+        "variable": "TRUTH_VS_STABILITY",
+        "deltaTruth": 3,
+        "deltaStability": 0
+      }
+    },
+    {
+      "id": "RESOLUTION_C_STABILITY",
+      "nombre": "Resolución C · ESTABILIDAD",
+      "accion": "Destruir las pruebas que incriminan a los Sterling y encubrir la red para que siga funcionando en secreto.",
+      "consecuenciasLocales": "Cherwood permanece pacífico y con baja criminalidad; los huérfanos crecen dóciles pero vacíos de individualidad y Evangeline sigue desvaneciéndose.",
+      "telarDeclared": {
+        "variable": "TRUTH_VS_STABILITY",
+        "deltaTruth": -5,
+        "deltaStability": 5
+      }
+    },
+    {
+      "id": "RESOLUTION_D_HEIR",
+      "nombre": "Resolución D · HEREDERO",
+      "accion": "Enlazar parte de la espiritualidad del jugador a la Red de Cherwood relevando la sobrecarga terminal de Sterling.",
+      "consecuenciasLocales": "Sterling vive sus últimos meses lúcido; Evangeline cesa el uso del Espejo y los huérfanos inician una recuperación gradual de memorias.",
+      "telarDeclared": {
+        "variable": "TRUTH_VS_STABILITY",
+        "deltaTruth": 2,
+        "deltaStability": 3,
+        "traitUnlocked": "LOS_SUSURROS_DEL_NIDO"
+      }
+    }
+  ],
+  "rewards_ref": "REWARD_CHERWOOD_CASE_FOUNDATIONAL"
 }
-

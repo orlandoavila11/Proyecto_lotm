@@ -71,7 +71,7 @@ describe('Brief 02.4: Compilación Tier G (Fool + Visionary)', () => {
       }
     }
 
-    assert.strictEqual(narrativeOutcomeCount, 34, 'Deben existir exactamente 34 narrativeOutcomes (17 en fool + 17 en visionary)');
+    assert.strictEqual(narrativeOutcomeCount, 35, 'Deben existir exactamente 35 narrativeOutcomes (17 en fool + 18 en visionary tras reautoría de DIL_VISIONARY_8_3)');
   });
 
   it('2. DILEMMA_G: Unicidad de choiceText y sin repetición de plantillas genéricas (Test 5)', () => {
@@ -158,25 +158,80 @@ describe('Brief 02.4: Compilación Tier G (Fool + Visionary)', () => {
     }
   });
 
-  it('5. CASE_G: Scaffold de CASE_CHERWOOD_HEIRLOOM con gating, 4 vectores y especialización de vías', () => {
+  it('5. CASE_G v2: Truth Model fundador, 8 pistas (>=2 fuentes), hipótesis colapsables, expiry y 4 resoluciones', () => {
     const caseData = JSON.parse(fs.readFileSync(casePath, 'utf-8'));
 
     assert.strictEqual(caseData.id, 'CASE_CHERWOOD_HEIRLOOM');
-    assert.ok(caseData.clues.length >= 6 && caseData.clues.length <= 8, 'Debe contener entre 6 y 8 pistas');
+    assert.strictEqual(caseData.title, 'El Eco en el Nido Vacío');
+    assert.strictEqual(caseData.truthModel.status, 'APPROVED_BY_DIRECTOR', 'truthModel debe estar firmado por el Director');
+    assert.strictEqual(caseData.truthModel.nucleo, 'Dr. Avery Sterling');
+    assert.strictEqual(caseData.truthModel.operador, 'Evangeline Sterling');
+    assert.strictEqual(caseData.truthModel.complices.length, 3, 'Deben existir exactamente 3 facilitadores con gradiente');
+
+    // Validación de las 8 pistas y sus >= 2 fuentes
+    assert.strictEqual(caseData.clues.length, 8, 'Deben existir exactamente 8 pistas compiladas');
+    const clueIds = new Set(caseData.clues.map((c: any) => c.id));
+    const expectedClues = [
+      'CLUE_BURNED_TOYS',
+      'CLUE_WILL_DRAFT',
+      'CLUE_MIND_TRACES',
+      'CLUE_ASTROLOGY_RECORD',
+      'CLUE_CONCEALED_SAFE',
+      'CLUE_FINANCIAL_BLACKMAIL',
+      'CLUE_FORGED_LETTERS',
+      'CLUE_BLOODLINE_TALISMAN'
+    ];
+    for (const exp of expectedClues) {
+      assert.ok(clueIds.has(exp), `Falta la pista obligatoria ${exp}`);
+    }
 
     for (const clue of caseData.clues) {
       assert.ok(Array.isArray(clue.fuentes) && clue.fuentes.length >= 2, `Pista ${clue.id} debe tener al menos 2 fuentes independientes`);
       assert.ok(clue.gating, `Pista ${clue.id} debe tener gating estructurado`);
     }
 
-    assert.ok(caseData.vectors.esotérico.dominantPathway === 'FOOL', 'Vector esotérico debe estar dominado por FOOL');
-    assert.ok(caseData.vectors.social.dominantPathway === 'VISIONARY', 'Vector social debe estar dominado por VISIONARY');
-    assert.strictEqual(caseData.truthModel.status, 'DRAFT', 'truthModel debe estar marcado como DRAFT esperando pluma del Director');
+    // Gating específico de vías y prueba definitiva
+    const mindTraces = caseData.clues.find((c: any) => c.id === 'CLUE_MIND_TRACES');
+    assert.strictEqual(mindTraces.gating.pathway, 'VISIONARY', 'CLUE_MIND_TRACES debe tener gating VISIONARY');
+
+    const astro = caseData.clues.find((c: any) => c.id === 'CLUE_ASTROLOGY_RECORD');
+    assert.strictEqual(astro.gating.pathway, 'FOOL', 'CLUE_ASTROLOGY_RECORD debe tener gating FOOL');
+
+    const safe = caseData.clues.find((c: any) => c.id === 'CLUE_CONCEALED_SAFE');
+    assert.strictEqual(safe.esPruebaDefinitiva, true, 'CLUE_CONCEALED_SAFE debe ser la prueba definitiva');
+    assert.strictEqual(safe.isConcealed, true, 'CLUE_CONCEALED_SAFE debe ser concealed');
+
+    // Validación de hipótesis (3 falsas colapsables ante el Libro de Transferencias)
+    assert.ok(Array.isArray(caseData.hypothesisSlots) && caseData.hypothesisSlots.length === 4, 'Deben existir 4 slots de hipótesis');
+    const falseHyps = caseData.hypothesisSlots.filter((h: any) => h.id !== 'HYPOTHESIS_TRUE_NETWORK');
+    assert.strictEqual(falseHyps.length, 3, 'Deben existir exactamente 3 hipótesis falsas');
+    for (const fh of falseHyps) {
+      assert.strictEqual(fh.colapsoAnte, 'CLUE_CONCEALED_SAFE', `Hipótesis ${fh.id} debe colapsar ante CLUE_CONCEALED_SAFE`);
+      assert.ok(fh.disparadorFalsacion, `Hipótesis ${fh.id} debe tener disparador de falsación explícito`);
+    }
+
+    // Validación de vector violento y riesgo
+    assert.ok(caseData.vectors.violento.risk, 'Vector violento debe explicitar el riesgo de fractura de la Red');
+
+    // Validación de Expiry (checkpoints 14, 21, 30)
+    assert.strictEqual(caseData.expiry.dias, 30, 'Caducidad global debe ser de 30 días');
+    assert.strictEqual(caseData.expiry.checkpoints.length, 3, 'Deben existir checkpoints en días 14, 21 y 30');
+    assert.deepStrictEqual(caseData.expiry.checkpoints.map((cp: any) => cp.day), [14, 21, 30]);
+    assert.strictEqual(caseData.expiry.checkpoints[2].eventId, 'THE_BROKEN_FATHER');
+
+    // Validación de las 4 resoluciones y Telar
+    assert.ok(Array.isArray(caseData.resolutionStates) && caseData.resolutionStates.length === 4, 'Deben existir exactamente 4 resoluciones');
+    const resD = caseData.resolutionStates.find((r: any) => r.id === 'RESOLUTION_D_HEIR');
+    assert.strictEqual(resD.telarDeclared.traitUnlocked, 'LOS_SUSURROS_DEL_NIDO');
+
+    // Comprobación de que la biblia narrativa existe
+    const narrativePath = path.join(packageRoot, 'data', 'gameplay', 'cases', 'case_cherwood_heirloom.narrative.md');
+    assert.ok(fs.existsSync(narrativePath), 'Debe existir case_cherwood_heirloom.narrative.md');
   });
 
-  it('6. NPC_WEEK_G: 30 rutinas semanales, Sharron/Xio canónicas y 3 sustituciones ejecutadas', () => {
+  it('6. NPC_WEEK_G: 39 rutinas semanales, Sharron/Xio canónicas, 3 sustituciones y NPCs del caso Cherwood', () => {
     const npcs = JSON.parse(fs.readFileSync(npcWeeksPath, 'utf-8'));
-    assert.strictEqual(npcs.length, 30, 'Deben compilarse exactamente 30 rutinas de NPC');
+    assert.ok(npcs.length >= 39, `Deben compilarse al menos 39 rutinas de NPC (actual: ${npcs.length})`);
 
     const canonicalNpcs = npcs.filter((n: any) => n.isCanonical);
     assert.strictEqual(canonicalNpcs.length, 2, 'Solo Sharron (NPC_004) y Xio (NPC_010) permanecen como canónicas vivas');
@@ -196,6 +251,17 @@ describe('Brief 02.4: Compilación Tier G (Fool + Visionary)', () => {
 
     const npc009 = npcs.find((n: any) => n.id === 'NPC_009');
     assert.ok(npc009 && npc009.name.includes('Archivista') && !npc009.isCanonical, 'Old Neil debe estar sustituido');
+
+    // Comprobación de NPCs clave del caso Cherwood
+    const julian = npcs.find((n: any) => n.id === 'NPC_CASE_JULIAN_VANCE');
+    assert.ok(julian, 'Julian Vance debe estar en npc_weeks.json');
+    assert.ok(julian.schedule.lunes.noche.includes('San Dionisio') || julian.schedule.lunes.noche.includes('orfanato'), 'Julian debe ser encontrable de noche en orfanato');
+
+    const sterling = npcs.find((n: any) => n.id === 'NPC_CASE_AVERY_STERLING');
+    assert.ok(sterling, 'Dr. Avery Sterling debe estar en npc_weeks.json');
+
+    const evangeline = npcs.find((n: any) => n.id === 'NPC_CASE_EVANGELINE');
+    assert.ok(evangeline, 'Evangeline Sterling debe estar en npc_weeks.json');
 
     for (const n of npcs) {
       assert.ok(n.schedule, `NPC ${n.id} debe tener schedule`);
@@ -232,15 +298,20 @@ describe('Brief 02.4: Compilación Tier G (Fool + Visionary)', () => {
     assert.ok(counts['CALAMITY_CLUSTER'] < 8, 'Pool CALAMITY_CLUSTER reporta gap legítimo');
   });
 
-  it('8. ARTIFACT_G: Distribución canónica de artefactos (7 canon de novela, 8 library)', () => {
+  it('8. ARTIFACT_G: Distribución canónica de artefactos (7 canon de novela, 9 library)', () => {
     const artifacts = JSON.parse(fs.readFileSync(artifactsPath, 'utf-8'));
-    assert.strictEqual(artifacts.length, 15, 'Deben existir exactamente 15 artefactos');
+    assert.strictEqual(artifacts.length, 16, 'Deben existir exactamente 16 artefactos');
 
     const canonArtifacts = artifacts.filter((a: any) => a.canonConfidence === 'canon');
     const libraryArtifacts = artifacts.filter((a: any) => a.canonConfidence === 'library');
 
     assert.strictEqual(canonArtifacts.length, 7, 'Deben existir exactamente 7 artefactos canon provenientes de grade_0..3');
-    assert.strictEqual(libraryArtifacts.length, 8, 'Deben existir exactamente 8 artefactos clasificados como library');
+    assert.strictEqual(libraryArtifacts.length, 9, 'Deben existir exactamente 9 artefactos clasificados como library (incluido G3-0711)');
+
+    const espejo = artifacts.find((a: any) => a.id === 'ARTIFACT_G3_0711');
+    assert.ok(espejo, 'El Espejo del Huérfano ARTIFACT_G3_0711 debe existir');
+    assert.strictEqual(espejo.pathwayTag, 'ERROR');
+    assert.strictEqual(espejo.sefiraGroupRef, 'LOTM');
   });
 });
 

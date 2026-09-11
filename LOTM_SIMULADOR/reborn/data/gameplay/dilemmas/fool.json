@@ -81,21 +81,21 @@
       },
       {
         "id": "CHOICE_FOOL_9_SAMPLE_CHEMICAL",
-        "texto": "Tomar discretamente una muestra de barro y dejar que las autoridades sanitarias decidan",
+        "texto": "Recoger muestras de lodo y costear un análisis químico forense en un boticario de Cherwood",
         "tradeOffs": {
-          "ganancia": "Cero sospecha y preservación del anonimato",
-          "coste": "Nula asimilación de la vía",
-          "riesgo": "La comunidad sigue consumiendo agua turbia"
+          "ganancia": "Investigación mundana rigurosa que destapa la fuente física de la polución",
+          "coste": "Gasto de chelines de tu bolsillo y demora de dos días",
+          "riesgo": "Destapas un laboratorio alquímico clandestino en los desagües que alerta a contrabandistas"
         },
         "pesos": {
-          "alignment": 0.2,
-          "actingWeight": 0.5
+          "alignment": 0.4,
+          "actingWeight": 0.6
         },
         "costes": {
           "spirituality": 0
         },
         "effectKey": "SEER_CAUTIOUS_ABSTAIN",
-        "narrativeOutcome": "Llenas el frasco con lodo en penumbra y te retiras con el cuello del abrigo levantado. La prudencia civil te salva de miradas curiosas, pero tu espiritualidad permanece estancada como el agua del pozo."
+        "narrativeOutcome": "Pagas el análisis al boticario y dos días después el informe confirma vertidos de ácido sulfúrico procedentes de un laboratorio clandestino bajo las cloacas de Cherwood. Tu indagación mundana abre una nueva pista criminal en el distrito, aunque tu digestión mística de Vidente permanece inmóvil."
       }
     ],
     "antiExploit": {
@@ -191,11 +191,11 @@
       },
       {
         "id": "CHOICE_FOOL_9_DIRECT_REFUSAL",
-        "texto": "Rechazar la consulta alegando que las cartas no deben interrogar a los muertos de guerra",
+        "texto": "Rechazar tajantemente la consulta advirtiendo que el destino de los caídos en combate es intocable",
         "tradeOffs": {
-          "ganancia": "Protección ante posibles ataduras fantasmales",
-          "coste": "Nula asimilación de la vía",
-          "riesgo": "La mujer cae en manos de charlatanes maliciosos"
+          "ganancia": "Preservación estricta del misterio y evasión de ataduras espectrales",
+          "coste": "Nula asimilación de la vía de Vidente",
+          "riesgo": "La viuda desesperada cae en manos de un charlatán del Puente que la estafa y huye"
         },
         "pesos": {
           "alignment": 0.1,
@@ -205,7 +205,7 @@
           "spirituality": 0
         },
         "effectKey": "SEER_CAUTIOUS_ABSTAIN",
-        "narrativeOutcome": "Guardas la baraja en la funda de cuero y niegas con la cabeza. La viuda se aleja entre la llovizna con paso vacilante; preservas tu reserva espiritual, pero sientes el peso estéril de una oportunidad perdida para interpretar el telar del destino."
+        "narrativeOutcome": "Guardas la baraja en la funda de terciopelo y rechazas la consulta con severidad ascética. Dos días después, rumores del Puente confirman que la viuda entregó sus últimos ahorros a un charlatán callejero que la engañó con falsas esperanzas antes de desaparecer; tu negativa protegió tu seguridad espiritual, pero el eco del abuso ajeno deja una sombra amarga en tu vecindario."
       }
     ],
     "antiExploit": {
@@ -373,22 +373,22 @@
         "narrativeOutcome": "Relajas la musculatura facial en una mueca de bobalicona timidez mientras ralentizas el pulso a cincuenta latidos por minuto. El sabueso pierde el rastro y el inquisidor sigue de largo; la digestión de Payaso avanza al dominar tu propio cuerpo."
       },
       {
-        "id": "CHOICE_FOOL_8_RUN_ROOFTOPS",
-        "texto": "Saltar al callejón lateral y huir trepando canalones con agilidad sobrehumana",
+        "id": "CHOICE_FOOL_8_DRUNKEN_BUFFOON",
+        "texto": "Fingir una embriaguez ridícula tropezando de bruces y esparciendo flores de tela ante el sabueso",
         "tradeOffs": {
-          "ganancia": "Evasión garantizada del interrogatorio presencial",
-          "coste": "Sospecha policial inmediata disparada",
-          "riesgo": "Persecución activa con orden de captura en Backlund"
+          "ganancia": "Desarma la tensión policial transformando el control inquisitorial en una bufonada callejera",
+          "coste": "Gasto de espiritualidad para modular el patetismo cómico y empujones de la guardia",
+          "riesgo": "Pérdida de dignidad civil y magulladuras al ser arrojado al fango de la calzada"
         },
         "pesos": {
-          "alignment": -0.5,
+          "alignment": 0.8,
           "actingWeight": 0.9
         },
         "costes": {
-          "spirituality": 20
+          "spirituality": 10
         },
-        "effectKey": "CLOWN_BOLD_PERFORMANCE",
-        "narrativeOutcome": "Te impulsas sobre un barril de arenques y alcanzas las cornisas de pizarra con un salto acrobático asombroso. Los silbatos policiales rasgan la niebla; salvas la piel, pero Backlund entero amanece con tu silueta en carteles de búsqueda."
+        "effectKey": "CLOWN_STAGE_LAUGHTER",
+        "narrativeOutcome": "Tropiezas de forma cómica contra un farol de gas con hipo teatral y derramas un ramo de flores de tela sobre el hocico del sabueso policial. Los guardias sueltan una carcajada despectiva y te apartan de una patada al grito de '¡muévete, payaso borracho!'. Te arrastras entre la niebla sonriendo bajo la suciedad: has burlado a los Nighthawks abrazando el ridículo del Payaso."
       }
     ],
     "antiExploit": {

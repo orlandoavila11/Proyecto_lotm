@@ -16,6 +16,8 @@ export const ArtifactAtomEffectSchema = z.object({
 export const ArtifactGSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
+  pathwayTag: z.string().optional(),
+  sefiraGroupRef: z.string().optional(),
   atomEffects: z.array(ArtifactAtomEffectSchema).min(1),
   presagio: ArtifactPresagioSchema,
   grade: z.union([

@@ -195,10 +195,10 @@ describe('Brief 03.a: Runtime de Átomos, Loadouts y Matriz de Estados', () => {
     assert.ok(grin.derivationNote.includes('1c'), 'Nota de derivación debe referenciar cola 1c');
   });
 
-  it('6. Artefactos Atados al Vocabulario: 15/15 con atomEffects válidos', () => {
+  it('6. Artefactos Atados al Vocabulario: 16/16 con atomEffects válidos (incluido G3-0711)', () => {
     const artifactsPath = path.join(packageRoot, 'data', 'gameplay', 'artifacts', 'artifacts.json');
     const artifacts = JSON.parse(fs.readFileSync(artifactsPath, 'utf-8'));
-    assert.strictEqual(artifacts.length, 15);
+    assert.strictEqual(artifacts.length, 16);
 
     for (const art of artifacts) {
       assert.ok(Array.isArray(art.atomEffects), `Artefacto '${art.id}' debe tener atomEffects`);

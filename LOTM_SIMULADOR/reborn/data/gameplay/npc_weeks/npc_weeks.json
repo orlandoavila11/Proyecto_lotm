@@ -1568,5 +1568,482 @@
       "IGLESIA": 45,
       "BEYONDER": 50
     }
+  },
+  {
+    "id": "NPC_CASE_AVERY_STERLING",
+    "name": "Dr. Avery Sterling",
+    "isCanonical": false,
+    "eraCoherenceNote": "Benefactor histórico de Cherwood (~1353 Quinta Época); nodo central de la red de amortiguación espiritual.",
+    "schedule": {
+      "lunes": {
+        "mañana": "Confinado en el estudio tallando figuritas de madera",
+        "tarde": "Aposentos cerrados sin respuesta a llamadas",
+        "noche": "Quema de juguetes en la chimenea de la mansión (00:00 - 02:00)"
+      },
+      "martes": {
+        "mañana": "Confinado en el estudio tallando figuritas de madera",
+        "tarde": "Aposentos cerrados sin respuesta a llamadas",
+        "noche": "Quema de juguetes en la chimenea de la mansión (00:00 - 02:00)"
+      },
+      "miercoles": {
+        "mañana": "Confinado en el estudio tallando figuritas de madera",
+        "tarde": "Aposentos cerrados sin respuesta a llamadas",
+        "noche": "Quema de juguetes en la chimenea de la mansión (00:00 - 02:00)"
+      },
+      "jueves": {
+        "mañana": "Confinado en el estudio tallando figuritas de madera",
+        "tarde": "Aposentos cerrados sin respuesta a llamadas",
+        "noche": "Quema de juguetes en la chimenea de la mansión (00:00 - 02:00)"
+      },
+      "viernes": {
+        "mañana": "Confinado en el estudio tallando figuritas de madera",
+        "tarde": "Aposentos cerrados sin respuesta a llamadas",
+        "noche": "Quema de juguetes en la chimenea de la mansión (00:00 - 02:00)"
+      },
+      "sabado": {
+        "mañana": "Confinado en el estudio tallando figuritas de madera",
+        "tarde": "Aposentos cerrados sin respuesta a llamadas",
+        "noche": "Quema de juguetes en la chimenea de la mansión (00:00 - 02:00)"
+      },
+      "domingo": {
+        "mañana": "Confinado en el estudio tallando figuritas de madera",
+        "tarde": "Aposentos cerrados sin respuesta a llamadas",
+        "noche": "Quema de juguetes en la chimenea de la mansión (00:00 - 02:00)"
+      }
+    },
+    "memoryHooks": [
+      "Recuerda los primeros experimentos de la red hace 18 años",
+      "Siente el peso acumulado de 57 huérfanos de Cherwood"
+    ],
+    "opinionPorIdentidad": {
+      "CIVIL": 60,
+      "POLICIA": 30,
+      "IGLESIA": 35,
+      "BEYONDER": 40
+    }
+  },
+  {
+    "id": "NPC_CASE_EVANGELINE",
+    "name": "Evangeline Sterling",
+    "isCanonical": false,
+    "eraCoherenceNote": "Hija adoptiva del Dr. Avery; operadora de la red mediante el Artefacto G3-0711.",
+    "schedule": {
+      "lunes": {
+        "mañana": "Cuidado de su padre en la mansión",
+        "tarde": "Compra de ingredientes sedantes en farmacia de Cherwood",
+        "noche": "Ritual de canalización en el sótano con el Espejo"
+      },
+      "martes": {
+        "mañana": "Cuidado de su padre en la mansión",
+        "tarde": "Visita de inspección discreta al orfanato San Dionisio",
+        "noche": "Ritual de canalización en el sótano con el Espejo"
+      },
+      "miercoles": {
+        "mañana": "Cuidado de su padre en la mansión",
+        "tarde": "Compra de ingredientes sedantes en farmacia de Cherwood",
+        "noche": "Ritual de canalización en el sótano con el Espejo"
+      },
+      "jueves": {
+        "mañana": "Cuidado de su padre en la mansión",
+        "tarde": "Visita de inspección discreta al orfanato San Dionisio",
+        "noche": "Ritual de canalización en el sótano con el Espejo"
+      },
+      "viernes": {
+        "mañana": "Cuidado de su padre en la mansión",
+        "tarde": "Compra de ingredientes sedantes en farmacia de Cherwood",
+        "noche": "Ritual de canalización en el sótano con el Espejo"
+      },
+      "sabado": {
+        "mañana": "Cuidado de su padre en la mansión",
+        "tarde": "Paseo por el jardín de la mansión quemando cartas",
+        "noche": "Ritual de canalización en el sótano con el Espejo"
+      },
+      "domingo": {
+        "mañana": "Cuidado de su padre en la mansión",
+        "tarde": "Supervisión de víveres en el almacén de caridad",
+        "noche": "Ritual de canalización en el sótano con el Espejo"
+      }
+    },
+    "memoryHooks": [
+      "Olvida progresivamente la voz de su madre por uso del Espejo",
+      "Protege desesperadamente la vida de su padre adoptivo"
+    ],
+    "opinionPorIdentidad": {
+      "CIVIL": 50,
+      "POLICIA": 20,
+      "IGLESIA": 25,
+      "BEYONDER": 35
+    }
+  },
+  {
+    "id": "NPC_CASE_JULIAN_VANCE",
+    "name": "Julian Vance",
+    "isCanonical": false,
+    "eraCoherenceNote": "Maestro nocturno en orfanatos de Cherwood; Nightmare (S8 Vía de la Noche). Horario nocturno encontrable.",
+    "schedule": {
+      "lunes": {
+        "mañana": "Descanso en su buhardilla de Cherwood",
+        "tarde": "Preparación de lecciones de lectura infantil",
+        "noche": "Visita nocturna al orfanato San Dionisio: apacigua pesadillas y administra sedantes (21:00 - 01:00)"
+      },
+      "martes": {
+        "mañana": "Descanso en su buhardilla de Cherwood",
+        "tarde": "Preparación de lecciones de lectura infantil",
+        "noche": "Visita nocturna al hospicio infantil de Cherwood (21:00 - 01:00)"
+      },
+      "miercoles": {
+        "mañana": "Descanso en su buhardilla de Cherwood",
+        "tarde": "Preparación de lecciones de lectura infantil",
+        "noche": "Visita nocturna al orfanato San Dionisio: apacigua pesadillas y administra sedantes (21:00 - 01:00)"
+      },
+      "jueves": {
+        "mañana": "Descanso en su buhardilla de Cherwood",
+        "tarde": "Preparación de lecciones de lectura infantil",
+        "noche": "Visita nocturna al hospicio infantil de Cherwood (21:00 - 01:00)"
+      },
+      "viernes": {
+        "mañana": "Descanso en su buhardilla de Cherwood",
+        "tarde": "Preparación de lecciones de lectura infantil",
+        "noche": "Visita nocturna al orfanato San Dionisio: apacigua pesadillas y administra sedantes (21:00 - 01:00)"
+      },
+      "sabado": {
+        "mañana": "Paseo por la biblioteca municipal de Cherwood",
+        "tarde": "Compra de tónicos medicinales",
+        "noche": "Visita nocturna al orfanato San Dionisio (21:00 - 00:00)"
+      },
+      "domingo": {
+        "mañana": "Oración discreta en la capilla de Noche Eterna",
+        "tarde": "Lectura de cuentos a huérfanos",
+        "noche": "Vigilia en el orfanato San Dionisio (22:00 - 02:00)"
+      }
+    },
+    "memoryHooks": [
+      "Recuerda niños que dejaron de tener pesadillas de guerra",
+      "Cree sinceramente que su apaciguamiento onírico cura el trauma"
+    ],
+    "opinionPorIdentidad": {
+      "CIVIL": 60,
+      "POLICIA": 30,
+      "IGLESIA": 55,
+      "BEYONDER": 50
+    }
+  },
+  {
+    "id": "NPC_CASE_SISTER_BEATRICE",
+    "name": "Hermana Beatrice",
+    "isCanonical": false,
+    "eraCoherenceNote": "Administradora laica de caridades de la Iglesia de la Noche Eterna en Cherwood.",
+    "schedule": {
+      "lunes": {
+        "mañana": "Misa matutina y atención a feligreses en San Dionisio",
+        "tarde": "Revisión de registros de adopción en la vicaría",
+        "noche": "Oración solitaria y quema de cartas confidenciales"
+      },
+      "martes": {
+        "mañana": "Misa matutina y atención a feligreses en San Dionisio",
+        "tarde": "Inspección de despensas del orfanato",
+        "noche": "Retiro a su celda parroquial"
+      },
+      "miercoles": {
+        "mañana": "Misa matutina y atención a feligreses en San Dionisio",
+        "tarde": "Revisión de registros de adopción en la vicaría",
+        "noche": "Oración solitaria y quema de cartas confidenciales"
+      },
+      "jueves": {
+        "mañana": "Misa matutina y atención a feligreses en San Dionisio",
+        "tarde": "Supervisión de enfermería con Miriam Wren",
+        "noche": "Retiro a su celda parroquial"
+      },
+      "viernes": {
+        "mañana": "Misa matutina y atención a feligreses en San Dionisio",
+        "tarde": "Revisión de registros de adopción en la vicaría",
+        "noche": "Oración solitaria y quema de cartas confidenciales"
+      },
+      "sabado": {
+        "mañana": "Confesionario laico y reparto de pan de caridad",
+        "tarde": "Reunión con donantes benefactores",
+        "noche": "Vigilia en la cripta parroquial"
+      },
+      "domingo": {
+        "mañana": "Liturgia solemne dominical de Medianoche",
+        "tarde": "Atención a huérfanos de guerra en el patio",
+        "noche": "Cierre de archivos parroquiales"
+      }
+    },
+    "memoryHooks": [
+      "Sabe que una purga eclesiástica de Nighthawks destruiría la red matando a los niños",
+      "Manipula informes parroquiales por compasión trágica"
+    ],
+    "opinionPorIdentidad": {
+      "CIVIL": 55,
+      "POLICIA": 40,
+      "IGLESIA": 70,
+      "BEYONDER": 30
+    }
+  },
+  {
+    "id": "NPC_CASE_MADAME_VIVIEN",
+    "name": "Madame Vivien",
+    "isCanonical": false,
+    "eraCoherenceNote": "Médium espiritista y comerciante clandestina de artefactos en Cherwood; facilitadora consciente.",
+    "schedule": {
+      "lunes": {
+        "mañana": "Descanso y preparación de inciensos en su salón de té",
+        "tarde": "Consultas de espiritismo para viudas y damas burguesas",
+        "noche": "Encuentro con intermediarios de contrabando en callejones de Cherwood"
+      },
+      "martes": {
+        "mañana": "Lectura de correspondencia cifrada",
+        "tarde": "Consultas de espiritismo para viudas y damas burguesas",
+        "noche": "Sesión privada de adivinación en su salón"
+      },
+      "miercoles": {
+        "mañana": "Descanso y preparación de inciensos en su salón de té",
+        "tarde": "Consultas de espiritismo para viudas y damas burguesas",
+        "noche": "Encuentro con intermediarios de contrabando en callejones de Cherwood"
+      },
+      "jueves": {
+        "mañana": "Inventario de talismanes y reliquias en su botica",
+        "tarde": "Consultas de espiritismo para viudas y damas burguesas",
+        "noche": "Sesión privada de adivinación en su salón"
+      },
+      "viernes": {
+        "mañana": "Descanso y preparación de inciensos en su salón de té",
+        "tarde": "Consultas de espiritismo para viudas y damas burguesas",
+        "noche": "Reunión clandestina con anticuarios en taberna portuaria"
+      },
+      "sabado": {
+        "mañana": "Compras de ungüentos y hierbas exóticas",
+        "tarde": "Sesiones públicas de lectura de aura",
+        "noche": "Conteo de fondos y libros contables"
+      },
+      "domingo": {
+        "mañana": "Clausura del salón de té",
+        "tarde": "Paseo por el cementerio de Cherwood",
+        "noche": "Ritual de purificación de objetos sellados"
+      }
+    },
+    "memoryHooks": [
+      "Recuerda la venta del Espejo G3-0711 a los Sterling por 450 libras",
+      "Conoce la capacidad de extracción ontológica del artefacto"
+    ],
+    "opinionPorIdentidad": {
+      "CIVIL": 45,
+      "POLICIA": 15,
+      "IGLESIA": 20,
+      "BEYONDER": 60
+    }
+  },
+  {
+    "id": "NPC_CASE_WENDY_CLARK",
+    "name": "Wendy Clark",
+    "isCanonical": false,
+    "eraCoherenceNote": "Ama de llaves de la Mansión Sterling; gancho común de entrada al presenciar las quemas nocturnas.",
+    "schedule": {
+      "lunes": {
+        "mañana": "Compras matutinas en el mercado de Cherwood (gancho de entrada)",
+        "tarde": "Limpieza y servicio de té en la mansión",
+        "noche": "Aposentos de servicio; escucha ruidos en el sótano"
+      },
+      "martes": {
+        "mañana": "Compras matutinas en el mercado de Cherwood (gancho de entrada)",
+        "tarde": "Lavandería y orden en el ala este",
+        "noche": "Aposentos de servicio; escucha ruidos en el sótano"
+      },
+      "miercoles": {
+        "mañana": "Compras matutinas en el mercado de Cherwood (gancho de entrada)",
+        "tarde": "Limpieza y servicio de té en la mansión",
+        "noche": "Aposentos de servicio; escucha ruidos en el sótano"
+      },
+      "jueves": {
+        "mañana": "Compras matutinas en el mercado de Cherwood (gancho de entrada)",
+        "tarde": "Lavandería y orden en el ala este",
+        "noche": "Aposentos de servicio; escucha ruidos en el sótano"
+      },
+      "viernes": {
+        "mañana": "Compras matutinas en el mercado de Cherwood (gancho de entrada)",
+        "tarde": "Limpieza y servicio de té en la mansión",
+        "noche": "Aposentos de servicio; escucha ruidos en el sótano"
+      },
+      "sabado": {
+        "mañana": "Mercado y recogida de correspondencia médica",
+        "tarde": "Limpieza de chimeneas (halla cenizas de juguetes)",
+        "noche": "Aposentos de servicio en vigilia asustada"
+      },
+      "domingo": {
+        "mañana": "Misa breve en la parroquia de Cherwood",
+        "tarde": "Servicio de comida al Dr. Avery",
+        "noche": "Aposentos de servicio; insomnio por ruidos extraños"
+      }
+    },
+    "memoryHooks": [
+      "Ha visto al Dr. Sterling quemar juguetes con nombres de niños a medianoche",
+      "Teme por la cordura de Evangeline y el doctor"
+    ],
+    "opinionPorIdentidad": {
+      "CIVIL": 65,
+      "POLICIA": 50,
+      "IGLESIA": 55,
+      "BEYONDER": 25
+    }
+  },
+  {
+    "id": "NPC_CASE_ARTHUR_HALE",
+    "name": "Arthur Hale",
+    "isCanonical": false,
+    "eraCoherenceNote": "Contable de los orfanatos de Cherwood; encubre movimientos financieros creyendo proteger a Sterling.",
+    "schedule": {
+      "lunes": {
+        "mañana": "Despacho contable en el orfanato San Dionisio",
+        "tarde": "Gestión de recibos en el Banco de Backlund",
+        "noche": "Taberna local de Cherwood"
+      },
+      "martes": {
+        "mañana": "Despacho contable en el orfanato San Dionisio",
+        "tarde": "Auditoría de donaciones privadas",
+        "noche": "Retiro a su pensión en Cherwood"
+      },
+      "miercoles": {
+        "mañana": "Despacho contable en el orfanato San Dionisio",
+        "tarde": "Gestión de recibos en el Banco de Backlund",
+        "noche": "Taberna local de Cherwood"
+      },
+      "jueves": {
+        "mañana": "Despacho contable en el orfanato San Dionisio",
+        "tarde": "Auditoría de donaciones privadas",
+        "noche": "Retiro a su pensión en Cherwood"
+      },
+      "viernes": {
+        "mañana": "Despacho contable en el orfanato San Dionisio",
+        "tarde": "Gestión de recibos en el Banco de Backlund",
+        "noche": "Taberna local de Cherwood"
+      },
+      "sabado": {
+        "mañana": "Balance semanal de compras y raciones",
+        "tarde": "Paseo por el parque municipal",
+        "noche": "Retiro a su pensión en Cherwood"
+      },
+      "domingo": {
+        "mañana": "Descanso dominical",
+        "tarde": "Revisión de pagarés en su vivienda",
+        "noche": "Retiro temprano"
+      }
+    },
+    "memoryHooks": [
+      "Conoce los pagos de 450 libras a Madame Vivien disfrazados de mantenimiento",
+      "Cree que Sterling es víctima de chantaje financiero"
+    ],
+    "opinionPorIdentidad": {
+      "CIVIL": 50,
+      "POLICIA": 35,
+      "IGLESIA": 40,
+      "BEYONDER": 20
+    }
+  },
+  {
+    "id": "NPC_CASE_MIRIAM_WREN",
+    "name": "Miriam Wren",
+    "isCanonical": false,
+    "eraCoherenceNote": "Enfermera jefa en orfanatos de Cherwood; altera historiales clínicos bajo órdenes de Beatrice.",
+    "schedule": {
+      "lunes": {
+        "mañana": "Ronda médica y toma de temperatura a huérfanos",
+        "tarde": "Suministro de jarabes y tónicos",
+        "noche": "Guardia en la enfermería de San Dionisio"
+      },
+      "martes": {
+        "mañana": "Ronda médica y toma de temperatura a huérfanos",
+        "tarde": "Actualización de historiales clínicos (oculta amnesias)",
+        "noche": "Retiro a su vivienda en Cherwood"
+      },
+      "miercoles": {
+        "mañana": "Ronda médica y toma de temperatura a huérfanos",
+        "tarde": "Suministro de jarabes y tónicos",
+        "noche": "Guardia en la enfermería de San Dionisio"
+      },
+      "jueves": {
+        "mañana": "Ronda médica y toma de temperatura a huérfanos",
+        "tarde": "Actualización de historiales clínicos (oculta amnesias)",
+        "noche": "Retiro a su vivienda en Cherwood"
+      },
+      "viernes": {
+        "mañana": "Ronda médica y toma de temperatura a huérfanos",
+        "tarde": "Suministro de jarabes y tónicos",
+        "noche": "Guardia en la enfermería de San Dionisio"
+      },
+      "sabado": {
+        "mañana": "Limpieza y desinfección de camas hospitalarias",
+        "tarde": "Informe sanitario a la Hermana Beatrice",
+        "noche": "Retiro a su vivienda en Cherwood"
+      },
+      "domingo": {
+        "mañana": "Descanso matutino",
+        "tarde": "Visita a huérfanos convalecientes",
+        "noche": "Guardia nocturna en San Dionisio"
+      }
+    },
+    "memoryHooks": [
+      "Ha visto a niños olvidar nombres de sus padres de un día para otro",
+      "Obedece las directivas de silencio de la Hermana Beatrice"
+    ],
+    "opinionPorIdentidad": {
+      "CIVIL": 60,
+      "POLICIA": 35,
+      "IGLESIA": 60,
+      "BEYONDER": 25
+    }
+  },
+  {
+    "id": "NPC_CASE_EDWARD_ROWE",
+    "name": "Edward Rowe",
+    "isCanonical": false,
+    "eraCoherenceNote": "Aristócrata benefactor y coleccionista de reliquias de la Cuarta Época; intermediario pasivo.",
+    "schedule": {
+      "lunes": {
+        "mañana": "Despacho en su residencia nobiliaria de Cherwood",
+        "tarde": "Subasta privada de antigüedades en West Borough",
+        "noche": "Club social de caballeros"
+      },
+      "martes": {
+        "mañana": "Lectura de gacetas y catálogos de arte",
+        "tarde": "Visita al anticuario de Madame Vivien",
+        "noche": "Cena privada con donantes benéficos"
+      },
+      "miercoles": {
+        "mañana": "Despacho en su residencia nobiliaria de Cherwood",
+        "tarde": "Subasta privada de antigüedades en West Borough",
+        "noche": "Club social de caballeros"
+      },
+      "jueves": {
+        "mañana": "Lectura de gacetas y catálogos de arte",
+        "tarde": "Visita al anticuario de Madame Vivien",
+        "noche": "Cena privada con donantes benéficos"
+      },
+      "viernes": {
+        "mañana": "Despacho en su residencia nobiliaria de Cherwood",
+        "tarde": "Subasta privada de antigüedades en West Borough",
+        "noche": "Club social de caballeros"
+      },
+      "sabado": {
+        "mañana": "Paseo a caballo por los parques de Backlund",
+        "tarde": "Recepción en salones aristocráticos",
+        "noche": "Retiro a sus aposentos"
+      },
+      "domingo": {
+        "mañana": "Misa en la Iglesia de San Dionisio",
+        "tarde": "Supervisión de obras benéficas en Cherwood",
+        "noche": "Estudio de piezas históricas"
+      }
+    },
+    "memoryHooks": [
+      "Intentó adquirir el 'relicario espiritual' de Sterling creyéndolo una joya histórica",
+      "Posee registros aduaneros de piezas importadas por Vivien"
+    ],
+    "opinionPorIdentidad": {
+      "CIVIL": 40,
+      "POLICIA": 50,
+      "IGLESIA": 50,
+      "BEYONDER": 30
+    }
   }
 ]

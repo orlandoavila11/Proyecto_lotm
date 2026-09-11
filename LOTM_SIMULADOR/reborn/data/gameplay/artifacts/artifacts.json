@@ -447,5 +447,38 @@
     },
     "grade": "GRADE_3",
     "canonConfidence": "library"
+  },
+  {
+    "id": "ARTIFACT_G3_0711",
+    "name": "El Espejo del Huérfano (3-0711)",
+    "pathwayTag": "ERROR",
+    "sefiraGroupRef": "LOTM",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 24,
+          "bypassPhysicalArmor": true
+        },
+        "trigger": "IDENTITY_EXTRACTION",
+        "description": "Extrae fragmentos del cuerpo espiritual y recuerdos fundamentales mediante reflejo místico."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "WEAKENED",
+          "durationTurns": 3
+        },
+        "trigger": "CONCEPTUAL_THEFT",
+        "description": "Despoja al objetivo de su individualidad provocando amnesia y debilitamiento ontológico."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Refleja emociones, temores y conceptos en lugar del rostro físico del observador.",
+      "tabú": "Mirar fijamente el reflejo más de doce segundos en soledad.",
+      "mirada": "Pérdida progresiva e irreversible de recuerdos propios del portador."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "library"
   }
 ]
