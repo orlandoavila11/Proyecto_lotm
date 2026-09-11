@@ -236,3 +236,4 @@ El reloj diegético del caso está fijado en 30 días:
 ## 14. FRASE DE CIERRE DEL CASO
 > *"Salvar una ciudad fue fácil. Lo imposible era recordar quién pagó el precio."*  
 > — *Registro Clínico del Dr. Avery Sterling (1353 Quinta Época)*
+

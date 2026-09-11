@@ -70,7 +70,7 @@ LOTM_SIMULADOR/
 6. **Resolución de Rutas:** Prohibidas heurísticas de CWD. Las rutas de datos se resuelven desde la raíz del paquete (`import.meta`).
 7. **Regla del Hueco (§3.8):** Un hueco de contenido nunca se rellena en línea por un agente. Hueco → excepción + cola HUMAN_REVIEW.
 8. **Regla del Testigo (§3.9):** Ninguna operación destructiva (borrado masivo, reescritura, migración, purge) se ejecuta sin commit previo del estado actual. Orden sagrada: **COMMIT primero, TAG después, DESTRUCCIÓN al final**.
-9. **Formato Obligatorio de Reporte (§12 ampliado):** Cada sesión o brief concluido debe emitir su reporte con el **campo 0 obligatorio "COMMIT: <hash>"**. Todo reporte cita el commit que contiene su trabajo. Reporte sin commit = inválido. Fin de sesión = commit + push (commit = testigo; push = notario), sin excepciones.
+9. **Formato Obligatorio de Reporte (§12 ampliado):** Cada sesión o brief concluido debe emitir su reporte con el **campo 0 obligatorio "COMMIT: <hash>"** (acompañado de URL de CI y contador N/20). Todo reporte cita el commit que contiene su trabajo. **Reporte sin Campo 0 = INVÁLIDO**. Fin de sesión = commit + push (commit = testigo; push = notario), sin excepciones.
 10. **Regla Permanente de Procedencia de Gates (§3.10):** Toda re-corrida de un gate tras cambio estructural reporta DELTA contra la corrida anterior + hipótesis causal. Números sin procedencia = inválidos.
 
 ---
