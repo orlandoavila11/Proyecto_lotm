@@ -21,6 +21,8 @@ CREATE TABLE IF NOT EXISTS characters (
   raw_pence INTEGER NOT NULL DEFAULT 7200, -- 7200 peniques = £30 libras iniciales
   current_location TEXT NOT NULL DEFAULT 'Backlund - Distrito de Cherwood',
   current_day INTEGER NOT NULL DEFAULT 1,
+  ruina INTEGER NOT NULL DEFAULT 0 CHECK (ruina >= 0),
+  terminal_state TEXT DEFAULT NULL CHECK (terminal_state IN (NULL, 'ALIVE', 'DEAD', 'LOST', 'TRANSFORMED', 'NPC_CONVERTED', 'SPECIAL_END')),
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
@@ -47,8 +49,57 @@ CREATE TABLE IF NOT EXISTS anchors (
   id TEXT PRIMARY KEY,
   character_id TEXT NOT NULL,
   title TEXT NOT NULL,
-  strength INTEGER NOT NULL CHECK (strength >= 1 AND strength <= 100),
-  category TEXT NOT NULL CHECK (category IN ('FAMILY', 'CIVILIAN_ROUTINE', 'DIARY', 'BELIEF', 'BOND')),
+  strength INTEGER NOT NULL CHECK (strength >= 0 AND strength <= 100),
+  category TEXT NOT NULL DEFAULT 'ROUTINE',
+  type TEXT NOT NULL DEFAULT 'ROUTINE',
+  name TEXT NOT NULL DEFAULT '',
+  description TEXT NOT NULL DEFAULT '',
+  damage_count INTEGER NOT NULL DEFAULT 0,
+  is_destroyed INTEGER NOT NULL DEFAULT 0 CHECK (is_destroyed IN (0, 1)),
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
+);
+
+-- 3.1 CICATRICES PERMANENTES
+CREATE TABLE IF NOT EXISTS character_scars (
+  id TEXT PRIMARY KEY,
+  character_id TEXT NOT NULL,
+  scar_code TEXT NOT NULL,
+  name TEXT NOT NULL,
+  narrative TEXT NOT NULL,
+  origin_anchor_id TEXT,
+  is_severe INTEGER NOT NULL DEFAULT 0 CHECK (is_severe IN (0, 1)),
+  mechanics_json TEXT NOT NULL DEFAULT '[]',
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
+);
+
+-- 3.2 REGISTRO DE COMPRAS DE SUSURROS [S]
+CREATE TABLE IF NOT EXISTS somatics_whisper_purchases (
+  id TEXT PRIMARY KEY,
+  character_id TEXT NOT NULL,
+  dilemma_id TEXT NOT NULL,
+  choice_id TEXT NOT NULL,
+  price_paid_json TEXT NOT NULL,
+  advantage_granted_json TEXT NOT NULL,
+  day INTEGER NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
+);
+
+-- 3.3 EVENTOS DE RAMPAGE
+CREATE TABLE IF NOT EXISTS rampage_events (
+  id TEXT PRIMARY KEY,
+  character_id TEXT NOT NULL,
+  trigger_reason TEXT NOT NULL,
+  start_day INTEGER NOT NULL,
+  end_day INTEGER NOT NULL,
+  hours_skipped INTEGER NOT NULL,
+  damaged_anchor_id TEXT,
+  district_impact_json TEXT NOT NULL,
+  case_impact_json TEXT NOT NULL,
+  reconstruction_dossier_json TEXT NOT NULL,
+  wake_narrative TEXT NOT NULL,
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
 );

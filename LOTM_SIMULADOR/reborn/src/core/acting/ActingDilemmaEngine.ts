@@ -5,6 +5,8 @@ import { CanonicalPathwayId } from '../types/pathway.js';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { DilemmaG } from '../../infra/content/schemas/dilemma.schema.js';
 import { ActingBalance } from '../../infra/content/schemas/actingBalance.schema.js';
+import { SomaticsEngine } from '../somatics/SomaticsEngine.js';
+import { WhisperPrice } from '../types/somatics.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, '../../..');
@@ -14,6 +16,8 @@ export interface ClientDilemmaOption {
   texto: string;
   costes: Record<string, any>;
   isWhisper?: boolean;
+  whisperPrice?: WhisperPrice;
+  advantageDescription?: string;
 }
 
 export interface ClientDilemma {
@@ -858,11 +862,20 @@ export class ActingDilemmaEngine {
 
       if (showWhispers && d.whisperOptions && d.whisperOptions.length > 0) {
         for (const w of d.whisperOptions) {
+          const somaticsBalance = SomaticsEngine.getSomaticsBalance();
+          const defaultPrice: WhisperPrice = {
+            type: 'CORRUPTION',
+            amount: 4,
+            description: 'La mácula astral se profundiza (+4 corrupción, +3 ruina ontológica permanente)'
+          };
+          const price: WhisperPrice = (w as any).whisperPrice || defaultPrice;
           clientOptions.push({
             id: w.id,
             texto: w.texto,
             costes: w.costes || {},
-            isWhisper: true
+            isWhisper: true,
+            whisperPrice: price,
+            advantageDescription: (w as any).tradeOffs?.ganancia || 'Ventaja sobrenatural ineludible'
           });
         }
       }
@@ -949,6 +962,31 @@ export class ActingDilemmaEngine {
     let corruptionDelta = 0;
     if (alignment < 0) {
       corruptionDelta = balance.transgression_corruption; // +3
+      const currentWeek = Math.max(1, Math.ceil(char.current_day / 7));
+      const transCount = db.recordTransgression(characterId, currentWeek);
+      if (transCount >= 3) {
+        const somBalance = SomaticsEngine.getSomaticsBalance();
+        SomaticsEngine.damageDeterministicAnchor(db, characterId, somBalance.anchors.damage_extreme_transgression, 'EXTREME_TRANSGRESSION');
+        SomaticsEngine.addRuina(db, characterId, 'extreme_transgression');
+      }
+    }
+
+    // Cobro de precio e inyección de ruina si es elección de susurro [S]
+    const isWhisperChoice = choiceId.includes('WHISPER') || !!matchedOption.isWhisper;
+    if (isWhisperChoice) {
+      const price: WhisperPrice = (matchedOption as any).whisperPrice || {
+        type: 'CORRUPTION',
+        amount: 4,
+        description: 'La mácula astral se profundiza (+4 corrupción, +3 ruina permanente)'
+      };
+      SomaticsEngine.payWhisperPrice(
+        db,
+        characterId,
+        price,
+        dilemmaId,
+        choiceId,
+        (matchedOption as any).tradeOffs?.ganancia || 'Ventaja sobrenatural ineludible'
+      );
     }
 
     // Coste de espiritualidad
@@ -958,9 +996,10 @@ export class ActingDilemmaEngine {
     }
 
     // 4. Aplicar cambios a personaje y persona activa (SIN TOCAR DIGESTIÓN)
-    const newSanity = Math.max(0, Math.min(100, char.sanity + (effectProfile.sanity || 0)));
-    const newCorruption = Math.min(100, (char.corruption || 0) + corruptionDelta);
-    const newSpirituality = char.current_spirituality - spCost;
+    const currentChar = db.getCharacter(characterId) || char;
+    const newSanity = Math.max(0, Math.min(100, currentChar.sanity + (effectProfile.sanity || 0)));
+    const newCorruption = Math.min(100, (currentChar.corruption || 0) + corruptionDelta);
+    const newSpirituality = currentChar.current_spirituality - spCost;
 
     db.updateCharacterSomatics(characterId, {
       sanity: newSanity,

@@ -70,14 +70,8 @@ export const characterRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: C
       is_compromised: 0
     });
 
-    // 3. Crear ancla inicial
-    db.addAnchor({
-      id: `anchor_${charId}_routine`,
-      character_id: charId,
-      title: `Vínculo Civil y Rutina como ${background}`,
-      strength: 40,
-      category: 'CIVILIAN_ROUTINE'
-    });
+    // 3. Crear las 6 anclas iniciales canónicas de origen y plantilla (HUMAN_REVIEW)
+    SomaticsEngine.initializeCharacterAnchors(db, charId);
 
     // 4. Añadir ingredientes o pertenencias de inicio en inventario
     db.addItem({
@@ -145,6 +139,7 @@ export const characterRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: C
     const persona = db.getActivePersona(id);
     const anchors = db.getAnchors(id);
     const anchorStrength = db.getTotalAnchorStrength(id);
+    const scars = db.getScars(id);
     const inventory = db.getInventory(id);
     const seqData = loader.getSequenceData(char.pathway, char.sequence);
 
@@ -155,8 +150,10 @@ export const characterRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: C
       maxSpirituality: char.max_spirituality,
       sanity: char.sanity,
       corruption: char.corruption,
+      ruina: char.ruina ?? 0,
       digestionProgress: char.digestion_progress,
-      anchorStrength
+      anchorStrength,
+      terminalState: (char.terminal_state as any) ?? null
     });
 
     return reply.send({
@@ -166,6 +163,8 @@ export const characterRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: C
       anchorStrength,
       anchors,
       anchorsCount: anchors.length,
+      scars,
+      scarsCount: scars.length,
       inventory,
       inventoryCount: inventory.length,
       somatics: somaticsEval,
@@ -175,6 +174,31 @@ export const characterRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: C
         pence: char.raw_pence % 12
       }
     });
+  });
+
+  // GET /api/character/:id/scars
+  fastify.get('/:id/scars', async (req, reply) => {
+    const { id } = req.params as { id: string };
+    const char = db.getCharacter(id);
+    if (!char) {
+      return reply.status(404).send({ error: 'Personaje no encontrado' });
+    }
+    const scars = db.getScars(id);
+    return reply.send({ characterId: id, scars, scarsCount: scars.length });
+  });
+
+  // POST /api/character/interact-anchor (Regeneración de fuerza de ancla)
+  fastify.post('/interact-anchor', async (req, reply) => {
+    const body = req.body as { characterId: string; anchorId: string; amount?: number };
+    if (!body?.characterId || !body?.anchorId) {
+      return reply.status(400).send({ error: 'characterId y anchorId requeridos' });
+    }
+    const char = db.getCharacter(body.characterId);
+    if (!char) {
+      return reply.status(404).send({ error: 'Personaje no encontrado' });
+    }
+    const updated = SomaticsEngine.repairAnchorWeekly(db, body.characterId, body.anchorId, body.amount);
+    return reply.send({ success: true, anchor: updated });
   });
 
   // POST /api/character/advance-day

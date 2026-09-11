@@ -1,0 +1,287 @@
+{
+  "version": "1.0.0",
+  "ruina_tiers": [
+    {
+      "tier": "INTEGRO",
+      "min": 0,
+      "max": 0,
+      "descriptor": "Íntegro",
+      "convergence_bonus": 0
+    },
+    {
+      "tier": "MARCADO",
+      "min": 1,
+      "max": 19,
+      "descriptor": "Marcado",
+      "convergence_bonus": 5
+    },
+    {
+      "tier": "EROSIONADO",
+      "min": 20,
+      "max": 49,
+      "descriptor": "Erosionado",
+      "convergence_bonus": 15
+    },
+    {
+      "tier": "ROTO",
+      "min": 50,
+      "max": 79,
+      "descriptor": "Roto",
+      "convergence_bonus": 30
+    },
+    {
+      "tier": "PERDIDO",
+      "min": 80,
+      "max": 9999,
+      "descriptor": "Perdido",
+      "convergence_bonus": 50
+    }
+  ],
+  "ruina_sources": {
+    "rampage": 15,
+    "anchor_destroyed": 10,
+    "severe_scar": 5,
+    "whisper_choice_s": 3,
+    "extreme_transgression": 5
+  },
+  "anchors": {
+    "initial_count": 6,
+    "max_anchors": 8,
+    "weekly_recovery_rate": 5,
+    "confident_relation_threshold": 80,
+    "confident_weeks_required": 3,
+    "damage_rampage": 25,
+    "damage_extreme_transgression": 15
+  },
+  "initial_anchor_templates": [
+    {
+      "id_suffix": "frost",
+      "type": "PERSON",
+      "name": "Julian Frost",
+      "description": "Un ratero asmático que te debe la vida tras salvarlo de un prestamista en East Borough; su lealtad huele a ginebra barata y gratitud sincera.",
+      "strength": 40,
+      "origin": "DETECTIVE_ORIGIN"
+    },
+    {
+      "id_suffix": "office",
+      "type": "LOCATION",
+      "name": "Despacho en Calle Daffodil 14",
+      "description": "Dos sillones de cuero raído, el aroma a tabaco turco y el letrero de latón pulido que promete respuestas a maridos celosos y comerciantes asaltados.",
+      "strength": 45,
+      "origin": "DETECTIVE_ORIGIN"
+    },
+    {
+      "id_suffix": "morning_routine",
+      "type": "ROUTINE",
+      "name": "El Libro Mayor Matutino y la Tetera de Cobre",
+      "description": "Anotar meticulosamente cada penique gastado y hervir agua antes de que la sirena de la fábrica de vapor despierte a Cherwood.",
+      "strength": 35,
+      "origin": "DETECTIVE_ORIGIN"
+    },
+    {
+      "id_suffix": "higgins",
+      "type": "PERSON",
+      "name": "Señora Higgins (La Casera)",
+      "description": "Una viuda estricta que exige el alquiler puntual cada viernes, pero invariablemente deja un plato de estofado caliente cuando escucha tus pasos cansados de noche.",
+      "strength": 40,
+      "origin": "CIVILIAN_TEMPLATE"
+    },
+    {
+      "id_suffix": "innocent_creed",
+      "type": "CONVICTION",
+      "name": "El inocente no pagará con sangre lo que el culpable ocultó",
+      "description": "Un código inflexible que forjaste al ver a un muchacho colgado injustamente en los muelles; la verdad debe salir a la luz, cueste lo que cueste.",
+      "strength": 50,
+      "origin": "CIVILIAN_TEMPLATE"
+    },
+    {
+      "id_suffix": "investigator_license",
+      "type": "ROLE",
+      "name": "Licencia Civil de Investigador Privado #B-408",
+      "description": "El documento oficial firmado por la Policía de Backlund que te separa de los vagabundos y te otorga derecho a caminar por las calles con sombrero de hongo y libreta de notas.",
+      "strength": 40,
+      "origin": "CIVILIAN_TEMPLATE"
+    }
+  ],
+  "scars_catalog": [
+    {
+      "id": "SCAR_0_NEST_WHISPERS",
+      "name": "Los Susurros del Nido",
+      "narrative": "Los murmullos de un feto que nunca nació resuenan cuando te adentras en áticos o sótanos oscuros.",
+      "is_severe": true,
+      "mechanics": [
+        {
+          "hook": "INVESTIGATION_PENALTY",
+          "target": "CASE_CHERWOOD_HEIRLOOM",
+          "value": -10,
+          "description": "-10% resistencia mental en investigaciones de la Mansión Sterling"
+        },
+        {
+          "hook": "SPIRIT_VISION_BONUS",
+          "target": "NON_HUMAN_TRACES",
+          "value": 5,
+          "description": "+5% percepción de rastros espirituales no humanos"
+        }
+      ]
+    },
+    {
+      "id": "SCAR_COLD_HANDS",
+      "name": "Manos de Cadáver",
+      "narrative": "Tus dedos pierden calor y adquieren un tinte azulado permanente; la torpeza táctil te asalta bajo estrés.",
+      "is_severe": false,
+      "mechanics": [
+        {
+          "hook": "COMBAT_AP_PENALTY",
+          "target": "SLEIGHT_OF_HAND_ACTIONS",
+          "value": 1,
+          "description": "+1 AP de coste en acciones de juego de manos y ganzúas en combate o sigilo"
+        }
+      ]
+    },
+    {
+      "id": "SCAR_CHILD_WEEPING_PHOBIA",
+      "name": "Horror al Llanto Infantil",
+      "narrative": "El sonido de un infante llorando te produce un espasmo en el diafragma y taquicardia violenta.",
+      "is_severe": false,
+      "mechanics": [
+        {
+          "hook": "INVESTIGATION_PENALTY",
+          "target": "CHILD_INVOLVED_INQUIRY",
+          "value": -1,
+          "description": "-1 en interacciones sociales y deducciones cuando hay niños involucrados"
+        }
+      ]
+    },
+    {
+      "id": "SCAR_MIRROR_PARANOIA",
+      "name": "Aversión al Cristal",
+      "narrative": "Jamás miras directamente a un espejo de frente; estás convencido de que tu reflejo parpadea con medio segundo de retraso.",
+      "is_severe": true,
+      "mechanics": [
+        {
+          "hook": "DIVINATION_SANITY_DAMAGE",
+          "target": "MIRROR_DIVINATION",
+          "value": 2,
+          "description": "+2 daño de sanidad al usar adivinación por espejo"
+        }
+      ]
+    },
+    {
+      "id": "SCAR_PHANTOM_ASH_TASTE",
+      "name": "Sabor a Ceniza Sagrada",
+      "narrative": "Tu lengua percibe el sabor a cenizas de incienso eclesiástico cada vez que dices una falsedad calculada.",
+      "is_severe": false,
+      "mechanics": [
+        {
+          "hook": "DECEPTION_PENALTY",
+          "target": "CHURCH_OFFICIALS",
+          "value": -5,
+          "description": "-5% efectividad en engaño hacia clérigos u oficiales de la Iglesia"
+        }
+      ]
+    },
+    {
+      "id": "SCAR_WHISPERING_VEINS",
+      "name": "Venas Parlantes",
+      "narrative": "Las venas de tu antebrazo laten al compás de oraciones en Hermes antiguo cuando la espiritualidad desciende de 20.",
+      "is_severe": true,
+      "mechanics": [
+        {
+          "hook": "COMBAT_ALERT_LEAK",
+          "target": "LOW_SPIRITUALITY",
+          "value": 5,
+          "description": "+5 alerta inquisitorial por turno de combate agotado con espiritualidad < 20"
+        }
+      ]
+    },
+    {
+      "id": "SCAR_LETHARGIC_PULSE",
+      "name": "Pulso Somnoliento",
+      "narrative": "Tu corazón se ralentiza a un ritmo antinatural en situaciones de calma, provocando apatía profunda hacia la rutina civil.",
+      "is_severe": false,
+      "mechanics": [
+        {
+          "hook": "ROUTINE_RECOVERY_PENALTY",
+          "target": "ROUTINE_ANCHOR",
+          "value": 50,
+          "description": "La regeneración de anclas de rutina se reduce a la mitad"
+        }
+      ]
+    },
+    {
+      "id": "SCAR_GAZE_OF_THE_WATCHED",
+      "name": "El Peso de la Mirada Invisible",
+      "narrative": "Una picazón punzante en la nuca te convence de que seres del mundo astral te observan a través de los cuadros familiares.",
+      "is_severe": false,
+      "mechanics": [
+        {
+          "hook": "SUSPICION_GAIN_PENALTY",
+          "target": "PORTRAIT_PROXIMITY",
+          "value": 10,
+          "description": "+10% incremento de sospecha si actúas frente a retratos o pinturas"
+        }
+      ]
+    },
+    {
+      "id": "SCAR_SHATTERED_TRUST",
+      "name": "Mandíbula Apretada",
+      "narrative": "Un reflejo condicionado de desconfianza te hace apretar los dientes hasta sangrar las encías ante promesas de auxilio.",
+      "is_severe": true,
+      "mechanics": [
+        {
+          "hook": "RESCUE_REJECTION",
+          "target": "NPC_AID",
+          "value": 1,
+          "description": "Imposibilidad de recibir auxilio directo de aliados sin chequeo previo"
+        }
+      ]
+    }
+  ],
+  "whisper_prices_menu": [
+    {
+      "id": "PRICE_CORRUPTION_LOW",
+      "type": "CORRUPTION",
+      "amount": 4,
+      "description": "La mácula astral se profundiza (+4 corrupción)"
+    },
+    {
+      "id": "PRICE_MEMORY_RELATION",
+      "type": "MEMORY_RELATION",
+      "penalty": 1,
+      "description": "Un recuerdo cálido se difumina (-1 con tu relación más alta)"
+    },
+    {
+      "id": "PRICE_MEMORY_COMPENDIUM",
+      "type": "MEMORY_COMPENDIUM",
+      "blockCount": 1,
+      "description": "Una entrada del Compendio Oculto queda sellada tras niebla mental"
+    },
+    {
+      "id": "PRICE_ANCHOR_DAMAGE",
+      "type": "ANCHOR_DAMAGE",
+      "amount": 10,
+      "description": "Una grieta se abre en tu ancla más vulnerable (-10 de fuerza)"
+    }
+  ],
+  "corruption_threshold_visible_signs": 60,
+  "rampage_corruption_threshold": 90,
+  "rampage_sanity_threshold": 5,
+  "rampage_event": {
+    "time_skip_hours_min": 24,
+    "time_skip_hours_max": 48,
+    "time_skip_days": 1,
+    "district_tension_increase": 20,
+    "inquisitorial_alert_increase": 15,
+    "investigation_clock_delay_days": 2
+  },
+  "drift_trajectories": {
+    "actor_drift_consecutive_windows": 2,
+    "actor_drift_coherence_threshold": 1.0,
+    "actor_drift_anchor_threshold": 40,
+    "actor_drift_recovery_windows": 2,
+    "actor_drift_recovery_coherence_min": 0.4,
+    "actor_drift_recovery_coherence_max": 0.9,
+    "chronic_corruption_ruina_threshold": 50,
+    "chronic_corruption_threshold": 60
+  }
+}

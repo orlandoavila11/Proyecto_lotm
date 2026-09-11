@@ -27,6 +27,8 @@ export interface CharacterRow {
   raw_pence: number;
   current_location: string;
   current_day: number;
+  ruina?: number;
+  terminal_state?: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -51,7 +53,24 @@ export interface AnchorRow {
   character_id: string;
   title: string;
   strength: number;
-  category: 'FAMILY' | 'CIVILIAN_ROUTINE' | 'DIARY' | 'BELIEF' | 'BOND';
+  category: string;
+  type?: string;
+  name?: string;
+  description?: string;
+  damage_count?: number;
+  is_destroyed?: number;
+  created_at: string;
+}
+
+export interface CharacterScarRow {
+  id: string;
+  character_id: string;
+  scar_code: string;
+  name: string;
+  narrative: string;
+  origin_anchor_id: string | null;
+  is_severe: number;
+  mechanics_json: string;
   created_at: string;
 }
 
@@ -133,8 +152,9 @@ export class DatabaseClient {
       INSERT INTO characters (
         id, name, pathway, sequence, current_health, max_health,
         current_spirituality, max_spirituality, sanity, corruption,
-        digestion_progress, raw_pence, current_location, current_day
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        digestion_progress, raw_pence, current_location, current_day,
+        ruina, terminal_state
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
     stmt.run(
@@ -143,7 +163,9 @@ export class DatabaseClient {
       char.current_spirituality, char.max_spirituality,
       char.sanity, char.corruption,
       char.digestion_progress, char.raw_pence,
-      char.current_location, char.current_day
+      char.current_location, char.current_day,
+      char.ruina ?? 0,
+      char.terminal_state ?? null
     );
 
     return this.getCharacter(char.id)!;
@@ -161,6 +183,8 @@ export class DatabaseClient {
     corruption?: number;
     digestion?: number;
     sequence?: number;
+    ruina?: number;
+    terminal_state?: string | null;
   }): void {
     const fields: string[] = [];
     const values: any[] = [];
@@ -171,6 +195,8 @@ export class DatabaseClient {
     if (updates.corruption !== undefined) { fields.push('corruption = ?'); values.push(updates.corruption); }
     if (updates.digestion !== undefined) { fields.push('digestion_progress = ?'); values.push(updates.digestion); }
     if (updates.sequence !== undefined) { fields.push('sequence = ?'); values.push(updates.sequence); }
+    if (updates.ruina !== undefined) { fields.push('ruina = ?'); values.push(updates.ruina); }
+    if (updates.terminal_state !== undefined) { fields.push('terminal_state = ?'); values.push(updates.terminal_state); }
 
     if (fields.length === 0) return;
 
@@ -179,6 +205,27 @@ export class DatabaseClient {
 
     const sql = `UPDATE characters SET ${fields.join(', ')} WHERE id = ?`;
     this.db.prepare(sql).run(...values);
+  }
+
+  /**
+   * Incrementa la ruina de forma estrictamente monótona (acumulador permanente, jamás baja).
+   */
+  public updateCharacterRuina(id: string, ruinaDelta: number): number {
+    this.db.prepare(`
+      UPDATE characters 
+      SET ruina = MAX(ruina, ruina + ?), updated_at = datetime('now') 
+      WHERE id = ?
+    `).run(ruinaDelta, id);
+    const row = this.db.prepare('SELECT ruina FROM characters WHERE id = ?').get(id) as any;
+    return row?.ruina ?? 0;
+  }
+
+  public setTerminalState(id: string, terminalState: string): void {
+    this.db.prepare(`
+      UPDATE characters
+      SET terminal_state = ?, updated_at = datetime('now')
+      WHERE id = ?
+    `).run(terminalState, id);
   }
 
   public updateCharacterWealth(id: string, penceDelta: number): number {
@@ -229,21 +276,207 @@ export class DatabaseClient {
 
   // --- ANCLAS ---
   public addAnchor(anchor: Omit<AnchorRow, 'created_at'>): void {
+    const mapCategory = (t: string) => {
+      if (['FAMILY', 'CIVILIAN_ROUTINE', 'DIARY', 'BELIEF', 'BOND'].includes(t)) return t;
+      if (t === 'PERSON') return 'BOND';
+      if (t === 'CONVICTION') return 'BELIEF';
+      return 'CIVILIAN_ROUTINE';
+    };
+    const cat = mapCategory(anchor.category || anchor.type || 'CIVILIAN_ROUTINE');
+    const tipologyType = anchor.type || anchor.category || 'ROUTINE';
+
     this.db.prepare(`
-      INSERT INTO anchors (id, character_id, title, strength, category)
-      VALUES (?, ?, ?, ?, ?)
-    `).run(anchor.id, anchor.character_id, anchor.title, anchor.strength, anchor.category);
+      INSERT INTO anchors (id, character_id, title, strength, category, type, name, description, damage_count, is_destroyed)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(
+      anchor.id,
+      anchor.character_id,
+      anchor.title || anchor.name || 'Ancla',
+      anchor.strength,
+      cat,
+      tipologyType,
+      anchor.name || anchor.title || 'Ancla',
+      anchor.description || '',
+      anchor.damage_count ?? 0,
+      anchor.is_destroyed ?? 0
+    );
   }
 
   public getAnchors(characterId: string): AnchorRow[] {
-    return (this.db.prepare('SELECT * FROM anchors WHERE character_id = ?').all(characterId) as unknown[]) as AnchorRow[];
+    return (this.db.prepare('SELECT * FROM anchors WHERE character_id = ? ORDER BY created_at ASC').all(characterId) as unknown[]) as AnchorRow[];
+  }
+
+  public getActiveAnchors(characterId: string): AnchorRow[] {
+    return (this.db.prepare('SELECT * FROM anchors WHERE character_id = ? AND is_destroyed = 0 ORDER BY strength DESC').all(characterId) as unknown[]) as AnchorRow[];
+  }
+
+  public damageAnchor(anchorId: string, damage: number): { anchor: AnchorRow; destroyed: boolean } {
+    const existing = this.db.prepare('SELECT * FROM anchors WHERE id = ?').get(anchorId) as unknown as AnchorRow;
+    if (!existing) throw new Error(`Ancla no encontrada: ${anchorId}`);
+    const newStrength = Math.max(0, existing.strength - damage);
+    const newDamageCount = (existing.damage_count || 0) + 1;
+    const isDestroyed = newStrength === 0 ? 1 : 0;
+    this.db.prepare(`
+      UPDATE anchors 
+      SET strength = ?, damage_count = ?, is_destroyed = ?
+      WHERE id = ?
+    `).run(newStrength, newDamageCount, isDestroyed, anchorId);
+    const updated = this.db.prepare('SELECT * FROM anchors WHERE id = ?').get(anchorId) as unknown as AnchorRow;
+    return { anchor: updated, destroyed: isDestroyed === 1 };
+  }
+
+  public repairAnchor(anchorId: string, amount: number): AnchorRow {
+    this.db.prepare(`
+      UPDATE anchors 
+      SET strength = MIN(100, strength + ?)
+      WHERE id = ? AND is_destroyed = 0
+    `).run(amount, anchorId);
+    return this.db.prepare('SELECT * FROM anchors WHERE id = ?').get(anchorId) as unknown as AnchorRow;
   }
 
   public getTotalAnchorStrength(characterId: string): number {
-    const rows = this.getAnchors(characterId);
-    if (rows.length === 0) return 20; // Piso base de humanidad
+    const rows = this.getActiveAnchors(characterId);
+    if (rows.length === 0) return 10; // Piso mínimo cuando todo está destruido o ausente
     const total = rows.reduce((sum, a) => sum + a.strength, 0);
-    return Math.min(100, Math.floor(total / rows.length * 1.5));
+    return Math.min(100, Math.floor((total / rows.length) * 1.5));
+  }
+
+  // --- CICATRICES (SCARS) ---
+  public addScar(scar: {
+    id: string;
+    character_id?: string;
+    characterId?: string;
+    scar_code?: string;
+    scarCode?: string;
+    name: string;
+    narrative: string;
+    origin_anchor_id?: string | null;
+    originAnchorId?: string | null;
+    is_severe?: boolean;
+    isSevere?: boolean;
+    mechanics: any[];
+  }): void {
+    const charId = scar.character_id || scar.characterId || '';
+    const code = scar.scar_code || scar.scarCode || '';
+    const origin = scar.origin_anchor_id ?? scar.originAnchorId ?? null;
+    const severe = (scar.is_severe ?? scar.isSevere) ? 1 : 0;
+
+    this.db.prepare(`
+      INSERT INTO character_scars (id, character_id, scar_code, name, narrative, origin_anchor_id, is_severe, mechanics_json)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(
+      scar.id,
+      charId,
+      code,
+      scar.name,
+      scar.narrative,
+      origin,
+      severe,
+      JSON.stringify(scar.mechanics || [])
+    );
+  }
+
+  public getScars(characterId: string): any[] {
+    const rows = this.db.prepare('SELECT * FROM character_scars WHERE character_id = ? ORDER BY created_at ASC').all(characterId) as unknown as CharacterScarRow[];
+    return rows.map(r => ({
+      id: r.id,
+      characterId: r.character_id,
+      scarCode: r.scar_code,
+      name: r.name,
+      narrative: r.narrative,
+      originAnchorId: r.origin_anchor_id || undefined,
+      isSevere: r.is_severe === 1,
+      mechanics: JSON.parse(r.mechanics_json || '[]'),
+      createdAt: r.created_at
+    }));
+  }
+
+  // --- REGISTRO DE COMPRAS DE SUSURROS [S] ---
+  public recordWhisperPurchase(record: {
+    id: string;
+    character_id: string;
+    dilemma_id: string;
+    choice_id: string;
+    price_paid: any;
+    advantage_granted: any;
+    day: number;
+  }): void {
+    this.db.prepare(`
+      INSERT INTO somatics_whisper_purchases (id, character_id, dilemma_id, choice_id, price_paid_json, advantage_granted_json, day)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `).run(
+      record.id,
+      record.character_id,
+      record.dilemma_id,
+      record.choice_id,
+      JSON.stringify(record.price_paid),
+      JSON.stringify(record.advantage_granted),
+      record.day
+    );
+  }
+
+  public getWhisperPurchases(characterId: string): any[] {
+    const rows = this.db.prepare('SELECT * FROM somatics_whisper_purchases WHERE character_id = ? ORDER BY created_at ASC').all(characterId) as any[];
+    return rows.map(r => ({
+      id: r.id,
+      characterId: r.character_id,
+      dilemmaId: r.dilemma_id,
+      choiceId: r.choice_id,
+      pricePaid: JSON.parse(r.price_paid_json),
+      advantageGranted: JSON.parse(r.advantage_granted_json),
+      day: r.day,
+      createdAt: r.created_at
+    }));
+  }
+
+  // --- EVENTOS DE RAMPAGE ---
+  public recordRampageEvent(event: {
+    id: string;
+    character_id: string;
+    trigger_reason: string;
+    start_day: number;
+    end_day: number;
+    hours_skipped: number;
+    damaged_anchor_id?: string | null;
+    district_impact: any;
+    case_impact: any;
+    reconstruction_dossier: any;
+    wake_narrative: string;
+  }): void {
+    this.db.prepare(`
+      INSERT INTO rampage_events (id, character_id, trigger_reason, start_day, end_day, hours_skipped, damaged_anchor_id, district_impact_json, case_impact_json, reconstruction_dossier_json, wake_narrative)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(
+      event.id,
+      event.character_id,
+      event.trigger_reason,
+      event.start_day,
+      event.end_day,
+      event.hours_skipped,
+      event.damaged_anchor_id ?? null,
+      JSON.stringify(event.district_impact),
+      JSON.stringify(event.case_impact),
+      JSON.stringify(event.reconstruction_dossier),
+      event.wake_narrative
+    );
+  }
+
+  public getRampageEvents(characterId: string): any[] {
+    const rows = this.db.prepare('SELECT * FROM rampage_events WHERE character_id = ? ORDER BY created_at DESC').all(characterId) as any[];
+    return rows.map(r => ({
+      id: r.id,
+      characterId: r.character_id,
+      triggerReason: r.trigger_reason,
+      startDay: r.start_day,
+      endDay: r.end_day,
+      hoursSkipped: r.hours_skipped,
+      damagedAnchorId: r.damaged_anchor_id,
+      districtImpact: JSON.parse(r.district_impact_json),
+      caseImpact: JSON.parse(r.case_impact_json),
+      reconstructionDossier: JSON.parse(r.reconstruction_dossier_json),
+      wakeNarrative: r.wake_narrative,
+      createdAt: r.created_at
+    }));
   }
 
   // --- INVENTARIO ---
@@ -321,6 +554,34 @@ export class DatabaseClient {
   public getActingWeeklyState(characterId: string): ActingWeeklyStateRow | null {
     const row = this.db.prepare('SELECT * FROM acting_weekly_states WHERE character_id = ?').get(characterId);
     return (row as unknown as ActingWeeklyStateRow) || null;
+  }
+
+  public recordTransgression(characterId: string, week: number): number {
+    const weeklyState = this.getActingWeeklyState(characterId);
+    let history: any = {};
+    if (weeklyState && weeklyState.history_json) {
+      try {
+        history = JSON.parse(weeklyState.history_json);
+      } catch {}
+    }
+    if (!history.transgressions_by_week) {
+      history.transgressions_by_week = {};
+    }
+    const currentTransgressions = (history.transgressions_by_week[week] || 0) + 1;
+    history.transgressions_by_week[week] = currentTransgressions;
+
+    this.saveActingWeeklyState({
+      character_id: characterId,
+      current_week: weeklyState?.current_week ?? week,
+      coherence: weeklyState?.coherence ?? 0,
+      variety_penalty: weeklyState?.variety_penalty ?? 0,
+      instability_flag: weeklyState?.instability_flag ?? 0,
+      loss_of_self_risk_flag: weeklyState?.loss_of_self_risk_flag ?? 0,
+      weekly_records_json: weeklyState?.weekly_records_json ?? '[]',
+      history_json: JSON.stringify(history)
+    });
+
+    return currentTransgressions;
   }
 
   // --- DISTRITOS ---

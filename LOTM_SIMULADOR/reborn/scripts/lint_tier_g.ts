@@ -17,7 +17,8 @@ import {
   StatusMatrixSchema,
   PlayerAbilitiesFileSchema,
   GrimoiresFileSchema,
-  ActingBalanceSchema
+  ActingBalanceSchema,
+  SomaticsBalanceSchema
 } from '../src/infra/content/schemas/index.js';
 
 interface SchemaTarget {
@@ -110,6 +111,11 @@ const TARGETS: SchemaTarget[] = [
     name: 'ACTING_BALANCE',
     pattern: 'balance/acting.json',
     schema: ActingBalanceSchema
+  },
+  {
+    name: 'SOMATICS_BALANCE',
+    pattern: 'balance/somatics.json',
+    schema: SomaticsBalanceSchema
   }
 ];
 
