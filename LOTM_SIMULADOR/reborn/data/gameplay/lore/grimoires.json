@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "grimoires": [
+    {
+      "id": "BOOK_002",
+      "title": "Las Sombras de Hornacis",
+      "canonRef": "BOOK_002",
+      "metadata": {
+        "title": "Las Sombras de Hornacis",
+        "author": "Hornacis",
+        "historical_era": "Fourth Epoch"
+      },
+      "classification": {
+        "risk_level": "DANGEROUS",
+        "rarity": "RARE"
+      },
+      "reading_requirements": {
+        "required_sequence": 7,
+        "required_knowledge": [
+          "KNOW_SYMBOLIC_CORRESPONDENCES"
+        ],
+        "under_sequence_penalty": {
+          "sanity_damage_multiplier": 2.5,
+          "forced_corruption_gain": 8
+        }
+      },
+      "knowledge_rewards": [
+        "KNOW_SPIRIT_WORLD_SHADOWS",
+        "KNOW_ANCIENT_SPIRIT_TOPOLOGY",
+        "KNOW_FORBIDDEN_SYMBOLIC_LINKS"
+      ],
+      "knowledge_categories": [
+        "SPIRIT_WORLD",
+        "COSMOLOGY",
+        "MYSTIC_HISTORY"
+      ],
+      "pathway_affinities": [
+        "FOOL",
+        "DARKNESS",
+        "HERMIT"
+      ],
+      "reading_effects": {
+        "sanity_cost": 20,
+        "corruption_yield": 3
+      },
+      "side_effects": [
+        "WHISPERS_AT_MIRRORS",
+        "SHADOW_ECHOES",
+        "RECURRING_SYMBOLIC_DREAMS"
+      ],
+      "unlocks": {
+        "events": [
+          "EV_HORNACIS_SHADOW_RECORD"
+        ],
+        "investigations": [
+          "INV_CASE_012"
+        ],
+        "rumors": [
+          "RUMOR_FORGOTTEN_HORNACIS_ARCHIVE"
+        ]
+      },
+      "importance": "ELITE",
+      "lore_summary": "Compilación fragmentaria atribuida a Hornacis que estudia las fronteras entre el Mundo Espiritual y la realidad material. Describe ecos persistentes, correspondencias simbólicas y regiones donde acontecimientos antiguos continúan proyectando sombras sobre el presente.",
+      "danger_statement": "La lectura prolongada induce una tendencia creciente a percibir conexiones ocultas entre eventos ordinarios. Algunos lectores comienzan a interpretar coincidencias como designios inevitables y desarrollan una dependencia obsesiva hacia los patrones simbólicos.",
+      "sections": [
+        {
+          "id": "SEC_HORNIS_FLEGREA_TREATISE",
+          "title": "Tratado de Hornis-Flegrea: Redes de Amortiguación Espiritual",
+          "content": "Estudio esotérico de la Cuarta Época sobre la transferencia, retención y amortiguación de trauma psíquico mediante nodos intermediarios astrales. Constituye el método-origen documentado que el Dr. Avery Sterling adaptó para construir la red de contención psíquica de los orfanatos de Cherwood.",
+          "relatedCase": "CASE_CHERWOOD_HEIRLOOM"
+        }
+      ],
+      "canonConfidence": "library",
+      "directorApproved": true
+    }
+  ]
+}

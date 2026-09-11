@@ -1,3 +1,6 @@
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { CanonicalPathwayId } from '../types/pathway.js';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { SeededRNG } from '../rng/SeededRNG.js';
@@ -24,136 +27,99 @@ export interface ProceduralCaseTemplate {
   rewardPence: number;
 }
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT_DIR = path.resolve(__dirname, '../../..');
+
 export class ProceduralInvestigationService {
-  private static templates: ProceduralCaseTemplate[] = [
-    {
-      code: 'CASE_CHERWOOD_HEIRLOOM',
-      title: 'El Relicario Espectral de la Familia Antigonus',
-      district: 'Distrito de Cherwood (Clase Media & Detectives)',
-      culpritName: 'Srta. Wendy Clark (Ama de Llaves)',
-      motive: 'Venganza familiar y ocultamiento de un relicario de plata con emanaciones de la Cuarta Época.',
-      rewardPence: 240, // £1 libra
-      clues: [
-        {
-          code: 'CLUE_WAX_SEAL',
-          title: 'Sello de Cera Carmesí Fragmentado',
-          description: 'Restos de cera heráldica con la insignia de un ojo sin párpado bajo el aparador.',
-          type: 'FORENSIC',
-          preferredMethod: 'FORENSIC_TRACKING'
-        },
-        {
-          code: 'CLUE_ASTRAL_WHISPER',
-          title: 'Residuo Astral de Resentimiento',
-          description: 'Una tenue neblina púrpura de rencor aún flota cerca de la cómoda del dormitorio.',
-          type: 'SPIRITUAL',
-          preferredMethod: 'SPIRITUAL_DIVINATION'
-        },
-        {
-          code: 'CLUE_TESTIMONY_BUTLER',
-          title: 'Testimonio Inconsistente del Mayordomo',
-          description: 'El mayordomo afirma que la ama de llaves salió con un paquete envuelto a medianoche.',
-          type: 'TESTIMONY',
-          preferredMethod: 'PSYCHOLOGICAL_ANALYSIS'
-        }
-      ]
-    },
-    {
-      code: 'CASE_EAST_BOROUGH_POISON',
-      title: 'Las Muertes por Cianuro en la Fábrica Textil',
-      district: 'Barrio Este (Bajos Fondos & Pobreza)',
-      culpritName: 'Capataz Thomas Graves',
-      motive: 'Encubrir la malversación de raciones obreras silenciando a inspectores sindicales.',
-      rewardPence: 360, // £1 10s
-      clues: [
-        {
-          code: 'CLUE_ALMOND_ODOR',
-          title: 'Frasco con Esencia de Almendras Amargas',
-          description: 'Oculto tras una tubería de vapor en la sala de calderas.',
-          type: 'FORENSIC',
-          preferredMethod: 'FORENSIC_TRACKING'
-        },
-        {
-          code: 'CLUE_LEDGER_FORGERY',
-          title: 'Libro Contable con Cifras Raspadas',
-          description: 'Alteraciones numéricas evidentes en las salidas de fondos de la fábrica.',
-          type: 'DOCUMENT',
-          preferredMethod: 'LOGICAL_RATIOCINATION'
-        },
-        {
-          code: 'CLUE_GUILT_PULSE',
-          title: 'Pulso de Pánico en el Aura del Capataz',
-          description: 'Al ser interrogado sobre el almacén de calderas, su ritmo cardíaco y aura corporal oscilan violentamente.',
-          type: 'TESTIMONY',
-          preferredMethod: 'PSYCHOLOGICAL_ANALYSIS'
-        }
-      ]
-    },
-    {
-      code: 'CASE_BRIDGE_RITUAL',
-      title: 'El Círculo de Velas Negras del Puente de Backlund',
-      district: 'Área del Puente de Backlund (Comercio & Niebla)',
-      culpritName: 'Hereje Barnaby (Secta Aurora)',
-      motive: 'Invocar un descenso de sombras del Creador Verdadero sacrificando estibadores.',
-      rewardPence: 480, // £2 libras
-      clues: [
-        {
-          code: 'CLUE_OBSIDIAN_DAGGER',
-          title: 'Daga Ceremonial de Obsidiana Mellada',
-          description: 'Grabada con símbolos sacrílegos del ojo invertido ensangrentado.',
-          type: 'FORENSIC',
-          preferredMethod: 'FORENSIC_TRACKING'
-        },
-        {
-          code: 'CLUE_BLOOD_CONVERGENCE',
-          title: 'Resonancia Causal de Sangre Hirviente',
-          description: 'El péndulo oscila descontrolado señalando hacia los sótanos húmedos del muelle.',
-          type: 'SPIRITUAL',
-          preferredMethod: 'SPIRITUAL_DIVINATION'
-        },
-        {
-          code: 'CLUE_CULT_HYMN',
-          title: 'Panfleto Sacrílego de la Orden Aurora',
-          description: 'Contiene oraciones en Hermes antiguo destinadas a infectar la mente de los desamparados.',
-          type: 'DOCUMENT',
-          preferredMethod: 'LOGICAL_RATIOCINATION'
-        }
-      ]
+  private static npcWeeksData: any[] | null = null;
+
+  private static getNpcWeeks(): any[] {
+    if (!this.npcWeeksData) {
+      const npcPath = path.join(ROOT_DIR, 'data/gameplay/npc_weeks/npc_weeks.json');
+      const raw = fs.readFileSync(npcPath, 'utf8');
+      this.npcWeeksData = JSON.parse(raw);
     }
-  ];
+    return this.npcWeeksData as any[];
+  }
 
   public static generateCaseForCharacter(
     db: DatabaseClient,
     characterId: string,
     currentDay: number
   ): { caseId: string; title: string; district: string } {
-    // Seleccionar expediente disponible evitando repetición cíclica
+    const npcs = this.getNpcWeeks();
     const existingCases = db.getCharacterCases(characterId);
-    const openOrActiveCodes = new Set(existingCases.filter((c: any) => c.status !== 'SOLVED' && c.status !== 'FAILED').map((c: any) => c.case_code));
-    const available = this.templates.filter(t => !openOrActiveCodes.has(t.code));
+    const existingCodes = new Set(existingCases.map((c: any) => c.case_code));
 
-    if (available.length === 0) {
-      throw new Error('No hay nuevos expedientes disponibles en Backlund para investigar en este momento.');
-    }
-    const template = available[0];
-    const seedRng = new SeededRNG(`case_${characterId}_${template.code}_${Date.now()}`);
+    // Seleccionar NPC disponible con schedule
+    const availableNpcs = npcs.filter(n => !existingCodes.has(`CASE_MINOR_${n.id}`));
+    const selectedNpc = availableNpcs.length > 0 
+      ? availableNpcs[0] 
+      : npcs[existingCases.length % npcs.length];
+
+    const districts = [
+      'Distrito de Cherwood',
+      'Barrio Este',
+      'Área del Puente de Backlund',
+      'Distrito Norte',
+      'Distrito de Hillston'
+    ];
+    const district = districts[existingCases.length % districts.length];
+
+    const days = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+    const dayName = days[(currentDay - 1) % days.length];
+    const schedule = selectedNpc.schedule?.[dayName] || {
+      mañana: `Despacho y gestiones matutinas (${dayName})`,
+      tarde: `Reuniones y trámites en ${district} (${dayName})`,
+      noche: `Retiro o actividad nocturna (${dayName})`
+    };
+
+    const caseCode = `CASE_MINOR_${selectedNpc.id}`;
+    const seedRng = new SeededRNG(`case_${characterId}_${caseCode}_${currentDay}_${Date.now()}`);
     const suffix = seedRng.nextInt(10000, 99999);
-    const caseId = `case_${characterId}_${template.code}_${Date.now()}_${suffix}`;
+    const caseId = `case_${characterId}_${caseCode}_${Date.now()}_${suffix}`;
+    const title = `Expediente Menor: El Enigma de ${selectedNpc.name}`;
+    const rewardPence = 240 + ((existingCases.length % 5) * 60);
 
     // 1. Crear caso en base de datos
     db.createInvestigationCase({
       id: caseId,
       character_id: characterId,
-      case_code: template.code,
-      title: template.title,
-      district: template.district,
+      case_code: caseCode,
+      title,
+      district,
       status: 'OPEN',
-      culprit_name: template.culpritName,
-      reward_pence: template.rewardPence,
+      culprit_name: selectedNpc.name,
+      reward_pence: rewardPence,
       created_day: currentDay
     });
 
-    // 2. Insertar pistas
-    template.clues.forEach((clue, idx) => {
+    // 2. Insertar 3 pistas derivadas del schedule real
+    const clues = [
+      {
+        code: `CLUE_MINOR_${selectedNpc.id}_1`,
+        title: `Registro Matutino de ${selectedNpc.name}`,
+        description: `Avistado durante sus rutinas: ${schedule.mañana}`,
+        type: 'FORENSIC' as const,
+        preferredMethod: 'FORENSIC_TRACKING' as const
+      },
+      {
+        code: `CLUE_MINOR_${selectedNpc.id}_2`,
+        title: `Resonancia Espiritual Vespertina de ${selectedNpc.name}`,
+        description: `Rastro y presencia residual en: ${schedule.tarde}`,
+        type: 'SPIRITUAL' as const,
+        preferredMethod: 'SPIRITUAL_DIVINATION' as const
+      },
+      {
+        code: `CLUE_MINOR_${selectedNpc.id}_3`,
+        title: `Testimonio Nocturno de ${selectedNpc.name}`,
+        description: `Declaración sobre su paradero: ${schedule.noche}`,
+        type: 'TESTIMONY' as const,
+        preferredMethod: 'PSYCHOLOGICAL_ANALYSIS' as const
+      }
+    ];
+
+    clues.forEach((clue, idx) => {
       db.addClue({
         id: `clue_${caseId}_${idx + 1}`,
         case_id: caseId,
@@ -167,8 +133,8 @@ export class ProceduralInvestigationService {
 
     return {
       caseId,
-      title: template.title,
-      district: template.district
+      title,
+      district
     };
   }
 

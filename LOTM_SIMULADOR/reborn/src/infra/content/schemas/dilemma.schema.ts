@@ -29,6 +29,7 @@ export const DilemmaGSchema = z.object({
   pathway: z.enum(CANONICAL_PATHWAYS as unknown as [string, ...string[]]),
   sequence: z.number().int().min(8).max(9),
   options: z.array(DilemmaOptionSchema).min(2).max(3),
+  whisperOptions: z.array(DilemmaOptionSchema).optional(),
   antiExploit: AntiExploitSchema,
   derivationNote: DilemmaDerivationNoteSchema.optional(),
   canonConfidence: z.enum(['canon', 'library', 'adapted']).optional(),

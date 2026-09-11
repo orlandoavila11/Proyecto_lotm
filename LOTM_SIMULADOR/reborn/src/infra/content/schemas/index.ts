@@ -11,3 +11,4 @@ export * from './worldState.schema.js';
 export * from './atomVocabulary.schema.js';
 export * from './statusMatrix.schema.js';
 export * from './playerAbilities.schema.js';
+export * from './lore.schema.js';

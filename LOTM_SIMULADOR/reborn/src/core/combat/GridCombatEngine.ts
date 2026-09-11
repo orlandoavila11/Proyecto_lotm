@@ -47,6 +47,7 @@ export interface GridActor {
   revealedAbilities: string[]; // Habilidades del oponente conocidas por este actor
   allAbilities: CombatAbility[];
   observationChance: number;   // Probabilidad data-driven de observación (0..100)
+  hasInstability?: boolean;    // Flag de inestabilidad espiritual por estancamiento de acting
   lastDamageSource?: RuntimeDamageSource;
   harvestQuality?: HarvestQuality;
 }
@@ -182,6 +183,7 @@ export class GridCombatEngine {
       isConcealed?: boolean;
       noRecentPowerUse?: boolean;
       ambushDeclared?: boolean;
+      hasInstability?: boolean;
     },
     enemyInit: {
       id: string;
@@ -253,7 +255,8 @@ export class GridCombatEngine {
       statuses: playerInit.isConcealed ? [{ status: 'CONCEALED', durationTurns: 2 }] : [],
       revealedAbilities: [], // Inicia opaco hacia el enemigo
       allAbilities: playerAbilities,
-      observationChance: 50
+      observationChance: 50,
+      hasInstability: !!playerInit.hasInstability
     };
 
     const enemyActor: GridActor = {
@@ -512,6 +515,13 @@ export class GridCombatEngine {
         // Simetría: el enemigo puede observar y revelar la habilidad usada según su observationChance data-driven
         if (!enemy.revealedAbilities.includes(skill.id) && rng.checkChance(enemy.observationChance)) {
           enemy.revealedAbilities.push(skill.id);
+        }
+
+        // Check for spiritual instability misfire (Gate 2f)
+        if (player.hasInstability && rng.checkChance(35)) {
+          result.message = `¡Fallo por Inestabilidad Espiritual! La disonancia de tu interpretación hace que [${skill.name}] se disipe en el aire.`;
+          battle.turnLog.push(result.message);
+          return result;
         }
 
         // Ejecutar los átomos de la habilidad

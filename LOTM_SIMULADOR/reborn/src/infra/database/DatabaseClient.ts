@@ -68,6 +68,18 @@ export interface InventoryItemRow {
   created_at: string;
 }
 
+export interface ActingWeeklyStateRow {
+  character_id: string;
+  current_week: number;
+  coherence: number;
+  variety_penalty: number;
+  instability_flag: number;
+  loss_of_self_risk_flag: number;
+  weekly_records_json: string;
+  history_json: string;
+  updated_at?: string;
+}
+
 export class DatabaseClient {
   private db: DatabaseSync;
   private isMemory: boolean;
@@ -251,7 +263,7 @@ export class DatabaseClient {
     return (this.db.prepare('SELECT * FROM inventory_items WHERE character_id = ?').all(characterId) as unknown[]) as InventoryItemRow[];
   }
 
-  // --- ACTING LOG ---
+  // --- ACTING LOG & WEEKLY STATE ---
   public logActing(record: {
     id: string;
     character_id: string;
@@ -263,15 +275,52 @@ export class DatabaseClient {
     sanity_delta: number;
     day: number;
     narrative_log: string;
+    alignment?: number;
+    acting_weight?: number;
+    decay_applied?: number;
   }): void {
     this.db.prepare(`
-      INSERT INTO acting_records (id, character_id, pathway, sequence, dilemma_id, choice_id, digestion_gained, sanity_delta, day, narrative_log)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      INSERT INTO acting_records (id, character_id, pathway, sequence, dilemma_id, choice_id, digestion_gained, sanity_delta, day, narrative_log, alignment, acting_weight, decay_applied)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `).run(
       record.id, record.character_id, record.pathway, record.sequence,
       record.dilemma_id, record.choice_id, record.digestion_gained,
-      record.sanity_delta, record.day, record.narrative_log
+      record.sanity_delta, record.day, record.narrative_log,
+      record.alignment ?? 0, record.acting_weight ?? 1.0, record.decay_applied ?? 1.0
     );
+  }
+
+  public getActingRecords(characterId: string): any[] {
+    return this.db.prepare('SELECT * FROM acting_records WHERE character_id = ? ORDER BY day ASC, created_at ASC').all(characterId) as any[];
+  }
+
+  public saveActingWeeklyState(state: ActingWeeklyStateRow): void {
+    const existing = this.db.prepare('SELECT character_id FROM acting_weekly_states WHERE character_id = ?').get(state.character_id);
+    if (existing) {
+      this.db.prepare(`
+        UPDATE acting_weekly_states
+        SET current_week = ?, coherence = ?, variety_penalty = ?, instability_flag = ?, loss_of_self_risk_flag = ?, weekly_records_json = ?, history_json = ?, updated_at = datetime('now')
+        WHERE character_id = ?
+      `).run(
+        state.current_week, state.coherence, state.variety_penalty,
+        state.instability_flag, state.loss_of_self_risk_flag,
+        state.weekly_records_json, state.history_json, state.character_id
+      );
+    } else {
+      this.db.prepare(`
+        INSERT INTO acting_weekly_states (character_id, current_week, coherence, variety_penalty, instability_flag, loss_of_self_risk_flag, weekly_records_json, history_json, updated_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+      `).run(
+        state.character_id, state.current_week, state.coherence, state.variety_penalty,
+        state.instability_flag, state.loss_of_self_risk_flag,
+        state.weekly_records_json, state.history_json
+      );
+    }
+  }
+
+  public getActingWeeklyState(characterId: string): ActingWeeklyStateRow | null {
+    const row = this.db.prepare('SELECT * FROM acting_weekly_states WHERE character_id = ?').get(characterId);
+    return (row as unknown as ActingWeeklyStateRow) || null;
   }
 
   // --- DISTRITOS ---

@@ -78,9 +78,25 @@ CREATE TABLE IF NOT EXISTS acting_records (
   choice_id TEXT NOT NULL,
   digestion_gained REAL NOT NULL,
   sanity_delta INTEGER NOT NULL,
+  alignment INTEGER DEFAULT 0,
+  acting_weight REAL DEFAULT 1.0,
+  decay_applied REAL DEFAULT 1.0,
   day INTEGER NOT NULL,
   narrative_log TEXT NOT NULL,
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS acting_weekly_states (
+  character_id TEXT PRIMARY KEY,
+  current_week INTEGER NOT NULL DEFAULT 1,
+  coherence REAL NOT NULL DEFAULT 0.0,
+  variety_penalty REAL NOT NULL DEFAULT 0.0,
+  instability_flag INTEGER NOT NULL DEFAULT 0 CHECK (instability_flag IN (0, 1)),
+  loss_of_self_risk_flag INTEGER NOT NULL DEFAULT 0 CHECK (loss_of_self_risk_flag IN (0, 1)),
+  weekly_records_json TEXT NOT NULL DEFAULT '[]',
+  history_json TEXT NOT NULL DEFAULT '[]',
+  updated_at TEXT NOT NULL DEFAULT (datetime('now')),
   FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
 );
 

@@ -15,7 +15,8 @@ import {
   DilemmaEffectsTableSchema,
   AtomVocabularySchema,
   StatusMatrixSchema,
-  PlayerAbilitiesFileSchema
+  PlayerAbilitiesFileSchema,
+  GrimoiresFileSchema
 } from '../src/infra/content/schemas/index.js';
 
 interface SchemaTarget {
@@ -98,6 +99,11 @@ const TARGETS: SchemaTarget[] = [
     name: 'PLAYER_ABILITIES_G',
     pattern: 'abilities/player_abilities.json',
     schema: PlayerAbilitiesFileSchema
+  },
+  {
+    name: 'LORE_G',
+    pattern: 'lore/grimoires.json',
+    schema: GrimoiresFileSchema
   }
 ];
 

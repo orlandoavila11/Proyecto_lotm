@@ -46,6 +46,40 @@ export const actingRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
     });
   });
 
+  // GET /api/acting/dilemmas/:characterId (o con query string)
+  fastify.get('/dilemmas/:characterId', async (req, reply) => {
+    const { characterId } = req.params as { characterId: string };
+    const char = db.getCharacter(characterId);
+    if (!char) {
+      return reply.status(404).send({ error: 'Personaje no encontrado' });
+    }
+
+    const dilemmas = ActingDilemmaEngine.getAvailableDilemmas(db, characterId);
+    return reply.send({
+      dilemmas,
+      currentDigestion: char.digestion_progress,
+      isFullyDigested: char.digestion_progress >= 100.0
+    });
+  });
+
+  fastify.get('/dilemmas', async (req, reply) => {
+    const query = req.query as { characterId?: string };
+    if (!query.characterId) {
+      return reply.status(400).send({ error: 'Parámetro characterId requerido' });
+    }
+    const char = db.getCharacter(query.characterId);
+    if (!char) {
+      return reply.status(404).send({ error: 'Personaje no encontrado' });
+    }
+
+    const dilemmas = ActingDilemmaEngine.getAvailableDilemmas(db, query.characterId);
+    return reply.send({
+      dilemmas,
+      currentDigestion: char.digestion_progress,
+      isFullyDigested: char.digestion_progress >= 100.0
+    });
+  });
+
   // POST /api/acting/resolve
   fastify.post('/resolve', async (req, reply) => {
     const parseRes = ResolveActingSchema.safeParse(req.body);
@@ -59,13 +93,33 @@ export const actingRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
       return reply.status(404).send({ error: 'Personaje no encontrado' });
     }
 
+    // Verificar si es un dilema de Tier G compilado
+    const tierGDilemma = ActingDilemmaEngine.findDilemma(dilemmaId);
+    if (tierGDilemma) {
+      const outcome = ActingDilemmaEngine.resolveDilemma(db, characterId, dilemmaId, choiceId);
+      const updatedChar = db.getCharacter(characterId);
+      return reply.send({
+        success: true,
+        message: outcome.narrativeOutcome,
+        isAligned: outcome.alignment >= 0,
+        alignment: outcome.alignment,
+        actingWeight: outcome.actingWeight,
+        decayApplied: outcome.decayApplied,
+        digestionProgress: updatedChar?.digestion_progress || 0,
+        isFullyDigested: (updatedChar?.digestion_progress || 0) >= 100.0,
+        sanityDelta: outcome.sanityDelta,
+        corruptionDelta: outcome.corruptionDelta,
+        penceRewarded: outcome.penceRewarded
+      });
+    }
+
+    // Fallback legado para vías no migradas aún a Tier G
     const dilemma = ActingDilemmaEngine.getDilemma(char.pathway as CanonicalPathwayId, char.sequence);
     const choice = dilemma.choices.find(c => c.id === choiceId);
     if (!choice) {
       return reply.status(400).send({ error: `Elección '${choiceId}' no válida para este dilema.` });
     }
 
-    // 1. Actualizar digestión y sanidad
     const newDigestion = Math.min(100.0, char.digestion_progress + choice.digestionGain);
     const newSanity = Math.max(0, Math.min(100, char.sanity + choice.sanityDelta));
 
@@ -74,18 +128,15 @@ export const actingRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
       sanity: newSanity
     });
 
-    // 2. Aplicar dinero
     if (choice.penceReward > 0) {
       db.updateCharacterWealth(characterId, choice.penceReward);
     }
 
-    // 3. Modificar sospecha de la persona activa
     const activePersona = db.getActivePersona(characterId);
     if (activePersona && (choice.policeSuspicionDelta !== 0 || choice.churchSuspicionDelta !== 0)) {
       db.updatePersonaSuspicion(activePersona.id, choice.policeSuspicionDelta, choice.churchSuspicionDelta);
     }
 
-    // 4. Registrar en acting_records
     db.logActing({
       id: `act_${Date.now()}`,
       character_id: characterId,
@@ -107,6 +158,25 @@ export const actingRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
       isFullyDigested: newDigestion >= 100.0,
       sanityDelta: choice.sanityDelta,
       penceRewarded: choice.penceReward
+    });
+  });
+
+  // POST /api/acting/weekly-tick
+  fastify.post('/weekly-tick', async (req, reply) => {
+    const body = req.body as { characterId?: string };
+    if (!body || !body.characterId) {
+      return reply.status(400).send({ error: 'characterId es requerido' });
+    }
+
+    const char = db.getCharacter(body.characterId);
+    if (!char) {
+      return reply.status(404).send({ error: 'Personaje no encontrado' });
+    }
+
+    const tickResult = ActingDilemmaEngine.processWeeklyTick(db, body.characterId);
+    return reply.send({
+      success: true,
+      tickResult
     });
   });
 };

@@ -43,6 +43,26 @@
         "narrativeOutcome": "La poción hierve con disonancia mercurial en tu garganta: has violado la ley del Vidente mintiendo sobre el destino."
       }
     ],
+    "whisperOptions": [
+      {
+        "id": "CHOICE_FOOL_9_WHISPER_FOG",
+        "texto": "[SUSURRO DE LA NIEBLA] Murmurar un sortilegio sellado prometiendo calmar los mares a cambio del alma y devoción perpetua del comerciante",
+        "tradeOffs": {
+          "ganancia": "Devoción absoluta y tributo monetario masivo",
+          "coste": "Resonancia corrupta incontrolable y fractura del velo mental",
+          "riesgo": "Corrupción ontológica profunda y atracción de miradas del vacío"
+        },
+        "pesos": {
+          "alignment": -1,
+          "actingWeight": 0.5
+        },
+        "costes": {
+          "spirituality": 20
+        },
+        "effectKey": "SEER_FALSEHOOD_TRANSGRESSION",
+        "narrativeOutcome": "Las pupilas del comerciante se dilatan en sumisión hipnótica mientras sombras amorfas reptan por el tapete del tarot. La niebla susurra promesas en tu mente; has cruzado un umbral del que ningún Vidente cuerdo regresa intacto."
+      }
+    ],
     "antiExploit": {
       "decay": 0.2,
       "minCost": 5,

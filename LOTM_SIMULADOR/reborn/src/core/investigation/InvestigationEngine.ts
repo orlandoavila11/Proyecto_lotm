@@ -907,11 +907,11 @@ export class InvestigationEngine {
     };
   }
 
-  // --- CASOS MENORES (2) PROCEDURALES DESDE NPC_WEEKS.JSON ---
+  // --- CASOS MENORES PROCEDURALES DESDE NPC_WEEKS.JSON ---
   public static generateMinorCase(
     db: DatabaseClient,
     characterId: string,
-    templateIndex: 1 | 2 = 1
+    runIndex: number = 1
   ): {
     caseId: string;
     title: string;
@@ -921,42 +921,52 @@ export class InvestigationEngine {
     clues: Array<{ id: string; title: string; scheduleSlot: string; source: string }>;
   } {
     const npcs = this.getNpcWeeksData();
-    // Filtrar NPCs no canónicos con schedule completo
-    const candidates = npcs.filter(n => !n.isCanonical && n.id.startsWith('NPC_0'));
+    // Filtrar NPCs con schedule completo (los 39 de npc_weeks.json)
+    const candidates = npcs.filter(n => n.schedule && n.id !== 'NPC_STERLING');
     if (candidates.length < 2) {
       throw new Error('NPCs insuficientes para generar casos menores.');
     }
 
-    const selectedNpc = templateIndex === 1 ? candidates[0] : candidates[1];
-    const caseId = `case_minor_${templateIndex}_${selectedNpc.id}_${Date.now()}`;
-    const district = templateIndex === 1 ? 'Cherwood' : 'East Borough';
-    const title =
-      templateIndex === 1
-        ? `Expediente Menor #1: La Desaparición de Pagarés de ${selectedNpc.name}`
-        : `Expediente Menor #2: El Contrabando de Raciones en ${district} (${selectedNpc.name})`;
+    const npcIndex = Math.abs(runIndex - 1) % candidates.length;
+    const selectedNpc = candidates[npcIndex];
+    const seedRng = new SeededRNG(`minor_${characterId}_${selectedNpc.id}_${runIndex}_${Date.now()}`);
+    const suffix = seedRng.nextInt(10000, 99999);
+    const caseId = `case_minor_${runIndex}_${selectedNpc.id}_${Date.now()}_${suffix}`;
 
-    const schedule = selectedNpc.schedule?.lunes || {
-      mañana: 'Despacho matutino',
-      tarde: 'Gestiones de distrito',
-      noche: 'Retiro nocturno'
+    const districts = [
+      'Cherwood',
+      'East Borough',
+      'Backlund Bridge',
+      'North Borough',
+      'Hillston'
+    ];
+    const district = districts[(runIndex - 1) % districts.length];
+    const title = `Expediente Menor #${runIndex}: Las Huellas de ${selectedNpc.name} en ${district}`;
+
+    const days = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+    const dayKey = days[(runIndex - 1) % days.length];
+    const schedule = selectedNpc.schedule?.[dayKey] || {
+      mañana: `Despacho y lectura de correspondencia (${dayKey})`,
+      tarde: `Gestiones en el distrito comercial y reuniones (${dayKey})`,
+      noche: `Retiro a aposentos o patrulla nocturna (${dayKey})`
     };
 
     const clues = [
       {
-        id: `CLUE_MINOR_${templateIndex}_1`,
+        id: `CLUE_MINOR_${runIndex}_1`,
         title: `Registro de Actividad Matutina de ${selectedNpc.name}`,
         scheduleSlot: 'mañana',
         source: schedule.mañana
       },
       {
-        id: `CLUE_MINOR_${templateIndex}_2`,
+        id: `CLUE_MINOR_${runIndex}_2`,
         title: `Rastro de Encuentro Vespertino en ${district}`,
         scheduleSlot: 'tarde',
         source: schedule.tarde
       },
       {
-        id: `CLUE_MINOR_${templateIndex}_3`,
-        title: `Movimiento Sospechoso Nocturno`,
+        id: `CLUE_MINOR_${runIndex}_3`,
+        title: `Movimiento Sospechoso Nocturno de ${selectedNpc.name}`,
         scheduleSlot: 'noche',
         source: schedule.noche
       }

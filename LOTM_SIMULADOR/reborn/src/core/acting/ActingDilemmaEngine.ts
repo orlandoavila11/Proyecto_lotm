@@ -1,4 +1,26 @@
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { CanonicalPathwayId } from '../types/pathway.js';
+import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
+import { DilemmaG } from '../../infra/content/schemas/dilemma.schema.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT_DIR = path.resolve(__dirname, '../../..');
+
+export interface ClientDilemmaOption {
+  id: string;
+  texto: string;
+  costes: Record<string, any>;
+  isWhisper?: boolean;
+}
+
+export interface ClientDilemma {
+  id: string;
+  title: string;
+  situation: string;
+  options: ClientDilemmaOption[];
+}
 
 export interface ActingChoice {
   id: string;
@@ -26,6 +48,9 @@ export interface ActingDilemma {
 
 export class ActingDilemmaEngine {
   private static dilemmas: Map<string, ActingDilemma[]> = new Map();
+  private static tierGDilemmas: Map<string, DilemmaG[]> = new Map();
+  private static effectProfiles: Map<string, any> = new Map();
+  private static initializedTierG: boolean = false;
 
   static {
     this.initAllCanonicalDilemmas();
@@ -742,5 +767,349 @@ export class ActingDilemmaEngine {
 
   public static hasBespokeDilemma(pathway: CanonicalPathwayId, sequence: number): boolean {
     return this.dilemmas.has(`${pathway}_${sequence}`);
+  }
+
+  // =========================================================================
+  // TIER G: CARGA CANÓNICA Y MOTOR DE ACTING DINÁMICO (Brief-05)
+  // =========================================================================
+  public static ensureTierGLoaded(): void {
+    if (this.initializedTierG) return;
+    this.initializedTierG = true;
+
+    // 1. Cargar perfiles de balance desde dilemma_effects.json
+    const effectsPath = path.join(ROOT_DIR, 'data/gameplay/balance/dilemma_effects.json');
+    if (fs.existsSync(effectsPath)) {
+      const raw = JSON.parse(fs.readFileSync(effectsPath, 'utf8'));
+      for (const [k, v] of Object.entries(raw.profiles || {})) {
+        this.effectProfiles.set(k, v);
+      }
+    }
+
+    // 2. Cargar dilemas Tier G desde data/gameplay/dilemmas/*.json
+    const dilemmasDir = path.join(ROOT_DIR, 'data/gameplay/dilemmas');
+    if (fs.existsSync(dilemmasDir)) {
+      const files = fs.readdirSync(dilemmasDir).filter(f => f.endsWith('.json'));
+      for (const file of files) {
+        const fullPath = path.join(dilemmasDir, file);
+        const list = JSON.parse(fs.readFileSync(fullPath, 'utf8')) as DilemmaG[];
+        for (const d of list) {
+          const key = `${d.pathway}_${d.sequence}`;
+          const existing = this.tierGDilemmas.get(key) || [];
+          existing.push(d);
+          this.tierGDilemmas.set(key, existing);
+        }
+      }
+    }
+  }
+
+  public static findDilemma(dilemmaId: string): DilemmaG | null {
+    this.ensureTierGLoaded();
+    for (const list of this.tierGDilemmas.values()) {
+      const found = list.find(d => d.id === dilemmaId);
+      if (found) return found;
+    }
+    return null;
+  }
+
+  /**
+   * Presentación de dilemas: estrictamente NO telegrafiado.
+   * Cero campos de scoring, alignment, pesos o effectKey.
+   * Opciones de susurros inyectadas SI Y SOLO SI corrupción >= 30.
+   */
+  public static getAvailableDilemmas(
+    db: DatabaseClient,
+    characterId: string
+  ): ClientDilemma[] {
+    this.ensureTierGLoaded();
+    const char = db.getCharacter(characterId);
+    if (!char) {
+      throw new Error(`Personaje no encontrado: ${characterId}`);
+    }
+
+    const key = `${char.pathway}_${char.sequence}`;
+    const rawDilemmas = this.tierGDilemmas.get(key) || [];
+
+    const result: ClientDilemma[] = [];
+    const showWhispers = (char.corruption || 0) >= 30;
+
+    for (const d of rawDilemmas) {
+      const clientOptions: ClientDilemmaOption[] = d.options.map(opt => ({
+        id: opt.id,
+        texto: opt.texto,
+        costes: opt.costes || {}
+      }));
+
+      if (showWhispers && d.whisperOptions && d.whisperOptions.length > 0) {
+        for (const w of d.whisperOptions) {
+          clientOptions.push({
+            id: w.id,
+            texto: w.texto,
+            costes: w.costes || {},
+            isWhisper: true
+          });
+        }
+      }
+
+      result.push({
+        id: d.id,
+        title: d.title || d.id,
+        situation: d.situation || '',
+        options: clientOptions
+      });
+    }
+
+    return result;
+  }
+
+  /**
+   * Resolución de dilema: aplica efecto de dilemma_effects.json, calcula decaimiento
+   * de farmeo y registra en acting_records.
+   */
+  public static resolveDilemma(
+    db: DatabaseClient,
+    characterId: string,
+    dilemmaId: string,
+    choiceId: string
+  ): {
+    success: boolean;
+    digestionGained: number;
+    sanityDelta: number;
+    corruptionDelta: number;
+    decayApplied: number;
+    alignment: number;
+    actingWeight: number;
+    narrativeOutcome: string;
+    penceRewarded: number;
+  } {
+    this.ensureTierGLoaded();
+    const char = db.getCharacter(characterId);
+    if (!char) {
+      throw new Error(`Personaje no encontrado: ${characterId}`);
+    }
+
+    // 1. Localizar dilema y opción
+    let matchedDilemma: DilemmaG | null = null;
+    let matchedOption: any = null;
+
+    for (const list of this.tierGDilemmas.values()) {
+      const found = list.find(d => d.id === dilemmaId);
+      if (found) {
+        matchedDilemma = found;
+        const opt = found.options.find(o => o.id === choiceId) || 
+                    found.whisperOptions?.find(w => w.id === choiceId);
+        if (opt) {
+          matchedOption = opt;
+          break;
+        }
+      }
+    }
+
+    if (!matchedDilemma || !matchedOption) {
+      throw new Error(`Dilema o elección no encontrada: ${dilemmaId} / ${choiceId}`);
+    }
+
+    // 2. Decaimiento por farmeo repetido (Gate 2b: x1, x0.5, x0.25, x0.1, 0)
+    const records = db.getActingRecords(characterId);
+    const repeats = records.filter(r => r.dilemma_id === dilemmaId).length;
+    let decayApplied = 1.0;
+    if (repeats === 1) decayApplied = 0.5;
+    else if (repeats === 2) decayApplied = 0.25;
+    else if (repeats === 3) decayApplied = 0.1;
+    else if (repeats >= 4) decayApplied = 0.0;
+
+    // 3. Perfil de efectos desde dilemma_effects.json
+    const effectProfile = this.effectProfiles.get(matchedOption.effectKey) || {
+      digestion: 10,
+      sanity: 0,
+      policeSuspicion: 0,
+      churchSuspicion: 0,
+      penceReward: 0,
+      spiritualityCost: 0
+    };
+
+    const alignment = matchedOption.pesos?.alignment ?? 0;
+    const actingWeight = matchedOption.pesos?.actingWeight ?? 1.0;
+    const baseDigestion = effectProfile.digestion ?? 10;
+    const digestionGained = Number((baseDigestion * decayApplied).toFixed(1));
+
+    // Transgresión causa ganancia medible de corrupción (Gate 2c)
+    let corruptionDelta = 0;
+    if (alignment < 0) {
+      corruptionDelta = 3;
+    }
+
+    // Coste de espiritualidad
+    const spCost = effectProfile.spiritualityCost || matchedOption.costes?.spirituality || 0;
+    if (char.current_spirituality < spCost) {
+      throw new Error(`Espiritualidad insuficiente (${char.current_spirituality}/${spCost} requerida).`);
+    }
+
+    // 4. Aplicar cambios a personaje y persona activa
+    const newDigestion = Math.min(100.0, Number((char.digestion_progress + digestionGained).toFixed(1)));
+    const newSanity = Math.max(0, Math.min(100, char.sanity + (effectProfile.sanity || 0)));
+    const newCorruption = Math.min(100, (char.corruption || 0) + corruptionDelta);
+    const newSpirituality = char.current_spirituality - spCost;
+
+    db.updateCharacterSomatics(characterId, {
+      digestion: newDigestion,
+      sanity: newSanity,
+      corruption: newCorruption,
+      spirituality: newSpirituality
+    });
+
+    if (effectProfile.penceReward > 0) {
+      db.updateCharacterWealth(characterId, effectProfile.penceReward);
+    }
+
+    const activePersona = db.getActivePersona(characterId);
+    if (activePersona && (effectProfile.policeSuspicion !== 0 || effectProfile.churchSuspicion !== 0)) {
+      db.updatePersonaSuspicion(activePersona.id, effectProfile.policeSuspicion, effectProfile.churchSuspicion);
+    }
+
+    // 5. Registrar en acting_records
+    const randomSuffix = Math.random().toString(36).substring(2, 9);
+    const recordId = `act_${characterId}_${dilemmaId}_${Date.now()}_${randomSuffix}`;
+    db.logActing({
+      id: recordId,
+      character_id: characterId,
+      pathway: char.pathway,
+      sequence: char.sequence,
+      dilemma_id: dilemmaId,
+      choice_id: choiceId,
+      digestion_gained: digestionGained,
+      sanity_delta: effectProfile.sanity || 0,
+      alignment,
+      acting_weight: actingWeight,
+      decay_applied: decayApplied,
+      day: char.current_day,
+      narrative_log: matchedOption.narrativeOutcome
+    });
+
+    return {
+      success: true,
+      digestionGained,
+      sanityDelta: effectProfile.sanity || 0,
+      corruptionDelta,
+      decayApplied,
+      alignment,
+      actingWeight,
+      narrativeOutcome: matchedOption.narrativeOutcome,
+      penceRewarded: effectProfile.penceReward || 0
+    };
+  }
+
+  /**
+   * Tick Semanal (cada 7 días):
+   * COHERENCIA = media(actingWeight * decay * costFactor * witnessFactor)
+   * VARIEDAD = penalizador si la ventana cae en una sola categoría
+   * ASIMILACIÓN += g(Coherence)
+   * TRANSGRESIÓN -> incremento de corrupción
+   * ESTANCAMIENTO (Coherence < 0.35) -> instability_flag
+   * SOBRE-ACTUACIÓN (Coherence > 1.0 && anchor < 50) -> loss_of_self_risk_flag
+   */
+  public static processWeeklyTick(
+    db: DatabaseClient,
+    characterId: string
+  ): {
+    currentWeek: number;
+    coherence: number;
+    varietyPenalty: number;
+    assimilationGain: number;
+    transgressionCorruptionGain: number;
+    instabilityFlag: boolean;
+    lossOfSelfRiskFlag: boolean;
+  } {
+    this.ensureTierGLoaded();
+    const char = db.getCharacter(characterId);
+    if (!char) {
+      throw new Error(`Personaje no encontrado: ${characterId}`);
+    }
+
+    const existingWeeklyState = db.getActingWeeklyState(characterId);
+    const currentWeek = (existingWeeklyState?.current_week || 1);
+
+    const allRecords = db.getActingRecords(characterId);
+    const minDay = (currentWeek - 1) * 7 + 1;
+    const maxDay = currentWeek * 7;
+    let weekRecords = allRecords.filter(r => r.day >= minDay && r.day <= maxDay);
+    if (weekRecords.length === 0 && allRecords.length > 0) {
+      weekRecords = allRecords.slice(-7);
+    }
+
+    let coherence = 0.0;
+    let varietyPenalty = 0.0;
+    let assimilationGain = 0.0;
+    let transgressionCorruptionGain = 0;
+
+    if (weekRecords.length > 0) {
+      // 1. Variedad: monocategoría recibe 40% de penalizador
+      const varieties = new Set<string>();
+      for (const r of weekRecords) {
+        const dDef = this.findDilemma(r.dilemma_id);
+        const v = dDef?.antiExploit?.variety ? String(dDef.antiExploit.variety) : r.dilemma_id;
+        varieties.add(v);
+      }
+
+      if (weekRecords.length >= 2 && varieties.size === 1) {
+        varietyPenalty = 0.40;
+      }
+
+      // 2. Coherencia
+      let sumWeight = 0;
+      for (const r of weekRecords) {
+        const dDef = this.findDilemma(r.dilemma_id);
+        const opt = dDef?.options.find(o => o.id === r.choice_id);
+        const spCost = opt?.costes?.spirituality || 0;
+        const costFactor = spCost >= 10 ? 1.15 : (spCost > 0 ? 1.05 : 1.0);
+        const witnessFactor = 1.0;
+        sumWeight += (r.acting_weight * r.decay_applied * costFactor * witnessFactor);
+      }
+
+      const rawCoherence = sumWeight / weekRecords.length;
+      coherence = Number((rawCoherence * (1.0 - varietyPenalty)).toFixed(3));
+
+      // 3. Asimilación += g(Coherence)
+      assimilationGain = Number((coherence * 15).toFixed(1));
+      const newDigestion = Math.min(100.0, Number((char.digestion_progress + assimilationGain).toFixed(1)));
+
+      // 4. Transgresión
+      const negativeCount = weekRecords.filter(r => r.alignment < 0).length;
+      transgressionCorruptionGain = negativeCount * 2;
+      const newCorruption = Math.min(100, (char.corruption || 0) + transgressionCorruptionGain);
+
+      db.updateCharacterSomatics(characterId, {
+        digestion: newDigestion,
+        corruption: newCorruption
+      });
+    }
+
+    // 5. Estancamiento (Coherence < 0.35) -> instability_flag
+    const instabilityFlag = coherence < 0.35;
+
+    // 6. Sobre-actuación (Coherence > 1.0 && anchor < 50) -> loss_of_self_risk_flag
+    const totalAnchorStrength = db.getTotalAnchorStrength(characterId);
+    const lossOfSelfRiskFlag = (coherence > 1.0 && totalAnchorStrength < 50);
+
+    // 7. Persistir estado semanal en SQLite
+    db.saveActingWeeklyState({
+      character_id: characterId,
+      current_week: currentWeek + 1,
+      coherence,
+      variety_penalty: varietyPenalty,
+      instability_flag: instabilityFlag ? 1 : 0,
+      loss_of_self_risk_flag: lossOfSelfRiskFlag ? 1 : 0,
+      weekly_records_json: JSON.stringify(weekRecords),
+      history_json: JSON.stringify(allRecords)
+    });
+
+    return {
+      currentWeek,
+      coherence,
+      varietyPenalty,
+      assimilationGain,
+      transgressionCorruptionGain,
+      instabilityFlag,
+      lossOfSelfRiskFlag
+    };
   }
 }
