@@ -7,7 +7,7 @@ export interface BattleRow {
   id: string;
   character_id: string;
   state_json: string;
-  status: 'ONGOING' | 'VICTORY' | 'DEFEAT' | 'FLED';
+  status: 'ONGOING' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'RAMPAGE_TERMINAL';
   created_at: string;
   updated_at: string;
 }
@@ -582,6 +582,31 @@ export class DatabaseClient {
     });
 
     return currentTransgressions;
+  }
+
+  public recordWeeklyCoherenceSnapshot(characterId: string, week: number, coherence: number): void {
+    const weeklyState = this.getActingWeeklyState(characterId);
+    let history: any = {};
+    if (weeklyState && weeklyState.history_json) {
+      try {
+        history = JSON.parse(weeklyState.history_json);
+      } catch {}
+    }
+    if (!history.past_coherences) {
+      history.past_coherences = [];
+    }
+    history.past_coherences.push(coherence);
+
+    this.saveActingWeeklyState({
+      character_id: characterId,
+      current_week: week,
+      coherence,
+      variety_penalty: weeklyState?.variety_penalty ?? 0,
+      instability_flag: weeklyState?.instability_flag ?? 0,
+      loss_of_self_risk_flag: weeklyState?.loss_of_self_risk_flag ?? 0,
+      weekly_records_json: weeklyState?.weekly_records_json ?? '[]',
+      history_json: JSON.stringify(history)
+    });
   }
 
   // --- DISTRITOS ---

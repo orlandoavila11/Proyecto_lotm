@@ -187,6 +187,31 @@ export const characterRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: C
     return reply.send({ characterId: id, scars, scarsCount: scars.length });
   });
 
+  // GET /api/character/:id/rampage-events (Expediente de reconstrucción del yo)
+  fastify.get('/:id/rampage-events', async (req, reply) => {
+    const { id } = req.params as { id: string };
+    const char = db.getCharacter(id);
+    if (!char) {
+      return reply.status(404).send({ error: 'Personaje no encontrado' });
+    }
+    const events = db.getRampageEvents(id);
+    return reply.send({ characterId: id, events, count: events.length });
+  });
+
+  // POST /api/character/trigger-rampage (Rampage como Evento)
+  fastify.post('/trigger-rampage', async (req, reply) => {
+    const body = req.body as { characterId: string; reason?: string };
+    if (!body?.characterId) {
+      return reply.status(400).send({ error: 'characterId requerido' });
+    }
+    const char = db.getCharacter(body.characterId);
+    if (!char) {
+      return reply.status(404).send({ error: 'Personaje no encontrado' });
+    }
+    const eventResult = SomaticsEngine.triggerRampageEvent(db, body.characterId, body.reason || 'SANITY_COLLAPSE');
+    return reply.send({ success: true, event: eventResult });
+  });
+
   // POST /api/character/interact-anchor (Regeneración de fuerza de ancla)
   fastify.post('/interact-anchor', async (req, reply) => {
     const body = req.body as { characterId: string; anchorId: string; amount?: number };

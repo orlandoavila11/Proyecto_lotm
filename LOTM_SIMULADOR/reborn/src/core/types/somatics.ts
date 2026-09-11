@@ -92,3 +92,34 @@ export interface SomaticsEvaluation {
   canSafelyConsumePotion: boolean;
   blockers: string[];
 }
+
+export interface RampageReconstructionSource {
+  type: 'TESTIMONY' | 'PHYSICAL_EVIDENCE' | 'ANCHOR_IMPACT';
+  title: string;
+  description: string;
+  sourceLocation: string;
+}
+
+export interface RampageEventResult {
+  id: string;
+  characterId: string;
+  triggerReason: string;
+  startDay: number;
+  endDay: number;
+  hoursSkipped: number;
+  damagedAnchor: AnchorModel | null;
+  districtImpact: {
+    district: string;
+    tensionDelta: number;
+    alertDelta: number;
+  };
+  caseImpact: {
+    affected: boolean;
+    caseId?: string;
+    clockDelayDays: number;
+    description: string;
+  };
+  reconstructionDossier: RampageReconstructionSource[];
+  wakeNarrative: string;
+  ruinaGained: number;
+}

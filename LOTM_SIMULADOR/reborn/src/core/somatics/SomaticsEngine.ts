@@ -9,7 +9,9 @@ import {
   RuinaTier,
   CharacterScar,
   WhisperPrice,
-  TerminalDestiny
+  TerminalDestiny,
+  RampageEventResult,
+  RampageReconstructionSource
 } from '../types/somatics.js';
 import { DatabaseClient, AnchorRow } from '../../infra/database/DatabaseClient.js';
 import { SomaticsBalance, SomaticsBalanceSchema } from '../../infra/content/schemas/somaticsBalance.schema.js';
@@ -390,6 +392,224 @@ export class SomaticsEngine {
       advantage_granted: advantageGranted,
       day: char.current_day
     });
+  }
+
+  /**
+   * Ejecuta el Rampage como Evento (salto temporal, consecuencias deterministas y mini-expediente del yo).
+   */
+  public static triggerRampageEvent(
+    db: DatabaseClient,
+    characterId: string,
+    triggerReason: string = 'SANITY_COLLAPSE'
+  ): RampageEventResult {
+    const char = db.getCharacter(characterId);
+    if (!char) throw new Error(`Personaje no encontrado: ${characterId}`);
+    const balance = this.getSomaticsBalance();
+
+    // 1. Salto temporal (horas/días)
+    const hoursSkipped = 36;
+    const daysSkipped = balance.rampage_event.time_skip_days || 1;
+    const startDay = char.current_day;
+    const endDay = db.advanceCharacterDay(characterId, daysSkipped);
+
+    // 2. Consecuencia 1: Ancla dañada deterministamente (o destruida)
+    const anchorResult = this.damageDeterministicAnchor(db, characterId, balance.anchors.damage_rampage, 'RAMPAGE');
+    const damagedAnchor = anchorResult.damagedAnchor;
+
+    // 3. Consecuencia 2: Incidente distrital
+    const currentDistrict = char.current_location || 'Backlund - Cherwood';
+    const tensionDelta = balance.rampage_event.district_tension_increase;
+    const alertDelta = balance.rampage_event.inquisitorial_alert_increase;
+
+    // 4. Consecuencia 3: Efecto sobre investigación activa (retraso de 2 días)
+    const activeCase = db.getRawDb().prepare("SELECT * FROM investigation_cases WHERE character_id = ? AND status NOT IN ('SOLVED', 'FAILED', 'COVERED_UP') LIMIT 1").get(characterId) as any;
+    let caseImpact = {
+      affected: false,
+      caseId: undefined as string | undefined,
+      clockDelayDays: balance.rampage_event.investigation_clock_delay_days,
+      description: 'Sin casos de investigación activos en el momento del colapso.'
+    };
+    if (activeCase) {
+      caseImpact = {
+        affected: true,
+        caseId: activeCase.id,
+        clockDelayDays: balance.rampage_event.investigation_clock_delay_days,
+        description: `El reloj de la investigación [${activeCase.title}] ha avanzado ${balance.rampage_event.investigation_clock_delay_days} días sin ti; los sospechosos han movido fichas.`
+      };
+    }
+
+    // 5. Acumulador permanente de Ruina (+15)
+    const ruinaGained = balance.ruina_sources.rampage;
+    this.addRuina(db, characterId, 'rampage');
+
+    // 6. Mini-expediente del yo: 3 fuentes consultables (reutilizando el patrón de pistas del motor de investigación)
+    const reconstructionDossier: RampageReconstructionSource[] = [
+      {
+        type: 'TESTIMONY',
+        title: 'Testimonio del Cochero Nocturno de East Borough',
+        description: 'Un cochero de alquiler afirma haber visto a una figura con sombrero desgarrado y pupilas dilatadas que vomitaba sombras viscosas cerca del muelle de carbón a las tres de la madrugada.',
+        sourceLocation: 'Taberna El Pez Salado, East Borough'
+      },
+      {
+        type: 'PHYSICAL_EVIDENCE',
+        title: 'Retazos de Ropa Manchados de Lodo y Fluido Místico',
+        description: 'Tus bolsillos contienen restos de botones de latón retorcidos y una mancha fluorescente que aún desprende un débil olor a ozono y sangre fría.',
+        sourceLocation: 'Vestimenta del despertar'
+      },
+      {
+        type: 'ANCHOR_IMPACT',
+        title: `Secuela en ${damagedAnchor?.name || 'Vínculo Destruido'}`,
+        description: `Una carta manchada con sangre seca o una cerradura forzada evidencian que en tu delirio intentaste buscar refugio en ${damagedAnchor?.name || 'tu anclaje humano'}.`,
+        sourceLocation: 'Lugar del Vínculo'
+      }
+    ];
+
+    // 7. Escena de despertar redactada (HUMAN_REVIEW)
+    const wakeNarrative = 'El frío no entra por la piel; brota del centro de tus costillas. Despiertas boca abajo sobre adoquines grasientos de un callejón sin nombre en East Borough, con la boca impregnada de un sabor a cobre rancio y bilis. Tus uñas están rotas y ensangrentadas, pero no sientes dolor. A dos pasos de ti, los restos deshilachados de tu abrigo yacen en un charco donde el agua estancada no refleja tu rostro, sino un torbellino de niebla y sombras temblorosas. El campanario de la catedral da las cuatro de la madrugada; no sabes si de hoy, de mañana o de hace dos días. Solo una certeza palpita en tu nuca: algo que habitaba en tu sangre tomó las riendas... y la ciudad pagó el precio.';
+
+    // 8. Persistencia SQLite del evento
+    const eventId = `rampage_${characterId}_day${endDay}_${Date.now()}`;
+    db.recordRampageEvent({
+      id: eventId,
+      character_id: characterId,
+      trigger_reason: triggerReason,
+      start_day: startDay,
+      end_day: endDay,
+      hours_skipped: hoursSkipped,
+      damaged_anchor_id: damagedAnchor?.id ?? null,
+      district_impact: { district: currentDistrict, tensionDelta, alertDelta },
+      case_impact: caseImpact,
+      reconstruction_dossier: reconstructionDossier,
+      wake_narrative: wakeNarrative
+    });
+
+    // 9. Reestabilización somática fuera de la zona crítica de colapso
+    db.updateCharacterSomatics(characterId, {
+      sanity: 25,
+      corruption: Math.min(80, char.corruption)
+    });
+
+    return {
+      id: eventId,
+      characterId,
+      triggerReason,
+      startDay,
+      endDay,
+      hoursSkipped,
+      damagedAnchor: damagedAnchor ? {
+        id: damagedAnchor.id,
+        characterId: damagedAnchor.character_id,
+        type: (damagedAnchor.type || 'ROUTINE') as any,
+        name: damagedAnchor.name || damagedAnchor.title,
+        description: damagedAnchor.description || '',
+        strength: damagedAnchor.strength,
+        damageCount: damagedAnchor.damage_count || 0,
+        isDestroyed: damagedAnchor.is_destroyed === 1
+      } : null,
+      districtImpact: { district: currentDistrict, tensionDelta, alertDelta },
+      caseImpact,
+      reconstructionDossier,
+      wakeNarrative,
+      ruinaGained
+    };
+  }
+
+  /**
+   * Evalúa la deriva de actor (sobre-actuación sostenida con anclas bajas).
+   * Gatillo: Coherencia > 1.0 en >= 2 ventanas ∧ anclas totales < 40.
+   * Reversible: Anclas >= 40 ∧ coherencia moderada (0.4 .. 0.9) durante 2 ventanas.
+   */
+  public static checkActorDrift(
+    db: DatabaseClient,
+    characterId: string,
+    pathway: string
+  ): { hasDrift: boolean; isRecovered: boolean; pathwaySymptom?: string } {
+    const weeklyState = db.getActingWeeklyState(characterId);
+    let history: any = {};
+    if (weeklyState && weeklyState.history_json) {
+      try { history = JSON.parse(weeklyState.history_json); } catch {}
+    }
+
+    const pastCoherences: number[] = history.past_coherences || [];
+    const totalAnchorStrength = db.getTotalAnchorStrength(characterId);
+
+    const last2Coherences = [...pastCoherences, weeklyState?.coherence ?? 0].slice(-2);
+    const hasHighCoherenceStreak = last2Coherences.length >= 2 && last2Coherences.every(c => c > 1.0);
+    const hasLowAnchors = totalAnchorStrength < 40;
+
+    let hasDrift = false;
+    let isRecovered = false;
+    let pathwaySymptom: string | undefined;
+
+    if (hasHighCoherenceStreak && hasLowAnchors) {
+      hasDrift = true;
+      if (pathway === 'FOOL') {
+        pathwaySymptom = 'La Vida como Representación: El mundo ha perdido su sustancia sólida; los transeúntes te parecen actores mediocres que han olvidado sus líneas y tú te descubres sonriendo mecánicamente ante tragedias ajenas, esperando que el telón baje de un momento a otro. Tu propio nombre suena como un apodo torpe que te asignaron para el primer acto.';
+      } else {
+        pathwaySymptom = 'Apagado Emocional: Tus propios sentimientos se han reducido a notas al margen en un manuscrito clínico. Cuando observas el dolor o el afecto de quienes te rodean, ya no sientes simpatía ni rabia; únicamente diseccionas sus mecanismos neuronales y sus pulsiones como quien observa ratones en un laberinto de cristal.';
+      }
+    } else if (totalAnchorStrength >= 40 && last2Coherences.length >= 2 && last2Coherences.every(c => c >= 0.4 && c <= 0.9)) {
+      isRecovered = true;
+    }
+
+    return { hasDrift, isRecovered, pathwaySymptom };
+  }
+
+  /**
+   * Evalúa la transformación por corrupción crónica (ruina >= 50 ∧ corrupción >= 60).
+   */
+  public static checkChronicTransformation(
+    ruina: number,
+    corruption: number
+  ): { isTransforming: boolean; tier: string; symptom?: string } {
+    if (ruina >= 50 && corruption >= 60) {
+      if (ruina >= 80) {
+        return {
+          isTransforming: true,
+          tier: 'VESSEL_EROSION',
+          symptom: 'Receptáculo erosionado: tu cuerpo astral supura fluido místico y las miradas directas a tu aura causan espasmos a seres no iniciados.'
+        };
+      }
+      return {
+        isTransforming: true,
+        tier: 'ASTRAL_PROTRUSIONS',
+        symptom: 'Protuberancias astrales: miradas del vacío perceptibles bajo tu piel y sombras temblorosas que no responden a la luz de las farolas.'
+      };
+    }
+    return { isTransforming: false, tier: 'STABLE' };
+  }
+
+  /**
+   * Evalúa y sella el destino terminal del personaje en base de datos.
+   */
+  public static checkTerminalDestiny(
+    db: DatabaseClient,
+    characterId: string
+  ): TerminalDestiny | null {
+    const char = db.getCharacter(characterId);
+    if (!char) return null;
+
+    if (char.terminal_state && char.terminal_state !== 'ALIVE') {
+      return char.terminal_state as TerminalDestiny;
+    }
+
+    if (char.current_health <= 0) {
+      db.setTerminalState(characterId, 'DEAD');
+      return 'DEAD';
+    }
+
+    const activeAnchors = db.getActiveAnchors(characterId);
+    if ((char.ruina ?? 0) >= 100 && activeAnchors.length === 0) {
+      db.setTerminalState(characterId, 'NPC_CONVERTED');
+      return 'NPC_CONVERTED';
+    }
+
+    if ((char.ruina ?? 0) >= 80 && char.corruption >= 90) {
+      db.setTerminalState(characterId, 'TRANSFORMED');
+      return 'TRANSFORMED';
+    }
+
+    return null;
   }
 
   private static getSanityNarrative(tier: SanityTier): string {

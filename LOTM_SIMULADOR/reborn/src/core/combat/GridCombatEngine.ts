@@ -67,7 +67,7 @@ export interface GridBattleState {
   actors: GridActor[];
   sides: GridBattleSides;
   turnCount: number;
-  status: 'ONGOING' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'NEGOTIATED';
+  status: 'ONGOING' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'NEGOTIATED' | 'RAMPAGE_TERMINAL';
   turnLog: string[];
 }
 
@@ -81,7 +81,7 @@ export interface GridActionResult {
   apSpent: number;
   isBattleOver: boolean;
   victory?: boolean;
-  status?: 'ONGOING' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'NEGOTIATED';
+  status?: 'ONGOING' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'NEGOTIATED' | 'RAMPAGE_TERMINAL';
   harvestQuality?: HarvestQuality;
   state: GridBattleState;
 }
@@ -713,5 +713,14 @@ export class GridCombatEngine {
     targetActor.statuses = [...runtimeActor.statuses];
     targetActor.revealedAbilities = [...runtimeActor.revealedAbilities];
     targetActor.lastDamageSource = runtimeActor.lastDamageSource;
+  }
+
+  /**
+   * Muta el combate a terminal anómalo cuando estalla un Rampage somático (Brief-06).
+   */
+  public static triggerAnomalousTerminal(battle: GridBattleState, reason: string = 'RAMPAGE'): void {
+    battle.status = 'RAMPAGE_TERMINAL';
+    const msg = `¡COLAPSO SOMÁTICO! La pérdida de control es absoluta. El combate muta a terminal anómalo (${reason}).`;
+    battle.turnLog.push(msg);
   }
 }
