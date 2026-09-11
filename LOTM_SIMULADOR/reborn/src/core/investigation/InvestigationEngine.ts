@@ -89,7 +89,7 @@ export class InvestigationEngine {
       const raw = fs.readFileSync(casePath, 'utf8');
       this.cherwoodCaseDefinition = JSON.parse(raw) as CaseG;
     }
-    return this.cherwoodCaseDefinition;
+    return this.cherwoodCaseDefinition as CaseG;
   }
 
   public static getNpcWeeksData(): any[] {
@@ -98,7 +98,7 @@ export class InvestigationEngine {
       const raw = fs.readFileSync(npcPath, 'utf8');
       this.npcWeeksData = JSON.parse(raw);
     }
-    return this.npcWeeksData;
+    return this.npcWeeksData as any[];
   }
 
   // --- MÁQUINA DE ESTADOS: DORMANT -> ACTIVE -> RESOLVED / EXPIRED ---

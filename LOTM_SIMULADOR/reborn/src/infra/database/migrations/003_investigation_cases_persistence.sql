@@ -12,3 +12,4 @@ CREATE TABLE IF NOT EXISTS investigation_case_instances (
 
 CREATE INDEX IF NOT EXISTS idx_case_instances_char_status ON investigation_case_instances(character_id, status);
 CREATE INDEX IF NOT EXISTS idx_case_instances_case_char ON investigation_case_instances(case_id, character_id);
+

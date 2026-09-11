@@ -395,3 +395,4 @@ describe('GATE 04: Motor de Investigación Sistémico, Verbos de Vía y Bots ε-
     assert.ok(visSolved >= 20, `El vector VISIONARY debe resolver al menos 20 de 25 casos (obtenido: ${visSolved})`);
   });
 });
+
