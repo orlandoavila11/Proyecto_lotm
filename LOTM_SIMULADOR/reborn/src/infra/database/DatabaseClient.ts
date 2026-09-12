@@ -163,8 +163,8 @@ export class DatabaseClient {
       char.current_health, char.max_health,
       char.current_spirituality, char.max_spirituality,
       char.sanity, char.corruption,
-      char.digestion_progress, char.raw_pence,
-      char.current_location, char.current_day,
+      char.digestion_progress ?? 0, char.raw_pence ?? 0,
+      char.current_location ?? 'Backlund - Cherwood', char.current_day ?? 1,
       char.ruina ?? 0,
       char.terminal_state ?? null
     );
@@ -610,9 +610,79 @@ export class DatabaseClient {
     });
   }
 
-  // --- DISTRITOS ---
+  // --- DISTRITOS Y CONVERGENCIA ---
   public getDistricts(): any[] {
     return this.db.prepare('SELECT * FROM districts').all();
+  }
+
+  public getDistrict(districtId: string): any {
+    return this.db.prepare(`
+      SELECT * FROM districts 
+      WHERE LOWER(id) = LOWER(?) OR id = ? OR LOWER(district_name) LIKE ?
+      LIMIT 1
+    `).get(districtId, districtId, `%${districtId.toLowerCase()}%`);
+  }
+
+  public updateDistrictConvergence(districtId: string, delta: number, day?: number): number {
+    let d = this.getDistrict(districtId);
+    if (!d) {
+      this.db.prepare(`
+        INSERT INTO districts (id, city, district_name, tension_level, inquisitorial_alert, convergence_index, last_incident_day)
+        VALUES (?, 'Backlund', ?, 15, 10, 0, 0)
+      `).run(districtId, districtId);
+      d = this.getDistrict(districtId);
+    }
+    const current = d ? (d.convergence_index ?? 0) : 0;
+    const nextVal = Math.max(0, Math.min(100, current + delta));
+    if (d) {
+      if (day !== undefined && delta > 0) {
+        this.db.prepare('UPDATE districts SET convergence_index = ?, last_incident_day = ? WHERE id = ?').run(nextVal, day, d.id);
+      } else {
+        this.db.prepare('UPDATE districts SET convergence_index = ? WHERE id = ?').run(nextVal, d.id);
+      }
+    }
+    return nextVal;
+  }
+
+  public logConvergenceEvent(event: {
+    id: string;
+    character_id: string;
+    district_id: string;
+    event_type: 'PUBLIC_COMBAT' | 'ASCENSION' | 'ECCLESIASTICAL_DILEMMA' | 'WHISPER_PURCHASE' | 'DECAY';
+    index_delta: number;
+    resulting_index: number;
+    day: number;
+  }): void {
+    this.db.prepare(`
+      INSERT INTO convergence_events (id, character_id, district_id, event_type, index_delta, resulting_index, day)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `).run(event.id, event.character_id, event.district_id, event.event_type, event.index_delta, event.resulting_index, event.day);
+  }
+
+  public getPendingIncursion(characterId: string): any {
+    return this.db.prepare('SELECT * FROM pending_incursions WHERE character_id = ? AND status = ?').get(characterId, 'PENDING');
+  }
+
+  public createPendingIncursion(inc: {
+    id: string;
+    character_id: string;
+    district_id: string;
+    squad_type?: string;
+    church_suspicion_snapshot: number;
+    day: number;
+  }): void {
+    this.db.prepare(`
+      INSERT OR REPLACE INTO pending_incursions (id, character_id, district_id, squad_type, church_suspicion_snapshot, status, day, updated_at)
+      VALUES (?, ?, ?, ?, ?, 'PENDING', ?, datetime('now'))
+    `).run(inc.id, inc.character_id, inc.district_id, inc.squad_type || 'NIGHTHAWKS_SQUAD', inc.church_suspicion_snapshot, inc.day);
+  }
+
+  public updateIncursionStatus(incursionId: string, status: 'PENDING' | 'ENGAGED' | 'RESOLVED' | 'FLED'): void {
+    this.db.prepare('UPDATE pending_incursions SET status = ?, updated_at = datetime(\'now\') WHERE id = ?').run(status, incursionId);
+  }
+
+  public clearPendingIncursion(characterId: string): void {
+    this.db.prepare('DELETE FROM pending_incursions WHERE character_id = ?').run(characterId);
   }
 
   // --- CASOS DE INVESTIGACIÓN ---

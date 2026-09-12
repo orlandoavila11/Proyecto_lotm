@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "sources": {
+    "public_combat_index_gain": 15,
+    "ascension_index_gain": 30,
+    "ecclesiastical_dilemma_gain_low": 5,
+    "ecclesiastical_dilemma_gain_high": 10,
+    "whisper_purchase_gain": 10
+  },
+  "ruina_effective_bonus": {
+    "INTEGRO": 0,
+    "MARCADO": 5,
+    "EROSIONADO": 15,
+    "ROTO": 30,
+    "PERDIDO": 50
+  },
+  "decay": {
+    "weekly_decay_per_district": -5,
+    "minimum_index": 0,
+    "maximum_index": 100
+  },
+  "encounter_roll": {
+    "base_chance_percentage": 15,
+    "index_factor": 0.5,
+    "dominant_sefira_attraction_percentage": 70,
+    "open_pool_attraction_percentage": 30
+  },
+  "incursion": {
+    "trigger_church_suspicion_threshold": 60,
+    "purge_suspicion_on_resolution": -35,
+    "default_nighthawk_squad": [
+      "nighthawk_sleepless_patrol",
+      "nighthawk_midnight_poet",
+      "nighthawk_squad_captain"
+    ]
+  }
+}

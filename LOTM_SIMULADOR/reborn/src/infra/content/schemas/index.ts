@@ -14,3 +14,4 @@ export * from './playerAbilities.schema.js';
 export * from './lore.schema.js';
 export * from './actingBalance.schema.js';
 export * from './somaticsBalance.schema.js';
+export * from './convergenceBalance.schema.js';
