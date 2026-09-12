@@ -18,6 +18,7 @@
     "test:server": "npm --prefix reborn run test",
     "test:ui": "npm --prefix ui run build",
     "verify:tier-l": "npm --prefix reborn run verify:tier-l",
+    "lint:determinism": "npm --prefix reborn run lint:determinism",
     "lint:tier-g": "npm --prefix reborn run lint:tier-g"
   },
   "devDependencies": {

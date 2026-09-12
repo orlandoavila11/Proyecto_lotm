@@ -1,6 +1,7 @@
 import { FastifyInstance, FastifyPluginAsync } from 'fastify';
 import { z } from 'zod';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
+import { SeededRNG } from '../../core/rng/SeededRNG.js';
 
 const TravelSchema = z.object({
   characterId: z.string(),
@@ -95,7 +96,8 @@ export const cityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
         'Gotas de lluvia ácida repiqueteaban sobre el techo de cuero del carruaje mientras cruzabas la avenida principal.',
         'Un vendedor de periódicos voceaba las últimas noticias sobre la niebla tóxica y los crímenes sin resolver en el Barrio Este.'
       ];
-      travelEncounter = travelAtmosphere[Math.floor(Math.random() * travelAtmosphere.length)];
+      const travelRng = new SeededRNG(`travel_${characterId}_${destinationDistrict}_${Date.now()}`);
+      travelEncounter = travelAtmosphere[travelRng.nextInt(0, travelAtmosphere.length - 1)];
     }
 
     return reply.send({

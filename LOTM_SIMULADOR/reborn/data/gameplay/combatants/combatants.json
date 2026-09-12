@@ -1856,5 +1856,210 @@
       }
     ],
     "observationChance": 32
+  },
+  {
+    "id": "nighthawk_sleepless_patrol",
+    "name": "Patrullero Sin Sueño de los Halcones Nocturnos",
+    "atomStats": {
+      "hp": 50,
+      "maxHp": 50,
+      "spirituality": 40,
+      "maxSpirituality": 40,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "DARKNESS",
+    "sefiraGroupRef": "DEATH_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_NIGHTHAWK_REVOLVER_PURIFYING",
+        "name": "Disparo Purificador de Plata",
+        "description": "Dispara una bala de plata bendecida con agua sagrada que inflige daño físico contundente a las aberraciones y herejes.",
+        "apCost": 1,
+        "spiritualityCost": 5,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 15
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Armamento reglamentario de los Halcones Nocturnos de Backlund (revólver con munición purificadora de aleación de plata)."
+      },
+      {
+        "id": "ABILITY_NIGHTHAWK_VIGILANT_GLARE",
+        "name": "Mirada Vigilante de Medianoche",
+        "description": "Fija sus ojos insomnes en el sospechoso, disipando el sigilo y debilitando sus reacciones.",
+        "apCost": 1,
+        "spiritualityCost": 8,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_REMOVE_STATUS",
+            "params": {
+              "status": "CONCEALED"
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Percepción hipervigilante de la Secuencia 9 Sin Sueño que detecta perturbaciones astrales y disipa engaños."
+      }
+    ],
+    "observationChance": 35
+  },
+  {
+    "id": "nighthawk_midnight_poet",
+    "name": "Poeta de Medianoche de los Halcones Nocturnos",
+    "atomStats": {
+      "hp": 55,
+      "maxHp": 55,
+      "spirituality": 65,
+      "maxSpirituality": 65,
+      "ap": 3,
+      "speed": 8
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "DARKNESS",
+    "sefiraGroupRef": "DEATH_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_NIGHTHAWK_POETIC_SOOTHING",
+        "name": "Cántico Somnífero de Medianoche",
+        "description": "Entona versos oscuros que adormecen el espíritu del objetivo, induciendo aturdimiento y letargo espiritual.",
+        "apCost": 2,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "STUN",
+              "durationTurns": 1
+            }
+          },
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 10
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Poema nocturno de Secuencia 8 Poeta de Medianoche que apacigua la mente e induce letargo espiritual."
+      },
+      {
+        "id": "ABILITY_NIGHTHAWK_REQUIEM_PROJECTION",
+        "name": "Réquiem Carmesí",
+        "description": "Proyecta un verso fúnebre cargado de espiritualidad de la Diosa que daña la integridad mágica del transgresor.",
+        "apCost": 1,
+        "spiritualityCost": 12,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 18
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Verso sacro fúnebre canalizado para purgar aberraciones e infligir daño directo al cuerpo astral."
+      }
+    ],
+    "observationChance": 35
+  },
+  {
+    "id": "nighthawk_squad_captain",
+    "name": "Capitán Ejecutor de los Halcones Nocturnos",
+    "atomStats": {
+      "hp": 65,
+      "maxHp": 65,
+      "spirituality": 75,
+      "maxSpirituality": 75,
+      "ap": 3,
+      "speed": 10
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "DARKNESS",
+    "sefiraGroupRef": "DEATH_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_NIGHTHAWK_CEREMONIAL_CANON",
+        "name": "Decreto del Silencio Nocturno",
+        "description": "Invoca la autoridad sacra de la Diosa de la Noche para debilitar y aterrorizar las intenciones del sospechoso.",
+        "apCost": 2,
+        "spiritualityCost": 20,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "FEAR",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Comando autoritario inquisitorial respaldado por la liturgia de la Medianoche para quebrar el espíritu del objetivo."
+      },
+      {
+        "id": "ABILITY_NIGHTHAWK_EXECUTION_STRIKE",
+        "name": "Castigo Sombrío Penitencial",
+        "description": "Combina un disparo consagrado a quemarropa con una bendición protectora sobre su propia posición.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 22
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Procedimiento de neutralización armada letal a quemarropa ejecutado durante allanamientos de refugio."
+      }
+    ],
+    "observationChance": 35
   }
 ]

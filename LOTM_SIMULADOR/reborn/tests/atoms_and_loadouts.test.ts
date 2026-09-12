@@ -127,10 +127,10 @@ describe('Brief 03.a: Runtime de Átomos, Loadouts y Matriz de Estados', () => {
     assert.strictEqual(actor.attention, 2);
   });
 
-  it('4. Loadouts de los 25 Combatientes: 2-3 habilidades, 0 átomos huérfanos, máx 1 economía', () => {
+  it('4. Loadouts de Combatientes: 2-3 habilidades, 0 átomos huérfanos, máx 1 economía', () => {
     const combatantsPath = path.join(packageRoot, 'data', 'gameplay', 'combatants', 'combatants.json');
     const combatants = JSON.parse(fs.readFileSync(combatantsPath, 'utf-8'));
-    assert.strictEqual(combatants.length, 25);
+    assert.ok(combatants.length >= 25, `Se esperan al menos 25 combatientes, encontrados ${combatants.length}`);
 
     let totalAbilities = 0;
     for (const c of combatants) {
@@ -161,7 +161,7 @@ describe('Brief 03.a: Runtime de Átomos, Loadouts y Matriz de Estados', () => {
       }
     }
 
-    assert.ok(totalAbilities >= 50 && totalAbilities <= 75, `Total de habilidades de combatientes: ${totalAbilities}`);
+    assert.ok(totalAbilities >= 50 && totalAbilities <= 90, `Total de habilidades de combatientes: ${totalAbilities}`);
   });
 
   it('5. Habilidades del Jugador: FOOL + VISIONARY (S9 y S8), Cola 1c auditada', () => {

@@ -72,6 +72,8 @@ LOTM_SIMULADOR/
 8. **Regla del Testigo (§3.9):** Ninguna operación destructiva (borrado masivo, reescritura, migración, purge) se ejecuta sin commit previo del estado actual. Orden sagrada: **COMMIT primero, TAG después, DESTRUCCIÓN al final**.
 9. **Formato Obligatorio de Reporte (§12 ampliado):** Cada sesión o brief concluido debe emitir su reporte con el **campo 0 obligatorio "COMMIT: <hash>"** (acompañado de URL de CI y contador N/20). Todo reporte cita el commit que contiene su trabajo. **Reporte sin Campo 0 = INVÁLIDO**. Fin de sesión = commit + push (commit = testigo; push = notario), sin excepciones.
 10. **Regla Permanente de Procedencia de Gates (§3.10 extendido):** Toda re-corrida de un gate tras cambio estructural reporta DELTA contra la corrida anterior + hipótesis causal. Todo umbral declarado en un reporte cita la orden que lo estableció — umbral sin procedencia = métrica inválida. Números sin procedencia = inválidos.
+11. **Erradicación Absoluta de Math.random (Tercera Huelga):** Prohibido el uso de `Math.random` en todo `reborn/src/`. Todo identificador, tirada, selección o evento probabilístico DEBE ser estrictamente determinista vía `SeededRNG` o `generateDeterministicId`. El gate de CI `lint:determinism` valida esto de forma estricta (presencia = build FAIL).
+12. **Reserva Canónica de Orígenes (BRIEF-09):** El origen "Detective Privado" y cualquier otro origen inicial son exclusivamente **PLACEHOLDER** técnico de andamiaje. La definición de orígenes, sus árboles de trasfondo y el prólogo son prerrogativa exclusiva del Director (a compilar en BRIEF-09). Ningún agente inventa ni consolida orígenes definitivos en línea.
 
 ---
 

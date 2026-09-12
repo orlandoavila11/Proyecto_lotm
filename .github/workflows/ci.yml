@@ -37,6 +37,9 @@ jobs:
       - name: Verify Tier L Integrity (manifest v2.0)
         run: npm run verify:tier-l
 
+      - name: Verify Anti-Math.random Determinism Gate
+        run: npm run lint:determinism
+
       - name: Lint Tier G Contracts (Zod Schemas)
         run: npm run lint:tier-g
 
