@@ -1,0 +1,67 @@
+/**
+ * textures.css — Path to Godhood (BRIEF-10.VISUAL)
+ * Texturas victorianas procedimentales y vectoriales en SVG Data URI ligero (0 bytes en assets externos).
+ * Paleta: Ébano victoriano, oro viejo (#d4af37), sombras góticas y luz de vela.
+ */
+
+/* 1. Madera de Caoba del Escritorio */
+.texture-mahogany-desk {
+  background-color: #120e0b;
+  background-image: 
+    radial-gradient(ellipse at 20% 40%, rgba(56, 32, 16, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 60%, rgba(38, 20, 10, 0.4) 0%, transparent 60%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.012) 0px,
+      rgba(255, 255, 255, 0.012) 2px,
+      transparent 2px,
+      transparent 8px
+    ),
+    linear-gradient(180deg, #17120e 0%, #100c09 50%, #0a0806 100%);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.85);
+}
+
+/* 2. Pared Victoriana con Papel Damasco en Penumbra */
+.texture-damask-wall {
+  background-color: #080706;
+  background-image: 
+    radial-gradient(circle at 30% 25%, rgba(45, 30, 18, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 75% 30%, rgba(25, 15, 30, 0.2) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.022' fill-rule='evenodd'%3E%3Cpath d='M20 20c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zm-10 0c0-5.523 4.477-10 10-10S30 14.477 30 20s-4.477 10-10 10-10-4.477-10-10z' /%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(180deg, #0d0b09 0%, #060504 100%);
+}
+
+/* 3. Tablero de Corcho Poroso de Investigación */
+.texture-corkboard {
+  background-color: #241c14;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(70, 50, 30, 0.25) 0%, rgba(20, 15, 10, 0.85) 100%),
+    url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='16' height='16' fill='%23221911'/%3E%3Ccircle cx='3' cy='3' r='1.2' fill='%23382717' opacity='0.7'/%3E%3Ccircle cx='11' cy='7' r='1.5' fill='%2319110a' opacity='0.8'/%3E%3Ccircle cx='7' cy='13' r='1.1' fill='%233a2a1b' opacity='0.6'/%3E%3Ccircle cx='14' cy='14' r='0.9' fill='%23171009' opacity='0.7'/%3E%3C/svg%3E");
+  box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.9), 0 12px 30px rgba(0, 0, 0, 0.85);
+  border: 8px solid #3d2f21;
+}
+
+/* 4. Vitela / Papel Envejecido con Manchas */
+.texture-aged-parchment {
+  background-color: #ede4d1;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(190, 160, 110, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(160, 125, 75, 0.3) 0%, transparent 50%),
+    linear-gradient(135deg, #f3ece0 0%, #e8dcc4 50%, #dfcfb2 100%);
+  color: #1a1612;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.65), inset 0 0 20px rgba(120, 90, 45, 0.2);
+  border: 1px solid #b8a688;
+}
+
+/* 5. Marco de Azogue Victoriano */
+.texture-silver-frame {
+  background: linear-gradient(135deg, #3a3835 0%, #1c1b1a 45%, #4a4742 55%, #181716 100%);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9), inset 0 0 10px rgba(255, 255, 255, 0.1);
+  border: 3px solid #5a5650;
+}
+
+/* Halo de Luz de Vela Proyectado */
+.candle-glow-ambient {
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
+}

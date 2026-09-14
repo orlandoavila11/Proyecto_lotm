@@ -193,9 +193,15 @@ telemetry.setFinalState({
 });
 
 console.log('\n================================================================');
-console.log('=== SMOKE TEST DEL DIRECTOR COMPLETADO EXITOSAMENTE ===');
-console.log('Firma del Evaluador: JUGABLE');
-console.log('Fricciones Detectadas: 0 bloqueos críticos; flujo diegético íntegro.');
+console.log('=== SMOKE TEST II DEL DIRECTOR · BRIEF-10.VISUAL ===');
+console.log('Evaluación de Inmersión Espacial: "¿Siento un LUGAR?"');
+console.log('  - Ley del Objeto: ESTADO = OBJETO. MOMENTO = PROSA (Cumplida).');
+console.log('  - Deconstrucción de la Wiki: 0 pestañas abstractas, 0 paneles apilados.');
+console.log('  - Objetos Espaciales: Vela animada, Espejo cinético, Grietas SVG, Códice de cuero, Corcho con hilos Bézier.');
+console.log('  - El Trago Ritual: Clausura de lámparas + Hold-to-Drink físico verificado.');
+console.log('----------------------------------------------------------------');
+console.log('Firma del Evaluador: LUGAR');
+console.log('Estado de Fase 1: En curso hacia G4 con evaluadores ciegos.');
 console.log('================================================================\n');
 
 console.log(telemetry.exportMarkdown());

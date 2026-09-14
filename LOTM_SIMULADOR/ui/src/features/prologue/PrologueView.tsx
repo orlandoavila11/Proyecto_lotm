@@ -80,7 +80,7 @@ interface PrologueViewProps {
 }
 
 export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }) => {
-  const [step, setStep] = useState<'ORIGIN_SELECT' | 'LETTER' | 'DILEMMA' | 'POTION_CHOICE' | 'DRINKING' | 'AWAKENING'>('ORIGIN_SELECT');
+  const [step, setStep] = useState<'ORIGIN_SELECT' | 'LETTER' | 'DILEMMA' | 'POTION_CHOICE' | 'RITUAL_DARKEN' | 'HOLD_TO_DRINK' | 'DRINKING' | 'AWAKENING'>('ORIGIN_SELECT');
   const [selectedOrigin, setSelectedOrigin] = useState<OriginTemplate>(CANONICAL_ORIGINS[0]);
   const [characterName, setCharacterName] = useState<string>('Arthur Pendelton');
   
@@ -90,20 +90,71 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
   // Elección de frasco
   const [potionChoice, setPotionChoice] = useState<'COBALTO' | 'AMBAR' | null>(null);
   
+  // Checklist de apagado de lámparas
+  const [extinguishedLamps, setExtinguishedLamps] = useState<{ [key: string]: boolean }>({
+    window_gas: false,
+    shelf_oil: false,
+    entry_candle: false
+  });
+
+  // Hold-to-Drink states
+  const [holdProgressMs, setHoldProgressMs] = useState<number>(0);
+  const [isHolding, setIsHolding] = useState<boolean>(false);
+  const [holdInterruptedText, setHoldInterruptedText] = useState<string | null>(null);
+  const holdIntervalRef = useRef<any>(null);
+  const holdStartTimeRef = useRef<number>(0);
+  
   // Telemetría de vacilación
   const drinkPromptTime = useRef<number>(0);
 
   useEffect(() => {
-    if (step === 'POTION_CHOICE') {
+    if (step === 'POTION_CHOICE' || step === 'HOLD_TO_DRINK') {
       drinkPromptTime.current = Date.now();
     }
   }, [step]);
 
-  const handleStartDrinking = (choice: 'COBALTO' | 'AMBAR') => {
+  // Manejo del Hold-to-Drink (3 segundos de sujeción física continua)
+  const startHold = () => {
+    setIsHolding(true);
+    setHoldInterruptedText(null);
+    holdStartTimeRef.current = Date.now();
+    
+    holdIntervalRef.current = setInterval(() => {
+      setHoldProgressMs(prev => {
+        const next = prev + 100;
+        if (next >= 3000) {
+          clearInterval(holdIntervalRef.current);
+          setIsHolding(false);
+          setStep('DRINKING');
+          return 3000;
+        }
+        return next;
+      });
+    }, 100);
+  };
+
+  const cancelHold = () => {
+    if (isHolding && holdProgressMs < 3000) {
+      clearInterval(holdIntervalRef.current);
+      setIsHolding(false);
+      setHoldInterruptedText('Retiras la mano con el pulso desbocado... Tu respiración resuena en la oscuridad. La esencia aún aguarda.');
+      setHoldProgressMs(0);
+    }
+  };
+
+  const handleToggleLamp = (lampKey: string) => {
+    const updated = { ...extinguishedLamps, [lampKey]: true };
+    setExtinguishedLamps(updated);
+    if (updated.window_gas && updated.shelf_oil && updated.entry_candle) {
+      setTimeout(() => setStep('HOLD_TO_DRINK'), 600);
+    }
+  };
+
+  const handleStartRitual = (choice: 'COBALTO' | 'AMBAR') => {
     const elapsed = Date.now() - drinkPromptTime.current;
     console.log('[PROLOGUE TELEMETRY] hesitation_ms:', elapsed);
     setPotionChoice(choice);
-    setStep('DRINKING');
+    setStep('RITUAL_DARKEN');
   };
 
   const handleFinishPrologue = () => {
@@ -355,7 +406,7 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
               </div>
 
               <button
-                onClick={() => handleStartDrinking('COBALTO')}
+                onClick={() => handleStartRitual('COBALTO')}
                 className="mt-6 px-4 py-2 bg-[#1e293b] text-[#e2e8f0] font-serif font-bold text-xs rounded hover:bg-[#0f172a] transition-all"
               >
                 Elegir el Frasco Cobalto
@@ -379,13 +430,161 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
               </div>
 
               <button
-                onClick={() => handleStartDrinking('AMBAR')}
+                onClick={() => handleStartRitual('AMBAR')}
                 className="mt-6 px-4 py-2 bg-[#78350f] text-[#fef3c7] font-serif font-bold text-xs rounded hover:bg-[#451a03] transition-all"
               >
                 Elegir el Frasco Ámbar
               </button>
             </div>
 
+          </div>
+        </div>
+      )}
+
+      {/* Paso 4.b: Escenificación del Ritual — Apagar las Lámparas una a una */}
+      {step === 'RITUAL_DARKEN' && (
+        <div className="w-full max-w-xl text-center p-8 bg-[#14110e]/95 border border-[#4a3622] rounded shadow-2xl z-30 font-serif">
+          <h2 className="text-xl font-bold tracking-wider text-[#d4af37] cinzel mb-2">
+            LA CLAUSURA DE LA LUZ
+          </h2>
+          <p className="text-xs text-[#b8a68d] italic mb-6">
+            "Para escuchar la voz del abismo, ninguna llama mortal debe competir con la esencia."
+          </p>
+
+          <div className="space-y-3 max-w-md mx-auto mb-6 text-left">
+            <button
+              onClick={() => handleToggleLamp('window_gas')}
+              disabled={extinguishedLamps.window_gas}
+              className={`w-full p-3 rounded border text-xs flex justify-between items-center transition-all ${
+                extinguishedLamps.window_gas
+                  ? 'bg-[#0a0806] text-[#544432] border-[#241a10] line-through'
+                  : 'bg-[#1f1912] text-[#dfcaa2] border-[#5e4326] hover:border-[#d4af37]'
+              }`}
+            >
+              <span>1. Cerrar la llave de gas de la ventana exterior</span>
+              <span>{extinguishedLamps.window_gas ? 'EXTINTA' : 'ENCENDIDA'}</span>
+            </button>
+
+            <button
+              onClick={() => handleToggleLamp('shelf_oil')}
+              disabled={extinguishedLamps.shelf_oil}
+              className={`w-full p-3 rounded border text-xs flex justify-between items-center transition-all ${
+                extinguishedLamps.shelf_oil
+                  ? 'bg-[#0a0806] text-[#544432] border-[#241a10] line-through'
+                  : 'bg-[#1f1912] text-[#dfcaa2] border-[#5e4326] hover:border-[#d4af37]'
+              }`}
+            >
+              <span>2. Apagar el quinqué de queroseno de la estantería</span>
+              <span>{extinguishedLamps.shelf_oil ? 'EXTINTA' : 'ENCENDIDA'}</span>
+            </button>
+
+            <button
+              onClick={() => handleToggleLamp('entry_candle')}
+              disabled={extinguishedLamps.entry_candle}
+              className={`w-full p-3 rounded border text-xs flex justify-between items-center transition-all ${
+                extinguishedLamps.entry_candle
+                  ? 'bg-[#0a0806] text-[#544432] border-[#241a10] line-through'
+                  : 'bg-[#1f1912] text-[#dfcaa2] border-[#5e4326] hover:border-[#d4af37]'
+              }`}
+            >
+              <span>3. Apagar la vela de sebo del zaguán</span>
+              <span>{extinguishedLamps.entry_candle ? 'EXTINTA' : 'ENCENDIDA'}</span>
+            </button>
+          </div>
+
+          <p className="text-[11px] text-[#735e46] italic">
+            Haz clic sobre cada foco de luz para extinguirlo.
+          </p>
+        </div>
+      )}
+
+      {/* Paso 4.c: Hold-to-Drink — Sujetar para Beber (Hesitación Física) */}
+      {step === 'HOLD_TO_DRINK' && (
+        <div className="w-full max-w-lg text-center p-8 bg-[#0a0806]/95 border border-[#382618] rounded shadow-2xl z-30 font-serif select-none">
+          <h2 className="text-lg font-bold tracking-widest text-[#d4af37] cinzel mb-1">
+            EL CÁLIZ EN LA OSCURIDAD
+          </h2>
+          <p className="text-xs text-[#8c7a65] italic mb-6">
+            Mantén presionado para alzar la pócima y beber. Soltar antes retira la mano temblando.
+          </p>
+
+          {/* Animación del Cáliz elevándose según progreso */}
+          <div className="h-40 flex flex-col items-center justify-center relative mb-4">
+            <div 
+              className="transition-transform duration-100 ease-out"
+              style={{
+                transform: `translateY(-${(holdProgressMs / 3000) * 50}px) scale(${1 + (holdProgressMs / 3000) * 0.15})`
+              }}
+            >
+              <div 
+                className="w-16 h-24 rounded-b-full rounded-t-sm p-1.5 border-2 relative flex flex-col justify-end shadow-2xl"
+                style={{
+                  borderColor: potionChoice === 'COBALTO' ? '#38bdf8' : '#fbbf24',
+                  backgroundColor: potionChoice === 'COBALTO' ? '#0f172a' : '#451a03',
+                  boxShadow: potionChoice === 'COBALTO' 
+                    ? `0 0 ${20 + (holdProgressMs / 3000) * 40}px rgba(56, 189, 248, 0.6)` 
+                    : `0 0 ${20 + (holdProgressMs / 3000) * 40}px rgba(251, 191, 36, 0.6)`
+                }}
+              >
+                <div 
+                  className="w-full rounded-b-full transition-all duration-100"
+                  style={{
+                    height: `${40 + (holdProgressMs / 3000) * 40}%`,
+                    backgroundColor: potionChoice === 'COBALTO' ? '#0284c7' : '#d97706'
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Prosa Progresiva que aparece línea a línea al sostener */}
+          <div className="h-20 flex items-center justify-center text-xs italic text-[#ded5c5] leading-relaxed mb-6 max-w-sm mx-auto">
+            {holdProgressMs >= 2400 ? (
+              <p className="text-[#facc15] font-semibold animate-fadeIn">
+                "Tragas hasta la última gota. El abismo despierta en tu garganta."
+              </p>
+            ) : holdProgressMs >= 1400 ? (
+              <p className="text-[#e2e8f0] animate-fadeIn">
+                "El mundo físico se disuelve en una marea de silencio... el pulso cósmico se aproxima."
+              </p>
+            ) : holdProgressMs >= 400 ? (
+              <p className="text-[#94a3b8] animate-fadeIn">
+                "La frialdad del cristal quema tus labios temblorosos..."
+              </p>
+            ) : holdInterruptedText ? (
+              <p className="text-[#f87171] animate-fadeIn">
+                "{holdInterruptedText}"
+              </p>
+            ) : (
+              <p className="text-[#64748b]">
+                Sostén firmemente para apurar el trago.
+              </p>
+            )}
+          </div>
+
+          {/* Botón Físico de Hold */}
+          <div className="flex justify-center">
+            <button
+              onMouseDown={startHold}
+              onMouseUp={cancelHold}
+              onTouchStart={startHold}
+              onTouchEnd={cancelHold}
+              className={`px-8 py-3 rounded-full text-xs uppercase tracking-widest font-bold border transition-all cursor-pointer ${
+                isHolding 
+                  ? 'bg-[#851c22] text-[#ffffff] border-[#d4af37] scale-95 shadow-[0_0_20px_rgba(212,175,55,0.5)]' 
+                  : 'bg-[#1f1710] text-[#dfcaa2] border-[#5e4326] hover:border-[#d4af37]'
+              }`}
+            >
+              {isHolding ? 'Bebiendo la Esencia...' : 'Mantener Pulsado para Beber'}
+            </button>
+          </div>
+
+          {/* Barra de progreso de hesitación física */}
+          <div className="w-48 h-1 bg-[#1a120b] rounded-full mx-auto mt-4 overflow-hidden border border-[#3d2715]">
+            <div 
+              className="h-full bg-[#d4af37] transition-all duration-100"
+              style={{ width: `${(holdProgressMs / 3000) * 100}%` }}
+            />
           </div>
         </div>
       )}

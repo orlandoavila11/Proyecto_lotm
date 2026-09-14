@@ -31,7 +31,7 @@ interface Violation {
 }
 
 function checkDiegeticUi() {
-  console.log('=== CI CHECK: AUDIT ANTI-MECÁNICO DE UI DIEGÉTICA (LEY DE PROSA DIEGÉTICA) ===');
+  console.log('=== CI CHECK: AUDIT ANTI-MECÁNICO Y LEY DEL OBJETO (BRIEF-10.VISUAL) ===');
   
   const filesToScan: string[] = [];
   
@@ -62,13 +62,13 @@ function checkDiegeticUi() {
 
   const violations: Violation[] = [];
 
+  // 1. Audit Anti-Mecánico
   for (const file of filesToScan) {
     const content = fs.readFileSync(file, 'utf-8');
     const lines = content.split('\n');
 
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
-      // Ignorar comentarios puros
       const trimmed = line.trim();
       if (trimmed.startsWith('//') || trimmed.startsWith('/*') || trimmed.startsWith('*')) {
         continue;
@@ -87,19 +87,46 @@ function checkDiegeticUi() {
     }
   }
 
+  // 2. Audit de Texto en Reposo (Ley del Objeto §14): etiquetas en reposo <= 7 palabras
+  const restingLabelPattern = /(?:title\s*=\s*["'`]([^"'`]+)["'`]|labelBrief\s*:\s*["'`]([^"'`]+)["'`])/g;
+  for (const file of filesToScan) {
+    // Solo auditar archivos del escritorio y sus objetos
+    if (!file.includes('desk') && !file.includes('objects')) continue;
+
+    const content = fs.readFileSync(file, 'utf-8');
+    const lines = content.split('\n');
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      let match;
+      while ((match = restingLabelPattern.exec(line)) !== null) {
+        const text = (match[1] || match[2] || '').trim();
+        const words = text.split(/\s+/).filter(w => w.length > 0);
+        if (words.length > 7) {
+          violations.push({
+            file: path.relative(workspaceRoot, file),
+            line: i + 1,
+            text: `"${text}" (${words.length} palabras)`,
+            pattern: 'Etiqueta ambiental en reposo supera el límite de 7 palabras (Ley del Objeto §14)'
+          });
+        }
+      }
+    }
+  }
+
   if (violations.length > 0) {
-    console.error(`\n❌ FALLO DE PROSA DIEGÉTICA: Se detectaron ${violations.length} violaciones mecánicas en la UI:\n`);
+    console.error(`\n❌ FALLO DE AUDITORÍA DIEGÉTICA: Se detectaron ${violations.length} violaciones en la UI:\n`);
     for (const v of violations) {
       console.error(`  - ${v.file}:${v.line} -> [${v.pattern}]`);
-      console.error(`    "${v.text}"\n`);
+      console.error(`    ${v.text}\n`);
     }
-    console.error('Ley de Prosa Diegética (§0.a BRIEF-10): Está estrictamente prohibido exponer números');
-    console.error('o estadísticas mecánicas en las cadenas de texto visibles al jugador.');
-    console.error('Utilice descripciones en prosa victoriana y metáforas de objetos sobre la mesa.\n');
+    console.error('Leyes Inviolables de Prosa y Objeto (Reglas 13 y 14 en AGENTS.md):');
+    console.error('1. Prohibido exponer números o estadísticas mecánicas.');
+    console.error('2. Toda etiqueta ambiental en reposo debe ser <= 7 palabras; la prosa vive solo al interactuar.\n');
     process.exit(1);
   }
 
-  console.log(`✅ [PASS] 0 violaciones detectadas en ${filesToScan.length} archivos escaneados de la UI diegética.\n`);
+  console.log(`✅ [PASS] 0 violaciones detectadas en ${filesToScan.length} archivos escaneados (Anti-mecánico + Ley del Objeto).\n`);
 }
 
 checkDiegeticUi();
