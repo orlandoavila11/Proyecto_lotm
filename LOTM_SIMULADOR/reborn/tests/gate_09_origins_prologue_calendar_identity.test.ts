@@ -130,12 +130,14 @@ describe('GATE 09: Orígenes Canónicos, Prólogo, Calendario de Cuatro Franjas 
     const drinkRes = PrologueEngine.drinkFirstPotion(db, char.id, 'COBALT_EYES');
     assert.strictEqual(drinkRes.pathway, 'FOOL');
     assert.strictEqual(drinkRes.sequence, 9);
-    assert.strictEqual(drinkRes.corruptionSet, 5, 'La corrupción inicial fija debe ser de 5 puntos');
+    assert.strictEqual(drinkRes.ruinaSet, 5, 'El primer trago marca al Beyonder con +5 de ruina');
+    assert.strictEqual(drinkRes.corruptionSet, 0, 'La corrupción arranca limpia en 0');
     assert.ok(drinkRes.visionNarrative.includes('niebla gris ceniza'));
 
     const updatedChar = db.getCharacter(char.id)!;
     assert.strictEqual(updatedChar.pathway, 'FOOL');
-    assert.strictEqual(updatedChar.corruption, 5);
+    assert.strictEqual(updatedChar.ruina, 5, 'Ruina debe ser 5 (Tier Marcado)');
+    assert.strictEqual(updatedChar.corruption, 0, 'Corrupción debe arrancar en 0');
     assert.strictEqual(updatedChar.prologue_step, 'COMPLETED');
   });
 

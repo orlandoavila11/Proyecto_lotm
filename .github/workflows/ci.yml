@@ -43,6 +43,9 @@ jobs:
       - name: Lint Tier G Contracts (Zod Schemas)
         run: npm run lint:tier-g
 
+      - name: Audit Diegetic UI Prose (Anti-Mechanical Grep)
+        run: npm run audit:diegetic
+
       - name: Build Server & UI
         run: npm run build
 

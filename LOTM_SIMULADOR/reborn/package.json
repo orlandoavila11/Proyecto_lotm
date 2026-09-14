@@ -9,7 +9,8 @@
     "test": "tsx --test tests/**/*.test.ts",
     "verify:tier-l": "node scripts/verify_tier_l.cjs",
     "lint:determinism": "tsx scripts/check_anti_math_random.ts",
-    "lint:tier-g": "tsx scripts/check_anti_math_random.ts && tsx scripts/lint_tier_g.ts"
+    "audit:diegetic": "tsx scripts/check_diegetic_ui.ts",
+    "lint:tier-g": "tsx scripts/check_anti_math_random.ts && tsx scripts/check_diegetic_ui.ts && tsx scripts/lint_tier_g.ts"
   },
   "dependencies": {
     "fastify": "^5.2.1",

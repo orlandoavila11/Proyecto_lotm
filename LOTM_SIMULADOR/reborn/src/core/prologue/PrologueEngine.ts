@@ -232,12 +232,13 @@ export class PrologueEngine {
         'El teatro humano se ha vuelto legible. Ya no eres un actor ingenuo: eres un Espectador de la Secuencia 9.';
     }
 
-    // Actualizar estado somático: Secuencia 9, Corrupción 5, Prólogo COMPLETED
+    // Actualizar estado somático: Secuencia 9, Ruina +5 (Marcado), Corrupción 0, Prólogo COMPLETED
     db.getRawDb().prepare(`
       UPDATE characters
       SET pathway = ?,
           sequence = ?,
-          corruption = 5,
+          ruina = ruina + 5,
+          corruption = 0,
           sanity = 95,
           digestion_progress = 0.0,
           prologue_step = 'COMPLETED',
@@ -249,7 +250,8 @@ export class PrologueEngine {
       pathway,
       sequence,
       sequenceName,
-      corruptionSet: 5,
+      ruinaSet: 5,
+      corruptionSet: 0,
       visionNarrative,
       awakeningNarrative
     };
