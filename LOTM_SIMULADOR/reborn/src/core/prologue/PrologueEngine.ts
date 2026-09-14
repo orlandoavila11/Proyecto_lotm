@@ -194,6 +194,7 @@ export class PrologueEngine {
     pathway: 'FOOL' | 'VISIONARY';
     sequence: number;
     sequenceName: string;
+    ruinaSet: number;
     corruptionSet: number;
     visionNarrative: string;
     awakeningNarrative: string;
