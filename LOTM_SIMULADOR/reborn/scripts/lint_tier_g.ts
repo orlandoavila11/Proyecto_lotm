@@ -19,7 +19,9 @@ import {
   GrimoiresFileSchema,
   ActingBalanceSchema,
   SomaticsBalanceSchema,
-  ConvergenceBalanceSchema
+  ConvergenceBalanceSchema,
+  EconomyBalanceSchema,
+  EconomyMarketSchema
 } from '../src/infra/content/schemas/index.js';
 
 interface SchemaTarget {
@@ -122,6 +124,16 @@ const TARGETS: SchemaTarget[] = [
     name: 'CONVERGENCE_BALANCE',
     pattern: 'balance/convergence.json',
     schema: ConvergenceBalanceSchema
+  },
+  {
+    name: 'ECONOMY_BALANCE',
+    pattern: 'balance/economy.json',
+    schema: EconomyBalanceSchema
+  },
+  {
+    name: 'ECONOMY_MARKET',
+    pattern: 'economy/market.json',
+    schema: EconomyMarketSchema
   }
 ];
 
@@ -291,6 +303,12 @@ function runLint(): void {
 
       // Validación de habilidades y economía para COMBATANT_G (Regla del Director BRIEF-03)
       if (target.name === 'COMBATANT_G' && Array.isArray(rawJson)) {
+        // BRIEF-08 Chore 0.a: Verificación de escalera RIVER en una línea (coherencia interna del ladder S9 -> S8 -> S7)
+        const riverLadder = ['nighthawk_sleepless_patrol', 'nighthawk_midnight_poet', 'nighthawk_squad_captain'].map(id => rawJson.find((c: any) => c.id === id));
+        if (!riverLadder.every((c, i) => c && c.pathwayTag === 'DARKNESS' && c.sefiraGroupRef === 'DEATH_CLUSTER' && (i === 0 || c.atomStats.hp > riverLadder[i - 1]!.atomStats.hp))) {
+          targetErrors.push(`[RIVER_LADDER_VIOLATION] ${relPath}: Incoherencia en escalera RIVER (debe ser S9 Sleepless -> S8 Poet -> S7 Nightmare con progresión monótona).`);
+        }
+
         for (const combatant of rawJson) {
           if (Array.isArray(combatant.abilities)) {
             for (const ability of combatant.abilities) {

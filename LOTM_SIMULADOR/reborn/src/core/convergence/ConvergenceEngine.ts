@@ -206,7 +206,8 @@ export class ConvergenceEngine {
     let selectedPool = dominantSefira;
 
     if (!isDominantMatching) {
-      const allPools = ['LOTM', 'GOD_ALMIGHTY', 'DEATH_CLUSTER', 'CALAMITY_CLUSTER', 'MOTHER_CLUSTER', 'ORDER_CLUSTER', 'ABYSS_CLUSTER'];
+      // POOL RIVER (DEATH_CLUSTER) excluido del pool abierto: los Nighthawks solo llegan vía incursión ordenada
+      const allPools = ['LOTM', 'GOD_ALMIGHTY', 'CALAMITY_CLUSTER', 'MOTHER_CLUSTER', 'ORDER_CLUSTER', 'ABYSS_CLUSTER'];
       const openPools = allPools.filter(p => p !== dominantSefira);
       selectedPool = openPools[rng.nextInt(0, openPools.length - 1)];
     }
@@ -282,6 +283,9 @@ export class ConvergenceEngine {
       });
 
       const narrativeWarning = 
+        `"Una sensación desagradable atraviesa tu estómago.\n` +
+        `No te encontraron esta noche.\n` +
+        `Te encontraron hace semanas."\n\n` +
         `[AVISO DIEGÉTICO · ALLANAMIENTO ECLESIÁSTICO]\n` +
         `"Un golpe seco y pesado retumba contra la puerta reforzada de tu refugio. Entre las rendijas carcomidas del marco se filtra un perfume helado a lavanda, serenidad y noche profunda.\n` +
         `Los latidos de tu corazón se aceleran cuando una voz pausada, severa y sin titubeos corta la quietud del callejón:\n\n` +

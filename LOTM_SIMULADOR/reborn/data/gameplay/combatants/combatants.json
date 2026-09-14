@@ -1995,14 +1995,14 @@
   },
   {
     "id": "nighthawk_squad_captain",
-    "name": "Capitán Ejecutor de los Halcones Nocturnos",
+    "name": "Capitán Ejecutor de los Halcones Nocturnos (Nightmare)",
     "atomStats": {
-      "hp": 65,
-      "maxHp": 65,
-      "spirituality": 75,
-      "maxSpirituality": 75,
-      "ap": 3,
-      "speed": 10
+      "hp": 85,
+      "maxHp": 85,
+      "spirituality": 110,
+      "maxSpirituality": 110,
+      "ap": 4,
+      "speed": 12
     },
     "statuses": [],
     "opacity": {
@@ -2012,11 +2012,11 @@
     "sefiraGroupRef": "DEATH_CLUSTER",
     "abilities": [
       {
-        "id": "ABILITY_NIGHTHAWK_CEREMONIAL_CANON",
-        "name": "Decreto del Silencio Nocturno",
-        "description": "Invoca la autoridad sacra de la Diosa de la Noche para debilitar y aterrorizar las intenciones del sospechoso.",
+        "id": "ABILITY_NIGHTHAWK_NIGHTMARE_TERROR",
+        "name": "Pesadilla Inquisitorial",
+        "description": "Arrastra la mente del objetivo a una pesadilla lúcida claustrofóbica impuesta por la Diosa, induciendo terror paralizante y daño espiritual directo.",
         "apCost": 2,
-        "spiritualityCost": 20,
+        "spiritualityCost": 25,
         "attentionCost": 0,
         "range": 4,
         "targetType": "SINGLE_ENEMY",
@@ -2024,27 +2024,33 @@
           {
             "atomId": "ATOM_APPLY_STATUS",
             "params": {
-              "status": "WEAKENED",
+              "status": "FEAR",
               "durationTurns": 2
             }
           },
           {
             "atomId": "ATOM_APPLY_STATUS",
             "params": {
-              "status": "FEAR",
-              "durationTurns": 2
+              "status": "STUN",
+              "durationTurns": 1
+            }
+          },
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 18
             }
           }
         ],
         "canonConfidence": "library",
-        "derivationNote": "Comando autoritario inquisitorial respaldado por la liturgia de la Medianoche para quebrar el espíritu del objetivo."
+        "derivationNote": "Firma del Director: Habilidad canónica de Secuencia 7 Nightmare (Pesadilla) de la vía Darkness. Arrastra la consciencia del transgresor a una pesadilla forzosa donde es paralizado y aterrorizado."
       },
       {
         "id": "ABILITY_NIGHTHAWK_EXECUTION_STRIKE",
-        "name": "Castigo Sombrío Penitencial",
-        "description": "Combina un disparo consagrado a quemarropa con una bendición protectora sobre su propia posición.",
+        "name": "Castigo Penitencial de Medianoche",
+        "description": "Disparo consagrado a quemarropa con revólver cargado de balas de plata purificada que inflige daño físico devastador.",
         "apCost": 1,
-        "spiritualityCost": 10,
+        "spiritualityCost": 15,
         "attentionCost": 0,
         "range": 2,
         "targetType": "SINGLE_ENEMY",
@@ -2052,12 +2058,12 @@
           {
             "atomId": "ATOM_DAMAGE_PHYSICAL",
             "params": {
-              "baseDamage": 22
+              "baseDamage": 26
             }
           }
         ],
         "canonConfidence": "library",
-        "derivationNote": "Procedimiento de neutralización armada letal a quemarropa ejecutado durante allanamientos de refugio."
+        "derivationNote": "Firma del Director: Procedimiento letal de neutralización armada a quemarropa ejecutado durante allanamientos de alto riesgo."
       }
     ],
     "observationChance": 35

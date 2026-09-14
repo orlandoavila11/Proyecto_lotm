@@ -1,0 +1,132 @@
+{
+  "version": "1.0.0",
+  "rent": {
+    "defaultRentPencePerWeek": 24,
+    "debtFlagName": "rent_debt",
+    "debtNarrativeNote": "La casera recuerda tu atraso con el alquiler: una mirada helada y un murmullo sobre la comisaría.",
+    "districtOverrides": [
+      {
+        "districtId": "cherwood",
+        "rentPencePerWeek": 24
+      },
+      {
+        "districtId": "east_borough",
+        "rentPencePerWeek": 12
+      },
+      {
+        "districtId": "bridge_borough",
+        "rentPencePerWeek": 18
+      },
+      {
+        "districtId": "backlund_north",
+        "rentPencePerWeek": 48
+      },
+      {
+        "districtId": "hillston",
+        "rentPencePerWeek": 36
+      }
+    ]
+  },
+  "qualityModifiers": {
+    "PRISTINE": {
+      "priceMultiplier": 1.0,
+      "successBonus": 15,
+      "corruptionRisk": -10
+    },
+    "DAMAGED": {
+      "priceMultiplier": 0.6,
+      "successBonus": 0,
+      "corruptionRisk": 5
+    },
+    "CONTAMINATED": {
+      "priceMultiplier": 0.35,
+      "successBonus": -20,
+      "corruptionRisk": 25
+    }
+  },
+  "corruptionCures": [
+    {
+      "tier": "INTEGRO",
+      "costPence": 60,
+      "corruptionReduction": 5,
+      "description": "Sesión de calma psicológica y té sedante en clínica privada de Cherwood."
+    },
+    {
+      "tier": "MARCADO",
+      "costPence": 144,
+      "corruptionReduction": 5,
+      "description": "Confesionario eclesiástico bajo el incienso nocturno y letargo inducido."
+    },
+    {
+      "tier": "EROSIONADO",
+      "costPence": 360,
+      "corruptionReduction": 5,
+      "description": "Terapia de choque psíquico en sanatorio clandestino de Backlund Norte."
+    },
+    {
+      "tier": "ROTO",
+      "costPence": 720,
+      "corruptionReduction": 5,
+      "description": "Exorcismo ritual menor por un boticario y sacerdote veterano en retiro."
+    },
+    {
+      "tier": "PERDIDO",
+      "costPence": 1440,
+      "corruptionReduction": 5,
+      "description": "Tratamiento psiquiátrico de emergencia extremo para contener el colapso astral."
+    }
+  ],
+  "preparationChecklist": [
+    {
+      "id": "lugar",
+      "name": "Refugio Sellado con Espiritualidad",
+      "description": "Paredes selladas con daga de plata y muro de espiritualidad hermético.",
+      "costPence": 36,
+      "successBonus": 10,
+      "riskReduction": 5
+    },
+    {
+      "id": "momento",
+      "name": "Momento Astral Propicio",
+      "description": "Alineación astrológica o vigilia de medianoche bajo la luna carmesí.",
+      "costPence": 0,
+      "successBonus": 10,
+      "riskReduction": 5
+    },
+    {
+      "id": "materiales_rituales",
+      "name": "Materiales Rituales Consagrados",
+      "description": "Velas aromáticas de manzanilla, cuenco de plata y esencias tranquilizantes.",
+      "costPence": 48,
+      "successBonus": 10,
+      "riskReduction": 5
+    },
+    {
+      "id": "costos_anclaje",
+      "name": "Foco de Anclaje Humano",
+      "description": "Presencia física de un objeto ancla o proximidad con una persona ancla.",
+      "costPence": 24,
+      "successBonus": 10,
+      "riskReduction": 5
+    }
+  ],
+  "harvestBuybacks": [
+    {
+      "grade": "COMMON",
+      "buybackPence": 24
+    },
+    {
+      "grade": "UNCOMMON",
+      "buybackPence": 60
+    },
+    {
+      "grade": "RARE",
+      "buybackPence": 240
+    }
+  ],
+  "ascensionRisk": {
+    "basePreparedFailChancePercentage": 15,
+    "baseUnpreparedFailChancePercentage": 60,
+    "rampageRuinaPenalty": 15
+  }
+}
