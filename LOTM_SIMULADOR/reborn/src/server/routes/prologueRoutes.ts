@@ -67,3 +67,4 @@ export const prologueRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async 
     return reply.send(result);
   });
 };
+

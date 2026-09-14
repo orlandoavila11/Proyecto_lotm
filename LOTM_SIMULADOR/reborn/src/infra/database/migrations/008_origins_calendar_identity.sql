@@ -35,3 +35,4 @@ CREATE TABLE IF NOT EXISTS identity_event_history (
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
 );
+

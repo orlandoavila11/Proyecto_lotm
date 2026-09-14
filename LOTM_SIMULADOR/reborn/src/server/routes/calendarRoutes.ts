@@ -34,3 +34,4 @@ export const calendarRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async 
     return reply.send({ logs });
   });
 };
+

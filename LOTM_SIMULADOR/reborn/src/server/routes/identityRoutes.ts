@@ -42,3 +42,4 @@ export const identityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async 
     return reply.send({ history });
   });
 };
+

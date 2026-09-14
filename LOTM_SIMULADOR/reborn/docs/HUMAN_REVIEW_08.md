@@ -38,6 +38,8 @@ En cumplimiento de **BRIEF-08**, se formalizan aquí los guiones autorales para:
 > 
 > *Tus articulaciones crujen con un chasquido suave. El equilibrio de tu cuerpo se vuelve milimétrico; eres capaz de percibir el centro de gravedad de cada mota de polvo que cae del techo. En tu mente resuena el principio fundamental del papel: reír ante la tragedia, mantener el control cuando el abismo se abre, y no dejar jamás que el público descubra el llanto tras el maquillaje.*
 > 
+> *Intentas borrar la sonrisa de tu rostro con el dorso de la manga, pero los labios no ceden: sonríes aunque quieras llorar, y por un instante aterrador ya no recuerdas quién habitaba debajo.*
+> 
 > *Has ascendido a Secuencia 8: Payaso. Tu digestión recomienza desde el vacío.*
 
 ---
@@ -75,4 +77,4 @@ En cumplimiento de **BRIEF-08**, se formalizan aquí los guiones autorales para:
 > 
 > *Despiertas horas más tarde, tendido sobre el suelo helado de tu refugio. El cuenco de plata yace volcado y vacío; los ingredientes se han evaporado en una costra negra chamuscada. El espejo del armario está destrozado, tus ropas manchadas de hollín y sangre seca, y una de tus anclas humanas ha sufrido las consecuencias de tu delirio.*
 > 
-> *Has sobrevivido por puro milagro somático, pero el precio ha sido cobrado: tu Ruina se ha incrementado (+15) y tu nombre resuena más fuerte en las brumas del destino. Debes reunir de nuevo los ingredientes si deseas intentar el trago otra vez.*
+> *Has sobrevivido apenas, aferrado a un jirón ciego de instinto humano, pero el precio ha sido cobrado: las grietas en tu alma son ahora más hondas e irreversibles, y tu silueta se ha vuelto indeleblemente más visible para los horrores que acechan en las brumas de Backlund. Las características místicas te han rechazado; deberás reunir de nuevo la fórmula y los ingredientes si osas intentar el trago otra vez.*

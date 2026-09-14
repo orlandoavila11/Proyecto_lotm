@@ -51,3 +51,4 @@ export const OriginsCatalogSchema = z.object({
 });
 
 export type OriginsCatalog = z.infer<typeof OriginsCatalogSchema>;
+

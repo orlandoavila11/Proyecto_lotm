@@ -27,16 +27,17 @@ describe('GATE 09: Orígenes Canónicos, Prólogo, Calendario de Cuatro Franjas 
     if (fs.existsSync(testDbPath)) fs.unlinkSync(testDbPath);
   });
 
-  test('1. Orígenes Canónicos (Tier G): 5 plantillas completas con 3 anclas firmadas, profesión y carga', () => {
+  test('1. Orígenes Canónicos (Tier G): 6 plantillas completas con 3 anclas firmadas, profesión y carga', () => {
     const origins = OriginEngine.getAllOrigins();
-    assert.strictEqual(origins.length, 5, 'Deben existir exactamente 5 plantillas canónicas de origen en Tier G');
+    assert.strictEqual(origins.length, 6, 'Deben existir exactamente 6 plantillas canónicas de origen en Tier G');
 
     const expectedIds = [
       'ORIGIN_CLERK',
       'ORIGIN_MEDICAL_STUDENT',
       'ORIGIN_REPORTER',
       'ORIGIN_FRAUDULENT_MEDIUM',
-      'ORIGIN_DOCKWORKER'
+      'ORIGIN_DOCKWORKER',
+      'ORIGIN_PRIVATE_INVESTIGATOR'
     ];
 
     for (const expectedId of expectedIds) {
@@ -373,7 +374,7 @@ describe('GATE 09: Orígenes Canónicos, Prólogo, Calendario de Cuatro Franjas 
     });
     assert.strictEqual(originsRes.statusCode, 200);
     const originsBody = JSON.parse(originsRes.body);
-    assert.strictEqual(originsBody.origins.length, 5);
+    assert.strictEqual(originsBody.origins.length, 6);
 
     // B. Crear personaje y POST /api/prologue/start
     const char = fastifyDb.createCharacter({

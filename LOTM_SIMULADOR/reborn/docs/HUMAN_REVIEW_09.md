@@ -3,15 +3,21 @@
 **Fecha:** 14 de Septiembre, 2026  
 **Destinatario:** Director Humano  
 **Autoridad:** Constitución v4.0 & BRIEF-09  
+**Estado:** **CLOSED / APPROVED (RATIFICADO POR EL DIRECTOR)**  
 
 ---
 
-## 1. PROPUESTA DE 5 PLANTILLAS DE ORIGEN (TIER G)
+## 1. RESOLUCIÓN DE LA DIRECCIÓN
 
-Estas 5 plantillas estructuran la doble vida del protagonista en Backlund (~1353 Quinta Época), vinculando un empleo civil, tres anclas de humanidad firmadas, un contacto inicial, una carga material/secreta y un distrito de inicio.
+Se aprueban oficialmente los 5 orígenes iniciales y se adopta formalmente el **Detective Privado** como **SEXTO ORIGEN CANÓNICO** del juego:
+1. `ORIGIN_CLERK` (Escribiente Notarial)
+2. `ORIGIN_MEDICAL_STUDENT` (Estudiante de Medicina)
+3. `ORIGIN_REPORTER` (Corresponsal de Sucesos)
+4. `ORIGIN_FRAUDULENT_MEDIUM` (Espiritista de Salón)
+5. `ORIGIN_DOCKWORKER` (Estibador de Muelles)
+6. `ORIGIN_PRIVATE_INVESTIGATOR` (Detective Privado)
 
-> [!NOTE]
-> **Reserva del Detective Privado:** El origen provisional de "Detective Privado" ha dejado de ser hardcodeado como único camino. El Director puede adoptarlo como 6.º origen oficial o sustituir cualquiera de las plantillas a continuación.
+El Detective Privado deja de ser un placeholder provisional y pasa a ser un origen canónico de pleno derecho, anclado al Caso Mayor #1 y al distrito de Cherwood.
 
 ---
 
@@ -100,6 +106,23 @@ Estas 5 plantillas estructuran la doble vida del protagonista en Backlund (~1353
 
 ---
 
+### ORIGEN 6: DETECTIVE PRIVADO (`ORIGIN_PRIVATE_INVESTIGATOR`)
+- **Profesión Civil:** Detective Privado de Asuntos Civiles e Indagación.
+- **Clase Social:** `MIDDLE_CLASS`.
+- **Distrito de Inicio:** `DIST_CHERWOOD` (Distrito de Cherwood).
+- **Salario Semanal:** 360d (£1 10s 0d / semana en honorarios base).
+- **Patrimonio Inicial:** 600d (£2 10s 0d).
+- **Las 3 Anclas de Origen:**
+  1. **Inspector Lestrade** (*PERSON*, Fuerza 65): Inspector de Scotland Yard que tolera a los sabuesos privados siempre que sus hallazgos no comprometan los informes ministeriales.
+  2. **Despacho de Indagación de Cherwood** (*LOCATION*, Fuerza 60): Habitación en el segundo piso sobre una cerrajería; estanterías con expedientes de casos civiles, olor a tabaco de pipa y café negro.
+  3. **Registro Meticuloso de Casos y Honorarios** (*ROUTINE*, Fuerza 60): Clasificar meticulosamente notas de entrevistas y comprobantes de honorarios cada tarde al cerrar el postigo.
+- **Contacto Inicial:** *Sargento Briggs* (Scotland Yard / División Cherwood).
+- **Carga Inicial:** *SECRETO — Licencia de Indagación Condicional*. Amonestado previamente por Scotland Yard por intervenir en un caso de suicidio que involucraba símbolos arcanos sin reportarlo al buró.
+- **Texto de Apertura:**
+  > *"La lluvia golpea con monotonía las persianas de tu modesta oficina en Cherwood. Las tazas de porcelana agrietada huelen a café recalentado y tabaco barato. En Backlund, un detective privado vive de infidelidades burguesas y pagarés extraviados, pero tu instinto sabe que la niebla esconde algo más que ladrones de poca monta. Esta mañana, una carta con lacre negro apareció apoyada contra tu pisapapeles de bronce."*
+
+---
+
 ## 2. EL PRÓLOGO DIEGÉTICO: GUION DE LAS CARTAS DEL BENEFACTOR
 
 ### Fase A: La Primera Carta del Benefactor (El Gancho)
@@ -139,3 +162,4 @@ En el desván abandonado del Callejón de la Cruz de Hierro, sobre una mesa de c
   - *Vía FOOL:* Las paredes del desván se disuelven en una marea infinita de niebla gris. Sobre la niebla, una figura colosal cubierta con una túnica de bufón sostiene cuerdas invisibles que atan las estrellas.
   - *Vía VISIONARY:* El suelo se convierte en un mar negro de conciencias donde sombras humanas nadan sin rumbo. En las profundidades, una gigantesca pupila de dragón se abre y te observa fijamente.
 - **El Despertar:** El personaje despierta en su habitación civil o en el piso del desván cuando amanece. Su cuerpo es el mismo, pero el mundo ha adquirido textura mística: las auras de las personas son tenues resplandores de colores y los susurros de la niebla han comenzado. **Secuencia 9 activa.**
+

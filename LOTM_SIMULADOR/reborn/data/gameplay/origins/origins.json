@@ -213,6 +213,49 @@
       },
       "prologueIntro": "El aire del Barrio Este quema la garganta con azufre y niebla ácida. Te duelen los hombros tras doce horas cargando sacos de grano y carbón en las barcazas del Tussock. En tu cuartucho compartido con otros tres jornaleros, donde el silencio vale más que el pan, hallaste sobre tu jergón de paja una carta limpia, intacta, sin una sola mancha de carbón. Nadie vio quién la dejó.",
       "derivationNote": "Compilado según BRIEF-09 §1."
+    },
+    {
+      "id": "ORIGIN_PRIVATE_INVESTIGATOR",
+      "name": "Detective Privado",
+      "profession": "Detective de Asuntos Civiles e Indagación",
+      "socialClass": "MIDDLE_CLASS",
+      "startingDistrict": "DIST_CHERWOOD",
+      "startingPence": 600,
+      "weeklySalaryPence": 360,
+      "originAnchors": [
+        {
+          "name": "Inspector Lestrade",
+          "type": "PERSON",
+          "description": "Inspector de Scotland Yard que tolera a los sabuesos privados siempre que sus hallazgos no comprometan los informes ministeriales.",
+          "strength": 65
+        },
+        {
+          "name": "Despacho de Indagación de Cherwood",
+          "type": "LOCATION",
+          "description": "Habitación en el segundo piso sobre una cerrajería; estanterías con expedientes de casos civiles, olor a tabaco de pipa y café negro.",
+          "strength": 60
+        },
+        {
+          "name": "Registro Meticuloso de Casos y Honorarios",
+          "type": "ROUTINE",
+          "description": "Clasificar meticulosamente notas de entrevistas y comprobantes de honorarios cada tarde al cerrar el postigo.",
+          "strength": 60
+        }
+      ],
+      "initialContact": {
+        "name": "Sargento Briggs",
+        "relation": "Contacto policial en Cherwood",
+        "description": "Scotland Yard / División Cherwood, facilita acceso a partes policiales menores a cambio de discreción."
+      },
+      "initialBurden": {
+        "type": "SECRET",
+        "name": "Licencia de Indagación Condicional",
+        "description": "Amonestado previamente por Scotland Yard por intervenir en un caso de suicidio que involucraba símbolos arcanos sin reportarlo al buró.",
+        "mechanicalEffect": "Mayor escrutinio policial en Cherwood si los casos caducan o se resuelven mal."
+      },
+      "prologueIntro": "La lluvia golpea con monotonía las persianas de tu modesta oficina en Cherwood. Las tazas de porcelana agrietada huelen a café recalentado y tabaco barato. En Backlund, un detective privado vive de infidelidades burguesas y pagarés extraviados, pero tu instinto sabe que la niebla esconde algo más que ladrones de poca monta. Esta mañana, una carta con lacre negro apareció apoyada contra tu pisapapeles de bronce.",
+      "derivationNote": "Adoptado formalmente como sexto origen canónico por la Dirección (HUMAN_REVIEW_09)."
     }
   ]
 }
+
