@@ -21,7 +21,8 @@ import {
   SomaticsBalanceSchema,
   ConvergenceBalanceSchema,
   EconomyBalanceSchema,
-  EconomyMarketSchema
+  EconomyMarketSchema,
+  OriginsCatalogSchema
 } from '../src/infra/content/schemas/index.js';
 
 interface SchemaTarget {
@@ -134,6 +135,11 @@ const TARGETS: SchemaTarget[] = [
     name: 'ECONOMY_MARKET',
     pattern: 'economy/market.json',
     schema: EconomyMarketSchema
+  },
+  {
+    name: 'ORIGINS_G',
+    pattern: 'origins/origins.json',
+    schema: OriginsCatalogSchema
   }
 ];
 

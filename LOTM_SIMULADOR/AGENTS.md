@@ -8,6 +8,7 @@
 - **El Producto:** *Path to Godhood* — RPG web sistémico de investigación y doble vida en el universo de *Lord of the Mysteries*.
 - **La Fantasía:** "De día soy un civil con empleo y deudas en Backlund; de noche interpreto un papel sobrenatural que me está digiriendo. El conocimiento es munición y veneno. Cada secreto me hace más poderoso y más visible."
 - **Autoridad Suprema:** **El Director Humano.** Sus prompts definen la última palabra. Ningún agente califica su propio trabajo ni relaja umbrales de prueba para autoconcederse aprobados.
+- **Encuadre de Fases (Ley de Estado):** BRIEF-08 cerró la fase de **SISTEMAS**. La **Fase 1 continúa** y comprende BRIEF-09 (Orígenes/Prólogo/Calendario/Identidad) + BRIEF-10 (El Desván / Dossier UI) + Gates G1 a G5 + Demo diegética jugable. Ningún agente declara cambio de fase sin orden explícita del Director.
 
 ---
 
@@ -70,10 +71,10 @@ LOTM_SIMULADOR/
 6. **Resolución de Rutas:** Prohibidas heurísticas de CWD. Las rutas de datos se resuelven desde la raíz del paquete (`import.meta`).
 7. **Regla del Hueco (§3.8):** Un hueco de contenido nunca se rellena en línea por un agente. Hueco → excepción + cola HUMAN_REVIEW.
 8. **Regla del Testigo (§3.9):** Ninguna operación destructiva (borrado masivo, reescritura, migración, purge) se ejecuta sin commit previo del estado actual. Orden sagrada: **COMMIT primero, TAG después, DESTRUCCIÓN al final**.
-9. **Formato Obligatorio de Reporte (§12 ampliado):** Cada sesión o brief concluido debe emitir su reporte con el **campo 0 obligatorio "COMMIT: <hash>"** (acompañado de URL de CI y contador N/20). Todo reporte cita el commit que contiene su trabajo. **Reporte sin Campo 0 = INVÁLIDO**. Fin de sesión = commit + push (commit = testigo; push = notario), sin excepciones.
+9. **Formato Obligatorio de Reporte (§12 ampliado):** Cada sesión o brief concluido debe emitir su reporte con el **campo 0 obligatorio "COMMIT: <hash>"** (acompañado de URL de CI y contador N/20). Todo reporte cita el commit que contiene su trabajo. **Reporte sin Campo 0 = INVÁLIDO**. Fin de sesión = commit + push (commit = testigo; push = notario), sin excepciones. La sección **FALLOS** es obligatoria sin excepción incluso en sesiones limpias ("ninguna incidencia tras búsqueda en logs/tests/CI" + evidencia).
 10. **Regla Permanente de Procedencia de Gates (§3.10 extendido):** Toda re-corrida de un gate tras cambio estructural reporta DELTA contra la corrida anterior + hipótesis causal. Todo umbral declarado en un reporte cita la orden que lo estableció — umbral sin procedencia = métrica inválida. Números sin procedencia = inválidos.
 11. **Erradicación Absoluta de Math.random (Tercera Huelga):** Prohibido el uso de `Math.random` en todo `reborn/src/`. Todo identificador, tirada, selección o evento probabilístico DEBE ser estrictamente determinista vía `SeededRNG` o `generateDeterministicId`. El gate de CI `lint:determinism` valida esto de forma estricta (presencia = build FAIL).
-12. **Reserva Canónica de Orígenes (BRIEF-09):** El origen "Detective Privado" y cualquier otro origen inicial son exclusivamente **PLACEHOLDER** técnico de andamiaje. La definición de orígenes, sus árboles de trasfondo y el prólogo son prerrogativa exclusiva del Director (a compilar en BRIEF-09). Ningún agente inventa ni consolida orígenes definitivos en línea.
+12. **Orígenes Canónicos (BRIEF-09):** Mueren los placeholders provisionales. Los orígenes jugables son definidos formalmente en Tier G (`origins.json`) a través de 5 plantillas canónicas (*escribiente, estudiante de medicina, reportero, médium fraudulenta, estibador*) que definen las 3 anclas de origen firmadas, profesión civil, contacto inicial, carga (deuda o secreto), distrito y salario formalizado. El Director se reserva la prerrogativa de adoptar o incorporar el "Detective Privado" como sexto origen. El prólogo tutorial orquesta el onboarding y el primer ciclo diegético.
 
 ---
 

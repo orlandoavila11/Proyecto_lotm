@@ -1,0 +1,218 @@
+{
+  "version": "1.0.0",
+  "description": "Catálogo canónico de plantillas de orígenes de Tier G para la Quinta Época en Backlund",
+  "origins": [
+    {
+      "id": "ORIGIN_CLERK",
+      "name": "Escribiente Notarial",
+      "profession": "Escribiente del Registro Civil",
+      "socialClass": "MIDDLE_CLASS",
+      "startingDistrict": "DIST_CHERWOOD",
+      "startingPence": 720,
+      "weeklySalaryPence": 360,
+      "originAnchors": [
+        {
+          "name": "Mr. Ronald Moore",
+          "type": "PERSON",
+          "description": "Jefe de la oficina de registro, un puritano del deber que inspecciona la caligrafía y recompensa la discreción civil.",
+          "strength": 65
+        },
+        {
+          "name": "Archivo de Saint George (Cherwood)",
+          "type": "LOCATION",
+          "description": "Un laberinto de anaqueles de roble con olor a cera, polvo y actas notariales donde nadie hace preguntas impertinentes.",
+          "strength": 60
+        },
+        {
+          "name": "Copia Diaria de Veinte Actas",
+          "type": "ROUTINE",
+          "description": "La rutina mecánica de transcribir veinte partidas oficiales antes de las cuatro de la tarde ancla la mente al mundo tangible.",
+          "strength": 60
+        }
+      ],
+      "initialContact": {
+        "name": "Sargento Briggs",
+        "relation": "Contacto policial en Cherwood",
+        "description": "Oficial que acude a certificar actas de defunción y acepta consejos discretos sobre inconsistencias en firmas."
+      },
+      "initialBurden": {
+        "type": "SECRET",
+        "name": "Falsificación del Sello Notarial",
+        "description": "Falsificó una constancia de solvencia para evitar que su hermana menor fuera recluida en el asilo de deudores de Backlund.",
+        "mechanicalEffect": "+10 sospecha policial basal si se investigan registros en Cherwood."
+      },
+      "prologueIntro": "Las calles de Cherwood despiertan bajo una llovizna carbonosa. En tu pequeño piso sobre la sombrerería, tus dedos todavía guardan el olor a tinta ferrogálica y té frío. Tienes un empleo honesto, deudas moderadas y el silencio de quien vive entre documentos ajenos. Pero esta mañana, bajo el marco de tu puerta, alguien deslizó un sobre de papel vitela grueso que no proviene de ninguna oficina civil.",
+      "derivationNote": "Compilado según BRIEF-09 §1 para la Vía Civil de Backlund."
+    },
+    {
+      "id": "ORIGIN_MEDICAL_STUDENT",
+      "name": "Estudiante de Medicina",
+      "profession": "Ayudante de Disección",
+      "socialClass": "MIDDLE_CLASS",
+      "startingDistrict": "DIST_CHERWOOD",
+      "startingPence": 480,
+      "weeklySalaryPence": 300,
+      "originAnchors": [
+        {
+          "name": "Profesor Allan",
+          "type": "PERSON",
+          "description": "Cirujano en jefe de la morgue de la Escuela de Medicina, mentor estricto que exige una mente fría ante la carne abierta.",
+          "strength": 65
+        },
+        {
+          "name": "Anfiteatro Anatómico de Backlund",
+          "type": "LOCATION",
+          "description": "Graderías empinadas de madera barnizada y mesas de disección con olor a fenol y éter que aíslan de la superstición.",
+          "strength": 60
+        },
+        {
+          "name": "La Carne es Biológica y Mensurable",
+          "type": "CONVICTION",
+          "description": "La fe absoluta en la anatomía y el microscopio: no existe monstruo ni horror que no posea órganos, nervios y causas naturales.",
+          "strength": 60
+        }
+      ],
+      "initialContact": {
+        "name": "Enfermera Martha",
+        "relation": "Colega en el Dispensario Caritativo",
+        "description": "Administra los suministros médicos y alerta sobre cadáveres no reclamados con marcas inusuales."
+      },
+      "initialBurden": {
+        "type": "DEBT",
+        "name": "Pagaré de Instrumental Quirúrgico",
+        "amountPence": 480,
+        "description": "Deuda de dos libras contraída con un prestamista del Área del Puente para comprar un estuche de bisturíes alemanes y un microscopio de bolsillo.",
+        "mechanicalEffect": "Deducción de intereses o visita de cobradores si el saldo cae a cero."
+      },
+      "prologueIntro": "El aroma a formaldehído y humo de carbón te acompaña incluso en el modesto dormitorio que alquilas cerca del hospital. Tus manos son firmes, entrenadas para suturar carne y medir dosis con gotero. Anoche, una autopsia no oficial en una mesa secundaria dejó un fragmento de tejido que se disolvió en humo azul. Al regresar a tu cuarto de madrugada, encontraste una carta esperándote.",
+      "derivationNote": "Compilado según BRIEF-09 §1."
+    },
+    {
+      "id": "ORIGIN_REPORTER",
+      "name": "Corresponsal de Sucesos",
+      "profession": "Reportero del Daily Observer",
+      "socialClass": "MIDDLE_CLASS",
+      "startingDistrict": "DIST_CHERWOOD",
+      "startingPence": 600,
+      "weeklySalaryPence": 384,
+      "originAnchors": [
+        {
+          "name": "Editor Vance",
+          "type": "PERSON",
+          "description": "Jefe de redacción del Daily Observer, fumador de pipa cínico pero obstinado en publicar la verdad antes que la competencia.",
+          "strength": 65
+        },
+        {
+          "name": "Taller de Prensa de Fleet Street",
+          "type": "LOCATION",
+          "description": "El estruendo ensordecedor de las rotativas a vapor y el olor a queroseno y papel húmedo donde el mundo se convierte en titulares.",
+          "strength": 60
+        },
+        {
+          "name": "La Voz de los Sin Voz",
+          "type": "ROLE",
+          "description": "El papel moral de intermediario entre la aristocracia impune y los desvalidos de la niebla.",
+          "strength": 60
+        }
+      ],
+      "initialContact": {
+        "name": "Sam el Tipógrafo",
+        "relation": "Compañero de taller",
+        "description": "Filtra rumores antes de que pasen por la censura gubernamental y conoce los tugurios de Cherwood."
+      },
+      "initialBurden": {
+        "type": "SECRET",
+        "name": "Libreta de Nombres Comprometidos",
+        "description": "Guarda bajo las tablas del suelo una libreta con nombres de industriales y sacerdotes que asisten a reuniones a puerta cerrada.",
+        "mechanicalEffect": "Mayor interés de informantes y riesgo si su domicilio es registrado."
+      },
+      "prologueIntro": "Tu cuaderno de notas tiene las esquinas dobladas y manchas de café. En Backlund, la noticia que no se vende a las ocho de la mañana ya es leña para el fuego. Cubriste el hallazgo de un ahogado en el Tussock cuyas ropas no tenían una sola gota de humedad. Al llegar a tu mesa de trabajo en el diario, una carta sellada con cera sin remitente te esperaba apoyada contra tu tintero.",
+      "derivationNote": "Compilado según BRIEF-09 §1."
+    },
+    {
+      "id": "ORIGIN_FRAUDULENT_MEDIUM",
+      "name": "Espiritista de Salón",
+      "profession": "Médium y Clarividente",
+      "socialClass": "WORKING_CLASS",
+      "startingDistrict": "DIST_BRIDGE",
+      "startingPence": 360,
+      "weeklySalaryPence": 288,
+      "originAnchors": [
+        {
+          "name": "Madame Eleanor",
+          "type": "PERSON",
+          "description": "Vieja charlatana que te enseñó el arte de leer rostros, esconder campanillas bajo las mesas y simular trances creíbles.",
+          "strength": 65
+        },
+        {
+          "name": "Salón de Velas Negras",
+          "type": "LOCATION",
+          "description": "Habitación trasera en el Área del Puente, cortinas de terciopelo gastado y aroma a lavanda rancia donde los ingenuos buscan consuelo.",
+          "strength": 60
+        },
+        {
+          "name": "Encendido Ritual de Tres Velas",
+          "type": "ROUTINE",
+          "description": "Encender tres velas de sebo a las ocho en punto y recitar las necrológicas del matutino para memorizar nombres de viudos adinerados.",
+          "strength": 60
+        }
+      ],
+      "initialContact": {
+        "name": "Aaron el Perista",
+        "relation": "Intermediario del Callejón del Hierro",
+        "description": "Compra baratijas 'bendecidas' y conoce qué casas de empeño aceptan reliquias dudosas."
+      },
+      "initialBurden": {
+        "type": "DEBT",
+        "name": "Deuda de Protección con la Banda del Puente",
+        "amountPence": 720,
+        "description": "Deuda de tres libras acumulada por operar un salón sin licencia en territorio de los matones del muelle.",
+        "mechanicalEffect": "Presión semanal si no se mantiene la presencia civil en el distrito."
+      },
+      "prologueIntro": "El humo de incienso de baja calidad disfraza la humedad de las paredes del Área del Puente. Durante tres años te has ganado la vida vendiendo consuelo fingido y susurros inventados a señoras enlutadas. Sabes que los espíritus no responden a campanillas de hojalata... hasta anoche. Durante una sesión a oscuras, una voz que no era tu ventriloquia habló por tu garganta. Al encender la lámpara, sobre la mesa no estaban tus cartas del tarot, sino un pliego sellado con lacre oscuro.",
+      "derivationNote": "Compilado según BRIEF-09 §1."
+    },
+    {
+      "id": "ORIGIN_DOCKWORKER",
+      "name": "Estibador del Puerto Fluvial",
+      "profession": "Estibador de Carga y Carbón",
+      "socialClass": "WORKING_CLASS",
+      "startingDistrict": "DIST_EAST_BOROUGH",
+      "startingPence": 240,
+      "weeklySalaryPence": 240,
+      "originAnchors": [
+        {
+          "name": "Viejo Tom",
+          "type": "PERSON",
+          "description": "Capataz veterano con una pierna rígida que distribuye los turnos de grúa con severidad incorruptible.",
+          "strength": 65
+        },
+        {
+          "name": "Muelle 4 del Río Tussock",
+          "type": "LOCATION",
+          "description": "Barro grisáceo, montañas de antracita galesa y grúas de vapor que rechinan contra la niebla sucia del Barrio Este.",
+          "strength": 60
+        },
+        {
+          "name": "El Sudor Honrado Mantiene la Cordura",
+          "type": "CONVICTION",
+          "description": "La certeza ruda de que un cuerpo fatigado por el trabajo físico duerme en paz y no es presa de las ilusiones ni las sombras.",
+          "strength": 60
+        }
+      ],
+      "initialContact": {
+        "name": "Enlace del Gremio Portuario",
+        "relation": "Camarada de cuadrilla",
+        "description": "Avisa qué barcazas traen cargamento no registrado y cuándo la policía fluvial mira hacia otro lado."
+      },
+      "initialBurden": {
+        "type": "SECRET",
+        "name": "Fardo Clandestino del Río",
+        "description": "Escondió bajo las vigas del muelle un baúl con sellos de las Indias Orientales rescatado de una chalupa volcada.",
+        "mechanicalEffect": "Vulnerabilidad si la policía fluvial hace redadas en el muelle 4."
+      },
+      "prologueIntro": "El aire del Barrio Este quema la garganta con azufre y niebla ácida. Te duelen los hombros tras doce horas cargando sacos de grano y carbón en las barcazas del Tussock. En tu cuartucho compartido con otros tres jornaleros, donde el silencio vale más que el pan, hallaste sobre tu jergón de paja una carta limpia, intacta, sin una sola mancha de carbón. Nadie vio quién la dejó.",
+      "derivationNote": "Compilado según BRIEF-09 §1."
+    }
+  ]
+}

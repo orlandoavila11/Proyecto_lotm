@@ -33,8 +33,40 @@ export interface CharacterRow {
   rent_debt_active?: number;
   rent_debt_amount?: number;
   rent_debt_note?: string | null;
+  origin_id?: string | null;
+  current_slot?: number;
+  work_attendance_weekly?: number;
+  consecutive_work_missed?: number;
+  prologue_step?: string;
+  prologue_data_json?: string;
+  salary_pence?: number;
+  employer_name?: string;
   created_at: string;
   updated_at: string;
+}
+
+export interface CalendarLogRow {
+  id: string;
+  character_id: string;
+  day: number;
+  slot: number;
+  event_type: string;
+  subsystem: string;
+  step_order: number;
+  details_json: string;
+  created_at?: string;
+}
+
+export interface IdentityEventHistoryRow {
+  id: string;
+  character_id: string;
+  event_id: string;
+  event_category: string;
+  chosen_option_index: number;
+  day: number;
+  slot: number;
+  stat_outcome_json: string;
+  created_at?: string;
 }
 
 export interface PersonaRow {
@@ -193,8 +225,10 @@ export class DatabaseClient {
         id, name, pathway, sequence, current_health, max_health,
         current_spirituality, max_spirituality, sanity, corruption,
         digestion_progress, raw_pence, current_location, current_day,
-        ruina, terminal_state, rent_debt_active, rent_debt_amount, rent_debt_note
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ruina, terminal_state, rent_debt_active, rent_debt_amount, rent_debt_note,
+        origin_id, current_slot, work_attendance_weekly, consecutive_work_missed,
+        prologue_step, prologue_data_json, salary_pence, employer_name
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
     stmt.run(
@@ -208,7 +242,15 @@ export class DatabaseClient {
       char.terminal_state ?? null,
       char.rent_debt_active ?? 0,
       char.rent_debt_amount ?? 0,
-      char.rent_debt_note ?? null
+      char.rent_debt_note ?? null,
+      char.origin_id ?? null,
+      char.current_slot ?? 0,
+      char.work_attendance_weekly ?? 0,
+      char.consecutive_work_missed ?? 0,
+      char.prologue_step ?? 'COMPLETED',
+      char.prologue_data_json ?? '{}',
+      char.salary_pence ?? 240,
+      char.employer_name ?? ''
     );
 
     return this.getCharacter(char.id)!;
@@ -1085,6 +1127,127 @@ export class DatabaseClient {
   public getAscensionTelemetry(characterId: string): AscensionTelemetryRow[] {
     const rows = this.db.prepare('SELECT * FROM ascension_telemetry WHERE character_id = ? ORDER BY created_at DESC').all(characterId);
     return rows as unknown as AscensionTelemetryRow[];
+  }
+
+  // --- MÉTODOS DE CALENDARIO Y TIEMPO DIARIO ---
+  public advanceCharacterSlot(characterId: string, consumeSlots: number = 1): { day: number; slot: number; dayAdvanced: boolean } {
+    const char = this.getCharacter(characterId);
+    if (!char) throw new Error(`Personaje no encontrado: ${characterId}`);
+
+    const currentSlot = char.current_slot ?? 0;
+    const currentDay = char.current_day ?? 1;
+
+    const totalSlots = currentSlot + consumeSlots;
+    const newSlot = totalSlots % 4;
+    const daysToAdd = Math.floor(totalSlots / 4);
+    const newDay = currentDay + daysToAdd;
+    const dayAdvanced = daysToAdd > 0;
+
+    this.db.prepare(`
+      UPDATE characters
+      SET current_slot = ?, current_day = ?, updated_at = datetime('now')
+      WHERE id = ?
+    `).run(newSlot, newDay, characterId);
+
+    return { day: newDay, slot: newSlot, dayAdvanced };
+  }
+
+  public setCharacterSlot(characterId: string, day: number, slot: number): void {
+    this.db.prepare(`
+      UPDATE characters
+      SET current_day = ?, current_slot = ?, updated_at = datetime('now')
+      WHERE id = ?
+    `).run(day, slot, characterId);
+  }
+
+  public updatePrologueState(characterId: string, step: string, dataJson?: string): void {
+    if (dataJson !== undefined) {
+      this.db.prepare(`
+        UPDATE characters
+        SET prologue_step = ?, prologue_data_json = ?, updated_at = datetime('now')
+        WHERE id = ?
+      `).run(step, dataJson, characterId);
+    } else {
+      this.db.prepare(`
+        UPDATE characters
+        SET prologue_step = ?, updated_at = datetime('now')
+        WHERE id = ?
+      `).run(step, characterId);
+    }
+  }
+
+  public recordWorkAttendance(characterId: string): { totalWeekly: number; consecutiveMissed: number } {
+    this.db.prepare(`
+      UPDATE characters
+      SET work_attendance_weekly = work_attendance_weekly + 1,
+          consecutive_work_missed = 0,
+          updated_at = datetime('now')
+      WHERE id = ?
+    `).run(characterId);
+
+    const row = this.db.prepare('SELECT work_attendance_weekly, consecutive_work_missed FROM characters WHERE id = ?').get(characterId) as any;
+    return {
+      totalWeekly: row?.work_attendance_weekly ?? 0,
+      consecutiveMissed: row?.consecutive_work_missed ?? 0
+    };
+  }
+
+  public resetWeeklyWorkAttendance(characterId: string): void {
+    this.db.prepare(`
+      UPDATE characters
+      SET work_attendance_weekly = 0, updated_at = datetime('now')
+      WHERE id = ?
+    `).run(characterId);
+  }
+
+  public incrementConsecutiveWorkMissed(characterId: string): number {
+    this.db.prepare(`
+      UPDATE characters
+      SET consecutive_work_missed = consecutive_work_missed + 1, updated_at = datetime('now')
+      WHERE id = ?
+    `).run(characterId);
+    const row = this.db.prepare('SELECT consecutive_work_missed FROM characters WHERE id = ?').get(characterId) as any;
+    return row?.consecutive_work_missed ?? 0;
+  }
+
+  public resetConsecutiveWorkMissed(characterId: string): void {
+    this.db.prepare(`
+      UPDATE characters
+      SET consecutive_work_missed = 0, updated_at = datetime('now')
+      WHERE id = ?
+    `).run(characterId);
+  }
+
+  public addCalendarLog(log: Omit<CalendarLogRow, 'created_at'>): void {
+    this.db.prepare(`
+      INSERT INTO calendar_log (
+        id, character_id, day, slot, event_type, subsystem, step_order, details_json
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(
+      log.id, log.character_id, log.day, log.slot, log.event_type,
+      log.subsystem, log.step_order ?? 0, log.details_json ?? '{}'
+    );
+  }
+
+  public getCalendarLogs(characterId: string, limit: number = 100): CalendarLogRow[] {
+    const rows = this.db.prepare('SELECT * FROM calendar_log WHERE character_id = ? ORDER BY day ASC, slot ASC, step_order ASC LIMIT ?').all(characterId, limit);
+    return rows as unknown as CalendarLogRow[];
+  }
+
+  public addIdentityEventHistory(hist: Omit<IdentityEventHistoryRow, 'created_at'>): void {
+    this.db.prepare(`
+      INSERT INTO identity_event_history (
+        id, character_id, event_id, event_category, chosen_option_index, day, slot, stat_outcome_json
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(
+      hist.id, hist.character_id, hist.event_id, hist.event_category,
+      hist.chosen_option_index, hist.day, hist.slot, hist.stat_outcome_json ?? '{}'
+    );
+  }
+
+  public getIdentityEventHistory(characterId: string, limit: number = 50): IdentityEventHistoryRow[] {
+    const rows = this.db.prepare('SELECT * FROM identity_event_history WHERE character_id = ? ORDER BY day DESC, slot DESC LIMIT ?').all(characterId, limit);
+    return rows as unknown as IdentityEventHistoryRow[];
   }
 
   public close(): void {

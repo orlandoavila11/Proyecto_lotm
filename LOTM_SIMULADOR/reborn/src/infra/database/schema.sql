@@ -26,6 +26,14 @@ CREATE TABLE IF NOT EXISTS characters (
   rent_debt_active INTEGER NOT NULL DEFAULT 0 CHECK (rent_debt_active IN (0, 1)),
   rent_debt_amount INTEGER NOT NULL DEFAULT 0,
   rent_debt_note TEXT DEFAULT NULL,
+  origin_id TEXT DEFAULT NULL,
+  current_slot INTEGER NOT NULL DEFAULT 0 CHECK (current_slot >= 0 AND current_slot <= 3),
+  work_attendance_weekly INTEGER NOT NULL DEFAULT 0,
+  consecutive_work_missed INTEGER NOT NULL DEFAULT 0,
+  prologue_step TEXT NOT NULL DEFAULT 'COMPLETED' CHECK (prologue_step IN ('INTRO', 'BENEFACTOR_LETTER', 'TUTORIAL_DILEMMA', 'TUTORIAL_CLUE', 'POTION_CHOICE', 'FIRST_DRINK', 'COMPLETED')),
+  prologue_data_json TEXT NOT NULL DEFAULT '{}',
+  salary_pence INTEGER NOT NULL DEFAULT 240,
+  employer_name TEXT NOT NULL DEFAULT '',
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
@@ -231,6 +239,34 @@ CREATE TABLE IF NOT EXISTS ascension_state (
   checklist_json TEXT NOT NULL DEFAULT '{}',
   formula_id TEXT,
   updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
+);
+
+-- 12. LOG CRONOLÓGICO DE EVENTOS DEL CALENDARIO
+CREATE TABLE IF NOT EXISTS calendar_log (
+  id TEXT PRIMARY KEY,
+  character_id TEXT NOT NULL,
+  day INTEGER NOT NULL,
+  slot INTEGER NOT NULL,
+  event_type TEXT NOT NULL,
+  subsystem TEXT NOT NULL,
+  step_order INTEGER NOT NULL DEFAULT 0,
+  details_json TEXT NOT NULL DEFAULT '{}',
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
+);
+
+-- 13. HISTORIAL DE EVENTOS DE IDENTIDAD
+CREATE TABLE IF NOT EXISTS identity_event_history (
+  id TEXT PRIMARY KEY,
+  character_id TEXT NOT NULL,
+  event_id TEXT NOT NULL,
+  event_category TEXT NOT NULL,
+  chosen_option_index INTEGER NOT NULL,
+  day INTEGER NOT NULL,
+  slot INTEGER NOT NULL,
+  stat_outcome_json TEXT NOT NULL DEFAULT '{}',
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
   FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
 );
 
