@@ -103,8 +103,8 @@ test('Integration Test: Ciclo completo de Creación, Acting, Viaje y Somática e
     assert.strictEqual(charRes.statusCode, 200);
     const finalData = JSON.parse(charRes.body);
     assert.strictEqual(finalData.character.current_location, 'Backlund - Distrito de Cherwood');
-    assert.strictEqual(finalData.wallet.pounds, 30); // 7200 + 240 - 24 = 7416 -> £30 18s
-    assert.strictEqual(finalData.wallet.soli, 18);
+    assert.strictEqual(finalData.wallet.pounds, 30); // 7200 + 240 - 24 (viaje) - 24 (alquiler semanal) = 7392 -> £30 16s
+    assert.strictEqual(finalData.wallet.soli, 16);
     assert.strictEqual(finalData.somatics.sanityTier, 'LUCID');
     assert.ok(finalData.character.digestion_progress > 10.0);
     assert.strictEqual(finalData.inventoryCount, 2);

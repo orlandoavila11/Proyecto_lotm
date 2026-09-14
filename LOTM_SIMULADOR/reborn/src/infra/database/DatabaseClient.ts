@@ -30,6 +30,9 @@ export interface CharacterRow {
   current_day: number;
   ruina?: number;
   terminal_state?: string | null;
+  rent_debt_active?: number;
+  rent_debt_amount?: number;
+  rent_debt_note?: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -80,12 +83,48 @@ export interface InventoryItemRow {
   character_id: string;
   item_code: string;
   name: string;
-  category: 'INGREDIENT' | 'CHARACTERISTIC' | 'POTION' | 'SEALED_ARTIFACT' | 'CONSUMABLE' | 'DOCUMENT' | 'WEAPON';
+  category: 'INGREDIENT' | 'CHARACTERISTIC' | 'POTION' | 'SEALED_ARTIFACT' | 'CONSUMABLE' | 'DOCUMENT' | 'WEAPON' | 'RITUAL_SUPPLY' | 'HARVEST_LOOT';
   grade: number | null;
   quantity: number;
   metadata_json: string;
+  quality?: 'PRISTINE' | 'DAMAGED' | 'CONTAMINATED';
   is_equipped: number;
   created_at: string;
+}
+
+export interface MarketTransactionRow {
+  id: string;
+  character_id: string;
+  type: 'BUY' | 'SELL' | 'CURE';
+  item_code: string | null;
+  quality: string | null;
+  pence_amount: number;
+  day: number;
+  description: string;
+  created_at: string;
+}
+
+export interface AscensionTelemetryRow {
+  id: string;
+  character_id: string;
+  target_sequence: number;
+  target_pathway: string;
+  outcome: 'SUCCESS' | 'RAMPAGE';
+  presented_at: number;
+  confirmed_at: number;
+  hesitation_ms: number;
+  preparation_score: number;
+  quality_average: string;
+  created_at: string;
+}
+
+export interface AscensionStateRow {
+  character_id: string;
+  current_step: 'CHECKLIST_IN_PROGRESS' | 'TRAGO_PRESENTED' | 'COMPLETED' | 'FAILED';
+  presented_at: number | null;
+  checklist_json: string;
+  formula_id: string | null;
+  updated_at: string;
 }
 
 export interface ActingWeeklyStateRow {
@@ -154,8 +193,8 @@ export class DatabaseClient {
         id, name, pathway, sequence, current_health, max_health,
         current_spirituality, max_spirituality, sanity, corruption,
         digestion_progress, raw_pence, current_location, current_day,
-        ruina, terminal_state
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ruina, terminal_state, rent_debt_active, rent_debt_amount, rent_debt_note
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
     stmt.run(
@@ -166,7 +205,10 @@ export class DatabaseClient {
       char.digestion_progress ?? 0, char.raw_pence ?? 0,
       char.current_location ?? 'Backlund - Cherwood', char.current_day ?? 1,
       char.ruina ?? 0,
-      char.terminal_state ?? null
+      char.terminal_state ?? null,
+      char.rent_debt_active ?? 0,
+      char.rent_debt_amount ?? 0,
+      char.rent_debt_note ?? null
     );
 
     return this.getCharacter(char.id)!;
@@ -482,14 +524,15 @@ export class DatabaseClient {
 
   // --- INVENTARIO ---
   public addItem(item: Omit<InventoryItemRow, 'created_at'>): void {
-    const existing = this.db.prepare('SELECT id, quantity FROM inventory_items WHERE character_id = ? AND item_code = ?').get(item.character_id, item.item_code) as any;
+    const qly = item.quality ?? 'PRISTINE';
+    const existing = this.db.prepare('SELECT id, quantity FROM inventory_items WHERE character_id = ? AND item_code = ? AND quality = ?').get(item.character_id, item.item_code, qly) as any;
     if (existing) {
       this.db.prepare('UPDATE inventory_items SET quantity = quantity + ? WHERE id = ?').run(item.quantity, existing.id);
     } else {
       this.db.prepare(`
-        INSERT INTO inventory_items (id, character_id, item_code, name, category, grade, quantity, metadata_json, is_equipped)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-      `).run(item.id, item.character_id, item.item_code, item.name, item.category, item.grade, item.quantity, item.metadata_json, item.is_equipped);
+        INSERT INTO inventory_items (id, character_id, item_code, name, category, grade, quantity, quality, metadata_json, is_equipped)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `).run(item.id, item.character_id, item.item_code, item.name, item.category, item.grade, item.quantity, qly, item.metadata_json, item.is_equipped);
     }
   }
 
@@ -838,6 +881,210 @@ export class DatabaseClient {
       SET status = ?, updated_at = datetime('now')
       WHERE id = ?
     `).run(status, battleId);
+  }
+
+  // --- MÉTODOS DE ECONOMÍA Y ALQUILER ---
+  public updateCharacterRentDebt(characterId: string, active: boolean, amount: number, note?: string | null): void {
+    this.db.prepare(`
+      UPDATE characters
+      SET rent_debt_active = ?, rent_debt_amount = ?, rent_debt_note = ?, updated_at = datetime('now')
+      WHERE id = ?
+    `).run(active ? 1 : 0, amount, note ?? null, characterId);
+  }
+
+  // --- MÉTODOS DE INVENTARIO CON CALIDAD ---
+  public addInventoryItem(item: {
+    id: string;
+    character_id: string;
+    item_code: string;
+    name: string;
+    category: string;
+    grade?: number | null;
+    quantity?: number;
+    quality?: 'PRISTINE' | 'DAMAGED' | 'CONTAMINATED';
+    metadata_json?: string;
+    is_equipped?: number;
+  }): InventoryItemRow {
+    const qty = item.quantity ?? 1;
+    const qly = item.quality ?? 'PRISTINE';
+    const meta = item.metadata_json ?? '{}';
+    const isEq = item.is_equipped ?? 0;
+    const grade = item.grade ?? null;
+
+    const existing = this.db.prepare(`
+      SELECT * FROM inventory_items
+      WHERE character_id = ? AND item_code = ? AND quality = ?
+    `).get(item.character_id, item.item_code, qly) as InventoryItemRow | undefined;
+
+    if (existing) {
+      this.db.prepare(`
+        UPDATE inventory_items
+        SET quantity = quantity + ?
+        WHERE id = ?
+      `).run(qty, existing.id);
+      return this.getInventoryItemById(existing.id)!;
+    }
+
+    this.db.prepare(`
+      INSERT INTO inventory_items (
+        id, character_id, item_code, name, category, grade, quantity, quality, metadata_json, is_equipped
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(item.id, item.character_id, item.item_code, item.name, item.category, grade, qty, qly, meta, isEq);
+
+    return this.getInventoryItemById(item.id)!;
+  }
+
+  public getInventoryItemById(id: string): InventoryItemRow | null {
+    const row = this.db.prepare('SELECT * FROM inventory_items WHERE id = ?').get(id);
+    return (row as unknown as InventoryItemRow) || null;
+  }
+
+  public getInventoryItems(characterId: string): InventoryItemRow[] {
+    const rows = this.db.prepare('SELECT * FROM inventory_items WHERE character_id = ? ORDER BY category, name').all(characterId);
+    return rows as unknown as InventoryItemRow[];
+  }
+
+  public removeInventoryItem(id: string, quantityToRemove: number = 1): void {
+    const existing = this.getInventoryItemById(id);
+    if (!existing) return;
+    if (existing.quantity <= quantityToRemove) {
+      this.db.prepare('DELETE FROM inventory_items WHERE id = ?').run(id);
+    } else {
+      this.db.prepare('UPDATE inventory_items SET quantity = quantity - ? WHERE id = ?').run(quantityToRemove, id);
+    }
+  }
+
+  public consumeItemByCode(characterId: string, itemCode: string, quantity: number = 1): boolean {
+    const existing = this.db.prepare(`
+      SELECT * FROM inventory_items
+      WHERE character_id = ? AND item_code = ? AND quantity >= ?
+      ORDER BY quantity ASC LIMIT 1
+    `).get(characterId, itemCode, quantity) as InventoryItemRow | undefined;
+
+    if (!existing) {
+      const items = this.db.prepare(`
+        SELECT * FROM inventory_items
+        WHERE character_id = ? AND item_code = ?
+      `).all(characterId, itemCode) as unknown as InventoryItemRow[];
+      const totalAvailable = items.reduce((acc, it) => acc + it.quantity, 0);
+      if (totalAvailable < quantity) return false;
+
+      let remaining = quantity;
+      for (const it of items) {
+        if (remaining <= 0) break;
+        const take = Math.min(remaining, it.quantity);
+        this.removeInventoryItem(it.id, take);
+        remaining -= take;
+      }
+      return true;
+    }
+
+    this.removeInventoryItem(existing.id, quantity);
+    return true;
+  }
+
+  // --- MÉTODOS DE TRANSACCIONES DE MERCADO ---
+  public logMarketTransaction(tx: {
+    id: string;
+    character_id: string;
+    type: 'BUY' | 'SELL' | 'CURE';
+    item_code?: string | null;
+    quality?: string | null;
+    pence_amount: number;
+    day: number;
+    description?: string;
+  }): void {
+    this.db.prepare(`
+      INSERT INTO market_transactions (
+        id, character_id, type, item_code, quality, pence_amount, day, description
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(
+      tx.id,
+      tx.character_id,
+      tx.type,
+      tx.item_code ?? null,
+      tx.quality ?? null,
+      tx.pence_amount,
+      tx.day,
+      tx.description ?? ''
+    );
+  }
+
+  public getMarketTransactions(characterId: string): MarketTransactionRow[] {
+    const rows = this.db.prepare('SELECT * FROM market_transactions WHERE character_id = ? ORDER BY created_at DESC').all(characterId);
+    return rows as unknown as MarketTransactionRow[];
+  }
+
+  // --- MÉTODOS DE ASCENSO Y TELEMETRÍA ---
+  public saveAscensionState(state: {
+    character_id: string;
+    current_step: 'CHECKLIST_IN_PROGRESS' | 'TRAGO_PRESENTED' | 'COMPLETED' | 'FAILED';
+    presented_at?: number | null;
+    checklist_json: string;
+    formula_id?: string | null;
+  }): void {
+    this.db.prepare(`
+      INSERT INTO ascension_state (
+        character_id, current_step, presented_at, checklist_json, formula_id, updated_at
+      ) VALUES (?, ?, ?, ?, ?, datetime('now'))
+      ON CONFLICT(character_id) DO UPDATE SET
+        current_step = excluded.current_step,
+        presented_at = excluded.presented_at,
+        checklist_json = excluded.checklist_json,
+        formula_id = excluded.formula_id,
+        updated_at = datetime('now')
+    `).run(
+      state.character_id,
+      state.current_step,
+      state.presented_at ?? null,
+      state.checklist_json,
+      state.formula_id ?? null
+    );
+  }
+
+  public getAscensionState(characterId: string): AscensionStateRow | null {
+    const row = this.db.prepare('SELECT * FROM ascension_state WHERE character_id = ?').get(characterId);
+    return (row as unknown as AscensionStateRow) || null;
+  }
+
+  public clearAscensionState(characterId: string): void {
+    this.db.prepare('DELETE FROM ascension_state WHERE character_id = ?').run(characterId);
+  }
+
+  public logAscensionTelemetry(telemetry: {
+    id: string;
+    character_id: string;
+    target_sequence: number;
+    target_pathway: string;
+    outcome: 'SUCCESS' | 'RAMPAGE';
+    presented_at: number;
+    confirmed_at: number;
+    hesitation_ms: number;
+    preparation_score: number;
+    quality_average: string;
+  }): void {
+    this.db.prepare(`
+      INSERT INTO ascension_telemetry (
+        id, character_id, target_sequence, target_pathway, outcome,
+        presented_at, confirmed_at, hesitation_ms, preparation_score, quality_average
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(
+      telemetry.id,
+      telemetry.character_id,
+      telemetry.target_sequence,
+      telemetry.target_pathway,
+      telemetry.outcome,
+      telemetry.presented_at,
+      telemetry.confirmed_at,
+      telemetry.hesitation_ms,
+      telemetry.preparation_score,
+      telemetry.quality_average
+    );
+  }
+
+  public getAscensionTelemetry(characterId: string): AscensionTelemetryRow[] {
+    const rows = this.db.prepare('SELECT * FROM ascension_telemetry WHERE character_id = ? ORDER BY created_at DESC').all(characterId);
+    return rows as unknown as AscensionTelemetryRow[];
   }
 
   public close(): void {

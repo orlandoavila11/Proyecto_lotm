@@ -8,6 +8,7 @@ import { ActingBalance } from '../../infra/content/schemas/actingBalance.schema.
 import { SomaticsEngine } from '../somatics/SomaticsEngine.js';
 import { WhisperPrice } from '../types/somatics.js';
 import { generateDeterministicId } from '../rng/IdGenerator.js';
+import { EconomyEngine } from '../economy/EconomyEngine.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, '../../..');
@@ -1071,6 +1072,13 @@ export class ActingDilemmaEngine {
     transgressionCorruptionGain: number;
     instabilityFlag: boolean;
     lossOfSelfRiskFlag: boolean;
+    rentPayment?: {
+      rentCharged: number;
+      rentPaid: boolean;
+      debtCreated: boolean;
+      remainingBalance: number;
+      note: string;
+    };
   } {
     this.ensureTierGLoaded();
     const balance = this.getActingBalance();
@@ -1174,6 +1182,9 @@ export class ActingDilemmaEngine {
       history_json: JSON.stringify(allRecords)
     });
 
+    // 8. Deducción semanal de alquiler (Economía Victoriana)
+    const rentPayment = EconomyEngine.processWeeklyRent(db, characterId, char.current_location);
+
     return {
       currentWeek,
       coherence,
@@ -1181,7 +1192,8 @@ export class ActingDilemmaEngine {
       assimilationGain,
       transgressionCorruptionGain,
       instabilityFlag,
-      lossOfSelfRiskFlag
+      lossOfSelfRiskFlag,
+      rentPayment
     };
   }
 }

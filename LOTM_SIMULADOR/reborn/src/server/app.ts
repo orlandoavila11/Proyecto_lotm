@@ -8,6 +8,8 @@ import { cityRoutes } from './routes/cityRoutes.js';
 
 import { combatRoutes } from './routes/combatRoutes.js';
 import { investigationRoutes } from './routes/investigationRoutes.js';
+import { economyRoutes } from './routes/economyRoutes.js';
+import { ascensionRoutes } from './routes/ascensionRoutes.js';
 
 import { DomainError } from '../core/errors/DomainError.js';
 
@@ -73,6 +75,8 @@ export async function buildApp(options: AppOptions = {}): Promise<{ app: Fastify
   await app.register(cityRoutes, { prefix: '/api/city', db });
   await app.register(combatRoutes, { prefix: '/api/combat', db, loader });
   await app.register(investigationRoutes, { prefix: '/api/investigation', db });
+  await app.register(economyRoutes, { db });
+  await app.register(ascensionRoutes, { db });
 
   return { app, db, loader };
 }

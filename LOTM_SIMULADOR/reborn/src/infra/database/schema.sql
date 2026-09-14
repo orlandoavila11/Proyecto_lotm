@@ -23,6 +23,9 @@ CREATE TABLE IF NOT EXISTS characters (
   current_day INTEGER NOT NULL DEFAULT 1,
   ruina INTEGER NOT NULL DEFAULT 0 CHECK (ruina >= 0),
   terminal_state TEXT DEFAULT NULL CHECK (terminal_state IN (NULL, 'ALIVE', 'DEAD', 'LOST', 'TRANSFORMED', 'NPC_CONVERTED', 'SPECIAL_END')),
+  rent_debt_active INTEGER NOT NULL DEFAULT 0 CHECK (rent_debt_active IN (0, 1)),
+  rent_debt_amount INTEGER NOT NULL DEFAULT 0,
+  rent_debt_note TEXT DEFAULT NULL,
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
@@ -114,6 +117,7 @@ CREATE TABLE IF NOT EXISTS inventory_items (
   grade INTEGER CHECK (grade IN (0, 1, 2, 3)),
   quantity INTEGER NOT NULL DEFAULT 1 CHECK (quantity >= 1),
   metadata_json TEXT DEFAULT '{}',
+  quality TEXT NOT NULL DEFAULT 'PRISTINE' CHECK (quality IN ('PRISTINE', 'DAMAGED', 'CONTAMINATED')),
   is_equipped INTEGER NOT NULL DEFAULT 0 CHECK (is_equipped IN (0, 1)),
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
@@ -187,5 +191,46 @@ CREATE TABLE IF NOT EXISTS districts (
   inquisitorial_alert INTEGER NOT NULL DEFAULT 10 CHECK (inquisitorial_alert >= 0 AND inquisitorial_alert <= 100),
   convergence_index INTEGER NOT NULL DEFAULT 5 CHECK (convergence_index >= 0 AND convergence_index <= 100),
   last_incident_day INTEGER DEFAULT 0
+);
+
+-- 9. TRANSACCIONES DE MERCADO Y CURAS
+CREATE TABLE IF NOT EXISTS market_transactions (
+  id TEXT PRIMARY KEY,
+  character_id TEXT NOT NULL,
+  type TEXT NOT NULL CHECK (type IN ('BUY', 'SELL', 'CURE')),
+  item_code TEXT,
+  quality TEXT,
+  pence_amount INTEGER NOT NULL,
+  day INTEGER NOT NULL,
+  description TEXT NOT NULL DEFAULT '',
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
+);
+
+-- 10. TELEMETRÍA DE HESITACIÓN DE ASCENSO
+CREATE TABLE IF NOT EXISTS ascension_telemetry (
+  id TEXT PRIMARY KEY,
+  character_id TEXT NOT NULL,
+  target_sequence INTEGER NOT NULL,
+  target_pathway TEXT NOT NULL,
+  outcome TEXT NOT NULL CHECK (outcome IN ('SUCCESS', 'RAMPAGE')),
+  presented_at INTEGER NOT NULL,
+  confirmed_at INTEGER NOT NULL,
+  hesitation_ms INTEGER NOT NULL,
+  preparation_score INTEGER NOT NULL,
+  quality_average TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
+);
+
+-- 11. ESTADO PERSISTENTE DE ASCENSO (KILL-9 TOLERANCE)
+CREATE TABLE IF NOT EXISTS ascension_state (
+  character_id TEXT PRIMARY KEY,
+  current_step TEXT NOT NULL CHECK (current_step IN ('CHECKLIST_IN_PROGRESS', 'TRAGO_PRESENTED', 'COMPLETED', 'FAILED')),
+  presented_at INTEGER,
+  checklist_json TEXT NOT NULL DEFAULT '{}',
+  formula_id TEXT,
+  updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
 );
 
