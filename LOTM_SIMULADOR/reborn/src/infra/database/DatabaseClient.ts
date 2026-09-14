@@ -54,6 +54,7 @@ export interface CalendarLogRow {
   subsystem: string;
   step_order: number;
   details_json: string;
+  detailsJson?: string;
   created_at?: string;
 }
 
@@ -1225,7 +1226,7 @@ export class DatabaseClient {
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `).run(
       log.id, log.character_id, log.day, log.slot, log.event_type,
-      log.subsystem, log.step_order ?? 0, log.details_json ?? '{}'
+      log.subsystem, log.step_order ?? 0, log.details_json ?? log.detailsJson ?? '{}'
     );
   }
 
