@@ -120,3 +120,4 @@ export const DeskCracksOverlay: React.FC<DeskCracksOverlayProps> = ({ tier, desc
     </div>
   );
 };
+

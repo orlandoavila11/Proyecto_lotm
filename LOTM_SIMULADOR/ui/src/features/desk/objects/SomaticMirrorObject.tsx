@@ -177,3 +177,4 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({ tier, 
     </div>
   );
 };
+

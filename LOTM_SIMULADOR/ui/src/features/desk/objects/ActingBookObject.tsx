@@ -129,3 +129,4 @@ export const ActingBookObject: React.FC<ActingBookObjectProps> = ({
     </div>
   );
 };
+

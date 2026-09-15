@@ -190,3 +190,4 @@ export const CandleObject: React.FC<CandleObjectProps> = ({ tier, description, o
     </div>
   );
 };
+
