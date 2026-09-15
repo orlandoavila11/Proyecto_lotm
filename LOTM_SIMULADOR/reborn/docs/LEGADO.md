@@ -943,3 +943,4 @@ Durante la auditoría exhaustiva del repositorio para la redacción de este docu
 
 > **FIN DE LA BIBLIA TÉCNICA DEL MOTOR (`reborn/docs/LEGADO.md`)**
 > *Path to Godhood — LOTM_ENGINE_REBORN (v4.0)*
+
