@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
 import type { CorruptionTier } from '../../types';
+import { Eye } from 'lucide-react';
 
 interface SomaticMirrorObjectProps {
   tier: CorruptionTier;
   description: string;
   onClick?: () => void;
+  spiritVisionActive?: boolean;
+  onToggleSpiritVision?: () => void;
 }
 
-export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({ tier, description, onClick }) => {
+export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({ 
+  tier, 
+  description, 
+  onClick,
+  spiritVisionActive = false,
+  onToggleSpiritVision
+}) => {
   const [hovered, setHovered] = useState(false);
   const [inspecting, setInspecting] = useState(false);
 
@@ -16,18 +25,26 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({ tier, 
     switch (tier) {
       case 'AZOGUE_LIMPIO':
         return {
-          mirrorGlow: '0 4px 20px rgba(0, 0, 0, 0.7)',
-          tintColor: 'rgba(212, 175, 55, 0.08)',
+          mirrorGlow: spiritVisionActive 
+            ? '0 0 35px rgba(168, 85, 247, 0.65)' 
+            : '0 4px 20px rgba(0, 0, 0, 0.7)',
+          tintColor: spiritVisionActive 
+            ? 'rgba(168, 85, 247, 0.22)' 
+            : 'rgba(212, 175, 55, 0.08)',
           silhouetteClass: 'animate-subtle-breathing',
           vahoOpacity: 0,
-          labelBrief: 'Superficie de azogue limpia y fiel',
-          eyeColor: '#ded5c5',
+          labelBrief: spiritVisionActive ? 'El Velo Espiritual descorre la niebla' : 'Superficie de azogue limpia y fiel',
+          eyeColor: spiritVisionActive ? '#c084fc' : '#ded5c5',
           isFrozen: false
         };
       case 'VAHO_TENUE':
         return {
-          mirrorGlow: '0 0 25px rgba(155, 111, 224, 0.25)',
-          tintColor: 'rgba(155, 111, 224, 0.15)',
+          mirrorGlow: spiritVisionActive 
+            ? '0 0 40px rgba(168, 85, 247, 0.7)' 
+            : '0 0 25px rgba(155, 111, 224, 0.25)',
+          tintColor: spiritVisionActive 
+            ? 'rgba(168, 85, 247, 0.3)' 
+            : 'rgba(155, 111, 224, 0.15)',
           silhouetteClass: 'animate-subtle-breathing',
           vahoOpacity: 0.65,
           labelBrief: 'Vaho espectral empaña los bordes',
@@ -48,7 +65,6 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({ tier, 
         return {
           mirrorGlow: '0 0 45px rgba(225, 29, 72, 0.6)',
           tintColor: 'rgba(225, 29, 72, 0.3)',
-          // LA ANIMACIÓN SE DETIENE POR COMPLETO (HORROR CINÉTICO)
           silhouetteClass: 'frozen-stillness',
           vahoOpacity: 1,
           labelBrief: 'El reflejo no pestañea jamás',
@@ -73,19 +89,36 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({ tier, 
     >
       {/* Marco Victoriano Ovalado */}
       <div 
-        className="w-44 h-56 rounded-[50%/60%] p-3.5 bg-gradient-to-b from-[#4a4237] via-[#241f1a] to-[#120f0d] border-2 border-[#8c733e] shadow-2xl relative flex items-center justify-center transition-all duration-500"
-        style={{ boxShadow: config.mirrorGlow }}
+        className={`somatic-mirror-frame ${spiritVisionActive ? 'border-[#a855f7]' : ''}`}
+        style={{
+          boxShadow: config.mirrorGlow,
+          borderColor: spiritVisionActive ? '#a855f7' : '#8c733e'
+        }}
       >
-        {/* Adorno superior de latón */}
-        <div className="absolute -top-3 w-8 h-4 bg-[#b89547] rounded-t-full border border-[#d4af37] flex items-center justify-center">
-          <div className="w-2 h-2 rounded-full bg-[#120f0d]" />
+        {/* Adorno superior de latón con gema o remate */}
+        <div 
+          style={{
+            position: 'absolute',
+            top: '-12px',
+            padding: '2px 8px',
+            borderTopLeftRadius: '9999px',
+            borderTopRightRadius: '9999px',
+            border: `1px solid ${spiritVisionActive ? '#a855f7' : '#d4af37'}`,
+            backgroundColor: spiritVisionActive ? '#2b1040' : '#b89547',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          {spiritVisionActive ? (
+            <Eye size={10} color="#c084fc" className="animate-pulse" />
+          ) : (
+            <div style={{ width: '8px', height: '8px', borderRadius: '9999px', backgroundColor: '#120f0d' }} />
+          )}
         </div>
 
         {/* Superficie de Azogue (Cristal Interior) */}
-        <div 
-          className="w-full h-full rounded-[50%/60%] relative overflow-hidden bg-[#0c0a08] border border-[#382c18] flex items-center justify-center"
-          style={{ backgroundColor: '#0e0c0a' }}
-        >
+        <div className="somatic-mirror-glass">
           {/* Tinte espectral de fondo */}
           <div 
             className="absolute inset-0 transition-colors duration-500"
@@ -104,26 +137,54 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({ tier, 
           {/* Silueta del Reflejo (Cinética o Congelada) */}
           <div className={`relative flex flex-col items-center ${config.silhouetteClass}`}>
             {/* Cabeza */}
-            <div className="w-14 h-16 rounded-full bg-[#1c1815] border border-[#3d3328] shadow-inner relative flex items-center justify-center">
+            <div 
+              style={{
+                width: '56px',
+                height: '64px',
+                borderRadius: '9999px',
+                backgroundColor: '#1c1815',
+                border: '1px solid #3d3328',
+                boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.8)',
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
               {/* Ojos del reflejo */}
-              <div className="flex gap-4 mb-1">
+              <div style={{ display: 'flex', gap: '16px', marginBottom: '4px' }}>
                 <div 
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${config.isFrozen ? 'scale-125' : ''}`}
-                  style={{ backgroundColor: config.eyeColor, boxShadow: `0 0 6px ${config.eyeColor}` }}
+                  className={`transition-all duration-300 ${config.isFrozen ? 'scale-125' : ''}`}
+                  style={{ width: '8px', height: '8px', borderRadius: '9999px', backgroundColor: config.eyeColor, boxShadow: `0 0 6px ${config.eyeColor}` }}
                 />
                 <div 
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${config.isFrozen ? 'scale-125' : ''}`}
-                  style={{ backgroundColor: config.eyeColor, boxShadow: `0 0 6px ${config.eyeColor}` }}
+                  className={`transition-all duration-300 ${config.isFrozen ? 'scale-125' : ''}`}
+                  style={{ width: '8px', height: '8px', borderRadius: '9999px', backgroundColor: config.eyeColor, boxShadow: `0 0 6px ${config.eyeColor}` }}
                 />
               </div>
             </div>
             {/* Hombros de levita victoriana */}
-            <div className="w-24 h-14 -mt-2 rounded-t-[50%] bg-[#151210] border-t border-[#332b22]" />
+            <div 
+              style={{
+                width: '96px',
+                height: '56px',
+                marginTop: '-8px',
+                borderTopLeftRadius: '50%',
+                borderTopRightRadius: '50%',
+                backgroundColor: '#151210',
+                borderTop: '1px solid #332b22'
+              }} 
+            />
           </div>
 
           {/* Reflejo diagonal de luz sobre el cristal */}
           <div 
-            className="absolute -inset-full bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none transform -rotate-45" 
+            className="absolute pointer-events-none" 
+            style={{
+              inset: '-100%',
+              background: 'linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.06) 50%, transparent 60%)',
+              transform: 'rotate(-45deg)'
+            }}
           />
         </div>
       </div>
@@ -155,6 +216,25 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({ tier, 
           <p className="text-xs text-[#ded5c5] italic leading-relaxed font-serif">
             "{description}"
           </p>
+
+          {/* Portal Directo al Velo Espiritual */}
+          {onToggleSpiritVision && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onToggleSpiritVision();
+              }}
+              className={`mt-3 w-full py-1.5 px-2 rounded border text-xs font-serif font-bold flex items-center justify-center gap-1.5 transition-all ${
+                spiritVisionActive
+                  ? 'bg-[#2b1040] border-[#a855f7] text-[#c084fc] hover:bg-[#3b1559]'
+                  : 'bg-[#18130e] border-[#8c733e] text-[#d4af37] hover:bg-[#291f15]'
+              }`}
+            >
+              <Eye size={12} />
+              <span>{spiritVisionActive ? 'Disipar Visión Espiritual' : 'Cruzar el Velo'}</span>
+            </button>
+          )}
         </div>
       )}
 
@@ -177,4 +257,3 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({ tier, 
     </div>
   );
 };
-

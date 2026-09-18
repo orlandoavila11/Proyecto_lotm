@@ -1,0 +1,144 @@
+/* ==========================================================================
+   PATH TO GODHOOD — TOKENS DE DISEÑO VICTORIANO / OCULTISTA (CONTRATO v1.0)
+   ========================================================================== */
+
+:root {
+  /* Paleta Canónica */
+  --lotm-ebon-void: #090807;
+  --lotm-mahogany-desk: #1c130c;
+  --lotm-mahogany-border: #2b1b10;
+  --lotm-antique-gold: #d4af37;
+  --lotm-gold-glow: rgba(212, 175, 55, 0.4);
+  --lotm-parchment-base: #ede4d1;
+  --lotm-ink-black: #1a1612;
+  --lotm-crimson-blood: #851c22;
+  --lotm-spirit-purple: #c084fc;
+  --lotm-cobalt-blue: #0284c7;
+  --lotm-amber-gold: #d97706;
+
+  /* Capas de Elevación y Z-Index */
+  --z-bg: 10;
+  --z-furniture: 15;
+  --z-objects: 20;
+  --z-lighting: 30;
+  --z-inspection: 40;
+  --z-veil: 50;
+
+  /* Duraciones y Curvas */
+  --motion-fast: 120ms ease-out;
+  --motion-camera: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-sheet: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Dimensiones del Escenario Lógico */
+  --logical-canvas-width: 1920px;
+  --logical-canvas-height: 1080px;
+  --safe-area-width: 1440px;
+  --safe-area-height: 900px;
+}
+
+/* Indicador de Foco de Latón Victoriano de Alto Contraste */
+.lotm-focus-ring:focus-visible {
+  outline: 2px solid var(--lotm-antique-gold) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 12px var(--lotm-gold-glow) !important;
+}
+
+/* Reset general para botones interactivos en escena */
+button.lotm-focus-ring,
+.lotm-focus-ring {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+}
+
+/* Utilidades Críticas de Puntero */
+.pointer-events-none {
+  pointer-events: none !important;
+}
+
+.pointer-events-auto {
+  pointer-events: auto !important;
+}
+
+/* ==========================================================================
+   UTILIDADES ESTRUCTURALES Y FLEXBOX (INDEPENDIENTES DE COMPILADOR EXTERNO)
+   ========================================================================== */
+.flex { display: flex !important; }
+.flex-col { flex-direction: column !important; }
+.flex-1 { flex: 1 1 0% !important; }
+.items-center { align-items: center !important; }
+.items-start { align-items: flex-start !important; }
+.items-end { align-items: flex-end !important; }
+.justify-center { justify-content: center !important; }
+.justify-between { justify-content: space-between !important; }
+.justify-end { justify-content: flex-end !important; }
+.relative { position: relative !important; }
+.absolute { position: absolute !important; }
+.fixed { position: fixed !important; }
+.inset-0 { top: 0 !important; right: 0 !important; bottom: 0 !important; left: 0 !important; }
+.w-full { width: 100% !important; }
+.h-full { height: 100% !important; }
+.overflow-hidden { overflow: hidden !important; }
+.overflow-visible { overflow: visible !important; }
+.select-none { user-select: none !important; }
+
+/* Bordes y Esquinas */
+.rounded { border-radius: 4px !important; }
+.rounded-xs { border-radius: 1px !important; }
+.rounded-sm { border-radius: 2px !important; }
+.rounded-md { border-radius: 6px !important; }
+.rounded-lg { border-radius: 8px !important; }
+.rounded-xl { border-radius: 12px !important; }
+.rounded-full { border-radius: 9999px !important; }
+.rounded-t-full { border-top-left-radius: 9999px !important; border-top-right-radius: 9999px !important; }
+.rounded-b-full { border-bottom-left-radius: 9999px !important; border-bottom-right-radius: 9999px !important; }
+.rounded-t-sm { border-top-left-radius: 2px !important; border-top-right-radius: 2px !important; }
+.rounded-t-md { border-top-left-radius: 6px !important; border-top-right-radius: 6px !important; }
+.rounded-b-md { border-bottom-left-radius: 6px !important; border-bottom-right-radius: 6px !important; }
+
+/* Tipografía y Textos */
+.whitespace-nowrap { white-space: nowrap !important; }
+.italic { font-style: italic !important; }
+.font-bold { font-weight: bold !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+.uppercase { text-transform: uppercase !important; }
+.tracking-wider { letter-spacing: 0.05em !important; }
+.tracking-widest { letter-spacing: 0.1em !important; }
+.font-serif { font-family: 'EB Garamond', Georgia, serif !important; }
+.font-mono { font-family: ui-monospace, SFMono-Regular, monospace !important; }
+.line-clamp-3 { display: -webkit-box !important; -webkit-line-clamp: 3 !important; -webkit-box-orient: vertical !important; overflow: hidden !important; }
+
+/* Transiciones y Hover */
+.cursor-pointer { cursor: pointer !important; }
+.transition-all { transition-property: all !important; transition-duration: 250ms !important; }
+.transition-transform { transition-property: transform !important; transition-duration: 250ms !important; }
+.transition-opacity { transition-property: opacity !important; transition-duration: 250ms !important; }
+.transition-colors { transition-property: background-color, border-color, color !important; transition-duration: 250ms !important; }
+
+/* Animaciones y Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 200ms ease-out forwards;
+}
+
+/* Soporte de Movimiento Reducido */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms !important;
+    --motion-camera: 0ms !important;
+    --motion-sheet: 0ms !important;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

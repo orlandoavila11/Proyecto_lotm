@@ -12,7 +12,7 @@ export const LeatherPouchObject: React.FC<LeatherPouchObjectProps> = ({ walletTe
     <div className="relative">
       {/* Saquito de Cuero con Monedas */}
       <div 
-        className="w-28 h-24 rounded-b-[40%] rounded-t-[20%] bg-gradient-to-b from-[#2e1d13] via-[#3d2719] to-[#1a100a] border border-[#543823] shadow-xl p-2 flex flex-col items-center justify-between cursor-pointer select-none group transform hover:scale-105 transition-all duration-300"
+        className="leather-pouch-body hover:scale-105 transition-all select-none group"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={() => setInspecting(prev => !prev)}

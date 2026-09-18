@@ -114,20 +114,20 @@ export const CandleObject: React.FC<CandleObjectProps> = ({ tier, description, o
         </div>
 
         {/* Pabilo / Mecha de algodón ennegrecido */}
-        <div className="w-[2px] h-3 bg-[#171410] -mb-1 z-10" />
+        <div style={{ width: '2px', height: '12px', backgroundColor: '#171410', marginBottom: '-4px', zIndex: 10 }} />
 
         {/* Cilindro de Cera de Sebo con gotas derretidas */}
-        <div className="w-7 h-24 bg-gradient-to-r from-[#cfc3aa] via-[#ede4d1] to-[#b3a489] rounded-t-sm shadow-md relative overflow-hidden">
+        <div className="candle-wax-cylinder">
           {/* Chorretones de cera */}
-          <div className="absolute top-0 left-1 w-2 h-8 bg-[#f5efe3] rounded-b-full opacity-90" />
-          <div className="absolute top-0 right-2 w-1.5 h-12 bg-[#dfd2bc] rounded-b-full opacity-80" />
-          <div className="absolute bottom-2 left-0 right-0 h-4 bg-gradient-to-t from-[#8a7a63]/40 to-transparent" />
+          <div style={{ position: 'absolute', top: 0, left: '4px', width: '8px', height: '32px', backgroundColor: '#f5efe3', borderRadius: '0 0 9999px 9999px', opacity: 0.9 }} />
+          <div style={{ position: 'absolute', top: 0, right: '8px', width: '6px', height: '48px', backgroundColor: '#dfd2bc', borderRadius: '0 0 9999px 9999px', opacity: 0.8 }} />
+          <div style={{ position: 'absolute', bottom: '8px', left: 0, right: 0, height: '16px', background: 'linear-gradient(0deg, rgba(138, 122, 99, 0.4) 0%, transparent 100%)' }} />
         </div>
 
         {/* Palmatoria de latón oxidado */}
-        <div className="relative -mt-1 flex flex-col items-center">
-          <div className="w-10 h-2 bg-[#6b532d] rounded-t-sm border-t border-[#c29b47]" />
-          <div className="w-16 h-3 bg-gradient-to-r from-[#423319] via-[#8c7038] to-[#302512] rounded-full shadow-lg border border-[#a68444]" />
+        <div className="candle-base-holder">
+          <div className="candle-base-rim" />
+          <div className="candle-base-dish" />
         </div>
       </div>
 

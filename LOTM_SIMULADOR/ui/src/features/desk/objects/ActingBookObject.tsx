@@ -24,7 +24,7 @@ export const ActingBookObject: React.FC<ActingBookObjectProps> = ({
     <div className="relative">
       {/* Objeto Físico Cerrado sobre la Mesa */}
       <div 
-        className="w-48 h-32 rounded bg-gradient-to-r from-[#24170e] via-[#382415] to-[#1e130b] border border-[#52371e] shadow-2xl cursor-pointer select-none p-3 flex flex-col justify-between transform -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300 group"
+        className="acting-book-cover hover:rotate-0 hover:scale-105 transition-all select-none group"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={() => setIsOpen(true)}

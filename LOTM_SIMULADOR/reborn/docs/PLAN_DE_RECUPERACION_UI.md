@@ -351,3 +351,4 @@ La UI se considera candidata a firma cuando:
 7. Las acciones irreversibles esperan confirmación del servidor y persisten en SQLite.
 8. La suite completa de auditorías diegéticas, pruebas unitarias y de integración pasan con 100% de éxito.
 9. El Director firma formalmente la demo tras la ejecución del Gate G4 humano.
+

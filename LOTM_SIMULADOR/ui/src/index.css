@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=MedievalSharp&display=swap');
 @import './styles/textures.css';
+@import './styles/tokens.css';
+@import './styles/desk_objects.css';
 
 :root {
   --bg-void: #090807;

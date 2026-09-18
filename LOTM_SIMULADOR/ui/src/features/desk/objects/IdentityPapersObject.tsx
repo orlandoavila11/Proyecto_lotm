@@ -30,7 +30,7 @@ export const IdentityPapersObject: React.FC<IdentityPapersObjectProps> = ({
     <div className="relative">
       {/* Pliegos Extendidos en Perspectiva sobre la Mesa */}
       <div 
-        className="w-56 h-36 bg-[#ede3cc] text-[#1a1612] rounded-sm p-3 shadow-xl border border-[#b8a688] cursor-pointer select-none transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 relative group overflow-hidden"
+        className="identity-papers-sheet hover:rotate-0 hover:scale-105 transition-all select-none relative group"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={() => setIsOpen(true)}
