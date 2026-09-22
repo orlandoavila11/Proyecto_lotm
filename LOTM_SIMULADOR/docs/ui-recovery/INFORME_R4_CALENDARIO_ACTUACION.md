@@ -8,7 +8,7 @@
 ---
 
 ### CAMPO 0: METADATA OBLIGATORIA
-- **COMMIT:** PENDING_COMMIT_HASH
+- **COMMIT:** 00ef8c1 (amend con hash final)
 - **RAMA:** `main`
 - **CI STATUS:** 100% PASS (Local Validation Matrix)
 - **CONTADOR DE SESIÓN:** 05/20
