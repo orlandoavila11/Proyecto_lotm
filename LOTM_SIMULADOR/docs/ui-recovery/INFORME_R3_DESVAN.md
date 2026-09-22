@@ -3,7 +3,7 @@
 **Fecha:** 22 de septiembre de 2026  
 **Autoridad:** Director de Integración Visual UI  
 **Estado:** LISTO PARA REVISIÓN (Fase 1 ABIERTA)  
-**Campo 0 — COMMIT:** `d6562de`  
+**Campo 0 — COMMIT:** `18f79f2`  
 **Commit Base:** `db0dc1a`  
 **URL de CI:** Local CI Validation (Suite 30/30, Tests 166/166, Determinism 0 violaciones, Diegetic Audit 0 violaciones, Tier G 22/22 PASS, UI Build 0 errores)  
 **Contador de Sesión:** 6/20  
