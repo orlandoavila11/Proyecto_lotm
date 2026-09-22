@@ -36,9 +36,12 @@ interface DeskViewProps {
   onOpenMarket: () => void;
   onOpenCombat: () => void;
   onOpenAscension: () => void;
+  onOpenActing: () => void;
+  onOpenIdentity: () => void;
   onToggleSpiritVision: () => void;
   spiritVisionActive: boolean;
   timeSlot?: TimeSlot;
+  dayNumber?: number;
   debugOverlay?: boolean;
 }
 
@@ -49,9 +52,12 @@ export const DeskView: React.FC<DeskViewProps> = ({
   onOpenMarket,
   onOpenCombat,
   onOpenAscension,
+  onOpenActing,
+  onOpenIdentity,
   onToggleSpiritVision,
   spiritVisionActive,
   timeSlot = 'NOCHE',
+  dayNumber = 4,
   debugOverlay = false
 }) => {
   const { 
@@ -61,21 +67,9 @@ export const DeskView: React.FC<DeskViewProps> = ({
     setCameraPreset 
   } = useNavigation();
 
-  const buttonRefs = useRef<Record<HotspotId, HTMLButtonElement | null>>({
-    hotspot_mirror: null,
-    hotspot_chalice: null,
-    hotspot_corkboard: null,
-    hotspot_candle: null,
-    hotspot_almanack: null,
-    hotspot_identity_papers: null,
-    hotspot_acting_diary: null,
-    hotspot_money_pouch: null,
-    hotspot_bazaar_letter: null,
-    hotspot_staircase_door: null,
-    hotspot_mahogany_cracks: null
-  });
+  // Gestión de foco accesible en el DOM
+  const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
 
-  // Restaurar foco al elemento activo si cambia focusedHotspotId
   useEffect(() => {
     if (state.focusedHotspotId && buttonRefs.current[state.focusedHotspotId]) {
       buttonRefs.current[state.focusedHotspotId]?.focus();
@@ -104,6 +98,12 @@ export const DeskView: React.FC<DeskViewProps> = ({
         break;
       case 'hotspot_bazaar_letter':
         onOpenMarket();
+        break;
+      case 'hotspot_acting_diary':
+        onOpenActing();
+        break;
+      case 'hotspot_identity_papers':
+        onOpenIdentity();
         break;
       default:
         openInspection(id);
@@ -269,7 +269,7 @@ export const DeskView: React.FC<DeskViewProps> = ({
         >
           <PocketWatchObject 
             timeSlot={timeSlot}
-            dayNumber={4}
+            dayNumber={dayNumber}
           />
         </HotspotButton>
 

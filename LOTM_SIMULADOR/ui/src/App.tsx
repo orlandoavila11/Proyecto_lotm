@@ -1,17 +1,19 @@
 /**
- * PATH TO GODHOOD — SHELL PRINCIPAL Y ENTORNO DE ESCENA (BRIEF-10.VISUAL-R2)
- * Integra SceneViewport 1920x1080, NavigationProvider, InspectionLayer y SceneHarness.
+ * PATH TO GODHOOD — SHELL PRINCIPAL Y ENTORNO DE ESCENA (BRIEF-10.VISUAL-R2 / R4)
+ * Integra SceneViewport 1920x1080, NavigationProvider, DeskView, CalendarView,
+ * IdentityDossierView, ActingMirrorView y sincronización transversal de estado.
  */
 
 import { useState, useEffect } from 'react';
 import { ErrorBoundary } from './ErrorBoundary';
-import type { CharacterDiegetic } from './features/types';
+import type { CharacterDiegetic, TimeSlot } from './features/types';
 import { PrologueView } from './features/prologue/PrologueView';
 import { DeskView } from './features/desk/DeskView';
 import { CorkboardView } from './features/investigation/CorkboardView';
 import { CalendarView } from './features/calendar/CalendarView';
 import { MarketView } from './features/market/MarketView';
 import { ActingMirrorView } from './features/acting/ActingMirrorView';
+import { IdentityDossierView } from './features/identity/IdentityDossierView';
 import { CombatView } from './features/combat/CombatView';
 import { AscensionView } from './features/ascension/AscensionView';
 import { VeilOverlay } from './features/veil/VeilOverlay';
@@ -20,10 +22,13 @@ import { SceneViewport } from './scene/SceneViewport';
 import { InspectionLayer } from './scene/InspectionLayer';
 import { SceneHarness, FOOL_SEER_FIXTURE } from './harness/SceneHarness';
 import { CANONICAL_HOTSPOTS } from './scene/types';
+import { apiClient } from './services/apiClient';
 
 function AppContent() {
   const { state, navigateTo, closeInspection, backToDesk, toggleSpiritVision } = useNavigation();
   const [character, setCharacter] = useState<CharacterDiegetic | null>(null);
+  const [timeSlot, setTimeSlot] = useState<TimeSlot>('TARDE');
+  const [dayNumber, setDayNumber] = useState<number>(4);
   const [showHarness, setShowHarness] = useState<boolean>(false);
   const [showDebugMasks, setShowDebugMasks] = useState<boolean>(false);
 
@@ -32,15 +37,49 @@ function AppContent() {
     const params = new URLSearchParams(window.location.search);
     if (params.get('harness') === 'true') {
       setShowHarness(true);
-      if (!character) {
-        // Inicializar con fixture canónico para pruebas rápidas en harness
-        setCharacter(FOOL_SEER_FIXTURE as unknown as CharacterDiegetic);
-      }
     }
     if (params.get('masks') === 'true') {
       setShowDebugMasks(true);
     }
+    if (!character) {
+      // Inicializar con fixture canónico para pruebas rápidas
+      setCharacter(FOOL_SEER_FIXTURE as unknown as CharacterDiegetic);
+    }
   }, [character]);
+
+  const refreshCharacter = async () => {
+    if (!character?.id) return;
+    try {
+      const data = await apiClient.getCharacter(character.id);
+      if (data?.character) {
+        setCharacter(prev => prev ? {
+          ...prev,
+          somatics: {
+            ...prev.somatics,
+            sanityTier: data.somatics?.sanityTier || prev.somatics.sanityTier,
+            corruptionTier: data.somatics?.corruptionTier || prev.somatics.corruptionTier,
+            ruinaTier: data.somatics?.ruinaTier || prev.somatics.ruinaTier
+          },
+          walletText: data.wallet ? `${data.wallet.pounds} £, ${data.wallet.soli} s` : prev.walletText,
+          anchors: data.anchors?.map((a: any) => ({
+            id: a.id,
+            tipo: a.type || 'persona',
+            nombre: a.name,
+            descripcion: a.description || 'Vínculo humano',
+            fuerza: a.strength > 25 ? 'FIRME' : a.strength > 10 ? 'TENUE' : 'QUEBRADIZA'
+          })) || prev.anchors,
+          policeSuspicionText: (data.activePersona?.police_suspicion ?? 5) > 20 
+            ? 'Vigilancia en las esquinas de tu calle.' 
+            : 'Sin sospechas policiales aparentes.',
+          churchSuspicionText: (data.activePersona?.church_suspicion ?? 5) > 20
+            ? 'Sombras inquisitorias rondan tu vecindario.'
+            : 'Los clérigos no han registrado tu nombre.'
+        } : null);
+      }
+    } catch {
+      // Fixture local
+    }
+  };
 
   // Si no hay personaje despierto y no está forzado el harness, iniciar en el Prólogo Canónico
   if (!character) {
@@ -54,7 +93,7 @@ function AppContent() {
             }} 
           />
           
-          {/* Acceso Rápido al Harness de Pruebas R2 */}
+          {/* Acceso Rápido al Harness de Pruebas */}
           <button
             type="button"
             onClick={() => {
@@ -63,7 +102,7 @@ function AppContent() {
             }}
             className="fixed bottom-4 right-4 z-50 px-3 py-1.5 rounded bg-[#1c1813] border border-[#8c733e] text-[#d4af37] text-xs font-serif opacity-70 hover:opacity-100 transition-opacity"
           >
-            Activar Harness R2
+            Activar Harness
           </button>
         </div>
       </SceneViewport>
@@ -90,8 +129,12 @@ function AppContent() {
           onOpenMarket={() => navigateTo('MARKET_STAGE', 'FOCUS_DESK', 'hotspot_bazaar_letter')}
           onOpenCombat={() => navigateTo('COMBAT_STAGE', 'FOCUS_STAIRCASE')}
           onOpenAscension={() => navigateTo('CEREMONY_STAGE', 'FOCUS_HORNACINA')}
+          onOpenActing={() => navigateTo('ACTING_STAGE', 'FOCUS_DESK', 'hotspot_acting_diary')}
+          onOpenIdentity={() => navigateTo('IDENTITY_STAGE', 'FOCUS_DESK', 'hotspot_identity_papers')}
           onToggleSpiritVision={toggleSpiritVision}
           spiritVisionActive={state.isSpiritVisionActive}
+          timeSlot={timeSlot}
+          dayNumber={dayNumber}
           debugOverlay={showDebugMasks}
         />
       )}
@@ -104,7 +147,18 @@ function AppContent() {
 
       {state.currentView === 'CALENDAR_STAGE' && (
         <div className="absolute inset-0 z-30">
-          <CalendarView onBackToDesk={backToDesk} />
+          <CalendarView 
+            onBackToDesk={backToDesk} 
+            characterId={character.id}
+            initialDay={dayNumber}
+            initialSlot={timeSlot}
+            onActionCompleted={(outcome) => {
+              const slotNames: Record<number, TimeSlot> = { 0: 'MAÑANA', 1: 'TARDE', 2: 'NOCHE', 3: 'MADRUGADA' };
+              setTimeSlot(slotNames[outcome.slot] || 'TARDE');
+              setDayNumber(outcome.day);
+              refreshCharacter();
+            }}
+          />
         </div>
       )}
 
@@ -119,6 +173,17 @@ function AppContent() {
           <ActingMirrorView
             character={character}
             onBackToDesk={backToDesk}
+            onRefreshCharacter={refreshCharacter}
+          />
+        </div>
+      )}
+
+      {state.currentView === 'IDENTITY_STAGE' && (
+        <div className="absolute inset-0 z-30">
+          <IdentityDossierView
+            character={character}
+            onBackToDesk={backToDesk}
+            onRefreshCharacter={refreshCharacter}
           />
         </div>
       )}
@@ -146,22 +211,10 @@ function AppContent() {
         />
       )}
 
-      {/* Panel del Harness de Pruebas (Alternable) */}
+      {/* Panel Flotante de Harness de Pruebas R2 / R4 */}
       {showHarness && (
-        <div style={{ position: 'relative', zIndex: 100 }}>
-          <SceneHarness />
-        </div>
+        <SceneHarness />
       )}
-
-      {/* Botón Flotante para Alternar Harness */}
-      <button
-        type="button"
-        onClick={() => setShowHarness(prev => !prev)}
-        className="fixed bottom-3 right-3 z-50 px-2.5 py-1 rounded bg-[#100e0b]/90 border border-[#8c733e]/50 text-[#d4af37] text-[10px] font-mono opacity-60 hover:opacity-100 transition-opacity"
-        title="Alternar panel de pruebas del Harness R2"
-      >
-        {showHarness ? 'Ocultar Harness' : 'Harness R2'}
-      </button>
 
     </SceneViewport>
   );

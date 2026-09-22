@@ -14,6 +14,7 @@ import {
 } from '../scene/types';
 
 export const FOOL_SEER_FIXTURE = {
+  id: 'char_fixture_fool_01',
   name: 'Adrian Vance',
   pathwayId: 'FOOL',
   pathwayName: 'The Fool',
@@ -23,22 +24,42 @@ export const FOOL_SEER_FIXTURE = {
   originTitle: 'Escribiente Notarial',
   district: 'North Borough',
   profession: 'Escribiente Notarial en Hillston',
+  walletText: '12 £, 14 s',
+  actingCoherence: 'COHERENTE' as const,
+  actingFeedback: 'Tus interpretaciones guardan prudente correspondencia con el misterio.',
+  actingDiary: [
+    {
+      id: 'diary_init_01',
+      day: 2,
+      principle: 'El Vidente interpreta el destino, pero no interviene en sus hilos.',
+      choiceTaken: 'Mantuviste el velo y evitaste advertir de la ruina inminente.',
+      narrativeOutcome: 'La poción asimiló parte de los principios arcanos.'
+    }
+  ],
+  initialBurden: {
+    type: 'DEUDA' as const,
+    description: 'Pagaré por la fianza de los estudios notariales.',
+    details: '28 libras adeudadas a la casa prestamista de Hillston.'
+  },
   somatics: {
-    sanityTier: 'BRILLANTE',
-    corruptionTier: 'AZOGUE_LIMPIO',
-    ruinTier: 'MARCADO',
+    sanityTier: 'BRILLANTE' as const,
+    corruptionTier: 'AZOGUE_LIMPIO' as const,
+    ruinaTier: 'INTEGRO' as const,
     candleDescription: 'Llama viva y clara sobre peltre.',
     mirrorDescription: 'El azogue refleja tu semblante humano.',
-    tableDescription: 'Hendidura oscura tallada en la esquina.'
+    woodDescription: 'Hendidura oscura tallada en la esquina.'
   },
   anchors: [
-    { id: 'anchor_1', name: 'El reloj de plata de mi abuelo' },
-    { id: 'anchor_2', name: 'Correspondencia con la Srta. Wendy' },
-    { id: 'anchor_3', name: 'El libro de cuentas de la notaría' }
-  ]
+    { id: 'anchor_1', tipo: 'rutina' as const, nombre: 'El reloj de plata de mi abuelo', descripcion: 'Objeto de familia que marca las campanadas de Hillston.', fuerza: 'FIRME' as const },
+    { id: 'anchor_2', tipo: 'persona' as const, nombre: 'Correspondencia con la Srta. Wendy', descripcion: 'Misivas dominicales que mantienen viva tu empatía civil.', fuerza: 'FIRME' as const },
+    { id: 'anchor_3', tipo: 'rol' as const, nombre: 'El libro de cuentas de la notaría', descripcion: 'Asientos contables y sellos notariales de la vida diaria.', fuerza: 'TENUE' as const }
+  ],
+  policeSuspicionText: 'Sin sospechas policiales en tu vecindario.',
+  churchSuspicionText: 'Los clérigos de la Iglesia de la Medianoche no han posado sus ojos en ti.'
 };
 
 export const VISIONARY_SPECTATOR_FIXTURE = {
+  id: 'char_fixture_visionary_01',
   name: 'Audrey Hall-Smith',
   pathwayId: 'VISIONARY',
   pathwayName: 'Visionary',
@@ -48,19 +69,30 @@ export const VISIONARY_SPECTATOR_FIXTURE = {
   originTitle: 'Estudiante de Medicina',
   district: 'Cherwood Borough',
   profession: 'Practicante en el Hospital de Caridad',
+  walletText: '8 £, 10 s',
+  actingCoherence: 'TENSO' as const,
+  actingFeedback: 'Observas con atención, pero las emociones ajenas turban tu compostura.',
+  actingDiary: [],
+  initialBurden: {
+    type: 'SECRETO' as const,
+    description: 'Cadáver desaparecido de la sala de disección del hospital.',
+    details: 'Podrías ser expulsado del cuerpo médico si se descubre tu silencio.'
+  },
   somatics: {
-    sanityTier: 'PARPADEANTE',
-    corruptionTier: 'SOMBRAS_ESPECTRALES',
-    ruinTier: 'MARCADO',
+    sanityTier: 'VACILANTE' as const,
+    corruptionTier: 'VAHO_TENUE' as const,
+    ruinaTier: 'MARCADO' as const,
     candleDescription: 'La llama oscila inquieta contra sombras.',
     mirrorDescription: 'Sombras tenues flotan tras tu reflejo.',
-    tableDescription: 'Hendidura oscura tallada en la esquina.'
+    woodDescription: 'Hendidura oscura tallada en la esquina.'
   },
   anchors: [
-    { id: 'anchor_1', name: 'El maletín de anatomía' },
-    { id: 'anchor_2', name: 'La libreta de observaciones clínicas' },
-    { id: 'anchor_3', name: 'El hermano menor en Backlund' }
-  ]
+    { id: 'anchor_1', tipo: 'rutina' as const, nombre: 'El maletín de anatomía', descripcion: 'Instrumental quirúrgico que evoca el deber civil de sanar.', fuerza: 'FIRME' as const },
+    { id: 'anchor_2', tipo: 'rol' as const, nombre: 'La libreta de observaciones clínicas', descripcion: 'Anotaciones metódicas sobre pacientes de Cherwood.', fuerza: 'TENUE' as const },
+    { id: 'anchor_3', tipo: 'persona' as const, nombre: 'El hermano menor en Backlund', descripcion: 'Vínculo fraternal que te ancla a la realidad humana.', fuerza: 'QUEBRADIZA' as const }
+  ],
+  policeSuspicionText: 'Patrullas nocturnas observan los alrededores del hospital.',
+  churchSuspicionText: 'Un sacerdote de la Iglesia de la Tormenta visita con frecuencia la sala de guardia.'
 };
 
 export const SceneHarness: React.FC = () => {
