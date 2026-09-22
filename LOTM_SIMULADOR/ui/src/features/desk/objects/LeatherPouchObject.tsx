@@ -5,7 +5,6 @@ interface LeatherPouchObjectProps {
 }
 
 export const LeatherPouchObject: React.FC<LeatherPouchObjectProps> = ({ walletText }) => {
-  const [hovered, setHovered] = useState(false);
   const [inspecting, setInspecting] = useState(false);
 
   return (
@@ -13,16 +12,11 @@ export const LeatherPouchObject: React.FC<LeatherPouchObjectProps> = ({ walletTe
       {/* Saquito de Cuero con Monedas */}
       <div 
         className="leather-pouch-body hover:scale-105 transition-all select-none group"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
         onClick={() => setInspecting(prev => !prev)}
         title="Monedero civil de chelines y peniques"
       >
-        {/* Cordel de cuero anudado */}
-        <div className="w-12 h-2 bg-[#543b27] rounded-full border-t border-[#7a5739] shadow-sm -mt-1" />
-
-        {/* Monedas visibles asomando */}
-        <div className="flex items-center gap-1 my-auto">
+        {/* Monedas visibles que asoman en interacción */}
+        <div className="flex items-center gap-1 my-auto opacity-0 group-hover:opacity-100 transition-opacity">
           <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-[#7a7469] via-[#c7c2b5] to-[#f0ece1] border border-[#423e37] shadow-md flex items-center justify-center text-[8px] font-serif font-bold text-[#2e2b26]">
             s
           </div>
@@ -32,18 +26,9 @@ export const LeatherPouchObject: React.FC<LeatherPouchObjectProps> = ({ walletTe
         </div>
 
         {/* Base del saquito */}
-        <div className="text-[10px] font-serif text-[#d4af37] font-bold tracking-wider pb-0.5">
+        <div className="text-[10px] font-serif text-[#d4af37] font-bold tracking-wider pb-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
           Fondo Civil
         </div>
-      </div>
-
-      {/* Etiqueta Ambiental en Reposo (≤ 7 Palabras) */}
-      <div 
-        className={`absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-serif italic text-[#c2b297] bg-[#120f0c]/90 px-2 py-0.5 rounded border border-[#423524] transition-opacity duration-200 pointer-events-none z-20 ${
-          hovered ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        Monedero civil de chelines y peniques
       </div>
 
       {/* Detalle al hacer clic */}

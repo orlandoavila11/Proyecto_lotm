@@ -1,59 +1,81 @@
+/**
+ * GFX27 — CINCO NIVELES DE GRIETAS DE RUINA SOBRE LA MESA (BRIEF-10.VISUAL)
+ * 
+ * Implementa las 5 máscaras vectoriales SVG acumulativas del estado de Ruina:
+ * 1. INTEGRO (Nivel 0): Caoba pulcra sin fisuras.
+ * 2. MARCADO (Nivel 1): Hendidura inicial fina en la esquina.
+ * 3. EROSIONADO (Nivel 2): Ramificaciones que siguen la veta de madera hacia el centro.
+ * 4. ROTO (Nivel 3): Fracturas profundas con sombras astrales oscuras.
+ * 5. PERDIDO (Nivel 4): Deterioro severo del tablero sin comprometer la solidez de los objetos.
+ * 
+ * Ley de Prosa Diegética: Cero números o porcentajes visibles.
+ */
+
 import React, { useState } from 'react';
 import type { RuinaTier } from '../../types';
 
 interface DeskCracksOverlayProps {
   tier: RuinaTier;
-  description: string;
+  description?: string;
 }
 
-export const DeskCracksOverlay: React.FC<DeskCracksOverlayProps> = ({ tier, description }) => {
-  const [hovered, setHovered] = useState(false);
+export const DeskCracksOverlay: React.FC<DeskCracksOverlayProps> = ({ 
+  tier, 
+  description = 'La madera de caoba soporta el peso invisible de los secretos.' 
+}) => {
   const [inspecting, setInspecting] = useState(false);
 
+  // Mapeo Canónico de Estados de Ruina (GFX27)
   const getCrackConfig = () => {
     switch (tier) {
       case 'INTEGRO':
         return {
           strokeColor: '#3d2516',
-          strokeWidth: 0.8,
-          opacity: 0.25,
+          strokeWidth: 1.0,
+          opacity: 0.2,
           labelBrief: 'Caoba pulcra sin fracturas',
           isCracked: false
         };
       case 'MARCADO':
         return {
-          strokeColor: '#2e190e',
-          strokeWidth: 1.5,
-          opacity: 0.75,
+          strokeColor: '#2b160b',
+          strokeWidth: 1.8,
+          opacity: 0.8,
           labelBrief: 'Una hendidura fina surca la caoba',
           isCracked: true
         };
       case 'EROSIONADO':
         return {
-          strokeColor: '#1f0d07',
-          strokeWidth: 2.2,
-          opacity: 0.9,
+          strokeColor: '#1a0d06',
+          strokeWidth: 2.6,
+          opacity: 0.92,
           labelBrief: 'Fisuras ramificadas fracturan el tablero',
           isCracked: true
         };
       case 'ROTO':
         return {
-          strokeColor: '#5c1015',
-          strokeWidth: 3.2,
-          opacity: 0.95,
+          strokeColor: '#4a0e13',
+          strokeWidth: 3.6,
+          opacity: 0.98,
           labelBrief: 'Grietas profundas rezuman sombra astral',
           isCracked: true
         };
       case 'PERDIDO':
         return {
-          strokeColor: '#851c22',
-          strokeWidth: 4.5,
-          opacity: 1,
-          labelBrief: 'La caoba se desintegra en cenizas',
+          strokeColor: '#7a151b',
+          strokeWidth: 4.8,
+          opacity: 1.0,
+          labelBrief: 'La caoba se desmorona en fisuras',
           isCracked: true
         };
       default:
-        return { strokeColor: '#3d2516', strokeWidth: 1, opacity: 0.3, labelBrief: 'Vetas de caoba pulida', isCracked: false };
+        return { 
+          strokeColor: '#3d2516', 
+          strokeWidth: 1.0, 
+          opacity: 0.2, 
+          labelBrief: 'Vetas de caoba pulida', 
+          isCracked: false 
+        };
     }
   };
 
@@ -63,72 +85,93 @@ export const DeskCracksOverlay: React.FC<DeskCracksOverlayProps> = ({ tier, desc
     <div 
       className="relative w-full h-full select-none cursor-pointer group"
       title={config.labelBrief}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       onClick={() => setInspecting(prev => !prev)}
+      role="region"
+      aria-label={`Estado de la caoba: ${config.labelBrief}`}
     >
       <svg 
         className="w-full h-full pointer-events-none"
         viewBox="0 0 580 90" 
         preserveAspectRatio="none"
+        aria-hidden="true"
       >
         <defs>
-          <linearGradient id="woodGrain" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#3d2516" stopOpacity="0.1" />
-            <stop offset="50%" stopColor="#523520" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#3d2516" stopOpacity="0.1" />
+          {/* Veta noble de caoba */}
+          <linearGradient id="woodGrainGrain" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#3d2516" stopOpacity="0.15" />
+            <stop offset="50%" stopColor="#523520" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#3d2516" stopOpacity="0.15" />
           </linearGradient>
+
+          {/* Sombra de profundidad para fracturas severas */}
+          <filter id="crackShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="#000000" floodOpacity="0.8" />
+          </filter>
         </defs>
 
-        {/* Veta natural de caoba en el tablero */}
-        <path d="M 0 45 Q 150 35 290 48 T 580 42" stroke="url(#woodGrain)" strokeWidth="2" fill="none" />
+        {/* Veta longitudinal de la madera */}
+        <path d="M 0 45 Q 150 35 290 48 T 580 42" stroke="url(#woodGrainGrain)" strokeWidth="2" fill="none" />
 
-        {/* Fisuras de Ruina si existen */}
+        {/* Nivel 1: MARCADO (Hendidura inicial) */}
         {config.isCracked && (
-          <g stroke={config.strokeColor} strokeWidth={config.strokeWidth} strokeLinecap="round" opacity={config.opacity}>
-            {/* Fisura Principal longitudinal */}
-            <path d="M 40 45 Q 160 30 260 52 T 420 38 T 540 50" fill="none" />
+          <g 
+            stroke={config.strokeColor} 
+            strokeWidth={config.strokeWidth} 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+            opacity={config.opacity}
+            filter="url(#crackShadow)"
+          >
+            {/* Fisura inicial acumulativa */}
+            <path d="M 45 52 Q 120 40 190 46 T 280 50" fill="none" />
 
-            {/* Ramificaciones secundarias para EROSIONADO, ROTO y PERDIDO */}
+            {/* Nivel 2: EROSIONADO (Ramificaciones longitudinales hacia el centro) */}
             {(tier === 'EROSIONADO' || tier === 'ROTO' || tier === 'PERDIDO') && (
               <>
-                <path d="M 160 30 Q 190 15 220 12" fill="none" />
-                <path d="M 260 52 Q 300 70 340 78" fill="none" />
-                <path d="M 420 38 Q 460 60 500 55" fill="none" />
+                <path d="M 190 46 Q 240 28 310 32 T 430 42" fill="none" />
+                <path d="M 120 40 Q 145 22 170 18" fill="none" strokeWidth={config.strokeWidth * 0.75} />
+                <path d="M 280 50 Q 320 68 360 74" fill="none" strokeWidth={config.strokeWidth * 0.8} />
               </>
             )}
 
-            {/* Fracturas críticas de ROTO y PERDIDO con sombra astral */}
+            {/* Nivel 3: ROTO (Fracturas profundas y daño transversal) */}
             {(tier === 'ROTO' || tier === 'PERDIDO') && (
               <>
-                <path d="M 220 12 Q 250 5 280 8" fill="none" stroke="#7f1d1d" strokeWidth={config.strokeWidth * 1.2} />
-                <path d="M 340 78 Q 380 85 410 82" fill="none" stroke="#7f1d1d" strokeWidth={config.strokeWidth * 1.2} />
-                <circle cx="260" cy="52" r="3" fill="#1f0a0c" />
-                <circle cx="420" cy="38" r="3.5" fill="#1f0a0c" />
+                <path d="M 430 42 Q 480 30 535 48" fill="none" stroke="#5a0f14" strokeWidth={config.strokeWidth * 1.1} />
+                <path d="M 310 32 Q 345 12 380 15" fill="none" stroke="#5a0f14" />
+                <path d="M 360 74 Q 400 82 440 78" fill="none" stroke="#5a0f14" />
+                {/* Desconchados oscuros en las intersecciones */}
+                <circle cx="190" cy="46" r="2.5" fill="#120507" />
+                <circle cx="310" cy="32" r="3.0" fill="#120507" />
+                <circle cx="430" cy="42" r="3.2" fill="#120507" />
+              </>
+            )}
+
+            {/* Nivel 4: PERDIDO (Deterioro extremo y sombras astrales) */}
+            {tier === 'PERDIDO' && (
+              <>
+                <path d="M 10 58 Q 30 54 45 52" fill="none" stroke="#8c1d24" strokeWidth={config.strokeWidth * 1.3} />
+                <path d="M 535 48 Q 560 52 575 45" fill="none" stroke="#8c1d24" strokeWidth={config.strokeWidth * 1.3} />
+                <path d="M 240 28 Q 255 10 270 6" fill="none" stroke="#8c1d24" />
+                <circle cx="280" cy="50" r="4.0" fill="#0d0304" />
               </>
             )}
           </g>
         )}
       </svg>
 
-      {/* Etiqueta flotante al hover (≤ 7 palabras) */}
-      {hovered && (
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none text-xs font-serif italic text-[#c2b297] bg-[#120f0c]/90 px-3 py-1 rounded border border-[#423524] shadow-lg z-30 whitespace-nowrap">
-          {config.labelBrief}
-        </div>
-      )}
-
-      {/* Modal de reflexión al hacer clic */}
+      {/* Modal de reflexión diegética al interactuar */}
       {inspecting && (
         <div 
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 w-80 bg-[#17130f] border border-[#a68444] rounded p-3.5 shadow-2xl z-40 pointer-events-auto animate-fadeIn"
+          className="absolute bottom-14 left-1/2 -translate-x-1/2 w-84 bg-[#140f0c] border border-[#8c733e] rounded p-4 shadow-[0_8px_30px_rgba(0,0,0,0.95)] z-40 pointer-events-auto"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="flex justify-between items-center mb-1 pb-1 border-b border-[#382b18]">
+          <div className="flex justify-between items-center mb-2 pb-1 border-b border-[#382b18]">
             <span className="text-xs font-serif font-bold text-[#d4af37] tracking-wider">LA HUELLA DE LA RUINA</span>
             <button 
               onClick={() => setInspecting(false)}
-              className="text-[#968c7e] hover:text-[#e5ded2] text-xs px-1"
+              className="text-[#a89f91] hover:text-[#f3ede2] text-xs px-1.5 py-0.5"
+              aria-label="Cerrar descripción"
             >
               ✕
             </button>

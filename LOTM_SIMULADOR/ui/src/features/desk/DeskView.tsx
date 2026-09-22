@@ -17,6 +17,9 @@ import { ActingBookObject } from './objects/ActingBookObject';
 import { LeatherPouchObject } from './objects/LeatherPouchObject';
 import { BazaarLetterObject } from './objects/BazaarLetterObject';
 import { DeskCracksOverlay } from './objects/DeskCracksOverlay';
+import { TimeLightingLayer } from '../../scene/lighting/TimeLightingLayer';
+import { DustParticlesOverlay } from '../../scene/lighting/DustParticlesOverlay';
+import { InteractionMasksOverlay } from '../../scene/InteractionMasksOverlay';
 import { useNavigation } from '../../scene/navigation/NavigationContext';
 import { SceneCamera } from '../../scene/SceneCamera';
 import { HotspotButton } from '../../scene/HotspotButton';
@@ -36,6 +39,7 @@ interface DeskViewProps {
   onToggleSpiritVision: () => void;
   spiritVisionActive: boolean;
   timeSlot?: TimeSlot;
+  debugOverlay?: boolean;
 }
 
 export const DeskView: React.FC<DeskViewProps> = ({
@@ -47,7 +51,8 @@ export const DeskView: React.FC<DeskViewProps> = ({
   onOpenAscension,
   onToggleSpiritVision,
   spiritVisionActive,
-  timeSlot = 'NOCHE'
+  timeSlot = 'NOCHE',
+  debugOverlay = false
 }) => {
   const { 
     state, 
@@ -108,44 +113,6 @@ export const DeskView: React.FC<DeskViewProps> = ({
 
   const activeCamera = CAMERA_PRESETS[state.activeCameraPreset] || CAMERA_PRESETS.WIDE_OVERVIEW;
 
-  // Parámetros lumínicos de las 4 franjas horarias
-  const getTimeLighting = () => {
-    switch (timeSlot) {
-      case 'MAÑANA':
-        return {
-          ambientTint: 'rgba(147, 197, 253, 0.07)', // Neblina azulada matutina
-          skylightGlow: 'radial-gradient(ellipse at 50% 0%, rgba(186, 230, 253, 0.22) 0%, transparent 65%)',
-          shadowDensity: 0.15
-        };
-      case 'TARDE':
-        return {
-          ambientTint: 'rgba(254, 240, 138, 0.06)', // Luz diurna dorada y templada
-          skylightGlow: 'radial-gradient(ellipse at 50% 0%, rgba(254, 240, 138, 0.25) 0%, transparent 70%)',
-          shadowDensity: 0.1
-        };
-      case 'NOCHE':
-        return {
-          ambientTint: 'rgba(249, 115, 22, 0.08)', // Hollín y crepúsculo cobrizo de Backlund
-          skylightGlow: 'radial-gradient(ellipse at 50% 0%, rgba(217, 119, 6, 0.2) 0%, transparent 60%)',
-          shadowDensity: 0.25
-        };
-      case 'MADRUGADA':
-        return {
-          ambientTint: 'rgba(15, 23, 42, 0.25)', // Abismo de medianoche y sombra cerrada
-          skylightGlow: 'radial-gradient(ellipse at 50% 0%, rgba(226, 232, 240, 0.08) 0%, transparent 50%)',
-          shadowDensity: 0.45
-        };
-      default:
-        return {
-          ambientTint: 'rgba(249, 115, 22, 0.08)',
-          skylightGlow: 'radial-gradient(ellipse at 50% 0%, rgba(217, 119, 6, 0.2) 0%, transparent 60%)',
-          shadowDensity: 0.25
-        };
-    }
-  };
-
-  const lighting = getTimeLighting();
-
   return (
     <div 
       style={{ position: 'relative', width: '1920px', height: '1080px', zIndex: 10, overflow: 'hidden', backgroundColor: '#090807', color: '#e5ded2' }}
@@ -154,51 +121,64 @@ export const DeskView: React.FC<DeskViewProps> = ({
       <SceneCamera preset={activeCamera}>
         
         {/* ==========================================================================
-            CAPA 0: FONDO ARQUITECTÓNICO DEL DESVÁN (Pared de damasco, niebla y vigas)
+            CAPA 0: ENTORNO ARQUITECTÓNICO MAESTRO DEL DESVÁN (C0 Composición Aprobada)
+            Vigas de roble, claraboya con niebla de Backlund, escalera, hornacina y mesa noble
             ========================================================================== */}
         <div 
-          className="texture-damask-wall"
-          style={{ position: 'absolute', top: 0, left: 0, width: '1920px', height: '1080px', zIndex: 'var(--z-bg, 10)' }}
-        >
-          {/* Luz cenital de claraboya y niebla lejana de Backlund según la franja horaria */}
-          <div 
-            className="pointer-events-none transition-all duration-1000"
-            style={{ position: 'absolute', top: 0, left: '480px', width: '960px', height: '320px', background: lighting.skylightGlow, pointerEvents: 'none' }}
-          />
-          
-          {/* Sombra de vigas de roble superiores */}
-          <div 
-            className="pointer-events-none"
-            style={{ position: 'absolute', top: 0, left: 0, width: '1920px', height: '64px', background: 'linear-gradient(180deg, #090807 0%, transparent 100%)', pointerEvents: 'none' }} 
-          />
-        </div>
-
-        {/* ==========================================================================
-            CAPA 1: MOBILIARIO Y ESTRUCTURAS FIJAS
-            ========================================================================== */}
-        {/* Tablero de Caoba de la Mesa Central (Capa 1) */}
-        <div 
-          className="texture-mahogany-desk"
-          style={{
-            position: 'absolute',
-            left: '380px',
-            top: '480px',
-            width: '1160px',
-            height: '580px',
-            borderRadius: '12px 12px 0 0',
-            borderTop: '8px solid #24170e',
-            borderLeft: '4px solid #24170e',
-            borderRight: '4px solid #24170e',
-            boxShadow: '0 -30px 70px rgba(0,0,0,0.95)',
-            zIndex: 'var(--z-furniture, 15)'
+          style={{ 
+            position: 'absolute', 
+            top: 0, 
+            left: 0, 
+            width: '1920px', 
+            height: '1080px', 
+            zIndex: 'var(--z-bg, 10)',
+            backgroundImage: 'url(/art/C0_desvan_composition.jpg)',
+            backgroundSize: '100% 100%',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
           }}
         >
-          {/* Bisel superior de latón desgastado */}
+          {/* Haz de luz diagonal de la claraboya (Luz diurna fría y neblina de Backlund) */}
           <div 
-            style={{
-              width: '100%',
-              height: '4px',
-              background: 'linear-gradient(90deg, rgba(82, 61, 20, 0.4) 0%, rgba(212, 175, 55, 0.3) 50%, rgba(82, 61, 20, 0.4) 100%)'
+            className="pointer-events-none"
+            style={{ 
+              position: 'absolute', 
+              top: 0, 
+              right: '240px', 
+              width: '820px', 
+              height: '760px', 
+              background: 'linear-gradient(215deg, rgba(186, 230, 253, 0.16) 0%, rgba(147, 197, 253, 0.06) 35%, transparent 70%)',
+              mixBlendMode: 'screen',
+              pointerEvents: 'none'
+            }} 
+          />
+
+          {/* Resplandor cálido de la lámpara de gas sobre la escalera de caracol */}
+          <div 
+            className="pointer-events-none"
+            style={{ 
+              position: 'absolute', 
+              top: '70px', 
+              left: '110px', 
+              width: '320px', 
+              height: '320px', 
+              background: 'radial-gradient(circle, rgba(245, 170, 45, 0.28) 0%, rgba(217, 119, 6, 0.10) 45%, transparent 75%)',
+              mixBlendMode: 'screen',
+              pointerEvents: 'none'
+            }} 
+          />
+
+          {/* Sombra cenital de las vigas maestras superiores */}
+          <div 
+            className="pointer-events-none"
+            style={{ 
+              position: 'absolute', 
+              top: 0, 
+              left: 0, 
+              width: '1920px', 
+              height: '90px', 
+              background: 'linear-gradient(180deg, rgba(9, 8, 7, 0.85) 0%, transparent 100%)', 
+              pointerEvents: 'none' 
             }} 
           />
         </div>
@@ -372,40 +352,27 @@ export const DeskView: React.FC<DeskViewProps> = ({
         </HotspotButton>
 
         {/* ==========================================================================
-            CAPA 3: ILUMINACIÓN DINÁMICA, ATMÓSFERA Y HALO DE LA VELA
+            CAPA 3: ILUMINACIÓN DINÁMICA SEGÚN EL TIEMPO (GFX11 TimeLightingLayer)
             ========================================================================== */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ zIndex: 'var(--z-lighting, 30)', pointerEvents: 'none' }}
-        >
-          {/* Tinte atmosférico según la franja horaria */}
-          <div 
-            className="absolute inset-0 transition-colors duration-1000 pointer-events-none"
-            style={{ backgroundColor: lighting.ambientTint, pointerEvents: 'none' }}
-          />
+        <TimeLightingLayer 
+          timeSlot={timeSlot} 
+          candleActive={character.somatics.sanityTier !== 'AHOGADA_EN_CERA'} 
+        />
 
-          {/* Sombra ambiental periférica del desván */}
-          <div 
-            className="absolute inset-0 transition-opacity duration-1000 pointer-events-none"
-            style={{ 
-              background: 'radial-gradient(circle at 50% 60%, transparent 40%, rgba(0,0,0,0.85) 100%)',
-              opacity: lighting.shadowDensity,
-              pointerEvents: 'none'
-            }}
-          />
+        {/* ==========================================================================
+            CAPA 3.5: ATMÓSFERA Y MOTES DE POLVO VICTORIANO (GFX56 DustParticlesOverlay)
+            ========================================================================== */}
+        <DustParticlesOverlay enabled={true} />
 
-          {/* Halo de luz cálida proyectado por la vela sobre el escritorio */}
-          <div
-            className="absolute rounded-full bg-radial from-[#d4af37]/18 via-[#854d0e]/6 to-transparent blur-xl pointer-events-none"
-            style={{
-              left: '420px',
-              top: '460px',
-              width: '440px',
-              height: '380px',
-              pointerEvents: 'none'
-            }}
-          />
-        </div>
+        {/* ==========================================================================
+            CAPA DE DEPURACIÓN TÉCNICA: MÁSCARAS DE INTERACCIÓN (GFX28)
+            ========================================================================== */}
+        <InteractionMasksOverlay
+          visible={debugOverlay}
+          activeHotspotId={state.activeHotspotId}
+          focusedHotspotId={state.focusedHotspotId}
+          onSelectHotspot={handleActivate}
+        />
 
       </SceneCamera>
     </div>

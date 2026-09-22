@@ -8,7 +8,6 @@ interface CandleObjectProps {
 }
 
 export const CandleObject: React.FC<CandleObjectProps> = ({ tier, description, onClick }) => {
-  const [hovered, setHovered] = useState(false);
   const [inspecting, setInspecting] = useState(false);
 
   // Parámetros cinéticos y lumínicos según el estado de la vela
@@ -62,8 +61,6 @@ export const CandleObject: React.FC<CandleObjectProps> = ({ tier, description, o
   return (
     <div 
       className="relative cursor-pointer select-none group"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       onClick={() => {
         setInspecting(prev => !prev);
         if (onClick) onClick();
@@ -113,31 +110,26 @@ export const CandleObject: React.FC<CandleObjectProps> = ({ tier, description, o
           </svg>
         </div>
 
-        {/* Pabilo / Mecha de algodón ennegrecido */}
-        <div style={{ width: '2px', height: '12px', backgroundColor: '#171410', marginBottom: '-4px', zIndex: 10 }} />
+        {/* Pabilo / Mecha de algodón */}
+        <div style={{ width: '2px', height: '10px', backgroundColor: '#171410', marginBottom: '-2px', zIndex: 10, opacity: tier === 'AHOGADA_EN_CERA' ? 0.3 : 0.8 }} />
 
-        {/* Cilindro de Cera de Sebo con gotas derretidas */}
+        {/* Cilindro de Cera y Desgaste Somático */}
         <div className="candle-wax-cylinder">
-          {/* Chorretones de cera */}
-          <div style={{ position: 'absolute', top: 0, left: '4px', width: '8px', height: '32px', backgroundColor: '#f5efe3', borderRadius: '0 0 9999px 9999px', opacity: 0.9 }} />
-          <div style={{ position: 'absolute', top: 0, right: '8px', width: '6px', height: '48px', backgroundColor: '#dfd2bc', borderRadius: '0 0 9999px 9999px', opacity: 0.8 }} />
-          <div style={{ position: 'absolute', bottom: '8px', left: 0, right: 0, height: '16px', background: 'linear-gradient(0deg, rgba(138, 122, 99, 0.4) 0%, transparent 100%)' }} />
+          {/* Chorretones de cera en estados de fatiga o ahogo */}
+          {(tier === 'CREPITANTE' || tier === 'AHOGADA_EN_CERA') && (
+            <>
+              <div style={{ position: 'absolute', top: 0, left: '4px', width: '8px', height: '32px', backgroundColor: '#f5efe3', borderRadius: '0 0 9999px 9999px', opacity: 0.85 }} />
+              <div style={{ position: 'absolute', top: 0, right: '8px', width: '6px', height: '48px', backgroundColor: '#dfd2bc', borderRadius: '0 0 9999px 9999px', opacity: 0.8 }} />
+              <div style={{ position: 'absolute', bottom: '8px', left: 0, right: 0, height: '16px', background: 'linear-gradient(0deg, rgba(138, 122, 99, 0.4) 0%, transparent 100%)' }} />
+            </>
+          )}
         </div>
 
-        {/* Palmatoria de latón oxidado */}
+        {/* Palmatoria de latón (resplandor en foco) */}
         <div className="candle-base-holder">
           <div className="candle-base-rim" />
           <div className="candle-base-dish" />
         </div>
-      </div>
-
-      {/* Etiqueta Ambiental en Reposo (≤ 7 Palabras — Ley del Objeto) */}
-      <div 
-        className={`absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-serif italic text-[#c2b297] bg-[#120f0c]/90 px-2.5 py-0.5 rounded border border-[#423524] transition-opacity duration-200 pointer-events-none z-20 ${
-          hovered ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        {config.labelBrief}
       </div>
 
       {/* Despliegue de Reflexión al interactuar (Prosa bajo demanda) */}

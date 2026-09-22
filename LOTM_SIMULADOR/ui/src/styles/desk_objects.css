@@ -23,19 +23,26 @@ button, button:focus, button:active {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 12px;
+  padding: 16px;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid #2b1b10;
-  background: linear-gradient(180deg, #140e0a 0%, #1a120c 50%, #0c0806 100%);
-  box-shadow: inset 0 0 35px rgba(0,0,0,0.9);
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 300ms ease;
+}
+
+.staircase-container:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 80%);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
 }
 
 .staircase-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(18, 14, 11, 0.92);
+  background: rgba(18, 14, 11, 0.85);
+  backdrop-filter: blur(4px);
   border: 1px solid #4a3520;
   padding: 4px 8px;
   border-radius: 4px;
@@ -67,7 +74,17 @@ button, button:focus, button:active {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 300ms ease;
+}
+
+.niche-container:hover {
+  border-color: rgba(203, 213, 225, 0.4);
+  box-shadow: 0 0 25px rgba(203, 213, 225, 0.2);
+  background: radial-gradient(circle at center, rgba(203, 213, 225, 0.05) 0%, transparent 80%);
 }
 
 .niche-alcove {
@@ -78,10 +95,10 @@ button, button:focus, button:active {
   bottom: 0;
   border-top-left-radius: 9999px;
   border-top-right-radius: 9999px;
-  background: linear-gradient(180deg, #090708 0%, #140e13 60%, #1f141d 100%);
-  border: 2px solid #382534;
-  box-shadow: inset 0 10px 25px rgba(0,0,0,0.95);
+  background: transparent;
+  border: 1px solid transparent;
   overflow: hidden;
+  transition: all 300ms ease;
 }
 
 /* ==========================================================================
@@ -92,18 +109,25 @@ button, button:focus, button:active {
   width: 100%;
   height: 100%;
   border-radius: 6px;
-  padding: 12px;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  border: 5px solid #3d2a1b;
-  box-shadow: 0 16px 36px rgba(0,0,0,0.9), inset 0 0 30px rgba(0,0,0,0.85);
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 300ms ease;
+}
+
+.corkboard-frame:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+  background: rgba(18, 14, 10, 0.15);
 }
 
 .corkboard-clue-note {
-  width: 95px;
-  height: 80px;
+  width: 110px;
+  height: 90px;
   border-radius: 2px;
   padding: 6px;
   background: #ede4d1;
@@ -116,46 +140,48 @@ button, button:focus, button:active {
 }
 
 /* ==========================================================================
-   4. RELOJ DE FALTRIQUERA Y ALMANAQUE
+   4. RELOJ DE SOBREMESA Y ALMANAQUE
    ========================================================================== */
 .pocketwatch-parchment {
   position: absolute;
-  width: 110px;
-  height: 95px;
+  width: 140px;
+  height: 110px;
   border-radius: 3px;
-  background: linear-gradient(180deg, #f0e7d5 0%, #e5d8be 60%, #d6c4a3 100%);
-  border: 1px solid #a89574;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
-  padding: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transform: rotate(-6deg);
+  transition: all 300ms ease;
 }
 
 .pocketwatch-case {
   position: relative;
   z-index: 10;
-  width: 96px;
-  height: 96px;
-  border-radius: 9999px;
-  padding: 4px;
-  background: radial-gradient(circle at 35% 30%, #fef08a 0%, #d4af37 40%, #8c733e 70%, #3a2810 100%);
-  border: 2px solid rgba(254, 240, 138, 0.7);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.85);
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  padding: 6px;
+  background: transparent;
+  border: 1px solid transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 300ms ease;
+}
+
+.pocketwatch-case:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
 }
 
 .pocketwatch-dial {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 9999px;
-  background: radial-gradient(circle, #fcfaf3 0%, #eee4cd 70%, #dfd3b8 100%);
-  border: 1px solid #785d2f;
-  box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
+  background: transparent;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,79 +192,97 @@ button, button:focus, button:active {
    5. PLIEGOS NOTARIALES DE IDENTIDAD
    ========================================================================== */
 .identity-papers-sheet {
-  width: 220px;
-  height: 145px;
-  background: linear-gradient(180deg, #f3ebd8 0%, #ede3cc 50%, #dfcfb2 100%);
+  width: 100%;
+  height: 100%;
+  background: transparent;
   color: #1a1612;
-  border-radius: 3px;
-  padding: 12px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.8);
-  border: 1px solid #b8a688;
+  border-radius: 6px;
+  padding: 16px;
+  border: 1px solid transparent;
   cursor: pointer;
-  transform: rotate(2deg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  transition: all 300ms ease;
+}
+
+.identity-papers-sheet:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+  background: rgba(245, 239, 227, 0.08);
 }
 
 /* ==========================================================================
    6. CUADERNO DE ACTUACIÓN
    ========================================================================== */
 .acting-book-cover {
-  width: 190px;
-  height: 130px;
-  border-radius: 5px;
-  background: linear-gradient(135deg, #24170e 0%, #3d2817 50%, #1e130b 100%);
-  border: 1px solid #5a3c21;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.9);
-  padding: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transform: rotate(-3deg);
   cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.acting-book-cover:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+  background: rgba(212, 175, 55, 0.05);
 }
 
 /* ==========================================================================
    7. MONEDERO DE CUERO
    ========================================================================== */
 .leather-pouch-body {
-  width: 110px;
-  height: 95px;
-  border-bottom-left-radius: 40%;
-  border-bottom-right-radius: 40%;
-  border-top-left-radius: 20%;
-  border-top-right-radius: 20%;
-  background: linear-gradient(180deg, #2e1d13 0%, #3d2719 50%, #1a100a 100%);
-  border: 1px solid #5a3b25;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.85);
-  padding: 8px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.leather-pouch-body:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+  background: rgba(212, 175, 55, 0.05);
 }
 
 /* ==========================================================================
    8. MISIVA SELLADA DEL BAZAR
    ========================================================================== */
 .bazaar-letter-envelope {
-  width: 130px;
-  height: 95px;
-  border-radius: 4px;
-  background: linear-gradient(135deg, #eee1c4 0%, #dfcfab 50%, #cbb994 100%);
-  border: 1px solid #a89471;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.75);
-  padding: 8px;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transform: rotate(3deg);
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition: all 300ms ease;
+}
+
+.bazaar-letter-envelope:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+  background: rgba(212, 175, 55, 0.05);
 }
 
 .bazaar-wax-seal {
@@ -261,24 +305,34 @@ button, button:focus, button:active {
   height: 100%;
   position: relative;
   cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 300ms ease;
+}
+
+.desk-cracks-container:hover {
+  border-color: rgba(185, 28, 28, 0.3);
 }
 
 /* ==========================================================================
    10. ESPEJO DE AZOGUE SOMÁTICO
    ========================================================================== */
 .somatic-mirror-frame {
-  width: 176px;
-  height: 224px;
+  width: 100%;
+  height: 100%;
   border-radius: 50% / 60%;
-  padding: 14px;
-  background: linear-gradient(180deg, #4a4237 0%, #241f1a 50%, #120f0d 100%);
-  border: 2px solid #8c733e;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  background: transparent;
+  border: 1px solid transparent;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 500ms ease;
+  transition: all 400ms ease;
+}
+
+.somatic-mirror-frame:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
 }
 
 .somatic-mirror-glass {
@@ -287,8 +341,8 @@ button, button:focus, button:active {
   border-radius: 50% / 60%;
   position: relative;
   overflow: hidden;
-  background-color: #0e0c0a;
-  border: 1px solid #382c18;
+  background: transparent;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,11 +352,10 @@ button, button:focus, button:active {
    11. LA VELA DE SEBO Y PALMATORIA
    ========================================================================== */
 .candle-wax-cylinder {
-  width: 28px;
-  height: 96px;
-  background: linear-gradient(90deg, #cfc3aa 0%, #ede4d1 50%, #b3a489 100%);
+  width: 32px;
+  height: 105px;
+  background: transparent;
   border-radius: 2px 2px 0 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
   position: relative;
   overflow: hidden;
 }
@@ -313,21 +366,19 @@ button, button:focus, button:active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: transparent;
 }
 
 .candle-base-rim {
-  width: 40px;
-  height: 8px;
-  background-color: #6b532d;
+  width: 44px;
+  height: 9px;
+  background: transparent;
   border-radius: 2px 2px 0 0;
-  border-top: 1px solid #c29b47;
 }
 
 .candle-base-dish {
-  width: 64px;
-  height: 12px;
-  background: linear-gradient(90deg, #423319 0%, #8c7038 50%, #302512 100%);
+  width: 76px;
+  height: 14px;
+  background: transparent;
   border-radius: 9999px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.8);
-  border: 1px solid #a68444;
 }

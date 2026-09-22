@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import type { CharacterDiegetic } from '../types';
+import { LetterUnfoldModal } from '../../components/common/LetterUnfoldModal';
 
 interface OriginTemplate {
   id: string;
@@ -10,6 +11,7 @@ interface OriginTemplate {
   burden: { type: 'DEUDA' | 'SECRETO'; description: string };
   anchors: string[];
   flavorText: string;
+  imageUrl?: string;
 }
 
 const CANONICAL_ORIGINS: OriginTemplate[] = [
@@ -21,7 +23,8 @@ const CANONICAL_ORIGINS: OriginTemplate[] = [
     salaryDesc: '2 libras, 5 chelines semanales',
     burden: { type: 'DEUDA', description: 'Pagaré hipotecario de 30 libras con la firma de un fiador fallecido' },
     anchors: ['El Libro Matriz de Actas Notariales', 'Sr. Kenneth (Notario titular)', 'El Café de la Esquina de Saint Jude'],
-    flavorText: 'Copias escrituras y firmas con tinta ferrogálica mientras el polvo de papel carcome tus pulmones.'
+    flavorText: 'Copias escrituras y firmas con tinta ferrogálica mientras el polvo de papel carcome tus pulmones.',
+    imageUrl: '/art/GFX36A_origin_clerk.jpg'
   },
   {
     id: 'ORIGIN_MEDICAL_STUDENT',
@@ -31,7 +34,8 @@ const CANONICAL_ORIGINS: OriginTemplate[] = [
     salaryDesc: '1 libra, 15 chelines semanales',
     burden: { type: 'SECRETO', description: 'Tráfico de cadáveres no reclamados para el anfiteatro de disección' },
     anchors: ['Bisturí con el blasón de la Facultad', 'Doctor Watson (Tutor de patología)', 'El Anfiteatro de Disección a medianoche'],
-    flavorText: 'Tus manos huelen a fenol y formol. Conoces los órganos por su textura y el frío de la muerte.'
+    flavorText: 'Tus manos huelen a fenol y formol. Conoces los órganos por su textura y el frío de la muerte.',
+    imageUrl: '/art/GFX36B_origin_medical_student.jpg'
   },
   {
     id: 'ORIGIN_REPORTER',
@@ -41,7 +45,8 @@ const CANONICAL_ORIGINS: OriginTemplate[] = [
     salaryDesc: '2 libras semanales',
     burden: { type: 'SECRETO', description: 'Cuaderno con nombres de confidentes policiales sobornados' },
     anchors: ['La Máquina de Escribir Remington', 'Subinspector Lestrade (Enlace policial)', 'La Redacción de The Daily Observer'],
-    flavorText: 'La tinta fresca en tus dedos y el fango en las suelas de tus botas persiguen el hedor de los crímenes de Backlund.'
+    flavorText: 'La tinta fresca en tus dedos y el fango en las suelas de tus botas persiguen el hedor de los crímenes de Backlund.',
+    imageUrl: '/art/GFX36C_origin_reporter.jpg'
   },
   {
     id: 'ORIGIN_FRAUDULENT_MEDIUM',
@@ -51,7 +56,8 @@ const CANONICAL_ORIGINS: OriginTemplate[] = [
     salaryDesc: '3 libras semanales de honorarios volátiles',
     burden: { type: 'DEUDA', description: 'Deuda usurera de 45 libras con un prestamista del Distrito Este' },
     anchors: ['Péndulo de cuarzo tallado', 'Madame Vivienne (Mecenas de la alta sociedad)', 'El Salón de Terciopelo Negro'],
-    flavorText: 'Haces tintinear campanillas ocultas bajo la mesa para señoras de luto, fingiendo hablar con los difuntos.'
+    flavorText: 'Haces tintinear campanillas ocultas bajo la mesa para señoras de luto, fingiendo hablar con los difuntos.',
+    imageUrl: '/art/GFX36D_origin_medium.jpg'
   },
   {
     id: 'ORIGIN_DOCKWORKER',
@@ -61,7 +67,8 @@ const CANONICAL_ORIGINS: OriginTemplate[] = [
     salaryDesc: '1 libra, 2 chelines semanales',
     burden: { type: 'DEUDA', description: 'Deuda por multa de huelga portuaria no autorizada' },
     anchors: ['Gancho de hierro forjado de carga', 'Old Barnaby (Patrón de chalana)', 'La Taberna del Marinero Ahogado'],
-    flavorText: 'Tus hombros conocen el peso de los fardos de ultramar y el alquitrán del río Tussock.'
+    flavorText: 'Tus hombros conocen el peso de los fardos de ultramar y el alquitrán del río Tussock.',
+    imageUrl: '/art/GFX36E_origin_dockworker.jpg'
   },
   {
     id: 'ORIGIN_PRIVATE_INVESTIGATOR',
@@ -71,7 +78,8 @@ const CANONICAL_ORIGINS: OriginTemplate[] = [
     salaryDesc: 'Honorarios según encargos (promedio 2 libras)',
     burden: { type: 'DEUDA', description: 'Alquiler acumulado de tres meses del despacho en Minsk Street' },
     anchors: ['Lupa de latón con mango de ébano', 'Sra. Higgins (Casera enérgica)', 'La Oficina de Minsk Street'],
-    flavorText: 'Los pasos en la escalera de madera siempre anuncian clientes deseperados o acreedores pacientes.'
+    flavorText: 'Los pasos en la escalera de madera siempre anuncian clientes deseperados o acreedores pacientes.',
+    imageUrl: '/art/GFX36F_origin_detective.jpg'
   }
 ];
 
@@ -213,11 +221,26 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
   };
 
   return (
-    <div className="prologue-screen min-h-screen flex items-center justify-center p-6 select-none" style={{ background: '#090807' }}>
+    <div 
+      className="prologue-screen w-[1920px] h-[1080px] w-full h-full flex items-center justify-center p-6 select-none relative overflow-hidden"
+      style={{
+        backgroundImage: 'url(/art/GFX47_prologue_hallway.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: '#090807'
+      }}
+    >
+      {/* Velo atmosférico victoriano sobre el zaguán */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(9, 8, 7, 0.78) 0%, rgba(5, 4, 3, 0.94) 100%)'
+        }}
+      />
       
       {/* Paso 1: Selección de Origen Canónico */}
       {step === 'ORIGIN_SELECT' && (
-        <div className="w-full max-w-4xl parchment-sheet p-8 rounded shadow-2xl">
+        <div className="w-full max-w-4xl parchment-sheet p-8 rounded shadow-2xl relative z-10">
           <div className="text-center mb-6">
             <h1 className="text-2xl font-bold tracking-widest text-[#1f1a14]" style={{ fontFamily: 'Cinzel' }}>
               IDENTIDAD Y ORIGEN EN BACKLUND
@@ -244,21 +267,36 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
                 <div
                   key={origin.id}
                   onClick={() => setSelectedOrigin(origin)}
-                  className={`p-4 rounded border cursor-pointer transition-all ${
+                  className={`p-4 rounded border cursor-pointer transition-all flex flex-col justify-between ${
                     isSelected 
                       ? 'bg-[#e4dac4] border-[#8c733e] shadow-md' 
                       : 'bg-[#ede5d3] border-[#d1c5ad] hover:bg-[#e6dcc6]'
                   }`}
                 >
-                  <h3 className="font-serif font-bold text-base text-[#1f1a14] mb-1" style={{ fontFamily: 'Cinzel' }}>
-                    {origin.name}
-                  </h3>
-                  <p className="text-xs text-[#6b5f4f] mb-2 font-serif italic">
-                    {origin.district} · {origin.salaryDesc}
-                  </p>
-                  <p className="text-xs text-[#2a241d] leading-relaxed mb-3">
-                    {origin.flavorText}
-                  </p>
+                  <div>
+                    {/* Miniatura de Viñeta de Oficio GFX36A-F */}
+                    {origin.imageUrl && (
+                      <div style={{ width: '100%', height: '96px', overflow: 'hidden', borderRadius: '4px', marginBottom: '8px', border: '1px solid #c4b59a', backgroundColor: '#d9cdb8', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <img 
+                          src={origin.imageUrl} 
+                          alt={origin.name}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                          onError={(e) => {
+                            (e.target as HTMLElement).style.display = 'none';
+                          }}
+                        />
+                      </div>
+                    )}
+                    <h3 className="font-serif font-bold text-base text-[#1f1a14] mb-1" style={{ fontFamily: 'Cinzel' }}>
+                      {origin.name}
+                    </h3>
+                    <p className="text-xs text-[#6b5f4f] mb-2 font-serif italic">
+                      {origin.district} · {origin.salaryDesc}
+                    </p>
+                    <p className="text-xs text-[#2a241d] leading-relaxed mb-3">
+                      {origin.flavorText}
+                    </p>
+                  </div>
                   <div className="border-t border-[#c7bba2] pt-2 text-[11px] text-[#524536]">
                     <strong>Carga:</strong> {origin.burden.description}
                   </div>
@@ -278,45 +316,25 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
         </div>
       )}
 
-      {/* Paso 2: La Carta en Vitela del Benefactor */}
+      {/* Paso 2: La Carta en Vitela del Benefactor (GFX48) */}
       {step === 'LETTER' && (
-        <div className="w-full max-w-2xl parchment-sheet p-8 rounded shadow-2xl relative">
-          <div className="border-b border-[#c4b59a] pb-3 mb-6 text-center">
-            <span className="text-xs text-[#736553] uppercase tracking-widest font-bold">
-              Correspondencia Reservada
-            </span>
-            <h2 className="text-xl font-bold text-[#1f1a14] mt-1" style={{ fontFamily: 'Cinzel' }}>
-              De un Benefactor Silencioso
-            </h2>
-          </div>
-
-          <div className="text-sm text-[#1f1a14] leading-relaxed font-serif space-y-4 mb-8 italic">
-            <p>
-              "Estimado {characterName},"
-            </p>
-            <p>
-              "Sé de tus noches en vela en el desván de {selectedOrigin.district}. Sé de las cargas que arrastras y del peso silencioso de tu vida civil como {selectedOrigin.profession}."
-            </p>
-            <p>
-              "En el pequeño cofre de caoba sobre el escritorio hallarás dos frascos de vidrio soplado. Ninguno de ellos es veneno común; ambos te arrancarán del letargo de los ciegos."
-            </p>
-            <p>
-              "Una vez que bebas, no habrá retorno al sosiego profano. La niebla de Backlund te observará tanto como tú a ella."
-            </p>
-          </div>
-
-          <div className="flex justify-between items-center border-t border-[#c4b59a] pt-4">
-            <span className="text-xs text-[#736553] italic">
-              Sello de lacre rojo carmesí con un grabado vertical
-            </span>
-            <button
-              onClick={() => setStep('DILEMMA')}
-              className="crimson-btn px-6 py-2 text-sm"
-            >
-              Examinar la Carta y el Sello
-            </button>
-          </div>
-        </div>
+        <LetterUnfoldModal
+          isOpen={true}
+          onClose={() => setStep('ORIGIN_SELECT')}
+          title="De un Benefactor Silencioso"
+          senderName="Un Benefactor Silencioso"
+          recipientName={characterName}
+          paragraphs={[
+            `Sé de tus noches en vela en el desván de ${selectedOrigin.district}. Sé de las cargas que arrastras y del peso silencioso de tu vida civil como ${selectedOrigin.profession}.`,
+            "En el pequeño cofre de caoba sobre el escritorio hallarás dos frascos de vidrio soplado. Ninguno de ellos es veneno común; ambos te arrancarán del letargo de los ciegos.",
+            "Una vez que bebas, no habrá retorno al sosiego profano. La niebla de Backlund te observará tanto como tú a ella."
+          ]}
+          postscript="El carmesí de la cera guarda el rastro de una mano que no vuelve a escribir dos veces."
+          actionButtonText="Examinar la Carta y el Sello"
+          onAcknowledge={() => setStep('DILEMMA')}
+          waxSealDescription="Sello de lacre carmesí intacto con un grabado vertical arcaico"
+          initialState="SEALED"
+        />
       )}
 
       {/* Paso 3: Dilema de Iniciación Tutorial */}
@@ -377,7 +395,7 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
 
       {/* Paso 4: La Elección Críptica de Poción */}
       {step === 'POTION_CHOICE' && (
-        <div className="w-full max-w-3xl parchment-sheet p-8 rounded shadow-2xl">
+        <div className="w-full max-w-4xl parchment-sheet p-8 rounded shadow-2xl relative z-10">
           <div className="text-center mb-6">
             <h2 className="text-xl font-bold text-[#1f1a14]" style={{ fontFamily: 'Cinzel' }}>
               LOS DOS FRASCOS SOBRE EL TERCIOPELO
@@ -391,49 +409,63 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
             
             {/* Opción A: Frasco Cobalto (The Fool / Vidente) */}
             <div 
-              className="p-5 rounded bg-[#ebe2ce] border border-[#bfae91] flex flex-col justify-between"
+              className="p-5 rounded bg-[#ebe2ce] border border-[#bfae91] flex flex-col justify-between items-center text-center"
             >
-              <div>
-                <h3 className="font-serif font-bold text-base text-[#1e293b] mb-2" style={{ fontFamily: 'Cinzel' }}>
+              <div className="w-full flex flex-col items-center">
+                <div className="w-32 h-44 mb-3 rounded overflow-hidden border border-[#94a3b8] bg-[#1e293b]/10 shadow-inner flex items-center justify-center">
+                  <img 
+                    src="/art/GFX50_potion_cobalt_eyes.jpg" 
+                    alt="Poción Ojos de Cobalto"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="font-serif font-bold text-base text-[#1e293b] mb-1" style={{ fontFamily: 'Cinzel' }}>
                   Frasco de Vidrio Cobalto
                 </h3>
-                <p className="text-xs text-[#334155] leading-relaxed mb-4">
-                  El líquido en su interior es de un azul nocturno profundo, casi opaco. Al mover el frasco suavemente, partículas plateadas giran como un torbellino estrellado y diminutos ojos dorados parecen abrirse y cerrarse en la superficie.
+                <p className="text-xs text-[#334155] leading-relaxed mb-3">
+                  El líquido en su interior es de un azul nocturno profundo. Al mover el frasco suavemente, partículas plateadas giran como un torbellino estrellado y diminutos ojos dorados parecen abrirse y cerrarse.
                 </p>
-                <div className="text-xs text-[#475569] italic border-t border-[#d8ccb8] pt-2">
-                  "El destino es un hilo invisible. Solo quien aprende a no temer la incertidumbre puede contemplar su tejido."
+                <div className="text-xs text-[#475569] italic border-t border-[#d8ccb8] pt-2 w-full">
+                  "El destino es un hilo invisible. Quien no teme la incertidumbre aprende a contemplar su tejido."
                 </div>
               </div>
 
               <button
                 onClick={() => handleStartRitual('COBALTO')}
-                className="mt-6 px-4 py-2 bg-[#1e293b] text-[#e2e8f0] font-serif font-bold text-xs rounded hover:bg-[#0f172a] transition-all"
+                className="mt-6 w-full py-2.5 bg-[#1e293b] text-[#e2e8f0] font-serif font-bold text-xs uppercase tracking-wider rounded hover:bg-[#0f172a] transition-all shadow-md"
               >
-                Elegir el Frasco Cobalto
+                Elegir el Frasco Cobalto (Fool)
               </button>
             </div>
 
             {/* Opción B: Frasco Ámbar (Visionary / Espectador) */}
             <div 
-              className="p-5 rounded bg-[#ebe2ce] border border-[#bfae91] flex flex-col justify-between"
+              className="p-5 rounded bg-[#ebe2ce] border border-[#bfae91] flex flex-col justify-between items-center text-center"
             >
-              <div>
-                <h3 className="font-serif font-bold text-base text-[#78350f] mb-2" style={{ fontFamily: 'Cinzel' }}>
+              <div className="w-full flex flex-col items-center">
+                <div className="w-32 h-44 mb-3 rounded overflow-hidden border border-[#d97706]/40 bg-[#451a03]/10 shadow-inner flex items-center justify-center">
+                  <img 
+                    src="/art/GFX51_potion_amber_mirror.jpg" 
+                    alt="Poción Espejo de Ámbar"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="font-serif font-bold text-base text-[#78350f] mb-1" style={{ fontFamily: 'Cinzel' }}>
                   Frasco de Vidrio Ámbar
                 </h3>
-                <p className="text-xs text-[#451a03] leading-relaxed mb-4">
-                  Un líquido dorado y espeso descansa en quietud absoluta. La superficie es tan nítida como un espejo veneciano, reflejando el zaguán con una quietud perturbadora que apacigua el pulso de quien lo contempla.
+                <p className="text-xs text-[#451a03] leading-relaxed mb-3">
+                  Un líquido dorado y espeso descansa en quietud absoluta. La superficie es tan nítida como un espejo veneciano, reflejando el zaguán con una quietud perturbadora que apacigua el pulso.
                 </p>
-                <div className="text-xs text-[#78350f] italic border-t border-[#d8ccb8] pt-2">
-                  "El mundo es un gran teatro. Quien renuncia a ser protagonista aprende a leer los pensamientos en las sombras."
+                <div className="text-xs text-[#78350f] italic border-t border-[#d8ccb8] pt-2 w-full">
+                  "El mundo es un gran teatro. Quien renuncia a ser protagonista aprende a leer los pensamientos."
                 </div>
               </div>
 
               <button
                 onClick={() => handleStartRitual('AMBAR')}
-                className="mt-6 px-4 py-2 bg-[#78350f] text-[#fef3c7] font-serif font-bold text-xs rounded hover:bg-[#451a03] transition-all"
+                className="mt-6 w-full py-2.5 bg-[#78350f] text-[#fef3c7] font-serif font-bold text-xs uppercase tracking-wider rounded hover:bg-[#451a03] transition-all shadow-md"
               >
-                Elegir el Frasco Ámbar
+                Elegir el Frasco Ámbar (Visionary)
               </button>
             </div>
 
@@ -443,7 +475,16 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
 
       {/* Paso 4.b: Escenificación del Ritual — Apagar las Lámparas una a una */}
       {step === 'RITUAL_DARKEN' && (
-        <div className="w-full max-w-xl text-center p-8 bg-[#14110e]/95 border border-[#4a3622] rounded shadow-2xl z-30 font-serif">
+        <div className="w-full max-w-xl text-center p-8 bg-[#14110e]/95 border border-[#4a3622] rounded shadow-2xl z-30 font-serif relative">
+          {/* Ilustración de la Lámpara GFX49 */}
+          <div className="w-24 h-32 mx-auto mb-4 rounded overflow-hidden border border-[#5e4326] bg-[#0c0a08]">
+            <img 
+              src="/art/GFX49_gas_lamp.jpg" 
+              alt="Lámpara de gas de Backlund"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
           <h2 className="text-xl font-bold tracking-wider text-[#d4af37] cinzel mb-2">
             LA CLAUSURA DE LA LUZ
           </h2>
@@ -508,30 +549,19 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
             Mantén presionado para alzar la pócima y beber. Soltar antes retira la mano temblando.
           </p>
 
-          {/* Animación del Cáliz elevándose según progreso */}
-          <div className="h-40 flex flex-col items-center justify-center relative mb-4">
+          {/* Animación del Frasco de Poción elevándose según progreso */}
+          <div className="h-44 flex flex-col items-center justify-center relative mb-4">
             <div 
               className="transition-transform duration-100 ease-out"
               style={{
-                transform: `translateY(-${(holdProgressMs / 3000) * 50}px) scale(${1 + (holdProgressMs / 3000) * 0.15})`
+                transform: `translateY(-${(holdProgressMs / 3000) * 40}px) scale(${1 + (holdProgressMs / 3000) * 0.12})`
               }}
             >
-              <div 
-                className="w-16 h-24 rounded-b-full rounded-t-sm p-1.5 border-2 relative flex flex-col justify-end shadow-2xl"
-                style={{
-                  borderColor: potionChoice === 'COBALTO' ? '#38bdf8' : '#fbbf24',
-                  backgroundColor: potionChoice === 'COBALTO' ? '#0f172a' : '#451a03',
-                  boxShadow: potionChoice === 'COBALTO' 
-                    ? `0 0 ${20 + (holdProgressMs / 3000) * 40}px rgba(56, 189, 248, 0.6)` 
-                    : `0 0 ${20 + (holdProgressMs / 3000) * 40}px rgba(251, 191, 36, 0.6)`
-                }}
-              >
-                <div 
-                  className="w-full rounded-b-full transition-all duration-100"
-                  style={{
-                    height: `${40 + (holdProgressMs / 3000) * 40}%`,
-                    backgroundColor: potionChoice === 'COBALTO' ? '#0284c7' : '#d97706'
-                  }}
+              <div className="w-24 h-36 rounded overflow-hidden border-2 border-[#d4af37] shadow-2xl bg-[#120f0c]">
+                <img 
+                  src={potionChoice === 'COBALTO' ? '/art/GFX50_potion_cobalt_eyes.jpg' : '/art/GFX51_potion_amber_mirror.jpg'}
+                  alt="Frasco de Poción"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>

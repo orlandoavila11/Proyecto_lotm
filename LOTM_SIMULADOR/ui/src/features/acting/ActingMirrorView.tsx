@@ -9,7 +9,15 @@ interface ActingMirrorViewProps {
 
 export const ActingMirrorView: React.FC<ActingMirrorViewProps> = ({ character, onBackToDesk }) => {
   return (
-    <div className="acting-screen min-h-screen p-6 flex flex-col justify-between select-none" style={{ background: '#100e0b' }}>
+    <div 
+      className="acting-screen p-8 flex flex-col justify-between select-none relative overflow-hidden" 
+      style={{ 
+        width: '1920px', 
+        height: '1080px', 
+        position: 'relative', 
+        background: '#100e0b' 
+      }}
+    >
       
       {/* Cabecera */}
       <header className="flex justify-between items-center pb-4 border-b border-[#2d2419] mb-6">

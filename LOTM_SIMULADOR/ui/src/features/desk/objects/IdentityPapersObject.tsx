@@ -24,51 +24,36 @@ export const IdentityPapersObject: React.FC<IdentityPapersObjectProps> = ({
   anchors
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hovered, setHovered] = useState(false);
 
   return (
     <div className="relative">
-      {/* Pliegos Extendidos en Perspectiva sobre la Mesa */}
+      {/* Pliegos Extendidos en Perspectiva sobre la Mesa (Superpuestos a la Caoba de C0) */}
       <div 
-        className="identity-papers-sheet hover:rotate-0 hover:scale-105 transition-all select-none relative group"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        className="identity-papers-sheet hover:scale-102 transition-all select-none relative group"
         onClick={() => setIsOpen(true)}
         title="Documentos civiles y fianza de humanidad"
-        style={{
-          backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(180, 140, 90, 0.25) 0%, transparent 50%), linear-gradient(180deg, #f0e7d5 0%, #e3d3b6 100%)'
-        }}
       >
         {/* Cabecera del papel timbrado */}
-        <div className="flex justify-between items-center border-b border-[#a89373] pb-1 mb-2">
-          <span className="text-[10px] font-bold tracking-widest uppercase font-serif text-[#4a3b29]">
+        <div className="flex justify-between items-center border-b border-[#8c733e]/40 pb-1 mb-1 opacity-80 group-hover:opacity-100 transition-opacity">
+          <span className="text-[10px] font-bold tracking-widest uppercase font-serif text-[#3d2e1e]">
             REINO DE LOEN · ACTA
           </span>
-          <div className="w-3 h-3 rounded-full bg-[#851c22] border border-[#a68444] opacity-80" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#851c22] border border-[#a68444] opacity-80 shadow-sm" />
         </div>
 
-        {/* Nombre y Oficio Caligrafiados */}
-        <div className="text-sm font-bold text-[#2b2014] font-serif leading-tight">
+        {/* Nombre y Oficio Caligrafiados como Tinta Ferrogálica */}
+        <div className="text-sm font-bold text-[#1f170f] font-serif leading-tight tracking-wide drop-shadow-sm">
           {name}
         </div>
-        <div className="text-[11px] italic text-[#57442f] font-serif mb-2">
+        <div className="text-[11px] italic text-[#3d2e1e] font-serif mb-1">
           {profession} · {district}
         </div>
 
         {/* Huellas de Anclas */}
-        <div className="flex items-center gap-1 text-[10px] font-bold text-[#6b553c] mt-auto">
+        <div className="flex items-center gap-1.5 text-[10px] font-bold text-[#4a3622] mt-auto opacity-85 group-hover:opacity-100 transition-opacity">
           <Anchor size={12} className="text-[#8c7038]" />
           <span>{anchors.length} Vínculos Mortales</span>
         </div>
-      </div>
-
-      {/* Etiqueta Ambiental en Reposo (≤ 7 Palabras) */}
-      <div 
-        className={`absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-serif italic text-[#c2b297] bg-[#120f0c]/90 px-2 py-0.5 rounded border border-[#423524] transition-opacity duration-200 pointer-events-none z-20 ${
-          hovered && !isOpen ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        Actas de identidad y fianza civil
       </div>
 
       {/* Documento Elevado en Primer Plano (Modal de Lectura) */}

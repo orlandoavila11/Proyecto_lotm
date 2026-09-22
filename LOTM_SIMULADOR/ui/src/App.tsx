@@ -25,8 +25,9 @@ function AppContent() {
   const { state, navigateTo, closeInspection, backToDesk, toggleSpiritVision } = useNavigation();
   const [character, setCharacter] = useState<CharacterDiegetic | null>(null);
   const [showHarness, setShowHarness] = useState<boolean>(false);
+  const [showDebugMasks, setShowDebugMasks] = useState<boolean>(false);
 
-  // Comprobar parámetro URL para activar harness automáticamente (?harness=true)
+  // Comprobar parámetros URL (?harness=true, ?masks=true)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get('harness') === 'true') {
@@ -36,38 +37,43 @@ function AppContent() {
         setCharacter(FOOL_SEER_FIXTURE as unknown as CharacterDiegetic);
       }
     }
+    if (params.get('masks') === 'true') {
+      setShowDebugMasks(true);
+    }
   }, [character]);
 
   // Si no hay personaje despierto y no está forzado el harness, iniciar en el Prólogo Canónico
   if (!character) {
     return (
-      <div className="relative min-h-screen bg-[#090807] text-[#e5ded2]">
-        <PrologueView 
-          onCompletePrologue={(newChar) => {
-            setCharacter(newChar);
-            navigateTo('DESK_WIDE');
-          }} 
-        />
-        
-        {/* Acceso Rápido al Harness de Pruebas R2 */}
-        <button
-          type="button"
-          onClick={() => {
-            setCharacter(FOOL_SEER_FIXTURE as unknown as CharacterDiegetic);
-            setShowHarness(true);
-          }}
-          className="fixed bottom-4 right-4 z-50 px-3 py-1.5 rounded bg-[#1c1813] border border-[#8c733e] text-[#d4af37] text-xs font-serif opacity-70 hover:opacity-100 transition-opacity"
-        >
-          Activar Harness R2
-        </button>
-      </div>
+      <SceneViewport debugOverlay={showDebugMasks}>
+        <div className="w-[1920px] h-[1080px] relative overflow-hidden bg-[#090807] text-[#e5ded2]">
+          <PrologueView 
+            onCompletePrologue={(newChar) => {
+              setCharacter(newChar);
+              navigateTo('DESK_WIDE');
+            }} 
+          />
+          
+          {/* Acceso Rápido al Harness de Pruebas R2 */}
+          <button
+            type="button"
+            onClick={() => {
+              setCharacter(FOOL_SEER_FIXTURE as unknown as CharacterDiegetic);
+              setShowHarness(true);
+            }}
+            className="fixed bottom-4 right-4 z-50 px-3 py-1.5 rounded bg-[#1c1813] border border-[#8c733e] text-[#d4af37] text-xs font-serif opacity-70 hover:opacity-100 transition-opacity"
+          >
+            Activar Harness R2
+          </button>
+        </div>
+      </SceneViewport>
     );
   }
 
   const inspectedHotspot = state.activeHotspotId ? CANONICAL_HOTSPOTS[state.activeHotspotId] : null;
 
   return (
-    <SceneViewport debugOverlay={showHarness}>
+    <SceneViewport debugOverlay={showDebugMasks}>
       
       {/* Capa 5: Capa de Visión Espiritual (El Velo) */}
       <VeilOverlay 
@@ -86,6 +92,7 @@ function AppContent() {
           onOpenAscension={() => navigateTo('CEREMONY_STAGE', 'FOCUS_HORNACINA')}
           onToggleSpiritVision={toggleSpiritVision}
           spiritVisionActive={state.isSpiritVisionActive}
+          debugOverlay={showDebugMasks}
         />
       )}
 

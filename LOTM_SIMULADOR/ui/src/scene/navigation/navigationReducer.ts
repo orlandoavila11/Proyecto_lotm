@@ -13,7 +13,7 @@ export const INITIAL_NAVIGATION_STATE: SceneNavigationState = {
   currentView: 'DESK_WIDE',
   activeCameraPreset: 'WIDE_OVERVIEW',
   activeHotspotId: null,
-  focusedHotspotId: 'hotspot_mirror',
+  focusedHotspotId: null,
   inspectedData: null,
   isAttentionModeActive: false,
   isSpiritVisionActive: false,

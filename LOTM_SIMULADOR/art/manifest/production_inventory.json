@@ -1,0 +1,1088 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "generated_at": "2026-09-22T18:46:18.944Z",
+  "order_code": "GFX00",
+  "project": "Path to Godhood (LOTM_ENGINE_REBORN)",
+  "phase_state": "FASE_1_ABIERTA",
+  "brief_framework": "BRIEF-10 + BRIEF-10.VISUAL + Lote 0 (GFX00/GFX01)",
+  "summary": {
+    "total_screens": 8,
+    "total_desvan_objects": 11,
+    "total_somatic_states": 17,
+    "total_origins": 6,
+    "total_investigation_clues": 8,
+    "total_investigation_relations": 4,
+    "total_combat_grid_cells": 35,
+    "total_combat_status_marks": 8,
+    "total_ascension_gates": 5,
+    "total_potions_prologue": 2,
+    "total_orders_catalog": 73
+  },
+  "screens_and_stages": [
+    {
+      "id": "STAGE_DESK_WIDE",
+      "name": "El Desván de Backlund (Vista General)",
+      "cameraPreset": "wide",
+      "resolution": "1920x1080 (escala lógica)",
+      "implementation": "SCENE_COMPOSITE",
+      "layers": [
+        "BACKGROUND_CLEAN",
+        "SHELF",
+        "STAIRCASE",
+        "DESK_CLEAN",
+        "OBJECTS_11",
+        "LIGHTING_TIME",
+        "FOREGROUND"
+      ],
+      "orderRefs": [
+        "GFX03",
+        "GFX05",
+        "GFX06",
+        "GFX07",
+        "GFX08",
+        "GFX09",
+        "GFX10",
+        "GFX11"
+      ]
+    },
+    {
+      "id": "STAGE_DESK_FOCUS",
+      "name": "Enfoque de Mesa de Trabajo",
+      "cameraPreset": "desk-center",
+      "implementation": "CSS_TRANSFORM_2_5D",
+      "orderRefs": [
+        "GFX12",
+        "GFX13",
+        "GFX14",
+        "GFX16",
+        "GFX17",
+        "GFX18",
+        "GFX19",
+        "GFX20",
+        "GFX28",
+        "GFX29"
+      ]
+    },
+    {
+      "id": "STAGE_INSPECTION_LAYER",
+      "name": "Capa de Lectura e Inspección",
+      "cameraPreset": "desk-center / wide",
+      "implementation": "MODAL_SURFACE_HTML_PROSE",
+      "orderRefs": [
+        "GFX15",
+        "GFX30",
+        "GFX31",
+        "GFX32"
+      ]
+    },
+    {
+      "id": "STAGE_CORKBOARD",
+      "name": "Tablero de Investigación (Cherwood)",
+      "cameraPreset": "wall-board",
+      "implementation": "SVG_GRAPH_CANVAS",
+      "orderRefs": [
+        "GFX21",
+        "GFX33",
+        "GFX34",
+        "GFX35A",
+        "GFX35B",
+        "GFX35C",
+        "GFX35D",
+        "GFX35E",
+        "GFX35F",
+        "GFX35G",
+        "GFX35H"
+      ]
+    },
+    {
+      "id": "STAGE_BAZAAR",
+      "name": "Bazar Clandestino",
+      "cameraPreset": "desk-right",
+      "implementation": "SCENE_COMPOSITE_WITH_TRAYS",
+      "orderRefs": [
+        "GFX37",
+        "GFX38",
+        "GFX39",
+        "GFX60"
+      ]
+    },
+    {
+      "id": "STAGE_COMBAT",
+      "name": "Teatro Táctico (Umbral/Escalera)",
+      "cameraPreset": "combat",
+      "implementation": "SVG_GRID_5X7_TACTICAL",
+      "orderRefs": [
+        "GFX40",
+        "GFX41",
+        "GFX42",
+        "GFX43",
+        "GFX44",
+        "GFX45",
+        "GFX46"
+      ]
+    },
+    {
+      "id": "STAGE_PROLOGUE",
+      "name": "Zaguán de Backlund (Prólogo y Carta)",
+      "cameraPreset": "wide",
+      "implementation": "ATMOSPHERIC_SCENE",
+      "orderRefs": [
+        "GFX47",
+        "GFX48",
+        "GFX49",
+        "GFX50",
+        "GFX51"
+      ]
+    },
+    {
+      "id": "STAGE_CEREMONY",
+      "name": "Hornacina Ritual (Ascensión)",
+      "cameraPreset": "ritual",
+      "implementation": "RITUAL_ENCLOSURE",
+      "orderRefs": [
+        "GFX22",
+        "GFX52",
+        "GFX53",
+        "GFX54",
+        "GFX55"
+      ]
+    }
+  ],
+  "desvan_eleven_objects": [
+    {
+      "id": "OBJ_CANDLE",
+      "name": "Vela de Sebo",
+      "somaticFunction": "Sanidad y Tensión Espiritual",
+      "basePrompt": "GFX12",
+      "statePrompt": "GFX23",
+      "renderingType": "RASTER_BODY_SVG_CSS_FLAME",
+      "states": [
+        {
+          "codeKey": "BRILLANTE",
+          "bibliaName": "Plena",
+          "visual": "Llama dorada viva, halo cálido suave",
+          "somaticLevel": "ALTO"
+        },
+        {
+          "codeKey": "VACILANTE",
+          "bibliaName": "Vacilante",
+          "visual": "Oscilación naranja, chisporroteo contenido",
+          "somaticLevel": "MEDIO"
+        },
+        {
+          "codeKey": "CREPITANTE",
+          "bibliaName": "Humeante",
+          "visual": "Llama azulada temblorosa, penacho de humo denso",
+          "somaticLevel": "BAJO"
+        },
+        {
+          "codeKey": "AHOGADA_EN_CERA",
+          "bibliaName": "Moribunda",
+          "visual": "Mecha en brasa roja, al borde de la extinción",
+          "somaticLevel": "CRITICO"
+        }
+      ]
+    },
+    {
+      "id": "OBJ_MIRROR",
+      "name": "Espejo de Azogue",
+      "somaticFunction": "Corrupción y Mutación Oculta",
+      "basePrompt": "GFX13",
+      "statePrompts": [
+        "GFX24",
+        "GFX25",
+        "GFX26"
+      ],
+      "renderingType": "RASTER_FRAME_INNER_SURFACE_LAYERS",
+      "states": [
+        {
+          "codeKey": "LIMPIO",
+          "bibliaName": "Limpio",
+          "visual": "Plata pulida clara, reflejo ambiental sin rostro",
+          "corruptionLevel": "CERO"
+        },
+        {
+          "codeKey": "TURBIO",
+          "bibliaName": "Turbio",
+          "visual": "Velo grisáceo nebuloso en el azogue, bordes oscurecidos",
+          "corruptionLevel": "LEVE"
+        },
+        {
+          "codeKey": "ONDULANTE",
+          "bibliaName": "Ondulante",
+          "visual": "Superficie líquida distorsionada, reflejo aberrante",
+          "corruptionLevel": "MODERADA"
+        },
+        {
+          "codeKey": "MONSTRUOSO",
+          "bibliaName": "Monstruoso",
+          "visual": "Ojos carmesí y filamentos astrales contenidos dentro del marco",
+          "corruptionLevel": "CRITICA"
+        }
+      ]
+    },
+    {
+      "id": "OBJ_DESK_CRACKS",
+      "name": "Grietas de la Mesa de Caoba",
+      "somaticFunction": "Ruina y Desgaste del Entorno",
+      "basePrompt": "GFX07",
+      "statePrompt": "GFX27",
+      "renderingType": "RASTER_DESK_SVG_OVERLAY_CRACKS",
+      "states": [
+        {
+          "codeKey": "INTEGRO",
+          "level": 0,
+          "visual": "Madera noble pulida sin fisuras"
+        },
+        {
+          "codeKey": "MARCADO",
+          "level": 1,
+          "visual": "Hendidura inicial localizada en la esquina"
+        },
+        {
+          "codeKey": "EROSIONADO",
+          "level": 2,
+          "visual": "Ramificación de grietas siguiendo la veta de caoba"
+        },
+        {
+          "codeKey": "ROTO",
+          "level": 3,
+          "visual": "Fisuras profundas que cruzan hacia el centro"
+        },
+        {
+          "codeKey": "PERDIDO",
+          "level": 4,
+          "visual": "Deterioro extremo de la madera sin perder solidez funcional"
+        }
+      ]
+    },
+    {
+      "id": "OBJ_ACTING_BOOK",
+      "name": "Libro de Actuación",
+      "somaticFunction": "Digestión de Poción y Registro de Principios",
+      "basePrompt": "GFX14",
+      "inspectionPrompt": "GFX15",
+      "renderingType": "RASTER_CLOSED_OPEN_TEXTURE_HTML_PROSE",
+      "states": [
+        {
+          "codeKey": "CLOSED",
+          "visual": "Encuadernación de cuero oscuro con canto gastado sobre la mesa"
+        },
+        {
+          "codeKey": "OPEN",
+          "visual": "Doble página en blanco marfil con texto ceremonial interactivo superpuesto"
+        }
+      ]
+    },
+    {
+      "id": "OBJ_IDENTITY_PAPERS",
+      "name": "Pliegos de Identidad Notarial",
+      "somaticFunction": "Anclas de Humanidad y Carga Civil",
+      "basePrompt": "GFX16",
+      "renderingType": "RASTER_PAPER_STACK_HTML_OVERLAY",
+      "states": [
+        {
+          "codeKey": "REST",
+          "visual": "Pliego timbrado sobrio con sello seco en reposo"
+        },
+        {
+          "codeKey": "INSPECTED",
+          "visual": "Despliegue de las 3 anclas de humanidad y profesión civil del origen activo"
+        }
+      ]
+    },
+    {
+      "id": "OBJ_LEATHER_POUCH",
+      "name": "Bolsa de Cuero (Monedero)",
+      "somaticFunction": "Economía Diegética (£ / s / d)",
+      "basePrompt": "GFX17",
+      "renderingType": "RASTER_POUCH_HTML_DIEGETIC_BALANCE",
+      "states": [
+        {
+          "codeKey": "REST",
+          "visual": "Bolsa cerrada de cuero mate con cordón ajustado"
+        },
+        {
+          "codeKey": "OPEN",
+          "visual": "Apertura con balance diegético sin barras numéricas de HUD"
+        }
+      ]
+    },
+    {
+      "id": "OBJ_ALMANAC",
+      "name": "Almanaque de Fibra",
+      "somaticFunction": "Calendario de la Quinta Época (1353)",
+      "basePrompt": "GFX18",
+      "renderingType": "RASTER_ALMANAC_HTML_CALENDAR",
+      "states": [
+        {
+          "codeKey": "REST",
+          "visual": "Almanaque en soporte con hoja en blanco sin fechas impresas"
+        },
+        {
+          "codeKey": "ACTIVE",
+          "visual": "Día del calendario y agenda de eventos revelados en texto vivo"
+        }
+      ]
+    },
+    {
+      "id": "OBJ_CLOCK",
+      "name": "Reloj de Faltriquera de Latón",
+      "somaticFunction": "Franjas Horarias del Día",
+      "basePrompt": "GFX19",
+      "renderingType": "RASTER_HOUSING_SVG_HANDS_TIME",
+      "states": [
+        {
+          "codeKey": "MORNING",
+          "visual": "Luz clara de mañana, manecilla en primer cuadrante"
+        },
+        {
+          "codeKey": "AFTERNOON",
+          "visual": "Luz dorada cálida de tarde, manecilla en segundo cuadrante"
+        },
+        {
+          "codeKey": "EVENING",
+          "visual": "Luz crepuscular cobriza, manecilla en tercer cuadrante"
+        },
+        {
+          "codeKey": "LATE_NIGHT",
+          "visual": "Sombra profunda de madrugada, manecilla en cuarto cuadrante"
+        }
+      ]
+    },
+    {
+      "id": "OBJ_SEALED_LETTER",
+      "name": "Carta Sellada con Lacre",
+      "somaticFunction": "Comunicaciones del Benefactor y Bazar",
+      "basePrompt": "GFX20",
+      "waxPrompt": "GFX31",
+      "renderingType": "RASTER_LETTER_WAX_HTML_READING",
+      "states": [
+        {
+          "codeKey": "SEALED",
+          "visual": "Sobre de papel vitela cerrado con sello de lacre rojo oscuro liso"
+        },
+        {
+          "codeKey": "UNSEALED",
+          "visual": "Sobre abierto con pliego desplegado para lectura"
+        }
+      ]
+    },
+    {
+      "id": "OBJ_CORKBOARD",
+      "name": "Corcho de Investigación",
+      "somaticFunction": "Grafo de Evidencias e Hipótesis del Caso Cherwood",
+      "basePrompt": "GFX21",
+      "canvasPrompt": "GFX33",
+      "renderingType": "RASTER_BOARD_SVG_NODES_AND_STRINGS",
+      "states": [
+        {
+          "codeKey": "EMPTY",
+          "visual": "Tablero de corcho vacío con marco de madera sobria"
+        },
+        {
+          "codeKey": "ACTIVE_CASE",
+          "visual": "Tarjetas de pistas conectadas con alfileres e hilos de color"
+        }
+      ]
+    },
+    {
+      "id": "OBJ_CHALICE",
+      "name": "Cáliz Ritual de Plata",
+      "somaticFunction": "Receptáculo de Poción y Ceremonia de Ascensión",
+      "basePrompt": "GFX22",
+      "ceremonyPrompt": "GFX52",
+      "renderingType": "RASTER_CHALICE_CSS_LIQUID_HOLD_GESTURE",
+      "states": [
+        {
+          "codeKey": "EMPTY",
+          "visual": "Copa de plata vacía y sobria sobre la hornacina"
+        },
+        {
+          "codeKey": "PREPARED",
+          "visual": "Líquido místico de poción vertido según la vía elegida"
+        },
+        {
+          "codeKey": "DRINKING",
+          "visual": "Gesto sostenido de 3 segundos con vacilación diegética"
+        }
+      ]
+    },
+    {
+      "id": "OBJ_STAIRCASE_DOOR",
+      "name": "Escalera de Caracol y Picaporte",
+      "somaticFunction": "Acceso al Umbral y Amenaza Táctica",
+      "basePrompt": "GFX09",
+      "renderingType": "RASTER_ARCHITECTURE_SVG_THREAT_INDICATOR",
+      "states": [
+        {
+          "codeKey": "CALM",
+          "visual": "Escalera en penumbra sin amenaza visible"
+        },
+        {
+          "codeKey": "THREAT_ALERT",
+          "visual": "Sombra recortada o crujido de pasos hacia el zaguán"
+        }
+      ]
+    }
+  ],
+  "canonical_origins_six": [
+    {
+      "id": "ORIGIN_CLERK",
+      "name": "Escribiente Notarial",
+      "district": "DIST_CHERWOOD",
+      "initialSalaryPence": 360,
+      "startingPence": 720,
+      "burden": "Falsificación del Sello Notarial",
+      "vignettePrompt": "GFX36A",
+      "vignetteProps": [
+        "Papeles en blanco",
+        "Pluma sencilla",
+        "Tintero",
+        "Carpeta de oficio"
+      ]
+    },
+    {
+      "id": "ORIGIN_MEDICAL_STUDENT",
+      "name": "Estudiante de Medicina",
+      "district": "DIST_CHERWOOD",
+      "initialSalaryPence": 300,
+      "startingPence": 480,
+      "burden": "Pagaré de Instrumental Quirúrgico (480d)",
+      "vignettePrompt": "GFX36B",
+      "vignetteProps": [
+        "Cuaderno en blanco",
+        "Venda limpia",
+        "Estuche sobrio de instrumental"
+      ]
+    },
+    {
+      "id": "ORIGIN_REPORTER",
+      "name": "Corresponsal de Sucesos",
+      "district": "DIST_CHERWOOD",
+      "initialSalaryPence": 384,
+      "startingPence": 600,
+      "burden": "Artículo Censurado de la Mansión Sterling",
+      "vignettePrompt": "GFX36C",
+      "vignetteProps": [
+        "Libreta en blanco",
+        "Lápiz",
+        "Recortes sin texto"
+      ]
+    },
+    {
+      "id": "ORIGIN_FRAUDULENT_MEDIUM",
+      "name": "Espiritista de Salón",
+      "district": "DIST_CHERWOOD",
+      "initialSalaryPence": 320,
+      "startingPence": 540,
+      "burden": "Sesión Espiritista con Manifestación Incontrolada",
+      "vignettePrompt": "GFX36D",
+      "vignetteProps": [
+        "Paño de mesa",
+        "Vaso de cristal",
+        "Accesorios de salón sobrios"
+      ]
+    },
+    {
+      "id": "ORIGIN_DOCKWORKER",
+      "name": "Estibador de Muelles",
+      "district": "DIST_DOCKS",
+      "initialSalaryPence": 240,
+      "startingPence": 360,
+      "burden": "Contrabando Oculto en el Almacén 4",
+      "vignettePrompt": "GFX36E",
+      "vignetteProps": [
+        "Cabo de cuerda",
+        "Guantes de trabajo",
+        "Tablón de muelle gastado"
+      ]
+    },
+    {
+      "id": "ORIGIN_PRIVATE_INVESTIGATOR",
+      "name": "Detective Privado",
+      "district": "DIST_CHERWOOD",
+      "initialSalaryPence": 400,
+      "startingPence": 650,
+      "burden": "Expediente Confidencial sin Resolver",
+      "vignettePrompt": "GFX36F",
+      "vignetteProps": [
+        "Libreta de notas en blanco",
+        "Lupa sencilla de latón",
+        "Sobre sin marcas"
+      ]
+    }
+  ],
+  "investigation_cherwood_case": {
+    "case_id": "CASE_CHERWOOD_HEIRLOOM",
+    "case_title": "El Eco en el Nido Vacío",
+    "clues": [
+      {
+        "id": "CLUE_BURNED_TOYS",
+        "name": "Juguetes de Madera Quemados",
+        "promptRef": "GFX35A",
+        "visibility": "PUBLIC_DAY_0"
+      },
+      {
+        "id": "CLUE_WILL_DRAFT",
+        "name": "Borrador de Directivas de Sterling",
+        "promptRef": "GFX35B",
+        "visibility": "INVESTIGATIVE"
+      },
+      {
+        "id": "CLUE_MIND_TRACES",
+        "name": "Microexpresiones de Evangeline",
+        "promptRef": "GFX35C",
+        "visibility": "SPECTATOR_PATHWAY"
+      },
+      {
+        "id": "CLUE_ASTROLOGY_RECORD",
+        "name": "Convergencia de Hilos Espirituales",
+        "promptRef": "GFX35D",
+        "visibility": "SEER_PATHWAY"
+      },
+      {
+        "id": "CLUE_CONCEALED_SAFE",
+        "name": "El Libro de Transferencias de Sterling",
+        "promptRef": "GFX35E",
+        "visibility": "CONCEALED_TRUTH"
+      },
+      {
+        "id": "CLUE_FORGED_LETTERS",
+        "name": "Correspondencia de Adopción Falsificada",
+        "promptRef": "GFX35F",
+        "visibility": "INVESTIGATIVE"
+      },
+      {
+        "id": "CLUE_FINANCIAL_BLACKMAIL",
+        "name": "Registro de Chantaje Financiero",
+        "promptRef": "GFX35G",
+        "visibility": "INVESTIGATIVE"
+      },
+      {
+        "id": "CLUE_ALCHEMICAL_RESIDUES",
+        "name": "Residuos de Esencia Plateada y Manzanilla",
+        "promptRef": "GFX35H",
+        "visibility": "ALCHEMICAL"
+      }
+    ],
+    "relations": [
+      {
+        "type": "ACUSA",
+        "color": "#8f2f31",
+        "stroke": "solid",
+        "meaning": "Vínculo de imputación o responsabilidad"
+      },
+      {
+        "type": "EXPLICA",
+        "color": "#4a7bb0",
+        "stroke": "dashed",
+        "meaning": "Vínculo causal o motivacional"
+      },
+      {
+        "type": "LOCALIZA",
+        "color": "#4a9c6d",
+        "stroke": "directional",
+        "meaning": "Vínculo espacial o convergencia de presencia"
+      },
+      {
+        "type": "CONTRADICE",
+        "color": "#d4a017",
+        "stroke": "double",
+        "meaning": "Incompatibilidad testimonial o factual"
+      }
+    ]
+  },
+  "combat_system": {
+    "grid_dimensions": {
+      "columns": 7,
+      "rows": 5,
+      "total_cells": 35,
+      "x_range": [
+        0,
+        6
+      ],
+      "y_range": [
+        0,
+        4
+      ]
+    },
+    "status_conditions": [
+      {
+        "id": "STUN",
+        "name": "Aturdimiento",
+        "pictogram": "Estrella angular interrumpida"
+      },
+      {
+        "id": "FEAR",
+        "name": "Miedo",
+        "pictogram": "Ojo retraído"
+      },
+      {
+        "id": "FROZEN",
+        "name": "Congelamiento",
+        "pictogram": "Estructura de cristal"
+      },
+      {
+        "id": "BLEED",
+        "name": "Sangrado",
+        "pictogram": "Gota descendente"
+      },
+      {
+        "id": "CORRUPTED",
+        "name": "Corrupción",
+        "pictogram": "Espiral rota"
+      },
+      {
+        "id": "HYPNOTIZED",
+        "name": "Hipnosis",
+        "pictogram": "Anillos concéntricos"
+      },
+      {
+        "id": "CONCEALED",
+        "name": "Oculto/Sigilo",
+        "pictogram": "Velo sombrío"
+      },
+      {
+        "id": "EMPOWERED",
+        "name": "Espiritualidad Aumentada",
+        "pictogram": "Destello ascendente"
+      }
+    ]
+  },
+  "ascension_and_prologue": {
+    "potions": [
+      {
+        "id": "POTION_COBALT_EYES",
+        "pathway": "FOOL",
+        "sequence": 9,
+        "name": "Vidente (Ojos de Cobalto)",
+        "color": "Cobalto profundo",
+        "promptRef": "GFX50"
+      },
+      {
+        "id": "POTION_AMBER_MIRROR",
+        "pathway": "VISIONARY",
+        "sequence": 9,
+        "name": "Espectador (Espejo de Ámbar)",
+        "color": "Ámbar reflectante",
+        "promptRef": "GFX51"
+      }
+    ],
+    "five_gates": [
+      {
+        "gate": 1,
+        "name": "Conocimiento de Fórmula",
+        "representation": "Fragmento de pergamino ritual verificado"
+      },
+      {
+        "gate": 2,
+        "name": "Ingredientes Principales y Suplementarios",
+        "representation": "2 componentes mayores exactos + reactivos"
+      },
+      {
+        "gate": 3,
+        "name": "Digestión de Secuencia Previa",
+        "representation": "Diario de actuación con digestión al 100%"
+      },
+      {
+        "gate": 4,
+        "name": "Preparación Ritual Cuádruple",
+        "representation": "Lugar + Momento + Materiales + Anclaje"
+      },
+      {
+        "gate": 5,
+        "name": "Consumo de Poción",
+        "representation": "Gesto sostenido de 3 segundos (Hold-to-Drink)"
+      }
+    ]
+  },
+  "canonical_conflicts_resolution": {
+    "candle_keys": {
+      "conflict": "Biblia usa (Plena, Vacilante, Humeante, Moribunda); UI.txt usa (BRILLANTE, VACILANTE, CREPITANTE, AHOGADA_EN_CERA)",
+      "resolution": "En código de dominio y UI se usan las claves tipadas BRILLANTE, VACILANTE, CREPITANTE, AHOGADA_EN_CERA. En prosa diegética ceremonial se utilizan las metáforas visuales de la Biblia."
+    },
+    "mirror_keys": {
+      "resolution": "Claves canónicas ratificadas: LIMPIO, TURBIO, ONDULANTE, MONSTRUOSO."
+    },
+    "ruin_cracks_keys": {
+      "resolution": "Claves canónicas ratificadas: INTEGRO, MARCADO, EROSIONADO, ROTO, PERDIDO."
+    },
+    "time_keys": {
+      "resolution": "Claves canónicas de dominio: MORNING, AFTERNOON, EVENING, LATE_NIGHT. Mapas lumínicos y reloj sincronizados."
+    },
+    "currency_display": {
+      "resolution": "Formato diegético victoriano estricto: Libras (£), Chelines (s), Peniques (d). Cero barras de HUD o stats flotantes."
+    }
+  },
+  "production_assets": [
+    {
+      "fileName": "C0_desvan_composition.jpg",
+      "sizeBytes": 700466,
+      "sizeKb": "684.05 KB",
+      "sha256": "94f193a5ba0c3122bff1be230f4e0aa1b0f571286c2fc68993fd62b894308710",
+      "installedPath": "/art/C0_desvan_composition.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX06_desvan_background_clean.jpg",
+      "sizeBytes": 599961,
+      "sizeKb": "585.90 KB",
+      "sha256": "281d2917dd65ddba1b29454e7eba2e569a7bc6166fec8036e0e8f162e2c0a072",
+      "installedPath": "/art/GFX06_desvan_background_clean.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX07_mahogany_desk_clean.jpg",
+      "sizeBytes": 367454,
+      "sizeKb": "358.84 KB",
+      "sha256": "d8d2af57ca25848221f498feb6b77e5b9a3f361c098bcf5de9137f4b643cfe3c",
+      "installedPath": "/art/GFX07_mahogany_desk_clean.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX12_tallow_candle.jpg",
+      "sizeBytes": 233338,
+      "sizeKb": "227.87 KB",
+      "sha256": "80f86a759e361c2145bf2a089ed2737b8d3fbbc1f5e40785932b920995f46e6b",
+      "installedPath": "/art/GFX12_tallow_candle.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX13_quicksilver_mirror.jpg",
+      "sizeBytes": 315846,
+      "sizeKb": "308.44 KB",
+      "sha256": "ce6d00f59a3bc17f449059c2ef6f6f28f97f0c7ccf3526942ca68c11363a1f31",
+      "installedPath": "/art/GFX13_quicksilver_mirror.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX14_acting_book_closed.jpg",
+      "sizeBytes": 499477,
+      "sizeKb": "487.77 KB",
+      "sha256": "654aee728552984fb9b232af591927c7faf76d4df6b075334140c5088205d055",
+      "installedPath": "/art/GFX14_acting_book_closed.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX15_acting_book_open.jpg",
+      "sizeBytes": 477925,
+      "sizeKb": "466.72 KB",
+      "sha256": "a5db31ef34b577750df7855dfe7b1d36676c4cb48fa6417d60a20d41cc6c4515",
+      "installedPath": "/art/GFX15_acting_book_open.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX16_identity_papers.jpg",
+      "sizeBytes": 439713,
+      "sizeKb": "429.41 KB",
+      "sha256": "e87a1e090b5f50b7095bb5403b2c8d1d646e1e379605e797955fc2af789dc56b",
+      "installedPath": "/art/GFX16_identity_papers.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX17_leather_pouch.jpg",
+      "sizeBytes": 331868,
+      "sizeKb": "324.09 KB",
+      "sha256": "a9cb6ccca069d0f9962ea0c10da47e62e9a7f420f2d5ab5c70b38010365a0c43",
+      "installedPath": "/art/GFX17_leather_pouch.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX18_victorian_almanac_v2.jpg",
+      "sizeBytes": 347899,
+      "sizeKb": "339.75 KB",
+      "sha256": "f8de61c6b8b7e6003dd5f36ed2bd9791ea26c05cdd32a3c66f93852f1d180568",
+      "installedPath": "/art/GFX18_victorian_almanac_v2.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX19_pocket_watch.jpg",
+      "sizeBytes": 374817,
+      "sizeKb": "366.03 KB",
+      "sha256": "4eb33b5a74f24f51ef8683f4a1447192176902445f58dc8a2e1158a2eac7b527",
+      "installedPath": "/art/GFX19_pocket_watch.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX20_sealed_letter.jpg",
+      "sizeBytes": 456532,
+      "sizeKb": "445.83 KB",
+      "sha256": "1f0c36b5842016da8fb54dcbbcf73b5ec15c70668914cadff5649c63f068a737",
+      "installedPath": "/art/GFX20_sealed_letter.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX21_corkboard.jpg",
+      "sizeBytes": 700783,
+      "sizeKb": "684.36 KB",
+      "sha256": "cadc80e8f773bb6bcac4e4a3f80b2c211266262f081af314f60117b01c837b9d",
+      "installedPath": "/art/GFX21_corkboard.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX22_ritual_chalice.jpg",
+      "sizeBytes": 506335,
+      "sizeKb": "494.47 KB",
+      "sha256": "a52f91a80440d19ee85d5673c52eec781aef8c2224fbfe6f7d5c2d1ca2660445",
+      "installedPath": "/art/GFX22_ritual_chalice.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX24_mirror_turbid.jpg",
+      "sizeBytes": 622897,
+      "sizeKb": "608.30 KB",
+      "sha256": "23191aee257f3c7b6d4b0bb7f347fea6ed86a3155adb3f8ed0d52d896658f11a",
+      "installedPath": "/art/GFX24_mirror_turbid.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX25_mirror_undulating.jpg",
+      "sizeBytes": 1031237,
+      "sizeKb": "1007.07 KB",
+      "sha256": "9490ab341697f092d15244bc80f40f7eb6325d4f392061662079abb1e7d69e9c",
+      "installedPath": "/art/GFX25_mirror_undulating.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX26_mirror_monstrous.jpg",
+      "sizeBytes": 1590228,
+      "sizeKb": "1552.96 KB",
+      "sha256": "20f7fd27af8112dd4436866a42d6fe4b78b8b89b7b745c754aef0ec9f2b3242d",
+      "installedPath": "/art/GFX26_mirror_monstrous.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX30_flat_paper.jpg",
+      "sizeBytes": 2046239,
+      "sizeKb": "1998.28 KB",
+      "sha256": "f09cbe8c9b22603d1983d69143b53bba7271eb0f76a53ba1191b5202d594e656",
+      "installedPath": "/art/GFX30_flat_paper.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX31_wax_seal.jpg",
+      "sizeBytes": 2398190,
+      "sizeKb": "2341.98 KB",
+      "sha256": "e4d16346462a2b7d69638f35f517a18678ccb245037f728a2523cb4049840651",
+      "installedPath": "/art/GFX31_wax_seal.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX35A_clue_burned_toys.jpg",
+      "sizeBytes": 513859,
+      "sizeKb": "501.82 KB",
+      "sha256": "c5d1032c82dcc6447ab2c916c167348335de934268a754768a84f5199fe98e43",
+      "installedPath": "/art/GFX35A_clue_burned_toys.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX35B_clue_will_draft.jpg",
+      "sizeBytes": 651650,
+      "sizeKb": "636.38 KB",
+      "sha256": "5f287ba784cc67bb9ae821ffc5300f8cf5fcfa88ff6fafc1f570f60a9ce5661d",
+      "installedPath": "/art/GFX35B_clue_will_draft.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX35C_clue_mind_traces.jpg",
+      "sizeBytes": 2233546,
+      "sizeKb": "2181.20 KB",
+      "sha256": "bba34ede425aadf49914acac991f87f6a04f2c2d155f1e0d5af8a76b9f0133e1",
+      "installedPath": "/art/GFX35C_clue_mind_traces.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX35D_clue_astrology_record.jpg",
+      "sizeBytes": 862366,
+      "sizeKb": "842.15 KB",
+      "sha256": "44a7523180a10f115a180bcc66f27af54aca5cf65bc853fb20e60b2a8fc255c5",
+      "installedPath": "/art/GFX35D_clue_astrology_record.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX35E_clue_concealed_safe.jpg",
+      "sizeBytes": 661836,
+      "sizeKb": "646.32 KB",
+      "sha256": "1ee2f41a1fde15e1bafe92c101bc99130a6b6932a796c0558c19a5362d6da937",
+      "installedPath": "/art/GFX35E_clue_concealed_safe.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX35F_clue_forged_letters.jpg",
+      "sizeBytes": 628646,
+      "sizeKb": "613.91 KB",
+      "sha256": "ae82562e01f68d471e5e427cdc848b7aa96f9ca47c4eace457e692aebb1bdbff",
+      "installedPath": "/art/GFX35F_clue_forged_letters.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX35G_clue_financial_blackmail.jpg",
+      "sizeBytes": 938791,
+      "sizeKb": "916.79 KB",
+      "sha256": "b1ae14278877715117e09ca4a588ca8cb9c169c5ee9524ae5fc2851ef94926be",
+      "installedPath": "/art/GFX35G_clue_financial_blackmail.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX35H_clue_alchemical_residues.jpg",
+      "sizeBytes": 904470,
+      "sizeKb": "883.27 KB",
+      "sha256": "7c4b4166a3673bc1fbbd7f9eea6f07102ffe28bf2bc69af076d66dd728b3171e",
+      "installedPath": "/art/GFX35H_clue_alchemical_residues.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX36A_origin_clerk.jpg",
+      "sizeBytes": 3017485,
+      "sizeKb": "2946.76 KB",
+      "sha256": "bd67bb21bbf2634bb76cb61a51a8fc44793a17f5424b1cacb528ba7ef0da0adb",
+      "installedPath": "/art/GFX36A_origin_clerk.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX36B_origin_medical_student.jpg",
+      "sizeBytes": 3628877,
+      "sizeKb": "3543.83 KB",
+      "sha256": "7a799b0ca048b96a300ef656dfe9197793ebe9cf2f71e7be22aa1da2330621b0",
+      "installedPath": "/art/GFX36B_origin_medical_student.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX36C_origin_reporter.jpg",
+      "sizeBytes": 4310565,
+      "sizeKb": "4209.54 KB",
+      "sha256": "c6b868287e5c7bf4e66c0db3eadf36246778fab848e6dbe0ea1d552a7dee9524",
+      "installedPath": "/art/GFX36C_origin_reporter.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX36D_origin_medium.jpg",
+      "sizeBytes": 4983948,
+      "sizeKb": "4867.14 KB",
+      "sha256": "032b93150466f6d886ecdf900066a683210606da17ed0a1f0a72e62b943c3ad9",
+      "installedPath": "/art/GFX36D_origin_medium.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX36E_origin_dockworker.jpg",
+      "sizeBytes": 6114111,
+      "sizeKb": "5970.81 KB",
+      "sha256": "e821b07847f809aa76b1147dc14b6937be2c1969880b2478d2d914acfe52f65e",
+      "installedPath": "/art/GFX36E_origin_dockworker.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX36F_origin_detective.jpg",
+      "sizeBytes": 6802961,
+      "sizeKb": "6643.52 KB",
+      "sha256": "682c294ee7cd20151d7f218d3b6efe8673cf5674ec4bfb208fccac78048a8699",
+      "installedPath": "/art/GFX36F_origin_detective.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX37_bazaar_counter.jpg",
+      "sizeBytes": 678576,
+      "sizeKb": "662.67 KB",
+      "sha256": "05e7e64741bc78c0ab2fffdfc500b496ecc619be853379ccc8f277ff0e856e97",
+      "installedPath": "/art/GFX37_bazaar_counter.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX38_bazaar_tray.jpg",
+      "sizeBytes": 426910,
+      "sizeKb": "416.90 KB",
+      "sha256": "b1f0dde4856c5288178bd47bf9dcac7109b4e93e911069a2f6c0b7dafa2f65dd",
+      "installedPath": "/art/GFX38_bazaar_tray.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX40_combat_arena_floor.jpg",
+      "sizeBytes": 677331,
+      "sizeKb": "661.46 KB",
+      "sha256": "2660499659a1e6b64d9d6e14cf42944667c7a0ca0556892dc02eb579a8b610bc",
+      "installedPath": "/art/GFX40_combat_arena_floor.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX47_prologue_hallway.jpg",
+      "sizeBytes": 764823,
+      "sizeKb": "746.90 KB",
+      "sha256": "1e1eaf8895aaeebb43ad86faf864d1ea1d8d02a46708e620c5cb9c71176f213d",
+      "installedPath": "/art/GFX47_prologue_hallway.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX49_gas_lamp.jpg",
+      "sizeBytes": 427102,
+      "sizeKb": "417.09 KB",
+      "sha256": "72ad89edb97640c04fe76498dca29f2c4c4a3917e88f32f8b22a964547e3db67",
+      "installedPath": "/art/GFX49_gas_lamp.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX50_potion_cobalt_eyes.jpg",
+      "sizeBytes": 400260,
+      "sizeKb": "390.88 KB",
+      "sha256": "86a4fc1b36d82a071cae6d5c3ccbdaf07835a693b22d0043b11e22c29515f9c2",
+      "installedPath": "/art/GFX50_potion_cobalt_eyes.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX51_potion_amber_mirror.jpg",
+      "sizeBytes": 458564,
+      "sizeKb": "447.82 KB",
+      "sha256": "f4c855dc76c52bc2c58bd665ca86ac3a8550093f33659f94373a60529274b165",
+      "installedPath": "/art/GFX51_potion_amber_mirror.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX52_ritual_framing.jpg",
+      "sizeBytes": 1571108,
+      "sizeKb": "1534.29 KB",
+      "sha256": "084e30eec80b4ca166bf1d5d77bd965926f53fc21c3f81bf0ba5d291a08ec62d",
+      "installedPath": "/art/GFX52_ritual_framing.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX59_npc_sharron.jpg",
+      "sizeBytes": 1820430,
+      "sizeKb": "1777.76 KB",
+      "sha256": "911f4709211b83240c2ba515e9787ddfcee88190ddd6a4c2c1ef8ef1342f8942",
+      "installedPath": "/art/GFX59_npc_sharron.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX60_artifact_sun_brooch.jpg",
+      "sizeBytes": 1880603,
+      "sizeKb": "1836.53 KB",
+      "sha256": "fbe5d780fc5f4084d49a3ca9f9c3689b213334fb3014e7aa14a78af6f7502f8a",
+      "installedPath": "/art/GFX60_artifact_sun_brooch.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "GFX61_vignette_backlund_streets.jpg",
+      "sizeBytes": 2221361,
+      "sizeKb": "2169.30 KB",
+      "sha256": "a29c3dac21a586711a7452c2d7c31a495ab74ad3613b3196ca20e0ed1c3853ee",
+      "installedPath": "/art/GFX61_vignette_backlund_streets.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    },
+    {
+      "fileName": "S0_materials_sample.jpg",
+      "sizeBytes": 892821,
+      "sizeKb": "871.90 KB",
+      "sha256": "5eb21692bdaf59260766b710cd73d5901eb1c7586dac943c5f9add5bb8601469",
+      "installedPath": "/art/S0_materials_sample.jpg",
+      "status": "APPROVED_10_OF_10_PASS"
+    }
+  ],
+  "production_summary": {
+    "canonical_files_count": 45,
+    "total_disk_bytes": 62514205,
+    "total_disk_mb": "59.62 MB",
+    "estimated_decoded_ram_mb": "373.05 MB (2K RGBA estándar)",
+    "verification_status": "100% PASS"
+  }
+}

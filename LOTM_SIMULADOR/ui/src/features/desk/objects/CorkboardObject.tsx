@@ -15,7 +15,7 @@ export const CorkboardObject: React.FC<CorkboardObjectProps> = ({
   activeCluesCount = 4
 }) => {
   return (
-    <div className="corkboard-frame texture-corkboard select-none group">
+    <div className="corkboard-frame select-none group">
       
       {/* Marco de Roble Oscuro con Cantoneras de Latón */}
       <div className="absolute inset-0 pointer-events-none" style={{ border: '1px solid rgba(82, 61, 36, 0.6)' }} />
@@ -24,8 +24,8 @@ export const CorkboardObject: React.FC<CorkboardObjectProps> = ({
       <div className="absolute bottom-1 left-1 w-3 h-3 pointer-events-none" style={{ borderBottom: '2px solid #8c733e', borderLeft: '2px solid #8c733e' }} />
       <div className="absolute bottom-1 right-1 w-3 h-3 pointer-events-none" style={{ borderBottom: '2px solid #8c733e', borderRight: '2px solid #8c733e' }} />
 
-      {/* Cabecera del Expediente */}
-      <div className="relative flex items-center justify-between" style={{ borderBottom: '1px solid rgba(82, 61, 36, 0.8)', paddingBottom: '4px', zIndex: 2 }}>
+      {/* Cabecera del Expediente (aparece en foco/hover) */}
+      <div className="relative flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity" style={{ borderBottom: '1px solid rgba(82, 61, 36, 0.8)', paddingBottom: '4px', zIndex: 2 }}>
         <span className="cinzel font-bold tracking-widest uppercase" style={{ fontSize: '11px', color: '#d4af37' }}>
           {caseTitle}
         </span>
@@ -47,8 +47,8 @@ export const CorkboardObject: React.FC<CorkboardObjectProps> = ({
         </div>
       </div>
 
-      {/* Recortes de Periódico, Notas y Telaraña de Hilos Rojos (SVG) */}
-      <div className="relative flex-1 flex items-center justify-between" style={{ margin: '8px 0', padding: '0 4px', zIndex: 2 }}>
+      {/* Recortes de Periódico, Notas y Telaraña de Hilos Rojos (revelados en interacción) */}
+      <div className="relative flex-1 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity" style={{ margin: '8px 0', padding: '0 4px', zIndex: 2 }}>
         
         {/* Nota 1: Recorte del Heraldo */}
         <div className="corkboard-clue-note" style={{ transform: 'rotate(-2deg)' }}>
@@ -91,10 +91,11 @@ export const CorkboardObject: React.FC<CorkboardObjectProps> = ({
       </div>
 
       {/* Pie del Tablero */}
-      <div className="relative flex justify-between items-center font-serif italic" style={{ borderTop: '1px solid rgba(82, 61, 36, 0.6)', paddingTop: '2px', fontSize: '9px', color: '#bfad95', zIndex: 2 }}>
+      <div className="relative flex justify-between items-center font-serif italic opacity-0 group-hover:opacity-100 transition-opacity" style={{ borderTop: '1px solid rgba(82, 61, 36, 0.6)', paddingTop: '2px', fontSize: '9px', color: '#bfad95', zIndex: 2 }}>
         <span className="uppercase tracking-wider font-serif" style={{ fontSize: '8px', color: '#8c733e' }}>Muelle fluvial</span>
         <span>Examinar expediente</span>
       </div>
     </div>
   );
 };
+

@@ -97,7 +97,7 @@ describe('BRIEF-10.VISUAL-R3: El Desván como Lugar — 11 Objetos Físicos Dieg
         React.createElement(BazaarLetterObject, { unread: true })
       );
       assert.ok(html.includes('Taberna Bravehearts'));
-      assert.ok(html.includes('Lacre del mercado'));
+      assert.ok(html.includes('bazaar-wax-seal'));
     });
 
     it('renderiza IdentityPapersObject con anclas civiles', () => {
@@ -168,7 +168,7 @@ describe('BRIEF-10.VISUAL-R3: El Desván como Lugar — 11 Objetos Físicos Dieg
             spiritVisionActive: false
           })
         );
-        assert.ok(html.includes('EL ESPEJO DE AZOGUE') || html.includes('Superficie de azogue') || html.includes('Vaho espectral') || html.includes('El reflejo'));
+        assert.ok(html.includes('somatic-mirror-frame') && (html.includes('Superficie de azogue') || html.includes('Sombras tenues') || html.includes('El azogue') || html.includes('La silueta')));
       }
 
       // Con Spirit Vision activo
@@ -180,7 +180,6 @@ describe('BRIEF-10.VISUAL-R3: El Desván como Lugar — 11 Objetos Físicos Dieg
           onToggleSpiritVision: () => {}
         })
       );
-      assert.ok(veilHtml.includes('El Velo Espiritual descorre la niebla'));
       assert.ok(veilHtml.includes('border-[#a855f7]'));
     });
 

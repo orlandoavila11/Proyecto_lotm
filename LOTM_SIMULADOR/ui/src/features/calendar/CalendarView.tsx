@@ -54,7 +54,15 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ onBackToDesk }) => {
   };
 
   return (
-    <div className="calendar-screen min-h-screen p-6 flex flex-col justify-between select-none" style={{ background: '#12100d' }}>
+    <div 
+      className="calendar-screen p-8 flex flex-col justify-between select-none relative overflow-hidden" 
+      style={{ 
+        width: '1920px', 
+        height: '1080px', 
+        position: 'relative', 
+        background: '#12100d' 
+      }}
+    >
       
       {/* Cabecera */}
       <header className="flex justify-between items-center pb-4 border-b border-[#2d2419] mb-6">

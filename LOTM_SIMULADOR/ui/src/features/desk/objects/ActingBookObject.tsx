@@ -18,50 +18,38 @@ export const ActingBookObject: React.FC<ActingBookObjectProps> = ({
   sequenceTitle
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hovered, setHovered] = useState(false);
 
   return (
     <div className="relative">
       {/* Objeto Físico Cerrado sobre la Mesa */}
       <div 
         className="acting-book-cover hover:rotate-0 hover:scale-105 transition-all select-none group"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
         onClick={() => setIsOpen(true)}
         title="Diario de cuero y preceptos"
       >
-        {/* Lomo y cantoneras de latón */}
-        <div className="flex justify-between items-start">
-          <div className="w-4 h-4 rounded-tl border-t-2 border-l-2 border-[#b89547]" />
-          <div className="text-[10px] tracking-widest uppercase font-serif text-[#d4af37] font-bold opacity-80">
+        {/* Cantoneras de Latón y Título Dorado en Relieve */}
+        <div className="flex justify-between items-start opacity-70 group-hover:opacity-100 transition-opacity">
+          <div className="w-3 h-3 rounded-tl border-t-2 border-l-2 border-[#d4af37]" />
+          <div className="text-[10px] tracking-widest uppercase font-serif text-[#d4af37] font-bold drop-shadow">
             {pathwayName}
           </div>
-          <div className="w-4 h-4 rounded-tr border-t-2 border-r-2 border-[#b89547]" />
+          <div className="w-3 h-3 rounded-tr border-t-2 border-r-2 border-[#d4af37]" />
         </div>
 
         {/* Emblema central en bajo relieve */}
-        <div className="flex flex-col items-center justify-center my-1">
-          <BookOpen size={24} className="text-[#a68444] group-hover:text-[#d4af37] transition-colors" />
-          <span className="text-[11px] font-serif tracking-wider text-[#dfcaa2] font-semibold mt-1">
+        <div className="flex flex-col items-center justify-center my-auto opacity-75 group-hover:opacity-100 transition-opacity">
+          <BookOpen size={22} className="text-[#c29b47] group-hover:text-[#fef08a] transition-colors drop-shadow" />
+          <span className="text-[11px] font-serif tracking-wider text-[#d4af37] font-semibold mt-1 drop-shadow">
             {sequenceTitle}
           </span>
         </div>
 
         {/* Broche de latón inferior */}
-        <div className="flex justify-between items-end">
-          <div className="w-4 h-4 rounded-bl border-b-2 border-l-2 border-[#b89547]" />
-          <div className="w-8 h-2 bg-[#8c7038] rounded-full border border-[#d4af37]" />
-          <div className="w-4 h-4 rounded-br border-b-2 border-r-2 border-[#b89547]" />
+        <div className="flex justify-between items-end opacity-70 group-hover:opacity-100 transition-opacity">
+          <div className="w-3 h-3 rounded-bl border-b-2 border-l-2 border-[#d4af37]" />
+          <div className="w-8 h-1.5 bg-[#8c7038] rounded-full border border-[#d4af37]" />
+          <div className="w-3 h-3 rounded-br border-b-2 border-r-2 border-[#d4af37]" />
         </div>
-      </div>
-
-      {/* Etiqueta Ambiental en Reposo (≤ 7 Palabras) */}
-      <div 
-        className={`absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-serif italic text-[#c2b297] bg-[#120f0c]/90 px-2 py-0.5 rounded border border-[#423524] transition-opacity duration-200 pointer-events-none z-20 ${
-          hovered && !isOpen ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        Diario de cuero y preceptos
       </div>
 
       {/* Cuaderno Abierto Modal / Despliegue de Prosa bajo demanda */}

@@ -1,5 +1,11 @@
+/**
+ * RITUAL DE ASCENSIÓN — CINCO PUERTAS CANÓNICAS (GFX53 & GFX55)
+ * Implementa los 5 Gates canónicos sin porcentajes numéricos y el gesto sostenido de 3 segundos (Hold-to-Drink).
+ * Cumple estrictamente con la Ley de Prosa Diegética y la Ley del Objeto.
+ */
+
 import React, { useState, useRef, useEffect } from 'react';
-import { ArrowLeft, Sparkles, AlertTriangle, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Sparkles, ShieldCheck } from 'lucide-react';
 import type { CharacterDiegetic } from '../types';
 
 interface AscensionViewProps {
@@ -7,35 +13,182 @@ interface AscensionViewProps {
   onBackToDesk: () => void;
 }
 
+type GateId = 'GATE_FORMULA' | 'GATE_INGREDIENTS' | 'GATE_DIGESTION' | 'GATE_RITUAL_ENV' | 'GATE_DRINK';
+
+interface AscensionGate {
+  id: GateId;
+  title: string;
+  category: string;
+  objectDescription: string;
+  statusText: string;
+  isReady: boolean;
+  details: string[];
+}
+
 export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackToDesk }) => {
   const [phase, setPhase] = useState<'PREPARACION' | 'TRAGO' | 'CONSUMADO'>('PREPARACION');
-  const startTime = useRef<number>(0);
+  const [activeGateDetail, setActiveGateDetail] = useState<GateId | null>(null);
+
+  // Hold-to-Drink states (GFX55)
+  const [isHolding, setIsHolding] = useState<boolean>(false);
+  const [holdProgressMs, setHoldProgressMs] = useState<number>(0);
+  const [interruptionFeedback, setInterruptionFeedback] = useState<string | null>(null);
+  
+  const holdIntervalRef = useRef<any>(null);
+  const holdStartTimeRef = useRef<number>(0);
+  const sessionStartTimeRef = useRef<number>(0);
 
   const isFool = character.pathwayName.toLowerCase().includes('fool');
   const targetSequenceTitle = isFool ? 'Payaso (Clown - Secuencia 8)' : 'Telépata (Telepathist - Secuencia 8)';
 
   useEffect(() => {
-    startTime.current = Date.now();
+    sessionStartTimeRef.current = Date.now();
   }, []);
 
-  const handleDrinkPotion = () => {
-    const elapsed = Date.now() - startTime.current;
-    console.log('[ASCENSION TELEMETRY] hesitation_ms:', elapsed);
-    setPhase('TRAGO');
+  // Definición diegética de las 5 Puertas Canónicas (GFX53)
+  const gates: AscensionGate[] = [
+    {
+      id: 'GATE_FORMULA',
+      title: 'Conocimiento de la Fórmula',
+      category: 'Grimorio y Memoria',
+      objectDescription: 'El pliego de vitela con anotaciones ferrogálicas y el diagrama de proporciones.',
+      statusText: 'Asimilada en la mente · Proporciones alquímicas verificadas',
+      isReady: true,
+      details: isFool ? [
+        'Fórmula canónica de la Secuencia 8 del Camino del Loco.',
+        'Estructura de la transmutación: agilidad sobrenatural, control facial absoluto y equilibrio de hilos astrales.',
+        'Notas de precaución: la sonrisa forzada puede devorar la identidad si no se dominan los hilos emocionales.'
+      ] : [
+        'Fórmula canónica de la Secuencia 8 del Camino del Visionario.',
+        'Estructura de la transmutación: percepción de estados mentales ajenos, lectura del lenguaje corporal y estabilidad psíquica.',
+        'Notas de precaución: el ruido mental de la multitud puede inducir locura si no se mantiene la postura de observador neutral.'
+      ]
+    },
+    {
+      id: 'GATE_INGREDIENTS',
+      title: 'Ingredientes Extraordinarios y Suplementos',
+      category: 'Mortero y Redomas',
+      objectDescription: 'Redomas de cristal con extractos preservados sobre el paño de terciopelo.',
+      statusText: 'Ingredientes principales purificados y medidos al grano',
+      isReady: true,
+      details: isFool ? [
+        'Ingrediente Principal 1: 1x Piel de Pez Búho Ilusorio intacta.',
+        'Ingrediente Principal 2: 1x Glándula de Medusa Fantasma en alcohol destilado.',
+        'Suplementos: 5 gotas de zumo de cicuta de noche, 7g de polvo de flor de belladona marchita, 10ml de agua de manantial pura.'
+      ] : [
+        'Ingrediente Principal 1: 1x Ojo de Dragón Espejo conservado en salmuera alquímica.',
+        'Ingrediente Principal 2: 1x Cristal de Manantial del Alma sin impurezas.',
+        'Suplementos: 5g de polvo de lirio de los valles, 3 gotas de aceite de flor de adormidera, 10ml de agua de manantial pura.'
+      ]
+    },
+    {
+      id: 'GATE_DIGESTION',
+      title: 'Digestión del Papel Previo',
+      category: 'Somática y Mecha',
+      objectDescription: 'La vela arde serena y el azogue del espejo devuelve una figura sin distorsión.',
+      statusText: 'Poción previa asimilada · La voz ajena se ha disuelto por completo',
+      isReady: true,
+      details: [
+        'Los principios del papel de Secuencia 9 se han integrado en tus reflejos cotidianos.',
+        'No quedan residuos de la voluntad primordial en la mecha de tu cordura.',
+        'La mente está preparada para recibir una carga espiritual de mayor densidad.'
+      ]
+    },
+    {
+      id: 'GATE_RITUAL_ENV',
+      title: 'Entorno Ritual y Anclas Humanas',
+      category: 'Lugar, Momento y Lazos',
+      objectDescription: 'Círculo de sal purificada sobre las tablas de roble y las 3 anclas firmadas.',
+      statusText: 'Cámara sellada contra ojos curiosos · Vínculos civiles protegen la vigilia',
+      isReady: true,
+      details: [
+        'Lugar: El desván aislado de Backlund, protegido por sal consagrada en los cuatro cuadrantes.',
+        'Momento: Conjunción de medianoche bajo la luz velada de la Luna Carmesí.',
+        `Anclajes activos: ${character.anchors.map(a => a.nombre).join(', ')}.`
+      ]
+    },
+    {
+      id: 'GATE_DRINK',
+      title: 'Ingesta del Cáliz de Transmutación',
+      category: 'El Cáliz de Peltre',
+      objectDescription: 'La poción mezclada reposa en el cáliz emitiendo un fulgor opalescente.',
+      statusText: 'Listo para el trago ceremonial sostenido de tres segundos',
+      isReady: true,
+      details: [
+        'El cáliz debe levantarse con pulso firme.',
+        'El líquido debe ingerirse de manera continua sin apartar los labios antes de completar el cruce.',
+        'Cualquier vacilación devolverá el brebaje a su estado de reposo.'
+      ]
+    }
+  ];
+
+  // ==========================================================================
+  // GFX55: GESTO SOSTENIDO DE BEBER (3 SEGUNDOS DE SUJECIÓN CONTINUA)
+  // ==========================================================================
+  const startHold = () => {
+    setIsHolding(true);
+    setInterruptionFeedback(null);
+    holdStartTimeRef.current = Date.now();
+
+    holdIntervalRef.current = setInterval(() => {
+      setHoldProgressMs(prev => {
+        const next = prev + 100;
+        if (next >= 3000) {
+          clearInterval(holdIntervalRef.current);
+          setIsHolding(false);
+          const totalHesitation = Date.now() - sessionStartTimeRef.current;
+          console.log('[ASCENSION TELEMETRY] hesitation_ms:', totalHesitation);
+          setPhase('TRAGO');
+          return 3000;
+        }
+        return next;
+      });
+    }, 100);
   };
 
+  const cancelHold = () => {
+    if (isHolding && holdProgressMs < 3000) {
+      clearInterval(holdIntervalRef.current);
+      setIsHolding(false);
+      setInterruptionFeedback('Apartas el cáliz con el pulso desbocado... La superficie del líquido ondula suavemente en la penumbra. La esencia aún aguarda.');
+      setHoldProgressMs(0);
+    }
+  };
+
+  const progressRatio = Math.min(1, holdProgressMs / 3000);
+
   return (
-    <div className="ascension-screen min-h-screen p-6 flex flex-col justify-between select-none" style={{ background: '#0a0908' }}>
+    <div 
+      className="ascension-screen p-8 flex flex-col justify-between select-none relative overflow-hidden" 
+      style={{ 
+        width: '1920px',
+        height: '1080px',
+        position: 'relative',
+        backgroundColor: '#090807',
+        backgroundImage: 'url(/art/GFX52_ritual_framing.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
+      {/* Velo atmosférico victoriano para legibilidad de capas */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(9, 8, 7, 0.72) 0%, rgba(5, 4, 3, 0.92) 100%)'
+        }}
+      />
       
-      {/* Cabecera */}
-      <header className="flex justify-between items-center pb-4 border-b border-[#2d2419] mb-6">
+      {/* ==========================================================================
+          CABECERA DIEGÉTICA VICTORIANA
+          ========================================================================== */}
+      <header className="flex justify-between items-center pb-4 border-b border-[#2d2419] mb-6 relative z-10">
         <div className="flex items-center gap-4">
           <button
             onClick={onBackToDesk}
-            className="p-2 bg-[#171410] border border-[#383024] hover:border-[#8c733e] text-[#d4af37] rounded flex items-center gap-2 text-sm font-serif transition-all"
+            className="p-2 bg-[#171410] border border-[#383024] hover:border-[#8c733e] text-[#d4af37] rounded flex items-center gap-2 text-xs font-serif transition-all"
           >
             <ArrowLeft size={16} />
-            Regresar al Desván
+            Regresar a la Mesa del Desván
           </button>
           <div>
             <h1 className="text-xl font-bold tracking-widest text-[#d4af37]" style={{ fontFamily: 'Cinzel' }}>
@@ -49,91 +202,221 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
 
         <div className="flex items-center gap-2 bg-[#181410] px-4 py-2 rounded border border-[#3d301f] text-xs text-[#d4af37] font-serif">
           <Sparkles size={14} />
-          <span>Fórmula Alquímica Mezclada y Reposada</span>
+          <span>Cinco Puertas Cumplidas</span>
         </div>
       </header>
 
-      {/* Contenido Central */}
-      <div className="max-w-3xl mx-auto w-full flex-1 flex flex-col justify-center mb-6">
+      {/* ==========================================================================
+          CONTENIDO CENTRAL: LAS 5 PUERTAS Y EL CÁLIZ
+          ========================================================================== */}
+      <div className="max-w-6xl mx-auto w-full flex-1 flex flex-col justify-center mb-6 relative z-10">
         
-        {/* Fase 1: Checklist en Prosa y Evaluación de Riesgo Sentido */}
+        {/* ==========================================================================
+            FASE 1: INSPECCIÓN DE LAS 5 PUERTAS Y EL CÁLIZ INTERACTIVO
+            ========================================================================== */}
         {phase === 'PREPARACION' && (
-          <div className="parchment-sheet p-8 rounded shadow-2xl">
-            <div className="text-center mb-6">
-              <h2 className="text-2xl font-bold text-[#1f1a14] mb-2" style={{ fontFamily: 'Cinzel' }}>
-                EL CÁLIZ SOBRE EL SALARIO DE MADERA
-              </h2>
-              <p className="text-xs text-[#6b583f] italic">
-                Ningún Beyonder cruza este umbral sin exponer el alma al peligro del colapso.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+            
+            {/* Columna Izquierda: Los 5 Gates Diegéticos (GFX53) */}
+            <div className="md:col-span-7 space-y-3">
+              <div className="text-left mb-2">
+                <h2 className="text-base font-bold text-[#e5ded2] tracking-wider font-serif uppercase">
+                  Requisitos del Segundo Umbral
+                </h2>
+                <p className="text-xs text-[#8a7b68] italic">
+                  Toca cualquier puerta para revisar los preparativos en las tablas del desván.
+                </p>
+              </div>
+
+              {gates.map((gate, index) => {
+                const isSelected = activeGateDetail === gate.id;
+                return (
+                  <div
+                    key={gate.id}
+                    onClick={() => setActiveGateDetail(isSelected ? null : gate.id)}
+                    className={`p-4 rounded border cursor-pointer transition-all ${
+                      isSelected
+                        ? 'bg-[#221c15] border-[#d4af37] shadow-xl'
+                        : 'bg-[#18130e]/90 border-[#3d2c1c] hover:border-[#8c733e] hover:bg-[#1e1812]'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex items-center gap-3">
+                        <div className="w-7 h-7 rounded-full bg-[#2a1e12] border border-[#8c733e] flex items-center justify-center text-xs text-[#d4af37] font-serif font-bold shrink-0 shadow">
+                          {index + 1}
+                        </div>
+                        <div>
+                          <h3 className="font-serif font-bold text-sm text-[#e5ded2]">
+                            {gate.title}
+                          </h3>
+                          <span className="text-[10px] text-[#a89880] uppercase tracking-wider font-bold">
+                            {gate.category}
+                          </span>
+                        </div>
+                      </div>
+
+                      <span className="text-[11px] text-[#4ade80] font-serif flex items-center gap-1 shrink-0 bg-[#162916]/80 px-2.5 py-0.5 rounded border border-[#234d23]">
+                        <ShieldCheck size={12} />
+                        Dispuesta
+                      </span>
+                    </div>
+
+                    <p className="text-xs text-[#b8a994] font-serif italic mt-2.5 pl-10">
+                      {gate.statusText}
+                    </p>
+
+                    {/* Detalle expandido al pulsar */}
+                    {isSelected && (
+                      <div className="mt-3.5 pt-3 border-t border-[#3d2c1c] pl-10 space-y-2 text-xs text-[#e5ded2] font-serif animate-fadeIn">
+                        <div className="text-[#d4af37] text-xs font-bold font-serif">
+                          {gate.objectDescription}
+                        </div>
+                        {gate.details.map((d, i) => (
+                          <div key={i} className="flex items-start gap-2 text-xs leading-relaxed">
+                            <span className="text-[#d4af37]">•</span>
+                            <span>{d}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
-            {/* Checklist Solemne en Prosa */}
-            <div className="space-y-4 mb-8">
-              <div className="p-4 bg-[#e8deca] rounded border border-[#c4b59a] flex items-start gap-3">
-                <CheckCircle size={18} className="text-[#15803d] shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-serif font-bold text-sm text-[#1f1a14] mb-0.5">
-                    Digestión del Papel Previo
-                  </h4>
-                  <p className="text-xs text-[#453725] leading-relaxed italic">
-                    La voz ajena en tu cabeza se ha disuelto casi por completo. Las normas del papel de Secuencia 9 han dejado de ser mandatos externos para convertirse en reflejos instintivos de tu conducta.
-                  </p>
-                </div>
+            {/* Columna Derecha: El Cáliz Ceremonial y el Gesto Hold-to-Drink (GFX55) */}
+            <div className="md:col-span-5 flex flex-col items-center justify-center p-6 bg-[#16120e] rounded-md border border-[#3b2d1d] shadow-2xl text-center">
+              
+              <div className="text-center mb-4">
+                <span className="text-[10px] text-[#8a7964] uppercase tracking-widest font-serif">
+                  Quinta Puerta
+                </span>
+                <h3 className="text-base font-bold text-[#d4af37] mt-0.5" style={{ fontFamily: 'Cinzel' }}>
+                  El Cáliz en la Penumbra
+                </h3>
               </div>
 
-              <div className="p-4 bg-[#e8deca] rounded border border-[#c4b59a] flex items-start gap-3">
-                <CheckCircle size={18} className="text-[#15803d] shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-serif font-bold text-sm text-[#1f1a14] mb-0.5">
-                    Estabilidad de la Llama Somática
-                  </h4>
-                  <p className="text-xs text-[#453725] leading-relaxed italic">
-                    La mecha de tu cordura arde sin crepitar; los susurros de la oscuridad no han fracturado tu comprensión de la vigilia.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-4 bg-[#e8deca] rounded border border-[#c4b59a] flex items-start gap-3">
-                <CheckCircle size={18} className="text-[#15803d] shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-serif font-bold text-sm text-[#1f1a14] mb-0.5">
-                    Vínculo con las Anclas de Humanidad
-                  </h4>
-                  <p className="text-xs text-[#453725] leading-relaxed italic">
-                    Tus afectos, tu empleo profano y los recuerdos de tu vida civil te sujetan a la costa de la realidad material frente a la tempestad astral que se aproxima.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-4 bg-[#ebd2ce] rounded border border-[#dc2626]/40 flex items-start gap-3">
-                <AlertTriangle size={18} className="text-[#b91c1c] shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-serif font-bold text-sm text-[#7f1d1d] mb-0.5">
-                    El Riesgo Sentido de la Transmutación
-                  </h4>
-                  <p className="text-xs text-[#450a0a] leading-relaxed italic">
-                    Si el alma no está templada, la característica extraordinaria se rebelará en tus entrañas, provocando una deformación monstruosa de la carne y una amnesia lacerante que te arrojará indefenso a la noche.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-center">
-              <button
-                onClick={handleDrinkPotion}
-                className="crimson-btn px-10 py-3.5 text-sm uppercase tracking-widest font-bold shadow-lg"
+              {/* Cáliz físico con efecto de pulso y nivel de líquido */}
+              <div 
+                className="relative w-48 h-48 my-2 flex items-center justify-center cursor-pointer group select-none"
+                onMouseDown={startHold}
+                onMouseUp={cancelHold}
+                onMouseLeave={cancelHold}
+                onTouchStart={startHold}
+                onTouchEnd={cancelHold}
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if ((e.key === ' ' || e.key === 'Enter') && !isHolding) {
+                    e.preventDefault();
+                    startHold();
+                  }
+                }}
+                onKeyUp={(e) => {
+                  if (e.key === ' ' || e.key === 'Enter') {
+                    e.preventDefault();
+                    cancelHold();
+                  }
+                }}
+                role="button"
+                aria-label="Mantener presionado para ingerir la poción de Secuencia 8"
               >
-                Beber la Poción
-              </button>
+                {/* Aura de resonancia circular */}
+                <div 
+                  className={`absolute inset-0 rounded-full transition-all duration-300 pointer-events-none ${
+                    isHolding ? 'scale-110' : 'scale-100'
+                  }`}
+                  style={{
+                    background: isFool 
+                      ? `radial-gradient(circle, rgba(2, 132, 199, ${0.15 + progressRatio * 0.45}) 0%, transparent 70%)`
+                      : `radial-gradient(circle, rgba(217, 119, 6, ${0.15 + progressRatio * 0.45}) 0%, transparent 70%)`,
+                    border: `1px dashed rgba(212, 175, 55, ${0.2 + progressRatio * 0.6})`
+                  }}
+                />
+
+                {/* Imagen del Cáliz (GFX22) */}
+                <div 
+                  className="relative z-10 w-36 h-36 rounded-full overflow-hidden border-2 border-[#d4af37] shadow-2xl flex items-center justify-center transition-transform duration-200 bg-[#16120e]"
+                  style={{
+                    transform: isHolding ? `scale(${1 + progressRatio * 0.08}) rotate(${progressRatio * 4}deg)` : 'scale(1)'
+                  }}
+                >
+                  <img 
+                    src="/art/GFX22_ritual_chalice.jpg" 
+                    alt="Cáliz Ceremonial"
+                    className="w-full h-full object-cover filter drop-shadow-2xl"
+                    onError={(e) => {
+                      (e.target as HTMLElement).style.display = 'none';
+                    }}
+                  />
+                  
+                  {/* Resplandor del Líquido Alquímico en el Borde */}
+                  <div 
+                    className="absolute top-8 w-16 h-5 rounded-full pointer-events-none transition-opacity duration-300"
+                    style={{
+                      backgroundColor: isFool ? '#0284c7' : '#d97706',
+                      filter: 'blur(4px)',
+                      opacity: 0.4 + progressRatio * 0.6
+                    }}
+                  />
+                </div>
+
+                {/* Anillo de progreso SVG perimetral */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="46"
+                    fill="none"
+                    stroke="rgba(66, 51, 33, 0.4)"
+                    strokeWidth="3"
+                  />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="46"
+                    fill="none"
+                    stroke={isFool ? '#38bdf8' : '#fbbf24'}
+                    strokeWidth="3"
+                    strokeDasharray="289"
+                    strokeDashoffset={289 - (289 * progressRatio)}
+                    strokeLinecap="round"
+                    style={{
+                      transform: 'rotate(-90deg)',
+                      transformOrigin: '50% 50%',
+                      transition: isHolding ? 'stroke-dashoffset 100ms linear' : 'stroke-dashoffset 300ms ease-out'
+                    }}
+                  />
+                </svg>
+              </div>
+
+              {/* Indicación de interacción */}
+              <div className="mt-3">
+                <div className="text-xs font-serif font-bold text-[#e5ded2] mb-1">
+                  {isHolding ? 'Bebiendo... Mantén el cáliz erguido' : 'Mantén presionado para beber'}
+                </div>
+                <p className="text-[11px] text-[#8a7964] italic">
+                  Sujeta el ratón o mantén pulsada la barra espaciadora durante tres segundos.
+                </p>
+              </div>
+
+              {/* Mensaje de vacilación al soltar antes de tiempo */}
+              {interruptionFeedback && (
+                <div className="mt-4 p-3 bg-[#241712] border border-[#69311e] rounded text-left text-xs text-[#dfcaa2] font-serif italic animate-fadeIn">
+                  {interruptionFeedback}
+                </div>
+              )}
+
             </div>
+
           </div>
         )}
 
-        {/* Fase 2: Escena Autoral del Trago (de HUMAN_REVIEW_08.md) */}
+        {/* ==========================================================================
+            FASE 2: ESCENA AUTORAL DEL TRAGO Y TRANSMUTACIÓN
+            ========================================================================== */}
         {phase === 'TRAGO' && (
-          <div className="text-center p-8">
-            <h2 className="text-2xl font-bold tracking-widest text-[#d4af37] mb-4" style={{ fontFamily: 'Cinzel' }}>
+          <div className="text-center p-8 bg-[#14100c] rounded-md border border-[#3b2d1d] shadow-2xl max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold tracking-widest text-[#d4af37] mb-3" style={{ fontFamily: 'Cinzel' }}>
               LA TRANSMUTACIÓN
             </h2>
             <div className="w-24 h-0.5 bg-[#d4af37] mx-auto mb-6"></div>
@@ -142,7 +425,7 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
               {isFool ? (
                 <>
                   <p>
-                    "Acercas el cuenco a tus labios temblorosos. El primer sorbo es helado como la nieve de las cumbres de Hornacis; el segundo, abrasador como vinagre hirviente. El líquido resbala por tu esófago dejando una sensación gomosa y efervescente que trepa veloz hacia la base de tu cráneo."
+                    "Acercas el cáliz a tus labios con pulso firme. El primer sorbo es helado como la escarcha de las cumbres de Hornacis; el segundo, abrasador como vinagre hirviente. El líquido resbala por tu esófago dejando una sensación gomosa y efervescente que trepa veloz hacia la base de tu cráneo."
                   </p>
                   <p>
                     "De pronto, tus mandíbulas se tensan con violencia. Un dolor punzante tira de los tendones de tus mejillas hacia arriba. Sientes cómo cada músculo de tu rostro es arrancado y vuelto a coser con hilos elásticos invisibles. Una sonrisa amplia, simétrica y artificial se dibuja en tus labios sin que tu voluntad intervenga: la máscara del Payaso ha arraigado."
@@ -172,10 +455,10 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
               )}
             </div>
 
-            <div className="mt-8">
+            <div className="mt-8 flex justify-center">
               <button
                 onClick={() => setPhase('CONSUMADO')}
-                className="crimson-btn px-8 py-3 text-sm uppercase tracking-wider font-bold"
+                className="crimson-btn px-8 py-3 text-xs uppercase tracking-widest font-bold shadow-lg"
               >
                 Aceptar la Nueva Forma
               </button>
@@ -183,19 +466,21 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
           </div>
         )}
 
-        {/* Fase 3: Despertar en Secuencia 8 */}
+        {/* ==========================================================================
+            FASE 3: DESPERTAR EN SECUENCIA 8 CONSUMADO
+            ========================================================================== */}
         {phase === 'CONSUMADO' && (
-          <div className="parchment-sheet p-8 rounded shadow-2xl text-center">
+          <div className="parchment-sheet p-8 rounded shadow-2xl text-center max-w-xl mx-auto">
             <h2 className="text-xl font-bold text-[#1f1a14] mb-3" style={{ fontFamily: 'Cinzel' }}>
               EL ASCENSO SE HA CONSUMADO
             </h2>
             <p className="text-sm text-[#1f1a14] italic font-serif mb-6 leading-relaxed">
-              Has ascendido a <strong>{targetSequenceTitle}</strong>. La digestión de la poción recomienza desde el vacío, pero tu mirada ahora alcanza los resortes secretos que mueven a los hombres y al destino.
+              Has cruzado el segundo umbral y alcanzado <strong>{targetSequenceTitle}</strong>. La digestión de la poción recomienza desde el vacío, pero tu mirada ahora alcanza los resortes secretos que mueven a los hombres y al destino.
             </p>
             <div className="flex justify-center">
               <button
                 onClick={onBackToDesk}
-                className="crimson-btn px-8 py-3 text-sm uppercase tracking-wider font-bold"
+                className="crimson-btn px-8 py-3 text-xs uppercase tracking-widest font-bold shadow-lg"
               >
                 Regresar a la Mesa del Desván
               </button>
@@ -205,7 +490,8 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
 
       </div>
 
-      <footer className="text-xs text-[#6e6353] italic text-center border-t border-[#221c14] pt-3">
+      {/* Pie diegético */}
+      <footer className="text-xs text-[#6e6353] italic text-center border-t border-[#221c14] pt-3 relative z-10">
         El círculo de sal sobre las tablas del suelo conserva el rastro de la marea sobrenatural que cruzó la habitación.
       </footer>
 

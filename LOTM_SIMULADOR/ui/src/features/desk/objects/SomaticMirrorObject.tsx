@@ -17,7 +17,6 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({
   spiritVisionActive = false,
   onToggleSpiritVision
 }) => {
-  const [hovered, setHovered] = useState(false);
   const [inspecting, setInspecting] = useState(false);
 
   // Estados visuales y cinéticos del espejo de azogue
@@ -31,45 +30,57 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({
           tintColor: spiritVisionActive 
             ? 'rgba(168, 85, 247, 0.22)' 
             : 'rgba(212, 175, 55, 0.08)',
+          textureUrl: null,
+          textureOpacity: 0,
           silhouetteClass: 'animate-subtle-breathing',
           vahoOpacity: 0,
-          labelBrief: spiritVisionActive ? 'El Velo Espiritual descorre la niebla' : 'Superficie de azogue limpia y fiel',
-          eyeColor: spiritVisionActive ? '#c084fc' : '#ded5c5',
-          isFrozen: false
+          eyeColor: '#ffffff',
+          isFrozen: false,
+          labelBrief: 'Superficie de azogue limpia y fiel'
         };
       case 'VAHO_TENUE':
         return {
           mirrorGlow: spiritVisionActive 
-            ? '0 0 40px rgba(168, 85, 247, 0.7)' 
-            : '0 0 25px rgba(155, 111, 224, 0.25)',
+            ? '0 0 35px rgba(168, 85, 247, 0.65)' 
+            : '0 4px 25px rgba(139, 92, 246, 0.3)',
           tintColor: spiritVisionActive 
-            ? 'rgba(168, 85, 247, 0.3)' 
-            : 'rgba(155, 111, 224, 0.15)',
-          silhouetteClass: 'animate-subtle-breathing',
-          vahoOpacity: 0.65,
-          labelBrief: 'Vaho espectral empaña los bordes',
+            ? 'rgba(168, 85, 247, 0.35)' 
+            : 'rgba(139, 92, 246, 0.15)',
+          textureUrl: '/art/GFX24_mirror_turbid.jpg',
+          textureOpacity: 0.35,
+          silhouetteClass: 'animate-shadow-tremor',
+          vahoOpacity: 0.3,
           eyeColor: '#c084fc',
-          isFrozen: false
+          isFrozen: false,
+          labelBrief: 'Sombras tenues flotan tras el reflejo'
         };
       case 'REFLEJOS_DESFASADOS':
         return {
-          mirrorGlow: '0 0 35px rgba(168, 85, 247, 0.45)',
-          tintColor: 'rgba(147, 51, 234, 0.25)',
-          silhouetteClass: 'animate-lagged-ghost',
-          vahoOpacity: 0.85,
-          labelBrief: 'El reflejo se mueve a destiempo',
-          eyeColor: '#f43f5e',
-          isFrozen: false
+          mirrorGlow: spiritVisionActive 
+            ? '0 0 40px rgba(168, 85, 247, 0.8)' 
+            : '0 4px 30px rgba(99, 102, 241, 0.4)',
+          tintColor: spiritVisionActive 
+            ? 'rgba(168, 85, 247, 0.45)' 
+            : 'rgba(99, 102, 241, 0.25)',
+          textureUrl: '/art/GFX25_mirror_undulating.jpg',
+          textureOpacity: 0.55,
+          silhouetteClass: 'animate-undulating-mirror',
+          vahoOpacity: 0.6,
+          eyeColor: '#a855f7',
+          isFrozen: false,
+          labelBrief: 'El azogue se ondula como agua turbia'
         };
       case 'EL_REFLEJO_NO_PARPADEA':
         return {
-          mirrorGlow: '0 0 45px rgba(225, 29, 72, 0.6)',
-          tintColor: 'rgba(225, 29, 72, 0.3)',
-          silhouetteClass: 'frozen-stillness',
-          vahoOpacity: 1,
-          labelBrief: 'El reflejo no pestañea jamás',
-          eyeColor: '#ff0033',
-          isFrozen: true
+          mirrorGlow: '0 0 45px rgba(239, 68, 68, 0.65)',
+          tintColor: 'rgba(239, 68, 68, 0.35)',
+          textureUrl: '/art/GFX26_mirror_monstrous.jpg',
+          textureOpacity: 0.75,
+          silhouetteClass: 'animate-monstrous-morph',
+          vahoOpacity: 0.85,
+          eyeColor: '#ef4444',
+          isFrozen: true,
+          labelBrief: 'La silueta sonríe con pupilas ajenas'
         };
     }
   };
@@ -79,8 +90,6 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({
   return (
     <div 
       className="relative cursor-pointer select-none group"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       onClick={() => {
         setInspecting(prev => !prev);
         if (onClick) onClick();
@@ -95,27 +104,26 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({
           borderColor: spiritVisionActive ? '#a855f7' : '#8c733e'
         }}
       >
-        {/* Adorno superior de latón con gema o remate */}
-        <div 
-          style={{
-            position: 'absolute',
-            top: '-12px',
-            padding: '2px 8px',
-            borderTopLeftRadius: '9999px',
-            borderTopRightRadius: '9999px',
-            border: `1px solid ${spiritVisionActive ? '#a855f7' : '#d4af37'}`,
-            backgroundColor: spiritVisionActive ? '#2b1040' : '#b89547',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          {spiritVisionActive ? (
+        {/* Adorno superior de latón y Ojo de Visión Espiritual (activo con tecla V) */}
+        {spiritVisionActive && (
+          <div 
+            style={{
+              position: 'absolute',
+              top: '-12px',
+              padding: '2px 8px',
+              borderTopLeftRadius: '9999px',
+              borderTopRightRadius: '9999px',
+              border: '1px solid #a855f7',
+              backgroundColor: '#2b1040',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 0 10px rgba(168, 85, 247, 0.6)'
+            }}
+          >
             <Eye size={10} color="#c084fc" className="animate-pulse" />
-          ) : (
-            <div style={{ width: '8px', height: '8px', borderRadius: '9999px', backgroundColor: '#120f0d' }} />
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Superficie de Azogue (Cristal Interior) */}
         <div className="somatic-mirror-glass">
@@ -124,6 +132,20 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({
             className="absolute inset-0 transition-colors duration-500"
             style={{ background: config.tintColor }}
           />
+
+          {/* Textura de Corrupción Somática GFX24/GFX25/GFX26 */}
+          {config.textureUrl && (
+            <div 
+              className="absolute inset-0 pointer-events-none transition-opacity duration-700"
+              style={{
+                backgroundImage: `url(${config.textureUrl})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                mixBlendMode: 'screen',
+                opacity: config.textureOpacity
+              }}
+            />
+          )}
 
           {/* Vaho en los bordes del espejo */}
           <div 
@@ -134,8 +156,9 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({
             }}
           />
 
-          {/* Silueta del Reflejo (Cinética o Congelada) */}
-          <div className={`relative flex flex-col items-center ${config.silhouetteClass}`}>
+          {/* Silueta del Reflejo (Visible solo en corrupción o Visión Espiritual) */}
+          {(tier !== 'AZOGUE_LIMPIO' || spiritVisionActive) && (
+            <div className={`relative flex flex-col items-center ${config.silhouetteClass}`}>
             {/* Cabeza */}
             <div 
               style={{
@@ -176,6 +199,7 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({
               }} 
             />
           </div>
+          )}
 
           {/* Reflejo diagonal de luz sobre el cristal */}
           <div 
@@ -187,15 +211,6 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({
             }}
           />
         </div>
-      </div>
-
-      {/* Etiqueta Ambiental en Reposo (≤ 7 Palabras — Ley del Objeto) */}
-      <div 
-        className={`absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-serif italic text-[#c2b297] bg-[#120f0c]/90 px-2.5 py-0.5 rounded border border-[#423524] transition-opacity duration-200 pointer-events-none z-20 ${
-          hovered ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        {config.labelBrief}
       </div>
 
       {/* Despliegue de Reflexión al interactuar (Prosa bajo demanda) */}

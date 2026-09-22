@@ -127,6 +127,125 @@ button.lotm-focus-ring,
   animation: fadeIn 200ms ease-out forwards;
 }
 
+/* ==========================================================================
+   GFX29 — TOKENS Y ESTADOS DE INTERACCIÓN CANÓNICOS
+   ========================================================================== */
+
+/* 1. Estado Reposo (Diegético e integrado) */
+.lotm-state-rest {
+  transition: transform var(--motion-fast), box-shadow var(--motion-fast), filter var(--motion-fast);
+}
+
+/* 2. Estado Hover (Resplandor de borde áureo sutil) */
+.lotm-state-hover:hover {
+  transform: scale(1.015);
+  box-shadow: 0 0 16px var(--lotm-gold-glow);
+}
+
+/* 3. Estado Focus Visible (Anillo de latón victoriano accesible) */
+.lotm-state-focus:focus-visible {
+  outline: 2px solid var(--lotm-antique-gold) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 14px var(--lotm-gold-glow) !important;
+}
+
+/* 4. Estado Pulsado / Activo */
+.lotm-state-active:active {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+}
+
+/* 5. Estado Deshabilitado (Con motivo diegético) */
+.lotm-state-disabled {
+  cursor: not-allowed !important;
+  opacity: 0.55;
+  filter: grayscale(0.6) brightness(0.85);
+}
+
+/* 6. Estado Cambio Reciente (Destello efímero) */
+@keyframes lotmGlowRecent {
+  0% { box-shadow: 0 0 0px rgba(212, 175, 55, 0); }
+  50% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.7); }
+  100% { box-shadow: 0 0 4px rgba(212, 175, 55, 0.2); }
+}
+.lotm-state-recent {
+  animation: lotmGlowRecent 2000ms ease-out;
+}
+
+/* 7. Estado Urgencia / Llamada Prioritaria */
+@keyframes lotmUrgentPulse {
+  0%, 100% { 
+    box-shadow: 0 0 6px rgba(133, 28, 34, 0.4); 
+    border-color: rgba(212, 175, 55, 0.4); 
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(133, 28, 34, 0.85), 0 0 10px rgba(212, 175, 55, 0.6); 
+    border-color: var(--lotm-antique-gold); 
+  }
+}
+.lotm-state-urgent {
+  animation: lotmUrgentPulse 1800ms infinite ease-in-out;
+}
+
+/* ==========================================================================
+   GFX56 — ANIMACIONES ATMOSFÉRICAS LOCALES
+   ========================================================================== */
+@keyframes dustFloat {
+  0% {
+    transform: translate(0px, 0px);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(12px, -18px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-8px, -35px);
+    opacity: 0.15;
+  }
+}
+
+@keyframes smokeRise {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-25px) scaleX(1.4) translateX(4px);
+    opacity: 0.12;
+  }
+  100% {
+    transform: translateY(-50px) scaleX(2) translateX(-6px);
+    opacity: 0;
+  }
+}
+
+@keyframes flameBreath {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.7;
+  }
+}
+
+/* ==========================================================================
+   GFX57 — CURSORES VICTORIANOS VECTORIALES DIEGÉTICOS
+   ========================================================================== */
+.cursor-victorian-pointer {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 2L18 10L11 12L14 20L11 21L8 13L4 16V2Z' fill='%23d4af37' stroke='%231a1612' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, pointer !important;
+}
+
+.cursor-victorian-quill {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 3C18 3 13 6 10 11C8.5 13.5 8 16 7 19L5 22L8 20C11 19 13.5 18.5 16 17C21 14 24 9 24 6C24 4.5 22.5 3 21 3Z' fill='%23e5ded2' stroke='%238c733e' stroke-width='1.2'/%3E%3Cpath d='M7 19L5 22L8 20' stroke='%231a1612' stroke-width='1.5'/%3E%3C/svg%3E") 5 22, text !important;
+}
+
+.cursor-victorian-inspect {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='7' stroke='%23d4af37' stroke-width='2' fill='rgba(212, 175, 55, 0.15)'/%3E%3Cpath d='M15 15L21 21' stroke='%23d4af37' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='8' r='2' fill='%23ffffff' fill-opacity='0.6'/%3E%3C/svg%3E") 10 10, pointer !important;
+}
+
 /* Soporte de Movimiento Reducido */
 @media (prefers-reduced-motion: reduce) {
   :root {
@@ -141,4 +260,18 @@ button.lotm-focus-ring,
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  .lotm-state-urgent {
+    animation: none !important;
+    box-shadow: 0 0 12px rgba(133, 28, 34, 0.7) !important;
+    border: 2px solid var(--lotm-antique-gold) !important;
+  }
+
+  .dust-mote-particle,
+  .candle-smoke-drift,
+  .flame-breath-pulse {
+    animation: none !important;
+    opacity: 0.3 !important;
+  }
 }
+

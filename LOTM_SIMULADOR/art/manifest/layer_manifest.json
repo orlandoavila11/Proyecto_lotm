@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "order_code": "GFX05",
+  "project": "Path to Godhood",
+  "canvas_logical": {
+    "width": 1920,
+    "height": 1080,
+    "aspectRatio": "16:9"
+  },
+  "master_references": {
+    "materials_s0": "materials_sample_s0_1790011140689.jpg",
+    "composition_c0": "desvan_composition_c0_alt_1790012245840.jpg",
+    "background_clean_gfx06": "desvan_background_clean_gfx06_1790012294413.jpg",
+    "desk_clean_gfx07": "mahogany_desk_clean_gfx07_1790012345898.jpg"
+  },
+  "layers": [
+    {
+      "layerIndex": 0,
+      "id": "LAYER_BACKGROUND_CLEAN",
+      "name": "Fondo Arquitectónico Limpio",
+      "sourcePrompt": "GFX06",
+      "assetFile": "desvan_background_clean_gfx06_1790012294413.jpg",
+      "bounds": { "x": 0, "y": 0, "width": 1920, "height": 1080 },
+      "elements": ["Pared de ladrillo", "Ventana claraboya", "Hornacina con Cáliz", "Corcho de investigación", "Escalera de caracol"]
+    },
+    {
+      "layerIndex": 1,
+      "id": "LAYER_DESK_CLEAN",
+      "name": "Mesa de Caoba Limpia",
+      "sourcePrompt": "GFX07",
+      "assetFile": "mahogany_desk_clean_gfx07_1790012345898.jpg",
+      "bounds": { "x": 180, "y": 520, "width": 1560, "height": 560 },
+      "pivot": { "x": 960, "y": 800 },
+      "elements": ["Madera noble de caoba", "Superficie pulida sin objetos horneados"]
+    },
+    {
+      "layerIndex": 2,
+      "id": "LAYER_RUIN_CRACKS",
+      "name": "Máscara de Ruina en Mesa",
+      "sourcePrompt": "GFX27",
+      "bounds": { "x": 180, "y": 520, "width": 1560, "height": 560 },
+      "states": ["INTEGRO", "MARCADO", "EROSIONADO", "ROTO", "PERDIDO"]
+    },
+    {
+      "layerIndex": 3,
+      "id": "LAYER_OBJECTS_DESK",
+      "name": "Objetos Funcionales sobre la Mesa",
+      "elements": [
+        {
+          "id": "OBJ_CANDLE",
+          "name": "Vela de Sebo",
+          "sourcePrompt": "GFX12",
+          "statePrompt": "GFX23",
+          "assetFile": "tallow_candle_o0_1790011224882.jpg",
+          "bounds": { "x": 380, "y": 420, "width": 180, "height": 280 },
+          "pivot": { "x": 470, "y": 680 }
+        },
+        {
+          "id": "OBJ_MIRROR",
+          "name": "Espejo de Azogue",
+          "sourcePrompt": "GFX13",
+          "statePrompts": ["GFX24", "GFX25", "GFX26"],
+          "assetFile": "quicksilver_mirror_o0_1790011251771.jpg",
+          "bounds": { "x": 580, "y": 380, "width": 240, "height": 340 },
+          "pivot": { "x": 700, "y": 700 }
+        },
+        {
+          "id": "OBJ_ACTING_BOOK",
+          "name": "Libro de Actuación",
+          "sourcePrompt": "GFX14",
+          "inspectionPrompt": "GFX15",
+          "assetFile": "acting_book_closed_o0_1790011467113.jpg",
+          "bounds": { "x": 480, "y": 680, "width": 260, "height": 200 },
+          "pivot": { "x": 610, "y": 780 }
+        },
+        {
+          "id": "OBJ_IDENTITY_PAPERS",
+          "name": "Pliegos de Identidad",
+          "sourcePrompt": "GFX16",
+          "bounds": { "x": 860, "y": 660, "width": 300, "height": 220 },
+          "pivot": { "x": 1010, "y": 770 }
+        },
+        {
+          "id": "OBJ_SEALED_LETTER",
+          "name": "Carta Sellada",
+          "sourcePrompt": "GFX20",
+          "waxPrompt": "GFX31",
+          "bounds": { "x": 1220, "y": 710, "width": 240, "height": 160 },
+          "pivot": { "x": 1340, "y": 790 }
+        },
+        {
+          "id": "OBJ_CLOCK_ALMANAC",
+          "name": "Reloj de Latón y Almanaque",
+          "sourcePrompts": ["GFX18", "GFX19"],
+          "bounds": { "x": 1140, "y": 420, "width": 320, "height": 240 },
+          "pivot": { "x": 1300, "y": 640 }
+        },
+        {
+          "id": "OBJ_LEATHER_POUCH",
+          "name": "Bolsa de Cuero",
+          "sourcePrompt": "GFX17",
+          "bounds": { "x": 1420, "y": 600, "width": 180, "height": 180 },
+          "pivot": { "x": 1510, "y": 760 }
+        }
+      ]
+    },
+    {
+      "layerIndex": 4,
+      "id": "LAYER_LIGHTING_TIME",
+      "name": "Mapas Lumínicos por Franja Horaria",
+      "sourcePrompt": "GFX11",
+      "bounds": { "x": 0, "y": 0, "width": 1920, "height": 1080 },
+      "presets": ["MORNING", "AFTERNOON", "EVENING", "LATE_NIGHT"]
+    },
+    {
+      "layerIndex": 5,
+      "id": "LAYER_INTERACTION_AND_FOCUS",
+      "name": "Máscaras SVG y Anillos de Foco",
+      "sourcePrompts": ["GFX28", "GFX29", "GFX57"],
+      "bounds": { "x": 0, "y": 0, "width": 1920, "height": 1080 }
+    }
+  ]
+}
+
