@@ -133,69 +133,88 @@ export const ActingMirrorView: React.FC<ActingMirrorViewProps> = ({
         </div>
       </header>
 
-      {/* Grimorio Abierto a Dos Páginas (1920x1080) */}
-      <div className="grid grid-cols-12 gap-8 flex-1 mb-6 overflow-hidden">
+      {/* Grimorio Abierto a Dos Páginas (Plan de Producción Gráfica GFX15 + GFX30 a h-[880px]) */}
+      <div className="open-grimoire-spread grid grid-cols-12 gap-0 flex-1 h-[880px] mb-4 overflow-hidden rounded-2xl border-4 border-[#2d1b0f] shadow-[0_20px_50px_rgba(0,0,0,0.95)] bg-[#100c08] relative">
         
-        {/* Página Izquierda: Principios, Asimilación y Bitácora */}
-        <div className="col-span-5 bg-[#15120e] p-6 rounded-lg border border-[#2d2419] flex flex-col justify-between overflow-y-auto">
+        {/* Lomo / Pliegue central del libro con sombra profunda */}
+        <div 
+          className="absolute top-0 bottom-0 left-[41.666%] w-6 -ml-3 pointer-events-none z-20"
+          style={{
+            background: 'linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(18,10,6,0.95) 50%, rgba(0,0,0,0.55) 100%)',
+            boxShadow: '0 0 15px rgba(0,0,0,0.75)'
+          }}
+        />
+
+        {/* Página Izquierda: Principios, Asimilación y Bitácora (Parchment GFX30 a 160%) */}
+        <div 
+          className="col-span-5 p-8 flex flex-col justify-between overflow-y-auto relative border-r-2 border-[#3d2817]"
+          style={{
+            backgroundColor: '#ebdcc4',
+            backgroundImage: "radial-gradient(ellipse at 70% 50%, rgba(246, 237, 217, 0.92) 0%, rgba(220, 201, 172, 0.95) 100%), url('/art/GFX30_flat_paper.jpg')",
+            backgroundSize: '100% 100%, 160% 160%',
+            backgroundPosition: 'center, center',
+            backgroundRepeat: 'no-repeat, no-repeat',
+            boxShadow: 'inset -25px 0 35px rgba(0,0,0,0.2)'
+          }}
+        >
           <div>
-            <div className="flex items-center gap-2 mb-4 border-b border-[#2d2419] pb-3">
-              <BookOpen size={18} className="text-[#d4af37]" />
-              <h2 className="font-serif font-bold text-base text-[#e5ded2]" style={{ fontFamily: 'Cinzel' }}>
+            <div className="flex items-center gap-2 mb-4 border-b-2 border-[#8c733e]/50 pb-3">
+              <BookOpen size={20} className="text-[#694e22]" />
+              <h2 className="font-serif font-bold text-lg text-[#241a12]" style={{ fontFamily: 'Cinzel' }}>
                 Preceptos de la Secuencia
               </h2>
             </div>
 
             {/* Veredicto Somático de la Poción */}
-            <div className="parchment-sheet p-5 rounded text-[#1f1a14] mb-5 shadow border border-[#c4b59a]">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#786447] block mb-1 font-serif">
+            <div className="p-4 rounded-xl bg-[#dfceb3] text-[#1f1a14] mb-5 shadow-sm border border-[#a69273]">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#6b5028] block mb-1 font-serif">
                 Veredicto Somático de la Poción
               </span>
-              <p className="text-sm leading-relaxed italic font-serif">
+              <p className="text-sm leading-relaxed italic font-serif text-[#291e14]">
                 "{character.actingFeedback}"
               </p>
             </div>
 
-            <div className="space-y-3 text-xs text-[#c4b59a] leading-relaxed font-serif">
-              <p className="flex items-start gap-2">
-                <Feather size={14} className="text-[#d4af37] shrink-0 mt-0.5" />
+            <div className="space-y-3.5 text-xs text-[#302316] leading-relaxed font-serif">
+              <p className="flex items-start gap-2.5">
+                <Feather size={16} className="text-[#8c7038] shrink-0 mt-0.5" />
                 <span>
-                  <strong>La Ley del Papel:</strong> Una poción no se domina con la fuerza de la voluntad bruta; se digiere convirtiendo los principios místicos en tu segunda naturaleza.
+                  <strong className="text-[#1a1612]">La Ley del Papel:</strong> Una poción no se domina con la fuerza de la voluntad bruta; se digiere convirtiendo los principios místicos en tu segunda naturaleza.
                 </span>
               </p>
-              <p className="flex items-start gap-2">
-                <AlertCircle size={14} className="text-[#851c22] shrink-0 mt-0.5" />
+              <p className="flex items-start gap-2.5">
+                <AlertCircle size={16} className="text-[#851c22] shrink-0 mt-0.5" />
                 <span>
-                  <strong>El Peligro de la Fractura:</strong> Violar reiteradamente el papel despierta la voluntad latente en la característica extraordinaria, precipitando la locura.
+                  <strong className="text-[#591419]">El Peligro de la Fractura:</strong> Violar reiteradamente el papel despierta la voluntad latente en la característica extraordinaria, precipitando la locura.
                 </span>
               </p>
             </div>
 
             {/* Bitácora de Resoluciones Pasadas */}
-            <div className="mt-6 border-t border-[#261e14] pt-4">
-              <span className="text-xs font-serif font-bold uppercase tracking-wider text-[#8c733e] block mb-3">
+            <div className="mt-6 border-t-2 border-[#8c733e]/30 pt-4">
+              <span className="text-xs font-serif font-bold uppercase tracking-wider text-[#694e22] block mb-3">
                 Bitácora de Interpretaciones Anteriores
               </span>
-              <div className="space-y-3 max-h-48 overflow-y-auto pr-1">
+              <div className="space-y-3 max-h-56 overflow-y-auto pr-1">
                 {diaryEntries.length > 0 ? (
                   diaryEntries.map((entry) => (
-                    <div key={entry.id} className="p-3 bg-[#1b1712] rounded border border-[#2e251a] text-xs font-serif">
-                      <div className="flex justify-between items-center text-[#8c733e] mb-1">
-                        <span>Día {entry.day}</span>
-                        <strong className="text-[#e5ded2]">{entry.choiceTaken}</strong>
+                    <div key={entry.id} className="p-3.5 bg-[#e4d6bf] rounded-xl border border-[#b8a486] text-xs font-serif shadow-xs">
+                      <div className="flex justify-between items-center text-[#5c4424] mb-1">
+                        <span className="font-bold">Día {entry.day}</span>
+                        <strong className="text-[#1f170f]">{entry.choiceTaken}</strong>
                       </div>
                       {entry.principle && (
-                        <span className="text-[10px] text-[#8c733e] block mb-1">
+                        <span className="text-[10px] text-[#6b522b] block mb-1 font-semibold">
                           Principio: {entry.principle}
                         </span>
                       )}
-                      <p className="text-[#968c7e] italic text-[11px] leading-relaxed">
+                      <p className="text-[#3b2b1b] italic text-[11px] leading-relaxed">
                         "{entry.narrativeOutcome}"
                       </p>
                     </div>
                   ))
                 ) : (
-                  <p className="text-[11px] text-[#6b5843] italic font-serif">
+                  <p className="text-[11px] text-[#735d43] italic font-serif">
                     Las páginas iniciales aguardan tu primera interpretación ceremonial.
                   </p>
                 )}
@@ -203,30 +222,40 @@ export const ActingMirrorView: React.FC<ActingMirrorViewProps> = ({
             </div>
           </div>
 
-          <div className="text-[11px] text-[#6e6353] border-t border-[#261e14] pt-3 italic font-serif">
+          <div className="text-[11px] text-[#6b563c] border-t border-[#8c733e]/30 pt-3 italic font-serif">
             "Recuerda: solo estás actuando."
           </div>
         </div>
 
-        {/* Página Derecha: Dilema Canónico de Actuación (Tier G) */}
-        <div className="col-span-7 bg-[#15120e] p-6 rounded-lg border border-[#2d2419] flex flex-col justify-between overflow-y-auto">
+        {/* Página Derecha: Dilema Canónico de Actuación (Parchment GFX30 a 160%) */}
+        <div 
+          className="col-span-7 p-8 flex flex-col justify-between overflow-y-auto relative"
+          style={{
+            backgroundColor: '#ebdcc4',
+            backgroundImage: "radial-gradient(ellipse at 30% 50%, rgba(246, 237, 217, 0.92) 0%, rgba(220, 201, 172, 0.95) 100%), url('/art/GFX30_flat_paper.jpg')",
+            backgroundSize: '100% 100%, 160% 160%',
+            backgroundPosition: 'center, center',
+            backgroundRepeat: 'no-repeat, no-repeat',
+            boxShadow: 'inset 25px 0 35px rgba(0,0,0,0.2)'
+          }}
+        >
           <div>
-            <div className="flex items-center justify-between border-b border-[#2d2419] pb-3 mb-4">
+            <div className="flex items-center justify-between border-b-2 border-[#8c733e]/50 pb-3 mb-4">
               <div className="flex items-center gap-2">
-                <Flame size={18} className="text-[#d4af37]" />
-                <h2 className="font-serif font-bold text-base text-[#e5ded2]" style={{ fontFamily: 'Cinzel' }}>
+                <Flame size={20} className="text-[#8c7038]" />
+                <h2 className="font-serif font-bold text-lg text-[#241a12]" style={{ fontFamily: 'Cinzel' }}>
                   Dilema Moral y Actuación Canónica
                 </h2>
               </div>
-              <span className="text-xs text-[#968c7e] italic font-serif">
+              <span className="text-xs text-[#694e22] italic font-serif font-semibold">
                 Prueba de Digestión
               </span>
             </div>
 
             {resolutionOutcome && (
-              <div className="mb-4 p-4 bg-[#1a2416] border border-[#3e6b2e] text-[#d6ecd0] rounded text-xs font-serif leading-relaxed">
-                <span className="font-bold block mb-1 text-[#8bc34a] flex items-center gap-1.5">
-                  <CheckCircle2 size={14} />
+              <div className="mb-4 p-4 bg-[#d8ebd2] border-2 border-[#528743] text-[#1c3814] rounded-xl text-xs font-serif leading-relaxed shadow-sm">
+                <span className="font-bold block mb-1 text-[#2d5c1f] flex items-center gap-1.5">
+                  <CheckCircle2 size={15} />
                   Resultado de la Interpretación:
                 </span>
                 "{resolutionOutcome}"
@@ -234,27 +263,27 @@ export const ActingMirrorView: React.FC<ActingMirrorViewProps> = ({
             )}
 
             {loadingDilemma ? (
-              <p className="text-xs text-[#968c7e] italic font-serif">
+              <p className="text-xs text-[#6b563c] italic font-serif">
                 Consultando los susurros de la característica extraordinaria...
               </p>
             ) : dilemma ? (
               <div className="space-y-4">
-                <div className="p-4 bg-[#1f1a14] rounded border border-[#3d3122]">
-                  <span className="text-xs font-serif font-bold text-[#d4af37] block mb-1">
+                <div className="p-4 bg-[#dfd0b7] rounded-xl border border-[#a89372] shadow-sm">
+                  <span className="text-sm font-serif font-bold text-[#5c3e1b] block mb-1" style={{ fontFamily: 'Cinzel' }}>
                     {dilemma.title}
                   </span>
-                  <p className="text-xs text-[#e5ded2] font-serif leading-relaxed">
+                  <p className="text-xs text-[#1f170f] font-serif leading-relaxed">
                     {dilemma.description}
                   </p>
                   {dilemma.corePrinciple && (
-                    <blockquote className="mt-3 text-[11px] text-[#8c733e] italic border-l-2 border-[#8c733e] pl-3 py-0.5">
+                    <blockquote className="mt-3 text-[11px] text-[#6b4c22] italic border-l-2 border-[#8c7038] pl-3 py-0.5 font-semibold">
                       Principio subyacente: "{dilemma.corePrinciple}"
                     </blockquote>
                   )}
                 </div>
 
-                <div className="space-y-2.5">
-                  <span className="text-[11px] font-serif uppercase tracking-wider text-[#968c7e] block">
+                <div className="space-y-3">
+                  <span className="text-[11px] font-serif uppercase tracking-wider text-[#5c472c] block font-bold">
                     Elige cómo interpretar tu papel:
                   </span>
                   {dilemma.choices.map((choice) => {
@@ -264,16 +293,16 @@ export const ActingMirrorView: React.FC<ActingMirrorViewProps> = ({
                         key={choice.id}
                         type="button"
                         onClick={() => setSelectedChoiceId(choice.id)}
-                        className={`w-full text-left p-4 rounded border text-xs font-serif transition-all lotm-focus-ring ${
+                        className={`w-full text-left p-4 rounded-xl border-2 text-xs font-serif transition-all lotm-focus-ring ${
                           isSelected 
-                            ? 'bg-[#2b2216] border-[#d4af37] text-[#f5ebd9] shadow-md' 
-                            : 'bg-[#181410] border-[#383024] text-[#c4b59a] hover:border-[#8c733e]'
+                            ? 'bg-[#281b10] border-[#d4af37] text-[#f5ebd9] shadow-xl' 
+                            : 'bg-[#f5ede0] border-[#ba9e74] text-[#1c140c] hover:bg-[#ede0ce] hover:border-[#8c733e] shadow-sm'
                         }`}
                       >
-                        <strong className="block text-[#e5ded2] mb-1 text-sm font-serif">
+                        <strong className={`block mb-1 text-sm font-serif ${isSelected ? 'text-[#f0d48d]' : 'text-[#1c140c]'}`}>
                           {choice.label}
                         </strong>
-                        <span className="text-[#968c7e] italic leading-relaxed block">
+                        <span className={`italic leading-relaxed block ${isSelected ? 'text-[#d8cdbd]' : 'text-[#473623]'}`}>
                           {choice.description}
                         </span>
                       </button>
@@ -282,11 +311,11 @@ export const ActingMirrorView: React.FC<ActingMirrorViewProps> = ({
                 </div>
               </div>
             ) : (
-              <div className="p-6 bg-[#16130f] rounded border border-[#2e261b] text-center space-y-2">
-                <p className="text-xs text-[#c4b59a] font-serif italic">
+              <div className="p-6 bg-[#dfd3bc]/80 rounded-xl border border-[#a89576] text-center space-y-2">
+                <p className="text-xs text-[#2b2014] font-serif italic">
                   Tu asimilación actual se encuentra en calma. Has interpretado las facetas principales de este ciclo; la característica extraordinaria no formula preguntas inmediatas.
                 </p>
-                <p className="text-[11px] text-[#786c5e] italic font-serif">
+                <p className="text-[11px] text-[#6b583f] italic font-serif">
                   Regresa al anochecer o tras experimentar sucesos notables en Backlund.
                 </p>
               </div>
@@ -294,12 +323,12 @@ export const ActingMirrorView: React.FC<ActingMirrorViewProps> = ({
           </div>
 
           {dilemma && selectedChoiceId && (
-            <div className="pt-4 border-t border-[#2d2419] flex justify-end">
+            <div className="pt-4 border-t-2 border-[#8c733e]/40 flex justify-end">
               <button
                 type="button"
                 disabled={resolving}
                 onClick={handleResolve}
-                className="px-6 py-2.5 bg-[#8c733e] hover:bg-[#a6894a] text-[#120f0c] font-serif font-bold text-xs uppercase tracking-widest rounded transition-all lotm-focus-ring shadow-lg"
+                className="px-8 py-3 bg-[#8c733e] hover:bg-[#a6894a] text-[#120f0c] font-serif font-bold text-xs uppercase tracking-widest rounded-xl transition-all lotm-focus-ring shadow-xl border border-[#d4af37]"
               >
                 {resolving ? 'Interpretando...' : 'Interpretar el Rol'}
               </button>

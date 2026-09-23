@@ -53,7 +53,16 @@ export const InspectionLayer: React.FC<InspectionLayerProps> = ({
       <div
         ref={containerRef}
         className="relative max-w-2xl w-full max-h-[85vh] overflow-y-auto parchment-sheet p-8 shadow-2xl border-2 border-[#8c733e] text-[#1a1612] flex flex-col gap-6 select-text"
-        style={{ fontSize: '1rem', lineHeight: '1.6' }}
+        style={{
+          backgroundColor: '#ebdcc4',
+          backgroundImage: "radial-gradient(ellipse at 50% 50%, rgba(246, 237, 217, 0.92) 0%, rgba(220, 201, 172, 0.95) 100%), url('/art/GFX30_flat_paper.jpg')",
+          backgroundSize: '100% 100%, 160% 160%',
+          backgroundPosition: 'center, center',
+          backgroundRepeat: 'no-repeat, no-repeat',
+          boxShadow: '0 15px 45px rgba(0,0,0,0.9), inset 0 0 30px rgba(140,115,62,0.15)',
+          fontSize: '1rem',
+          lineHeight: '1.6'
+        }}
       >
         {/* Cabecera de la Inspección */}
         <div className="flex items-start justify-between border-b-2 border-[#8c733e]/40 pb-4">

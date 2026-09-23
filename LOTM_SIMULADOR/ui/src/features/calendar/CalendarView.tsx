@@ -172,42 +172,64 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
         </div>
       </header>
 
-      {/* Contenido Central */}
-      <div className="grid grid-cols-12 gap-6 flex-1 mb-6 overflow-hidden">
+      {/* Contenido Central a 1920x1080 (880px de altura disponible) */}
+      <div className="grid grid-cols-12 gap-8 flex-1 h-[880px] mb-4 overflow-hidden">
         
-        {/* Lado Izquierdo: Las Cuatro Franjas del Día */}
-        <div className="col-span-6 bg-[#161411] p-6 rounded-lg border border-[#2d2419] flex flex-col justify-between overflow-y-auto">
+        {/* Lado Izquierdo: Las Cuatro Franjas del Día (7 / 12) */}
+        <div 
+          className="col-span-7 p-7 rounded-xl flex flex-col justify-start gap-5 overflow-y-auto"
+          style={{
+            backgroundColor: '#16130f',
+            border: '2px solid #3d2f21',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.85), inset 0 0 40px rgba(0,0,0,0.5)'
+          }}
+        >
           <div>
-            <h2 className="font-serif font-bold text-base text-[#e5ded2] mb-4 border-b border-[#2d2419] pb-2 flex items-center gap-2" style={{ fontFamily: 'Cinzel' }}>
-              <Clock size={16} className="text-[#8c733e]" />
-              El Reloj Victoriano de la Jornada
-            </h2>
+            <div className="flex items-center justify-between mb-5 border-b-2 border-[#3d2f21] pb-3">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <Clock size={20} className="text-[#d4af37]" />
+                  <h2 className="font-serif font-bold text-lg text-[#f5ebd9]" style={{ fontFamily: 'Cinzel' }}>
+                    El Reloj Victoriano de la Jornada
+                  </h2>
+                </div>
+                <p className="text-xs text-[#968c7e] italic font-serif">
+                  Distribución civil de las cuatro franjas horarias de Backlund
+                </p>
+              </div>
+              <img 
+                src="/art/GFX19_pocket_watch.jpg" 
+                alt="Reloj de Faltriquera de Latón" 
+                className="w-16 h-16 object-contain rounded-full border-2 border-[#8c733e] shadow-xl bg-[#0b0907] p-1" 
+              />
+            </div>
 
-            <div className="space-y-4 mb-6">
+            <div className="space-y-3.5 mb-5">
               {SLOTS.map((s) => {
                 const isCurrent = s.slot === currentSlot;
                 return (
                   <div
                     key={s.slot}
-                    className={`p-4 rounded border transition-all flex items-start gap-4 ${
-                      isCurrent 
-                        ? 'bg-[#221c15] border-[#8c733e] shadow-[0_0_15px_rgba(212,175,55,0.15)]' 
-                        : 'bg-[#14120f] border-[#262016] opacity-60'
-                    }`}
+                    className="p-4 rounded-xl border-2 transition-all flex items-start gap-4 shadow-md"
+                    style={{
+                      backgroundColor: isCurrent ? '#281e13' : '#120f0c',
+                      borderColor: isCurrent ? '#d4af37' : '#2d2419',
+                      boxShadow: isCurrent ? '0 0 25px rgba(212,175,55,0.25)' : 'none'
+                    }}
                   >
-                    <div className="mt-1">{s.icon}</div>
+                    <div className="mt-1 p-2 rounded-lg bg-[#1a140f] border border-[#3d2e1d]">{s.icon}</div>
                     <div className="flex-1">
                       <div className="flex justify-between items-center mb-1">
-                        <span className="font-serif font-bold text-sm text-[#e5ded2]">
+                        <span className="font-serif font-bold text-base text-[#f5ebd9]">
                           {s.label} <span className="text-xs text-[#8c733e] font-normal font-sans ml-2">({s.hours})</span>
                         </span>
                         {isCurrent && (
-                          <span className="text-xs px-2 py-0.5 rounded bg-[#2b2216] text-[#d4af37] border border-[#8c733e] font-serif">
+                          <span className="text-xs px-2.5 py-0.5 rounded bg-[#3d2e1b] text-[#fef08a] border border-[#d4af37] font-serif font-bold tracking-wider uppercase shadow-sm">
                             Franja en Curso
                           </span>
                         )}
                       </div>
-                      <p className="text-xs text-[#968c7e] leading-relaxed font-serif">
+                      <p className="text-xs text-[#b8ab96] leading-relaxed font-serif">
                         {s.desc}
                       </p>
                     </div>
@@ -217,125 +239,204 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
             </div>
           </div>
 
-          <div className="parchment-sheet p-4 rounded text-[#1f1a14] shadow text-xs italic font-serif">
+          <div 
+            className="p-4 rounded-xl text-[#1f1a14] shadow-lg text-xs italic font-serif leading-relaxed border border-[#8c733e]"
+            style={{
+              backgroundColor: '#ebdcc4',
+              boxShadow: 'inset 0 0 25px rgba(140,115,62,0.2)'
+            }}
+          >
             "En Backlund, el tiempo no espera a los hombres ni a los monstruos. Cada hora consagrada a lo sobrenatural es una hora robada al deber civil."
           </div>
         </div>
 
-        {/* Lado Derecho: Acciones de Coartada y Eventos Fechados */}
-        <div className="col-span-6 flex flex-col gap-4 overflow-y-auto">
+        {/* Lado Derecho: Acciones de Coartada y Eventos Fechados (5 / 12) */}
+        <div className="col-span-5 flex flex-col gap-6 overflow-y-auto">
           
           {/* Panel de Selección de Acción */}
-          <div className="bg-[#161411] p-6 rounded-lg border border-[#2d2419]">
-            <h3 className="font-serif font-bold text-base text-[#d4af37] mb-3" style={{ fontFamily: 'Cinzel' }}>
-              Decidir el Empleo de la Franja ({currentSlot})
-            </h3>
-            
-            <div className="grid grid-cols-2 gap-3 mb-4">
-              <button
-                type="button"
-                disabled={isPending}
-                onClick={() => handlePerformAction('WORK')}
-                className="p-3 bg-[#191714] border border-[#383024] hover:border-[#8c733e] rounded text-left transition-all group lotm-focus-ring"
-              >
-                <span className="font-serif font-bold text-xs text-[#e5ded2] group-hover:text-[#d4af37] block mb-1">
-                  Atender el Empleo Civil
-                </span>
-                <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
-                  Cumples con el deber legal, aseguras el jornal semanal y disuelves la sospecha pública.
-                </span>
-              </button>
-
-              <button
-                type="button"
-                disabled={isPending}
-                onClick={() => handlePerformAction('INVESTIGATE')}
-                className="p-3 bg-[#191714] border border-[#383024] hover:border-[#8c733e] rounded text-left transition-all group lotm-focus-ring"
-              >
-                <span className="font-serif font-bold text-xs text-[#e5ded2] group-hover:text-[#d4af37] block mb-1">
-                  Indagar en los Callejones
-                </span>
-                <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
-                  Buscas confidentes y cotejas pistas de tu caso activo bajo la niebla de Backlund.
-                </span>
-              </button>
-
-              <button
-                type="button"
-                disabled={isPending}
-                onClick={() => handlePerformAction('SOCIALIZE')}
-                className="p-3 bg-[#191714] border border-[#383024] hover:border-[#8c733e] rounded text-left transition-all group lotm-focus-ring"
-              >
-                <span className="font-serif font-bold text-xs text-[#e5ded2] group-hover:text-[#d4af37] block mb-1">
-                  Vínculos Civiles y Taberna
-                </span>
-                <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
-                  Compartes con vecinos o allegados, cuidando las anclas que preservan tu juicio.
-                </span>
-              </button>
-
-              <button
-                type="button"
-                disabled={isPending}
-                onClick={() => handlePerformAction('OPERATE')}
-                className="p-3 bg-[#191714] border border-[#383024] hover:border-[#8c733e] rounded text-left transition-all group lotm-focus-ring"
-              >
-                <span className="font-serif font-bold text-xs text-[#e5ded2] group-hover:text-[#d4af37] block mb-1">
-                  Reclusión Arcana en el Desván
-                </span>
-                <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
-                  Atrancas la puerta, meditas sobre los principios y atiendes asuntos de tu Vía.
-                </span>
-              </button>
-            </div>
-
-            {/* Resultado de la Última Acción */}
-            <div className="p-3 bg-[#13110e] rounded border border-[#2b2317] text-xs text-[#c4b59a] italic font-serif">
-              <span className="text-[#d4af37] font-serif font-bold block not-italic mb-1">
-                Acontecido en la franja:
-              </span>
-              "{lastActionOutcome}"
-            </div>
-
-            {/* Evento Fechado Disparado */}
-            {datedEvent && (
-              <div className="mt-3 p-3 bg-[#241a12] border border-[#8c733e] text-[#f5ebd9] rounded text-xs font-serif leading-relaxed">
-                <span className="font-bold text-[#d4af37] block mb-0.5 flex items-center gap-1.5">
-                  <Bell size={14} />
-                  {datedEvent.title}
-                </span>
-                "{datedEvent.description}"
+          <div 
+            className="p-6 rounded-xl flex flex-col gap-4"
+            style={{
+              backgroundColor: '#16130f',
+              border: '2px solid #3d2f21',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.85), inset 0 0 40px rgba(0,0,0,0.5)'
+            }}
+          >
+            <div>
+              <div className="flex items-center justify-between mb-5 border-b-2 border-[#3d2f21] pb-3">
+                <div>
+                  <h3 className="font-serif font-bold text-base text-[#d4af37]" style={{ fontFamily: 'Cinzel' }}>
+                    Decidir el Empleo de la Franja ({currentSlot})
+                  </h3>
+                  <span className="text-xs text-[#968c7e] italic font-serif">
+                    Construir coartadas y gestionar sospechas
+                  </span>
+                </div>
+                <img 
+                  src="/art/GFX18_victorian_almanac_v2.jpg" 
+                  alt="Almanaque Victoriano de Backlund" 
+                  className="w-16 h-16 object-cover rounded-xl border-2 border-[#8c733e] shadow-xl" 
+                />
               </div>
-            )}
+              
+              <div className="grid grid-cols-2 gap-4 mb-5">
+                <button
+                  type="button"
+                  disabled={isPending}
+                  onClick={() => handlePerformAction('WORK')}
+                  className="p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2"
+                  style={{
+                    backgroundColor: '#1c1712',
+                    borderColor: '#3d2e1d'
+                  }}
+                >
+                  <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
+                    Atender el Empleo Civil
+                  </span>
+                  <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
+                    Cumples con el deber legal, aseguras el jornal semanal y disuelves la sospecha pública.
+                  </span>
+                </button>
 
-            {/* Resumen de Ciclo Semanal */}
-            {weeklyTickSummary && (
-              <div className="mt-3 p-3 bg-[#1b2416] border border-[#4a7238] text-[#d4ebd0] rounded text-xs font-serif leading-relaxed">
-                <span className="font-bold text-[#8bc34a] block mb-0.5 flex items-center gap-1.5">
-                  <CheckCircle size={14} />
-                  Ciclo Semanal Concluido
-                </span>
-                "{weeklyTickSummary}"
+                <button
+                  type="button"
+                  disabled={isPending}
+                  onClick={() => handlePerformAction('INVESTIGATE')}
+                  className="p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2"
+                  style={{
+                    backgroundColor: '#1c1712',
+                    borderColor: '#3d2e1d'
+                  }}
+                >
+                  <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
+                    Indagar en los Callejones
+                  </span>
+                  <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
+                    Buscas confidentes y cotejas pistas de tu caso activo bajo la niebla de Backlund.
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  disabled={isPending}
+                  onClick={() => handlePerformAction('SOCIALIZE')}
+                  className="p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2"
+                  style={{
+                    backgroundColor: '#1c1712',
+                    borderColor: '#3d2e1d'
+                  }}
+                >
+                  <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
+                    Vínculos Civiles y Taberna
+                  </span>
+                  <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
+                    Compartes con vecinos o allegados, cuidando las anclas que preservan tu juicio.
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  disabled={isPending}
+                  onClick={() => handlePerformAction('OPERATE')}
+                  className="p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2"
+                  style={{
+                    backgroundColor: '#1c1712',
+                    borderColor: '#3d2e1d'
+                  }}
+                >
+                  <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
+                    Reclusión Arcana en el Desván
+                  </span>
+                  <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
+                    Atrancas la puerta, meditas sobre los principios y atiendes asuntos de tu Vía.
+                  </span>
+                </button>
               </div>
-            )}
+
+              {/* Resultado de la Última Acción */}
+              <div 
+                className="p-4 rounded-xl border text-xs text-[#ded5c5] italic font-serif leading-relaxed"
+                style={{
+                  backgroundColor: '#120f0c',
+                  borderColor: '#2e251a'
+                }}
+              >
+                <span className="text-[#d4af37] font-serif font-bold block not-italic mb-1">
+                  Acontecido en la franja:
+                </span>
+                "{lastActionOutcome}"
+              </div>
+
+              {/* Evento Fechado Disparado */}
+              {datedEvent && (
+                <div 
+                  className="mt-4 p-4 border rounded-xl text-xs font-serif leading-relaxed shadow-md"
+                  style={{
+                    backgroundColor: '#261b12',
+                    borderColor: '#8c733e',
+                    color: '#f5ebd9'
+                  }}
+                >
+                  <span className="font-bold text-[#d4af37] block mb-1 flex items-center gap-1.5">
+                    <Bell size={14} />
+                    {datedEvent.title}
+                  </span>
+                  "{datedEvent.description}"
+                </div>
+              )}
+
+              {/* Resumen de Ciclo Semanal */}
+              {weeklyTickSummary && (
+                <div 
+                  className="mt-4 p-4 border rounded-xl text-xs font-serif leading-relaxed shadow-md"
+                  style={{
+                    backgroundColor: '#1b2615',
+                    borderColor: '#4a7238',
+                    color: '#d4ebd0'
+                  }}
+                >
+                  <span className="font-bold text-[#8bc34a] block mb-1 flex items-center gap-1.5">
+                    <CheckCircle size={14} />
+                    Ciclo Semanal Concluido
+                  </span>
+                  "{weeklyTickSummary}"
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Citas y Ciclos Ineludibles */}
-          <div className="bg-[#161411] p-5 rounded-lg border border-[#2d2419]">
-            <h3 className="font-serif font-bold text-sm text-[#968c7e] uppercase tracking-wider mb-3">
-              Citas y Ciclos Ineludibles
+          <div 
+            className="p-6 rounded-xl"
+            style={{
+              backgroundColor: '#16130f',
+              border: '2px solid #3d2f21',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.85)'
+            }}
+          >
+            <h3 className="font-serif font-bold text-xs text-[#8c733e] uppercase tracking-wider mb-3">
+              Citas y Ciclos Ineludibles en Backlund
             </h3>
-            <div className="space-y-2 text-xs text-[#c4b59a] font-serif">
-              <div className="p-2 bg-[#191714] rounded border border-[#2e261b] flex justify-between items-center">
-                <span>Lunes (Mañana): Cobro del Alquiler Semanal</span>
+            <div className="space-y-2.5 text-xs text-[#c4b59a] font-serif">
+              <div 
+                className="p-3 rounded-lg border flex justify-between items-center"
+                style={{ backgroundColor: '#13100d', borderColor: '#2b2216' }}
+              >
+                <span className="text-[#e5ded2]">Lunes (Mañana): Cobro del Alquiler Semanal</span>
                 <span className="text-[#8c733e] italic">La casera llamará a tu puerta</span>
               </div>
-              <div className="p-2 bg-[#191714] rounded border border-[#2e261b] flex justify-between items-center">
-                <span>Domingo (Mañana): Sermón de la Iglesia Local</span>
+              <div 
+                className="p-3 rounded-lg border flex justify-between items-center"
+                style={{ backgroundColor: '#13100d', borderColor: '#2b2216' }}
+              >
+                <span className="text-[#e5ded2]">Domingo (Mañana): Sermón de la Iglesia Local</span>
                 <span className="text-[#8c733e] italic">Obligación moral del vecindario</span>
               </div>
-              <div className="p-2 bg-[#191714] rounded border border-[#2e261b] flex justify-between items-center">
-                <span>Día 15 (Medianoche): Noche de Luna Llena</span>
+              <div 
+                className="p-3 rounded-lg border flex justify-between items-center"
+                style={{ backgroundColor: '#13100d', borderColor: '#2b2216' }}
+              >
+                <span className="text-[#e5ded2]">Día 15 (Medianoche): Noche de Luna Llena</span>
                 <span className="text-[#e06666] italic flex items-center gap-1">
                   <AlertOctagon size={12} />
                   La marea astral agita la sangre

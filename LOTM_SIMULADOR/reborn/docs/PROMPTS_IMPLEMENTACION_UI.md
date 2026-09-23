@@ -103,6 +103,15 @@ CIERRE OBLIGATORIO: entrega el reporte del manual con Campo 0 COMMIT real, commi
 FIN DEL PROMPT R1
 ```
 
+### Complemento del Plan de Producción Gráfica (Recursos GFX de R1)
+- **Órdenes de producción asociadas:** `GFX00` (Inventario real de recursos), `GFX01` (Contrato visual y prueba de lectura), `GFX02` (Muestra de materiales), `GFX03` (Composición del Desván), `GFX04` (Alternativa de composición).
+- **Activos generados y validados en el repositorio (`ui/public/art/`):**
+  - `C0_desvan_composition.jpg`: Composición Maestra aprobada (encuadre 3/4 ligeramente elevado, luz cálida izquierda, relleno frío tenue desde la ventana derecha, 11 puntos funcionales en mesa y pared).
+  - `S0_materials_sample.jpg`: Muestra de materiales aprobada (caoba envejecida, latón mate, vitela/papel marfil, cuero oscuro, cera de sebo, azogue).
+  - Tríada de objetos piloto O0 aprobada: Vela de sebo (`GFX12`), Espejo de azogue (`GFX13`), Libro de acting cerrado (`GFX14`).
+- **Paleta de tokens ratificada:** Vacío (`#090807`), Tinta (`#17120e`), Caoba (`#402717`), Latón (`#a68444`), Papel (`#e8dcc4`), Tinta de papel (`#241d16`), Peligro (`#8f2f31`), Éter (`#7961a8`), Foco (`#f0d48d`).
+- **Presets de cámara tipados:** `WIDE_OVERVIEW`, `FOCUS_DESK`, `FOCUS_CORKBOARD`, `FOCUS_STAIRCASE`, `FOCUS_HORNACINA`.
+
 ---
 
 ## R2 Construir los fundamentos de escena
@@ -126,6 +135,17 @@ ACEPTACIÓN: sin recortes funcionales; recorrido completo por teclado; sin estad
 CIERRE OBLIGATORIO: entrega el reporte del manual con Campo 0 COMMIT real, commit base, CI real o no ejecutada, contador N/20 verificado, archivos, pruebas con logs, capturas, DELTA e hipótesis causal, FALLOS y HUMAN_REVIEW. Commit y push sólo con rama y remoto autorizados; si no se pueden completar, reporta entrega pendiente sin inventar evidencia. Finaliza LISTO PARA REVISIÓN o BLOQUEADO. No te autoapruebes, no ejecutes el siguiente brief y no cambies de fase.
 FIN DEL PROMPT R2
 ```
+
+### Complemento del Plan de Producción Gráfica (Recursos GFX de R2)
+- **Órdenes de producción asociadas:** `GFX28` (Máscaras de interacción y hit areas), `GFX29` (Foco y estados de interacción), `GFX30` (Papel común para lectura), `GFX32` (Marcos y superficies adaptables).
+- **Activos generados y validados en el repositorio (`ui/public/art/`):**
+  - `GFX30_flat_paper.jpg`: Textura de vitela y papel marfil envejecido de fibra fina; base física táctil para paneles modales de lectura (`InspectionLayer.tsx`).
+  - Capas de sombreado y máscaras vectoriales en CSS/SVG: `tokens.css`, `textures.css`, `desk_objects.css`.
+- **Contratos de interacción verificados:**
+  - Lienzo lógico invariable 1920 × 1080 con proyección homogénea y matriz inversa para clics en los 5 viewports de compatibilidad (1280×720 a 2560×1440).
+  - Regiones interactivas semánticas (hit areas mínimas $\ge 44 \times 44$ px) coincidentes con el arte de C0.
+  - Anillo de foco accesible victoriano (`lotm-focus-ring` oro viejo con resplandor suave).
+  - Ley del Objeto (§14): Etiquetas en reposo de hasta siete palabras; la prosa vive exclusivamente al interactuar directamente dentro de `InspectionLayer.tsx`.
 
 ---
 
@@ -152,6 +172,25 @@ CIERRE OBLIGATORIO: entrega el reporte del manual con Campo 0 COMMIT real, commi
 FIN DEL PROMPT R3
 ```
 
+### Complemento del Plan de Producción Gráfica (Recursos GFX de R3)
+- **Órdenes de producción asociadas:** `GFX05` a `GFX10` (Capas del entorno: fondo, mesa, estante, escalera/picaporte, primer plano), `GFX11` (Iluminación según el tiempo), `GFX12` a `GFX22` (Los 11 objetos del Desván), `GFX23` (Cuatro estados de la vela), `GFX24` a `GFX26` (Estados somáticos del espejo), `GFX27` (Cinco niveles de grietas de Ruina).
+- **Activos generados y validados en el repositorio (`ui/public/art/`):**
+  - Entorno arquitectónico: `C0_desvan_composition.jpg`, `GFX06_desvan_background_clean.jpg`, `GFX07_mahogany_desk_clean.jpg`.
+  - Los 11 objetos canónicos del Desván (`ui/src/features/desk/objects/`):
+    1. Vela de sebo: `GFX12_tallow_candle.jpg` + `GFX23` (llama viva `BRILLANTE`, vacilante `VACILANTE`, humo `CREPITANTE`, brasa `AHOGADA_EN_CERA`).
+    2. Espejo de azogue: `GFX13_quicksilver_mirror.jpg` + `GFX24_mirror_turbid.jpg` (`VAHO_TENUE`), `GFX25_mirror_undulating.jpg` (`REFLEJOS_DESFASADOS`), `GFX26_mirror_monstrous.jpg` (`EL_REFLEJO_NO_PARPADEA`).
+    3. Libro de acting cerrado: `GFX14_acting_book_closed.jpg`.
+    4. Papeles de identidad: `GFX16_identity_papers.jpg`.
+    5. Bolsa de cuero: `GFX17_leather_pouch.jpg`.
+    6. Reloj de latón y almanaque: `GFX19_pocket_watch.jpg`, `GFX18_victorian_almanac_v2.jpg`.
+    7. Carta sellada: `GFX20_sealed_letter.jpg`.
+    8. Tablero de corcho: `GFX21_corkboard.jpg`.
+    9. Cáliz ritual: `GFX22_ritual_chalice.jpg`.
+    10. Escalera y picaporte: capa arquitectónica integrada en C0 / foco táctico.
+    11. Grietas de la mesa (`DeskCracksOverlay.tsx`): Máscara acumulativa `GFX27` (`INTEGRO`, `MARCADO`, `EROSIONADO`, `ROTO`, `PERDIDO`).
+  - Capa de iluminación horaria (`TimeLightingLayer.tsx`): Mañana, Tarde, Noche, Madrugada según `GFX11`.
+- **Cero pastillas HUD flotantes:** Velo, Guardia, Bazar y Calendario se accionan exclusivamente mediante los objetos físicos de la estancia.
+
 ---
 
 ## R4 Conectar calendario identidad y actuación
@@ -176,6 +215,30 @@ ACEPTACIÓN: ninguna franja consumida dos veces, ninguna actuación resuelta só
 CIERRE OBLIGATORIO: entrega el reporte del manual con Campo 0 COMMIT real, commit base, CI real o no ejecutada, contador N/20 verificado, archivos, pruebas con logs, capturas, DELTA e hipótesis causal, FALLOS y HUMAN_REVIEW. Commit y push sólo con rama y remoto autorizados; si no se pueden completar, reporta entrega pendiente sin inventar evidencia. Finaliza LISTO PARA REVISIÓN o BLOQUEADO. No te autoapruebes, no ejecutes el siguiente brief y no cambies de fase.
 FIN DEL PROMPT R4
 ```
+
+### Complemento del Plan de Producción Gráfica (Recursos GFX de R4)
+- **Órdenes de producción asociadas:** `GFX15` (Libro de actuación abierto), `GFX16` (Papeles de identidad), `GFX18` (Almanaque victoriano), `GFX19` (Reloj de faltriquera), `GFX30` (Papel común para lectura), `GFX31` (Sello de lacre del Reino de Loen), `GFX36A–GFX36F` (Viñetas de oficio de los seis orígenes canónicos).
+- **Activos generados y validados en el repositorio (`ui/public/art/`):**
+  - **Identidad y Anclas de Origen (`IdentityDossierView.tsx`):**
+    - `GFX31_wax_seal.jpg`: Sello de lacre carmesí oficial del Reino de Loen.
+    - `GFX30_flat_paper.jpg`: Superficie de vitela envejecida para el pliego notarial de identidad civil.
+    - Viñetas de enseres civiles de los seis orígenes canónicos (`GFX36A–GFX36F`):
+      1. Escribiente Notarial: `GFX36A_origin_clerk.jpg` (pliego, tintero, pluma y carpeta notarial).
+      2. Estudiante de Medicina: `GFX36B_origin_medical_student.jpg` (cuaderno anatómico, vendas e instrumental).
+      3. Corresponsal de Sucesos: `GFX36C_origin_reporter.jpg` (libreta de notas, lápiz y recortes).
+      4. Espiritista de Salón: `GFX36D_origin_medium.jpg` (péndulo de cuarzo y paño de terciopelo).
+      5. Estibador de Muelles: `GFX36E_origin_dockworker.jpg` (gancho de estiba y cuerda alquitranada).
+      6. Detective Privado: `GFX36F_origin_detective.jpg` (lupa, pipa y cuaderno de notas).
+    - Representación respetuosa: las viñetas retratan naturalezas muertas de los útiles del oficio, sin imponer rostro ni fisonomía al protagonista.
+  - **Cuaderno de Actuación en Piel (`ActingMirrorView.tsx`):**
+    - `GFX15_acting_book_open.jpg`: Volumen de cuero oscuro abierto sobre la mesa de caoba.
+    - `GFX30_flat_paper.jpg`: Textura de doble página en blanco sobre la que se proyecta la prosa y la bitácora viva.
+    - Tipografía en tinta ferrogálica de alto contraste (`Cinzel` y `EB Garamond`), lomo central con sombra volumétrica y encuadernación en piel.
+    - Cero estadísticas mecánicas: la asimilación se refleja exclusivamente en el veredicto somático cualitativo y la máscara de coherencia.
+  - **Almanaque y Tiempo Civil (`CalendarView.tsx`):**
+    - `GFX18_victorian_almanac_v2.jpg`: Almanaque civil ilustrado del Reino de Loen.
+    - `GFX19_pocket_watch.jpg`: Reloj de faltriquera de latón opaco con cuadrante de cuatro franjas horarias.
+    - `GFX30_flat_paper.jpg`: Fondo táctil de notas para la crónica del tiempo civil.
 
 ---
 
