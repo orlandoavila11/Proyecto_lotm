@@ -20,7 +20,8 @@ async function startServer() {
   console.log(`✨ [2/3] Compendio canónico validado: ${pathwaysCount}/22 Vías Sagradas activas.`);
 
   const PORT = Number(process.env.PORT) || 3456;
-  await app.listen({ port: PORT, host: '0.0.0.0' });
+  const HOST = process.env.HOST || '127.0.0.1';
+  await app.listen({ port: PORT, host: HOST });
   console.log(`🕯️ [3/3] Servidor Victoriano Fastify escuchando en: \x1b[32mhttp://localhost:${PORT}\x1b[0m\n`);
 
   console.log('================================================================================');

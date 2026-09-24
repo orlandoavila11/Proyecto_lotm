@@ -248,10 +248,7 @@ export const LetterUnfoldModal: React.FC<LetterUnfoldModalProps> = ({
               <div className="flex gap-2">
                 {onAcknowledge && (
                   <button
-                    onClick={() => {
-                      onAcknowledge();
-                      onClose();
-                    }}
+                    onClick={onAcknowledge}
                     className="crimson-btn px-5 py-2 text-xs uppercase tracking-wider font-bold flex items-center gap-1.5"
                   >
                     <span>{actionButtonText}</span>
