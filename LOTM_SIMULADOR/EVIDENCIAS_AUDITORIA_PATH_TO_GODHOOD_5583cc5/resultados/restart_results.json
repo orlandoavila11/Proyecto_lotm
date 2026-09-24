@@ -1,0 +1,44 @@
+[
+  {
+    "phase": 1,
+    "exitCode": 0,
+    "result": {
+      "pid": 6,
+      "error": null,
+      "before": {
+        "day": 1,
+        "slot": 0,
+        "work": 0
+      },
+      "after": {
+        "day": 1,
+        "slot": 1,
+        "work": 1
+      },
+      "logs": [
+        "cal_act_kij6_1"
+      ]
+    }
+  },
+  {
+    "phase": 2,
+    "exitCode": 0,
+    "result": {
+      "pid": 30,
+      "error": "UNIQUE constraint failed: calendar_log.id",
+      "before": {
+        "day": 1,
+        "slot": 1,
+        "work": 1
+      },
+      "after": {
+        "day": 1,
+        "slot": 1,
+        "work": 2
+      },
+      "logs": [
+        "cal_act_kij6_1"
+      ]
+    }
+  }
+]

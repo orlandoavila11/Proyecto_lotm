@@ -19,9 +19,30 @@ export const SomaticMirrorObject: React.FC<SomaticMirrorObjectProps> = ({
 }) => {
   const [inspecting, setInspecting] = useState(false);
 
+  // Normalización exhaustiva de corrupción: proyecta estados de dominio (PRISTINE, etc.) a representación visual
+  const normalizedTier = (() => {
+    switch (tier as string) {
+      case 'PRISTINE':
+      case 'AZOGUE_LIMPIO':
+        return 'AZOGUE_LIMPIO';
+      case 'LATENT_MURMURS':
+      case 'VAHO_TENUE':
+        return 'VAHO_TENUE';
+      case 'ASTRAL_STRAIN':
+      case 'REFLEJOS_DESFASADOS':
+        return 'REFLEJOS_DESFASADOS';
+      case 'MUTATING':
+      case 'CORRUPTED_VESSEL':
+      case 'EL_REFLEJO_NO_PARPADEA':
+        return 'EL_REFLEJO_NO_PARPADEA';
+      default:
+        return 'AZOGUE_LIMPIO';
+    }
+  })();
+
   // Estados visuales y cinéticos del espejo de azogue
   const getConfig = () => {
-    switch (tier) {
+    switch (normalizedTier) {
       case 'AZOGUE_LIMPIO':
         return {
           mirrorGlow: spiritVisionActive 

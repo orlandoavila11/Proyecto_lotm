@@ -43,7 +43,16 @@ export class MigrationRunner {
 
   public loadMigrations(): MigrationRecord[] {
     if (!fs.existsSync(this.migrationsDir)) {
-      throw new Error(`Directorio de migraciones no encontrado: ${this.migrationsDir}`);
+      // Fallback: si se ejecuta desde dist pero migrations no se copió, buscar en src
+      const fallbackSrcDir = path.resolve(
+        path.dirname(fileURLToPath(import.meta.url)),
+        '../../../src/infra/database/migrations'
+      );
+      if (fs.existsSync(fallbackSrcDir)) {
+        this.migrationsDir = fallbackSrcDir;
+      } else {
+        throw new Error(`Directorio de migraciones no encontrado: ${this.migrationsDir}`);
+      }
     }
 
     const files = fs.readdirSync(this.migrationsDir)

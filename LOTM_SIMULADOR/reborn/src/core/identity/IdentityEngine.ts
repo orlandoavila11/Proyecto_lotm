@@ -127,7 +127,19 @@ export class IdentityEngine {
     const event = allEvents.find(e => e.id === eventId);
     if (!event) throw new Error(`Evento de identidad no encontrado: ${eventId}`);
 
-    const chosenOption = event.options[optionIndex] || event.options[0];
+    if (optionIndex < 0 || optionIndex >= event.options.length) {
+      throw new Error(`Índice de opción inválido: ${optionIndex}. El evento solo contiene ${event.options.length} opciones.`);
+    }
+
+    const history = db.getIdentityEventHistory(characterId, 50);
+    const currentSlot = char.current_slot ?? 0;
+    const currentDay = char.current_day ?? 1;
+    const alreadyResolved = history.some(h => h.event_id === eventId && h.day === currentDay && h.slot === currentSlot);
+    if (alreadyResolved) {
+      throw new Error(`El evento de identidad '${eventId}' ya fue resuelto en la franja actual (Día ${currentDay}, Franja ${currentSlot}).`);
+    }
+
+    const chosenOption = event.options[optionIndex];
     const outcome = chosenOption.statOutcome;
 
     // Convertir pounds a peniques (1 libra = 240 peniques)
@@ -161,13 +173,13 @@ export class IdentityEngine {
 
     // 5. Registrar en historial de eventos de identidad
     db.addIdentityEventHistory({
-      id: generateDeterministicId('id_ev'),
+      id: db.nextId('id_ev'),
       character_id: characterId,
       event_id: event.id,
       event_category: event.category,
       chosen_option_index: optionIndex,
-      day: char.current_day,
-      slot: char.current_slot ?? 0,
+      day: currentDay,
+      slot: currentSlot,
       stat_outcome_json: JSON.stringify(outcome)
     });
 

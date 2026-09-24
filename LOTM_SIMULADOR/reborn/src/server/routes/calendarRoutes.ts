@@ -10,6 +10,7 @@ export const calendarRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async 
   const ActionSchema = z.object({
     characterId: z.string().min(1),
     actionType: z.enum(['INVESTIGATE', 'WORK', 'SOCIALIZE', 'OPERATE']),
+    commandId: z.string().optional(),
     details: z.object({
       targetId: z.string().optional(),
       customNote: z.string().optional()
@@ -21,7 +22,33 @@ export const calendarRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async 
     if (!parsed.success) {
       return reply.status(400).send({ error: 'Payload inválido', details: parsed.error.issues });
     }
-    const { characterId, actionType, details } = parsed.data;
+    const { characterId, actionType, commandId, details } = parsed.data;
+
+    if (commandId) {
+      const payloadHash = JSON.stringify({ characterId, actionType, details: details || {} });
+      const existing = db.getCommandReceipt(commandId);
+      if (existing) {
+        if (existing.payloadHash !== payloadHash) {
+          return reply.status(409).send({ error: 'Command ID reutilizado con diferente payload' });
+        }
+        return reply.status(200).send(existing.response);
+      }
+
+      const outcome = db.transaction(() => {
+        const out = CalendarEngine.performSlotAction(db, characterId, actionType as CalendarActionType, details);
+        db.saveCommandReceipt({
+          commandId,
+          characterId,
+          commandType: 'CALENDAR_ACTION',
+          payloadHash,
+          response: out
+        });
+        return out;
+      });
+
+      return reply.send(outcome);
+    }
+
     const outcome = CalendarEngine.performSlotAction(db, characterId, actionType as CalendarActionType, details);
     return reply.send(outcome);
   });

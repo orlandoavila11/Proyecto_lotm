@@ -247,14 +247,22 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
     if (!enemy.revealedAbilities) enemy.revealedAbilities = [];
     if (!player.statuses) player.statuses = [];
     if (!enemy.statuses) enemy.statuses = [];
-    if (!player.ap) player.ap = 3;
-    if (!enemy.ap) enemy.ap = 3;
-    if (!player.attention) player.attention = 1;
-    if (!enemy.attention) enemy.attention = 1;
+    if (player.ap === undefined || player.ap === null) player.ap = 3;
+    if (enemy.ap === undefined || enemy.ap === null) enemy.ap = 3;
+    if (player.attention === undefined || player.attention === null) player.attention = 1;
+    if (enemy.attention === undefined || enemy.attention === null) enemy.attention = 1;
     if (!battle.turnLog) battle.turnLog = [];
 
     // Manejo según actionType
     if (actionType === 'SCRUTINIZE') {
+      if (player.ap < 1) {
+        return reply.status(400).send({
+          error: 'Puntos de Acción (AP) insuficientes para escudriñar.',
+          player,
+          enemy,
+          state: battle
+        });
+      }
       // Acción de Escudriñar
       player.ap = Math.max(0, player.ap - 1);
       const enemyPossibleSkills = ['SKILL_ENEMY_PRIMARY_STRIKE', 'SKILL_ENEMY_CORRUPTION_AURA'];
@@ -282,7 +290,25 @@ export const combatRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
     }
 
     if (actionType === 'MOVE') {
+      if (player.ap < 1) {
+        return reply.status(400).send({
+          error: 'Puntos de Acción (AP) insuficientes para realizar un movimiento.',
+          player,
+          enemy,
+          state: battle
+        });
+      }
+
       const targetPos = targetPosition || { x: Math.min(6, player.position.x + 1), y: player.position.y };
+      if (targetPos.x < 0 || targetPos.x > 6 || targetPos.y < 0 || targetPos.y > 4) {
+        return reply.status(400).send({
+          error: `Posición fuera de los límites de la cuadrícula táctica (7x5: x=0..6, y=0..4): (${targetPos.x}, ${targetPos.y})`,
+          player,
+          enemy,
+          state: battle
+        });
+      }
+
       player.position = targetPos;
       player.ap = Math.max(0, player.ap - 1);
 

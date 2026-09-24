@@ -1,0 +1,610 @@
+[
+  {
+    "monster_id": "mon_adult_manhal_fish",
+    "visual_tone": "Etéreo, frío, subacuático y sereno; atmósfera de penumbra acuática victoriana.",
+    "color_palette": [
+      "#cbd5e1",
+      "#64748b",
+      "#0f172a",
+      "#38bdf8",
+      "#f8fafc"
+    ],
+    "anatomy": {
+      "silhouette": "Pez estilizado y aerodinámico con aletas ondulantes translúcidas y cráneo ensanchado para albergar órganos oculares descomunales.",
+      "prominent_features": [
+        "Ojos globulares convexos de aspecto vidrioso que emiten una suave luminiscencia argéntea",
+        "Escamas plateadas delgadas con iridiscencia fría",
+        "Aleta dorsal filamentosa que vibra imperceptiblemente"
+      ],
+      "scale_category": "SMALL",
+      "surface_materials": "Membrana gelatinosa translúcida sobre placas de escamas argentinas delgadas, refracción vítrea en córneas oculares."
+    },
+    "visual_atmosphere": {
+      "lighting": "Bioluminiscencia fría difusa que emana desde el interior de los globos oculares, cáusticas acuáticas apagadas sin sombras duras.",
+      "composition": "Perfil lateral medio sumergido, con el sujeto en diagonal ascendente suave y fondo de lecho rocoso cavernoso en penumbra.",
+      "focal_elements": "El iris plateado reflectante y la curvatura del lente ocular convexo.",
+      "environmental_setting": "Aguas abisales y frías de cuencas subterráneas, corrientes quietas con sedimentos minerales en suspensión."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_adult_manhal_fish.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_adult_manhal_fish.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/subterranean_basin.webp"
+    }
+  },
+  {
+    "monster_id": "mon_ram_horn_blackfish",
+    "visual_tone": "Gótico fluvial, turbio, pesado y amenazante; lodo de río industrial de Backlund.",
+    "color_palette": [
+      "#18181b",
+      "#27272a",
+      "#3f3f46",
+      "#1e3a5f",
+      "#71717a"
+    ],
+    "anatomy": {
+      "silhouette": "Pez robusto y acorazado con torso grueso y dos cuernos curvados hacia atrás sobre el dorso de la cabeza.",
+      "prominent_features": [
+        "Par de protuberancias óseas curvadas como cuernos de carnero de textura rugosa",
+        "Piel coriácea negra mate sin brillo",
+        "Mandíbula inferior prognática con placas cortantes"
+      ],
+      "scale_category": "MEDIUM",
+      "surface_materials": "Piel gruesa de textura similar al cuero mojado con incrustaciones óseas calcificadas y estrías minerales."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luz rasante débil y amarillenta que apenas penetra el agua turbia; sombras densas y contrastes fangosos.",
+      "composition": "Tres cuartos frontal en ángulo bajo, enfatizando la masa del cráneo y la espiral de los cuernos.",
+      "focal_elements": "Las crestas estriadas de los cuernos óseos y el filo oscuro de la mandíbula.",
+      "environmental_setting": "Fondos limosos y canales fluviales con sedimentos industriales, raíces sumergidas y maderas podridas."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_ram_horn_blackfish.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_ram_horn_blackfish.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/industrial_riverbed.webp"
+    }
+  },
+  {
+    "monster_id": "mon_seven_colored_lizard_dragon",
+    "visual_tone": "Prismático sutil, misterioso, resplandeciente e ilusorio; bosque brumoso con refracciones cromáticas.",
+    "color_palette": [
+      "#e0e7ff",
+      "#818cf8",
+      "#c084fc",
+      "#34d399",
+      "#fbbf24"
+    ],
+    "anatomy": {
+      "silhouette": "Reptil alargado de cuatro patas con cresta dorsal baja y cola prensil en forma de látigo.",
+      "prominent_features": [
+        "Escamas de prisma que cambian gradualmente entre siete colores pastel",
+        "Ojos rasgados con dos pupilas concéntricas",
+        "Glándula transparente en la base del cráneo que palpita suavemente"
+      ],
+      "scale_category": "MEDIUM",
+      "surface_materials": "Queratina pulida con microestructuras cristalinas que generan iridiscencia estructural no pigmentada."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luz tamizada natural a través de copas de árboles y niebla baja, produciendo sutil aberración cromática en los bordes corporales.",
+      "composition": "Plano entero reposando sobre una rama retorcida cubierta de líquenes, con mirada orientada hacia el espectador.",
+      "focal_elements": "La doble pupila concéntrica y el destello de la glándula endocrina translúcida en la nuca.",
+      "environmental_setting": "Bosque antiguo húmedo con helechos gigantes, troncos musgosos y claros envueltos en bruma fría."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_seven_colored_lizard_dragon.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_seven_colored_lizard_dragon.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/prismatic_woods.webp"
+    }
+  },
+  {
+    "monster_id": "mon_falsman_rabbit",
+    "visual_tone": "Campestre victoriano melancólico, sutilmente inquietante, nervioso y veloz.",
+    "color_palette": [
+      "#f1f5f9",
+      "#94a3b8",
+      "#475569",
+      "#38bdf8",
+      "#334155"
+    ],
+    "anatomy": {
+      "silhouette": "Lagomorfo estilizado y esbelto con patas traseras alargadas y orejas desproporcionadas orientadas en abanico.",
+      "prominent_features": [
+        "Orejas translúcidas con filamentos nerviosos de color azul cielo brillante",
+        "Ojos azul pálido fijos sin pestañeo",
+        "Pelaje ceniciento suave con mechones plateados"
+      ],
+      "scale_category": "TINY",
+      "surface_materials": "Piel fina de tacto aterciopelado cenizo con membranas auriculares semitransparentes como papel pergamino húmedo."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luz de crepúsculo nublado en un páramo victoriano; iluminación fría uniforme con neblina rasante.",
+      "composition": "Primer plano en ángulo bajo a ras de suelo entre briznas de hierba seca, cuerpo en tensión congelada.",
+      "focal_elements": "La red de venas bioluminiscentes celestes visibles a trasluz en el cartílago de las orejas.",
+      "environmental_setting": "Colinas abiertas cubiertas de pasto amarillento, niebla crepuscular y madrigueras kársticas ocultas."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_falsman_rabbit.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_falsman_rabbit.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/moorland_dusk.webp"
+    }
+  },
+  {
+    "monster_id": "mon_mirror_dragon",
+    "visual_tone": "Mineral, reflectante, frío y psicológicamente abrumador; caverna de espejos arcanos.",
+    "color_palette": [
+      "#f8fafc",
+      "#e2e8f0",
+      "#94a3b8",
+      "#475569",
+      "#0ea5e9"
+    ],
+    "anatomy": {
+      "silhouette": "Draco alado de líneas geométricas angulosas con alas como paneles facetados de vidrio azogado.",
+      "prominent_features": [
+        "Escamas de azogue pulido que reflejan distorsiones visuales del entorno circundante",
+        "Ojos convexos de espejo liso sin pupila ni esclera",
+        "Garras estilizadas con brillo de plata esterlina"
+      ],
+      "scale_category": "LARGE",
+      "surface_materials": "Placas de vidrio volcánico metalizado y mercurio sólido cristalizado en facetas prismáticas lisas."
+    },
+    "visual_atmosphere": {
+      "lighting": "Reflejos especulares múltiples, destellos plateados fríos sobre roca oscura húmeda sin fuentes de luz cálida.",
+      "composition": "Plano medio americano frontal, con el dragón posado sobre un promontorio de cuarzo mirando fijamente al espectador.",
+      "focal_elements": "Los ojos convexos que proyectan en su superficie una figura distorsionada que no coincide con la cámara.",
+      "environmental_setting": "Gruta subterránea de estalactitas cristalinas y suelos de obsidiana lisa reflectante."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_mirror_dragon.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_mirror_dragon.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/crystal_cavern.webp"
+    }
+  },
+  {
+    "monster_id": "mon_elder_treant",
+    "visual_tone": "Solemne, milenario, sagrado y calmante; santuario forestal ancestral con aura de serenidad.",
+    "color_palette": [
+      "#1c1917",
+      "#292524",
+      "#78716c",
+      "#d97706",
+      "#a8a29e"
+    ],
+    "anatomy": {
+      "silhouette": "Árbol colosal de tronco ancho con nudos y vetas que forman la semblanza de rostros pacíficos durmientes.",
+      "prominent_features": [
+        "Corteza grisácea agrietada con vetas de savia dorada endurecida",
+        "Frutos globulares que irradian una calidez lumínica ambarina como faroles antiguos",
+        "Follaje denso en abanico que tamiza la luz cenital"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Madera petrificada y corteza fibrosa cubierta de musgos secos, líquenes plateados y nódulos de ámbar translúcido."
+    },
+    "visual_atmosphere": {
+      "lighting": "Rayos crepusculares dorados filtrados entre la vegetación alta, motas de polvo y polen flotando en haces cálidos.",
+      "composition": "Contrapicado monumental mostrando la inmensidad del tronco elevándose hacia la niebla verdegrisácea.",
+      "focal_elements": "Las facciones serenas talladas por la erosión en la corteza y el fruto ámbar central encendido.",
+      "environmental_setting": "Bosque primigenio protegido donde las leyes naturales y la paz anímica suprimen el viento violento."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_elder_treant.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_elder_treant.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/sacred_grove.webp"
+    }
+  },
+  {
+    "monster_id": "mon_young_psychic_dragon",
+    "visual_tone": "Inquietante, vaporoso, noble y furtivo; presencia incorpórea en el borde de la percepción.",
+    "color_palette": [
+      "#f1f5f9",
+      "#cbd5e1",
+      "#94a3b8",
+      "#fbbf24",
+      "#1e293b"
+    ],
+    "anatomy": {
+      "silhouette": "Dragón joven serpentino y esbelto con dos alas emplumadas y cola en penacho difuso.",
+      "prominent_features": [
+        "Escamas blanco grisáceo mate de apariencia marmórea",
+        "Ojos dorados con pupilas verticales de borde afilado",
+        "Bordes de las membranas alares que se disuelven en jirones de niebla"
+      ],
+      "scale_category": "MEDIUM",
+      "surface_materials": "Queratina fina nacarada de textura similar a piedra caliza húmeda, plumas astrales desprovistas de peso físico."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luz cenital pálida monocromática, silueta que se desvanece suavemente hacia los bordes del encuadre.",
+      "composition": "Encuadre dinámico en diagonal serpenteante entre columnas derruidas de arquitectura gótica.",
+      "focal_elements": "La pupila vertical dorada brillante que destaca sobre la neutralidad grisácea del resto del cuerpo.",
+      "environmental_setting": "Patios en ruinas de academias herméticas de la Cuarta Época, bancos de niebla espesa y piedra húmeda."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_young_psychic_dragon.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_young_psychic_dragon.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/ruined_academy_fog.webp"
+    }
+  },
+  {
+    "monster_id": "mon_black_hunt_giant_lizard",
+    "visual_tone": "Opresivo, tenebroso, brutal y claustrofóbico; túnel de mina victoriana abandonada.",
+    "color_palette": [
+      "#09090b",
+      "#18181b",
+      "#27272a",
+      "#52525b",
+      "#38bdf8"
+    ],
+    "anatomy": {
+      "silhouette": "Lagarto de complexión maciza y baja con cabeza acorazada y extremidades musculosas armadas de garras excavadoras.",
+      "prominent_features": [
+        "Piel de placas hexagonales negro carbón que absorben la luz",
+        "Conducto espinal bioluminiscente tenue visible a lo largo de las vértebras",
+        "Mandíbulas anchas revestidas de colmillos curvados"
+      ],
+      "scale_category": "LARGE",
+      "surface_materials": "Escudos córneos de queratina densa mate con textura rugosa de basalto fracturado."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luz tenue direccional de una lámpara de carburo solitaria, proyectando sombras pesadas y amenazantes en muros de roca húmeda.",
+      "composition": "Plano general medio cerrado en contrapicado, el reptil ocupando el ancho del túnel estrecho.",
+      "focal_elements": "La línea de luz azul eléctrico a lo largo del canal vertebral y la mandíbula abierta.",
+      "environmental_setting": "Galerías mineras subterráneas desiertas, vías de vagoneta retorcidas y charcos de agua estancada."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_black_hunt_giant_lizard.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_black_hunt_giant_lizard.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/abandoned_mine_shaft.webp"
+    }
+  },
+  {
+    "monster_id": "mon_hallucination_wind_chime_tree",
+    "visual_tone": "Onírico, embriagador, místico y espectral; clairière astral con flores luminiscentes.",
+    "color_palette": [
+      "#2e1065",
+      "#581c87",
+      "#7e22ce",
+      "#c084fc",
+      "#f5d0fe"
+    ],
+    "anatomy": {
+      "silhouette": "Árbol sauce de ramas arqueadas con cientos de filamentos colgantes terminados en campanas cristalinas.",
+      "prominent_features": [
+        "Frutos en forma de campanas de cristal violeta que emiten ondas de vapor translúcido",
+        "Tronco retorcido de madera púrpura oscura con grietas plateadas",
+        "Hojas finas como hilos de seda que flotan desafiando la gravedad"
+      ],
+      "scale_category": "LARGE",
+      "surface_materials": "Corteza fibrosa morada con vetas de savia luminosa y frutos de consistencia vítrea translúcida sonante."
+    },
+    "visual_atmosphere": {
+      "lighting": "Resplandor violáceo propio que brota de los frutos campaniformes, iluminando la neblina a ras de suelo.",
+      "composition": "Plano medio vertical con racimos de campanas en primer término desenfocadas y el tronco central en foco nítido.",
+      "focal_elements": "El fruto cristalino principal palpitando con ondas concéntricas de vapor tenue.",
+      "environmental_setting": "Claro silencioso del Mundo Espiritual, suelo de arena astral plateada bajo un cielo perpetuamente estrellado."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_hallucination_wind_chime_tree.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_hallucination_wind_chime_tree.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/astral_chime_glade.webp"
+    }
+  },
+  {
+    "monster_id": "mon_dreamcatcher",
+    "visual_tone": "Arácnido etéreo, geométrico, frío y fantasmal; filigrana de pesadillas en la penumbra.",
+    "color_palette": [
+      "#f8fafc",
+      "#cbd5e1",
+      "#64748b",
+      "#38bdf8",
+      "#0f172a"
+    ],
+    "anatomy": {
+      "silhouette": "Estructura arácnida circular con patas extremadamente largas y delgadas de cristal de plata.",
+      "prominent_features": [
+        "Torso central tejido como un atrapasueños ceremonial con un corazón que pulsa luz espectral",
+        "Patas filiformes que parecen hilos tensados de arpa",
+        "Múltiples ojos diminutos como gemas de aguamarina talladas"
+      ],
+      "scale_category": "MEDIUM",
+      "surface_materials": "Seda astral solidificada en filamentos metálicos de plata pura y cristal de cuarzo psíquico en el núcleo."
+    },
+    "visual_atmosphere": {
+      "lighting": "Iluminación cenital fría monocroma, reflejos plateados nítidos en los filamentos que cruzan la oscuridad.",
+      "composition": "Composición centrada y geométrica, suspendida en el vacío con hilos que se anclan fuera del marco.",
+      "focal_elements": "El núcleo poliédrico que palpita en el centro del aro torácico.",
+      "environmental_setting": "Estrato onírico del plano astral, flotando sobre los tejados abuhardillados de una ciudad dormida."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_dreamcatcher.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_dreamcatcher.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/dream_web_sky.webp"
+    }
+  },
+  {
+    "monster_id": "mon_psychic_phantom",
+    "visual_tone": "Incorpóreo, trágico, intelectual y fragmentado; fantasma victoriano de erudición arcana.",
+    "color_palette": [
+      "#f1f5f9",
+      "#93c5fd",
+      "#3b82f6",
+      "#1e3a8a",
+      "#0f172a"
+    ],
+    "anatomy": {
+      "silhouette": "Figura humanoide flotante sin extremidades inferiores definidas, rodeada de páginas de luz y polvo astral.",
+      "prominent_features": [
+        "Rostro vacío sin rasgos salvo por un resplandor en la zona de la frente",
+        "Núcleo pectoral formado por un cristal octaédrico transparente de bordes afilados",
+        "Toga espectral que se deshilacha en hilos de pensamiento azul cobalto"
+      ],
+      "scale_category": "MEDIUM",
+      "surface_materials": "Masa de plasma astral vaporoso con condensaciones geométricas de cristal psíquico refractante."
+    },
+    "visual_atmosphere": {
+      "lighting": "Halo azul cobalto intenso generado por el núcleo, proyectando sombras fantasmales en estanterías viejas.",
+      "composition": "Figura flotante en leve escorzo diagonal en el pasillo estrecho de una biblioteca abandonada.",
+      "focal_elements": "El cristal octaédrico pectoral brillante y las páginas de pergamino suspendidas en el aire.",
+      "environmental_setting": "Sótano de biblioteca imperial con libros enmohecidos, vitrinas rotas y polvo congelado en el aire."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_psychic_phantom.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_psychic_phantom.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/haunted_library.webp"
+    }
+  },
+  {
+    "monster_id": "mon_adult_psychic_dragon",
+    "visual_tone": "Monumental, mítico, sublime y aterrador; majestuosidad de la Segunda Época de LOTM.",
+    "color_palette": [
+      "#f8fafc",
+      "#e2e8f0",
+      "#94a3b8",
+      "#fbbf24",
+      "#334155"
+    ],
+    "anatomy": {
+      "silhouette": "Dragón cuadrúpedo alado colosal de proporciones arquitectónicas con cornamenta de múltiples puntas coronando su cráneo marmóreo.",
+      "prominent_features": [
+        "Escamas gruesas de textura similar al mármol tallado con vetas azul pálido",
+        "Ojos dorados verticales inmensos cargados de indiferencia divina",
+        "Alas de envergadura titánica bordeadas de niebla mental constante"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Escamas petrificadas de consistencia pétrea marmórea con cuernos de marfil fósil y membranas de niebla condensada."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luz estelar mística difusa que delinea la silueta de los cuernos y las alas, aura dorada suave alrededor del cráneo.",
+      "composition": "Gran plano general épico en contrapicado, el dragón posado sobre un promontorio rocoso flotante.",
+      "focal_elements": "La pupila vertical dorada inmutable y la textura esculpida de las placas craneales.",
+      "environmental_setting": "Cumbres inaccesibles del Mundo Espiritual, mar de nubes pálidas y picos rocosos suspendidos."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_adult_psychic_dragon.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_adult_psychic_dragon.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/astral_peaks.webp"
+    }
+  },
+  {
+    "monster_id": "mon_elderly_psychic_dragon",
+    "visual_tone": "Trascendental, semidivino, cristalino y ominoso; poder de Semidiós que doblega voluntades.",
+    "color_palette": [
+      "#ffffff",
+      "#f1f5f9",
+      "#e2e8f0",
+      "#fef08a",
+      "#64748b"
+    ],
+    "anatomy": {
+      "silhouette": "Dragón anciano cuya silueta parece fundirse con el firmamento y las ondas del pensamiento colectivo.",
+      "prominent_features": [
+        "Incrustaciones cristalinas a lo largo de la espina dorsal que se prolongan en filamentos luminosos infinitos",
+        "Barbas y crestas aladas de apariencia vaporosa como humo blanco",
+        "Ojos que contienen galaxias de memorias humanas en rotación lenta"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Materia física semitransparente con apariencia de alabastro pulido y formaciones de cristal de roca puro."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luz blanca celestial sobrecogedora con halos de interferencia psíquica difusa, fondo de cielo astral infinito.",
+      "composition": "Plano general amplio, la cabeza del dragón dominando el tercio superior mientras los filamentos se pierden en la profundidad.",
+      "focal_elements": "La confluencia de hilos luminosos dorados que entran y salen del cráneo cristalino.",
+      "environmental_setting": "Plano del subconsciente colectivo, fondo abstracto de siluetas de pensamientos humanos y constelaciones."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_elderly_psychic_dragon.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_elderly_psychic_dragon.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/collective_subconscious_sea.webp"
+    }
+  },
+  {
+    "monster_id": "mon_treant_mentor",
+    "visual_tone": "Hierático, áureo, benevolente pero alienígena; nodo de sabiduría milenaria en la niebla.",
+    "color_palette": [
+      "#fef08a",
+      "#eab308",
+      "#854d0e",
+      "#422006",
+      "#1c1917"
+    ],
+    "anatomy": {
+      "silhouette": "Árbol colosal de silueta piramidal con ramas doradas simétricas que forman una cúpula geométrica perfecta.",
+      "prominent_features": [
+        "Follaje compuesto íntegramente por hojas metálicas de oro puro que vibran con armonías mentales",
+        "Corteza esculpida con semblantes de pensadores y eruditos en relieve natural",
+        "Raíces aéreas que brillan como filamentos de fibra óptica dorada"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Láminas de oro fino batido en las hojas, madera fosilizada de color castaño oscuro y savia ambarina."
+    },
+    "visual_atmosphere": {
+      "lighting": "Radiación áurea cálida omnidireccional que emana del propio árbol, disipando la niebla en un radio circular perfecto.",
+      "composition": "Composición frontal simétrica, transmitiendo orden hierático, estabilidad monumental y paz sobrehumana.",
+      "focal_elements": "La red de raíces tejidas que descienden hacia un espejo de agua astral inmóvil.",
+      "environmental_setting": "Jardín sagrado intocado por el tiempo en una bolsa dimensional del Mundo Espiritual."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_treant_mentor.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_treant_mentor.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/golden_sanctuary.webp"
+    }
+  },
+  {
+    "monster_id": "mon_treant_king",
+    "visual_tone": "Pesadillesco, abrumador, oscuro y regio; soberanía onírica de pesadillas vivas.",
+    "color_palette": [
+      "#0a0a0a",
+      "#171717",
+      "#262626",
+      "#4c1d95",
+      "#e0e7ff"
+    ],
+    "anatomy": {
+      "silhouette": "Árbol titánico de ramas en forma de garras coronadas por una bóveda de espinas y nubes de pesadilla.",
+      "prominent_features": [
+        "Madera de ébano petrificado con vetas que sangran savia violácea luminosa",
+        "Corazón visible en el hueco del tronco: un cristal poliédrico que proyecta imágenes de ciudades en ruinas",
+        "Hojas afiladas de cristal oscuro que reflejan cielos nocturnos tormentosos"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Ébano petrificado carbonizado, aristas de cristal obsidiana y plasma onírico violáceo espeso."
+    },
+    "visual_atmosphere": {
+      "lighting": "Iluminación de tormenta onírica con destellos violetas intermitentes, resplandor tétrico desde el corazón del tronco.",
+      "composition": "Contrapicado épico angular, con ramas espinosas que enmarcan y desgarran los bordes superiores de la imagen.",
+      "focal_elements": "El núcleo cristalino latiendo con destellos fracturados de recuerdos dolorosos.",
+      "environmental_setting": "Abismo de pesadillas en el Mundo Espiritual, suelo que se ondula como carne negra petrificada."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_treant_king.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_treant_king.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/nightmare_chasm.webp"
+    }
+  },
+  {
+    "monster_id": "mon_dream_dragon",
+    "visual_tone": "Surrealista, inmaterial, etéreo y majestuoso; el tejido mismo de la ilusión manifestado.",
+    "color_palette": [
+      "#f8fafc",
+      "#cbd5e1",
+      "#818cf8",
+      "#4338ca",
+      "#0f172a"
+    ],
+    "anatomy": {
+      "silhouette": "Serpentina dracónica sin patas que ondula a través de las nubes astrales dejando estelas de estrellas y niebla.",
+      "prominent_features": [
+        "Cuerpo translúcido formado por capas superpuestas de niebla gris plateada y motas de luz estelar",
+        "Cabeza dracónica con cuernos de cuarzo transparente que refractan constelaciones en miniatura",
+        "Ojos que son dos portales abiertos hacia paisajes oníricos infinitos"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Vapor astral hiperdenso entrelazado con micropartículas de polvo estelar y filamentos de niebla plateada."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luminosidad estelar interna difusa en tonos añil y plata, ausencia total de sombras proyectadas terrestres.",
+      "composition": "Movimiento en espiral envolvente, guiando la mirada a lo largo de las curvas del cuerpo serpentino cósmico.",
+      "focal_elements": "Las constelaciones flotantes atrapadas entre los cuernos de cristal transparente de la cabeza.",
+      "environmental_setting": "Límite liminal entre el mundo de las ideas y la realidad material, atmósfera de vacío salpicada de estrellas."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_dream_dragon.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_dream_dragon.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/starlight_limbo.webp"
+    }
+  },
+  {
+    "monster_id": "mon_ancient_psychic_dragon",
+    "visual_tone": "Divino, apabullante, cósmico y terrorífico; la mirada del Creador de la Imaginación.",
+    "color_palette": [
+      "#ffffff",
+      "#f8fafc",
+      "#fef08a",
+      "#ca8a04",
+      "#0f172a"
+    ],
+    "anatomy": {
+      "silhouette": "Dragón mítico de escala titánica cuyas alas abarcan el horizonte y cuya presencia deforma el espacio circundante.",
+      "prominent_features": [
+        "Pupilas verticales doradas de tamaño colosal que observan fijamente a través de todos los planos",
+        "Escamas blanco grisáceo puras grabadas con los conceptos arquetípicos de la creación",
+        "Corazón ardiente que palpita como una estrella en el centro de su pecho translúcido"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Materia divina incorruptible con textura de mármol blanco de alta densidad y fuego dorado sagrado."
+    },
+    "visual_atmosphere": {
+      "lighting": "Resplandor divino dorado omnipotente emanando de las pupilas y el pecho, contrastando contra el negro astral.",
+      "composition": "Primer plano masivo frontal centrado en el rostro colosal y la mirada directa que domina todo el encuadre.",
+      "focal_elements": "La hendidura de la pupila vertical dorada que parece contener el universo entero.",
+      "environmental_setting": "Vértice absoluto de la imaginación en el plano celestial, donde los pensamientos toman forma física instantánea."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_ancient_psychic_dragon.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_ancient_psychic_dragon.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/divine_mind_sky.webp"
+    }
+  },
+  {
+    "monster_id": "mon_erihog_spawn",
+    "visual_tone": "Aberrante, visceral, inquietante y trágico; carne divina corrompida por el colapso cósmico.",
+    "color_palette": [
+      "#fef2f2",
+      "#fca5a5",
+      "#b91c1c",
+      "#450a0a",
+      "#ca8a04"
+    ],
+    "anatomy": {
+      "silhouette": "Masa amorfa de carne pálida y crestas dracónicas desfiguradas suspendida en un foso astral oscuro.",
+      "prominent_features": [
+        "Decenas de bocas sin labios con dientes humanos y colmillos dracónicos en murmullos perpetuos",
+        "Cuencas oculares múltiples repletas de ojos dorados sin párpados que lagrimean fluido dorado",
+        "Tentáculos de carne marmórea que palpitan con ritmos desincronizados"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Tejido biológico marmóreo húmedo, fluidos dorados espesos coagulados y crestas óseas fracturadas."
+    },
+    "visual_atmosphere": {
+      "lighting": "Contraste tenebroso con luces parásitas carmesíes y destellos enfermizos de oro viejo emergiendo de las hendiduras.",
+      "composition": "Encuadre claustrofóbico cerrado sin aire, la masa de carne llenando las cuatro esquinas de la vista.",
+      "focal_elements": "El racimo central de ojos dorados abiertos desalineados y las bocas susurrantes.",
+      "environmental_setting": "Fosa abisal en los confines más corruptos del Mundo Espiritual, rodeada de oscuridad densa y fría."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_erihog_spawn.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_erihog_spawn.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/corrupt_astral_trench.webp"
+    }
+  },
+  {
+    "monster_id": "mon_nightmare_swamp_shadow",
+    "visual_tone": "Arcangélico, fatalista, literario y crepuscular; el autor que escribe el destino del mundo.",
+    "color_palette": [
+      "#020617",
+      "#0f172a",
+      "#1e293b",
+      "#e2e8f0",
+      "#d97706"
+    ],
+    "anatomy": {
+      "silhouette": "Silueta humanoide monumental vestida con capas de oscuridad que se despliegan en pliegos de pergamino infinito.",
+      "prominent_features": [
+        "Mano derecha alargada de hueso cristalino afilado como una pluma de escribir",
+        "Rostro cubierto por un velo de tinta en el que flotan frases escritas en caracteres antiguos",
+        "Ropajes que se disuelven en el pantano negro de las historias no nacidas"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Tinta líquida viscosa con reflectividad vítrea, pergamino antiguo fibroso y hueso cristalino traslúcido."
+    },
+    "visual_atmosphere": {
+      "lighting": "Chiaroscuro extremo entre la penumbra de la tinta profunda y la calidez dorada de las líneas manuscritas encendidas.",
+      "composition": "Figura sentada o suspendida en ángulo picado sobre el pantano, con la mano empuñando la pluma en primer plano nítido.",
+      "focal_elements": "La punta de la pluma de hueso cristalino tocando la superficie de la tinta donde nacen ondas doradas.",
+      "environmental_setting": "Pantano de Pesadillas en el Mundo Espiritual, lago negro infinito de tinta bajo un cielo sin estrellas."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/spectator/portraits/mon_nightmare_swamp_shadow.webp",
+      "token_icon": "art/bestiary/spectator/tokens/mon_nightmare_swamp_shadow.svg",
+      "scene_backdrop": "art/bestiary/spectator/backdrops/nightmare_swamp_depths.webp"
+    }
+  }
+]

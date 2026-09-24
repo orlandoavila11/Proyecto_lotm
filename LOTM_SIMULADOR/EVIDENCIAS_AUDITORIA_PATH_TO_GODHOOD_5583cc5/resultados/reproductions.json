@@ -1,0 +1,149 @@
+{
+  "somaticsRender": {
+    "tier": "LUCID",
+    "crash": true,
+    "error": "Cannot read properties of undefined (reading 'labelBrief')"
+  },
+  "health": {
+    "status": "ok",
+    "engine": "LOTM_ENGINE_REBORN",
+    "version": "1.0.0",
+    "canonicalPathwaysLoaded": 22,
+    "districtsCount": 5
+  },
+  "calendarContract": {
+    "status": 200,
+    "returned": {
+      "day": 1,
+      "slot": 0
+    },
+    "persisted": {
+      "day": 1,
+      "slot": 1
+    }
+  },
+  "socialize": {
+    "status": 200,
+    "declaredAnchorDelta": 2,
+    "anchorBefore": 62,
+    "anchorAfter": 62
+  },
+  "duplicateCalendar": {
+    "statuses": [
+      200,
+      200
+    ],
+    "before": {
+      "day": 1,
+      "slot": 2
+    },
+    "after": {
+      "day": 2,
+      "slot": 0
+    }
+  },
+  "identityInvalidAndReplay": {
+    "event": "ID_EV_EXPOSICION_ACCIDENTAL_01",
+    "statuses": [
+      200,
+      200
+    ],
+    "chosenOption": "Responder con aplomo civil y diplomacia cortés",
+    "history": [
+      {
+        "event": "ID_EV_EXPOSICION_ACCIDENTAL_01",
+        "option": 9999,
+        "day": 2,
+        "slot": 0
+      },
+      {
+        "event": "ID_EV_EXPOSICION_ACCIDENTAL_01",
+        "option": 9999,
+        "day": 2,
+        "slot": 0
+      }
+    ]
+  },
+  "combatInvalidMove": {
+    "status": 200,
+    "position": {
+      "x": 999,
+      "y": -100
+    },
+    "ap": 2,
+    "repeats": [
+      {
+        "status": 200,
+        "ap": 1,
+        "turn": 1
+      },
+      {
+        "status": 200,
+        "ap": 0,
+        "turn": 1
+      },
+      {
+        "status": 200,
+        "ap": 2,
+        "turn": 1
+      },
+      {
+        "status": 200,
+        "ap": 1,
+        "turn": 1
+      },
+      {
+        "status": 200,
+        "ap": 0,
+        "turn": 1
+      }
+    ]
+  },
+  "negativeDay": {
+    "status": 200,
+    "before": 2,
+    "after": -8
+  },
+  "legacyAscension": {
+    "ingredientCount": 0,
+    "status": 200,
+    "response": {
+      "success": true,
+      "newSequence": 8,
+      "sequenceName": "Clown",
+      "pathway": "FOOL",
+      "message": "¡Ritual completado con éxito! Has consumido la fórmula de [Clown] y ascendido a Secuencia 8."
+    },
+    "sequenceAfter": 8
+  },
+  "purchaseAtomicity": {
+    "injectedFailure": true,
+    "status": 500,
+    "moneyBefore": 4800,
+    "moneyAfter": 3600,
+    "itemCode": "ING_GOAT_HORN_CRYSTAL",
+    "itemReceived": false
+  },
+  "resetIdCollision": {
+    "simulatesGeneratorRestart": true,
+    "statuses": [
+      500,
+      500
+    ],
+    "error": "UNIQUE constraint failed: calendar_log.id",
+    "workBefore": 4,
+    "workAfter": 5
+  },
+  "uiFallback503": {
+    "acting": {
+      "success": true,
+      "message": "Tu interpretación resuena con los preceptos de la Secuencia. La poción se asimila en silencio y la llama en la palmatoria arde con serenidad.",
+      "isFullyDigested": false
+    },
+    "identity": {
+      "success": true,
+      "narrativeOutcome": "Tus explicaciones serenas logran apaciguar el recelo de los inquilinos. La máscara burguesa resiste un día más."
+    }
+  },
+  "fixtureCharacter": 404
+}

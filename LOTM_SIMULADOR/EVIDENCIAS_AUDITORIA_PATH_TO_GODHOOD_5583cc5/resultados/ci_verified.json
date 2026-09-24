@@ -1,0 +1,136 @@
+{
+  "commit": "5583cc5c940ae5d8a056d7af5560b93c9af40afd",
+  "runs": [
+    {
+      "id": 35887409419,
+      "url": "https://github.com/orlandoavila11/Proyecto_lotm/actions/runs/35887409419",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 31,
+      "sha": "5583cc5c940ae5d8a056d7af5560b93c9af40afd",
+      "created": "2026-09-23T16:14:52Z"
+    }
+  ],
+  "jobs": [
+    {
+      "name": "Build & Test (windows-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/orlandoavila11/Proyecto_lotm/actions/runs/35887409419/job/107270979893",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup Node.js 22",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify Tier L Integrity (manifest v2.0)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify Anti-Math.random Determinism Gate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Lint Tier G Contracts (Zod Schemas)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Audit Diegetic UI Prose (Anti-Mechanical Grep)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build Server & UI",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run Reborn Test Suite (including Kill -9 and Seeded PRNG)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Setup Node.js 22",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Checkout repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Build & Test (ubuntu-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/orlandoavila11/Proyecto_lotm/actions/runs/35887409419/job/107270980570",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup Node.js 22",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify Tier L Integrity (manifest v2.0)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify Anti-Math.random Determinism Gate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Lint Tier G Contracts (Zod Schemas)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Audit Diegetic UI Prose (Anti-Mechanical Grep)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build Server & UI",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run Reborn Test Suite (including Kill -9 and Seeded PRNG)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Setup Node.js 22",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Checkout repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

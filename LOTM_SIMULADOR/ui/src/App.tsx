@@ -23,6 +23,7 @@ import { InspectionLayer } from './scene/InspectionLayer';
 import { SceneHarness, FOOL_SEER_FIXTURE } from './harness/SceneHarness';
 import { CANONICAL_HOTSPOTS } from './scene/types';
 import { apiClient } from './services/apiClient';
+import { mapSanityToVisual, mapCorruptionToVisual, mapRuinaToVisual } from './services/somaticsMapper';
 
 function AppContent() {
   const { state, navigateTo, closeInspection, backToDesk, toggleSpiritVision } = useNavigation();
@@ -32,18 +33,75 @@ function AppContent() {
   const [showHarness, setShowHarness] = useState<boolean>(false);
   const [showDebugMasks, setShowDebugMasks] = useState<boolean>(false);
 
-  // Comprobar parámetros URL (?harness=true, ?masks=true)
+  // Comprobar parámetros URL (?harness=true, ?masks=true) y partida persistida
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get('harness') === 'true') {
+    const isHarness = params.get('harness') === 'true';
+    if (isHarness) {
       setShowHarness(true);
     }
     if (params.get('masks') === 'true') {
       setShowDebugMasks(true);
     }
+
     if (!character) {
-      // Inicializar con fixture canónico para pruebas rápidas
-      setCharacter(FOOL_SEER_FIXTURE as unknown as CharacterDiegetic);
+      if (isHarness) {
+        setCharacter(FOOL_SEER_FIXTURE as unknown as CharacterDiegetic);
+      } else {
+        const storedId = localStorage.getItem('lotm_active_character_id');
+        if (storedId) {
+          apiClient.getCharacter(storedId).then(data => {
+            if (data?.character) {
+              const mappedSanity = mapSanityToVisual(data.somatics?.sanityTier || 'LUCID');
+              const mappedCorruption = mapCorruptionToVisual(data.somatics?.corruptionTier || 'PRISTINE');
+              const mappedRuina = mapRuinaToVisual(data.somatics?.ruinaTier || 0);
+              const isFool = data.character.pathway === 'FOOL';
+
+              setCharacter({
+                id: data.character.id,
+                name: data.character.name,
+                profession: data.activePersona?.profession || 'Detective Privado',
+                originTitle: data.activePersona?.profession || 'Origen Civil',
+                district: data.character.current_location || 'Backlund - Cherwood',
+                pathwayName: isFool ? 'The Fool' : 'Visionary',
+                sequenceTitle: isFool ? `Vidente (Secuencia ${data.character.sequence})` : `Espectador (Secuencia ${data.character.sequence})`,
+                initialBurden: {
+                  type: 'DEUDA',
+                  description: 'Alquiler y compromisos notariales en Backlund.',
+                  details: 'Compromiso formal que pesa sobre tu rutina civil.'
+                },
+                somatics: {
+                  sanityTier: mappedSanity.tier,
+                  candleDescription: mappedSanity.description,
+                  corruptionTier: mappedCorruption.tier,
+                  mirrorDescription: mappedCorruption.description,
+                  ruinaTier: mappedRuina.tier,
+                  woodDescription: mappedRuina.description
+                },
+                walletText: data.wallet ? `${data.wallet.pounds} £, ${data.wallet.soli} s y ${data.wallet.pence} d` : '2 soberanos de oro, 8 chelines de plata y 4 peniques de cobre',
+                actingCoherence: 'COHERENTE',
+                actingFeedback: 'Interpretar el papel exige equilibrar la vida civil con los principios de la Secuencia.',
+                actingDiary: [],
+                anchors: data.anchors?.map((a: any) => ({
+                  id: a.id,
+                  tipo: a.type || 'persona',
+                  nombre: a.name || a.title || 'Ancla',
+                  descripcion: a.description || 'Lazo humano',
+                  fuerza: a.strength > 25 ? 'FIRME' : a.strength > 10 ? 'TENUE' : 'QUEBRADIZA'
+                })) || [],
+                policeSuspicionText: (data.activePersona?.police_suspicion ?? 5) > 20 
+                  ? 'Vigilancia en las esquinas de tu calle.' 
+                  : 'Sin sospechas policiales aparentes.',
+                churchSuspicionText: (data.activePersona?.church_suspicion ?? 5) > 20
+                  ? 'Sombras inquisitorias rondan tu vecindario.'
+                  : 'Los clérigos no han registrado tu nombre.'
+              });
+            }
+          }).catch(() => {
+            // Sin personaje válido en el servidor: permanece en Prólogo
+          });
+        }
+      }
     }
   }, [character]);
 
@@ -52,19 +110,26 @@ function AppContent() {
     try {
       const data = await apiClient.getCharacter(character.id);
       if (data?.character) {
+        const mappedSanity = mapSanityToVisual(data.somatics?.sanityTier || 'LUCID');
+        const mappedCorruption = mapCorruptionToVisual(data.somatics?.corruptionTier || 'PRISTINE');
+        const mappedRuina = mapRuinaToVisual(data.somatics?.ruinaTier || 0);
+
         setCharacter(prev => prev ? {
           ...prev,
           somatics: {
             ...prev.somatics,
-            sanityTier: data.somatics?.sanityTier || prev.somatics.sanityTier,
-            corruptionTier: data.somatics?.corruptionTier || prev.somatics.corruptionTier,
-            ruinaTier: data.somatics?.ruinaTier || prev.somatics.ruinaTier
+            sanityTier: mappedSanity.tier,
+            candleDescription: mappedSanity.description,
+            corruptionTier: mappedCorruption.tier,
+            mirrorDescription: mappedCorruption.description,
+            ruinaTier: mappedRuina.tier,
+            woodDescription: mappedRuina.description
           },
           walletText: data.wallet ? `${data.wallet.pounds} £, ${data.wallet.soli} s` : prev.walletText,
           anchors: data.anchors?.map((a: any) => ({
             id: a.id,
             tipo: a.type || 'persona',
-            nombre: a.name,
+            nombre: a.name || a.title || 'Ancla',
             descripcion: a.description || 'Vínculo humano',
             fuerza: a.strength > 25 ? 'FIRME' : a.strength > 10 ? 'TENUE' : 'QUEBRADIZA'
           })) || prev.anchors,

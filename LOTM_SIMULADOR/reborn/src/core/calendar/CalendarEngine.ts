@@ -12,6 +12,15 @@ export interface CalendarActionOutcome {
   day: number;
   slot: TimeSlot;
   slotName: string;
+  performedAt?: {
+    day: number;
+    slot: TimeSlot;
+    slotName: string;
+  };
+  snapshotAfter?: {
+    day: number;
+    slot: number;
+  };
   narrative: string;
   mechanicalDeltas: {
     policeSuspicionDelta?: number;
@@ -77,6 +86,10 @@ export class CalendarEngine {
           db.updatePersonaSuspicion(persona.id, -2, 0);
         }
         db.recordWorkAttendance(characterId);
+        const anchors = db.getActiveAnchors(characterId);
+        if (anchors.length > 0) {
+          db.repairAnchor(anchors[0].id, 1);
+        }
         narrative = `Cumples tu jornada laboral en ${persona?.profession || 'tu empleo civil'}. La rutina mecánica te otorga una coartada sólida y disipa las preguntas de vecinos.`;
         break;
       }
@@ -87,6 +100,10 @@ export class CalendarEngine {
       case 'SOCIALIZE': {
         // Fortalece lazos humanos
         mechanicalDeltas.anchorStrengthDelta = 2;
+        const anchors = db.getActiveAnchors(characterId);
+        if (anchors.length > 0) {
+          db.repairAnchor(anchors[0].id, 2);
+        }
         narrative = 'Compartes una cerveza tibia en la taberna local o visitas a tus conocidos civiles, reforzando tu sentido de pertenencia a este mundo.';
         break;
       }
@@ -98,7 +115,7 @@ export class CalendarEngine {
 
     // Registrar acción en log de calendario
     db.addCalendarLog({
-      id: generateDeterministicId('cal_act'),
+      id: db.nextId('cal_act'),
       character_id: characterId,
       day: currentDay,
       slot: currentSlot,
@@ -125,9 +142,18 @@ export class CalendarEngine {
 
     return {
       actionType,
-      day: currentDay,
-      slot: currentSlot,
-      slotName: this.SLOT_NAMES[currentSlot],
+      day: newDay,
+      slot: newSlot as TimeSlot,
+      slotName: this.SLOT_NAMES[newSlot as TimeSlot],
+      performedAt: {
+        day: currentDay,
+        slot: currentSlot,
+        slotName: this.SLOT_NAMES[currentSlot]
+      },
+      snapshotAfter: {
+        day: newDay,
+        slot: newSlot
+      },
       narrative,
       mechanicalDeltas,
       datedEventTriggered,
@@ -154,7 +180,7 @@ export class CalendarEngine {
         db.updatePersonaSuspicion(persona.id, -1, -2);
       }
       db.addCalendarLog({
-        id: generateDeterministicId('cal_sermon'),
+        id: db.nextId('cal_sermon'),
         character_id: characterId,
         day,
         slot,
@@ -177,7 +203,7 @@ export class CalendarEngine {
         spirituality: Math.min(char.max_spirituality, char.current_spirituality + 15)
       });
       db.addCalendarLog({
-        id: generateDeterministicId('cal_moon'),
+        id: db.nextId('cal_moon'),
         character_id: characterId,
         day,
         slot,
@@ -196,7 +222,7 @@ export class CalendarEngine {
     // 3. Presión policial: Si police_suspicion > 40
     if (persona && persona.police_suspicion > 40 && slot === 1) {
       db.addCalendarLog({
-        id: generateDeterministicId('cal_police'),
+        id: db.nextId('cal_police'),
         character_id: characterId,
         day,
         slot,
@@ -246,7 +272,7 @@ export class CalendarEngine {
     executionOrder.push('1_acting');
     const actingResult = ActingDilemmaEngine.processWeeklyTick(db, characterId);
     db.addCalendarLog({
-      id: generateDeterministicId('tick_acting'),
+      id: db.nextId('tick_acting'),
       character_id: characterId,
       day: char.current_day,
       slot: char.current_slot ?? 0,
@@ -260,7 +286,7 @@ export class CalendarEngine {
     executionOrder.push('2_alquiler');
     const rentResult = EconomyEngine.processWeeklyRent(db, characterId, char.current_location);
     db.addCalendarLog({
-      id: generateDeterministicId('tick_rent'),
+      id: db.nextId('tick_rent'),
       character_id: characterId,
       day: char.current_day,
       slot: char.current_slot ?? 0,
@@ -287,7 +313,7 @@ export class CalendarEngine {
     // Resetear asistencia semanal
     db.resetWeeklyWorkAttendance(characterId);
     db.addCalendarLog({
-      id: generateDeterministicId('tick_salary'),
+      id: db.nextId('tick_salary'),
       character_id: characterId,
       day: char.current_day,
       slot: char.current_slot ?? 0,
@@ -301,7 +327,7 @@ export class CalendarEngine {
     executionOrder.push('4_mercado');
     const marketRotated = true;
     db.addCalendarLog({
-      id: generateDeterministicId('tick_market'),
+      id: db.nextId('tick_market'),
       character_id: characterId,
       day: char.current_day,
       slot: char.current_slot ?? 0,
@@ -315,7 +341,7 @@ export class CalendarEngine {
     executionOrder.push('5_convergencia');
     const incursion = ConvergenceEngine.checkNighthawkIncursion(db, characterId, char.current_location || 'DIST_CHERWOOD', char.current_day);
     db.addCalendarLog({
-      id: generateDeterministicId('tick_convergence'),
+      id: db.nextId('tick_convergence'),
       character_id: characterId,
       day: char.current_day,
       slot: char.current_slot ?? 0,
@@ -329,7 +355,7 @@ export class CalendarEngine {
     executionOrder.push('6_decay');
     const newDistrictIndex = ConvergenceEngine.processWeeklyDecay(db, 'DIST_CHERWOOD', characterId, char.current_day);
     db.addCalendarLog({
-      id: generateDeterministicId('tick_decay'),
+      id: db.nextId('tick_decay'),
       character_id: characterId,
       day: char.current_day,
       slot: char.current_slot ?? 0,

@@ -111,13 +111,13 @@ export const CombatView: React.FC<CombatViewProps> = ({
     }
 
     if (characterPathway === 'The Fool') {
-      // Habilidad S9 Fool: Manipulación de Hilos de Destino
+      // Habilidad S9 Fool: Intuición del Vidente / Visión Espiritual
       triggerVfx('ASTRAL_THREAD');
       setSpiritualBreath('AGITADO');
       const nextWounds = enemyWoundsCount + 1;
       setEnemyWoundsCount(nextWounds);
       setCombatLog(prev => [
-        'Tiras de los hilos astrales invisibles: la sombra trastabilla como un títere con los cordajes enredados, perdiendo su ventaja.',
+        'Activas tu Visión Espiritual e intuición de peligro: anticipas la trayectoria del asalto y desvías el golpe hacia el flanco vulnerable de la sombra.',
         ...prev
       ]);
 

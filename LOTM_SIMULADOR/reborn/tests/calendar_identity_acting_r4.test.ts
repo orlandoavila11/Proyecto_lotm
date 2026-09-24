@@ -150,7 +150,8 @@ describe('BRIEF-10.VISUAL-R4: Calendario, Identidad y Actuación Conectados', ()
       const outcome = CalendarEngine.performSlotAction(db, char.id, 'WORK');
 
       // 1 franja consumida: pasa de 0 a 1
-      assert.strictEqual(outcome.slot, 0, 'La acción se ejecutó en la franja 0');
+      assert.strictEqual(outcome.performedAt?.slot, 0, 'La acción se ejecutó en la franja 0');
+      assert.strictEqual(outcome.slot, 1, 'El contrato del resultado debe reflejar la franja 1 posterior');
       assert.strictEqual(outcome.mechanicalDeltas.policeSuspicionDelta, -2);
       assert.strictEqual(outcome.mechanicalDeltas.anchorStrengthDelta, 1);
 

@@ -72,13 +72,13 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
       statusText: 'Ingredientes principales purificados y medidos al grano',
       isReady: true,
       details: isFool ? [
-        'Ingrediente Principal 1: 1x Piel de Pez Búho Ilusorio intacta.',
-        'Ingrediente Principal 2: 1x Glándula de Medusa Fantasma en alcohol destilado.',
-        'Suplementos: 5 gotas de zumo de cicuta de noche, 7g de polvo de flor de belladona marchita, 10ml de agua de manantial pura.'
+        'Ingrediente Principal 1: 1x Cristal de Cuerno de Cabra de Hornacis (ING_GOAT_HORN_CRYSTAL).',
+        'Ingrediente Principal 2: 1x Tallo de Rosa con Rostro Humano (ING_HUMAN_FACED_ROSE_STALK).',
+        'Suplementos: Zumo de estramonio, polvo de girasol negro, polvo de manto dorado y cicuta pura.'
       ] : [
-        'Ingrediente Principal 1: 1x Ojo de Dragón Espejo conservado en salmuera alquímica.',
-        'Ingrediente Principal 2: 1x Cristal de Manantial del Alma sin impurezas.',
-        'Suplementos: 5g de polvo de lirio de los valles, 3 gotas de aceite de flor de adormidera, 10ml de agua de manantial pura.'
+        'Ingrediente Principal 1: 1x Glándula de Dragón Lagarto (ING_LIZARD_DRAGON_GLAND).',
+        'Ingrediente Principal 2: 1x Líquido Espinal de Conejo de Falsman (ING_FALSMAN_RABBIT_SPINAL_FLUID).',
+        'Suplementos: Brotes de castaño, polvo de diente de dragón y extracto de flores élficas.'
       ]
     },
     {

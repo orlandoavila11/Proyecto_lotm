@@ -154,46 +154,49 @@ export class EconomyEngine {
       };
     }
 
-    // Cobrar al personaje
-    const remaining = db.updateCharacterWealth(characterId, -finalPrice);
+    // Ejecutar compra dentro de una transacción atómica (F08)
+    return db.transaction(() => {
+      // Cobrar al personaje
+      const remaining = db.updateCharacterWealth(characterId, -finalPrice);
 
-    // Añadir al inventario con calidad explícita
-    const itemId = generateDeterministicId('inv_ing');
-    const invItem = db.addInventoryItem({
-      id: itemId,
-      character_id: characterId,
-      item_code: listing.id,
-      name: listing.name,
-      category: listing.category === 'RITUAL_SUPPLY' ? 'CONSUMABLE' : 'INGREDIENT',
-      grade: null,
-      quantity: 1,
-      quality,
-      metadata_json: JSON.stringify({
-        pathway: listing.pathwayTarget,
-        basePrice: listing.basePricePence,
-        qualityModifier: qualityMod
-      })
+      // Añadir al inventario con calidad explícita
+      const itemId = db.nextId('inv_ing');
+      const invItem = db.addInventoryItem({
+        id: itemId,
+        character_id: characterId,
+        item_code: listing.id,
+        name: listing.name,
+        category: listing.category === 'RITUAL_SUPPLY' ? 'CONSUMABLE' : 'INGREDIENT',
+        grade: null,
+        quantity: 1,
+        quality,
+        metadata_json: JSON.stringify({
+          pathway: listing.pathwayTarget,
+          basePrice: listing.basePricePence,
+          qualityModifier: qualityMod
+        })
+      });
+
+      // Registrar transacción de mercado
+      const txId = db.nextId('tx_buy');
+      db.logMarketTransaction({
+        id: txId,
+        character_id: characterId,
+        type: 'BUY',
+        item_code: listing.id,
+        quality,
+        pence_amount: finalPrice,
+        day: currentDay,
+        description: `Compra de '${listing.name}' [${quality}] en '${market.districtName}' por ${finalPrice}d.`
+      });
+
+      return {
+        success: true,
+        item: invItem,
+        penceSpent: finalPrice,
+        remainingBalance: remaining
+      };
     });
-
-    // Registrar transacción de mercado
-    const txId = generateDeterministicId('tx_buy');
-    db.logMarketTransaction({
-      id: txId,
-      character_id: characterId,
-      type: 'BUY',
-      item_code: listing.id,
-      quality,
-      pence_amount: finalPrice,
-      day: currentDay,
-      description: `Compra de '${listing.name}' [${quality}] en '${market.districtName}' por ${finalPrice}d.`
-    });
-
-    return {
-      success: true,
-      item: invItem,
-      penceSpent: finalPrice,
-      remainingBalance: remaining
-    };
   }
 
   /**
@@ -220,26 +223,28 @@ export class EconomyEngine {
     const buyback = balance.harvestBuybacks.find(b => b.grade === grade);
     const price = buyback ? buyback.buybackPence : 24;
 
-    db.removeInventoryItem(inventoryItemId, 1);
-    const remaining = db.updateCharacterWealth(characterId, price);
+    return db.transaction(() => {
+      db.removeInventoryItem(inventoryItemId, 1);
+      const remaining = db.updateCharacterWealth(characterId, price);
 
-    const txId = generateDeterministicId('tx_sell');
-    db.logMarketTransaction({
-      id: txId,
-      character_id: characterId,
-      type: 'SELL',
-      item_code: item.item_code,
-      quality: item.quality,
-      pence_amount: price,
-      day: currentDay,
-      description: `Venta de excedente de cosecha '${item.name}' [${grade}] por ${price}d.`
+      const txId = db.nextId('tx_sell');
+      db.logMarketTransaction({
+        id: txId,
+        character_id: characterId,
+        type: 'SELL',
+        item_code: item.item_code,
+        quality: item.quality,
+        pence_amount: price,
+        day: currentDay,
+        description: `Venta de excedente de cosecha '${item.name}' [${grade}] por ${price}d.`
+      });
+
+      return {
+        success: true,
+        penceGained: price,
+        remainingBalance: remaining
+      };
     });
-
-    return {
-      success: true,
-      penceGained: price,
-      remainingBalance: remaining
-    };
   }
 
   /**
@@ -292,28 +297,30 @@ export class EconomyEngine {
       };
     }
 
-    // Cobrar coste y reducir corrupción (Ruina permanece INTACTA)
-    const newPence = db.updateCharacterWealth(characterId, -cureConfig.costPence);
-    const newCorruption = Math.max(0, char.corruption - cureConfig.corruptionReduction);
-    db.updateCharacterSomatics(characterId, { corruption: newCorruption });
+    return db.transaction(() => {
+      // Cobrar coste y reducir corrupción (Ruina permanece INTACTA)
+      const newPence = db.updateCharacterWealth(characterId, -cureConfig.costPence);
+      const newCorruption = Math.max(0, char.corruption - cureConfig.corruptionReduction);
+      db.updateCharacterSomatics(characterId, { corruption: newCorruption });
 
-    const txId = generateDeterministicId('tx_cure');
-    db.logMarketTransaction({
-      id: txId,
-      character_id: characterId,
-      type: 'CURE',
-      pence_amount: cureConfig.costPence,
-      day: currentDay,
-      description: `Cura psíquica en tier '${ruinaTier}': -${cureConfig.corruptionReduction} corrupción por ${cureConfig.costPence}d. Ruina intacta (${char.ruina ?? 0}).`
+      const txId = db.nextId('tx_cure');
+      db.logMarketTransaction({
+        id: txId,
+        character_id: characterId,
+        type: 'CURE',
+        pence_amount: cureConfig.costPence,
+        day: currentDay,
+        description: `Cura psíquica en tier '${ruinaTier}': -${cureConfig.corruptionReduction} corrupción por ${cureConfig.costPence}d. Ruina intacta (${char.ruina ?? 0}).`
+      });
+
+      return {
+        success: true,
+        costPence: cureConfig.costPence,
+        corruptionReduced: cureConfig.corruptionReduction,
+        newCorruption,
+        ruinaUnchanged: char.ruina ?? 0,
+        description: cureConfig.description
+      };
     });
-
-    return {
-      success: true,
-      costPence: cureConfig.costPence,
-      corruptionReduced: cureConfig.corruptionReduction,
-      newCorruption,
-      ruinaUnchanged: char.ruina ?? 0,
-      description: cureConfig.description
-    };
   }
 }

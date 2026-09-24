@@ -10,9 +10,30 @@ interface CandleObjectProps {
 export const CandleObject: React.FC<CandleObjectProps> = ({ tier, description, onClick }) => {
   const [inspecting, setInspecting] = useState(false);
 
+  // Normalización exhaustiva: proyecta estados de dominio (LUCID, etc.) a representación visual (BRILLANTE, etc.)
+  const normalizedTier = (() => {
+    switch (tier as string) {
+      case 'LUCID':
+      case 'BRILLANTE':
+        return 'BRILLANTE';
+      case 'NERVOUS_TENSION':
+      case 'VACILANTE':
+        return 'VACILANTE';
+      case 'HALLUCINATING':
+      case 'CREPITANTE':
+        return 'CREPITANTE';
+      case 'NEAR_COLLAPSE':
+      case 'RAMPAGING':
+      case 'AHOGADA_EN_CERA':
+        return 'AHOGADA_EN_CERA';
+      default:
+        return 'BRILLANTE';
+    }
+  })();
+
   // Parámetros cinéticos y lumínicos según el estado de la vela
   const getConfig = () => {
-    switch (tier) {
+    switch (normalizedTier) {
       case 'BRILLANTE':
         return {
           flameHeight: 38,
@@ -44,6 +65,7 @@ export const CandleObject: React.FC<CandleObjectProps> = ({ tier, description, o
           ambientLightIntensity: 0.35
         };
       case 'AHOGADA_EN_CERA':
+      default:
         return {
           flameHeight: 12,
           flameColor: '#38bdf8',

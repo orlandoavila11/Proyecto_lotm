@@ -43,14 +43,10 @@
   box-shadow: 0 0 12px var(--lotm-gold-glow) !important;
 }
 
-/* Reset general para botones interactivos en escena */
+/* Anillo de foco victoriano accesible para elementos interactivos en escena */
 button.lotm-focus-ring,
 .lotm-focus-ring {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  color: inherit;
-  font: inherit;
+  cursor: pointer;
 }
 
 /* Utilidades Críticas de Puntero */

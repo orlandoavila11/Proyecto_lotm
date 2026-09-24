@@ -219,6 +219,100 @@ export class DatabaseClient {
     return this.db;
   }
 
+  private inTransaction: boolean = false;
+  private savepointCounter: number = 0;
+
+  /**
+   * Ejecuta una operación atómica dentro de una transacción SQLite.
+   * Si ocurre un error, revierte los cambios automáticamente (ROLLBACK).
+   */
+  public transaction<T>(fn: () => T): T {
+    if (this.inTransaction) {
+      const sp = `sp_${++this.savepointCounter}`;
+      this.db.exec(`SAVEPOINT ${sp}`);
+      try {
+        const res = fn();
+        this.db.exec(`RELEASE ${sp}`);
+        return res;
+      } catch (err) {
+        this.db.exec(`ROLLBACK TO ${sp}`);
+        throw err;
+      }
+    } else {
+      this.inTransaction = true;
+      this.db.exec('BEGIN IMMEDIATE');
+      try {
+        const res = fn();
+        this.db.exec('COMMIT');
+        return res;
+      } catch (err) {
+        try {
+          this.db.exec('ROLLBACK');
+        } catch {}
+        throw err;
+      } finally {
+        this.inTransaction = false;
+      }
+    }
+  }
+
+  /**
+   * Genera un identificador secuencial y monótono persistido en SQLite (F07).
+   * Sobrevive a reinicios del proceso y llamadas a setDeterministicSeed.
+   */
+  public nextId(prefix: string): string {
+    const row = this.db.prepare(`
+      INSERT INTO entity_sequences (prefix, last_val, updated_at)
+      VALUES (?, 1, datetime('now'))
+      ON CONFLICT(prefix) DO UPDATE SET last_val = entity_sequences.last_val + 1, updated_at = datetime('now')
+      RETURNING last_val
+    `).get(prefix) as { last_val: number } | undefined;
+
+    const val = row?.last_val ?? 1;
+    const hash = Math.abs((val * 2654435761) ^ 13530101).toString(36);
+    return `${prefix}_${hash}_${val}`;
+  }
+
+  public getCommandReceipt(commandId: string): {
+    commandId: string;
+    characterId: string;
+    commandType: string;
+    payloadHash: string;
+    response: any;
+    createdAt: string;
+  } | null {
+    const row = this.db.prepare('SELECT * FROM command_receipts WHERE command_id = ?').get(commandId) as any;
+    if (!row) return null;
+    return {
+      commandId: row.command_id,
+      characterId: row.character_id,
+      commandType: row.command_type,
+      payloadHash: row.payload_hash,
+      response: JSON.parse(row.response_json),
+      createdAt: row.created_at
+    };
+  }
+
+  public saveCommandReceipt(receipt: {
+    commandId: string;
+    characterId: string;
+    commandType: string;
+    payloadHash: string;
+    response: any;
+  }): void {
+    this.db.prepare(`
+      INSERT INTO command_receipts (command_id, character_id, command_type, payload_hash, response_json, created_at)
+      VALUES (?, ?, ?, ?, ?, datetime('now'))
+      ON CONFLICT(command_id) DO UPDATE SET response_json = excluded.response_json
+    `).run(
+      receipt.commandId,
+      receipt.characterId,
+      receipt.commandType,
+      receipt.payloadHash,
+      JSON.stringify(receipt.response)
+    );
+  }
+
   // --- MÉTODOS DE PERSONAJE ---
   public createCharacter(char: Omit<CharacterRow, 'created_at' | 'updated_at'>): CharacterRow {
     const stmt = this.db.prepare(`

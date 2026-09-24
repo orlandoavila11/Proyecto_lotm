@@ -3,6 +3,8 @@ import { z } from 'zod';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { CanonicalDataLoader } from '../../infra/data/CanonicalDataLoader.js';
 import { SomaticsEngine } from '../../core/somatics/SomaticsEngine.js';
+import { AscensionEngine } from '../../core/ascension/AscensionEngine.js';
+import { SeededRNG } from '../../core/rng/SeededRNG.js';
 
 const CreateCharacterSchema = z.object({
   name: z.string().min(2).max(40),
@@ -238,7 +240,11 @@ export const characterRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: C
       return reply.status(404).send({ error: 'Personaje no encontrado' });
     }
 
-    const days = body.days || 1;
+    const days = body.days !== undefined ? body.days : 1;
+    if (typeof days !== 'number' || days <= 0 || !Number.isInteger(days)) {
+      return reply.status(400).send({ error: 'days debe ser un número entero positivo mayor a cero' });
+    }
+
     const newDay = db.advanceCharacterDay(char.id, days);
 
     // Desgaste mental del Beyonder si la sanidad es baja
@@ -273,6 +279,20 @@ export const characterRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: C
       });
     }
 
+    // Comprobación de requisitos canónicos completos de ascensión (F11)
+    const ascStatus = AscensionEngine.evaluateAscensionStatus(db, char.id);
+    if (!ascStatus.door2_ingredients.passed) {
+      return reply.status(400).send({
+        error: `[INGREDIENTES INSUFICIENTES]: Faltan ingredientes canónicos en el inventario para componer la poción de ascenso. Detalle: ${ascStatus.door2_ingredients.details.join(', ')}`
+      });
+    }
+
+    if (!ascStatus.door3_digestion.passed) {
+      return reply.status(400).send({
+        error: `[DIGESTIÓN INCOMPLETA]: La digestión actual es ${ascStatus.door3_digestion.current}% y debe ser 100% para ascender.`
+      });
+    }
+
     const anchorStrength = db.getTotalAnchorStrength(char.id);
     const somaticsEval = SomaticsEngine.evaluate({
       currentHealth: char.current_health,
@@ -291,27 +311,17 @@ export const characterRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: C
       });
     }
 
-    const nextSeq = char.sequence - 1;
-    let nextSeqData;
-    try {
-      nextSeqData = loader.getSequenceData(char.pathway, nextSeq);
-    } catch (err: any) {
-      return reply.status(400).send({ error: err.message });
-    }
+    const rng = new SeededRNG(Date.now() + 1353);
+    const result = AscensionEngine.drinkPotion(db, char.id, rng);
 
-    // Actualizar somática y secuencia
-    db.updateCharacterSomatics(char.id, {
-      sequence: nextSeq,
-      digestion: 0.0,
-      spirituality: Math.min(150, char.current_spirituality + 30)
-    });
+    const nextSeqData = loader.getSequenceData(char.pathway, result.newSequence);
 
     return reply.send({
-      success: true,
-      newSequence: nextSeq,
+      success: result.outcome === 'SUCCESS',
+      newSequence: result.newSequence,
       sequenceName: nextSeqData.name,
       pathway: char.pathway,
-      message: `¡Ritual completado con éxito! Has consumido la fórmula de [${nextSeqData.name}] y ascendido a Secuencia ${nextSeq}.`
+      message: result.narrativeText
     });
   });
 };

@@ -19,6 +19,8 @@ export const SAFE_HEIGHT = 900;
 
 interface ViewportContextValue {
   scale: number;
+  invScale: number;
+  isCompact: boolean;
   offsetX: number;
   offsetY: number;
   toLogicalCoords: (clientX: number, clientY: number) => { x: number; y: number };
@@ -119,8 +121,8 @@ export const SceneViewport: React.FC<SceneViewportProps> = ({
         return;
       }
 
-      // Si estamos en un modal o etapa ajena al desván, dejar que el modal maneje el foco
-      if (state.currentView === 'INSPECTION_LAYER') {
+      // Si estamos en cualquier vista ajena al escritorio principal del desván, permitir la navegación DOM normal
+      if (state.currentView !== 'DESK_WIDE') {
         return;
       }
 
@@ -179,8 +181,11 @@ export const SceneViewport: React.FC<SceneViewportProps> = ({
     toggleAttention
   ]);
 
+  const invScale = 1 / Math.max(0.1, scale);
+  const isCompact = scale < 0.8;
+
   return (
-    <ViewportContext.Provider value={{ scale, offsetX, offsetY, toLogicalCoords, toScreenCoords }}>
+    <ViewportContext.Provider value={{ scale, invScale, isCompact, offsetX, offsetY, toLogicalCoords, toScreenCoords }}>
       <div
         ref={containerRef}
         className="relative w-screen h-screen overflow-hidden bg-[#090807] flex items-center justify-center select-none"

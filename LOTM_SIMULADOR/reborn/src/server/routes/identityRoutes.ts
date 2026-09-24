@@ -30,8 +30,12 @@ export const identityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async 
       return reply.status(400).send({ error: 'Payload inválido', details: parsed.error.issues });
     }
     const { characterId, eventId, optionIndex } = parsed.data;
-    const result = IdentityEngine.resolveIdentityEvent(db, characterId, eventId, optionIndex);
-    return reply.send(result);
+    try {
+      const result = IdentityEngine.resolveIdentityEvent(db, characterId, eventId, optionIndex);
+      return reply.send(result);
+    } catch (err: any) {
+      return reply.status(400).send({ error: err.message });
+    }
   });
 
   // GET /api/identity/history/:characterId

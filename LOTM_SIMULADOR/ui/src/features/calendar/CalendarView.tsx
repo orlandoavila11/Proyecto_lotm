@@ -100,31 +100,8 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
       if (onActionCompleted) {
         onActionCompleted(outcome);
       }
-    } catch {
-      // Fallback determinista en entorno fixture
-      let narrative = '';
-      if (actionType === 'WORK') {
-        narrative = 'Cumples tu jornada laboral. La rutina mecánica te otorga una coartada sólida y disipa las preguntas de vecinos.';
-      } else if (actionType === 'INVESTIGATE') {
-        narrative = 'Dedicas la franja a examinar archivos, interrogar informantes o rastrear huellas en los callejones neblinosos.';
-      } else if (actionType === 'SOCIALIZE') {
-        narrative = 'Compartes una cerveza tibia en la taberna local o visitas a tus conocidos civiles, reforzando tu sentido de pertenencia.';
-      } else {
-        narrative = 'Te recluyes para realizar transacciones arcanas, preparar reactivos alquímicos o interpretar los principios de tu Vía.';
-      }
-
-      setLastActionOutcome(narrative);
-
-      // Avanzar exactamente 1 franja en modo fixture
-      if (currentSlot === 'MAÑANA') setCurrentSlot('TARDE');
-      else if (currentSlot === 'TARDE') setCurrentSlot('NOCHE');
-      else if (currentSlot === 'NOCHE') setCurrentSlot('MADRUGADA');
-      else {
-        setCurrentSlot('MAÑANA');
-        setCurrentDay(prev => prev + 1);
-        const nextIdx = (WEEK_DAYS.indexOf(currentDayName) + 1) % 7;
-        setCurrentDayName(WEEK_DAYS[nextIdx]);
-      }
+    } catch (err: any) {
+      setLastActionOutcome(`Fallo de sincronización: la acción no pudo registrarse en el reloj de Backlund (${err.message || 'Error del servidor'}). Tu tiempo permanece intacto.`);
     } finally {
       setIsPending(false);
     }

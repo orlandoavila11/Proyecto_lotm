@@ -61,7 +61,8 @@ export interface SanitizedIdentityEvent {
 
 export interface SanitizedIdentityResolution {
   success: boolean;
-  narrativeOutcome: string;
+  narrativeOutcome?: string;
+  error?: string;
 }
 
 export const apiClient = {
@@ -200,20 +201,18 @@ export const apiClient = {
           narrativeOutcome: data.chosenOption?.narrativeOutcome || data.chosenOption?.text || 'La situación civil ha sido atendida.'
         };
       }
-    } catch {
-      // Fallback diegético si no hay conexión
+      return {
+        success: false,
+        narrativeOutcome: undefined,
+        error: `Error al resolver evento civil: ${res.status}`
+      };
+    } catch (err: any) {
+      return {
+        success: false,
+        narrativeOutcome: undefined,
+        error: err.message || 'Error de conexión con el servidor.'
+      };
     }
-
-    const outcomes = [
-      'Tus explicaciones serenas logran apaciguar el recelo de los inquilinos. La máscara burguesa resiste un día más.',
-      'Las monedas cambiaron de manos discretamente; el silencio se restablece en el pasillo.',
-      'Las cenizas en el hogar consumieron el rastro de la noche. Tu refugio vuelve a ser invisible a miradas extrañas.'
-    ];
-
-    return {
-      success: true,
-      narrativeOutcome: outcomes[optionIndex % outcomes.length] || 'El incidente civil concluye sin comprometer tu identidad.'
-    };
   },
 
   /**
@@ -292,14 +291,17 @@ export const apiClient = {
           isFullyDigested: !!data.isFullyDigested
         };
       }
-    } catch {
-      // Fallback
+      return {
+        success: false,
+        message: `Error al resolver interpretación: ${res.status}`,
+        isFullyDigested: false
+      };
+    } catch (err: any) {
+      return {
+        success: false,
+        message: err.message || 'Error de conexión con el servidor.',
+        isFullyDigested: false
+      };
     }
-
-    return {
-      success: true,
-      message: 'Tu interpretación resuena con los preceptos de la Secuencia. La poción se asimila en silencio y la llama en la palmatoria arde con serenidad.',
-      isFullyDigested: false
-    };
   }
 };

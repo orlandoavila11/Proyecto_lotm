@@ -165,12 +165,36 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
     setStep('RITUAL_DARKEN');
   };
 
-  const handleFinishPrologue = () => {
+  const handleFinishPrologue = async () => {
     const isFool = potionChoice === 'COBALTO';
+    let charId = `char_${Date.now()}`;
+
+    try {
+      const res = await fetch('/api/character/new', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: characterName,
+          pathway: isFool ? 'FOOL' : 'SPECTATOR',
+          startingCity: selectedOrigin.district || 'Backlund - Distrito de Cherwood',
+          background: selectedOrigin.profession || 'Detective Privado',
+          socialClass: 'MIDDLE_CLASS'
+        })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data?.character?.id) {
+          charId = data.character.id;
+          localStorage.setItem('lotm_active_character_id', charId);
+        }
+      }
+    } catch {
+      // Fallback local en caso de desconexión
+    }
     
     // Crear el personaje diegético completo con Ruina 5 (Marcado) y Corrupción limpia
     const newChar: CharacterDiegetic = {
-      id: `char_${Date.now()}`,
+      id: charId,
       name: characterName,
       profession: selectedOrigin.profession,
       originTitle: selectedOrigin.name,
