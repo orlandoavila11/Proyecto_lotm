@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Crosshair, Eye, Shield, Sparkles, Zap, Brain } from 'lucide-react';
 import type { CombatantDiegetic } from '../types';
 import { TacticalGrid, type ActiveVfxState } from './TacticalGrid';
 import { TacticalResolutionOverlay, type CombatOutcomeType } from './TacticalResolutionOverlay';
 import type { AbilityVfxType } from './TacticalAbilityVfx';
+import { apiClient } from '../../services/apiClient';
 
 interface CombatViewProps {
   onBackToDesk: () => void;
   characterPathway?: 'The Fool' | 'Visionary';
+  characterId?: string;
+  onRefreshCharacter?: () => void;
 }
 
 const INITIAL_COMBATANTS: CombatantDiegetic[] = [
@@ -35,7 +38,9 @@ const INITIAL_COMBATANTS: CombatantDiegetic[] = [
 
 export const CombatView: React.FC<CombatViewProps> = ({ 
   onBackToDesk,
-  characterPathway = 'The Fool'
+  characterPathway = 'The Fool',
+  characterId,
+  onRefreshCharacter
 }) => {
   const [combatants, setCombatants] = useState<CombatantDiegetic[]>(INITIAL_COMBATANTS);
   const [selectedCell, setSelectedCell] = useState<{ x: number; y: number } | null>(null);
@@ -51,6 +56,29 @@ export const CombatView: React.FC<CombatViewProps> = ({
   const [spiritualBreath, setSpiritualBreath] = useState<'PLENO' | 'AGITADO' | 'EXHAUSTO'>('PLENO');
   const [enemyWoundsCount, setEnemyWoundsCount] = useState<number>(0);
 
+  const activeCharId = characterId || localStorage.getItem('lotm_active_character_id') || 'char_1790267861425';
+
+  // Inicializar o recuperar combate persistido en SQLite
+  useEffect(() => {
+    apiClient.getActiveCombat(activeCharId).then(battle => {
+      if (!battle) {
+        apiClient.startCombat({
+          characterId: activeCharId,
+          enemyName: 'Sombra Embozada de la Noche',
+          enemyHp: 65
+        }).then(newBattle => {
+          if (newBattle?.turnLog) {
+            setCombatLog(newBattle.turnLog);
+          }
+        }).catch(() => {});
+      } else {
+        if (battle.turnLog && battle.turnLog.length > 0) {
+          setCombatLog(battle.turnLog);
+        }
+      }
+    }).catch(() => {});
+  }, [activeCharId]);
+
   const player = combatants.find(c => c.isPlayer)!;
   const enemy = combatants.find(c => !c.isPlayer)!;
 
@@ -58,26 +86,34 @@ export const CombatView: React.FC<CombatViewProps> = ({
     setActiveVfx({ type, fromCell: from, toCell: to });
   };
 
-  const handleInspectWithSpiritVision = () => {
+  const handleInspectWithSpiritVision = async () => {
     triggerVfx('SPIRIT_VISION_SCAN');
-    setCombatants(prev => prev.map(c => {
-      if (!c.isPlayer) {
-        return {
-          ...c,
-          opacityState: 'DESCIFRADO',
-          revealedIntent: 'Se prepara para abalanzarse con garras oscuras ungidas en veneno adormecedor.'
-        };
-      }
-      return c;
-    }));
-    setSpiritualBreath(prev => prev === 'PLENO' ? 'AGITADO' : 'EXHAUSTO');
-    setCombatLog(prev => [
-      'Activaste la Visión Espiritual: el aura de la sombra se tiñe de violeta oscuro y sus intenciones asesinas quedan desnudas ante tus ojos.',
-      ...prev
-    ]);
+    try {
+      const res = await apiClient.executeCombatAction({
+        characterId: activeCharId,
+        actionType: 'SCRUTINIZE'
+      });
+      setCombatants(prev => prev.map(c => {
+        if (!c.isPlayer) {
+          return {
+            ...c,
+            opacityState: 'DESCIFRADO',
+            revealedIntent: res.message || 'Se prepara para abalanzarse con garras oscuras ungidas en veneno.'
+          };
+        }
+        return c;
+      }));
+      setSpiritualBreath(prev => prev === 'PLENO' ? 'AGITADO' : 'EXHAUSTO');
+      setCombatLog(prev => [
+        res.message || 'Activaste la Visión Espiritual: el aura de la sombra queda desvelada ante tus ojos.',
+        ...prev
+      ]);
+    } catch (err: any) {
+      setCombatLog(prev => [err.message || 'La niebla interfiere con la visión.', ...prev]);
+    }
   };
 
-  const handleShoot = () => {
+  const handleShoot = async () => {
     if (cartridgesInCylinder <= 0) {
       setCombatLog(prev => ['El percutor golpea en vacío: no quedan cartuchos en el tambor del revólver.', ...prev]);
       return;
@@ -88,19 +124,37 @@ export const CombatView: React.FC<CombatViewProps> = ({
     const nextWounds = enemyWoundsCount + 1;
     setEnemyWoundsCount(nextWounds);
 
-    setCombatLog(prev => [
-      'Un estruendo de pólvora rompe la niebla. El proyectil roza el hombro de la figura haciéndola retroceder un paso.',
-      ...prev
-    ]);
-
-    if (nextWounds >= 2) {
-      setTimeout(() => {
-        setResolutionOutcome('VICTORIA');
-      }, 1000);
+    try {
+      const res = await apiClient.executeCombatAction({
+        characterId: activeCharId,
+        actionType: 'SKILL',
+        skillId: 'SKILL_PRECISION_SHOT'
+      });
+      setCombatLog(prev => [
+        res.message || 'Un estruendo de pólvora rompe la niebla. El proyectil alcanza a la figura.',
+        ...prev
+      ]);
+      if (res.battleOver || res.isCombatOver) {
+        setTimeout(() => {
+          setResolutionOutcome('VICTORIA');
+          onRefreshCharacter?.();
+        }, 1000);
+      }
+    } catch {
+      setCombatLog(prev => [
+        'Un estruendo de pólvora rompe la niebla. El proyectil roza el hombro de la figura haciéndola retroceder.',
+        ...prev
+      ]);
+      if (nextWounds >= 2) {
+        setTimeout(() => {
+          setResolutionOutcome('VICTORIA');
+          onRefreshCharacter?.();
+        }, 1000);
+      }
     }
   };
 
-  const handlePathwayAbility = () => {
+  const handlePathwayAbility = async () => {
     if (spiritualBreath === 'EXHAUSTO') {
       setCombatLog(prev => [
         'Tu espiritualidad está al límite. Intentar canalizar más poder amenaza con fracturar tu mente.',
@@ -110,45 +164,72 @@ export const CombatView: React.FC<CombatViewProps> = ({
       return;
     }
 
-    if (characterPathway === 'The Fool') {
-      // Habilidad S9 Fool: Intuición del Vidente / Visión Espiritual
-      triggerVfx('ASTRAL_THREAD');
-      setSpiritualBreath('AGITADO');
-      const nextWounds = enemyWoundsCount + 1;
-      setEnemyWoundsCount(nextWounds);
+    const skillId = characterPathway === 'The Fool' ? 'SKILL_SPIRIT_VISION' : 'SKILL_PSYCHIC_WAVE';
+    triggerVfx(characterPathway === 'The Fool' ? 'ASTRAL_THREAD' : 'PSYCHIC_WAVE');
+    setSpiritualBreath('AGITADO');
+
+    const nextWounds = enemyWoundsCount + 1;
+    setEnemyWoundsCount(nextWounds);
+
+    try {
+      const res = await apiClient.executeCombatAction({
+        characterId: activeCharId,
+        actionType: 'SKILL',
+        skillId
+      });
       setCombatLog(prev => [
-        'Activas tu Visión Espiritual e intuición de peligro: anticipas la trayectoria del asalto y desvías el golpe hacia el flanco vulnerable de la sombra.',
+        res.message || (characterPathway === 'The Fool'
+          ? 'Activas tu intuición de peligro y manipulas hilos astrales para desviar el ataque.'
+          : 'Proyectas una onda de desasosiego que conmociona la mente de la sombra.'),
         ...prev
       ]);
-
-      if (nextWounds >= 2) {
-        setTimeout(() => setResolutionOutcome('VICTORIA'), 1000);
+      if (res.battleOver || res.isCombatOver) {
+        setTimeout(() => {
+          setResolutionOutcome('VICTORIA');
+          onRefreshCharacter?.();
+        }, 1000);
       }
-    } else {
-      // Habilidad S9 Visionary: Intimidación Psíquica / Espectador
-      triggerVfx('PSYCHIC_WAVE');
-      setSpiritualBreath('AGITADO');
-      const nextWounds = enemyWoundsCount + 1;
-      setEnemyWoundsCount(nextWounds);
+    } catch {
       setCombatLog(prev => [
-        'Fijas tu mirada en la sombra: proyectas una onda de desasosiego que congela sus extremidades y siembra el pavor en su mente.',
+        characterPathway === 'The Fool'
+          ? 'Activas tu intuición mística desequilibrando la postura hostil del adversario.'
+          : 'Proyectas una mirada intimidante que congela sus movimientos.',
         ...prev
       ]);
-
       if (nextWounds >= 2) {
-        setTimeout(() => setResolutionOutcome('VICTORIA'), 1000);
+        setTimeout(() => {
+          setResolutionOutcome('VICTORIA');
+          onRefreshCharacter?.();
+        }, 1000);
       }
     }
   };
 
-  const handleDodge = () => {
-    setCombatLog(prev => [
-      'Te deslizas hacia la penumbra tras una pila de cajones de madera, rompiendo la línea de ataque enemiga.',
-      ...prev
-    ]);
+  const handleDodge = async () => {
+    try {
+      const res = await apiClient.executeCombatAction({
+        characterId: activeCharId,
+        actionType: 'MOVE'
+      });
+      setCombatLog(prev => [
+        res.message || 'Te deslizas hacia la penumbra rompiendo la línea de ataque enemiga.',
+        ...prev
+      ]);
+    } catch {
+      setCombatLog(prev => [
+        'Te deslizas hacia la penumbra tras una pila de cajones de madera, rompiendo la línea de ataque enemiga.',
+        ...prev
+      ]);
+    }
   };
 
-  const handleDisengage = () => {
+  const handleDisengage = async () => {
+    try {
+      await apiClient.executeCombatAction({
+        characterId: activeCharId,
+        actionType: 'FLEE'
+      });
+    } catch {}
     setResolutionOutcome('HUIDA');
   };
 

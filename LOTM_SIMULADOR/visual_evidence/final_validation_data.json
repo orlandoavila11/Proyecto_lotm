@@ -1,0 +1,33 @@
+{
+  "market": {
+    "initialPence": 6912,
+    "postBuyPence": 6840,
+    "penceDeducted": 72,
+    "initialMarketTx": 4,
+    "postBuyMarketTx": 5,
+    "initialInv": 6,
+    "postBuyInv": 6,
+    "persistedCorrectly": true
+  },
+  "combat": {
+    "battlesBefore": 2,
+    "battleId": "battle_char_1790267861425_kij6_1",
+    "turnCount": 1,
+    "logLength": 2,
+    "persistedCorrectly": true
+  },
+  "investigation": {
+    "casesBefore": 1,
+    "caseId": "case_inst_char_1790267861425_CASE_CHERWOOD_HEIRLOOM_1790270561988",
+    "caseTitle": "El Eco en el Nido Vacío",
+    "hypothesesCount": 4,
+    "persistedCorrectly": true
+  },
+  "ascension": {
+    "finalSequence": 8,
+    "telemetryCount": 3,
+    "persistedCorrectly": true
+  },
+  "journey": [],
+  "c0Comparison": {}
+}

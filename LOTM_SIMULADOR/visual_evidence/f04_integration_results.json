@@ -1,0 +1,72 @@
+[
+  {
+    "system": "MarketView",
+    "status": "PASSED",
+    "before": {
+      "pence": 7056,
+      "transactions": 2,
+      "inventory": 3
+    },
+    "persisted": {
+      "pence": 6984,
+      "transactions": 3,
+      "inventory": 3,
+      "lastTxCode": "ING_JIMSONWEED_JUICE"
+    },
+    "screenshots": [
+      "f04_market_01_before.png",
+      "f04_market_02_action.png",
+      "f04_market_03_reload.png"
+    ]
+  },
+  {
+    "system": "CombatView",
+    "status": "PASSED",
+    "before": {
+      "battlesCount": 2
+    },
+    "persisted": {
+      "battleId": "battle_char_1790267861425_kij6_1",
+      "status": "FLED"
+    },
+    "screenshots": [
+      "f04_combat_01_before.png",
+      "f04_combat_02_action.png",
+      "f04_combat_03_reload.png"
+    ]
+  },
+  {
+    "system": "CorkboardView",
+    "status": "PASSED",
+    "before": {
+      "caseInstances": 1
+    },
+    "persisted": {
+      "caseInstanceId": "case_inst_char_1790267861425_CASE_CHERWOOD_HEIRLOOM_1790270561988",
+      "status": "ACTIVE"
+    },
+    "screenshots": [
+      "f04_corkboard_01_before.png",
+      "f04_corkboard_02_action.png",
+      "f04_corkboard_03_reload.png"
+    ]
+  },
+  {
+    "system": "AscensionView",
+    "status": "PASSED",
+    "before": {
+      "sequence": 8,
+      "telemetryRows": 1
+    },
+    "persisted": {
+      "sequence": 8,
+      "telemetryRows": 2,
+      "outcome": "SUCCESS"
+    },
+    "screenshots": [
+      "f04_ascension_01_before.png",
+      "f04_ascension_02_action.png",
+      "f04_ascension_03_reload.png"
+    ]
+  }
+]

@@ -1,64 +1,105 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ShoppingBag, Coins, Sparkles, Check } from 'lucide-react';
 import type { MarketProduct } from '../types';
+import { apiClient } from '../../services/apiClient';
 
 interface MarketViewProps {
   onBackToDesk: () => void;
+  characterId?: string;
+  onRefreshCharacter?: () => void;
 }
 
-const CANONICAL_PRODUCTS: MarketProduct[] = [
+export interface MarketProductItem extends MarketProduct {
+  itemCode: string;
+  districtId: string;
+  quality: 'PRISTINE' | 'DAMAGED' | 'CONTAMINATED';
+}
+
+const CANONICAL_PRODUCTS: MarketProductItem[] = [
   {
-    id: 'prod_shadow_panther',
-    name: 'Médula de Pantera de las Sombras',
-    category: 'INGREDIENTE',
-    rarity: 'INUSUAL',
-    priceDescription: '3 libras de plata esterlina',
-    costPence: 720,
-    description: 'Un fragmento de espina dorsal conservado en aceite de almendras amargas. Emite un frío tenue al tacto.',
+    id: 'prod_jimsonweed_juice',
+    itemCode: 'ING_JIMSONWEED_JUICE',
+    districtId: 'bridge_borough',
+    quality: 'PRISTINE',
+    name: 'Jugo de Estramonio Purificado',
+    category: 'BOTICARIO',
+    rarity: 'COMÚN',
+    priceDescription: '6 chelines de plata (72d)',
+    costPence: 72,
+    description: 'Esencia herbal purificada conservada en frasco de vidrio ámbar. Atenúa zumbidos auditivos y estabiliza mezclas alquímicas.',
     purityNote: 'Autenticado por un tasador del Callejón del Gato Negro.'
   },
   {
-    id: 'prod_abyssal_gland',
-    name: 'Glándula de Pez Abisal de Niebla',
+    id: 'prod_goat_horn_crystal',
+    itemCode: 'ING_GOAT_HORN_CRYSTAL',
+    districtId: 'bridge_borough',
+    quality: 'PRISTINE',
+    name: 'Cristal de Cuerno de Cabra de Hornacis',
     category: 'INGREDIENTE',
     rarity: 'INUSUAL',
-    priceDescription: '2 libras y 15 chelines',
-    costPence: 660,
-    description: 'Una vesícula translúcida que destila un licor fluorescente capaz de alterar las percepciones ópticas.',
+    priceDescription: '5 libras de plata esterlina (1200d)',
+    costPence: 1200,
+    description: 'Fragmento mineralizado con reflejos plateados extraído de las cumbres de Hornacis. Emite un frío tenue al tacto.',
+    purityNote: 'Autenticado por un tasador del Callejón del Gato Negro.'
+  },
+  {
+    id: 'prod_human_faced_rose',
+    itemCode: 'ING_HUMAN_FACED_ROSE_STALK',
+    districtId: 'bridge_borough',
+    quality: 'PRISTINE',
+    name: 'Tallo de Rosa con Rostro Humano',
+    category: 'INGREDIENTE',
+    rarity: 'INUSUAL',
+    priceDescription: '6 libras esterlinas (1440d)',
+    costPence: 1440,
+    description: 'Tallo espinoso cuyas venaciones forman facciones faciales cambiantes. Ingrediente principal para el papel del Payaso.',
     purityNote: 'Extraída en la costa rocosa de Desi Bay.'
   },
   {
-    id: 'prod_sun_tincture',
-    name: 'Bálsamo Calmante de Manzanilla Solar',
+    id: 'prod_black_sunflower',
+    itemCode: 'ING_BLACK_SUNFLOWER_POWDER',
+    districtId: 'bridge_borough',
+    quality: 'PRISTINE',
+    name: 'Polvo de Girasol de Borde Negro',
     category: 'BOTICARIO',
     rarity: 'COMÚN',
-    priceDescription: '8 chelines y 6 peniques',
-    costPence: 102,
-    description: 'Infusión densa y aromática bendecida en un altar solar menor. Suaviza los zumbidos en los oídos y los delirios nocturnos.',
+    priceDescription: '8 chelines (96d)',
+    costPence: 96,
+    description: 'Polvo denso de pétalos solares desecados. Suaviza la disonancia espiritual.',
     purityNote: 'Elaborado por un herbolario autorizado.'
-  },
-  {
-    id: 'prod_occult_journal',
-    name: 'Fragmento del Cuaderno de la Familia Antigonus',
-    category: 'LIBRO',
-    rarity: 'PROHIBIDO',
-    priceDescription: '12 libras en soberanos de oro',
-    costPence: 2880,
-    description: 'Tres folios apergaminados cosidos con pelo de cabra. Las letras parecen reptar cuando no se las mira de frente.',
-    purityNote: 'El vendedor no responde por los desvelos de quien lo adquiera.'
   }
 ];
 
-export const MarketView: React.FC<MarketViewProps> = ({ onBackToDesk }) => {
-  const [products] = useState<MarketProduct[]>(CANONICAL_PRODUCTS);
-  const [selectedProduct, setSelectedProduct] = useState<MarketProduct | null>(products[0]);
+export const MarketView: React.FC<MarketViewProps> = ({ onBackToDesk, characterId, onRefreshCharacter }) => {
+  const [products] = useState<MarketProductItem[]>(CANONICAL_PRODUCTS);
+  const [selectedProduct, setSelectedProduct] = useState<MarketProductItem | null>(products[0]);
   const [purchasedMessage, setPurchasedMessage] = useState<string | null>(null);
+  const [isBuying, setIsBuying] = useState<boolean>(false);
+  const [livePence, setLivePence] = useState<number | null>(null);
 
-  const handleBuy = (product: MarketProduct) => {
-    setPurchasedMessage(`Has acordado el traspaso de "${product.name}". El paquete fue deslizado bajo tu capa sin levantar la voz.`);
-    setTimeout(() => {
-      setPurchasedMessage(null);
-    }, 4000);
+  const handleBuy = async (product: MarketProductItem) => {
+    setIsBuying(true);
+    try {
+      const activeCharId = characterId || localStorage.getItem('lotm_active_character_id') || 'char_1790267861425';
+      const res = await apiClient.buyMarketItem({
+        characterId: activeCharId,
+        districtId: product.districtId,
+        itemCode: product.itemCode,
+        quality: product.quality
+      });
+      setPurchasedMessage(`Has adquirido "${product.name}". El paquete fue deslizado bajo tu capa sin levantar la voz.`);
+      if (res.remainingBalance !== undefined) {
+        setLivePence(res.remainingBalance);
+      }
+      onRefreshCharacter?.();
+    } catch (err: any) {
+      setPurchasedMessage(`Trato interrumpido: ${err.message}`);
+    } finally {
+      setIsBuying(false);
+      setTimeout(() => {
+        setPurchasedMessage(null);
+      }, 5000);
+    }
   };
 
   return (
@@ -105,7 +146,9 @@ export const MarketView: React.FC<MarketViewProps> = ({ onBackToDesk }) => {
         <div className="flex items-center gap-2 bg-[#191714] px-4 py-2 rounded border border-[#383024]">
           <Coins size={16} className="text-[#d4af37]" />
           <span className="text-xs text-[#d4af37] font-serif">
-            Monedas de oro y plata listas para el regateo
+            {livePence !== null 
+              ? `Faltriquera tras el pago: ${Math.floor(livePence / 240)} libras esterlinas` 
+              : 'Monedas de oro y plata listas para el regateo'}
           </span>
         </div>
       </header>
@@ -217,9 +260,10 @@ export const MarketView: React.FC<MarketViewProps> = ({ onBackToDesk }) => {
 
               <button
                 onClick={() => handleBuy(selectedProduct)}
-                className="w-full crimson-btn py-2.5 text-sm uppercase tracking-wider font-bold"
+                disabled={isBuying}
+                className="w-full crimson-btn py-2.5 text-sm uppercase tracking-wider font-bold disabled:opacity-50"
               >
-                Pagar y Recoger el Paquete
+                {isBuying ? 'Sellando el Trato...' : 'Pagar y Recoger el Paquete'}
               </button>
             </div>
           ) : (

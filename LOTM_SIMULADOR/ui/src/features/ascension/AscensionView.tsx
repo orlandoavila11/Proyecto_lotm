@@ -5,12 +5,14 @@
  */
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ArrowLeft, Sparkles, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, Sparkles, ShieldCheck, AlertTriangle } from 'lucide-react';
 import type { CharacterDiegetic } from '../types';
+import { apiClient } from '../../services/apiClient';
 
 interface AscensionViewProps {
   character: CharacterDiegetic;
   onBackToDesk: () => void;
+  onRefreshCharacter?: () => void;
 }
 
 type GateId = 'GATE_FORMULA' | 'GATE_INGREDIENTS' | 'GATE_DIGESTION' | 'GATE_RITUAL_ENV' | 'GATE_DRINK';
@@ -25,9 +27,10 @@ interface AscensionGate {
   details: string[];
 }
 
-export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackToDesk }) => {
+export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackToDesk, onRefreshCharacter }) => {
   const [phase, setPhase] = useState<'PREPARACION' | 'TRAGO' | 'CONSUMADO'>('PREPARACION');
   const [activeGateDetail, setActiveGateDetail] = useState<GateId | null>(null);
+  const [backendStatus, setBackendStatus] = useState<any>(null);
 
   // Hold-to-Drink states (GFX55)
   const [isHolding, setIsHolding] = useState<boolean>(false);
@@ -43,7 +46,32 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
 
   useEffect(() => {
     sessionStartTimeRef.current = Date.now();
-  }, []);
+    if (character?.id) {
+      apiClient.getAscensionStatus(character.id)
+        .then(res => {
+          if (res?.status) {
+            setBackendStatus(res.status);
+          }
+        })
+        .catch(() => {});
+      apiClient.prepareAscension({
+        characterId: character.id,
+        checklist: {
+          lugar: true,
+          momento: true,
+          materiales_rituales: true,
+          costos_anclaje: true
+        },
+        markPresented: true
+      }).catch(() => {});
+    }
+  }, [character?.id]);
+
+  const ingredientsReady = backendStatus ? Boolean(backendStatus.door2_ingredients?.passed) : false;
+  const digestionReady = backendStatus ? Boolean(backendStatus.door3_digestion?.passed) : false;
+  const formulaReady = backendStatus ? Boolean(backendStatus.door1_formula?.passed) : true;
+  const prepReady = backendStatus ? Boolean(backendStatus.door4_preparation?.passed) : true;
+  const canDrink = backendStatus ? Boolean(backendStatus.canDrink) : false;
 
   // Definición diegética de las 5 Puertas Canónicas (GFX53)
   const gates: AscensionGate[] = [
@@ -52,8 +80,10 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
       title: 'Conocimiento de la Fórmula',
       category: 'Grimorio y Memoria',
       objectDescription: 'El pliego de vitela con anotaciones ferrogálicas y el diagrama de proporciones.',
-      statusText: 'Asimilada en la mente · Proporciones alquímicas verificadas',
-      isReady: true,
+      statusText: formulaReady 
+        ? 'Asimilada en la mente · Proporciones alquímicas verificadas' 
+        : 'Fórmula incompleta o no descifrada',
+      isReady: formulaReady,
       details: isFool ? [
         'Fórmula canónica de la Secuencia 8 del Camino del Loco.',
         'Estructura de la transmutación: agilidad sobrenatural, control facial absoluto y equilibrio de hilos astrales.',
@@ -69,8 +99,10 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
       title: 'Ingredientes Extraordinarios y Suplementos',
       category: 'Mortero y Redomas',
       objectDescription: 'Redomas de cristal con extractos preservados sobre el paño de terciopelo.',
-      statusText: 'Ingredientes principales purificados y medidos al grano',
-      isReady: true,
+      statusText: ingredientsReady
+        ? 'Ingredientes principales purificados y medidos al grano'
+        : 'Faltan ingredientes principales en el mortero ceremonial',
+      isReady: ingredientsReady,
       details: isFool ? [
         'Ingrediente Principal 1: 1x Cristal de Cuerno de Cabra de Hornacis (ING_GOAT_HORN_CRYSTAL).',
         'Ingrediente Principal 2: 1x Tallo de Rosa con Rostro Humano (ING_HUMAN_FACED_ROSE_STALK).',
@@ -86,8 +118,10 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
       title: 'Digestión del Papel Previo',
       category: 'Somática y Mecha',
       objectDescription: 'La vela arde serena y el azogue del espejo devuelve una figura sin distorsión.',
-      statusText: 'Poción previa asimilada · La voz ajena se ha disuelto por completo',
-      isReady: true,
+      statusText: digestionReady
+        ? 'Poción previa asimilada · La voz ajena se ha disuelto por completo'
+        : 'Digestión en curso · La asimilación del papel anterior aún no se ha completado',
+      isReady: digestionReady,
       details: [
         'Los principios del papel de Secuencia 9 se han integrado en tus reflejos cotidianos.',
         'No quedan residuos de la voluntad primordial en la mecha de tu cordura.',
@@ -99,8 +133,10 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
       title: 'Entorno Ritual y Anclas Humanas',
       category: 'Lugar, Momento y Lazos',
       objectDescription: 'Círculo de sal purificada sobre las tablas de roble y las 3 anclas firmadas.',
-      statusText: 'Cámara sellada contra ojos curiosos · Vínculos civiles protegen la vigilia',
-      isReady: true,
+      statusText: prepReady
+        ? 'Cámara sellada contra ojos curiosos · Vínculos civiles protegen la vigilia'
+        : 'El entorno carece de consagración ritual completa',
+      isReady: prepReady,
       details: [
         'Lugar: El desván aislado de Backlund, protegido por sal consagrada en los cuatro cuadrantes.',
         'Momento: Conjunción de medianoche bajo la luz velada de la Luna Carmesí.',
@@ -112,8 +148,10 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
       title: 'Ingesta del Cáliz de Transmutación',
       category: 'El Cáliz de Peltre',
       objectDescription: 'La poción mezclada reposa en el cáliz emitiendo un fulgor opalescente.',
-      statusText: 'Listo para el trago ceremonial sostenido de tres segundos',
-      isReady: true,
+      statusText: canDrink
+        ? 'Listo para el trago ceremonial sostenido de tres segundos'
+        : 'El cáliz aguarda los ingredientes requeridos antes de alzarse',
+      isReady: canDrink,
       details: [
         'El cáliz debe levantarse con pulso firme.',
         'El líquido debe ingerirse de manera continua sin apartar los labios antes de completar el cruce.',
@@ -126,6 +164,10 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
   // GFX55: GESTO SOSTENIDO DE BEBER (3 SEGUNDOS DE SUJECIÓN CONTINUA)
   // ==========================================================================
   const startHold = () => {
+    if (!canDrink) {
+      setInterruptionFeedback('El cáliz está incompleto. Faltan ingredientes esenciales en el mortero para poder sellar la transmutación.');
+      return;
+    }
     setIsHolding(true);
     setInterruptionFeedback(null);
     holdStartTimeRef.current = Date.now();
@@ -138,6 +180,16 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
           setIsHolding(false);
           const totalHesitation = Date.now() - sessionStartTimeRef.current;
           console.log('[ASCENSION TELEMETRY] hesitation_ms:', totalHesitation);
+          if (character?.id) {
+            apiClient.drinkAscensionPotion({
+              characterId: character.id,
+              confirmedAt: Date.now()
+            }).then(() => {
+              onRefreshCharacter?.();
+            }).catch(err => {
+              console.warn('Ascension potion consumption fallback:', err);
+            });
+          }
           setPhase('TRAGO');
           return 3000;
         }
@@ -200,10 +252,17 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
           </div>
         </div>
 
-        <div className="flex items-center gap-2 bg-[#181410] px-4 py-2 rounded border border-[#3d301f] text-xs text-[#d4af37] font-serif">
-          <Sparkles size={14} />
-          <span>Cinco Puertas Cumplidas</span>
-        </div>
+        {canDrink ? (
+          <div className="flex items-center gap-2 bg-[#181410] px-4 py-2 rounded border border-[#3d301f] text-xs text-[#d4af37] font-serif">
+            <Sparkles size={14} />
+            <span>Cinco Puertas Cumplidas</span>
+          </div>
+        ) : (
+          <div className="flex items-center gap-2 bg-[#261713] px-4 py-2 rounded border border-[#5a2c20] text-xs text-[#f87171] font-serif">
+            <AlertTriangle size={14} />
+            <span>Puertas Incompletas</span>
+          </div>
+        )}
       </header>
 
       {/* ==========================================================================
@@ -255,10 +314,17 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
                         </div>
                       </div>
 
-                      <span className="text-[11px] text-[#4ade80] font-serif flex items-center gap-1 shrink-0 bg-[#162916]/80 px-2.5 py-0.5 rounded border border-[#234d23]">
-                        <ShieldCheck size={12} />
-                        Dispuesta
-                      </span>
+                      {gate.isReady ? (
+                        <span className="text-[11px] text-[#4ade80] font-serif flex items-center gap-1 shrink-0 bg-[#162916]/80 px-2.5 py-0.5 rounded border border-[#234d23]">
+                          <ShieldCheck size={12} />
+                          Dispuesta
+                        </span>
+                      ) : (
+                        <span className="text-[11px] text-[#f87171] font-serif flex items-center gap-1 shrink-0 bg-[#291616]/80 px-2.5 py-0.5 rounded border border-[#4d2323]">
+                          <AlertTriangle size={12} />
+                          Incompleta
+                        </span>
+                      )}
                     </div>
 
                     <p className="text-xs text-[#b8a994] font-serif italic mt-2.5 pl-10">
@@ -392,10 +458,12 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
               {/* Indicación de interacción */}
               <div className="mt-3">
                 <div className="text-xs font-serif font-bold text-[#e5ded2] mb-1">
-                  {isHolding ? 'Bebiendo... Mantén el cáliz erguido' : 'Mantén presionado para beber'}
+                  {isHolding ? 'Bebiendo... Mantén el cáliz erguido' : canDrink ? 'Mantén presionado para beber' : 'El cáliz aguarda los ingredientes'}
                 </div>
                 <p className="text-[11px] text-[#8a7964] italic">
-                  Sujeta el ratón o mantén pulsada la barra espaciadora durante tres segundos.
+                  {canDrink 
+                    ? 'Sujeta el ratón o mantén pulsada la barra espaciadora durante tres segundos.' 
+                    : 'Las puertas previas deben sellarse antes de alzar el brebaje.'}
                 </p>
               </div>
 

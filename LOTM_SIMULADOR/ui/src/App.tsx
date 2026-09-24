@@ -206,7 +206,7 @@ function AppContent() {
 
       {state.currentView === 'CORKBOARD_STAGE' && (
         <div className="absolute inset-0 z-30">
-          <CorkboardView onBackToDesk={backToDesk} />
+          <CorkboardView onBackToDesk={backToDesk} characterId={character.id} />
         </div>
       )}
 
@@ -229,7 +229,11 @@ function AppContent() {
 
       {state.currentView === 'MARKET_STAGE' && (
         <div className="absolute inset-0 z-30">
-          <MarketView onBackToDesk={backToDesk} />
+          <MarketView 
+            onBackToDesk={backToDesk} 
+            characterId={character.id} 
+            onRefreshCharacter={refreshCharacter} 
+          />
         </div>
       )}
 
@@ -255,7 +259,12 @@ function AppContent() {
 
       {state.currentView === 'COMBAT_STAGE' && (
         <div className="absolute inset-0 z-30">
-          <CombatView onBackToDesk={backToDesk} />
+          <CombatView 
+            onBackToDesk={backToDesk} 
+            characterPathway={character.pathwayName as any} 
+            characterId={character.id} 
+            onRefreshCharacter={refreshCharacter} 
+          />
         </div>
       )}
 
@@ -264,6 +273,7 @@ function AppContent() {
           <AscensionView
             character={character}
             onBackToDesk={backToDesk}
+            onRefreshCharacter={refreshCharacter}
           />
         </div>
       )}

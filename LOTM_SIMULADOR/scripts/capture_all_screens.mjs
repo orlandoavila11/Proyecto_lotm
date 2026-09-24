@@ -204,3 +204,4 @@ captureAll().catch(err => {
   console.error('[FAIL] Error en captura:', err);
   process.exit(1);
 });
+

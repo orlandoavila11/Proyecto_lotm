@@ -23,3 +23,4 @@ if (fs.existsSync(srcMigrations)) {
 } else {
   console.warn(`[BUILD WARN] No se encontró directorio de migraciones en: ${srcMigrations}`);
 }
+

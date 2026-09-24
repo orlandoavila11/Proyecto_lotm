@@ -108,3 +108,4 @@ export function mapRuinaToVisual(domainRuina: string | number): {
     description: 'La madera se desmorona en serrín negro; la estructura misma del refugio colapsa.'
   };
 }
+

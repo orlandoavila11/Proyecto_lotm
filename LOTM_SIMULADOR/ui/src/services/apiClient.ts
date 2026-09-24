@@ -303,5 +303,205 @@ export const apiClient = {
         isFullyDigested: false
       };
     }
+  },
+
+  // =========================================================================
+  // F04: INTEGRACIÓN REAL DE SISTEMAS (ECONOMÍA, COMBATE, CASOS, ASCENSO)
+  // =========================================================================
+
+  /**
+   * Obtiene catálogo de mercancías para un distrito
+   */
+  async getDistrictMarket(districtId: string): Promise<any> {
+    try {
+      const res = await fetch(`/api/economy/market/${encodeURIComponent(districtId)}`);
+      if (res.ok) {
+        const data = await res.json();
+        return data.market;
+      }
+    } catch {
+      // Fallback
+    }
+    return null;
+  },
+
+  /**
+   * Compra un ítem del mercado con persistencia transaccional SQLite
+   */
+  async buyMarketItem(params: {
+    characterId: string;
+    districtId: string;
+    itemCode: string;
+    quality: 'PRISTINE' | 'DAMAGED' | 'CONTAMINATED';
+  }): Promise<{ success: boolean; item?: any; penceSpent: number; remainingBalance: number; error?: string }> {
+    const res = await fetch('/api/economy/buy', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data.error || `Error en la compra: ${res.statusText}`);
+    }
+    return data;
+  },
+
+  /**
+   * Inicia o recupera combate táctico activo en SQLite
+   */
+  async startCombat(params: {
+    characterId: string;
+    enemyName?: string;
+    enemyHp?: number;
+    enemySpeed?: number;
+  }): Promise<any> {
+    const res = await fetch('/api/combat/start', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `Error al iniciar combate: ${res.statusText}`);
+    }
+    return res.json();
+  },
+
+  /**
+   * Obtiene combate activo de SQLite
+   */
+  async getActiveCombat(characterId: string): Promise<any> {
+    const res = await fetch(`/api/combat/active/${encodeURIComponent(characterId)}`);
+    if (!res.ok) return null;
+    return res.json();
+  },
+
+  /**
+   * Ejecuta una acción de combate persistida en SQLite
+   */
+  async executeCombatAction(params: {
+    characterId: string;
+    actionType: 'SKILL' | 'MOVE' | 'SCRUTINIZE' | 'NEGOTIATE' | 'FLEE';
+    skillId?: string;
+    targetPosition?: { x: number; y: number };
+  }): Promise<any> {
+    const res = await fetch('/api/combat/action', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data.error || data.message || `Error en acción de combate: ${res.statusText}`);
+    }
+    return data;
+  },
+
+  /**
+   * Activa o recupera caso de investigación en SQLite
+   */
+  async activateInvestigationCase(characterId: string, caseId = 'CASE_CHERWOOD_HEIRLOOM'): Promise<any> {
+    const res = await fetch('/api/investigation/case/activate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ characterId, caseId })
+    });
+    if (!res.ok) return null;
+    return res.json();
+  },
+
+  /**
+   * Conecta pistas de investigación persistidas en SQLite
+   */
+  async connectInvestigationClues(params: {
+    instanceId: string;
+    clueA: string;
+    clueB: string;
+    relation: 'acusa' | 'explica' | 'localiza' | 'contradice';
+  }): Promise<any> {
+    const res = await fetch('/api/investigation/clues/connect', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || 'Error al conectar pistas');
+    }
+    return res.json();
+  },
+
+  /**
+   * Envía y persiste una hipótesis de investigación en SQLite
+   */
+  async submitInvestigationHypothesis(params: {
+    instanceId: string;
+    hypothesisId: string;
+  }): Promise<any> {
+    const res = await fetch('/api/investigation/hypothesis/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || 'Error al someter hipótesis');
+    }
+    return res.json();
+  },
+
+  /**
+   * Evalúa el estado de las Cinco Puertas del ascenso en SQLite
+   */
+  async getAscensionStatus(characterId: string): Promise<any> {
+    const res = await fetch(`/api/ascension/status/${encodeURIComponent(characterId)}`);
+    if (!res.ok) return null;
+    return res.json();
+  },
+
+  /**
+   * Prepara los requerimientos rituales de ascenso en SQLite
+   */
+  async prepareAscension(params: {
+    characterId: string;
+    checklist: {
+      lugar?: boolean;
+      momento?: boolean;
+      materiales_rituales?: boolean;
+      costos_anclaje?: boolean;
+    };
+    markPresented?: boolean;
+  }): Promise<any> {
+    const res = await fetch('/api/ascension/prepare', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || 'Error en preparación de ascenso');
+    }
+    return res.json();
+  },
+
+  /**
+   * Ingesta ceremonial de la poción y avance de secuencia en SQLite
+   */
+  async drinkAscensionPotion(params: {
+    characterId: string;
+    confirmedAt?: number;
+    seed?: number;
+  }): Promise<any> {
+    const res = await fetch('/api/ascension/drink', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data.error || `Error al ingerir poción: ${res.statusText}`);
+    }
+    return data;
   }
 };

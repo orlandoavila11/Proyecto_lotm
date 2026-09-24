@@ -16,3 +16,4 @@ CREATE TABLE IF NOT EXISTS command_receipts (
 );
 
 CREATE INDEX IF NOT EXISTS idx_command_receipts_char ON command_receipts(character_id);
+

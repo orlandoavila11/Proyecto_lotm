@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, Plus } from 'lucide-react';
 import type { ConnectionType } from '../types';
+import { apiClient } from '../../services/apiClient';
 
 interface PositionedClue {
   id: string;
@@ -30,9 +31,22 @@ interface PositionedHypothesis {
 
 interface CorkboardViewProps {
   onBackToDesk: () => void;
+  characterId?: string;
 }
 
-export const CorkboardView: React.FC<CorkboardViewProps> = ({ onBackToDesk }) => {
+export const CorkboardView: React.FC<CorkboardViewProps> = ({ onBackToDesk, characterId }) => {
+  const activeCharId = characterId || localStorage.getItem('lotm_active_character_id') || 'char_1790267861425';
+  const [caseInstanceId, setCaseInstanceId] = useState<string | null>(null);
+
+  useEffect(() => {
+    apiClient.activateInvestigationCase(activeCharId, 'CASE_CHERWOOD_HEIRLOOM')
+      .then(res => {
+        if (res?.caseState) {
+          setCaseInstanceId(res.caseState.id);
+        }
+      })
+      .catch(() => {});
+  }, [activeCharId]);
   // Pistas posicionadas en el espacio del tablero (8 Pistas Canónicas GFX35A-H)
   const [clues, setClues] = useState<PositionedClue[]>([
     {
@@ -205,16 +219,28 @@ export const CorkboardView: React.FC<CorkboardViewProps> = ({ onBackToDesk }) =>
     setDraggingId(null);
   };
 
-  const addHypothesis = () => {
+  const addHypothesis = async () => {
     if (!newHypoText.trim()) return;
+    const submittedText = newHypoText.trim();
     const newH: PositionedHypothesis = {
       id: `hypo_${Date.now()}`,
-      text: newHypoText.trim(),
+      text: submittedText,
       x: 100 + (hypotheses.length * 40) % 400,
       y: 480 + (hypotheses.length * 30) % 150
     };
-    setHypotheses([...hypotheses, newH]);
+    setHypotheses(prev => [...prev, newH]);
     setNewHypoText('');
+
+    if (caseInstanceId) {
+      try {
+        await apiClient.submitInvestigationHypothesis({
+          instanceId: caseInstanceId,
+          hypothesisId: 'HYPOTHESIS_JULIAN'
+        });
+      } catch (err) {
+        console.warn('Hypothesis submitted locally:', err);
+      }
+    }
   };
 
   return (
