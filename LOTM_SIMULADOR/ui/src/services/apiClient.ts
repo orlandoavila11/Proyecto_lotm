@@ -310,14 +310,17 @@ export const apiClient = {
   // =========================================================================
 
   /**
-   * Obtiene catálogo de mercancías para un distrito
+   * Obtiene catálogo de mercancías para un distrito con modificadores de balance
    */
-  async getDistrictMarket(districtId: string): Promise<any> {
+  async getDistrictMarket(districtId: string): Promise<{ market: any; qualityModifiers?: Record<string, { priceMultiplier: number; successBonus: number; corruptionRisk: number }> } | null> {
     try {
       const res = await fetch(`/api/economy/market/${encodeURIComponent(districtId)}`);
       if (res.ok) {
         const data = await res.json();
-        return data.market;
+        return {
+          market: data.market,
+          qualityModifiers: data.qualityModifiers
+        };
       }
     } catch {
       // Fallback
@@ -344,7 +347,10 @@ export const apiClient = {
 
     const data = await res.json().catch(() => ({}));
     if (!res.ok) {
-      throw new Error(data.error || `Error en la compra: ${res.statusText}`);
+      const err = new Error(data.error || `Error en la compra: ${res.statusText}`) as any;
+      err.status = res.status;
+      err.code = data.code;
+      throw err;
     }
     return data;
   },

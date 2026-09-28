@@ -41,10 +41,27 @@ export class EconomyEngine {
     return this.marketData;
   }
 
-  public static getDistrictMarket(districtId: string): DistrictMarket | null {
+  public static getDistrictMarket(districtId: string, allowFallback: boolean = false): DistrictMarket | null {
+    if (!districtId) return allowFallback ? (this.getMarketCatalog().markets[0] || null) : null;
     const catalog = this.getMarketCatalog();
-    const market = catalog.markets.find(m => m.districtId === districtId || districtId.toLowerCase().includes(m.districtId));
-    return market || catalog.markets[0]; // fallback canónico al primer mercado
+    const cleanId = districtId.toLowerCase().replace(/^dist_/, '').replace(/_borough$/, '');
+
+    const market = catalog.markets.find(m => {
+      const cleanMarketId = m.districtId.toLowerCase().replace(/_borough$/, '');
+      return (
+        m.districtId === districtId ||
+        m.districtId.toLowerCase() === districtId.toLowerCase() ||
+        cleanMarketId === cleanId ||
+        m.districtId.toLowerCase().includes(cleanId) ||
+        districtId.toLowerCase().includes(cleanMarketId) ||
+        (cleanId.includes('bridge') && m.districtId.includes('bridge')) ||
+        (cleanId.includes('cherwood') && m.districtId.includes('cherwood')) ||
+        (cleanId.includes('east') && m.districtId.includes('east')) ||
+        (cleanId.includes('north') && m.districtId.includes('north'))
+      );
+    });
+
+    return market || (allowFallback ? catalog.markets[0] : null);
   }
 
   /**

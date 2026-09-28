@@ -15,7 +15,11 @@ export const economyRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
     if (!market) {
       return reply.status(404).send({ error: `Mercado no disponible para '${districtId}'` });
     }
-    return reply.send({ market });
+    const balance = EconomyEngine.getEconomyBalance();
+    return reply.send({ 
+      market,
+      qualityModifiers: balance.qualityModifiers
+    });
   });
 
   // POST /api/economy/buy

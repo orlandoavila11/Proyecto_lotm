@@ -326,6 +326,7 @@ function AppContent() {
           <MarketView 
             onBackToDesk={backToDesk} 
             characterId={character.id} 
+            characterDistrict={character.district}
             onRefreshCharacter={refreshCharacter} 
           />
         </div>
