@@ -31,6 +31,14 @@ export interface FalseClue {
   plantedAtDay: number;
 }
 
+export interface CaseFreeNote {
+  id: string;
+  text: string;
+  createdAtDay: number;
+  x?: number;
+  y?: number;
+}
+
 export interface InvestigationCaseState {
   id: string; // e.g. instance ID
   caseId: string; // e.g. CASE_CHERWOOD_HEIRLOOM
@@ -56,6 +64,7 @@ export interface InvestigationCaseState {
     testedAtDay: number;
   }>;
   falseClues: FalseClue[];
+  notes?: CaseFreeNote[];
   resolutionUnlocked: boolean;
   triggeredCheckpoints: string[];
   effects: {
@@ -491,6 +500,91 @@ export class InvestigationEngine {
         state
       };
     }
+  }
+
+  // --- NOTAS LIBRES DEL INVESTIGADOR (P09) ---
+  public static addFreeNote(
+    db: DatabaseClient,
+    instanceId: string,
+    text: string,
+    x?: number,
+    y?: number
+  ): {
+    success: boolean;
+    note: CaseFreeNote;
+    state: InvestigationCaseState;
+  } {
+    const row = db.getCaseInstance(instanceId);
+    if (!row) throw new Error(`Instancia no encontrada: ${instanceId}`);
+    const state = JSON.parse(row.state_json) as InvestigationCaseState;
+    if (!state.notes) state.notes = [];
+
+    const cleanText = text.trim();
+    if (!cleanText) throw new Error('El texto de la nota no puede estar vacío');
+
+    const note: CaseFreeNote = {
+      id: db.nextId('note'),
+      text: cleanText,
+      createdAtDay: state.dayCounter,
+      x: x !== undefined ? x : (120 + (state.notes.length * 40) % 400),
+      y: y !== undefined ? y : (480 + (state.notes.length * 30) % 150)
+    };
+
+    state.notes.push(note);
+
+    db.saveCaseInstance({
+      id: state.id,
+      character_id: state.characterId,
+      case_id: state.caseId,
+      status: state.status,
+      state_json: JSON.stringify(state)
+    });
+
+    return { success: true, note, state };
+  }
+
+  public static removeFreeNote(
+    db: DatabaseClient,
+    instanceId: string,
+    noteId: string
+  ): { success: boolean; state: InvestigationCaseState } {
+    const row = db.getCaseInstance(instanceId);
+    if (!row) throw new Error(`Instancia no encontrada: ${instanceId}`);
+    const state = JSON.parse(row.state_json) as InvestigationCaseState;
+    if (state.notes) {
+      state.notes = state.notes.filter(n => n.id !== noteId);
+    }
+    db.saveCaseInstance({
+      id: state.id,
+      character_id: state.characterId,
+      case_id: state.caseId,
+      status: state.status,
+      state_json: JSON.stringify(state)
+    });
+    return { success: true, state };
+  }
+
+  public static getPublicCaseMetadata(): {
+    hypotheses: Array<{ id: string; name: string; teoria: string; pistasSoporte: string[] }>;
+    resolutions: Array<{ id: string; nombre: string; accion: string; consecuenciasLocales: string }>;
+  } {
+    const caseDef = this.getCherwoodCaseDefinition();
+    const rawSlots: any[] = Array.isArray(caseDef.hypothesisSlots) ? (caseDef.hypothesisSlots as any[]) : [];
+    const rawResolutions: any[] = Array.isArray(caseDef.resolutionStates) ? (caseDef.resolutionStates as any[]) : [];
+    return {
+      hypotheses: rawSlots.map((h: any) => ({
+        id: String(h.id),
+        name: String(h.name || h.id),
+        teoria: String(h.teoria || ''),
+        pistasSoporte: Array.isArray(h.pistasSoporte) ? h.pistasSoporte : []
+      })),
+      resolutions: rawResolutions.map((r: any) => ({
+        id: String(r.id),
+        nombre: String(r.nombre || r.id),
+        accion: String(r.accion || ''),
+        consecuenciasLocales: String(r.consecuenciasLocales || '')
+      }))
+    };
   }
 
   // --- SUBMISIÓN DE HIPÓTESIS (submit_hypothesis) ---

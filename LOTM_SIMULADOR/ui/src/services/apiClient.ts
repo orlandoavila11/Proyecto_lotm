@@ -459,6 +459,68 @@ export const apiClient = {
   },
 
   /**
+   * Añade y persiste una nota libre de investigación en SQLite (P09)
+   */
+  async addInvestigationNote(params: {
+    instanceId: string;
+    text: string;
+    x?: number;
+    y?: number;
+    commandId?: string;
+  }): Promise<any> {
+    const res = await fetch('/api/investigation/notes/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || 'Error al añadir nota libre');
+    }
+    return res.json();
+  },
+
+  /**
+   * Elimina una nota libre de investigación en SQLite (P09)
+   */
+  async deleteInvestigationNote(params: {
+    instanceId: string;
+    noteId: string;
+    commandId?: string;
+  }): Promise<any> {
+    const res = await fetch('/api/investigation/notes/delete', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || 'Error al eliminar nota');
+    }
+    return res.json();
+  },
+
+  /**
+   * Resuelve formalmente el caso de investigación en SQLite (P09)
+   */
+  async resolveInvestigationCase(params: {
+    instanceId: string;
+    resolutionId: 'RESOLUTION_A_JUSTICE' | 'RESOLUTION_B_TRUTH' | 'RESOLUTION_C_STABILITY' | 'RESOLUTION_D_HEIR';
+    commandId?: string;
+  }): Promise<any> {
+    const res = await fetch('/api/investigation/case/resolve', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || err.message || 'Error al resolver el caso');
+    }
+    return res.json();
+  },
+
+  /**
    * Evalúa el estado de las Cinco Puertas del ascenso en SQLite
    */
   async getAscensionStatus(characterId: string): Promise<any> {

@@ -102,6 +102,20 @@ const GenerateMinorCaseSchema = z.object({
   templateIndex: z.union([z.literal(1), z.literal(2)]).optional().default(1)
 });
 
+const AddNoteSchema = z.object({
+  instanceId: z.string(),
+  text: z.string().min(1),
+  x: z.number().optional(),
+  y: z.number().optional(),
+  commandId: z.string().optional()
+});
+
+const DeleteNoteSchema = z.object({
+  instanceId: z.string(),
+  noteId: z.string(),
+  commandId: z.string().optional()
+});
+
 export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
   fastify: FastifyInstance,
   opts
@@ -142,7 +156,13 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
 
     try {
       const state = InvestigationEngine.activateCase(db, parseRes.data.characterId, parseRes.data.caseId);
-      return reply.status(200).send({ success: true, caseState: state });
+      const publicMeta = InvestigationEngine.getPublicCaseMetadata();
+      return reply.status(200).send({
+        success: true,
+        caseState: state,
+        availableHypotheses: publicMeta.hypotheses,
+        availableResolutions: state.resolutionUnlocked ? publicMeta.resolutions : []
+      });
     } catch (err: any) {
       return reply.status(400).send({ error: err.message });
     }
@@ -158,7 +178,13 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
 
     try {
       const activeState = InvestigationEngine.activateCase(db, characterId, 'CASE_CHERWOOD_HEIRLOOM');
-      return reply.status(200).send({ success: true, caseState: activeState });
+      const publicMeta = InvestigationEngine.getPublicCaseMetadata();
+      return reply.status(200).send({
+        success: true,
+        caseState: activeState,
+        availableHypotheses: publicMeta.hypotheses,
+        availableResolutions: activeState.resolutionUnlocked ? publicMeta.resolutions : []
+      });
     } catch (err: any) {
       return reply.status(400).send({ error: err.message });
     }
@@ -272,6 +298,80 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
           return InvestigationEngine.submitHypothesis(db, instanceId, hypothesisId);
         } catch (err: any) {
           throw new DomainRuleViolationError(err.message || 'Error al someter hipótesis');
+        }
+      }
+    );
+
+    return reply.send({
+      ...processed.response,
+      fromReceipt: processed.fromReceipt,
+      revision: processed.revision
+    });
+  });
+
+  // POST /api/investigation/notes/add (P09: Notas Libres)
+  fastify.post('/notes/add', async (req, reply) => {
+    const parseRes = AddNoteSchema.safeParse(req.body);
+    if (!parseRes.success) {
+      return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
+    }
+
+    const { instanceId, text, x, y, commandId } = parseRes.data;
+    const caseRow = db.getCaseInstance(instanceId);
+    if (!caseRow) {
+      throw new EntityNotFoundError(`Instancia de caso '${instanceId}' no encontrada.`);
+    }
+
+    const processed = CommandProcessor.execute(
+      db,
+      {
+        commandId,
+        characterId: caseRow.character_id,
+        commandType: 'INVESTIGATION_ADD_NOTE',
+        payload: { instanceId, text, x, y }
+      },
+      () => {
+        try {
+          return InvestigationEngine.addFreeNote(db, instanceId, text, x, y);
+        } catch (err: any) {
+          throw new DomainRuleViolationError(err.message || 'Error al añadir nota libre');
+        }
+      }
+    );
+
+    return reply.send({
+      ...processed.response,
+      fromReceipt: processed.fromReceipt,
+      revision: processed.revision
+    });
+  });
+
+  // POST /api/investigation/notes/delete (P09: Eliminar Nota Libre)
+  fastify.post('/notes/delete', async (req, reply) => {
+    const parseRes = DeleteNoteSchema.safeParse(req.body);
+    if (!parseRes.success) {
+      return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
+    }
+
+    const { instanceId, noteId, commandId } = parseRes.data;
+    const caseRow = db.getCaseInstance(instanceId);
+    if (!caseRow) {
+      throw new EntityNotFoundError(`Instancia de caso '${instanceId}' no encontrada.`);
+    }
+
+    const processed = CommandProcessor.execute(
+      db,
+      {
+        commandId,
+        characterId: caseRow.character_id,
+        commandType: 'INVESTIGATION_DELETE_NOTE',
+        payload: { instanceId, noteId }
+      },
+      () => {
+        try {
+          return InvestigationEngine.removeFreeNote(db, instanceId, noteId);
+        } catch (err: any) {
+          throw new DomainRuleViolationError(err.message || 'Error al eliminar nota libre');
         }
       }
     );
