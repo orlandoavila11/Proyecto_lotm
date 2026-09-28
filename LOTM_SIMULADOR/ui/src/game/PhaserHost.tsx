@@ -122,6 +122,9 @@ export const PhaserHost: React.FC<PhaserHostProps> = ({
 
     const game = createGame(containerRef.current, bridge);
     gameRef.current = game;
+    if (typeof window !== 'undefined') {
+      (window as any).__PHASER_GAME__ = game;
+    }
 
     // Limpieza al desmontar
     return () => {
@@ -129,6 +132,9 @@ export const PhaserHost: React.FC<PhaserHostProps> = ({
       unsubInspect();
       unsubError();
 
+      if (typeof window !== 'undefined') {
+        delete (window as any).__PHASER_GAME__;
+      }
       if (gameRef.current) {
         gameRef.current.destroy(true);
         gameRef.current = null;
@@ -225,6 +231,7 @@ export const PhaserHost: React.FC<PhaserHostProps> = ({
     >
       {/* Contenedor DOM para el Canvas de Phaser 4.2.1 */}
       <div 
+        id="phaser-game-container"
         ref={containerRef} 
         tabIndex={0}
         aria-label="Lienzo de juego interactivo"

@@ -6,6 +6,7 @@
 
 import * as Phaser from 'phaser';
 import type { GameBridge } from '../bridge/GameBridge';
+import { getAssetsByGroup } from '../assets/AssetManifest';
 
 export class PreloadScene extends Phaser.Scene {
   private progressBar!: Phaser.GameObjects.Graphics;
@@ -96,12 +97,15 @@ export class PreloadScene extends Phaser.Scene {
       }
     });
 
-    // Carga de recursos verificados en ui/public/art
-    // 1. Fondos autorizados
+    // Carga de recursos verificados desde el manifiesto de activos (P05)
+    const refugeAssets = getAssetsByGroup('critical_refuge');
+    refugeAssets.forEach((asset) => {
+      this.load.image(asset.id, asset.path);
+    });
+
+    // Alias canónicos para retrocompatibilidad
     this.load.image('desvan_bg', '/art/C0_desvan_composition.jpg');
     this.load.image('desvan_clean', '/art/GFX06_desvan_background_clean.jpg');
-
-    // 2. Objetos canónicos del escritorio
     this.load.image('victorian_almanac', '/art/GFX18_victorian_almanac_v2.jpg');
     this.load.image('tallow_candle', '/art/GFX12_tallow_candle.jpg');
     this.load.image('sealed_letter', '/art/GFX20_sealed_letter.jpg');

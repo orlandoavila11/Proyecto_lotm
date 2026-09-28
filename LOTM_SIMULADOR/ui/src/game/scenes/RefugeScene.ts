@@ -6,6 +6,8 @@
 
 import * as Phaser from 'phaser';
 import type { GameBridge } from '../bridge/GameBridge';
+import { getMirrorVariantAssetId } from '../assets/AssetManifest';
+import { assetManager } from '../assets/AssetManager';
 
 interface InteractiveHotspotItem {
   id: string;
@@ -157,6 +159,7 @@ export class RefugeScene extends Phaser.Scene {
     // 8. Limpieza en shutdown de la escena
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.cleanup();
+      assetManager.releaseGroup(this, 'critical_refuge');
     });
   }
 
@@ -187,12 +190,20 @@ export class RefugeScene extends Phaser.Scene {
   }
 
   private buildHotspots(): void {
+    const session = this.bridge?.getSession();
+    const dynamicMirrorTexture = session ? getMirrorVariantAssetId(session.somatics?.corruptionTier) : 'obj_mirror_pristine';
+
     this.hotspotDefs.forEach((item, index) => {
+      let textureToUse = item.textureKey;
+      if (item.id === 'hotspot_mirror') {
+        textureToUse = dynamicMirrorTexture;
+      }
+
       let gameObject: Phaser.GameObjects.GameObject;
 
-      if (item.textureKey && this.textures.exists(item.textureKey)) {
+      if (textureToUse && this.textures.exists(textureToUse)) {
         // Sprite con imagen verificada
-        const sprite = this.add.image(item.x, item.y, item.textureKey);
+        const sprite = this.add.image(item.x, item.y, textureToUse);
         sprite.setDisplaySize(item.width, item.height);
         sprite.setDepth(10);
         sprite.setInteractive({ useHandCursor: true });

@@ -56,7 +56,7 @@ function AppContent() {
     }
 
     if (!character) {
-      if (isHarness) {
+      if (isHarness || params.get('renderer') === 'phaser') {
         setCharacter(FOOL_SEER_FIXTURE as unknown as CharacterDiegetic);
       } else {
         const storedId = localStorage.getItem('lotm_active_character_id');

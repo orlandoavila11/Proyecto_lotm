@@ -185,3 +185,4 @@ export const InspectionPanel: React.FC<InspectionPanelProps> = ({
     </div>
   );
 };
+

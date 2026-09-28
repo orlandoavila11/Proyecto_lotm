@@ -216,3 +216,4 @@ run().then(() => {
   console.error('\n[FATAL] Error en la verificación P04:', err);
   process.exit(1);
 });
+

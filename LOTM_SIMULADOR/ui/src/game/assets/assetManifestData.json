@@ -1,0 +1,952 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-09-28T19:17:28.203Z",
+  "totalActiveAssets": 31,
+  "totalTransferredBytes": 23448602,
+  "totalDecodedMemoryBytes": 132055808,
+  "groups": [
+    {
+      "group": "critical_refuge",
+      "assetCount": 14,
+      "totalTransferredBytes": 8153722,
+      "totalDecodedMemoryBytes": 59373312
+    },
+    {
+      "group": "scene_investigation",
+      "assetCount": 9,
+      "totalTransferredBytes": 8095947,
+      "totalDecodedMemoryBytes": 38718464
+    },
+    {
+      "group": "scene_market",
+      "assetCount": 2,
+      "totalTransferredBytes": 1105486,
+      "totalDecodedMemoryBytes": 8454144
+    },
+    {
+      "group": "scene_combat",
+      "assetCount": 1,
+      "totalTransferredBytes": 677331,
+      "totalDecodedMemoryBytes": 4227072
+    },
+    {
+      "group": "scene_travel",
+      "assetCount": 2,
+      "totalTransferredBytes": 2986184,
+      "totalDecodedMemoryBytes": 8454144
+    },
+    {
+      "group": "scene_ascension",
+      "assetCount": 3,
+      "totalTransferredBytes": 2429932,
+      "totalDecodedMemoryBytes": 12828672
+    }
+  ],
+  "assets": [
+    {
+      "id": "bg_desvan_composition",
+      "path": "/art/C0_desvan_composition.jpg",
+      "width": 1376,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1376,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 0,
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "COMPOSITION_MASTER",
+      "author": "Production Art Pipeline",
+      "sha256": "94f193a5ba0c3122bff1be230f4e0aa1b0f571286c2fc68993fd62b894308710",
+      "byteSize": 700466,
+      "decodedMemoryBytes": 4227072
+    },
+    {
+      "id": "bg_desvan_clean",
+      "path": "/art/GFX06_desvan_background_clean.jpg",
+      "width": 1376,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1376,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 0,
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "CLEAN_PLATE",
+      "author": "Production Art Pipeline",
+      "sha256": "281d2917dd65ddba1b29454e7eba2e569a7bc6166fec8036e0e8f162e2c0a072",
+      "byteSize": 599961,
+      "decodedMemoryBytes": 4227072
+    },
+    {
+      "id": "obj_candle_lucid",
+      "path": "/art/GFX12_tallow_candle.jpg",
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1024
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      },
+      "depth": 10,
+      "interactionGeometry": {
+        "type": "rectangle",
+        "bounds": {
+          "x": 420,
+          "y": 320,
+          "width": 160,
+          "height": 380
+        }
+      },
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "BRILLANTE",
+      "author": "Production Art Pipeline",
+      "sha256": "80f86a759e361c2145bf2a089ed2737b8d3fbbc1f5e40785932b920995f46e6b",
+      "byteSize": 233338,
+      "decodedMemoryBytes": 4194304
+    },
+    {
+      "id": "obj_mirror_pristine",
+      "path": "/art/GFX13_quicksilver_mirror.jpg",
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1024
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      },
+      "depth": 10,
+      "interactionGeometry": {
+        "type": "rectangle",
+        "bounds": {
+          "x": 580,
+          "y": 390,
+          "width": 240,
+          "height": 290
+        }
+      },
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "AZOGUE_LIMPIO",
+      "author": "Production Art Pipeline",
+      "sha256": "ce6d00f59a3bc17f449059c2ef6f6f28f97f0c7ccf3526942ca68c11363a1f31",
+      "byteSize": 315846,
+      "decodedMemoryBytes": 4194304
+    },
+    {
+      "id": "obj_acting_book_closed",
+      "path": "/art/GFX14_acting_book_closed.jpg",
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1024
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "CLOSED",
+      "author": "Production Art Pipeline",
+      "sha256": "654aee728552984fb9b232af591927c7faf76d4df6b075334140c5088205d055",
+      "byteSize": 499477,
+      "decodedMemoryBytes": 4194304
+    },
+    {
+      "id": "obj_acting_book_open",
+      "path": "/art/GFX15_acting_book_open.jpg",
+      "width": 1200,
+      "height": 896,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 896
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "OPEN",
+      "author": "Production Art Pipeline",
+      "sha256": "a5db31ef34b577750df7855dfe7b1d36676c4cb48fa6417d60a20d41cc6c4515",
+      "byteSize": 477925,
+      "decodedMemoryBytes": 4300800
+    },
+    {
+      "id": "obj_identity_papers",
+      "path": "/art/GFX16_identity_papers.jpg",
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1024
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "interactionGeometry": {
+        "type": "rectangle",
+        "bounds": {
+          "x": 830,
+          "y": 660,
+          "width": 450,
+          "height": 190
+        }
+      },
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "FORMAL",
+      "author": "Production Art Pipeline",
+      "sha256": "e87a1e090b5f50b7095bb5403b2c8d1d646e1e379605e797955fc2af789dc56b",
+      "byteSize": 439713,
+      "decodedMemoryBytes": 4194304
+    },
+    {
+      "id": "obj_leather_pouch",
+      "path": "/art/GFX17_leather_pouch.jpg",
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1024
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "CLOSED",
+      "author": "Production Art Pipeline",
+      "sha256": "a9cb6ccca069d0f9962ea0c10da47e62e9a7f420f2d5ab5c70b38010365a0c43",
+      "byteSize": 331868,
+      "decodedMemoryBytes": 4194304
+    },
+    {
+      "id": "obj_almanac",
+      "path": "/art/GFX18_victorian_almanac_v2.jpg",
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1024
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "interactionGeometry": {
+        "type": "rectangle",
+        "bounds": {
+          "x": 1160,
+          "y": 390,
+          "width": 330,
+          "height": 250
+        }
+      },
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "DEFAULT",
+      "author": "Production Art Pipeline",
+      "sha256": "f8de61c6b8b7e6003dd5f36ed2bd9791ea26c05cdd32a3c66f93852f1d180568",
+      "byteSize": 347899,
+      "decodedMemoryBytes": 4194304
+    },
+    {
+      "id": "obj_sealed_letter",
+      "path": "/art/GFX20_sealed_letter.jpg",
+      "width": 1408,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1408,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "interactionGeometry": {
+        "type": "rectangle",
+        "bounds": {
+          "x": 990,
+          "y": 550,
+          "width": 250,
+          "height": 160
+        }
+      },
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "UNOPENED",
+      "author": "Production Art Pipeline",
+      "sha256": "1f0c36b5842016da8fb54dcbbcf73b5ec15c70668914cadff5649c63f068a737",
+      "byteSize": 456532,
+      "decodedMemoryBytes": 4325376
+    },
+    {
+      "id": "bg_corkboard",
+      "path": "/art/GFX21_corkboard.jpg",
+      "width": 1408,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1408,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 0,
+      "loadingGroup": "scene_investigation",
+      "author": "Production Art Pipeline",
+      "sha256": "cadc80e8f773bb6bcac4e4a3f80b2c211266262f081af314f60117b01c837b9d",
+      "byteSize": 700783,
+      "decodedMemoryBytes": 4325376
+    },
+    {
+      "id": "obj_ritual_chalice",
+      "path": "/art/GFX22_ritual_chalice.jpg",
+      "width": 1408,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1408,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      },
+      "depth": 10,
+      "interactionGeometry": {
+        "type": "rectangle",
+        "bounds": {
+          "x": 800,
+          "y": 220,
+          "width": 220,
+          "height": 300
+        }
+      },
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "RESTING",
+      "author": "Production Art Pipeline",
+      "sha256": "a52f91a80440d19ee85d5673c52eec781aef8c2224fbfe6f7d5c2d1ca2660445",
+      "byteSize": 506335,
+      "decodedMemoryBytes": 4325376
+    },
+    {
+      "id": "obj_mirror_turbid",
+      "path": "/art/GFX24_mirror_turbid.jpg",
+      "width": 1408,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1408,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      },
+      "depth": 10,
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "VAHO_TENUE",
+      "author": "Production Art Pipeline",
+      "sha256": "23191aee257f3c7b6d4b0bb7f347fea6ed86a3155adb3f8ed0d52d896658f11a",
+      "byteSize": 622897,
+      "decodedMemoryBytes": 4325376
+    },
+    {
+      "id": "obj_mirror_undulating",
+      "path": "/art/GFX25_mirror_undulating.jpg",
+      "width": 1408,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1408,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      },
+      "depth": 10,
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "REFLEJOS_DESFASADOS",
+      "author": "Production Art Pipeline",
+      "sha256": "9490ab341697f092d15244bc80f40f7eb6325d4f392061662079abb1e7d69e9c",
+      "byteSize": 1031237,
+      "decodedMemoryBytes": 4325376
+    },
+    {
+      "id": "obj_mirror_monstrous",
+      "path": "/art/GFX26_mirror_monstrous.jpg",
+      "width": 1380,
+      "height": 752,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1380,
+        "height": 752
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      },
+      "depth": 10,
+      "loadingGroup": "critical_refuge",
+      "stateVariant": "EL_REFLEJO_NO_PARPADEA",
+      "author": "Production Art Pipeline",
+      "sha256": "20f7fd27af8112dd4436866a42d6fe4b78b8b89b7b745c754aef0ec9f2b3242d",
+      "byteSize": 1590228,
+      "decodedMemoryBytes": 4151040
+    },
+    {
+      "id": "clue_burned_toys",
+      "path": "/art/GFX35A_clue_burned_toys.jpg",
+      "width": 1200,
+      "height": 896,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 896
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "scene_investigation",
+      "author": "Investigation System",
+      "sha256": "c5d1032c82dcc6447ab2c916c167348335de934268a754768a84f5199fe98e43",
+      "byteSize": 513859,
+      "decodedMemoryBytes": 4300800
+    },
+    {
+      "id": "clue_will_draft",
+      "path": "/art/GFX35B_clue_will_draft.jpg",
+      "width": 1200,
+      "height": 896,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 896
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "scene_investigation",
+      "author": "Investigation System",
+      "sha256": "5f287ba784cc67bb9ae821ffc5300f8cf5fcfa88ff6fafc1f570f60a9ce5661d",
+      "byteSize": 651650,
+      "decodedMemoryBytes": 4300800
+    },
+    {
+      "id": "clue_mind_traces",
+      "path": "/art/GFX35C_clue_mind_traces.jpg",
+      "width": 848,
+      "height": 1264,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 848,
+        "height": 1264
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "scene_investigation",
+      "author": "Investigation System",
+      "sha256": "bba34ede425aadf49914acac991f87f6a04f2c2d155f1e0d5af8a76b9f0133e1",
+      "byteSize": 2233546,
+      "decodedMemoryBytes": 4287488
+    },
+    {
+      "id": "clue_astrology_record",
+      "path": "/art/GFX35D_clue_astrology_record.jpg",
+      "width": 1200,
+      "height": 896,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 896
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "scene_investigation",
+      "author": "Investigation System",
+      "sha256": "44a7523180a10f115a180bcc66f27af54aca5cf65bc853fb20e60b2a8fc255c5",
+      "byteSize": 862366,
+      "decodedMemoryBytes": 4300800
+    },
+    {
+      "id": "clue_concealed_safe",
+      "path": "/art/GFX35E_clue_concealed_safe.jpg",
+      "width": 1200,
+      "height": 896,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 896
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "scene_investigation",
+      "author": "Investigation System",
+      "sha256": "1ee2f41a1fde15e1bafe92c101bc99130a6b6932a796c0558c19a5362d6da937",
+      "byteSize": 661836,
+      "decodedMemoryBytes": 4300800
+    },
+    {
+      "id": "clue_forged_letters",
+      "path": "/art/GFX35F_clue_forged_letters.jpg",
+      "width": 1200,
+      "height": 896,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 896
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "scene_investigation",
+      "author": "Investigation System",
+      "sha256": "ae82562e01f68d471e5e427cdc848b7aa96f9ca47c4eace457e692aebb1bdbff",
+      "byteSize": 628646,
+      "decodedMemoryBytes": 4300800
+    },
+    {
+      "id": "clue_financial_blackmail",
+      "path": "/art/GFX35G_clue_financial_blackmail.jpg",
+      "width": 1200,
+      "height": 896,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 896
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "scene_investigation",
+      "author": "Investigation System",
+      "sha256": "b1ae14278877715117e09ca4a588ca8cb9c169c5ee9524ae5fc2851ef94926be",
+      "byteSize": 938791,
+      "decodedMemoryBytes": 4300800
+    },
+    {
+      "id": "clue_alchemical_residues",
+      "path": "/art/GFX35H_clue_alchemical_residues.jpg",
+      "width": 1200,
+      "height": 896,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 896
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "scene_investigation",
+      "author": "Investigation System",
+      "sha256": "7c4b4166a3673bc1fbbd7f9eea6f07102ffe28bf2bc69af076d66dd728b3171e",
+      "byteSize": 904470,
+      "decodedMemoryBytes": 4300800
+    },
+    {
+      "id": "bg_bazaar_counter",
+      "path": "/art/GFX37_bazaar_counter.jpg",
+      "width": 1376,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1376,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 0,
+      "loadingGroup": "scene_market",
+      "author": "Production Art Pipeline",
+      "sha256": "05e7e64741bc78c0ab2fffdfc500b496ecc619be853379ccc8f277ff0e856e97",
+      "byteSize": 678576,
+      "decodedMemoryBytes": 4227072
+    },
+    {
+      "id": "bg_bazaar_tray",
+      "path": "/art/GFX38_bazaar_tray.jpg",
+      "width": 1376,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1376,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 5,
+      "loadingGroup": "scene_market",
+      "author": "Production Art Pipeline",
+      "sha256": "b1f0dde4856c5288178bd47bf9dcac7109b4e93e911069a2f6c0b7dafa2f65dd",
+      "byteSize": 426910,
+      "decodedMemoryBytes": 4227072
+    },
+    {
+      "id": "bg_combat_arena",
+      "path": "/art/GFX40_combat_arena_floor.jpg",
+      "width": 1376,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1376,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 0,
+      "loadingGroup": "scene_combat",
+      "author": "Production Art Pipeline",
+      "sha256": "2660499659a1e6b64d9d6e14cf42944667c7a0ca0556892dc02eb579a8b610bc",
+      "byteSize": 677331,
+      "decodedMemoryBytes": 4227072
+    },
+    {
+      "id": "bg_prologue_hallway",
+      "path": "/art/GFX47_prologue_hallway.jpg",
+      "width": 1376,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1376,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 0,
+      "loadingGroup": "scene_travel",
+      "author": "Production Art Pipeline",
+      "sha256": "1e1eaf8895aaeebb43ad86faf864d1ea1d8d02a46708e620c5cb9c71176f213d",
+      "byteSize": 764823,
+      "decodedMemoryBytes": 4227072
+    },
+    {
+      "id": "obj_potion_cobalt",
+      "path": "/art/GFX50_potion_cobalt_eyes.jpg",
+      "width": 896,
+      "height": 1200,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 896,
+        "height": 1200
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "scene_ascension",
+      "author": "Production Art Pipeline",
+      "sha256": "86a4fc1b36d82a071cae6d5c3ccbdaf07835a693b22d0043b11e22c29515f9c2",
+      "byteSize": 400260,
+      "decodedMemoryBytes": 4300800
+    },
+    {
+      "id": "obj_potion_amber",
+      "path": "/art/GFX51_potion_amber_mirror.jpg",
+      "width": 896,
+      "height": 1200,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 896,
+        "height": 1200
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 10,
+      "loadingGroup": "scene_ascension",
+      "author": "Production Art Pipeline",
+      "sha256": "f4c855dc76c52bc2c58bd665ca86ac3a8550093f33659f94373a60529274b165",
+      "byteSize": 458564,
+      "decodedMemoryBytes": 4300800
+    },
+    {
+      "id": "bg_ritual_frame",
+      "path": "/art/GFX52_ritual_framing.jpg",
+      "width": 1376,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1376,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 0,
+      "loadingGroup": "scene_ascension",
+      "author": "Production Art Pipeline",
+      "sha256": "084e30eec80b4ca166bf1d5d77bd965926f53fc21c3f81bf0ba5d291a08ec62d",
+      "byteSize": 1571108,
+      "decodedMemoryBytes": 4227072
+    },
+    {
+      "id": "bg_travel_streets",
+      "path": "/art/GFX61_vignette_backlund_streets.jpg",
+      "width": 1376,
+      "height": 768,
+      "hasAlpha": false,
+      "sourceFrame": {
+        "x": 0,
+        "y": 0,
+        "width": 1376,
+        "height": 768
+      },
+      "trimOffsets": {
+        "x": 0,
+        "y": 0
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "depth": 0,
+      "loadingGroup": "scene_travel",
+      "author": "Production Art Pipeline",
+      "sha256": "a29c3dac21a586711a7452c2d7c31a495ab74ad3613b3196ca20e0ed1c3853ee",
+      "byteSize": 2221361,
+      "decodedMemoryBytes": 4227072
+    }
+  ]
+}
