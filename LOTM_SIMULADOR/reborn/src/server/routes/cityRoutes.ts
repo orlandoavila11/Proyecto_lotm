@@ -8,6 +8,7 @@ import { EntityNotFoundError, DomainRuleViolationError } from '../../core/errors
 const TravelSchema = z.object({
   characterId: z.string(),
   destinationDistrict: z.string(),
+  consumeSlot: z.boolean().optional().default(false),
   commandId: z.string().optional(),
   expectedRevision: z.number().int().optional()
 });
@@ -76,7 +77,7 @@ export const cityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
       return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
     }
 
-    const { characterId, destinationDistrict, commandId, expectedRevision } = parseRes.data;
+    const { characterId, destinationDistrict, consumeSlot, commandId, expectedRevision } = parseRes.data;
 
     const processed = CommandProcessor.execute(
       db,
@@ -84,7 +85,7 @@ export const cityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
         commandId,
         characterId,
         commandType: 'CITY_TRAVEL',
-        payload: { destinationDistrict },
+        payload: { destinationDistrict, consumeSlot },
         expectedRevision
       },
       () => {
@@ -93,18 +94,56 @@ export const cityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
           throw new EntityNotFoundError('Personaje no encontrado');
         }
 
-        if (char.raw_pence < 24) {
+        // 1. Validar que el destino exista en los distritos autorizados
+        const districts = db.getDistricts();
+        const norm = destinationDistrict.toLowerCase();
+        const targetDistrict = districts.find(
+          (d: any) => d.id.toLowerCase() === norm ||
+                      d.district_name.toLowerCase() === norm ||
+                      d.district_name.toLowerCase().includes(norm) ||
+                      (norm.includes('cherwood') && d.id === 'DIST_CHERWOOD') ||
+                      (norm.includes('este') && d.id === 'DIST_EAST_BOROUGH') ||
+                      (norm.includes('reina') && d.id === 'DIST_QUEEN') ||
+                      (norm.includes('puente') && d.id === 'DIST_BRIDGE') ||
+                      (norm.includes('bayam') && d.id === 'DIST_BAYAM')
+        );
+
+        if (!targetDistrict) {
+          throw new DomainRuleViolationError(`Destino [${destinationDistrict}] no reconocido en las rutas de carruaje de Backlund.`);
+        }
+
+        // 2. Validar transición permitida (no viajar al mismo distrito en el que ya se encuentra)
+        const currentLoc = char.current_location || 'DIST_CHERWOOD';
+        if (currentLoc === destinationDistrict || currentLoc === targetDistrict.id) {
+          throw new DomainRuleViolationError(`Ya te encuentras en ${targetDistrict.district_name || targetDistrict.id}.`);
+        }
+
+        // 3. Validar asequibilidad (tarifa de carruaje de 2s = 24 peniques)
+        const CARRIAGE_FARE = 24;
+        if (char.raw_pence < CARRIAGE_FARE) {
           throw new DomainRuleViolationError('Fondos insuficientes para el carruaje de alquiler (tarifa requerida: 2s / 24 peniques).');
         }
 
+        const finalLocation = destinationDistrict;
         const rawDb = db.getRawDb();
         rawDb.prepare("UPDATE characters SET current_location = ?, updated_at = datetime('now') WHERE id = ?")
-          .run(destinationDistrict, characterId);
+          .run(finalLocation, characterId);
 
-        // Costo: 2 chelines (24 peniques)
-        db.updateCharacterWealth(characterId, -24);
+        // Cobro atómico: 2 chelines (24 peniques)
+        db.updateCharacterWealth(characterId, -CARRIAGE_FARE);
 
-        // Posible encuentro de viaje
+        // Avance de tiempo opcional/aplicable
+        let timeAdvanced = false;
+        let newSlot = char.current_slot ?? 0;
+        let newDay = char.current_day ?? 1;
+        if (consumeSlot) {
+          const advanced = db.advanceCharacterSlot(characterId, 1);
+          timeAdvanced = true;
+          newSlot = advanced.slot;
+          newDay = advanced.day;
+        }
+
+        // Posible encuentro de viaje determinista
         const persona = db.getActivePersona(characterId);
         let travelEncounter = null;
         if (persona && (persona.police_suspicion > 50 || persona.church_suspicion > 50)) {
@@ -115,15 +154,22 @@ export const cityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
             'Gotas de lluvia ácida repiqueteaban sobre el techo de cuero del carruaje mientras cruzabas la avenida principal.',
             'Un vendedor de periódicos voceaba las últimas noticias sobre la niebla tóxica y los crímenes sin resolver en el Barrio Este.'
           ];
-          const travelRng = new SeededRNG(`travel_${characterId}_${destinationDistrict}_${char.current_day}`);
+          const travelRng = new SeededRNG(`travel_${characterId}_${targetDistrict.id}_${char.current_day}`);
           travelEncounter = travelAtmosphere[travelRng.nextInt(0, travelAtmosphere.length - 1)];
         }
 
         return {
           success: true,
-          newLocation: destinationDistrict,
+          newLocation: finalLocation,
+          districtName: targetDistrict.district_name || targetDistrict.id,
+          previousLocation: currentLoc,
+          farePaidPence: CARRIAGE_FARE,
+          remainingPence: char.raw_pence - CARRIAGE_FARE,
+          timeAdvanced,
+          currentDay: newDay,
+          currentSlot: newSlot,
           encounter: travelEncounter,
-          message: `Has tomado un carruaje de alquiler hacia [${destinationDistrict}]. (Tarifa: 2s) ${travelEncounter}`
+          message: `Has tomado un carruaje de alquiler hacia [${targetDistrict.district_name || finalLocation}]. (Tarifa: 2s) ${travelEncounter}`
         };
       }
     );

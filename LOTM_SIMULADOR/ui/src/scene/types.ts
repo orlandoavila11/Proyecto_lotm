@@ -67,7 +67,9 @@ export type NavigationState =
   | 'CALENDAR_STAGE'
   | 'MARKET_STAGE'
   | 'ACTING_STAGE'
-  | 'IDENTITY_STAGE';
+  | 'IDENTITY_STAGE'
+  | 'TRAVEL_STAGE'
+  | 'INVESTIGATION_LOCATION_STAGE';
 
 export interface SceneNavigationState {
   currentView: NavigationState;

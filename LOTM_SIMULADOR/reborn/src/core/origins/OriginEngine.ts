@@ -2,7 +2,6 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DatabaseClient, CharacterRow, PersonaRow } from '../../infra/database/DatabaseClient.js';
-import { generateDeterministicId } from '../rng/IdGenerator.js';
 import {
   OriginsCatalog,
   OriginsCatalogSchema,
@@ -94,7 +93,7 @@ export class OriginEngine {
     let persona = db.getActivePersona(characterId);
     if (!persona) {
       persona = db.createPersona({
-        id: generateDeterministicId('persona'),
+        id: db.nextId('persona'),
         character_id: characterId,
         legal_name: char.name,
         profession: origin.profession,
@@ -121,7 +120,7 @@ export class OriginEngine {
     const existingAnchors = db.getAnchors(characterId);
     if (existingAnchors.length === 0) {
       for (const anchorDef of origin.originAnchors) {
-        const anchorId = generateDeterministicId(`anc_${origin.id.toLowerCase()}`);
+        const anchorId = db.nextId(`anc_${origin.id.toLowerCase()}`);
         db.addAnchor({
           id: anchorId,
           character_id: characterId,

@@ -1,5 +1,4 @@
 import { DatabaseClient, CharacterRow } from '../../infra/database/DatabaseClient.js';
-import { generateDeterministicId } from '../rng/IdGenerator.js';
 import { SeededRNG } from '../rng/SeededRNG.js';
 import { OriginEngine } from '../origins/OriginEngine.js';
 
@@ -105,7 +104,7 @@ export class PrologueEngine {
     // Crear caso tutorial preliminar si no existe
     const existingCase = db.getRawDb().prepare('SELECT * FROM investigation_cases WHERE character_id = ? AND case_code = ?').get(characterId, 'CASE_TUTORIAL_PROLOGUE');
     if (!existingCase) {
-      const caseId = generateDeterministicId('case_prologue');
+      const caseId = db.nextId('case_prologue');
       db.getRawDb().prepare(`
         INSERT INTO investigation_cases (
           id, character_id, case_code, title, district, status, culprit_name, reward_pence, created_day
@@ -122,7 +121,7 @@ export class PrologueEngine {
         char.current_day
       );
 
-      const clueId = generateDeterministicId('clue_seal');
+      const clueId = db.nextId('clue_seal');
       db.getRawDb().prepare(`
         INSERT INTO investigation_clues (
           id, case_id, clue_code, title, description, clue_type, is_discovered

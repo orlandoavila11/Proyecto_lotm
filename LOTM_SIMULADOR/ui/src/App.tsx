@@ -16,6 +16,8 @@ import { ActingMirrorView } from './features/acting/ActingMirrorView';
 import { IdentityDossierView } from './features/identity/IdentityDossierView';
 import { CombatView } from './features/combat/CombatView';
 import { AscensionView } from './features/ascension/AscensionView';
+import { TravelView } from './features/travel/TravelView';
+import { InvestigationLocationView } from './features/investigation/InvestigationLocationView';
 import { VeilOverlay } from './features/veil/VeilOverlay';
 import { NavigationProvider, useNavigation } from './scene/navigation/NavigationContext';
 import { SceneViewport } from './scene/SceneViewport';
@@ -185,6 +187,9 @@ function AppContent() {
           <PrologueView 
             initialCharacterId={storedCharId || undefined}
             onCompletePrologue={(newChar) => {
+              if (newChar?.id) {
+                localStorage.setItem('lotm_active_character_id', newChar.id);
+              }
               setCharacter(newChar);
               navigateTo('DESK_WIDE');
             }} 
@@ -257,6 +262,7 @@ function AppContent() {
               onOpenCalendar={() => navigateTo('CALENDAR_STAGE', 'FOCUS_DESK', 'hotspot_almanack')}
               onOpenMarket={() => navigateTo('MARKET_STAGE', 'FOCUS_DESK', 'hotspot_bazaar_letter')}
               onOpenCombat={() => navigateTo('COMBAT_STAGE', 'FOCUS_STAIRCASE')}
+              onOpenTravel={() => navigateTo('TRAVEL_STAGE', 'FOCUS_STAIRCASE')}
               onOpenAscension={() => navigateTo('CEREMONY_STAGE', 'FOCUS_HORNACINA')}
               onOpenActing={() => navigateTo('ACTING_STAGE', 'FOCUS_DESK', 'hotspot_acting_diary')}
               onOpenIdentity={() => navigateTo('IDENTITY_STAGE', 'FOCUS_DESK', 'hotspot_identity_papers')}
@@ -362,6 +368,33 @@ function AppContent() {
             character={character}
             onBackToDesk={backToDesk}
             onRefreshCharacter={refreshCharacter}
+          />
+        </div>
+      )}
+
+      {state.currentView === 'TRAVEL_STAGE' && (
+        <div className="absolute inset-0 z-30">
+          <TravelView 
+            onBackToDesk={backToDesk}
+            onOpenInvestigationLocation={() => navigateTo('INVESTIGATION_LOCATION_STAGE')}
+            characterId={character.id}
+            currentLocationId={character.district || 'DIST_CHERWOOD'}
+            walletText={character.walletText}
+            onLocationChanged={() => {
+              refreshCharacter();
+            }}
+          />
+        </div>
+      )}
+
+      {state.currentView === 'INVESTIGATION_LOCATION_STAGE' && (
+        <div className="absolute inset-0 z-30">
+          <InvestigationLocationView
+            onBackToDesk={backToDesk}
+            onBackToTravel={() => navigateTo('TRAVEL_STAGE')}
+            onOpenCorkboard={() => navigateTo('CORKBOARD_STAGE', 'FOCUS_CORKBOARD')}
+            characterId={character.id}
+            characterPathway={character.pathwayName?.includes('Vidente') || character.pathwayName?.includes('Fool') ? 'FOOL' : 'VISIONARY'}
           />
         </div>
       )}

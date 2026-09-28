@@ -35,6 +35,7 @@ interface DeskViewProps {
   onOpenCalendar: () => void;
   onOpenMarket: () => void;
   onOpenCombat: () => void;
+  onOpenTravel?: () => void;
   onOpenAscension: () => void;
   onOpenActing: () => void;
   onOpenIdentity: () => void;
@@ -51,6 +52,7 @@ export const DeskView: React.FC<DeskViewProps> = ({
   onOpenCalendar,
   onOpenMarket,
   onOpenCombat,
+  onOpenTravel,
   onOpenAscension,
   onOpenActing,
   onOpenIdentity,
@@ -88,7 +90,11 @@ export const DeskView: React.FC<DeskViewProps> = ({
         onOpenCorkboard();
         break;
       case 'hotspot_staircase_door':
-        onOpenCombat();
+        if (onOpenTravel) {
+          onOpenTravel();
+        } else {
+          onOpenCombat();
+        }
         break;
       case 'hotspot_chalice':
         onOpenAscension();

@@ -621,5 +621,47 @@ export const apiClient = {
     const res = await fetch(`/api/prologue/status/${encodeURIComponent(characterId)}`);
     if (!res.ok) return null;
     return res.json();
+  },
+
+  /**
+   * Obtiene la lista autoritativa de distritos de Backlund con enriquecimiento narrativo
+   */
+  async getCityDistricts(): Promise<{ districts: any[] }> {
+    const res = await fetch('/api/city/districts');
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || 'Error al obtener distritos');
+    }
+    return res.json();
+  },
+
+  /**
+   * Obtiene el caso activo actual para un personaje en SQLite
+   */
+  async getActiveInvestigationCase(characterId: string): Promise<any> {
+    const res = await fetch(`/api/investigation/case/active/${encodeURIComponent(characterId)}`);
+    if (!res.ok) return null;
+    return res.json();
+  },
+
+  /**
+   * Visita e inspecciona una fuente física de pista autoritativa en SQLite
+   */
+  async visitClueSource(params: {
+    instanceId: string;
+    clueId: string;
+    sourceIndex?: number;
+    commandId?: string;
+  }): Promise<any> {
+    const res = await fetch('/api/investigation/clue/visit-source', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data.error || data.reason || 'Error al inspeccionar la fuente de pista');
+    }
+    return data;
   }
 };

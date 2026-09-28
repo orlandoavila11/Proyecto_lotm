@@ -148,6 +148,22 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
     }
   });
 
+  // GET /api/investigation/case/active/:characterId
+  fastify.get('/case/active/:characterId', async (req, reply) => {
+    const { characterId } = req.params as { characterId: string };
+    const char = db.getCharacter(characterId);
+    if (!char) {
+      return reply.status(404).send({ error: 'Personaje no encontrado' });
+    }
+
+    try {
+      const activeState = InvestigationEngine.activateCase(db, characterId, 'CASE_CHERWOOD_HEIRLOOM');
+      return reply.status(200).send({ success: true, caseState: activeState });
+    } catch (err: any) {
+      return reply.status(400).send({ error: err.message });
+    }
+  });
+
   // POST /api/investigation/clue/visit-source (Brief-04)
   fastify.post('/clue/visit-source', async (req, reply) => {
     const parseRes = VisitClueSourceSchema.safeParse(req.body);
