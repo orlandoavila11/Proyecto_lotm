@@ -41,6 +41,7 @@ export interface CharacterRow {
   prologue_data_json?: string;
   salary_pence?: number;
   employer_name?: string;
+  revision?: number;
   created_at: string;
   updated_at: string;
 }
@@ -279,6 +280,7 @@ export class DatabaseClient {
     commandType: string;
     payloadHash: string;
     response: any;
+    revision?: number;
     createdAt: string;
   } | null {
     const row = this.db.prepare('SELECT * FROM command_receipts WHERE command_id = ?').get(commandId) as any;
@@ -289,6 +291,7 @@ export class DatabaseClient {
       commandType: row.command_type,
       payloadHash: row.payload_hash,
       response: JSON.parse(row.response_json),
+      revision: row.revision ?? 1,
       createdAt: row.created_at
     };
   }
@@ -299,18 +302,30 @@ export class DatabaseClient {
     commandType: string;
     payloadHash: string;
     response: any;
+    revision?: number;
   }): void {
     this.db.prepare(`
-      INSERT INTO command_receipts (command_id, character_id, command_type, payload_hash, response_json, created_at)
-      VALUES (?, ?, ?, ?, ?, datetime('now'))
-      ON CONFLICT(command_id) DO UPDATE SET response_json = excluded.response_json
+      INSERT INTO command_receipts (command_id, character_id, command_type, payload_hash, response_json, revision, created_at)
+      VALUES (?, ?, ?, ?, ?, ?, datetime('now'))
+      ON CONFLICT(command_id) DO UPDATE SET response_json = excluded.response_json, revision = excluded.revision
     `).run(
       receipt.commandId,
       receipt.characterId,
       receipt.commandType,
       receipt.payloadHash,
-      JSON.stringify(receipt.response)
+      JSON.stringify(receipt.response),
+      receipt.revision ?? 1
     );
+  }
+
+  public incrementCharacterRevision(characterId: string): number {
+    this.db.prepare(`
+      UPDATE characters
+      SET revision = COALESCE(revision, 1) + 1, updated_at = datetime('now')
+      WHERE id = ?
+    `).run(characterId);
+    const row = this.db.prepare('SELECT revision FROM characters WHERE id = ?').get(characterId) as any;
+    return row?.revision ?? 1;
   }
 
   // --- MÉTODOS DE PERSONAJE ---

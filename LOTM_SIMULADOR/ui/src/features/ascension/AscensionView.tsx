@@ -54,16 +54,6 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
           }
         })
         .catch(() => {});
-      apiClient.prepareAscension({
-        characterId: character.id,
-        checklist: {
-          lugar: true,
-          momento: true,
-          materiales_rituales: true,
-          costos_anclaje: true
-        },
-        markPresented: true
-      }).catch(() => {});
     }
   }, [character?.id]);
 
@@ -184,13 +174,17 @@ export const AscensionView: React.FC<AscensionViewProps> = ({ character, onBackT
             apiClient.drinkAscensionPotion({
               characterId: character.id,
               confirmedAt: Date.now()
-            }).then(() => {
-              onRefreshCharacter?.();
+            }).then(res => {
+              if (res?.success) {
+                setPhase('TRAGO');
+                onRefreshCharacter?.();
+              } else {
+                setInterruptionFeedback(res?.message || 'El brebaje ha sido rechazado por el abismo.');
+              }
             }).catch(err => {
-              console.warn('Ascension potion consumption fallback:', err);
+              setInterruptionFeedback(err.message || 'Error de conexión al ingerir la poción.');
             });
           }
-          setPhase('TRAGO');
           return 3000;
         }
         return next;

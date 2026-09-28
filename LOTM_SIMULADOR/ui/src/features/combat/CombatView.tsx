@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Crosshair, Eye, Shield, Sparkles, Zap, Brain } from 'lucide-react';
+import { ArrowLeft, Crosshair, Eye, Shield, Sparkles, Zap, Brain, AlertTriangle } from 'lucide-react';
 import type { CombatantDiegetic } from '../types';
 import { TacticalGrid, type ActiveVfxState } from './TacticalGrid';
 import { TacticalResolutionOverlay, type CombatOutcomeType } from './TacticalResolutionOverlay';
@@ -42,10 +42,15 @@ export const CombatView: React.FC<CombatViewProps> = ({
   characterId,
   onRefreshCharacter
 }) => {
+  const activeCharId = characterId || localStorage.getItem('lotm_active_character_id');
+
   const [combatants, setCombatants] = useState<CombatantDiegetic[]>(INITIAL_COMBATANTS);
   const [selectedCell, setSelectedCell] = useState<{ x: number; y: number } | null>(null);
   const [activeVfx, setActiveVfx] = useState<ActiveVfxState | null>(null);
   const [resolutionOutcome, setResolutionOutcome] = useState<CombatOutcomeType | null>(null);
+  const [hasActiveBattle, setHasActiveBattle] = useState<boolean>(false);
+  const [isStartingBattle, setIsStartingBattle] = useState<boolean>(false);
+  const [combatError, setCombatError] = useState<string | null>(null);
   
   const [combatLog, setCombatLog] = useState<string[]>([
     'Una presencia hostil se interpone en el callejón. El metal del cerrojo resuena en la quietud.'
@@ -56,28 +61,68 @@ export const CombatView: React.FC<CombatViewProps> = ({
   const [spiritualBreath, setSpiritualBreath] = useState<'PLENO' | 'AGITADO' | 'EXHAUSTO'>('PLENO');
   const [enemyWoundsCount, setEnemyWoundsCount] = useState<number>(0);
 
-  const activeCharId = characterId || localStorage.getItem('lotm_active_character_id') || 'char_1790267861425';
-
-  // Inicializar o recuperar combate persistido en SQLite
+  // Comprobar combate activo existente en SQLite (sin iniciar combate incidentalmente en mount)
   useEffect(() => {
+    if (!activeCharId) return;
+
     apiClient.getActiveCombat(activeCharId).then(battle => {
-      if (!battle) {
-        apiClient.startCombat({
-          characterId: activeCharId,
-          enemyName: 'Sombra Embozada de la Noche',
-          enemyHp: 65
-        }).then(newBattle => {
-          if (newBattle?.turnLog) {
-            setCombatLog(newBattle.turnLog);
-          }
-        }).catch(() => {});
-      } else {
+      if (battle && battle.status === 'ONGOING') {
+        setHasActiveBattle(true);
         if (battle.turnLog && battle.turnLog.length > 0) {
           setCombatLog(battle.turnLog);
         }
+      } else {
+        setHasActiveBattle(false);
       }
-    }).catch(() => {});
+    }).catch(() => {
+      setHasActiveBattle(false);
+    });
   }, [activeCharId]);
+
+  if (!activeCharId) {
+    return (
+      <div 
+        className="combat-screen p-8 flex flex-col justify-center items-center select-none relative overflow-hidden text-center"
+        style={{ width: '1920px', height: '1080px', backgroundColor: '#0b0a09' }}
+      >
+        <h2 className="text-xl font-bold tracking-widest text-[#d4af37] font-serif mb-4" style={{ fontFamily: 'Cinzel' }}>
+          SIN SESIÓN ACTIVA
+        </h2>
+        <p className="text-sm text-[#a89885] max-w-md font-serif mb-6 leading-relaxed">
+          No hay una identidad civil confirmada en este momento. Debes encarnar un personaje en la vigilia del prólogo antes de salir a la penumbra de Backlund.
+        </p>
+        <button
+          onClick={onBackToDesk}
+          className="px-6 py-2.5 bg-[#171410] border border-[#8c733e] hover:border-[#d4af37] text-[#d4af37] rounded font-serif text-sm transition-all shadow-lg"
+        >
+          Volver al Refugio
+        </button>
+      </div>
+    );
+  }
+
+  const handleStartEncounter = async () => {
+    if (!activeCharId || isStartingBattle) return;
+    setIsStartingBattle(true);
+    setCombatError(null);
+    try {
+      const newBattle = await apiClient.startCombat({
+        characterId: activeCharId,
+        enemyName: 'Sombra Embozada de la Noche',
+        enemyHp: 65
+      });
+      if (newBattle) {
+        setHasActiveBattle(true);
+        if (newBattle.turnLog) {
+          setCombatLog(newBattle.turnLog);
+        }
+      }
+    } catch (err: any) {
+      setCombatError(err.message || 'Error al iniciar la confrontación.');
+    } finally {
+      setIsStartingBattle(false);
+    }
+  };
 
   const player = combatants.find(c => c.isPlayer)!;
   const enemy = combatants.find(c => !c.isPlayer)!;
@@ -88,6 +133,7 @@ export const CombatView: React.FC<CombatViewProps> = ({
 
   const handleInspectWithSpiritVision = async () => {
     triggerVfx('SPIRIT_VISION_SCAN');
+    setCombatError(null);
     try {
       const res = await apiClient.executeCombatAction({
         characterId: activeCharId,
@@ -109,20 +155,21 @@ export const CombatView: React.FC<CombatViewProps> = ({
         ...prev
       ]);
     } catch (err: any) {
-      setCombatLog(prev => [err.message || 'La niebla interfiere con la visión.', ...prev]);
+      setCombatError(err.message || 'La inspección espiritual no pudo completarse.');
     }
   };
 
-  const handleShoot = async () => {
+  const handleShootRevolver = async () => {
     if (cartridgesInCylinder <= 0) {
-      setCombatLog(prev => ['El percutor golpea en vacío: no quedan cartuchos en el tambor del revólver.', ...prev]);
+      setCombatLog(prev => [
+        '¡El percutor cae en seco sobre una recámara vacía! No quedan balas de plata.',
+        ...prev
+      ]);
       return;
     }
-    setCartridgesInCylinder(prev => prev - 1);
+    
+    setCombatError(null);
     triggerVfx('GUNPOWDER_TRACER');
-
-    const nextWounds = enemyWoundsCount + 1;
-    setEnemyWoundsCount(nextWounds);
 
     try {
       const res = await apiClient.executeCombatAction({
@@ -130,27 +177,24 @@ export const CombatView: React.FC<CombatViewProps> = ({
         actionType: 'SKILL',
         skillId: 'SKILL_PRECISION_SHOT'
       });
+
+      // Solo consumir recursos locales tras confirmación exitosa del servidor
+      setCartridgesInCylinder(prev => Math.max(0, prev - 1));
+      setEnemyWoundsCount(prev => prev + 1);
+
       setCombatLog(prev => [
         res.message || 'Un estruendo de pólvora rompe la niebla. El proyectil alcanza a la figura.',
         ...prev
       ]);
+
       if (res.battleOver || res.isCombatOver) {
         setTimeout(() => {
-          setResolutionOutcome('VICTORIA');
+          setResolutionOutcome(res.victory ? 'VICTORIA' : 'DERROTA_INCONSCIENTE');
           onRefreshCharacter?.();
         }, 1000);
       }
-    } catch {
-      setCombatLog(prev => [
-        'Un estruendo de pólvora rompe la niebla. El proyectil roza el hombro de la figura haciéndola retroceder.',
-        ...prev
-      ]);
-      if (nextWounds >= 2) {
-        setTimeout(() => {
-          setResolutionOutcome('VICTORIA');
-          onRefreshCharacter?.();
-        }, 1000);
-      }
+    } catch (err: any) {
+      setCombatError(err.message || 'El disparo no pudo ser confirmado por el servidor.');
     }
   };
 
@@ -166,10 +210,7 @@ export const CombatView: React.FC<CombatViewProps> = ({
 
     const skillId = characterPathway === 'The Fool' ? 'SKILL_SPIRIT_VISION' : 'SKILL_PSYCHIC_WAVE';
     triggerVfx(characterPathway === 'The Fool' ? 'ASTRAL_THREAD' : 'PSYCHIC_WAVE');
-    setSpiritualBreath('AGITADO');
-
-    const nextWounds = enemyWoundsCount + 1;
-    setEnemyWoundsCount(nextWounds);
+    setCombatError(null);
 
     try {
       const res = await apiClient.executeCombatAction({
@@ -177,35 +218,30 @@ export const CombatView: React.FC<CombatViewProps> = ({
         actionType: 'SKILL',
         skillId
       });
+
+      setSpiritualBreath('AGITADO');
+      setEnemyWoundsCount(prev => prev + 1);
+
       setCombatLog(prev => [
         res.message || (characterPathway === 'The Fool'
           ? 'Activas tu intuición de peligro y manipulas hilos astrales para desviar el ataque.'
           : 'Proyectas una onda de desasosiego que conmociona la mente de la sombra.'),
         ...prev
       ]);
+
       if (res.battleOver || res.isCombatOver) {
         setTimeout(() => {
-          setResolutionOutcome('VICTORIA');
+          setResolutionOutcome(res.victory ? 'VICTORIA' : 'DERROTA_INCONSCIENTE');
           onRefreshCharacter?.();
         }, 1000);
       }
-    } catch {
-      setCombatLog(prev => [
-        characterPathway === 'The Fool'
-          ? 'Activas tu intuición mística desequilibrando la postura hostil del adversario.'
-          : 'Proyectas una mirada intimidante que congela sus movimientos.',
-        ...prev
-      ]);
-      if (nextWounds >= 2) {
-        setTimeout(() => {
-          setResolutionOutcome('VICTORIA');
-          onRefreshCharacter?.();
-        }, 1000);
-      }
+    } catch (err: any) {
+      setCombatError(err.message || 'La canalización de la vía no pudo ser confirmada por el servidor.');
     }
   };
 
   const handleDodge = async () => {
+    setCombatError(null);
     try {
       const res = await apiClient.executeCombatAction({
         characterId: activeCharId,
@@ -215,22 +251,26 @@ export const CombatView: React.FC<CombatViewProps> = ({
         res.message || 'Te deslizas hacia la penumbra rompiendo la línea de ataque enemiga.',
         ...prev
       ]);
-    } catch {
-      setCombatLog(prev => [
-        'Te deslizas hacia la penumbra tras una pila de cajones de madera, rompiendo la línea de ataque enemiga.',
-        ...prev
-      ]);
+    } catch (err: any) {
+      setCombatError(err.message || 'El movimiento evasivo no pudo ser confirmado.');
     }
   };
 
   const handleDisengage = async () => {
+    setCombatError(null);
     try {
-      await apiClient.executeCombatAction({
+      const res = await apiClient.executeCombatAction({
         characterId: activeCharId,
         actionType: 'FLEE'
       });
-    } catch {}
-    setResolutionOutcome('HUIDA');
+      if (res?.status === 'FLED' || res?.isCombatOver) {
+        setResolutionOutcome('HUIDA');
+      } else {
+        setCombatLog(prev => [res?.message || 'No fue posible romper el contacto con el enemigo.', ...prev]);
+      }
+    } catch (err: any) {
+      setCombatError(err.message || 'No fue posible romper el contacto táctico.');
+    }
   };
 
   return (
@@ -251,11 +291,11 @@ export const CombatView: React.FC<CombatViewProps> = ({
       <header className="flex justify-between items-center pb-4 border-b border-[#2d2419] mb-6">
         <div className="flex items-center gap-4">
           <button
-            onClick={handleDisengage}
+            onClick={hasActiveBattle ? handleDisengage : onBackToDesk}
             className="p-2 bg-[#171410] border border-[#383024] hover:border-[#8c733e] text-[#d4af37] rounded flex items-center gap-2 text-sm font-serif transition-all"
           >
             <ArrowLeft size={16} />
-            Romper el Contacto
+            {hasActiveBattle ? 'Romper el Contacto' : 'Volver al Refugio'}
           </button>
           <div>
             <h1 className="text-xl font-bold tracking-widest text-[#f87171]" style={{ fontFamily: 'Cinzel' }}>
@@ -281,132 +321,180 @@ export const CombatView: React.FC<CombatViewProps> = ({
         </div>
       </header>
 
-      {/* Contenido Central: Rejilla 5x7 y Panel Táctico */}
-      <div className="grid grid-cols-12 gap-6 flex-1 mb-6">
-        
-        {/* Rejilla 7x5 de Tablero Táctico (GFX41, GFX44 & GFX45) */}
-        <div className="col-span-7 flex flex-col items-center justify-center">
-          <TacticalGrid
-            combatants={combatants}
-            selectedCell={selectedCell}
-            onSelectCell={(pos) => setSelectedCell(pos)}
-            validMoveCells={[
-              { x: 3, y: 3 },
-              { x: 2, y: 4 },
-              { x: 4, y: 4 }
-            ]}
-            validTargetCells={[
-              { x: 3, y: 1 }
-            ]}
-            activeVfx={activeVfx}
-            onVfxComplete={() => setActiveVfx(null)}
-          />
+      {/* Alerta de Error Recuperable si el Servidor Rechaza */}
+      {combatError && (
+        <div className="mb-4 p-3 bg-[#2a0e0e] border border-[#dc2626] text-[#fca5a5] rounded text-xs flex items-center gap-2 font-serif">
+          <AlertTriangle size={16} className="text-[#ef4444]" />
+          <span>{combatError}</span>
         </div>
+      )}
 
-        {/* Panel Táctico Diegético */}
-        <div className="col-span-5 bg-[#14100c]/95 p-6 rounded-lg border border-[#4a3622] shadow-2xl flex flex-col justify-between backdrop-blur-sm">
-          <div>
-            <div className="flex justify-between items-center border-b border-[#3d2b1b] pb-3 mb-4">
-              <h2 className="font-serif font-bold text-base text-[#d4af37]" style={{ fontFamily: 'Cinzel' }}>
-                Lectura de la Situación
-              </h2>
-              <span className="text-[11px] text-[#9c8a74] italic font-serif">
-                Mano firme y respiración contenida
-              </span>
+      {/* Contenido Central: Rejilla 5x7 o Preparación de Encuentro */}
+      {!hasActiveBattle ? (
+        <div className="flex-1 flex flex-col items-center justify-center text-center p-8 bg-[#14100c]/80 border border-[#383024] rounded backdrop-blur-sm max-w-xl mx-auto my-12">
+          <h2 className="text-lg font-serif font-bold text-[#d4af37] mb-2">
+            La Penumbra Aguarda en el Callejón
+          </h2>
+          <p className="text-xs text-[#a89885] font-serif leading-relaxed mb-6">
+            El eco de pasos lejanos y el goteo constante de los aleros dominan la quietud. Ninguna criatura ha cruzado tu camino todavía, pero el aire huele a azufre y fango astral.
+          </p>
+          <button
+            onClick={handleStartEncounter}
+            disabled={isStartingBattle}
+            className="px-6 py-2.5 bg-[#1b1510] border border-[#8c733e] hover:border-[#d4af37] text-[#d4af37] rounded font-serif text-sm transition-all shadow-lg flex items-center gap-2"
+          >
+            <Crosshair size={16} />
+            {isStartingBattle ? 'Sondeando la Penumbra...' : 'Sondear la Penumbra (Iniciar Confrontación)'}
+          </button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-12 gap-6 flex-1 mb-6">
+          
+          {/* Rejilla 7x5 de Tablero Táctico (GFX41, GFX44 & GFX45) */}
+          <div className="col-span-7 flex flex-col items-center justify-center">
+            <TacticalGrid
+              combatants={combatants}
+              selectedCell={selectedCell}
+              onSelectCell={setSelectedCell}
+              activeVfx={activeVfx}
+              onVfxComplete={() => setActiveVfx(null)}
+            />
+            <div className="mt-2 text-[10px] text-[#8c733e] italic font-serif">
+              Rejilla 5x7 de Adoquines Húmedos · Movimiento y Alcance Espacial Diegético
             </div>
+          </div>
 
-            {/* Estado del Enemigo con Opacidad Diegética */}
-            <div className="parchment-sheet p-4 rounded text-[#1f1a14] mb-4 shadow-lg border border-[#bfae91]">
-              <div className="flex justify-between items-center mb-1.5">
-                <span className="font-serif font-bold text-sm" style={{ fontFamily: 'Cinzel' }}>
+          {/* Panel Lateral: Percepción y Registro Táctico */}
+          <div className="col-span-5 flex flex-col gap-4">
+            
+            {/* Estado del Enemigo percibido */}
+            <div className="bg-[#12100d]/90 p-4 border border-[#2d2419] rounded shadow-lg backdrop-blur-sm">
+              <div className="flex justify-between items-start border-b border-[#2d2419] pb-2 mb-2">
+                <h3 className="font-serif font-bold text-sm text-[#f87171]">
                   {enemy.name}
-                </span>
-                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-[#c4b59a] border border-[#a69578]">
-                  Opacidad: {enemy.opacityState}
+                </h3>
+                <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-[#201c18] border border-[#3d3327] rounded text-[#d4af37]">
+                  {enemy.opacityState}
                 </span>
               </div>
-              <p className="text-xs italic mb-2 text-[#3b3123] leading-relaxed">
+              <p className="text-xs text-[#dcd1be] italic font-serif mb-2">
                 "{enemy.vitalityDescription}"
               </p>
-              <p className="text-xs leading-relaxed text-[#1f1a14]">
-                {enemy.stanceDescription}
+              <p className="text-xs text-[#a89885] font-serif mb-2">
+                <strong>Postura:</strong> {enemy.stanceDescription}
               </p>
+              {enemyWoundsCount > 0 && (
+                <p className="text-xs text-[#f87171] font-serif mb-2">
+                  <strong>Impactos percibidos:</strong> {enemyWoundsCount}
+                </p>
+              )}
               {enemy.revealedIntent && (
-                <div className="mt-2.5 border-t border-[#bfae91] pt-2 text-xs text-[#7f1d1d] font-serif font-bold">
-                  * Intención Desvelada: {enemy.revealedIntent}
+                <div className="mt-2 p-2 bg-[#2d1b19] border-l-2 border-[#dc2626] text-[11px] text-[#fca5a5] italic">
+                  <strong>Intención Intuidas:</strong> {enemy.revealedIntent}
                 </div>
               )}
             </div>
 
-            {/* Acciones Disponibles */}
-            <div className="grid grid-cols-2 gap-2.5 mb-4">
-              <button
-                onClick={handleShoot}
-                className="p-3 bg-[#1e1712] border border-[#4a3622] hover:border-[#d4af37] rounded text-left transition-all text-xs font-serif font-bold text-[#e5ded2] flex items-center gap-2 shadow-md hover:bg-[#281f18]"
-              >
-                <Crosshair size={15} className="text-[#f59e0b]" />
-                <span>Disparo de Precisión</span>
-              </button>
-
-              <button
-                onClick={handleDodge}
-                className="p-3 bg-[#1e1712] border border-[#4a3622] hover:border-[#d4af37] rounded text-left transition-all text-xs font-serif font-bold text-[#e5ded2] flex items-center gap-2 shadow-md hover:bg-[#281f18]"
-              >
-                <Shield size={15} className="text-[#38bdf8]" />
-                <span>Esquiva en Penumbra</span>
-              </button>
-
-              {/* Habilidad Extraordinaria de Secuencia 9 */}
-              <button
-                onClick={handlePathwayAbility}
-                className="col-span-2 p-3 bg-[#141b29] border border-[#2563eb] hover:border-[#60a5fa] rounded text-left transition-all text-xs font-serif font-bold text-[#93c5fd] flex items-center gap-2 shadow-[0_0_12px_rgba(37,99,235,0.25)] hover:bg-[#1b2538]"
-              >
-                {characterPathway === 'The Fool' ? <Zap size={15} /> : <Brain size={15} />}
-                <span>
-                  {characterPathway === 'The Fool' 
-                    ? 'Manipular Hilos de Destino (Vidente S9)' 
-                    : 'Proyectar Intimidación Psíquica (Espectador S9)'}
-                </span>
-              </button>
-
-              <button
-                onClick={handleInspectWithSpiritVision}
-                className="col-span-2 p-3 bg-[#1f142b] border border-[#7c3aed] hover:border-[#a855f7] rounded text-left transition-all text-xs font-serif font-bold text-[#d8b4fe] flex items-center gap-2 shadow-[0_0_12px_rgba(124,58,237,0.25)] hover:bg-[#291b38]"
-              >
-                <Eye size={15} />
-                <span>Escudriñar Intención con Visión Espiritual</span>
-              </button>
-            </div>
-
-            {/* Bitácora de Combate */}
-            <div className="p-3.5 bg-[#0d0a08] rounded border border-[#2d2015] text-xs text-[#c4b59a] max-h-40 overflow-y-auto space-y-1.5 font-serif shadow-inner">
-              <div className="text-[10px] text-[#8a7964] uppercase tracking-widest font-bold mb-1 border-b border-[#241910] pb-1">
-                Ecos del Encuentro
+            {/* Crónica Táctica (Log de Acciones) */}
+            <div className="bg-[#100e0b]/90 p-4 border border-[#2d2419] rounded flex-1 flex flex-col justify-between shadow-lg">
+              <h4 className="text-xs font-serif font-bold text-[#8c733e] uppercase tracking-wider border-b border-[#2d2419] pb-1.5 mb-2">
+                Crónica de la Escaramuza
+              </h4>
+              <div className="flex-1 overflow-y-auto space-y-2 pr-2 text-xs font-serif leading-relaxed text-[#c7bcab]">
+                {combatLog.map((log, index) => (
+                  <p key={index} className={index === 0 ? "text-[#f3ede2] font-semibold" : "opacity-80"}>
+                    • {log}
+                  </p>
+                ))}
               </div>
-              {combatLog.map((log, idx) => (
-                <p key={idx} className="italic leading-relaxed">
-                  · {log}
-                </p>
-              ))}
             </div>
+
           </div>
 
-          <div className="text-[11px] text-[#8c7b66] border-t border-[#2d2015] pt-3 italic text-center">
-            "El combate entre extraordinarios dura segundos; los errores duran para siempre."
-          </div>
         </div>
+      )}
 
-      </div>
+      {/* Barra Inferior: Acciones y Habilidades Tácticas */}
+      {hasActiveBattle && (
+        <footer className="bg-[#14120f]/95 p-4 rounded border border-[#2d2419] flex justify-between items-center shadow-xl">
+          <div className="flex gap-3">
+            
+            {/* Acción 1: Disparo de Precisión (Consumo de Objeto Físico) */}
+            <button
+              onClick={handleShootRevolver}
+              disabled={cartridgesInCylinder <= 0}
+              className={`px-4 py-2.5 rounded border flex items-center gap-2 font-serif text-xs transition-all ${
+                cartridgesInCylinder > 0
+                  ? 'bg-[#1b1713] border-[#8c733e] text-[#f59e0b] hover:bg-[#2a221a] hover:border-[#f59e0b] shadow-md'
+                  : 'bg-[#12100d] border-[#201c18] text-[#554b3f] cursor-not-allowed'
+              }`}
+            >
+              <Crosshair size={16} />
+              <div>
+                <div className="font-bold">Disparo de Precisión</div>
+                <div className="text-[10px] opacity-75">1 Bala de Plata · 1 PA</div>
+              </div>
+            </button>
 
-      <footer className="text-xs text-[#6e6353] italic text-center border-t border-[#221c14] pt-3">
-        El eco de las detonaciones reverbera entre las paredes de ladrillo tiznado de carbón.
-      </footer>
+            {/* Acción 2: Habilidad Sobrenatural de Secuencia 9 */}
+            <button
+              onClick={handlePathwayAbility}
+              className="px-4 py-2.5 rounded border border-[#6b21a8] bg-[#1a1325] text-[#d8b4fe] hover:bg-[#271b38] hover:border-[#a855f7] flex items-center gap-2 font-serif text-xs transition-all shadow-md"
+            >
+              {characterPathway === 'The Fool' ? <Brain size={16} /> : <Zap size={16} />}
+              <div>
+                <div className="font-bold">
+                  {characterPathway === 'The Fool' ? 'Manipular Hilos de Azar' : 'Intimidación Psíquica'}
+                </div>
+                <div className="text-[10px] opacity-75">Aliento Espiritual · 1 PA</div>
+              </div>
+            </button>
 
-      {/* Capa de Resolución Diegética de Combate (GFX46) */}
+            {/* Acción 3: Visión Espiritual (Scrutinize) */}
+            <button
+              onClick={handleInspectWithSpiritVision}
+              className="px-4 py-2.5 rounded border border-[#1e3a5f] bg-[#0f172a] text-[#7dd3fc] hover:bg-[#1e293b] hover:border-[#38bdf8] flex items-center gap-2 font-serif text-xs transition-all shadow-md"
+            >
+              <Eye size={16} />
+              <div>
+                <div className="font-bold">Descifrar Aura (Visión Espiritual)</div>
+                <div className="text-[10px] opacity-75">Revela intenciones y debilidades</div>
+              </div>
+            </button>
+
+            {/* Acción 4: Maniobra Evasiva (Movimiento) */}
+            <button
+              onClick={handleDodge}
+              className="px-4 py-2.5 rounded border border-[#2d2419] bg-[#171410] text-[#a89885] hover:bg-[#201c18] hover:text-[#d4af37] flex items-center gap-2 font-serif text-xs transition-all shadow-md"
+            >
+              <Shield size={16} />
+              <div>
+                <div className="font-bold">Desplazarse a Cubierto</div>
+                <div className="text-[10px] opacity-75">1 PA · Cambia posición táctica</div>
+              </div>
+            </button>
+
+          </div>
+
+          <div>
+            <button
+              onClick={handleDisengage}
+              className="px-4 py-2 bg-[#201414] border border-[#522525] hover:border-[#991b1b] text-[#fca5a5] rounded font-serif text-xs transition-all"
+            >
+              Romper Contacto (Flee)
+            </button>
+          </div>
+        </footer>
+      )}
+
+      {/* Overlay de Desenlace Táctico */}
       {resolutionOutcome && (
         <TacticalResolutionOverlay
           outcome={resolutionOutcome}
-          onConfirm={onBackToDesk}
+          onConfirm={() => {
+            setResolutionOutcome(null);
+            onBackToDesk();
+          }}
         />
       )}
 

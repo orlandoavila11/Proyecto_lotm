@@ -13,6 +13,7 @@ import { ascensionRoutes } from './routes/ascensionRoutes.js';
 import { prologueRoutes } from './routes/prologueRoutes.js';
 import { calendarRoutes } from './routes/calendarRoutes.js';
 import { identityRoutes } from './routes/identityRoutes.js';
+import { commandRoutes } from './routes/commandRoutes.js';
 
 import { DomainError } from '../core/errors/DomainError.js';
 
@@ -83,6 +84,7 @@ export async function buildApp(options: AppOptions = {}): Promise<{ app: Fastify
   await app.register(prologueRoutes, { db });
   await app.register(calendarRoutes, { db });
   await app.register(identityRoutes, { db });
+  await app.register(commandRoutes, { prefix: '/api/commands', db });
 
   return { app, db, loader };
 }

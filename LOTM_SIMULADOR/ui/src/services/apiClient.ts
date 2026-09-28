@@ -333,7 +333,9 @@ export const apiClient = {
     districtId: string;
     itemCode: string;
     quality: 'PRISTINE' | 'DAMAGED' | 'CONTAMINATED';
-  }): Promise<{ success: boolean; item?: any; penceSpent: number; remainingBalance: number; error?: string }> {
+    commandId?: string;
+    expectedRevision?: number;
+  }): Promise<{ success: boolean; item?: any; penceSpent: number; remainingBalance: number; error?: string; fromReceipt?: boolean; revision?: number }> {
     const res = await fetch('/api/economy/buy', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -355,6 +357,9 @@ export const apiClient = {
     enemyName?: string;
     enemyHp?: number;
     enemySpeed?: number;
+    commandId?: string;
+    expectedRevision?: number;
+    forceNew?: boolean;
   }): Promise<any> {
     const res = await fetch('/api/combat/start', {
       method: 'POST',
@@ -385,6 +390,8 @@ export const apiClient = {
     actionType: 'SKILL' | 'MOVE' | 'SCRUTINIZE' | 'NEGOTIATE' | 'FLEE';
     skillId?: string;
     targetPosition?: { x: number; y: number };
+    commandId?: string;
+    expectedRevision?: number;
   }): Promise<any> {
     const res = await fetch('/api/combat/action', {
       method: 'POST',
@@ -492,6 +499,8 @@ export const apiClient = {
     characterId: string;
     confirmedAt?: number;
     seed?: number;
+    commandId?: string;
+    expectedRevision?: number;
   }): Promise<any> {
     const res = await fetch('/api/ascension/drink', {
       method: 'POST',
@@ -503,5 +512,35 @@ export const apiClient = {
       throw new Error(data.error || `Error al ingerir poción: ${res.statusText}`);
     }
     return data;
+  },
+
+  /**
+   * Viaje a otro distrito de la ciudad mediante carruaje de alquiler (2 chelines)
+   */
+  async travelToDistrict(params: {
+    characterId: string;
+    destinationDistrict: string;
+    commandId?: string;
+    expectedRevision?: number;
+  }): Promise<any> {
+    const res = await fetch('/api/city/travel', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data.error || 'Error al viajar en carruaje');
+    }
+    return data;
+  },
+
+  /**
+   * Consulta el recibo de un comando por su ID para recuperación tras timeout de red
+   */
+  async getCommandReceipt(commandId: string): Promise<any> {
+    const res = await fetch(`/api/commands/receipt/${encodeURIComponent(commandId)}`);
+    if (!res.ok) return null;
+    return res.json();
   }
 };

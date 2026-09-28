@@ -2,10 +2,14 @@ import { FastifyInstance, FastifyPluginAsync } from 'fastify';
 import { z } from 'zod';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { SeededRNG } from '../../core/rng/SeededRNG.js';
+import { CommandProcessor } from '../../infra/database/CommandProcessor.js';
+import { EntityNotFoundError, DomainRuleViolationError } from '../../core/errors/DomainError.js';
 
 const TravelSchema = z.object({
   characterId: z.string(),
-  destinationDistrict: z.string()
+  destinationDistrict: z.string(),
+  commandId: z.string().optional(),
+  expectedRevision: z.number().int().optional()
 });
 
 export const cityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
@@ -72,39 +76,62 @@ export const cityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
       return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
     }
 
-    const { characterId, destinationDistrict } = parseRes.data;
-    const char = db.getCharacter(characterId);
-    if (!char) {
-      return reply.status(404).send({ error: 'Personaje no encontrado' });
-    }
+    const { characterId, destinationDistrict, commandId, expectedRevision } = parseRes.data;
 
-    const rawDb = db.getRawDb();
-    rawDb.prepare('UPDATE characters SET current_location = ?, updated_at = datetime(\'now\') WHERE id = ?')
-      .run(destinationDistrict, characterId);
+    const processed = CommandProcessor.execute(
+      db,
+      {
+        commandId,
+        characterId,
+        commandType: 'CITY_TRAVEL',
+        payload: { destinationDistrict },
+        expectedRevision
+      },
+      () => {
+        const char = db.getCharacter(characterId);
+        if (!char) {
+          throw new EntityNotFoundError('Personaje no encontrado');
+        }
 
-    // Costo: 2 chelines (24 peniques)
-    db.updateCharacterWealth(characterId, -24);
+        if (char.raw_pence < 24) {
+          throw new DomainRuleViolationError('Fondos insuficientes para el carruaje de alquiler (tarifa requerida: 2s / 24 peniques).');
+        }
 
-    // Posible encuentro de viaje
-    const persona = db.getActivePersona(characterId);
-    let travelEncounter = null;
-    if (persona && (persona.police_suspicion > 50 || persona.church_suspicion > 50)) {
-      travelEncounter = 'Una patrulla de la Policía de Backlund detuvo brevemente tu carruaje en un retén. Mostraste tus credenciales civiles y continuaste sin incidentes mayores.';
-    } else {
-      const travelAtmosphere = [
-        'El cochero fustigó a los caballos a través de la densa niebla de carbón; las campanas de San Samuel resonaban a lo lejos.',
-        'Gotas de lluvia ácida repiqueteaban sobre el techo de cuero del carruaje mientras cruzabas la avenida principal.',
-        'Un vendedor de periódicos voceaba las últimas noticias sobre la niebla tóxica y los crímenes sin resolver en el Barrio Este.'
-      ];
-      const travelRng = new SeededRNG(`travel_${characterId}_${destinationDistrict}_${Date.now()}`);
-      travelEncounter = travelAtmosphere[travelRng.nextInt(0, travelAtmosphere.length - 1)];
-    }
+        const rawDb = db.getRawDb();
+        rawDb.prepare("UPDATE characters SET current_location = ?, updated_at = datetime('now') WHERE id = ?")
+          .run(destinationDistrict, characterId);
+
+        // Costo: 2 chelines (24 peniques)
+        db.updateCharacterWealth(characterId, -24);
+
+        // Posible encuentro de viaje
+        const persona = db.getActivePersona(characterId);
+        let travelEncounter = null;
+        if (persona && (persona.police_suspicion > 50 || persona.church_suspicion > 50)) {
+          travelEncounter = 'Una patrulla de la Policía de Backlund detuvo brevemente tu carruaje en un retén. Mostraste tus credenciales civiles y continuaste sin incidentes mayores.';
+        } else {
+          const travelAtmosphere = [
+            'El cochero fustigó a los caballos a través de la densa niebla de carbón; las campanas de San Samuel resonaban a lo lejos.',
+            'Gotas de lluvia ácida repiqueteaban sobre el techo de cuero del carruaje mientras cruzabas la avenida principal.',
+            'Un vendedor de periódicos voceaba las últimas noticias sobre la niebla tóxica y los crímenes sin resolver en el Barrio Este.'
+          ];
+          const travelRng = new SeededRNG(`travel_${characterId}_${destinationDistrict}_${char.current_day}`);
+          travelEncounter = travelAtmosphere[travelRng.nextInt(0, travelAtmosphere.length - 1)];
+        }
+
+        return {
+          success: true,
+          newLocation: destinationDistrict,
+          encounter: travelEncounter,
+          message: `Has tomado un carruaje de alquiler hacia [${destinationDistrict}]. (Tarifa: 2s) ${travelEncounter}`
+        };
+      }
+    );
 
     return reply.send({
-      success: true,
-      newLocation: destinationDistrict,
-      encounter: travelEncounter,
-      message: `Has tomado un carruaje de alquiler hacia [${destinationDistrict}]. (Tarifa: 2s) ${travelEncounter}`
+      ...processed.response,
+      fromReceipt: processed.fromReceipt,
+      revision: processed.revision
     });
   });
 };

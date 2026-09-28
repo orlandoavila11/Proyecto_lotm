@@ -25,7 +25,7 @@ async function captureAll() {
 
   // FASE 1: RECORRIDO DEL PRÓLOGO TUTORIAL
   console.log('[1/14] Cargando aplicación limpia para Prólogo...');
-  await page.goto('http://127.0.0.1:5173/');
+  await page.goto('http://localhost:5173/');
   await page.evaluate(() => localStorage.clear());
   await page.reload();
   await page.waitForTimeout(1000);
@@ -112,7 +112,7 @@ async function captureAll() {
   let inDesk = await page.$('#hotspot_almanack');
   if (!inDesk) {
     console.log('[FALLBACK] Creando e hidratando personaje en SQLite...');
-    const charResp = await fetch('http://127.0.0.1:3456/api/character/new', {
+    const charResp = await fetch('http://localhost:3456/api/character/new', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -125,7 +125,7 @@ async function captureAll() {
     const charData = await charResp.json();
     const pid = charData.character.id;
     await page.evaluate((id) => localStorage.setItem('lotm_active_character_id', id), pid);
-    await page.goto('http://127.0.0.1:5173/');
+    await page.goto('http://localhost:5173/');
     await page.waitForTimeout(2000);
   }
 

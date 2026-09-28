@@ -9,7 +9,7 @@ async function startServer() {
   console.log('   "El misterio no se improvisa; se sostiene sobre piedra, fe y silencio."     ');
   console.log('================================================================================\n');
 
-  const dbFilePath = path.resolve('saves/lotm_reborn.db');
+  const dbFilePath = process.env.DB_PATH ? path.resolve(process.env.DB_PATH) : path.resolve('saves/lotm_reborn.db');
   console.log(`📦 [1/3] Inicializando persistencia relacional SQLite en: ${dbFilePath}`);
   
   const { app, db, loader } = await buildApp({

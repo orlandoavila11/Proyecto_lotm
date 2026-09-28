@@ -24,6 +24,8 @@ import { SceneHarness, FOOL_SEER_FIXTURE } from './harness/SceneHarness';
 import { CANONICAL_HOTSPOTS } from './scene/types';
 import { apiClient } from './services/apiClient';
 import { mapSanityToVisual, mapCorruptionToVisual, mapRuinaToVisual } from './services/somaticsMapper';
+import { resolveSequenceTitle, resolvePathwayDisplayName } from './session/sequenceRegistry';
+import { PhaserHost } from './game/PhaserHost';
 
 function AppContent() {
   const { state, navigateTo, closeInspection, backToDesk, toggleSpiritVision } = useNavigation();
@@ -32,8 +34,9 @@ function AppContent() {
   const [dayNumber, setDayNumber] = useState<number>(4);
   const [showHarness, setShowHarness] = useState<boolean>(false);
   const [showDebugMasks, setShowDebugMasks] = useState<boolean>(false);
+  const [rendererMode, setRendererMode] = useState<'react' | 'phaser'>('react');
 
-  // Comprobar parámetros URL (?harness=true, ?masks=true) y partida persistida
+  // Comprobar parámetros URL (?harness=true, ?masks=true, ?renderer=phaser) y partida persistida
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const isHarness = params.get('harness') === 'true';
@@ -42,6 +45,9 @@ function AppContent() {
     }
     if (params.get('masks') === 'true') {
       setShowDebugMasks(true);
+    }
+    if (params.get('renderer') === 'phaser') {
+      setRendererMode('phaser');
     }
 
     if (!character) {
@@ -55,7 +61,6 @@ function AppContent() {
               const mappedSanity = mapSanityToVisual(data.somatics?.sanityTier || 'LUCID');
               const mappedCorruption = mapCorruptionToVisual(data.somatics?.corruptionTier || 'PRISTINE');
               const mappedRuina = mapRuinaToVisual(data.somatics?.ruinaTier || 0);
-              const isFool = data.character.pathway === 'FOOL';
 
               setCharacter({
                 id: data.character.id,
@@ -63,8 +68,8 @@ function AppContent() {
                 profession: data.activePersona?.profession || 'Detective Privado',
                 originTitle: data.activePersona?.profession || 'Origen Civil',
                 district: data.character.current_location || 'Backlund - Cherwood',
-                pathwayName: isFool ? 'The Fool' : 'Visionary',
-                sequenceTitle: isFool ? `Vidente (Secuencia ${data.character.sequence})` : `Espectador (Secuencia ${data.character.sequence})`,
+                pathwayName: resolvePathwayDisplayName(data.character.pathway),
+                sequenceTitle: resolveSequenceTitle(data.character.pathway, data.character.sequence),
                 initialBurden: {
                   type: 'DEUDA',
                   description: 'Alquiler y compromisos notariales en Backlund.',
@@ -125,6 +130,8 @@ function AppContent() {
             ruinaTier: mappedRuina.tier,
             woodDescription: mappedRuina.description
           },
+          pathwayName: resolvePathwayDisplayName(data.character.pathway),
+          sequenceTitle: resolveSequenceTitle(data.character.pathway, data.character.sequence),
           walletText: data.wallet ? `${data.wallet.pounds} £, ${data.wallet.soli} s` : prev.walletText,
           anchors: data.anchors?.map((a: any) => ({
             id: a.id,
@@ -187,21 +194,61 @@ function AppContent() {
 
       {/* Router de Vistas Gobernado por la Máquina de Navegación Central */}
       {(state.currentView === 'DESK_WIDE' || state.currentView === 'DESK_FOCUS' || state.currentView === 'INSPECTION_LAYER') && (
-        <DeskView
-          character={character}
-          onOpenCorkboard={() => navigateTo('CORKBOARD_STAGE', 'FOCUS_CORKBOARD')}
-          onOpenCalendar={() => navigateTo('CALENDAR_STAGE', 'FOCUS_DESK', 'hotspot_almanack')}
-          onOpenMarket={() => navigateTo('MARKET_STAGE', 'FOCUS_DESK', 'hotspot_bazaar_letter')}
-          onOpenCombat={() => navigateTo('COMBAT_STAGE', 'FOCUS_STAIRCASE')}
-          onOpenAscension={() => navigateTo('CEREMONY_STAGE', 'FOCUS_HORNACINA')}
-          onOpenActing={() => navigateTo('ACTING_STAGE', 'FOCUS_DESK', 'hotspot_acting_diary')}
-          onOpenIdentity={() => navigateTo('IDENTITY_STAGE', 'FOCUS_DESK', 'hotspot_identity_papers')}
-          onToggleSpiritVision={toggleSpiritVision}
-          spiritVisionActive={state.isSpiritVisionActive}
-          timeSlot={timeSlot}
-          dayNumber={dayNumber}
-          debugOverlay={showDebugMasks}
-        />
+        rendererMode === 'phaser' ? (
+          <PhaserHost
+            character={character}
+            timeSlot={timeSlot}
+            dayNumber={dayNumber}
+            onOpenCorkboard={() => navigateTo('CORKBOARD_STAGE', 'FOCUS_CORKBOARD')}
+            onOpenCalendar={() => navigateTo('CALENDAR_STAGE', 'FOCUS_DESK', 'hotspot_almanack')}
+            onOpenMarket={() => navigateTo('MARKET_STAGE', 'FOCUS_DESK', 'hotspot_bazaar_letter')}
+            onOpenCombat={() => navigateTo('COMBAT_STAGE', 'FOCUS_STAIRCASE')}
+            onOpenAscension={() => navigateTo('CEREMONY_STAGE', 'FOCUS_HORNACINA')}
+            onOpenActing={() => navigateTo('ACTING_STAGE', 'FOCUS_DESK', 'hotspot_acting_diary')}
+            onOpenIdentity={() => navigateTo('IDENTITY_STAGE', 'FOCUS_DESK', 'hotspot_identity_papers')}
+            onToggleSpiritVision={toggleSpiritVision}
+            spiritVisionActive={state.isSpiritVisionActive}
+            onSwitchToReactRenderer={() => {
+              const url = new URL(window.location.href);
+              url.searchParams.delete('renderer');
+              window.history.pushState({}, '', url.toString());
+              setRendererMode('react');
+            }}
+          />
+        ) : (
+          <>
+            <DeskView
+              character={character}
+              onOpenCorkboard={() => navigateTo('CORKBOARD_STAGE', 'FOCUS_CORKBOARD')}
+              onOpenCalendar={() => navigateTo('CALENDAR_STAGE', 'FOCUS_DESK', 'hotspot_almanack')}
+              onOpenMarket={() => navigateTo('MARKET_STAGE', 'FOCUS_DESK', 'hotspot_bazaar_letter')}
+              onOpenCombat={() => navigateTo('COMBAT_STAGE', 'FOCUS_STAIRCASE')}
+              onOpenAscension={() => navigateTo('CEREMONY_STAGE', 'FOCUS_HORNACINA')}
+              onOpenActing={() => navigateTo('ACTING_STAGE', 'FOCUS_DESK', 'hotspot_acting_diary')}
+              onOpenIdentity={() => navigateTo('IDENTITY_STAGE', 'FOCUS_DESK', 'hotspot_identity_papers')}
+              onToggleSpiritVision={toggleSpiritVision}
+              spiritVisionActive={state.isSpiritVisionActive}
+              timeSlot={timeSlot}
+              dayNumber={dayNumber}
+              debugOverlay={showDebugMasks}
+            />
+            {/* Acceso reversible para alternar al motor Phaser 4.2.1 */}
+            <div className="absolute top-4 left-4 z-40">
+              <button
+                type="button"
+                onClick={() => {
+                  const url = new URL(window.location.href);
+                  url.searchParams.set('renderer', 'phaser');
+                  window.history.pushState({}, '', url.toString());
+                  setRendererMode('phaser');
+                }}
+                className="px-3 py-1 bg-[#1c1813]/90 hover:bg-[#2b241c] border border-[#8c733e]/70 rounded text-xs font-serif text-[#d4af37] shadow transition-colors cursor-pointer"
+              >
+                Activar Modo Phaser 4.2.1 (?renderer=phaser)
+              </button>
+            </div>
+          </>
+        )
       )}
 
       {state.currentView === 'CORKBOARD_STAGE' && (

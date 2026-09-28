@@ -31,3 +31,13 @@ export class ValidationDomainError extends DomainError {
   readonly errorCode = 'VALIDATION_ERROR';
 }
 
+export class CommandConflictError extends DomainError {
+  readonly statusCode = 409;
+  readonly errorCode = 'COMMAND_CONFLICT';
+}
+
+export class RevisionConflictError extends DomainError {
+  readonly statusCode = 409;
+  readonly errorCode = 'REVISION_CONFLICT';
+}
+

@@ -4,6 +4,8 @@ import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { ProceduralInvestigationService, InvestigationMethod } from '../../core/investigation/ProceduralInvestigationService.js';
 import { InvestigationEngine } from '../../core/investigation/InvestigationEngine.js';
 import { CanonicalPathwayId } from '../../core/types/pathway.js';
+import { CommandProcessor } from '../../infra/database/CommandProcessor.js';
+import { EntityNotFoundError, DomainRuleViolationError } from '../../core/errors/DomainError.js';
 
 const GenerateCaseSchema = z.object({
   characterId: z.string()
@@ -18,7 +20,9 @@ const InvestigateClueSchema = z.object({
     'PSYCHOLOGICAL_ANALYSIS',
     'LOGICAL_RATIOCINATION',
     'FORENSIC_TRACKING'
-  ])
+  ]),
+  commandId: z.string().optional(),
+  expectedRevision: z.number().int().optional()
 });
 
 const VerdictSchema = z.object({
@@ -29,7 +33,9 @@ const VerdictSchema = z.object({
     'EXTORT_BLACKMAIL',
     'EXECUTE_SHADOWS',
     'COVER_UP_ALLIANCE'
-  ])
+  ]),
+  commandId: z.string().optional(),
+  expectedRevision: z.number().int().optional()
 });
 
 // Schemas para BRIEF-04 (Motor de Investigación Sistémico)
@@ -43,35 +49,47 @@ const VisitClueSourceSchema = z.object({
   clueId: z.string(),
   sourceIndex: z.number().int().min(0),
   timeOfDay: z.enum(['mañana', 'tarde', 'noche']).optional(),
-  hour: z.number().optional()
+  hour: z.number().optional(),
+  commandId: z.string().optional(),
+  expectedRevision: z.number().int().optional()
 });
 
 const ConnectCluesSchema = z.object({
   instanceId: z.string(),
   clueA: z.string(),
   clueB: z.string(),
-  relation: z.enum(['acusa', 'explica', 'localiza', 'contradice'])
+  relation: z.enum(['acusa', 'explica', 'localiza', 'contradice']),
+  commandId: z.string().optional(),
+  expectedRevision: z.number().int().optional()
 });
 
 const SubmitHypothesisSchema = z.object({
   instanceId: z.string(),
-  hypothesisId: z.string()
+  hypothesisId: z.string(),
+  commandId: z.string().optional(),
+  expectedRevision: z.number().int().optional()
 });
 
 const PathwayDivinationSchema = z.object({
   instanceId: z.string(),
   mode: z.enum(['PENDULUM', 'DREAM']),
-  targetClueId: z.string().optional()
+  targetClueId: z.string().optional(),
+  commandId: z.string().optional(),
+  expectedRevision: z.number().int().optional()
 });
 
 const PathwayEmotionReadingSchema = z.object({
   instanceId: z.string(),
-  npcId: z.string()
+  npcId: z.string(),
+  commandId: z.string().optional(),
+  expectedRevision: z.number().int().optional()
 });
 
 const ResolveCaseSchema = z.object({
   instanceId: z.string(),
-  resolutionId: z.enum(['RESOLUTION_A_JUSTICE', 'RESOLUTION_B_TRUTH', 'RESOLUTION_C_STABILITY', 'RESOLUTION_D_HEIR'])
+  resolutionId: z.enum(['RESOLUTION_A_JUSTICE', 'RESOLUTION_B_TRUTH', 'RESOLUTION_C_STABILITY', 'RESOLUTION_D_HEIR']),
+  commandId: z.string().optional(),
+  expectedRevision: z.number().int().optional()
 });
 
 const AdvanceTimeSchema = z.object({
@@ -137,18 +155,40 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
       return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
     }
 
-    try {
-      const result = InvestigationEngine.visitClueSource(db, parseRes.data.instanceId, {
-        clueId: parseRes.data.clueId,
-        sourceIndex: parseRes.data.sourceIndex,
-        timeOfDay: parseRes.data.timeOfDay,
-        hour: parseRes.data.hour
-      });
-
-      return reply.send(result);
-    } catch (err: any) {
-      return reply.status(400).send({ error: err.message });
+    const { instanceId, clueId, sourceIndex, timeOfDay, hour, commandId, expectedRevision } = parseRes.data;
+    const caseRow = db.getCaseInstance(instanceId);
+    if (!caseRow) {
+      throw new EntityNotFoundError(`Instancia de caso '${instanceId}' no encontrada.`);
     }
+
+    const processed = CommandProcessor.execute(
+      db,
+      {
+        commandId,
+        characterId: caseRow.character_id,
+        commandType: 'INVESTIGATION_VISIT_CLUE',
+        payload: { instanceId, clueId, sourceIndex, timeOfDay, hour },
+        expectedRevision
+      },
+      () => {
+        try {
+          return InvestigationEngine.visitClueSource(db, instanceId, {
+            clueId,
+            sourceIndex,
+            timeOfDay,
+            hour
+          });
+        } catch (err: any) {
+          throw new DomainRuleViolationError(err.message || 'Error al visitar fuente de pista');
+        }
+      }
+    );
+
+    return reply.send({
+      ...processed.response,
+      fromReceipt: processed.fromReceipt,
+      revision: processed.revision
+    });
   });
 
   // POST /api/investigation/clues/connect (Brief-04)
@@ -158,19 +198,35 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
       return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
     }
 
-    try {
-      const result = InvestigationEngine.connectClues(
-        db,
-        parseRes.data.instanceId,
-        parseRes.data.clueA,
-        parseRes.data.clueB,
-        parseRes.data.relation
-      );
-
-      return reply.send(result);
-    } catch (err: any) {
-      return reply.status(400).send({ error: err.message });
+    const { instanceId, clueA, clueB, relation, commandId, expectedRevision } = parseRes.data;
+    const caseRow = db.getCaseInstance(instanceId);
+    if (!caseRow) {
+      throw new EntityNotFoundError(`Instancia de caso '${instanceId}' no encontrada.`);
     }
+
+    const processed = CommandProcessor.execute(
+      db,
+      {
+        commandId,
+        characterId: caseRow.character_id,
+        commandType: 'INVESTIGATION_CONNECT_CLUES',
+        payload: { instanceId, clueA, clueB, relation },
+        expectedRevision
+      },
+      () => {
+        try {
+          return InvestigationEngine.connectClues(db, instanceId, clueA, clueB, relation);
+        } catch (err: any) {
+          throw new DomainRuleViolationError(err.message || 'Error al conectar pistas');
+        }
+      }
+    );
+
+    return reply.send({
+      ...processed.response,
+      fromReceipt: processed.fromReceipt,
+      revision: processed.revision
+    });
   });
 
   // POST /api/investigation/hypothesis/submit (Brief-04)
@@ -180,17 +236,35 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
       return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
     }
 
-    try {
-      const result = InvestigationEngine.submitHypothesis(
-        db,
-        parseRes.data.instanceId,
-        parseRes.data.hypothesisId
-      );
-
-      return reply.send(result);
-    } catch (err: any) {
-      return reply.status(400).send({ error: err.message });
+    const { instanceId, hypothesisId, commandId, expectedRevision } = parseRes.data;
+    const caseRow = db.getCaseInstance(instanceId);
+    if (!caseRow) {
+      throw new EntityNotFoundError(`Instancia de caso '${instanceId}' no encontrada.`);
     }
+
+    const processed = CommandProcessor.execute(
+      db,
+      {
+        commandId,
+        characterId: caseRow.character_id,
+        commandType: 'INVESTIGATION_SUBMIT_HYPOTHESIS',
+        payload: { instanceId, hypothesisId },
+        expectedRevision
+      },
+      () => {
+        try {
+          return InvestigationEngine.submitHypothesis(db, instanceId, hypothesisId);
+        } catch (err: any) {
+          throw new DomainRuleViolationError(err.message || 'Error al someter hipótesis');
+        }
+      }
+    );
+
+    return reply.send({
+      ...processed.response,
+      fromReceipt: processed.fromReceipt,
+      revision: processed.revision
+    });
   });
 
   // POST /api/investigation/pathway/divination (Brief-04: FOOL)
@@ -243,16 +317,35 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
       return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
     }
 
-    try {
-      const result = InvestigationEngine.resolveCase(
-        db,
-        parseRes.data.instanceId,
-        parseRes.data.resolutionId
-      );
-      return reply.send(result);
-    } catch (err: any) {
-      return reply.status(400).send({ error: err.message });
+    const { instanceId, resolutionId, commandId, expectedRevision } = parseRes.data;
+    const caseRow = db.getCaseInstance(instanceId);
+    if (!caseRow) {
+      throw new EntityNotFoundError(`Instancia de caso '${instanceId}' no encontrada.`);
     }
+
+    const processed = CommandProcessor.execute(
+      db,
+      {
+        commandId,
+        characterId: caseRow.character_id,
+        commandType: 'INVESTIGATION_RESOLVE_CASE',
+        payload: { instanceId, resolutionId },
+        expectedRevision
+      },
+      () => {
+        try {
+          return InvestigationEngine.resolveCase(db, instanceId, resolutionId);
+        } catch (err: any) {
+          throw new DomainRuleViolationError(err.message || 'Error al resolver el caso');
+        }
+      }
+    );
+
+    return reply.send({
+      ...processed.response,
+      fromReceipt: processed.fromReceipt,
+      revision: processed.revision
+    });
   });
 
   // POST /api/investigation/case/advance-day (Brief-04: Expiry)

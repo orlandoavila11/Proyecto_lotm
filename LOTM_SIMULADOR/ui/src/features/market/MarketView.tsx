@@ -77,10 +77,33 @@ export const MarketView: React.FC<MarketViewProps> = ({ onBackToDesk, characterI
   const [isBuying, setIsBuying] = useState<boolean>(false);
   const [livePence, setLivePence] = useState<number | null>(null);
 
+  const activeCharId = characterId || localStorage.getItem('lotm_active_character_id');
+
+  if (!activeCharId) {
+    return (
+      <div 
+        className="market-screen p-8 flex flex-col justify-center items-center select-none relative overflow-hidden text-center"
+        style={{ width: '1920px', height: '1080px', backgroundColor: '#0e0d0b' }}
+      >
+        <h2 className="text-xl font-bold tracking-widest text-[#d4af37] font-serif mb-4" style={{ fontFamily: 'Cinzel' }}>
+          SIN SESIÓN ACTIVA
+        </h2>
+        <p className="text-sm text-[#a89885] max-w-md font-serif mb-6 leading-relaxed">
+          No hay una identidad civil activa con la cual comerciar en los bazares clandestinos de Backlund.
+        </p>
+        <button
+          onClick={onBackToDesk}
+          className="px-6 py-2.5 bg-[#171410] border border-[#8c733e] hover:border-[#d4af37] text-[#d4af37] rounded font-serif text-sm transition-all shadow-lg"
+        >
+          Volver al Refugio
+        </button>
+      </div>
+    );
+  }
+
   const handleBuy = async (product: MarketProductItem) => {
     setIsBuying(true);
     try {
-      const activeCharId = characterId || localStorage.getItem('lotm_active_character_id') || 'char_1790267861425';
       const res = await apiClient.buyMarketItem({
         characterId: activeCharId,
         districtId: product.districtId,

@@ -98,3 +98,18 @@ LOTM_SIMULADOR/
 - **R3 (Semillas Cósmicas):** Nada de *Circle of Inevitability* (CoI) ha ocurrido: su contenido existe únicamente como semillas cósmicas latentes (precursores), no como facciones activas ni poderes jugables.
 - **R4 (El Loco):** Su existencia es un misterio reciente; sus creyentes son pocos; la Iglesia del Loco es embrionaria y LORE-ONLY (rumor distante en el Continente Norte, jamás organización funcional ni NPC operativo); Klein está durmiendo. `ENTITY_LORD_OF_MYSTERIES` existe como historia oculta reciente en mythic/lore, jamás como presencia activa directa.
 
+---
+
+## 6. MANDATO DE ELEVACIÓN PHASER (v4.1 · P00-P15)
+
+1. **Mandato Principal:** Finalizar y elevar el juego existente `LOTM_SIMULADOR` mediante la integración de **Phaser 4.2.1** para escenas, objetos, cámara, animación y efectos tácticos, conservando el frontend **React** para lecturas accesibles, tipografía editorial, formularios y menús HUD. La propuesta de migración externa a Godot queda formalmente descartada.
+2. **Actualización de Reglas de Presentación (§I.11 / §I.14):**
+   - La prohibición histórica absoluta de información mecánica en pantalla queda actualizada: se autoriza la visualización clara de información mecánica conocida por el personaje (puntos de acción, balance de cartera, costes de viaje, turnos, munición y estados tácticos) para garantizar una jugabilidad comprensible y accesible.
+   - Las salvaguardas de secretos narrativos permanecen inviolables: la verdad oculta de casos, atributos reservados de enemigos, y tiradas internas del backend jamás viajan ni se exponen al cliente.
+   - La restricción de 7 palabras por etiqueta se flexibiliza para permitir descripciones claras y accesibles en paneles de inspección y controles interactivos.
+3. **Doctrina de Integración y Transaccionalidad:**
+   - **Renderizado Dual Reversible:** Soporte del parámetro `?renderer=phaser` en `App.tsx` para pruebas y validación comparativa sin romper el renderer actual.
+   - **Autoridad Estricta del Backend:** El cliente es un intérprete de proyecciones públicas; queda estrictamente prohibida la simulación de victorias, huidas, o estados de preparación en bloques `catch` o montajes de vista.
+   - **Idempotencia Transaccional:** Todas las mutaciones de juego (compras, viajes, combate, pistas, ascensión) adoptan el patrón de sobres con `commandId` y `command_receipts` en SQLite.
+
+

@@ -3,6 +3,8 @@ import { z } from 'zod';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { AscensionEngine, PreparationChecklist } from '../../core/ascension/AscensionEngine.js';
 import { SeededRNG } from '../../core/rng/SeededRNG.js';
+import { CommandProcessor } from '../../infra/database/CommandProcessor.js';
+import { EntityNotFoundError, DomainRuleViolationError } from '../../core/errors/DomainError.js';
 
 export const ascensionRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (app: FastifyInstance, opts) => {
   const { db } = opts;
@@ -58,7 +60,9 @@ export const ascensionRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async
   const DrinkSchema = z.object({
     characterId: z.string().min(1),
     confirmedAt: z.number().int().optional(),
-    seed: z.number().int().optional()
+    seed: z.number().int().optional(),
+    commandId: z.string().optional(),
+    expectedRevision: z.number().int().optional()
   });
 
   app.post('/api/ascension/drink', async (req, reply) => {
@@ -67,21 +71,39 @@ export const ascensionRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async
       return reply.status(400).send({ error: 'Payload inválido', details: parsed.error.issues });
     }
 
-    const { characterId, confirmedAt, seed } = parsed.data;
-    const char = db.getCharacter(characterId);
-    if (!char) {
-      return reply.status(404).send({ error: 'Character no encontrado' });
-    }
+    const { characterId, confirmedAt, seed, commandId, expectedRevision } = parsed.data;
 
-    const deterministicSeed = seed ?? (Date.now() + 1353);
-    const rng = new SeededRNG(deterministicSeed);
+    const processed = CommandProcessor.execute(
+      db,
+      {
+        commandId,
+        characterId,
+        commandType: 'ASCENSION_DRINK',
+        payload: { confirmedAt: confirmedAt ?? null, seed: seed ?? null },
+        expectedRevision
+      },
+      () => {
+        const char = db.getCharacter(characterId);
+        if (!char) {
+          throw new EntityNotFoundError('Character no encontrado');
+        }
 
-    try {
-      const result = AscensionEngine.drinkPotion(db, characterId, rng, confirmedAt);
-      return reply.send(result);
-    } catch (e: any) {
-      return reply.status(400).send({ error: e.message });
-    }
+        const deterministicSeed = seed ?? ((char.revision ?? 1) * 7919 + 1353);
+        const rng = new SeededRNG(deterministicSeed);
+
+        try {
+          return AscensionEngine.drinkPotion(db, characterId, rng, confirmedAt);
+        } catch (e: any) {
+          throw new DomainRuleViolationError(e.message || 'Error en la ceremonia de ingestión de poción.');
+        }
+      }
+    );
+
+    return reply.send({
+      ...processed.response,
+      fromReceipt: processed.fromReceipt,
+      revision: processed.revision
+    });
   });
 
   // GET /api/ascension/telemetry/:characterId

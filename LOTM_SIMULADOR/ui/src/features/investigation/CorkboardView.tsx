@@ -35,101 +35,57 @@ interface CorkboardViewProps {
 }
 
 export const CorkboardView: React.FC<CorkboardViewProps> = ({ onBackToDesk, characterId }) => {
-  const activeCharId = characterId || localStorage.getItem('lotm_active_character_id') || 'char_1790267861425';
+  const activeCharId = characterId || localStorage.getItem('lotm_active_character_id');
   const [caseInstanceId, setCaseInstanceId] = useState<string | null>(null);
+  const [clues, setClues] = useState<PositionedClue[]>([]);
 
   useEffect(() => {
+    if (!activeCharId) return;
     apiClient.activateInvestigationCase(activeCharId, 'CASE_CHERWOOD_HEIRLOOM')
       .then(res => {
         if (res?.caseState) {
           setCaseInstanceId(res.caseState.id);
+          const discovered = res.caseState.discoveredClues || [];
+          if (discovered.length > 0) {
+            setClues(discovered.map((c: any, index: number) => ({
+              id: c.id,
+              code: c.id,
+              title: c.nombre || c.title || 'Indicio',
+              description: c.descripcion || c.description || '',
+              source: c.sourceVisited || 'Inspección de Cherwood',
+              x: 100 + (index % 3) * 440,
+              y: 80 + Math.floor(index / 3) * 200,
+              imageUrl: c.imageUrl
+            })));
+          }
         }
       })
-      .catch(() => {});
+      .catch((err) => {
+        console.warn('Error al activar caso:', err);
+      });
   }, [activeCharId]);
-  // Pistas posicionadas en el espacio del tablero (8 Pistas Canónicas GFX35A-H)
-  const [clues, setClues] = useState<PositionedClue[]>([
-    {
-      id: 'clue_toys',
-      code: 'CLUE_BURNED_TOYS',
-      title: 'Juguetes de Pino Quemados',
-      description: 'Figuras de madera rescatadas de la chimenea de la mansión Sterling. Nombres de huérfanos tallados.',
-      source: 'Chimenea Exterior Mansión',
-      x: 100,
-      y: 80,
-      imageUrl: '/art/GFX35A_clue_burned_toys.jpg'
-    },
-    {
-      id: 'clue_will',
-      code: 'CLUE_WILL_DRAFT',
-      title: 'Directivas Notariales de Sterling',
-      description: 'Borrador de hace 14 años donde el Dr. Sterling formaliza la amortiguación del dolor infantil.',
-      source: 'Despacho Privado de Cherwood',
-      x: 540,
-      y: 60,
-      imageUrl: '/art/GFX35B_clue_will_draft.jpg'
-    },
-    {
-      id: 'clue_mind',
-      code: 'CLUE_MIND_TRACES',
-      title: 'Rastros de Memoria Fracturada',
-      description: 'Estudio de tensión psicológica y microexpresiones desveladas en el orfanato.',
-      source: 'Interrogatorio San Dionisio',
-      x: 980,
-      y: 70,
-      imageUrl: '/art/GFX35C_clue_mind_traces.jpg'
-    },
-    {
-      id: 'clue_astro',
-      code: 'CLUE_ASTROLOGY_RECORD',
-      title: 'Registro de Astrología Oculta',
-      description: 'Diagramas de constelaciones y filamentos etéreos que enlazan las sienes de los huérfanos.',
-      source: 'Desván Orfanato San Dionisio',
-      x: 1420,
-      y: 80,
-      imageUrl: '/art/GFX35D_clue_astrology_record.jpg'
-    },
-    {
-      id: 'clue_safe',
-      code: 'CLUE_CONCEALED_SAFE',
-      title: 'Libro Clínico Oculto',
-      description: 'Registro clínico secreto con detalle milimétrico de memorias felices extraídas y dolor absorbido.',
-      source: 'Caja Fuerte tras Retrato',
-      x: 140,
-      y: 470,
-      imageUrl: '/art/GFX35E_clue_concealed_safe.jpg'
-    },
-    {
-      id: 'clue_forged',
-      code: 'CLUE_FORGED_LETTERS',
-      title: 'Cartas de Adopción Falsificadas',
-      description: 'Fajo de correspondencia oficial alterada con sellos y rúbricas encubiertas.',
-      source: 'Archivo Parroquial Cherwood',
-      x: 580,
-      y: 490,
-      imageUrl: '/art/GFX35F_clue_forged_letters.jpg'
-    },
-    {
-      id: 'clue_finance',
-      code: 'CLUE_FINANCIAL_BLACKMAIL',
-      title: 'Registro de Pagos y Chantaje',
-      description: 'Libro mayor con balances de transferencias bancarias clandestinas a intermediarios de Backlund.',
-      source: 'Caja de Caoba del Banco',
-      x: 1020,
-      y: 470,
-      imageUrl: '/art/GFX35G_clue_financial_blackmail.jpg'
-    },
-    {
-      id: 'clue_alchemy',
-      code: 'CLUE_ALCHEMICAL_RESIDUES',
-      title: 'Residuos de Esencia Plateada',
-      description: 'Restos de manzanilla silvestre y polvo de esencia de azogue en el mortero del sótano.',
-      source: 'Laboratorio de la Mansión',
-      x: 1460,
-      y: 480,
-      imageUrl: '/art/GFX35H_clue_alchemical_residues.jpg'
-    }
-  ]);
+
+  if (!activeCharId) {
+    return (
+      <div 
+        className="p-8 flex flex-col justify-center items-center select-none relative overflow-hidden text-center"
+        style={{ width: '1920px', height: '1080px', backgroundColor: '#1b140e' }}
+      >
+        <h2 className="text-xl font-bold tracking-widest text-[#d4af37] font-serif mb-4" style={{ fontFamily: 'Cinzel' }}>
+          SIN SESIÓN ACTIVA
+        </h2>
+        <p className="text-sm text-[#a89885] max-w-md font-serif mb-6 leading-relaxed">
+          No hay una identidad civil confirmada para examinar el expediente de investigación.
+        </p>
+        <button
+          onClick={onBackToDesk}
+          className="px-6 py-2.5 bg-[#140e0a] border border-[#8c733e] hover:border-[#d4af37] text-[#d4af37] rounded font-serif text-sm transition-all shadow-lg"
+        >
+          Volver al Refugio
+        </button>
+      </div>
+    );
+  }
 
   // Conexiones de cordel entre pistas (8 Pistas Canónicas GFX35A-H)
   const [connections] = useState<ClueConnection[]>([
@@ -219,28 +175,17 @@ export const CorkboardView: React.FC<CorkboardViewProps> = ({ onBackToDesk, char
     setDraggingId(null);
   };
 
-  const addHypothesis = async () => {
+  const addHypothesis = () => {
     if (!newHypoText.trim()) return;
     const submittedText = newHypoText.trim();
     const newH: PositionedHypothesis = {
-      id: `hypo_${Date.now()}`,
+      id: `note_${Date.now()}`,
       text: submittedText,
       x: 100 + (hypotheses.length * 40) % 400,
       y: 480 + (hypotheses.length * 30) % 150
     };
     setHypotheses(prev => [...prev, newH]);
     setNewHypoText('');
-
-    if (caseInstanceId) {
-      try {
-        await apiClient.submitInvestigationHypothesis({
-          instanceId: caseInstanceId,
-          hypothesisId: 'HYPOTHESIS_JULIAN'
-        });
-      } catch (err) {
-        console.warn('Hypothesis submitted locally:', err);
-      }
-    }
   };
 
   return (
@@ -274,7 +219,7 @@ export const CorkboardView: React.FC<CorkboardViewProps> = ({ onBackToDesk, char
               EL ECO EN EL NIDO VACÍO · EXPEDIENTE CHERWOOD #1
             </h1>
             <span className="text-[10px] text-[#a89885] italic font-serif">
-              Agrupar es pensar · Hilos tensados entre indicios
+              Agrupar es pensar · Hilos tensados entre indicios{caseInstanceId ? ` · Caso #${caseInstanceId.slice(0, 8)}` : ''}
             </span>
           </div>
         </div>
