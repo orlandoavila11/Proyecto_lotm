@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import type { CharacterDiegetic } from '../types';
 import { LetterUnfoldModal } from '../../components/common/LetterUnfoldModal';
+import { apiClient } from '../../services/apiClient';
+import { mapSanityToVisual, mapCorruptionToVisual, mapRuinaToVisual } from '../../services/somaticsMapper';
+import { resolveSequenceTitle, resolvePathwayDisplayName } from '../../session/sequenceRegistry';
 
 interface OriginTemplate {
   id: string;
@@ -85,12 +88,20 @@ const CANONICAL_ORIGINS: OriginTemplate[] = [
 
 interface PrologueViewProps {
   onCompletePrologue: (character: CharacterDiegetic) => void;
+  initialCharacterId?: string;
+  initialStep?: string;
 }
 
-export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }) => {
+export const PrologueView: React.FC<PrologueViewProps> = ({ 
+  onCompletePrologue, 
+  initialCharacterId, 
+  initialStep 
+}) => {
   const [step, setStep] = useState<'ORIGIN_SELECT' | 'LETTER' | 'DILEMMA' | 'POTION_CHOICE' | 'RITUAL_DARKEN' | 'HOLD_TO_DRINK' | 'DRINKING' | 'AWAKENING'>('ORIGIN_SELECT');
   const [selectedOrigin, setSelectedOrigin] = useState<OriginTemplate>(CANONICAL_ORIGINS[0]);
   const [characterName, setCharacterName] = useState<string>('Arthur Pendelton');
+  const [currentCharacterId, setCurrentCharacterId] = useState<string | null>(initialCharacterId || localStorage.getItem('lotm_active_character_id'));
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   
   // Decisión del dilema tutorial
   const [dilemmaChoice, setDilemmaChoice] = useState<'PRUDENCIA' | 'CURIOSIDAD' | null>(null);
@@ -115,6 +126,38 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
   // Telemetría de vacilación
   const drinkPromptTime = useRef<number>(0);
 
+  // Carga de orígenes y recuperación autoritativa de paso mid-prologue
+  useEffect(() => {
+    // Si ya existe paso inicial provisto por props
+    if (initialStep === 'BENEFACTOR_LETTER') setStep('LETTER');
+    if (initialStep === 'TUTORIAL_DILEMMA') setStep('DILEMMA');
+    if (initialStep === 'POTION_CHOICE') setStep('POTION_CHOICE');
+
+    const charIdToProbe = initialCharacterId || localStorage.getItem('lotm_active_character_id');
+    if (charIdToProbe) {
+      apiClient.getPrologueStatus(charIdToProbe).then(res => {
+        if (res?.character) {
+          setCurrentCharacterId(charIdToProbe);
+          if (res.character.name) setCharacterName(res.character.name);
+          if (res.originId) {
+            const match = CANONICAL_ORIGINS.find(o => o.id === res.originId);
+            if (match) setSelectedOrigin(match);
+          }
+          if (res.prologueStep === 'BENEFACTOR_LETTER') {
+            setStep('LETTER');
+          } else if (res.prologueStep === 'POTION_CHOICE') {
+            setStep('POTION_CHOICE');
+          } else if (res.prologueStep === 'COMPLETED') {
+            // Ya completado en servidor: finalizar
+            handleFinishPrologue();
+          }
+        }
+      }).catch(() => {
+        // En caso de sesión limpia no encontrada
+      });
+    }
+  }, [initialCharacterId, initialStep]);
+
   useEffect(() => {
     if (step === 'POTION_CHOICE' || step === 'HOLD_TO_DRINK') {
       drinkPromptTime.current = Date.now();
@@ -133,7 +176,7 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
         if (next >= 3000) {
           clearInterval(holdIntervalRef.current);
           setIsHolding(false);
-          setStep('DRINKING');
+          handleExecuteDrink(potionChoice || 'COBALTO');
           return 3000;
         }
         return next;
@@ -148,6 +191,12 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
       setHoldInterruptedText('Retiras la mano con el pulso desbocado... Tu respiración resuena en la oscuridad. La esencia aún aguarda.');
       setHoldProgressMs(0);
     }
+  };
+
+  // Alternativa accesible sin hold
+  const handleImmediateDrink = () => {
+    cancelHold();
+    handleExecuteDrink(potionChoice || 'COBALTO');
   };
 
   const handleToggleLamp = (lampKey: string) => {
@@ -165,36 +214,158 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
     setStep('RITUAL_DARKEN');
   };
 
-  const handleFinishPrologue = async () => {
-    const isFool = potionChoice === 'COBALTO';
-    let charId = `char_${Date.now()}`;
+  // Iniciar Prólogo transaccional con el servidor
+  const handleStartVigilia = async () => {
+    if (isSubmitting) return;
+    setIsSubmitting(true);
 
     try {
-      const res = await fetch('/api/character/new', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: characterName,
-          pathway: isFool ? 'FOOL' : 'SPECTATOR',
-          startingCity: selectedOrigin.district || 'Backlund - Distrito de Cherwood',
-          background: selectedOrigin.profession || 'Detective Privado',
-          socialClass: 'MIDDLE_CLASS'
-        })
+      const data = await apiClient.startPrologue({
+        characterId: currentCharacterId || undefined,
+        name: characterName,
+        originId: selectedOrigin.id
       });
-      if (res.ok) {
-        const data = await res.json();
-        if (data?.character?.id) {
-          charId = data.character.id;
-          localStorage.setItem('lotm_active_character_id', charId);
-        }
+      if (data?.characterId) {
+        setCurrentCharacterId(data.characterId);
+        localStorage.setItem('lotm_active_character_id', data.characterId);
       }
-    } catch {
-      // Fallback local en caso de desconexión
+      setStep('LETTER');
+    } catch (err) {
+      console.warn('Fallo al sincronizar prólogo con servidor, procediendo con sesión local:', err);
+      setStep('LETTER');
+    } finally {
+      setIsSubmitting(false);
     }
-    
-    // Crear el personaje diegético completo con Ruina 5 (Marcado) y Corrupción limpia
-    const newChar: CharacterDiegetic = {
-      id: charId,
+  };
+
+  // Resolver dilema tutorial con el backend
+  const handleConfirmDilemma = async () => {
+    if (!dilemmaChoice || isSubmitting) return;
+    setIsSubmitting(true);
+
+    try {
+      if (currentCharacterId) {
+        await apiClient.resolvePrologueDilemma({
+          characterId: currentCharacterId,
+          choice: dilemmaChoice === 'PRUDENCIA' ? 'PRUDENCE' : 'CURIOSITY'
+        });
+      }
+      setStep('POTION_CHOICE');
+    } catch (err) {
+      console.warn('Fallo al resolver dilema en servidor:', err);
+      setStep('POTION_CHOICE');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Ingesta de la poción autoritativa
+  const handleExecuteDrink = async (choice: 'COBALTO' | 'AMBAR') => {
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
+    try {
+      if (currentCharacterId) {
+        await apiClient.drinkProloguePotion({
+          characterId: currentCharacterId,
+          potionChoice: choice === 'COBALTO' ? 'COBALT_EYES' : 'AMBER_MIRROR'
+        });
+      }
+      setStep('DRINKING');
+    } catch (err) {
+      console.warn('Fallo en ingesta de poción en servidor:', err);
+      setStep('DRINKING');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleFinishPrologue = async () => {
+    const isFool = potionChoice === 'COBALTO';
+    const activeId = currentCharacterId || localStorage.getItem('lotm_active_character_id');
+
+    if (activeId) {
+      try {
+        const data = await apiClient.getCharacter(activeId);
+        if (data?.character) {
+          const charFool = data.character.pathway === 'FOOL';
+          const mappedSanity = mapSanityToVisual(data.somatics?.sanityTier || 'LUCID');
+          const mappedCorruption = mapCorruptionToVisual(data.somatics?.corruptionTier || 'PRISTINE');
+          const mappedRuina = mapRuinaToVisual(data.somatics?.ruinaTier || 5);
+
+          const newChar: CharacterDiegetic = {
+            id: data.character.id,
+            name: data.character.name,
+            profession: data.activePersona?.profession || selectedOrigin.profession,
+            originTitle: selectedOrigin.name,
+            district: selectedOrigin.district,
+            pathwayName: resolvePathwayDisplayName(data.character.pathway),
+            sequenceTitle: resolveSequenceTitle(data.character.pathway, data.character.sequence),
+            initialBurden: {
+              type: selectedOrigin.burden.type,
+              description: selectedOrigin.burden.description,
+              details: 'Compromiso formal que pesa sobre tu rutina civil.'
+            },
+            somatics: {
+              sanityTier: mappedSanity.tier,
+              candleDescription: mappedSanity.description,
+              corruptionTier: mappedCorruption.tier,
+              mirrorDescription: mappedCorruption.description,
+              ruinaTier: mappedRuina.tier,
+              woodDescription: mappedRuina.description
+            },
+            walletText: data.wallet 
+              ? `${data.wallet.pounds} £, ${data.wallet.soli} s y ${data.wallet.pence} d`
+              : '2 soberanos de oro, 8 chelines de plata y 4 peniques de cobre',
+            actingCoherence: 'COHERENTE',
+            actingFeedback: charFool 
+              ? 'Interpretar el papel de adivino requiere contemplar el destino sin dejarse cegar por él.'
+              : 'Observar a la multitud desde el silencio revela los engranajes secretos de la psique.',
+            actingDiary: [
+              {
+                id: 'acting_tutorial_1',
+                day: 1,
+                principle: charFool ? 'El Vidente descifra los hilos del destino' : 'El Espectador atestigua sin intervenir',
+                choiceTaken: dilemmaChoice === 'PRUDENCIA' ? 'Prudencia Civil' : 'Curiosidad del Sabueso',
+                narrativeOutcome: dilemmaChoice === 'PRUDENCIA'
+                  ? 'Apartaste la mirada a tiempo, preservando tu tapadera civil y asegurando tu coartada.'
+                  : 'Rompiste el lacre examinando la cera, descubriendo el símbolo velado del Benefactor.'
+              }
+            ],
+            anchors: (data.anchors && data.anchors.length > 0)
+              ? data.anchors.map((a: any) => ({
+                  id: a.id,
+                  tipo: a.type || 'persona',
+                  nombre: a.name || a.title || 'Ancla',
+                  descripcion: a.description || 'Vínculo humano',
+                  fuerza: a.strength > 25 ? 'FIRME' : a.strength > 10 ? 'TENUE' : 'QUEBRADIZA'
+                }))
+              : selectedOrigin.anchors.map((anchorName, idx) => ({
+                  id: `anchor_origin_${idx}`,
+                  tipo: idx === 0 ? 'rol' : idx === 1 ? 'persona' : 'lugar',
+                  nombre: anchorName,
+                  descripcion: 'Un lazo que te recuerda quién eras antes de tocar lo oculto.',
+                  fuerza: 'FIRME'
+                })),
+            policeSuspicionText: (data.activePersona?.police_suspicion ?? 5) > 20 
+              ? 'Vigilancia en las esquinas de tu calle.' 
+              : 'Sin sospechas policiales aparentes.',
+            churchSuspicionText: (data.activePersona?.church_suspicion ?? 5) > 20
+              ? 'Sombras inquisitorias rondan tu vecindario.'
+              : 'Los clérigos no han registrado tu nombre.'
+          };
+
+          onCompletePrologue(newChar);
+          return;
+        }
+      } catch (err) {
+        console.warn('Error cargando personaje autoritativo tras prólogo:', err);
+      }
+    }
+
+    // Fallback diegético consistente si el backend no respondió
+    const fallbackChar: CharacterDiegetic = {
+      id: activeId || `char_${Date.now()}`,
       name: characterName,
       profession: selectedOrigin.profession,
       originTitle: selectedOrigin.name,
@@ -241,7 +412,7 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
       churchSuspicionText: 'Las campanas de la parroquia doblan con normalidad; el clero ignora tu existencia.'
     };
 
-    onCompletePrologue(newChar);
+    onCompletePrologue(fallbackChar);
   };
 
   return (
@@ -331,10 +502,11 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
 
           <div className="flex justify-end">
             <button
-              onClick={() => setStep('LETTER')}
-              className="crimson-btn px-6 py-2 text-sm uppercase tracking-wider"
+              disabled={isSubmitting}
+              onClick={handleStartVigilia}
+              className="crimson-btn px-6 py-2 text-sm uppercase tracking-wider disabled:opacity-50 cursor-pointer"
             >
-              Comenzar la Vigilia
+              {isSubmitting ? 'Iniciando...' : 'Comenzar la Vigilia'}
             </button>
           </div>
         </div>
@@ -407,11 +579,11 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
 
           <div className="flex justify-end">
             <button
-              disabled={!dilemmaChoice}
-              onClick={() => setStep('POTION_CHOICE')}
-              className="crimson-btn px-6 py-2 text-sm disabled:opacity-50"
+              disabled={!dilemmaChoice || isSubmitting}
+              onClick={handleConfirmDilemma}
+              className="crimson-btn px-6 py-2 text-sm disabled:opacity-50 cursor-pointer"
             >
-              Abrir el Cofre de los Frascos
+              {isSubmitting ? 'Abriendo el Cofre...' : 'Abrir el Cofre de los Frascos'}
             </button>
           </div>
         </div>
@@ -456,9 +628,9 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
 
               <button
                 onClick={() => handleStartRitual('COBALTO')}
-                className="mt-6 w-full py-2.5 bg-[#1e293b] text-[#e2e8f0] font-serif font-bold text-xs uppercase tracking-wider rounded hover:bg-[#0f172a] transition-all shadow-md"
+                className="mt-6 w-full py-2.5 bg-[#1e293b] text-[#e2e8f0] font-serif font-bold text-xs uppercase tracking-wider rounded hover:bg-[#0f172a] transition-all shadow-md cursor-pointer"
               >
-                Elegir el Frasco Cobalto (Fool)
+                Elegir el Frasco de Vidrio Cobalto (Vidente)
               </button>
             </div>
 
@@ -487,9 +659,9 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
 
               <button
                 onClick={() => handleStartRitual('AMBAR')}
-                className="mt-6 w-full py-2.5 bg-[#78350f] text-[#fef3c7] font-serif font-bold text-xs uppercase tracking-wider rounded hover:bg-[#451a03] transition-all shadow-md"
+                className="mt-6 w-full py-2.5 bg-[#78350f] text-[#fef3c7] font-serif font-bold text-xs uppercase tracking-wider rounded hover:bg-[#451a03] transition-all shadow-md cursor-pointer"
               >
-                Elegir el Frasco Ámbar (Visionary)
+                Elegir el Frasco de Vidrio Ámbar (Espectador)
               </button>
             </div>
 
@@ -617,7 +789,7 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
           </div>
 
           {/* Botón Físico de Hold */}
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center gap-3 justify-center">
             <button
               onMouseDown={startHold}
               onMouseUp={cancelHold}
@@ -630,6 +802,13 @@ export const PrologueView: React.FC<PrologueViewProps> = ({ onCompletePrologue }
               }`}
             >
               {isHolding ? 'Bebiendo la Esencia...' : 'Mantener Pulsado para Beber'}
+            </button>
+            <button
+              type="button"
+              onClick={handleImmediateDrink}
+              className="text-[11px] text-[#968c7e] hover:text-[#d4af37] underline tracking-wider font-serif cursor-pointer"
+            >
+              Beber de Inmediato (Alternativa Accesible)
             </button>
           </div>
 

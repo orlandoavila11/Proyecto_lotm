@@ -30,19 +30,31 @@ const WEEK_DAYS: DayOfWeek[] = ['LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIER
 export const CalendarView: React.FC<CalendarViewProps> = ({ 
   onBackToDesk, 
   characterId = 'char_player',
-  initialDay = 4,
-  initialSlot = 'TARDE',
+  initialDay = 1,
+  initialSlot = 'MAÑANA',
   onActionCompleted
 }) => {
   const [currentDay, setCurrentDay] = useState<number>(initialDay);
   const [currentSlot, setCurrentSlot] = useState<TimeSlot>(initialSlot);
-  const [currentDayName, setCurrentDayName] = useState<DayOfWeek>('JUEVES');
+  const [currentDayName, setCurrentDayName] = useState<DayOfWeek>('LUNES');
+  const [selectedAction, setSelectedAction] = useState<'WORK' | 'INVESTIGATE' | 'SOCIALIZE' | 'OPERATE' | null>(null);
   const [lastActionOutcome, setLastActionOutcome] = useState<string>(
-    'Cumpliste con tu jornada laboral en el archivo notarial. Tus superiores no tienen motivos de queja.'
+    'Cumpliste con tu jornada laboral. Tus superiores civiles no tienen motivos de queja.'
   );
   const [datedEvent, setDatedEvent] = useState<{ title: string; description: string } | null>(null);
   const [weeklyTickSummary, setWeeklyTickSummary] = useState<string | null>(null);
   const [isPending, setIsPending] = useState<boolean>(false);
+
+  // Sincronizar día y franja iniciales recibidos de App
+  useEffect(() => {
+    setCurrentDay(initialDay);
+    const dayIdx = Math.max(0, (initialDay - 1) % 7);
+    setCurrentDayName(WEEK_DAYS[dayIdx]);
+  }, [initialDay]);
+
+  useEffect(() => {
+    setCurrentSlot(initialSlot);
+  }, [initialSlot]);
 
   // Escuchar Escape para volver al desván
   useEffect(() => {
@@ -68,6 +80,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
     setIsPending(true);
     setDatedEvent(null);
     setWeeklyTickSummary(null);
+    setSelectedAction(null);
 
     try {
       // Llamar al endpoint del servidor
@@ -260,12 +273,12 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                 <button
                   type="button"
                   disabled={isPending}
-                  onClick={() => handlePerformAction('WORK')}
-                  className="p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2"
-                  style={{
-                    backgroundColor: '#1c1712',
-                    borderColor: '#3d2e1d'
-                  }}
+                  onClick={() => setSelectedAction('WORK')}
+                  className={`p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2 cursor-pointer ${
+                    selectedAction === 'WORK'
+                      ? 'bg-[#291e13] border-[#d4af37] shadow-lg'
+                      : 'bg-[#1c1712] border-[#3d2e1d] hover:border-[#8c733e]'
+                  }`}
                 >
                   <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
                     Atender el Empleo Civil
@@ -278,12 +291,12 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                 <button
                   type="button"
                   disabled={isPending}
-                  onClick={() => handlePerformAction('INVESTIGATE')}
-                  className="p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2"
-                  style={{
-                    backgroundColor: '#1c1712',
-                    borderColor: '#3d2e1d'
-                  }}
+                  onClick={() => setSelectedAction('INVESTIGATE')}
+                  className={`p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2 cursor-pointer ${
+                    selectedAction === 'INVESTIGATE'
+                      ? 'bg-[#291e13] border-[#d4af37] shadow-lg'
+                      : 'bg-[#1c1712] border-[#3d2e1d] hover:border-[#8c733e]'
+                  }`}
                 >
                   <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
                     Indagar en los Callejones
@@ -296,12 +309,12 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                 <button
                   type="button"
                   disabled={isPending}
-                  onClick={() => handlePerformAction('SOCIALIZE')}
-                  className="p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2"
-                  style={{
-                    backgroundColor: '#1c1712',
-                    borderColor: '#3d2e1d'
-                  }}
+                  onClick={() => setSelectedAction('SOCIALIZE')}
+                  className={`p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2 cursor-pointer ${
+                    selectedAction === 'SOCIALIZE'
+                      ? 'bg-[#291e13] border-[#d4af37] shadow-lg'
+                      : 'bg-[#1c1712] border-[#3d2e1d] hover:border-[#8c733e]'
+                  }`}
                 >
                   <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
                     Vínculos Civiles y Taberna
@@ -314,12 +327,12 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                 <button
                   type="button"
                   disabled={isPending}
-                  onClick={() => handlePerformAction('OPERATE')}
-                  className="p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2"
-                  style={{
-                    backgroundColor: '#1c1712',
-                    borderColor: '#3d2e1d'
-                  }}
+                  onClick={() => setSelectedAction('OPERATE')}
+                  className={`p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2 cursor-pointer ${
+                    selectedAction === 'OPERATE'
+                      ? 'bg-[#291e13] border-[#d4af37] shadow-lg'
+                      : 'bg-[#1c1712] border-[#3d2e1d] hover:border-[#8c733e]'
+                  }`}
                 >
                   <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
                     Reclusión Arcana en el Desván
@@ -329,6 +342,46 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                   </span>
                 </button>
               </div>
+
+              {/* Previsualización de Costes y Confirmación */}
+              {selectedAction && (
+                <div 
+                  className="p-4 rounded-xl border-2 mb-4 bg-[#1f1811] border-[#8c733e] text-xs font-serif shadow-xl"
+                >
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-bold text-[#d4af37] uppercase tracking-wider text-[11px]">
+                      Previsualización de Compromiso ({selectedAction})
+                    </span>
+                    <span className="text-[#e5ded2] bg-[#2a1d12] px-2 py-0.5 rounded border border-[#5e4326] text-[10px]">
+                      Coste: 1 Franja ({currentSlot})
+                    </span>
+                  </div>
+                  <p className="text-[#ded5c5] italic leading-relaxed mb-4">
+                    {selectedAction === 'WORK' && "Atender el empleo civil consume la franja actual. Consecuencias: coartada legal ante vecinos y autoridades, mitigación de sospechas y cómputo de asistencia para el jornal semanal."}
+                    {selectedAction === 'INVESTIGATE' && "Indagar en los callejones consume la franja actual. Consecuencias: cotejo de informantes, rastreo de huellas y avance de pesquisas bajo la niebla."}
+                    {selectedAction === 'SOCIALIZE' && "Frecuentar a vecinos y conocidos consume la franja actual. Consecuencias: cuidado directo de tus anclas humanas y fortalecimiento del juicio frente a la marea sobrenatural."}
+                    {selectedAction === 'OPERATE' && "Recluirse en soledad consume la franja actual. Consecuencias: tiempo consagrado al estudio de fórmulas, meditación de principios y asuntos del Desván."}
+                  </p>
+                  <div className="flex justify-end gap-3">
+                    <button
+                      type="button"
+                      disabled={isPending}
+                      onClick={() => setSelectedAction(null)}
+                      className="px-4 py-1.5 rounded border border-[#5e4326] text-[#b8a68d] hover:bg-[#2b2116] transition-colors text-xs cursor-pointer"
+                    >
+                      Cancelar
+                    </button>
+                    <button
+                      type="button"
+                      disabled={isPending}
+                      onClick={() => handlePerformAction(selectedAction)}
+                      className="crimson-btn px-5 py-1.5 text-xs uppercase tracking-wider font-bold cursor-pointer"
+                    >
+                      {isPending ? 'Registrando en el Reloj...' : `Confirmar Empleo de Franja (${currentSlot})`}
+                    </button>
+                  </div>
+                </div>
+              )}
 
               {/* Resultado de la Última Acción */}
               <div 

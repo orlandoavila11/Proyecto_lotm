@@ -56,16 +56,25 @@ function AppContent() {
     }
 
     if (!character) {
-      if (isHarness || params.get('renderer') === 'phaser') {
+      if (isHarness) {
         setCharacter(FOOL_SEER_FIXTURE as unknown as CharacterDiegetic);
       } else {
         const storedId = localStorage.getItem('lotm_active_character_id');
         if (storedId) {
           apiClient.getCharacter(storedId).then(data => {
             if (data?.character) {
+              // Si aún no completa el prólogo, permanece en la vista de Prólogo para resumir
+              if (data.character.prologue_step && data.character.prologue_step !== 'COMPLETED') {
+                return;
+              }
+
               const mappedSanity = mapSanityToVisual(data.somatics?.sanityTier || 'LUCID');
               const mappedCorruption = mapCorruptionToVisual(data.somatics?.corruptionTier || 'PRISTINE');
               const mappedRuina = mapRuinaToVisual(data.somatics?.ruinaTier || 0);
+
+              const slotNames: Record<number, TimeSlot> = { 0: 'MAÑANA', 1: 'TARDE', 2: 'NOCHE', 3: 'MADRUGADA' };
+              setDayNumber(data.character.current_day ?? 1);
+              setTimeSlot(slotNames[data.character.current_slot ?? 0] || 'MAÑANA');
 
               setCharacter({
                 id: data.character.id,
@@ -124,6 +133,10 @@ function AppContent() {
         const mappedCorruption = mapCorruptionToVisual(data.somatics?.corruptionTier || 'PRISTINE');
         const mappedRuina = mapRuinaToVisual(data.somatics?.ruinaTier || 0);
 
+        const slotNames: Record<number, TimeSlot> = { 0: 'MAÑANA', 1: 'TARDE', 2: 'NOCHE', 3: 'MADRUGADA' };
+        setDayNumber(data.character.current_day ?? 1);
+        setTimeSlot(slotNames[data.character.current_slot ?? 0] || 'MAÑANA');
+
         setCharacter(prev => prev ? {
           ...prev,
           somatics: {
@@ -165,10 +178,12 @@ function AppContent() {
 
   // Si no hay personaje despierto y no está forzado el harness, iniciar en el Prólogo Canónico
   if (!character) {
+    const storedCharId = localStorage.getItem('lotm_active_character_id');
     return (
       <SceneViewport debugOverlay={showDebugMasks}>
         <div className="w-[1920px] h-[1080px] relative overflow-hidden bg-[#090807] text-[#e5ded2]">
           <PrologueView 
+            initialCharacterId={storedCharId || undefined}
             onCompletePrologue={(newChar) => {
               setCharacter(newChar);
               navigateTo('DESK_WIDE');

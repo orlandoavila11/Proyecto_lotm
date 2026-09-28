@@ -207,6 +207,19 @@ export class PrologueEngine {
     const sequence = 9;
     const sequenceName = isFool ? 'Vidente (Seer)' : 'Espectador (Spectator)';
 
+    // Idempotencia: si ya completó el prólogo, retornar sin duplicar ruina
+    if (char.prologue_step === 'COMPLETED' && char.sequence === 9) {
+      return {
+        pathway: char.pathway as 'FOOL' | 'VISIONARY',
+        sequence: char.sequence,
+        sequenceName: char.pathway === 'FOOL' ? 'Vidente (Seer)' : 'Espectador (Spectator)',
+        ruinaSet: char.ruina ?? 5,
+        corruptionSet: char.corruption ?? 0,
+        visionNarrative: 'Ya has cruzado el umbral del despertar.',
+        awakeningNarrative: 'Tus sentidos continúan sintonizados con el mundo espiritual.'
+      };
+    }
+
     let visionNarrative = '';
     let awakeningNarrative = '';
 
@@ -280,7 +293,14 @@ export class PrologueEngine {
     let totalDecisionMinutes = 0;
     let totalClueMinutes = 0;
 
-    const origins = ['ORIGIN_CLERK', 'ORIGIN_MEDICAL_STUDENT', 'ORIGIN_REPORTER', 'ORIGIN_FRAUDULENT_MEDIUM', 'ORIGIN_DOCKWORKER'];
+    const origins = [
+      'ORIGIN_CLERK',
+      'ORIGIN_MEDICAL_STUDENT',
+      'ORIGIN_REPORTER',
+      'ORIGIN_FRAUDULENT_MEDIUM',
+      'ORIGIN_DOCKWORKER',
+      'ORIGIN_PRIVATE_INVESTIGATOR'
+    ];
 
     for (let i = 0; i < iterations; i++) {
       // Simular tiempo de lectura/interacción novato:

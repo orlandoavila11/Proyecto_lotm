@@ -542,5 +542,84 @@ export const apiClient = {
     const res = await fetch(`/api/commands/receipt/${encodeURIComponent(commandId)}`);
     if (!res.ok) return null;
     return res.json();
+  },
+
+  // =========================================================================
+  // P07: PRÓLOGO CANÓNICO Y ONBOARDING
+  // =========================================================================
+
+  /**
+   * Obtiene la lista de los 6 orígenes canónicos disponibles
+   */
+  async getPrologueOrigins(): Promise<{ origins: any[] }> {
+    const res = await fetch('/api/prologue/origins');
+    if (!res.ok) throw new Error(`Error al cargar orígenes: ${res.statusText}`);
+    return res.json();
+  },
+
+  /**
+   * Inicia el prólogo canónico, creando o asignando el personaje de forma transaccional
+   */
+  async startPrologue(params: { characterId?: string; name?: string; originId: string }): Promise<any> {
+    const res = await fetch('/api/prologue/start', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `Error al iniciar prólogo: ${res.statusText}`);
+    }
+    return res.json();
+  },
+
+  /**
+   * Resuelve el dilema tutorial del zaguán
+   */
+  async resolvePrologueDilemma(params: { characterId: string; choice: 'PRUDENCE' | 'CURIOSITY' }): Promise<any> {
+    const res = await fetch('/api/prologue/tutorial/dilemma', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `Error en dilema del prólogo: ${res.statusText}`);
+    }
+    return res.json();
+  },
+
+  /**
+   * Obtiene la descripción críptica de las pociones en el desván
+   */
+  async getProloguePotions(): Promise<any> {
+    const res = await fetch('/api/prologue/potions');
+    if (!res.ok) throw new Error(`Error al consultar pociones: ${res.statusText}`);
+    return res.json();
+  },
+
+  /**
+   * Realiza la ingesta de la primera poción S9
+   */
+  async drinkProloguePotion(params: { characterId: string; potionChoice: 'COBALT_EYES' | 'AMBER_MIRROR' }): Promise<any> {
+    const res = await fetch('/api/prologue/drink', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `Error en ingesta de poción: ${res.statusText}`);
+    }
+    return res.json();
+  },
+
+  /**
+   * Consulta el estado del prólogo para un personaje guardado
+   */
+  async getPrologueStatus(characterId: string): Promise<any> {
+    const res = await fetch(`/api/prologue/status/${encodeURIComponent(characterId)}`);
+    if (!res.ok) return null;
+    return res.json();
   }
 };

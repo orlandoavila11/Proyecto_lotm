@@ -116,23 +116,28 @@ export class OriginEngine {
       `).run(origin.profession, origin.socialClass, origin.startingDistrict, persona.id);
     }
 
-    // 4. Crear las 3 anclas de origen canónicas en SQLite
+    // 4. Crear las 3 anclas de origen canónicas en SQLite (si no existen ya)
     let anchorsCreated = 0;
-    for (const anchorDef of origin.originAnchors) {
-      const anchorId = generateDeterministicId(`anc_${origin.id.toLowerCase()}`);
-      db.addAnchor({
-        id: anchorId,
-        character_id: characterId,
-        title: anchorDef.name,
-        name: anchorDef.name,
-        type: anchorDef.type,
-        category: anchorDef.type,
-        description: anchorDef.description,
-        strength: anchorDef.strength,
-        damage_count: 0,
-        is_destroyed: 0
-      });
-      anchorsCreated++;
+    const existingAnchors = db.getAnchors(characterId);
+    if (existingAnchors.length === 0) {
+      for (const anchorDef of origin.originAnchors) {
+        const anchorId = generateDeterministicId(`anc_${origin.id.toLowerCase()}`);
+        db.addAnchor({
+          id: anchorId,
+          character_id: characterId,
+          title: anchorDef.name,
+          name: anchorDef.name,
+          type: anchorDef.type,
+          category: anchorDef.type,
+          description: anchorDef.description,
+          strength: anchorDef.strength,
+          damage_count: 0,
+          is_destroyed: 0
+        });
+        anchorsCreated++;
+      }
+    } else {
+      anchorsCreated = existingAnchors.length;
     }
 
     const updatedChar = db.getCharacter(characterId)!;
