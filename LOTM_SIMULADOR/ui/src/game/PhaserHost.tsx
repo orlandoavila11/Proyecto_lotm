@@ -274,11 +274,22 @@ export const PhaserHost: React.FC<PhaserHostProps> = ({
           <button
             type="button"
             onClick={onSwitchToReactRenderer}
-            className="px-3 py-1 bg-[#1c1813] hover:bg-[#2b241c] border border-[#8c733e] rounded text-xs font-serif text-[#ede4d1] transition-colors"
+            className="px-3 py-1 bg-[#1c1813] hover:bg-[#2b241c] border border-[#8c733e] rounded text-xs font-serif text-[#ede4d1] transition-colors cursor-pointer"
           >
             Cambiar a Renderizador React DOM
           </button>
         )}
+        <button
+          type="button"
+          onClick={() => {
+            const url = new URL(window.location.href);
+            url.searchParams.set('gallery', 'true');
+            window.location.href = url.toString();
+          }}
+          className="px-3 py-1 bg-[#1c1813] hover:bg-[#2b241c] border border-[#8c733e] rounded text-xs font-serif text-[#ede4d1] transition-colors cursor-pointer"
+        >
+          Galería UI P04 (?gallery=true)
+        </button>
       </div>
 
       {/* Barra de Estado Diegética Superior */}

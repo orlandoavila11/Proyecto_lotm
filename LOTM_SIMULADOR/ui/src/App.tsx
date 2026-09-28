@@ -26,6 +26,7 @@ import { apiClient } from './services/apiClient';
 import { mapSanityToVisual, mapCorruptionToVisual, mapRuinaToVisual } from './services/somaticsMapper';
 import { resolveSequenceTitle, resolvePathwayDisplayName } from './session/sequenceRegistry';
 import { PhaserHost } from './game/PhaserHost';
+import { ComponentGallery } from './harness/ComponentGallery';
 
 function AppContent() {
   const { state, navigateTo, closeInspection, backToDesk, toggleSpiritVision } = useNavigation();
@@ -34,11 +35,15 @@ function AppContent() {
   const [dayNumber, setDayNumber] = useState<number>(4);
   const [showHarness, setShowHarness] = useState<boolean>(false);
   const [showDebugMasks, setShowDebugMasks] = useState<boolean>(false);
+  const [showGallery, setShowGallery] = useState<boolean>(false);
   const [rendererMode, setRendererMode] = useState<'react' | 'phaser'>('react');
 
-  // Comprobar parámetros URL (?harness=true, ?masks=true, ?renderer=phaser) y partida persistida
+  // Comprobar parámetros URL (?harness=true, ?masks=true, ?renderer=phaser, ?gallery=true) y partida persistida
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
+    if (params.get('gallery') === 'true') {
+      setShowGallery(true);
+    }
     const isHarness = params.get('harness') === 'true';
     if (isHarness) {
       setShowHarness(true);
@@ -153,6 +158,11 @@ function AppContent() {
     }
   };
 
+  // Herramienta de Desarrollo P04: Galería de Componentes y Estados
+  if (showGallery) {
+    return <ComponentGallery />;
+  }
+
   // Si no hay personaje despierto y no está forzado el harness, iniciar en el Prólogo Canónico
   if (!character) {
     return (
@@ -165,17 +175,26 @@ function AppContent() {
             }} 
           />
           
-          {/* Acceso Rápido al Harness de Pruebas */}
-          <button
-            type="button"
-            onClick={() => {
-              setCharacter(FOOL_SEER_FIXTURE as unknown as CharacterDiegetic);
-              setShowHarness(true);
-            }}
-            className="fixed bottom-4 right-4 z-50 px-3 py-1.5 rounded bg-[#1c1813] border border-[#8c733e] text-[#d4af37] text-xs font-serif opacity-70 hover:opacity-100 transition-opacity"
-          >
-            Activar Harness
-          </button>
+          {/* Accesos Rápidos para Desarrollo */}
+          <div className="fixed bottom-4 right-4 z-50 flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setShowGallery(true)}
+              className="px-3 py-1.5 rounded bg-[#1c1813] border border-[#8c733e] text-[#d4af37] text-xs font-serif opacity-80 hover:opacity-100 transition-opacity cursor-pointer"
+            >
+              Galería UI P04 (?gallery=true)
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setCharacter(FOOL_SEER_FIXTURE as unknown as CharacterDiegetic);
+                setShowHarness(true);
+              }}
+              className="px-3 py-1.5 rounded bg-[#1c1813] border border-[#8c733e] text-[#ede4d1] text-xs font-serif opacity-70 hover:opacity-100 transition-opacity cursor-pointer"
+            >
+              Activar Harness
+            </button>
+          </div>
         </div>
       </SceneViewport>
     );
@@ -232,8 +251,8 @@ function AppContent() {
               dayNumber={dayNumber}
               debugOverlay={showDebugMasks}
             />
-            {/* Acceso reversible para alternar al motor Phaser 4.2.1 */}
-            <div className="absolute top-4 left-4 z-40">
+            {/* Acceso reversible para alternar al motor Phaser 4.2.1 y Galería UI */}
+            <div className="absolute top-4 left-4 z-40 flex items-center gap-2">
               <button
                 type="button"
                 onClick={() => {
@@ -245,6 +264,13 @@ function AppContent() {
                 className="px-3 py-1 bg-[#1c1813]/90 hover:bg-[#2b241c] border border-[#8c733e]/70 rounded text-xs font-serif text-[#d4af37] shadow transition-colors cursor-pointer"
               >
                 Activar Modo Phaser 4.2.1 (?renderer=phaser)
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowGallery(true)}
+                className="px-3 py-1 bg-[#1c1813]/90 hover:bg-[#2b241c] border border-[#8c733e]/70 rounded text-xs font-serif text-[#ede4d1] shadow transition-colors cursor-pointer"
+              >
+                Galería UI P04 (?gallery=true)
               </button>
             </div>
           </>
