@@ -19,7 +19,9 @@ export const PreparationChecklistItemSchema = z.object({
   description: z.string().min(1),
   costPence: z.number().int().nonnegative(),
   successBonus: z.number().positive(),
-  riskReduction: z.number().positive()
+  riskReduction: z.number().positive(),
+  /** condición para poder prepararlo: estar en el distrito del propio refugio y/o en una franja concreta (0-3) */
+  requires: z.object({ atHome: z.boolean().optional(), slot: z.number().int().min(0).max(3).optional() }).optional()
 });
 
 export const DistrictRentSchema = z.object({

@@ -19,7 +19,7 @@ describe('GATE G3 · BATERÍA KILL-9 COMPLETA (5 DOMINIOS CRÍTICOS)', () => {
     
     const char = db.createCharacter({
       id: 'char_k9_combat',
-      name: 'Leonard Mitchell',
+      name: 'Walter Crane',
       pathway: 'DARKNESS',
       sequence: 8,
       current_health: 85,
@@ -80,7 +80,7 @@ describe('GATE G3 · BATERÍA KILL-9 COMPLETA (5 DOMINIOS CRÍTICOS)', () => {
 
     const char = db.createCharacter({
       id: 'char_k9_investigation',
-      name: 'Sherlock Moriarty',
+      name: 'Ernest Holloway',
       pathway: 'FOOL',
       sequence: 9,
       current_health: 100,
@@ -133,7 +133,7 @@ describe('GATE G3 · BATERÍA KILL-9 COMPLETA (5 DOMINIOS CRÍTICOS)', () => {
 
     const char = db.createCharacter({
       id: 'char_k9_acting',
-      name: 'Audrey Hall',
+      name: 'Margaret Ashby',
       pathway: 'VISIONARY',
       sequence: 9,
       current_health: 100,
@@ -181,7 +181,7 @@ describe('GATE G3 · BATERÍA KILL-9 COMPLETA (5 DOMINIOS CRÍTICOS)', () => {
 
     const char = db.createCharacter({
       id: 'char_k9_ascension',
-      name: 'Klein Moretti',
+      name: 'Henry Blythe',
       pathway: 'FOOL',
       sequence: 9,
       current_health: 100,
@@ -235,7 +235,7 @@ describe('GATE G3 · BATERÍA KILL-9 COMPLETA (5 DOMINIOS CRÍTICOS)', () => {
 
     const char = db.createCharacter({
       id: 'char_k9_calendar',
-      name: 'Derrick Berg',
+      name: 'Thomas Ferris',
       pathway: 'SUN',
       sequence: 9,
       current_health: 100,

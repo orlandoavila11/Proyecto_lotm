@@ -4,6 +4,7 @@ import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { CanonicalDataLoader } from '../../infra/data/CanonicalDataLoader.js';
 import { ActingDilemmaEngine } from '../../core/acting/ActingDilemmaEngine.js';
 import { CanonicalPathwayId } from '../../core/types/pathway.js';
+import { EntityNotFoundError } from '../../core/errors/DomainError.js';
 
 const ResolveActingSchema = z.object({
   characterId: z.string(),
@@ -17,35 +18,51 @@ export const actingRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
 ) => {
   const { db, loader } = opts;
 
-  // GET /api/acting/dilemma/:characterId
+  // GET /api/acting/dilemma/:characterId — el papel que toca ensayar ahora (Tier G, sin telegrafiar)
   fastify.get('/dilemma/:characterId', async (req, reply) => {
     const { characterId } = req.params as { characterId: string };
-    // ?public=1: proyección sin la solución del dilema (alineación, ganancias y desenlaces sólo tras elegir).
-    // Sin el parámetro se conserva el contrato que consume el cliente anterior (ui/).
-    const { public: publicView } = req.query as { public?: string };
     const char = db.getCharacter(characterId);
     if (!char) {
       return reply.status(404).send({ error: 'Personaje no encontrado' });
     }
 
-    const rawDilemma = ActingDilemmaEngine.getDilemma(char.pathway as CanonicalPathwayId, char.sequence);
-    const normalizedDilemma = {
-      ...rawDilemma,
-      title: `${rawDilemma.sequenceName} · ${rawDilemma.clientOrContext || 'Backlund'}`,
-      description: rawDilemma.situation,
-      corePrinciple: rawDilemma.principleText,
-      choices: rawDilemma.choices.map(c => (publicView === '1'
-        ? { id: c.id, text: c.label, label: c.label, description: c.description }
-        : {
-          ...c,
-          text: c.label,
-          label: c.label,
-          description: c.description
-        }))
-    };
+    const available = ActingDilemmaEngine.getAvailableDilemmas(db, characterId);
+    if (available.length === 0) {
+      // Regla del Hueco: sin dilemas Tier G para esta vía y secuencia no se inventa uno
+      throw new EntityNotFoundError('No hay ningún papel que ensayar para tu secuencia todavía.');
+    }
+    // el menos ensayado (a igualdad, el primero del catálogo): repetir el mismo dilema decae
+    const records = db.getActingRecords(characterId);
+    const times = (id: string) => records.filter((r: any) => r.dilemma_id === id).length;
+    const current = available.reduce((best, d) => (times(d.id) < times(best.id) ? d : best), available[0]);
+
+    // el principio de la secuencia (ethos) aún vive en el catálogo legado; es texto de historia
+    let corePrinciple = '';
+    let sequenceName = '';
+    try {
+      const legacy = ActingDilemmaEngine.getDilemma(char.pathway as CanonicalPathwayId, char.sequence);
+      corePrinciple = legacy.principleText;
+      sequenceName = legacy.sequenceName;
+    } catch {
+      corePrinciple = '';
+    }
 
     return reply.send({
-      dilemma: normalizedDilemma,
+      dilemma: {
+        id: current.id,
+        title: current.title,
+        description: current.situation,
+        corePrinciple,
+        sequenceName,
+        choices: current.options.map(o => ({
+          id: o.id,
+          label: o.texto,
+          text: o.texto,
+          description: '',
+          costes: o.costes,
+          ...(o.isWhisper ? { isWhisper: true, whisperPrice: o.whisperPrice, advantageDescription: o.advantageDescription } : {})
+        }))
+      },
       currentDigestion: char.digestion_progress,
       isFullyDigested: char.digestion_progress >= 100.0
     });
@@ -118,69 +135,8 @@ export const actingRoutes: FastifyPluginAsync<{ db: DatabaseClient; loader: Cano
       });
     }
 
-    // Fallback legado para vías no migradas aún a Tier G
-    const dilemma = ActingDilemmaEngine.getDilemma(char.pathway as CanonicalPathwayId, char.sequence);
-    const choice = dilemma.choices.find(c => c.id === choiceId);
-    if (!choice) {
-      return reply.status(400).send({ error: `Elección '${choiceId}' no válida para este dilema.` });
-    }
-
-    const newSanity = Math.max(0, Math.min(100, char.sanity + choice.sanityDelta));
-
-    db.updateCharacterSomatics(characterId, {
-      sanity: newSanity
-    });
-
-    if (choice.penceReward > 0) {
-      db.updateCharacterWealth(characterId, choice.penceReward);
-    }
-
-    const activePersona = db.getActivePersona(characterId);
-    if (activePersona && (choice.policeSuspicionDelta !== 0 || choice.churchSuspicionDelta !== 0)) {
-      db.updatePersonaSuspicion(activePersona.id, choice.policeSuspicionDelta, choice.churchSuspicionDelta);
-    }
-
-    db.logActing({
-      id: `act_${Date.now()}`,
-      character_id: characterId,
-      pathway: char.pathway,
-      sequence: char.sequence,
-      dilemma_id: dilemmaId,
-      choice_id: choiceId,
-      digestion_gained: choice.digestionGain,
-      sanity_delta: choice.sanityDelta,
-      day: char.current_day,
-      narrative_log: choice.narrativeOutcome
-    });
-
-    return reply.send({
-      success: true,
-      message: choice.narrativeOutcome,
-      isAligned: choice.isAlignedWithPrinciple,
-      digestionProgress: char.digestion_progress,
-      isFullyDigested: char.digestion_progress >= 100.0,
-      sanityDelta: choice.sanityDelta,
-      penceRewarded: choice.penceReward
-    });
-  });
-
-  // POST /api/acting/weekly-tick
-  fastify.post('/weekly-tick', async (req, reply) => {
-    const body = req.body as { characterId?: string };
-    if (!body || !body.characterId) {
-      return reply.status(400).send({ error: 'characterId es requerido' });
-    }
-
-    const char = db.getCharacter(body.characterId);
-    if (!char) {
-      return reply.status(404).send({ error: 'Personaje no encontrado' });
-    }
-
-    const tickResult = ActingDilemmaEngine.processWeeklyTick(db, body.characterId);
-    return reply.send({
-      success: true,
-      tickResult
-    });
+    // Sin dilema Tier G no hay resolución (Regla del Hueco: nada de catálogos legados en código)
+    throw new EntityNotFoundError(`Dilema '${dilemmaId}' desconocido.`);
   });
 };
 

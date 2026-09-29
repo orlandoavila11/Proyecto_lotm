@@ -129,7 +129,9 @@ describe('ui3d · correcciones de integración del motor', () => {
       const { characterId } = await newAwakenedCharacter(app);
       await app.inject({ method: 'POST', url: '/api/prologue/tutorial/dilemma', payload: { characterId, choice: 'PRUDENCE' } });
       await app.inject({ method: 'POST', url: '/api/prologue/drink', payload: { characterId, potionChoice: 'COBALT_EYES' } });
-      const env = JSON.parse((await app.inject({ method: 'GET', url: `/api/investigation/case/active/${characterId}` })).body);
+      const none = JSON.parse((await app.inject({ method: 'GET', url: `/api/investigation/case/active/${characterId}` })).body);
+      assert.strictEqual(none.caseState, null, 'consultar no abre el caso (GET nunca muta)');
+      const env = JSON.parse((await app.inject({ method: 'POST', url: '/api/investigation/case/activate', payload: { characterId, caseId: 'CASE_CHERWOOD_HEIRLOOM' } })).body);
       const instanceId = env.caseState.id;
       for (const clueId of ['CLUE_WILL_DRAFT', 'CLUE_CONCEALED_SAFE', 'CLUE_ASTROLOGY_RECORD']) {
         const v = await app.inject({ method: 'POST', url: '/api/investigation/clue/visit-source', payload: { instanceId, clueId, sourceIndex: 0, timeOfDay: 'mañana' } });
@@ -162,11 +164,10 @@ describe('ui3d · correcciones de integración del motor', () => {
       await app.inject({ method: 'POST', url: '/api/prologue/drink', payload: { characterId, potionChoice: 'COBALT_EYES' } });
       const pub = JSON.parse((await app.inject({ method: 'GET', url: `/api/acting/dilemma/${characterId}?public=1` })).body);
       assert.ok(pub.dilemma.choices.length >= 2);
+      const forbidden = ['pesos', 'alignment', 'effectKey', 'narrativeOutcome', 'isAlignedWithPrinciple', 'digestionGain', 'tradeOffs'];
       for (const c of pub.dilemma.choices) {
-        assert.deepStrictEqual(Object.keys(c).sort(), ['description', 'id', 'label', 'text'], 'sólo id y textos visibles');
+        for (const k of forbidden) assert.strictEqual(k in c, false, `la opción no debe traer '${k}'`);
       }
-      const legacy = JSON.parse((await app.inject({ method: 'GET', url: `/api/acting/dilemma/${characterId}` })).body);
-      assert.ok('digestionGain' in legacy.dilemma.choices[0], 'sin public se conserva el contrato de ui/');
       const choiceId = pub.dilemma.choices[0].id;
       const res = await app.inject({ method: 'POST', url: '/api/acting/resolve', payload: { characterId, dilemmaId: pub.dilemma.id, choiceId } });
       assert.strictEqual(res.statusCode, 200, 'se puede resolver con los ids públicos');

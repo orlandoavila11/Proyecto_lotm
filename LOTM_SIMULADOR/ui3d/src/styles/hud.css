@@ -766,6 +766,14 @@ button { font: inherit; color: inherit; }
 .ink-meter__line span { display: block; height: 100%; background: linear-gradient(90deg, #3a2412, #6b2a1c); transition: width 900ms var(--ease-out); }
 .ink-meter__num { font-style: normal; font-variant-numeric: tabular-nums; color: #2e2419; }
 .toggle--paper { font-size: 22px; color: #2e2419; }
+.prep-step { align-items: flex-start; }
+.prep-step .toggle__box { margin-top: 6px; flex: none; }
+.prep-step__text { display: grid; gap: 2px; }
+.prep-step__name { font-size: 21px; }
+.prep-step__detail { font-size: 17px; font-style: italic; color: #5a4a37; line-height: 1.3; }
+.prep-step.is-blocked { cursor: default; }
+.prep-step.is-blocked .prep-step__name { color: #7a6650; }
+.prep-step.is-blocked .prep-step__detail { color: #8a2a22; }
 .toggle--paper .toggle__box { border-color: #6e5430; }
 .toggle--paper input:checked + .toggle__box { background: radial-gradient(circle, #8a2226 0 38%, transparent 42%); }
 .sheet-subheading { margin: 18px 0 8px; font-family: var(--display); font-weight: 500; font-size: 18px; letter-spacing: 0.08em; color: #5a4128; }

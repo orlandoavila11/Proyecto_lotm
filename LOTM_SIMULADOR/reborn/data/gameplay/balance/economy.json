@@ -83,7 +83,10 @@
       "description": "Paredes selladas con daga de plata y muro de espiritualidad hermético.",
       "costPence": 36,
       "successBonus": 10,
-      "riskReduction": 5
+      "riskReduction": 5,
+      "requires": {
+        "atHome": true
+      }
     },
     {
       "id": "momento",
@@ -91,7 +94,10 @@
       "description": "Alineación astrológica o vigilia de medianoche bajo la luna carmesí.",
       "costPence": 0,
       "successBonus": 10,
-      "riskReduction": 5
+      "riskReduction": 5,
+      "requires": {
+        "slot": 3
+      }
     },
     {
       "id": "materiales_rituales",

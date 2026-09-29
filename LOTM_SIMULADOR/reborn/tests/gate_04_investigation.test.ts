@@ -18,7 +18,7 @@ describe('GATE 04: Motor de Investigación Sistémico, Verbos de Vía y Bots ε-
     // Crear personaje FOOL
     db.createCharacter({
       id: charFoolId,
-      name: 'Klein Moretti (Test)',
+      name: 'Henry Blythe (Test)',
       pathway: 'FOOL',
       sequence: 9,
       current_health: 100,
@@ -36,7 +36,7 @@ describe('GATE 04: Motor de Investigación Sistémico, Verbos de Vía y Bots ε-
     // Crear personaje VISIONARY
     db.createCharacter({
       id: charVisionaryId,
-      name: 'Audrey Hall (Test)',
+      name: 'Margaret Ashby (Test)',
       pathway: 'VISIONARY',
       sequence: 9,
       current_health: 100,

@@ -45,12 +45,12 @@ export const ascensionRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async
       return reply.status(404).send({ error: 'Character no encontrado' });
     }
 
-    const updatedChecklist = AscensionEngine.updatePreparationChecklist(
-      db,
-      characterId,
-      checklist,
-      markPresented ?? false
-    );
+    let updatedChecklist;
+    try {
+      updatedChecklist = AscensionEngine.updatePreparationChecklist(db, characterId, checklist, markPresented ?? false);
+    } catch (e: any) {
+      throw new DomainRuleViolationError(e.message || 'Ese paso del rito no puede prepararse ahora.');
+    }
 
     const status = AscensionEngine.evaluateAscensionStatus(db, characterId);
     return reply.send({ checklist: updatedChecklist, status });
@@ -59,8 +59,6 @@ export const ascensionRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async
   // POST /api/ascension/drink
   const DrinkSchema = z.object({
     characterId: z.string().min(1),
-    confirmedAt: z.number().int().optional(),
-    seed: z.number().int().optional(),
     commandId: z.string().optional(),
     expectedRevision: z.number().int().optional()
   });
@@ -71,7 +69,7 @@ export const ascensionRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async
       return reply.status(400).send({ error: 'Payload inválido', details: parsed.error.issues });
     }
 
-    const { characterId, confirmedAt, seed, commandId, expectedRevision } = parsed.data;
+    const { characterId, commandId, expectedRevision } = parsed.data;
 
     const processed = CommandProcessor.execute(
       db,
@@ -79,7 +77,7 @@ export const ascensionRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async
         commandId,
         characterId,
         commandType: 'ASCENSION_DRINK',
-        payload: { confirmedAt: confirmedAt ?? null, seed: seed ?? null },
+        payload: {},
         expectedRevision
       },
       () => {
@@ -88,11 +86,11 @@ export const ascensionRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async
           throw new EntityNotFoundError('Character no encontrado');
         }
 
-        const deterministicSeed = seed ?? ((char.revision ?? 1) * 7919 + 1353);
-        const rng = new SeededRNG(deterministicSeed);
+        // la tirada la siembra el servidor con el estado del personaje; el momento del trago es la hora del servidor
+        const rng = new SeededRNG(`ascension:${characterId}:${char.sequence}:${char.revision ?? 1}`);
 
         try {
-          return AscensionEngine.drinkPotion(db, characterId, rng, confirmedAt);
+          return AscensionEngine.drinkPotion(db, characterId, rng);
         } catch (e: any) {
           throw new DomainRuleViolationError(e.message || 'Error en la ceremonia de ingestión de poción.');
         }

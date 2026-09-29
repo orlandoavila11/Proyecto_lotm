@@ -20,7 +20,7 @@ describe('TASK P08: Viaje y Locación Real de Investigación en Cherwood', () =>
     try {
       const char = db.createCharacter({
         id: 'char_travel_tester',
-        name: 'Leonard Mitchell',
+        name: 'Walter Crane',
         pathway: 'FOOL',
         sequence: 9,
         current_health: 100,
@@ -86,7 +86,7 @@ describe('TASK P08: Viaje y Locación Real de Investigación en Cherwood', () =>
     try {
       const char = db.createCharacter({
         id: 'char_traveler_ok',
-        name: 'Klein Moretti',
+        name: 'Henry Blythe',
         pathway: 'FOOL',
         sequence: 9,
         current_health: 100,
@@ -156,7 +156,7 @@ describe('TASK P08: Viaje y Locación Real de Investigación en Cherwood', () =>
       // Personaje Vidente (FOOL)
       const foolChar = db.createCharacter({
         id: 'char_investigator_fool',
-        name: 'Sherlock Moriarty',
+        name: 'Ernest Holloway',
         pathway: 'FOOL',
         sequence: 9,
         current_health: 100,
@@ -271,7 +271,7 @@ describe('TASK P08: Viaje y Locación Real de Investigación en Cherwood', () =>
     try {
       const spectatorChar = db.createCharacter({
         id: 'char_investigator_spectator',
-        name: 'Audrey Hall',
+        name: 'Margaret Ashby',
         pathway: 'VISIONARY',
         sequence: 9,
         current_health: 100,

@@ -2,6 +2,7 @@ import { DatabaseClient, CharacterRow } from '../../infra/database/DatabaseClien
 import { ActingDilemmaEngine } from '../acting/ActingDilemmaEngine.js';
 import { EconomyEngine } from '../economy/EconomyEngine.js';
 import { ConvergenceEngine } from '../convergence/ConvergenceEngine.js';
+import { InvestigationEngine } from '../investigation/InvestigationEngine.js';
 
 export type TimeSlot = 0 | 1 | 2 | 3; // 0: MORNING, 1: AFTERNOON, 2: EVENING, 3: NIGHT
 export type CalendarActionType = 'INVESTIGATE' | 'WORK' | 'SOCIALIZE' | 'OPERATE';
@@ -129,6 +130,13 @@ export class CalendarEngine {
 
     let datedEventTriggered: CalendarActionOutcome['datedEventTriggered'] = undefined;
     let weeklyTickExecuted: CalendarActionOutcome['weeklyTickExecuted'] = undefined;
+
+    // 2.b El tiempo sólo avanza aquí: cada día nuevo también cuenta para la caducidad de los casos abiertos
+    if (dayAdvanced) {
+      for (const inst of db.getCharacterCaseInstances(characterId)) {
+        if (inst.status === 'ACTIVE') InvestigationEngine.advanceTime(db, inst.id, 1);
+      }
+    }
 
     // 3. Comprobar eventos fechados para el nuevo slot/día
     datedEventTriggered = this.checkDatedEvents(db, characterId, newDay, newSlot as TimeSlot);

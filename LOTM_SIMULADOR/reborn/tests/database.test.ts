@@ -8,7 +8,7 @@ test('DatabaseClient: Inicialización y operaciones CRUD en memoria', () => {
   // 1. Crear personaje de prueba
   const char = db.createCharacter({
     id: 'char_test_1',
-    name: 'Lumian Lee',
+    name: 'Arthur Penrose',
     pathway: 'RED_PRIEST',
     sequence: 9,
     current_health: 120,
@@ -24,7 +24,7 @@ test('DatabaseClient: Inicialización y operaciones CRUD en memoria', () => {
   });
 
   assert.strictEqual(char.id, 'char_test_1');
-  assert.strictEqual(char.name, 'Lumian Lee');
+  assert.strictEqual(char.name, 'Arthur Penrose');
   assert.strictEqual(char.pathway, 'RED_PRIEST');
   assert.strictEqual(char.sequence, 9);
   assert.strictEqual(char.raw_pence, 7200);
@@ -46,7 +46,7 @@ test('DatabaseClient: Inicialización y operaciones CRUD en memoria', () => {
   db.createPersona({
     id: 'persona_1',
     character_id: 'char_test_1',
-    legal_name: 'Lumian Lee',
+    legal_name: 'Arthur Penrose',
     profession: 'Camarero y Explorador de Tabernas',
     social_class: 'WORKING_CLASS',
     district: 'Trier - Barrio Subterráneo',
@@ -59,7 +59,7 @@ test('DatabaseClient: Inicialización y operaciones CRUD en memoria', () => {
 
   const activePersona = db.getActivePersona('char_test_1');
   assert.ok(activePersona);
-  assert.strictEqual(activePersona.legal_name, 'Lumian Lee');
+  assert.strictEqual(activePersona.legal_name, 'Arthur Penrose');
   assert.strictEqual(activePersona.police_suspicion, 10);
 
   // 4. Anclas de fe

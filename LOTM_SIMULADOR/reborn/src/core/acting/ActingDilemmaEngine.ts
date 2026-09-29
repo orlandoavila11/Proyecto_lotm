@@ -1071,13 +1071,6 @@ export class ActingDilemmaEngine {
     transgressionCorruptionGain: number;
     instabilityFlag: boolean;
     lossOfSelfRiskFlag: boolean;
-    rentPayment?: {
-      rentCharged: number;
-      rentPaid: boolean;
-      debtCreated: boolean;
-      remainingBalance: number;
-      note: string;
-    };
   } {
     this.ensureTierGLoaded();
     const balance = this.getActingBalance();
@@ -1092,10 +1085,8 @@ export class ActingDilemmaEngine {
     const allRecords = db.getActingRecords(characterId);
     const minDay = (currentWeek - 1) * 7 + 1;
     const maxDay = currentWeek * 7;
+    // sólo los actos de esta semana: repetir el tick no recicla actos antiguos
     let weekRecords = allRecords.filter(r => r.day >= minDay && r.day <= maxDay);
-    if (weekRecords.length === 0 && allRecords.length > 0) {
-      weekRecords = allRecords.slice(-7);
-    }
 
     // Regla 1.c: Transgresiones jamás entran en la ventana actoral
     weekRecords = weekRecords.filter(r => (r.alignment ?? 0) >= 0);
@@ -1181,9 +1172,6 @@ export class ActingDilemmaEngine {
       history_json: JSON.stringify(allRecords)
     });
 
-    // 8. Deducción semanal de alquiler (Economía Victoriana)
-    const rentPayment = EconomyEngine.processWeeklyRent(db, characterId, char.current_location);
-
     return {
       currentWeek,
       coherence,
@@ -1191,8 +1179,7 @@ export class ActingDilemmaEngine {
       assimilationGain,
       transgressionCorruptionGain,
       instabilityFlag,
-      lossOfSelfRiskFlag,
-      rentPayment
+      lossOfSelfRiskFlag
     };
   }
 }

@@ -52,7 +52,7 @@ export function Desvan() {
 
   useEffect(() => {
     if (!characterId || inPrologue) return;
-    api.activeCase(characterId).then((c) => setCaseClues(c.caseState.discoveredClues.length)).catch(() => setCaseClues(null));
+    api.activeCase(characterId).then((c) => setCaseClues(c.caseState ? c.caseState.discoveredClues.length : 0)).catch(() => setCaseClues(null));
   }, [characterId, inPrologue]);
 
   // la carta del Benefactor la reconstruye el motor mientras el prólogo sigue abierto

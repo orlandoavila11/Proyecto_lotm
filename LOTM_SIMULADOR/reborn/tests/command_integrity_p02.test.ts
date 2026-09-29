@@ -91,7 +91,7 @@ describe('P02: Integridad de Comandos, Idempotencia y Concurrencia Transaccional
     try {
       const char = db.createCharacter({
         id: 'char_p02_conflict',
-        name: 'Leonard Mitchell',
+        name: 'Walter Crane',
         pathway: 'FOOL',
         sequence: 9,
         current_health: 100,
@@ -149,7 +149,7 @@ describe('P02: Integridad de Comandos, Idempotencia y Concurrencia Transaccional
     try {
       const char = db.createCharacter({
         id: 'char_p02_concurrency',
-        name: 'Audrey Hall',
+        name: 'Margaret Ashby',
         pathway: 'VISIONARY',
         sequence: 9,
         current_health: 100,
@@ -210,7 +210,7 @@ describe('P02: Integridad de Comandos, Idempotencia y Concurrencia Transaccional
     try {
       const char = db.createCharacter({
         id: 'char_p02_traveler',
-        name: 'Fors Wall',
+        name: 'Clara Whitmore',
         pathway: 'FOOL',
         sequence: 9,
         current_health: 100,
@@ -267,7 +267,7 @@ describe('P02: Integridad de Comandos, Idempotencia y Concurrencia Transaccional
     try {
       const char = db.createCharacter({
         id: 'char_p02_combatant',
-        name: 'Derrick Berg',
+        name: 'Thomas Ferris',
         pathway: 'FOOL',
         sequence: 9,
         current_health: 100,
@@ -351,7 +351,7 @@ describe('P02: Integridad de Comandos, Idempotencia y Concurrencia Transaccional
     try {
       const char = db.createCharacter({
         id: 'char_p02_query',
-        name: 'Alger Wilson',
+        name: 'Oliver Marsh',
         pathway: 'FOOL',
         sequence: 9,
         current_health: 100,
@@ -385,8 +385,14 @@ describe('P02: Integridad de Comandos, Idempotencia y Concurrencia Transaccional
       // Consultar el recibo a través de la API
       const resReceipt = await app.inject({
         method: 'GET',
-        url: `/api/commands/receipt/${cmdId}`
+        url: `/api/commands/receipt/${cmdId}?characterId=${char.id}`
       });
+
+      // el recibo no se entrega a otro personaje (ni sin identificarse)
+      const foreign = await app.inject({ method: 'GET', url: `/api/commands/receipt/${cmdId}?characterId=char_otro` });
+      assert.strictEqual(foreign.statusCode, 404);
+      const anonymous = await app.inject({ method: 'GET', url: `/api/commands/receipt/${cmdId}` });
+      assert.strictEqual(anonymous.statusCode, 404);
 
       assert.strictEqual(resReceipt.statusCode, 200);
       const receipt = JSON.parse(resReceipt.body);

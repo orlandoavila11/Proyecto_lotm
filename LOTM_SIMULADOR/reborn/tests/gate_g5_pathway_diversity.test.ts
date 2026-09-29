@@ -18,7 +18,7 @@ describe('GATE G5 · DIVERSIDAD DE VÍAS EN EL CASO #1 (FOOL vs VISIONARY)', () 
     // 1. Crear personaje FOOL
     db.createCharacter({
       id: foolCharId,
-      name: 'Sherlock Moriarty (FOOL)',
+      name: 'Ernest Holloway (FOOL)',
       pathway: 'FOOL',
       sequence: 9,
       current_health: 100,
@@ -36,7 +36,7 @@ describe('GATE G5 · DIVERSIDAD DE VÍAS EN EL CASO #1 (FOOL vs VISIONARY)', () 
     // 2. Crear personaje VISIONARY
     db.createCharacter({
       id: visCharId,
-      name: 'Audrey Hall (VISIONARY)',
+      name: 'Margaret Ashby (VISIONARY)',
       pathway: 'VISIONARY',
       sequence: 9,
       current_health: 100,

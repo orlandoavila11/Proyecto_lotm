@@ -23,6 +23,16 @@ export interface AscensionIngredient {
   quality: MarketItemQuality | null;
 }
 
+export interface PreparationStep {
+  id: keyof PreparationChecklist;
+  name: string;
+  description: string;
+  costPence: number;
+  done: boolean;
+  /** por qué no puede prepararse ahora (null si puede) */
+  blockedReason: string | null;
+}
+
 export interface AscensionStatus {
   canDrink: boolean;
   currentSequence: number;
@@ -57,6 +67,7 @@ export interface AscensionStatus {
     maxScore: number;
     mitigationPercent: number;
     checklist: PreparationChecklist;
+    steps: PreparationStep[];
   };
   estimatedSuccessRate: number;
 }
@@ -242,7 +253,8 @@ export class AscensionEngine {
         score: prepScore,
         maxScore: 4,
         mitigationPercent,
-        checklist
+        checklist,
+        steps: this.preparationSteps(db, characterId, checklist)
       },
       estimatedSuccessRate: successRate
     };
@@ -271,9 +283,21 @@ export class AscensionEngine {
       } catch {}
     }
 
-    const mergedChecklist = { ...currentChecklist, ...checklistUpdates };
-    const presentedAt = isPresented 
-      ? (existing?.presented_at || Date.now()) 
+    // Cada paso se prepara una vez: se comprueba su condición y se paga su coste (balance/economy.json).
+    // Lo ya preparado no se deshace; marcar "false" no tiene efecto.
+    const steps = this.preparationSteps(db, characterId, currentChecklist);
+    const mergedChecklist = { ...currentChecklist };
+    for (const [key, wanted] of Object.entries(checklistUpdates) as [keyof PreparationChecklist, boolean | undefined][]) {
+      if (!wanted || mergedChecklist[key]) continue;
+      const step = steps.find(st => st.id === key);
+      if (!step) throw new Error(`Paso del rito desconocido: ${key}`);
+      if (step.blockedReason) throw new Error(step.blockedReason);
+      if (step.costPence > 0) db.updateCharacterWealth(characterId, -step.costPence);
+      mergedChecklist[key] = true;
+    }
+
+    const presentedAt = isPresented
+      ? (existing?.presented_at || Date.now())
       : (existing?.presented_at || null);
 
     db.saveAscensionState({
@@ -284,6 +308,26 @@ export class AscensionEngine {
     });
 
     return mergedChecklist;
+  }
+
+  /** Estado de cada paso del rito para el personaje ahora mismo (lo que ve el cliente). */
+  public static preparationSteps(db: DatabaseClient, characterId: string, checklist: PreparationChecklist): PreparationStep[] {
+    const char = db.getCharacter(characterId);
+    const home = db.getActivePersona(characterId)?.district ?? null;
+    return EconomyEngine.getEconomyBalance().preparationChecklist.map(def => {
+      const done = !!checklist[def.id];
+      let blockedReason: string | null = null;
+      if (!done && char) {
+        if (def.requires?.atHome && home && !(char.current_location ?? '').includes(home)) {
+          blockedReason = 'El rito sólo puede sellarse en tu propio refugio.';
+        } else if (def.requires?.slot !== undefined && (char.current_slot ?? 0) !== def.requires.slot) {
+          blockedReason = 'Aún no es la hora: hay que esperar a la noche.';
+        } else if (char.raw_pence < def.costPence) {
+          blockedReason = 'No te alcanza el dinero para prepararlo.';
+        }
+      }
+      return { id: def.id, name: def.name, description: def.description, costPence: def.costPence, done, blockedReason };
+    });
   }
 
   /**

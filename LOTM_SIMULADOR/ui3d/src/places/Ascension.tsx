@@ -10,7 +10,7 @@ import { GoldButton } from '../hud/kit/components';
 import { IconBook, IconBottles, IconCandle, IconScroll } from '../hud/kit/icons';
 import { StackedSheet } from '../hud/kit/StackedSheet';
 import { LetterReader } from '../hud/panels/LetterReader';
-import { useSession } from '../session/store';
+import { formatMoney, useSession } from '../session/store';
 import { ASCENSION_MIRROR, ascensionSpec } from './specs/interiors';
 import { useSomaticScene } from './somatics';
 import { useMirrorPortrait } from './useMirrorPortrait';
@@ -18,12 +18,6 @@ import { useMirrorPortrait } from './useMirrorPortrait';
 type Detail = 'formula' | 'ingredients' | 'digestion' | 'preparation' | null;
 type ChecklistKey = keyof AscensionStatus['door4_preparation']['checklist'];
 
-const CHECKLIST: { key: ChecklistKey; label: string }[] = [
-  { key: 'lugar', label: 'Un lugar apartado y seguro' },
-  { key: 'momento', label: 'El momento propicio' },
-  { key: 'materiales_rituales', label: 'Los materiales del rito dispuestos' },
-  { key: 'costos_anclaje', label: 'Aceptado lo que arriesgan tus anclas' }
-];
 
 const QUALITY: Record<string, string> = { PRISTINE: 'íntegra', DAMAGED: 'dañada', CONTAMINATED: 'contaminada' };
 /** calidad de un ingrediente suelto (masculino: "el ingrediente") */
@@ -180,12 +174,16 @@ export function Ascension() {
         {detail === 'preparation' && (
           <>
             <h3 className="sheet-heading" style={{ fontSize: 32 }}>Preparación del rito</h3>
-            <div style={{ display: 'grid', gap: 10 }}>
-              {CHECKLIST.map((c) => (
-                <label key={c.key} className="toggle toggle--paper">
-                  <input type="checkbox" checked={!!s.door4_preparation.checklist[c.key]} disabled={busy === c.key} onChange={(e) => toggle(c.key, e.target.checked)} />
+            <p className="sheet-prose sheet-prose--small" style={{ fontStyle: 'italic' }}>Cada paso se prepara una vez y se paga en el acto.</p>
+            <div style={{ display: 'grid', gap: 14 }}>
+              {s.door4_preparation.steps.map((st) => (
+                <label key={st.id} className={`toggle toggle--paper prep-step ${st.blockedReason && !st.done ? 'is-blocked' : ''}`}>
+                  <input type="checkbox" checked={st.done} disabled={st.done || !!st.blockedReason || busy === st.id} onChange={(e) => e.target.checked && toggle(st.id, true)} />
                   <span className="toggle__box" aria-hidden="true" />
-                  <span>{c.label}</span>
+                  <span className="prep-step__text">
+                    <span className="prep-step__name">{st.name}{!st.done && st.costPence > 0 ? ` · ${formatMoney(st.costPence)}` : ''}</span>
+                    <span className="prep-step__detail">{st.done ? 'Preparado.' : st.blockedReason ?? st.description}</span>
+                  </span>
                 </label>
               ))}
             </div>

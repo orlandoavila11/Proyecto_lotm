@@ -2,113 +2,60 @@ import { test } from 'node:test';
 import * as assert from 'node:assert';
 import { buildApp } from '../src/server/app.js';
 
-test('Integration Test: Ciclo completo de Creación, Acting, Viaje y Somática en Fastify + SQLite', async () => {
+/**
+ * Ciclo completo por la API: prólogo → dilema de actuación → una semana de calendario (el tick semanal lo dispara
+ * el calendario, una sola vez) → viaje en carruaje.
+ */
+test('Integración: prólogo, actuación, semana de calendario con un único cobro de alquiler y viaje', async () => {
   const { app, db } = await buildApp({ dbPath: ':memory:' });
+  const post = (url: string, payload: unknown) => app.inject({ method: 'POST', url, payload: payload as any });
+  const get = (url: string) => app.inject({ method: 'GET', url });
 
   try {
-    // 1. Health check
-    const healthRes = await app.inject({
-      method: 'GET',
-      url: '/api/health'
-    });
-    assert.strictEqual(healthRes.statusCode, 200);
-    const healthData = JSON.parse(healthRes.body);
-    assert.strictEqual(healthData.status, 'ok');
-    assert.strictEqual(healthData.canonicalPathwaysLoaded, 22);
+    const health = JSON.parse((await get('/api/health')).body);
+    assert.strictEqual(health.status, 'ok');
 
-    // 2. Creación de Personaje: Danitz (Hunter / RED_PRIEST)
-    const newCharRes = await app.inject({
-      method: 'POST',
-      url: '/api/character/new',
-      payload: {
-        name: 'Danitz',
-        pathway: 'HUNTER',
-        startingCity: 'Bayam - Muelles Coloniales',
-        background: 'Cazador de Piratas',
-        socialClass: 'WORKING_CLASS'
-      }
-    });
+    // 1. El personaje nace sólo por el prólogo
+    const start = JSON.parse((await post('/api/prologue/start', { originId: 'ORIGIN_CLERK', name: 'Ernest Holloway' })).body);
+    const characterId = start.characterId;
+    await post('/api/prologue/tutorial/dilemma', { characterId, choice: 'PRUDENCE' });
+    const drink = await post('/api/prologue/drink', { characterId, potionChoice: 'AMBER_MIRROR' });
+    assert.strictEqual(drink.statusCode, 200);
+    assert.strictEqual((await post('/api/character/new', { name: 'Otro', pathway: 'HUNTER' })).statusCode, 404, 'no hay atajo de creación');
 
-    assert.strictEqual(newCharRes.statusCode, 201);
-    const newCharData = JSON.parse(newCharRes.body);
-    assert.strictEqual(newCharData.character.name, 'Danitz');
-    assert.strictEqual(newCharData.character.pathway, 'RED_PRIEST');
-    assert.strictEqual(newCharData.character.sequence, 9);
-    assert.strictEqual(newCharData.sequenceName, 'Hunter');
-    assert.strictEqual(newCharData.wallet.pounds, 30);
-    assert.strictEqual(newCharData.activePersona.profession, 'Cazador de Piratas');
+    // 2. Dilema público (sin solución) y resolución
+    const dilemma = JSON.parse((await get(`/api/acting/dilemma/${characterId}?public=1`)).body).dilemma;
+    assert.ok(dilemma.choices.length >= 2, JSON.stringify(dilemma).slice(0, 400));
+    const resolved = await post('/api/acting/resolve', { characterId, dilemmaId: dilemma.id, choiceId: dilemma.choices[0].id });
+    assert.strictEqual(resolved.statusCode, 200);
+    const digestionBefore = db.getCharacter(characterId)!.digestion_progress;
 
-    const charId = newCharData.character.id;
+    // 3. No hay tick semanal a petición del cliente
+    assert.strictEqual((await post('/api/acting/weekly-tick', { characterId })).statusCode, 404);
 
-    // 3. Obtener Dilema de Actuación Canónico
-    const dilemmaRes = await app.inject({
-      method: 'GET',
-      url: `/api/acting/dilemma/${charId}`
-    });
+    // 4. Una semana de franjas (4 por día × 7 días): el calendario dispara el tick al empezar el día 8
+    const penceBefore = db.getCharacter(characterId)!.raw_pence;
+    let ticks = 0;
+    for (let i = 0; i < 28; i++) {
+      const r = await post('/api/calendar/action', { characterId, actionType: 'SOCIALIZE' });
+      assert.strictEqual(r.statusCode, 200, r.body);
+      if (JSON.parse(r.body).weeklyTickExecuted) ticks++;
+    }
+    const after = db.getCharacter(characterId)!;
+    assert.strictEqual(after.current_day, 8);
+    assert.strictEqual(ticks, 1, 'un único tick semanal');
+    const rentLogs = db.getCalendarLogs(characterId, 200).filter((l: any) => l.subsystem === 'rent');
+    assert.strictEqual(rentLogs.length, 1, 'el alquiler se cobra una sola vez por semana');
+    assert.ok(after.digestion_progress >= digestionBefore, 'la digestión sólo la escribe el tick');
+    assert.notStrictEqual(after.raw_pence, penceBefore, 'la semana mueve el dinero (alquiler y salario)');
 
-    assert.strictEqual(dilemmaRes.statusCode, 200);
-    const dilemmaData = JSON.parse(dilemmaRes.body);
-    assert.strictEqual(dilemmaData.dilemma.pathway, 'RED_PRIEST');
-    assert.strictEqual(dilemmaData.dilemma.sequenceName, 'Hunter');
-    assert.ok(dilemmaData.dilemma.choices.length >= 2);
+    // 5. Viaje: la ubicación guardada es el id del distrito, no el texto del cliente
+    const travel = await post('/api/city/travel', { characterId, destinationDistrict: 'el este de la ciudad' });
+    assert.strictEqual(travel.statusCode, 200, travel.body);
+    assert.strictEqual(db.getCharacter(characterId)!.current_location, 'DIST_EAST_BOROUGH');
 
-    // 4. Resolver Dilema con Elección Alineada
-    const resolveRes = await app.inject({
-      method: 'POST',
-      url: '/api/acting/resolve',
-      payload: {
-        characterId: charId,
-        dilemmaId: dilemmaData.dilemma.id,
-        choiceId: 'CHOICE_HUNTER_9_TRACK'
-      }
-    });
-
-    assert.strictEqual(resolveRes.statusCode, 200);
-    const resolveData = JSON.parse(resolveRes.body);
-    assert.strictEqual(resolveData.isAligned, true);
-    assert.strictEqual(resolveData.digestionProgress, 10.0); // No cambia hasta el tick semanal
-    assert.strictEqual(resolveData.penceRewarded, 240); // +£1 libra
-
-    // 4b. Tick Semanal: ÚNICO escritor de la digestión
-    const tickRes = await app.inject({
-      method: 'POST',
-      url: '/api/acting/weekly-tick',
-      payload: { characterId: charId }
-    });
-    assert.strictEqual(tickRes.statusCode, 200);
-    const tickData = JSON.parse(tickRes.body);
-    assert.strictEqual(tickData.success, true);
-    assert.ok(tickData.tickResult.assimilationGain > 0);
-
-    // 5. Viajar a otro distrito
-    const travelRes = await app.inject({
-      method: 'POST',
-      url: '/api/city/travel',
-      payload: {
-        characterId: charId,
-        destinationDistrict: 'Backlund - Distrito de Cherwood'
-      }
-    });
-
-    assert.strictEqual(travelRes.statusCode, 200);
-    const travelData = JSON.parse(travelRes.body);
-    assert.strictEqual(travelData.newLocation, 'Backlund - Distrito de Cherwood');
-
-    // 6. Consultar estado final del personaje
-    const charRes = await app.inject({
-      method: 'GET',
-      url: `/api/character/${charId}`
-    });
-
-    assert.strictEqual(charRes.statusCode, 200);
-    const finalData = JSON.parse(charRes.body);
-    assert.strictEqual(finalData.character.current_location, 'Backlund - Distrito de Cherwood');
-    assert.strictEqual(finalData.wallet.pounds, 30); // 7200 + 240 - 24 (viaje) - 24 (alquiler semanal) = 7392 -> £30 16s
-    assert.strictEqual(finalData.wallet.soli, 16);
-    assert.strictEqual(finalData.somatics.sanityTier, 'LUCID');
-    assert.ok(finalData.character.digestion_progress > 10.0);
-    assert.strictEqual(finalData.inventoryCount, 2);
-
+    const snap = JSON.parse((await get(`/api/character/${characterId}`)).body);
+    assert.strictEqual(snap.character.current_location, 'DIST_EAST_BOROUGH');
   } finally {
     db.close();
     await app.close();

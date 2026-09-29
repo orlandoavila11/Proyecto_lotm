@@ -27,8 +27,9 @@ export async function buildApp(options: AppOptions = {}): Promise<{ app: Fastify
     logger: false
   });
 
+  // juego local: sólo el propio equipo (localhost / 127.0.0.1 en cualquier puerto)
   await app.register(cors, {
-    origin: '*'
+    origin: [/^https?:\/\/localhost(:\d+)?$/, /^https?:\/\/127\.0\.0\.1(:\d+)?$/]
   });
 
   // Global Semantic Error Handler

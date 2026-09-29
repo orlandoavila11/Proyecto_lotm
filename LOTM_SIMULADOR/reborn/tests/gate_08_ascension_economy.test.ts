@@ -43,7 +43,7 @@ describe('GATE 08: Economía Victoriana, Las Cinco Puertas y La Escena del Trago
     // Personaje 1: Solvente (7200d)
     const richChar = db.createCharacter({
       id: 'char_solvent',
-      name: 'Sherlock Moriarty',
+      name: 'Ernest Holloway',
       pathway: 'FOOL',
       sequence: 9,
       current_health: 100,
@@ -94,7 +94,7 @@ describe('GATE 08: Economía Victoriana, Las Cinco Puertas y La Escena del Trago
 
     const char = db.createCharacter({
       id: 'char_corrupt',
-      name: 'Audrey Hall',
+      name: 'Margaret Ashby',
       pathway: 'VISIONARY',
       sequence: 9,
       current_health: 100,
@@ -125,7 +125,7 @@ describe('GATE 08: Economía Victoriana, Las Cinco Puertas y La Escena del Trago
 
     const char = db.createCharacter({
       id: 'char_merchant',
-      name: 'Klein Moretti',
+      name: 'Henry Blythe',
       pathway: 'FOOL',
       sequence: 9,
       current_health: 100,
@@ -309,7 +309,7 @@ describe('GATE 08: Economía Victoriana, Las Cinco Puertas y La Escena del Trago
 
     const char = db.createCharacter({
       id: 'char_ascend_success',
-      name: 'Klein Moretti',
+      name: 'Henry Blythe',
       pathway: 'FOOL',
       sequence: 9,
       current_health: 100,
@@ -329,7 +329,9 @@ describe('GATE 08: Economía Victoriana, Las Cinco Puertas y La Escena del Trago
     db.addInventoryItem({ id: 'ing_p3', character_id: char.id, item_code: 'ING_JIMSONWEED_JUICE', name: 'Estramonio', category: 'INGREDIENT', quality: 'PRISTINE' });
     db.addInventoryItem({ id: 'ing_p4', character_id: char.id, item_code: 'ING_BLACK_SUNFLOWER_POWDER', name: 'Girasol', category: 'INGREDIENT', quality: 'PRISTINE' });
 
-    // Completar checklist 4/4
+    // Completar checklist 4/4: el rito se paga y el momento exige la noche
+    db.updateCharacterWealth(char.id, 1000);
+    db.getRawDb().prepare('UPDATE characters SET current_slot = 3 WHERE id = ?').run(char.id);
     const presentedTime = 1757800000000;
     AscensionEngine.updatePreparationChecklist(db, char.id, {
       lugar: true,

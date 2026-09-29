@@ -20,7 +20,7 @@ describe('TASK P09: Tablero de Corcho Veraz, Notas Libres e Hipótesis Autorales
     try {
       const char = db.createCharacter({
         id: 'char_p09_inspector',
-        name: 'Sherlock Holmes',
+        name: 'Oliver Marsh',
         pathway: 'FOOL',
         sequence: 9,
         current_health: 100,
@@ -34,6 +34,7 @@ describe('TASK P09: Tablero de Corcho Veraz, Notas Libres e Hipótesis Autorales
         current_location: 'DIST_CHERWOOD',
         current_day: 1
       });
+      await app.inject({ method: 'POST', url: '/api/investigation/case/activate', payload: { characterId: char.id, caseId: 'CASE_CHERWOOD_HEIRLOOM' } });
 
       const res = await app.inject({
         method: 'GET',
@@ -76,7 +77,7 @@ describe('TASK P09: Tablero de Corcho Veraz, Notas Libres e Hipótesis Autorales
     try {
       const char = db.createCharacter({
         id: 'char_p09_notetaker',
-        name: 'Klein Moretti',
+        name: 'Henry Blythe',
         pathway: 'FOOL',
         sequence: 9,
         current_health: 100,
@@ -90,6 +91,7 @@ describe('TASK P09: Tablero de Corcho Veraz, Notas Libres e Hipótesis Autorales
         current_location: 'DIST_CHERWOOD',
         current_day: 1
       });
+      await app.inject({ method: 'POST', url: '/api/investigation/case/activate', payload: { characterId: char.id, caseId: 'CASE_CHERWOOD_HEIRLOOM' } });
 
       const caseState = InvestigationEngine.activateCase(db, char.id, 'CASE_CHERWOOD_HEIRLOOM');
 
@@ -152,7 +154,7 @@ describe('TASK P09: Tablero de Corcho Veraz, Notas Libres e Hipótesis Autorales
     try {
       const char = db.createCharacter({
         id: 'char_p09_connect_tester',
-        name: 'Audrey Hall',
+        name: 'Margaret Ashby',
         pathway: 'VISIONARY',
         sequence: 9,
         current_health: 100,
@@ -166,6 +168,7 @@ describe('TASK P09: Tablero de Corcho Veraz, Notas Libres e Hipótesis Autorales
         current_location: 'DIST_CHERWOOD',
         current_day: 1
       });
+      await app.inject({ method: 'POST', url: '/api/investigation/case/activate', payload: { characterId: char.id, caseId: 'CASE_CHERWOOD_HEIRLOOM' } });
 
       const caseState = InvestigationEngine.activateCase(db, char.id, 'CASE_CHERWOOD_HEIRLOOM');
 
@@ -225,7 +228,7 @@ describe('TASK P09: Tablero de Corcho Veraz, Notas Libres e Hipótesis Autorales
     try {
       const char = db.createCharacter({
         id: 'char_p09_hypo_tester',
-        name: 'Leonard Mitchell',
+        name: 'Walter Crane',
         pathway: 'FOOL',
         sequence: 9,
         current_health: 100,
@@ -239,6 +242,7 @@ describe('TASK P09: Tablero de Corcho Veraz, Notas Libres e Hipótesis Autorales
         current_location: 'DIST_CHERWOOD',
         current_day: 1
       });
+      await app.inject({ method: 'POST', url: '/api/investigation/case/activate', payload: { characterId: char.id, caseId: 'CASE_CHERWOOD_HEIRLOOM' } });
 
       const caseState = InvestigationEngine.activateCase(db, char.id, 'CASE_CHERWOOD_HEIRLOOM');
 

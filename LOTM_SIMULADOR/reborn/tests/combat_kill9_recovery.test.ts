@@ -6,6 +6,7 @@ import * as os from 'node:os';
 import { spawn, execSync } from 'node:child_process';
 import { DatabaseClient } from '../src/infra/database/DatabaseClient.js';
 import { buildApp } from '../src/server/app.js';
+import { awakenedCharacterHttp } from './helpers/characters.js';
 
 describe('Kill -9 Recovery: Persistencia Transaccional y Restauración Byte-Equivalente', () => {
   it('un proceso abruptamente terminado con kill -9 en pleno combate restaura el estado exacto byte-equivalente', async () => {
@@ -46,21 +47,8 @@ describe('Kill -9 Recovery: Persistencia Transaccional y Restauración Byte-Equi
       assert.ok(port > 0, 'El servidor de prueba debe arrancar y reportar su puerto');
       const baseUrl = `http://127.0.0.1:${port}`;
 
-      // 3. Crear personaje
-      const createRes = await fetch(`${baseUrl}/api/character/new`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: 'Ernest Holloway',
-          pathway: 'FOOL',
-          startingCity: 'Backlund',
-          background: 'Guerrero de Barrio',
-          socialClass: 'WORKING_CLASS'
-        })
-      });
-      assert.strictEqual(createRes.status, 201);
-      const createData = await createRes.json();
-      const charId = createData.character.id;
+      // 3. Crear personaje (por el prólogo, el único camino)
+      const charId = await awakenedCharacterHttp(baseUrl);
 
       // 4. Iniciar combate
       const startRes = await fetch(`${baseUrl}/api/combat/start`, {

@@ -6,6 +6,7 @@ import * as os from 'node:os';
 import { spawn, execSync } from 'node:child_process';
 import { DatabaseClient } from '../src/infra/database/DatabaseClient.js';
 import { buildApp } from '../src/server/app.js';
+import { awakenedCharacterHttp } from './helpers/characters.js';
 
 describe('Kill -9 Recovery: Persistencia Transaccional de Investigaciones y Restauración Byte-Equivalente', () => {
   it('un proceso abruptamente terminado con kill -9 a mitad de una investigación restaura el estado exacto byte-equivalente', async () => {
@@ -46,21 +47,8 @@ describe('Kill -9 Recovery: Persistencia Transaccional de Investigaciones y Rest
       assert.ok(port > 0, 'El servidor de prueba debe arrancar y reportar su puerto');
       const baseUrl = `http://127.0.0.1:${port}`;
 
-      // 3. Crear personaje FOOL
-      const createRes = await fetch(`${baseUrl}/api/character/new`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: 'Sherlock Moriarty',
-          pathway: 'FOOL',
-          startingCity: 'Backlund',
-          background: 'Detective Consultor',
-          socialClass: 'MIDDLE_CLASS'
-        })
-      });
-      assert.strictEqual(createRes.status, 201);
-      const createData = await createRes.json();
-      const charId = createData.character.id;
+      // 3. Crear personaje FOOL (por el prólogo)
+      const charId = await awakenedCharacterHttp(baseUrl);
 
       // 4. Activar Caso #1 "El Eco en el Nido Vacío"
       const activateRes = await fetch(`${baseUrl}/api/investigation/case/activate`, {
@@ -153,7 +141,10 @@ describe('Kill -9 Recovery: Persistencia Transaccional de Investigaciones y Rest
       assert.ok(restoredCase, 'El caso activo debe haber sido recuperado');
       assert.strictEqual(restoredCase.status, 'ACTIVE');
 
-      const restoredState = restoredCase.state;
+      assert.strictEqual(restoredCase.culprit_name, undefined, 'el expediente público no trae culpables');
+      assert.strictEqual(restoredCase.state_json, undefined, 'ni el estado interno');
+      const activeRes = await recoveredApp.inject({ method: 'GET', url: `/api/investigation/case/active/${charId}` });
+      const restoredState = JSON.parse(activeRes.body).caseState;
       assert.strictEqual(restoredState.id, instanceId);
       assert.strictEqual(restoredState.discoveredClues.length, 2); // CLUE_BURNED_TOYS + CLUE_WILL_DRAFT
       assert.strictEqual(restoredState.connectedEdges.length, 1);

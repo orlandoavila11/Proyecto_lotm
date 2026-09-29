@@ -1,6 +1,7 @@
 import { test, describe, it } from 'node:test';
 import * as assert from 'node:assert';
 import { buildApp } from '../src/server/app.js';
+import { awakenedCharacter } from './helpers/characters.js';
 import { projectPublicBattle } from '../src/server/routes/combatRoutes.js';
 import { GridCombatEngine } from '../src/core/combat/GridCombatEngine.js';
 import { CombatContent } from '../src/core/combat/CombatContent.js';
@@ -46,11 +47,7 @@ describe('P01: Proyecciones Públicas Veraces y Ocultamiento de Secretos', () =>
 
   it('3. iniciar combate: el servidor elige el adversario y no acepta parámetros de resultado', async () => {
     const { app } = await buildApp({ dbPath: ':memory:' });
-    const charRes = await app.inject({
-      method: 'POST', url: '/api/character/new',
-      payload: { name: 'Ernest Holloway', pathway: 'FOOL', startingCity: 'Backlund - Cherwood', background: 'Detective Privado' }
-    });
-    const charId = JSON.parse(charRes.body).character.id;
+    const charId = await awakenedCharacter(app);
     const startRes = await app.inject({
       method: 'POST', url: '/api/combat/start',
       payload: { characterId: charId, enemyName: 'Criatura Sombra', enemyHp: 1, ambushMode: 'PLAYER_AMBUSH' }
@@ -68,18 +65,7 @@ describe('P01: Proyecciones Públicas Veraces y Ocultamiento de Secretos', () =>
   it('4. La activación de un caso no expone truthModel al cliente', async () => {
     const { app } = await buildApp({ dbPath: ':memory:' });
 
-    const charRes = await app.inject({
-      method: 'POST',
-      url: '/api/character/new',
-      payload: {
-        name: 'Audrey Hall',
-        pathway: 'VISIONARY',
-        startingCity: 'Backlund - Queen',
-        background: 'Espiritista de Salón'
-      }
-    });
-    const char = JSON.parse(charRes.body);
-    const charId = char.character.id;
+    const charId = await awakenedCharacter(app, { potion: 'AMBER_MIRROR', name: 'Margaret Ashby' });
 
     const caseRes = await app.inject({
       method: 'POST',

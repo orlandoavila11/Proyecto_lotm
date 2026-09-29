@@ -128,7 +128,7 @@ export const cityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
           throw new DomainRuleViolationError(`Fondos insuficientes para el carruaje de alquiler (tarifa requerida: ${CARRIAGE_FARE} peniques).`);
         }
 
-        const finalLocation = destinationDistrict;
+        const finalLocation = targetDistrict.id;
         const rawDb = db.getRawDb();
         rawDb.prepare("UPDATE characters SET current_location = ?, updated_at = datetime('now') WHERE id = ?")
           .run(finalLocation, characterId);

@@ -47,7 +47,7 @@ describe('GATE 07: Motor de Convergencia v1, Ley de Características y Halcones 
     // Crear personaje FOOL
     db.createCharacter({
       id: 'char_fool_test',
-      name: 'Klein Moretti',
+      name: 'Henry Blythe',
       pathway: 'FOOL',
       sequence: 9,
       current_health: 100,
@@ -61,7 +61,7 @@ describe('GATE 07: Motor de Convergencia v1, Ley de Características y Halcones 
     // Crear personaje VISIONARY
     db.createCharacter({
       id: 'char_visionary_test',
-      name: 'Audrey Hall',
+      name: 'Margaret Ashby',
       pathway: 'VISIONARY',
       sequence: 9,
       current_health: 100,

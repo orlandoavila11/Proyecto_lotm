@@ -1,42 +1,10 @@
 import { FastifyInstance, FastifyPluginAsync } from 'fastify';
 import { z } from 'zod';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
-import { ProceduralInvestigationService, InvestigationMethod } from '../../core/investigation/ProceduralInvestigationService.js';
 import { InvestigationEngine, type InvestigationCaseState } from '../../core/investigation/InvestigationEngine.js';
 import { CanonicalPathwayId } from '../../core/types/pathway.js';
 import { CommandProcessor } from '../../infra/database/CommandProcessor.js';
 import { EntityNotFoundError, DomainRuleViolationError } from '../../core/errors/DomainError.js';
-
-const GenerateCaseSchema = z.object({
-  characterId: z.string()
-});
-
-const InvestigateClueSchema = z.object({
-  characterId: z.string(),
-  caseId: z.string(),
-  clueId: z.string(),
-  method: z.enum([
-    'SPIRITUAL_DIVINATION',
-    'PSYCHOLOGICAL_ANALYSIS',
-    'LOGICAL_RATIOCINATION',
-    'FORENSIC_TRACKING'
-  ]),
-  commandId: z.string().optional(),
-  expectedRevision: z.number().int().optional()
-});
-
-const VerdictSchema = z.object({
-  characterId: z.string(),
-  caseId: z.string(),
-  action: z.enum([
-    'SCOTLAND_YARD',
-    'EXTORT_BLACKMAIL',
-    'EXECUTE_SHADOWS',
-    'COVER_UP_ALLIANCE'
-  ]),
-  commandId: z.string().optional(),
-  expectedRevision: z.number().int().optional()
-});
 
 // Schemas para BRIEF-04 (Motor de Investigación Sistémico)
 const ActivateCaseSchema = z.object({
@@ -92,16 +60,6 @@ const ResolveCaseSchema = z.object({
   expectedRevision: z.number().int().optional()
 });
 
-const AdvanceTimeSchema = z.object({
-  instanceId: z.string(),
-  days: z.number().int().positive()
-});
-
-const GenerateMinorCaseSchema = z.object({
-  characterId: z.string(),
-  templateIndex: z.union([z.literal(1), z.literal(2)]).optional().default(1)
-});
-
 const AddNoteSchema = z.object({
   instanceId: z.string(),
   text: z.string().min(1),
@@ -148,21 +106,20 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
       return reply.status(404).send({ error: 'Personaje no encontrado' });
     }
 
-    const legacyCases = db.getCharacterCases(characterId).map(c => ({
-      ...c,
-      clues: db.getCaseClues(c.id)
-    }));
-
-    const caseInstances = db.getCharacterCaseInstances(characterId).map(inst => ({
-      ...inst,
-      state: JSON.parse(inst.state_json)
-    }));
-
-    return reply.send({
-      characterId,
-      cases: legacyCases,
-      caseInstances
+    // lista blanca: el expediente sin culpables ni modelo de verdad (sólo lo que el personaje sabe)
+    const caseInstances = db.getCharacterCaseInstances(characterId).map(inst => {
+      const state = JSON.parse(inst.state_json) as InvestigationCaseState;
+      return {
+        id: inst.id,
+        caseId: inst.case_id,
+        title: state.title,
+        status: inst.status,
+        cluesFound: state.discoveredClues.length,
+        resolution: state.resolvedState ? { nombre: state.resolvedState.nombre } : null
+      };
     });
+
+    return reply.send({ characterId, caseInstances });
   });
 
   // POST /api/investigation/case/activate (Brief-04)
@@ -197,10 +154,12 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
     try {
       // Un caso ya cerrado no se reabre al consultarlo: si la última instancia no está activa (resuelta),
       // se devuelve tal cual. Sólo sin historial se activa el caso autoral.
+      // GET nunca muta: sin caso abierto se responde vacío y el cliente lo abre con POST /case/activate
       const latest = db.getCharacterCaseInstances(characterId).find((i: any) => i.case_id === 'CASE_CHERWOOD_HEIRLOOM');
-      const activeState: InvestigationCaseState = latest && latest.status !== 'ACTIVE'
-        ? JSON.parse(latest.state_json)
-        : InvestigationEngine.activateCase(db, characterId, 'CASE_CHERWOOD_HEIRLOOM');
+      if (!latest) {
+        return reply.status(200).send({ success: true, caseState: null, availableHypotheses: [], availableResolutions: [] });
+      }
+      const activeState: InvestigationCaseState = JSON.parse(latest.state_json);
       const publicMeta = InvestigationEngine.getPublicCaseMetadata();
       return reply.status(200).send({
         success: true,
@@ -485,133 +444,5 @@ export const investigationRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = a
       fromReceipt: processed.fromReceipt,
       revision: processed.revision
     });
-  });
-
-  // POST /api/investigation/case/advance-day (Brief-04: Expiry)
-  fastify.post('/case/advance-day', async (req, reply) => {
-    const parseRes = AdvanceTimeSchema.safeParse(req.body);
-    if (!parseRes.success) {
-      return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
-    }
-
-    try {
-      const state = InvestigationEngine.advanceTime(
-        db,
-        parseRes.data.instanceId,
-        parseRes.data.days
-      );
-      return reply.send({ success: true, caseState: InvestigationEngine.projectPublicState(state) });
-    } catch (err: any) {
-      return reply.status(400).send({ error: err.message });
-    }
-  });
-
-  // POST /api/investigation/cases/minor/generate (Brief-04: Casos Menores)
-  fastify.post('/cases/minor/generate', async (req, reply) => {
-    const parseRes = GenerateMinorCaseSchema.safeParse(req.body);
-    if (!parseRes.success) {
-      return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
-    }
-
-    try {
-      const minorCase = InvestigationEngine.generateMinorCase(
-        db,
-        parseRes.data.characterId,
-        parseRes.data.templateIndex as 1 | 2
-      );
-      return reply.status(201).send({ success: true, minorCase });
-    } catch (err: any) {
-      return reply.status(400).send({ error: err.message });
-    }
-  });
-
-  // --- RUTAS LEGACY (Retrocompatibilidad) ---
-  // POST /api/investigation/case/generate
-  fastify.post('/case/generate', async (req, reply) => {
-    const parseRes = GenerateCaseSchema.safeParse(req.body);
-    if (!parseRes.success) {
-      return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
-    }
-
-    const { characterId } = parseRes.data;
-    const char = db.getCharacter(characterId);
-    if (!char) {
-      return reply.status(404).send({ error: 'Personaje no encontrado' });
-    }
-
-    const newCase = ProceduralInvestigationService.generateCaseForCharacter(
-      db,
-      characterId,
-      char.current_day
-    );
-
-    const fullCase = db.getInvestigationCase(newCase.caseId);
-    const clues = db.getCaseClues(newCase.caseId);
-
-    return reply.status(201).send({
-      success: true,
-      case: {
-        ...fullCase,
-        clues
-      }
-    });
-  });
-
-  // POST /api/investigation/clue/investigate
-  fastify.post('/clue/investigate', async (req, reply) => {
-    const parseRes = InvestigateClueSchema.safeParse(req.body);
-    if (!parseRes.success) {
-      return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
-    }
-
-    const { characterId, caseId, clueId, method } = parseRes.data;
-    const char = db.getCharacter(characterId);
-    if (!char) {
-      return reply.status(404).send({ error: 'Personaje no encontrado' });
-    }
-
-    try {
-      const result = ProceduralInvestigationService.investigateClue(
-        db,
-        caseId,
-        clueId,
-        char.pathway as CanonicalPathwayId,
-        method as InvestigationMethod
-      );
-
-      return reply.send({
-        ...result,
-        newDigestion: char.digestion_progress
-      });
-    } catch (err: any) {
-      return reply.status(400).send({ error: err.message });
-    }
-  });
-
-  // POST /api/investigation/verdict
-  fastify.post('/verdict', async (req, reply) => {
-    const parseRes = VerdictSchema.safeParse(req.body);
-    if (!parseRes.success) {
-      return reply.status(400).send({ error: 'Datos inválidos', details: parseRes.error.format() });
-    }
-
-    const { characterId, caseId, action } = parseRes.data;
-    const char = db.getCharacter(characterId);
-    if (!char) {
-      return reply.status(404).send({ error: 'Personaje no encontrado' });
-    }
-
-    try {
-      const result = ProceduralInvestigationService.resolveVerdict(
-        db,
-        characterId,
-        caseId,
-        action
-      );
-
-      return reply.send(result);
-    } catch (err: any) {
-      return reply.status(400).send({ error: err.message });
-    }
   });
 };

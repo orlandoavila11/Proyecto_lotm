@@ -72,7 +72,7 @@ describe('Brief 03.a: Runtime de Átomos, Loadouts y Matriz de Estados', () => {
   it('3. Ejecución de Átomos en Runtime: Daño, Desplazamiento y Escudriñar deterministas', () => {
     const actor: RuntimeCombatant = {
       id: 'player_test',
-      name: 'Klein Moretti',
+      name: 'Henry Blythe',
       isPlayer: true,
       hp: 100,
       maxHp: 100,

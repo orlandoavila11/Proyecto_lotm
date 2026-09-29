@@ -23,7 +23,9 @@ export function useCase() {
   const reload = useCallback(async () => {
     if (!characterId) return null;
     try {
-      const env = await api.activeCase(characterId);
+      // el caso del barrio se abre la primera vez que el personaje lo consulta (consultar no lo abre en el motor)
+      const found = await api.activeCase(characterId);
+      const env = found.caseState ? (found as CaseEnvelope) : await api.activateCase(characterId);
       setEnvelope(env);
       return env;
     } catch (err) {

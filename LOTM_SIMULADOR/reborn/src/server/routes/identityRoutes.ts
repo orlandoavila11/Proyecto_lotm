@@ -7,10 +7,10 @@ export const identityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async 
   const { db } = opts;
 
   // GET /api/identity/roll/:characterId
-  app.get<{ Params: { characterId: string }; Querystring: { seed?: string } }>('/api/identity/roll/:characterId', async (req, reply) => {
+  app.get<{ Params: { characterId: string } }>('/api/identity/roll/:characterId', async (req, reply) => {
     const { characterId } = req.params;
-    const seed = req.query.seed ? parseInt(req.query.seed, 10) : undefined;
-    const event = IdentityEngine.rollIdentityEvent(db, characterId, seed);
+    // la tirada depende sólo del personaje y de su franja: consultar dos veces da el mismo compromiso
+    const event = IdentityEngine.rollIdentityEvent(db, characterId);
     if (!event) {
       return reply.send({ event: null, message: 'Ningún evento de identidad disparado en esta franja' });
     }

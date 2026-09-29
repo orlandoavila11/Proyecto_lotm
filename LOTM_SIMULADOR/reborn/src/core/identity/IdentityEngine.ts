@@ -51,8 +51,7 @@ export class IdentityEngine {
    */
   public static rollIdentityEvent(
     db: DatabaseClient,
-    characterId: string,
-    seed: number = 1353
+    characterId: string
   ): IdentityEventRaw | null {
     const char = db.getCharacter(characterId);
     if (!char) throw new Error(`Personaje no encontrado: ${characterId}`);
@@ -93,7 +92,7 @@ export class IdentityEngine {
 
     if (candidates.length === 0) return null;
 
-    const rng = new SeededRNG(seed + char.current_day * 10 + (char.current_slot ?? 0));
+    const rng = new SeededRNG(`identity:${characterId}:${char.current_day}:${char.current_slot ?? 0}`);
     const chosenIndex = Math.floor(rng.next() * candidates.length);
     return candidates[chosenIndex];
   }
@@ -125,6 +124,11 @@ export class IdentityEngine {
     const allEvents = this.getEvents();
     const event = allEvents.find(e => e.id === eventId);
     if (!event) throw new Error(`Evento de identidad no encontrado: ${eventId}`);
+    // sólo se resuelve el compromiso que la franja actual ha traído, no cualquiera del catálogo
+    const offered = this.rollIdentityEvent(db, characterId);
+    if (!offered || offered.id !== eventId) {
+      throw new Error('Ese compromiso no es el que te ocupa ahora.');
+    }
 
     if (optionIndex < 0 || optionIndex >= event.options.length) {
       throw new Error(`Índice de opción inválido: ${optionIndex}. El evento solo contiene ${event.options.length} opciones.`);

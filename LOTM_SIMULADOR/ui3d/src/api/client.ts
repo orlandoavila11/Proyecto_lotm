@@ -51,7 +51,9 @@ async function command<T>(path: string, kind: string, body: Record<string, unkno
     return await post<T & Receipted>(path, { ...body, commandId });
   } catch (err) {
     if (err instanceof ApiError && err.code === 'NETWORK') {
-      const receipt = await get<{ response: T; revision: number }>(`/api/commands/receipt/${encodeURIComponent(commandId)}`).catch(() => null);
+      // el recibo sólo se entrega a su autor: se identifica con el personaje de la orden
+      const who = typeof body.characterId === 'string' ? `?characterId=${encodeURIComponent(body.characterId)}` : '';
+      const receipt = await get<{ response: T; revision: number }>(`/api/commands/receipt/${encodeURIComponent(commandId)}${who}`).catch(() => null);
       if (receipt) return { ...receipt.response, fromReceipt: true, revision: receipt.revision };
     }
     throw err;
@@ -89,7 +91,10 @@ export const api = {
     command<TravelResult>('/api/city/travel', 'travel', { characterId, destinationDistrict }),
 
   // ── investigación
-  activeCase: (characterId: string) => get<CaseEnvelope>(`/api/investigation/case/active/${enc(characterId)}`),
+  /** caseState null = aún no hay caso abierto (consultar nunca lo abre) */
+  activeCase: (characterId: string) => get<Omit<CaseEnvelope, 'caseState'> & { caseState: CaseState | null }>(`/api/investigation/case/active/${enc(characterId)}`),
+  activateCase: (characterId: string, caseId = 'CASE_CHERWOOD_HEIRLOOM') =>
+    post<CaseEnvelope>('/api/investigation/case/activate', { characterId, caseId }),
   visitSource: (instanceId: string, clueId: string, sourceIndex: number, timeOfDay?: 'mañana' | 'tarde' | 'noche') =>
     command<VisitSourceResult>('/api/investigation/clue/visit-source', 'visit', { instanceId, clueId, sourceIndex, timeOfDay }),
   connectClues: (instanceId: string, clueA: string, clueB: string, relation: ClueRelation) =>
@@ -126,7 +131,7 @@ export const api = {
   // ── actuación e identidad
   actingDilemma: (characterId: string) =>
     // public=1: las opciones llegan sin su alineación ni sus efectos (se conocen al elegir)
-    get<{ dilemma: ActingDilemma; currentDigestion: number; isFullyDigested: boolean }>(`/api/acting/dilemma/${enc(characterId)}?public=1`),
+    get<{ dilemma: ActingDilemma; currentDigestion: number; isFullyDigested: boolean }>(`/api/acting/dilemma/${enc(characterId)}`),
   resolveActing: (characterId: string, dilemmaId: string, choiceId: string) =>
     post<ActingResolution>('/api/acting/resolve', { characterId, dilemmaId, choiceId }),
   identityEvent: (characterId: string) => get<{ event: IdentityEvent | null; message?: string }>(`/api/identity/roll/${enc(characterId)}`),
@@ -139,5 +144,5 @@ export const api = {
   prepareAscension: (characterId: string, checklist: Partial<AscensionStatus['door4_preparation']['checklist']>, markPresented = false) =>
     post<{ status: AscensionStatus }>('/api/ascension/prepare', { characterId, checklist, markPresented }),
   drinkAscension: (characterId: string) =>
-    command<AscensionResult>('/api/ascension/drink', 'ascend', { characterId, confirmedAt: Date.now() })
+    command<AscensionResult>('/api/ascension/drink', 'ascend', { characterId })
 };

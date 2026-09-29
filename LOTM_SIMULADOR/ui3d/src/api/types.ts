@@ -405,7 +405,12 @@ export interface AscensionStatus {
     items: { code: string; name: string; role: 'MAIN' | 'SUPPLEMENTARY'; owned: boolean; quality: Quality | null }[];
   };
   door3_digestion: { passed: boolean; current: number; required: number; details: string };
-  door4_preparation: { passed: boolean; score: number; maxScore: number; checklist: Record<'lugar' | 'momento' | 'materiales_rituales' | 'costos_anclaje', boolean> };
+  door4_preparation: {
+    passed: boolean; score: number; maxScore: number;
+    checklist: Record<'lugar' | 'momento' | 'materiales_rituales' | 'costos_anclaje', boolean>;
+    /** cada paso con su coste y, si no puede prepararse ahora, el porqué */
+    steps: { id: 'lugar' | 'momento' | 'materiales_rituales' | 'costos_anclaje'; name: string; description: string; costPence: number; done: boolean; blockedReason: string | null }[];
+  };
 }
 
 export interface AscensionResult {
