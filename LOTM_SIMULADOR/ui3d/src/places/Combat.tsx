@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { ApiError, api } from '../api/client';
-import type { BattleActor, BattleEnvelope, CombatActionResult, CombatSkill } from '../api/types';
+import type { BattleEnemy, BattleEnvelope, CombatActionResult, CombatSkill, Quality } from '../api/types';
 import { assetUrl } from '../assets';
 import { Cell, GridActor, TacticalGrid } from '../engine/combat';
 import { useAttached, usePlace, useStage, useStageEvents } from '../engine/react';
@@ -9,21 +9,23 @@ import { Divider, Gilt } from '../hud/kit/Gilt';
 import { Cartouche, GoldButton, Panel } from '../hud/kit/components';
 import { Prose } from '../hud/kit/cards';
 import { IconBoot, IconEye, IconFlee, IconHourglass, IconPistols } from '../hud/kit/icons';
-import { useSession } from '../session/store';
-import { cleanNarration, skillLabel } from './prose';
+import { formatMoney, useSession } from '../session/store';
+import { cleanNarration } from './prose';
 import { GRID_CORNERS, alleySpec } from './specs/streets';
 
-type Mode = 'move' | 'attack' | null;
-const COLS = 7;
-const ROWS = 5;
+/** modo de selección sobre la rejilla: moverse una casilla o elegir destino de una técnica de desplazamiento */
+type Mode = { kind: 'move' } | { kind: 'cell'; skill: CombatSkill } | { kind: 'attack' } | null;
+type ActionType = 'SKILL' | 'MOVE' | 'SCRUTINIZE' | 'NEGOTIATE' | 'FLEE' | 'END_TURN';
 
-/** Estado del adversario tal como lo percibe el personaje: nunca la cifra oculta. */
-function enemyCondition(e: BattleActor): string {
-  const r = e.maxHp > 0 ? e.currentHp / e.maxHp : 1;
-  if (r > 0.66) return 'Firme sobre sus pies';
-  if (r > 0.33) return 'Herido, respira con dificultad';
-  return 'Tambaleante, al borde';
-}
+const CONDITION: Record<BattleEnemy['condition'], string> = {
+  FIRM: 'Firme sobre sus pies',
+  WOUNDED: 'Herido, respira con dificultad',
+  FALTERING: 'Tambaleante, al borde'
+};
+/** estado de lo cosechado, sin concordancia de género ni número con el objeto */
+const QUALITY: Record<Quality, string> = { PRISTINE: 'en perfecto estado', DAMAGED: 'con desperfectos', CONTAMINATED: 'tocado por la corrupción' };
+
+const manhattan = (a: { x: number; y: number }, b: { x: number; y: number }) => Math.abs(a.x - b.x) + Math.abs(a.y - b.y);
 
 export function Combat() {
   const { characterId, go, refresh, saved, fail } = useSession();
@@ -50,14 +52,16 @@ export function Combat() {
     load();
   }, [load]);
 
-  const grid = useAttached(() => (ready ? new TacticalGrid(COLS, ROWS, GRID_CORNERS) : null), [ready]);
+  const cols = battle?.grid.width ?? 7;
+  const rows = battle?.grid.height ?? 5;
+  const grid = useAttached(() => (ready ? new TacticalGrid(cols, rows, GRID_CORNERS) : null), [ready, cols, rows]);
   const player = useAttached(
     () => (grid && battle ? new GridActor(grid, [battle.player.position.x, battle.player.position.y], 'ally') : null),
-    [grid, !!battle]
+    [grid, battle?.battleId]
   );
   const enemy = useAttached(
     () => (grid && battle ? new GridActor(grid, [battle.enemy.position.x, battle.enemy.position.y], 'enemy') : null),
-    [grid, !!battle]
+    [grid, battle?.battleId]
   );
 
   // figuras recortadas cuando exista el arte (la lámina limpia ya no las trae pintadas)
@@ -75,24 +79,36 @@ export function Combat() {
     enemy?.moveTo([battle.enemy.position.x, battle.enemy.position.y]);
   }, [battle, player, enemy]);
 
-  // casillas alcanzables: regla canónica del motor (adyacencia de distancia 1, nunca la del adversario)
+  // casillas elegibles: la regla la valida el motor; aquí sólo se señalan (adyacentes para mover, alcance para técnicas)
   const reachable = useMemo(() => {
-    if (!battle || mode !== 'move') return [] as Vec2[];
-    const { x, y } = battle.player.position;
-    const steps: Vec2[] = [[1, 0], [-1, 0], [0, 1], [0, -1]];
-    return steps
-      .map(([dx, dy]) => [x + dx, y + dy] as Vec2)
-      .filter(([nx, ny]) => nx >= 0 && ny >= 0 && nx < COLS && ny < ROWS && !(nx === battle.enemy.position.x && ny === battle.enemy.position.y));
-  }, [battle, mode]);
+    if (!battle || !mode || mode.kind === 'attack') return [] as Vec2[];
+    const { position: from } = battle.player;
+    const range = mode.kind === 'move' ? 1 : mode.skill.range;
+    const out: Vec2[] = [];
+    for (let x = 0; x < cols; x++) {
+      for (let y = 0; y < rows; y++) {
+        const d = manhattan(from, { x, y });
+        const free = !(x === battle.enemy.position.x && y === battle.enemy.position.y);
+        if (d >= 1 && d <= range && free) out.push([x, y]);
+      }
+    }
+    return out;
+  }, [battle, mode, cols, rows]);
 
   useEffect(() => {
     if (!grid || !battle) return;
     grid.clear();
     for (const [x, y] of reachable) grid.setCell(x, y, Cell.reach);
-    if (mode === 'attack') grid.setCell(battle.enemy.position.x, battle.enemy.position.y, Cell.target);
+    if (mode?.kind === 'attack') grid.setCell(battle.enemy.position.x, battle.enemy.position.y, Cell.target);
     if (hoverCell && reachable.some(([x, y]) => x === hoverCell[0] && y === hoverCell[1])) grid.setCell(hoverCell[0], hoverCell[1], Cell.hover);
     grid.commit();
   }, [grid, battle, reachable, hoverCell, mode]);
+
+  const pickCell = (x: number, y: number) => {
+    if (!mode || mode.kind === 'attack') return;
+    if (mode.kind === 'move') act('MOVE', { targetPosition: { x, y } });
+    else act('SKILL', { skillId: mode.skill.id, targetPosition: { x, y } });
+  };
 
   useStageEvents((e) => {
     if (!grid) return;
@@ -101,40 +117,38 @@ export function Combat() {
       setHoverCell(c);
       stage?.setCursor(!!c && reachable.some(([x, y]) => x === c[0] && y === c[1]));
     }
-    if (e.type === 'plate' && mode === 'move') {
+    if (e.type === 'plate') {
       const c = grid.cellAt([e.x, e.y]);
-      if (c && reachable.some(([x, y]) => x === c[0] && y === c[1])) act('MOVE', { targetPosition: { x: c[0], y: c[1] } });
+      if (c && reachable.some(([x, y]) => x === c[0] && y === c[1])) pickCell(c[0], c[1]);
     }
   });
 
-  const act = async (actionType: 'SKILL' | 'MOVE' | 'SCRUTINIZE' | 'NEGOTIATE' | 'FLEE' | 'END_TURN', extra: { skillId?: string; targetPosition?: { x: number; y: number } } = {}) => {
+  const flashDanger = () => {
+    if (!stage) return;
+    stage.uDanger.value = 0.9;
+    window.setTimeout(() => stage && (stage.uDanger.value = 0), 450);
+  };
+
+  const act = async (actionType: ActionType, extra: { skillId?: string; targetPosition?: { x: number; y: number } } = {}) => {
     if (!characterId || !battle) return;
     setBusy(actionType + (extra.skillId ?? ''));
     try {
       const res = await api.combatAction(characterId, actionType, extra);
       saved();
-      // el desplazamiento se ve en la rejilla; el resto se narra sin las marcas técnicas del motor
-      const lines = (actionType === 'MOVE'
-        ? []
-        : [res.playerResult?.message, res.enemyResult?.message, actionType === 'SKILL' || actionType === 'END_TURN' ? undefined : res.message]
-      ).filter(Boolean).map((l) => cleanNarration(l as string));
-      if ((res.playerResult?.damageDealt ?? 0) > 0) enemy?.hit();
-      if ((res.enemyResult?.damageDealt ?? 0) > 0) {
+      const skill = battle.availableSkills.find((s) => s.id === extra.skillId);
+      if (actionType === 'SKILL' && skill?.targetType === 'SINGLE_ENEMY') enemy?.hit();
+      if (res.player.hp < battle.player.hp) {
         player?.hit();
-        if (stage) {
-          stage.uDanger.value = 0.9;
-          window.setTimeout(() => stage && (stage.uDanger.value = 0), 450);
-        }
+        flashDanger();
       }
-      setNarration(lines.length || actionType === 'MOVE' ? lines : [cleanNarration(res.message)]);
+      // el desplazamiento propio se ve en la rejilla; lo demás se narra en prosa
+      const lines = res.messages.filter((_l, i) => !(actionType === 'MOVE' && i === 0)).map(cleanNarration);
+      setNarration(lines);
       setMode(null);
+      setBattle(res);
       if (res.battleOver) {
         setOver(res);
         await refresh();
-      } else if (res.player && res.enemy) {
-        setBattle((b) => (b ? { ...b, player: res.player!, enemy: res.enemy!, availableSkills: res.availableSkills ?? b.availableSkills } : b));
-      } else {
-        await load();
       }
     } catch (err) {
       // una negativa de las reglas (huida imposible, parlamento frustrado…) es parte de la escena, no un fallo
@@ -151,10 +165,14 @@ export function Combat() {
     if (!characterId) return;
     setBusy('start');
     try {
-      const res = await api.startBattle(characterId, { ambushMode: 'NEUTRAL' });
+      const res = await api.startBattle(characterId);
       setBattle(res);
-      setNarration([cleanNarration(res.message)]);
+      setNarration((res.messages ?? []).map(cleanNarration));
       saved();
+      if (res.outcome !== undefined && res.status !== 'ONGOING') {
+        setOver({ ...res, battleOver: true, victory: false, messages: res.messages ?? [] });
+        await refresh();
+      }
     } catch (err) {
       fail(err);
     } finally {
@@ -172,7 +190,8 @@ export function Combat() {
   const e = battle?.enemy;
   const portrait = assetUrl('art/actor_enemy_portrait.webp');
   const plate = assetUrl(alleySpec.plate.clean) ?? assetUrl(alleySpec.plate.atlas);
-  const revealed = p?.revealedAbilities ?? [];
+  const known = e?.knownAbilities ?? [];
+  const distance = p && e ? manhattan(p.position, e.position) : 0;
 
   return (
     <>
@@ -185,27 +204,29 @@ export function Combat() {
         </div>
       )}
 
-      {e && (
+      {e && !over && (
         <Panel className="slide-in-right" style={{ right: 40, top: 78, width: 302, padding: '26px 22px 20px' }} label="Objetivo seleccionado">
           <p className="t-body" style={{ margin: 0, fontSize: 27, textAlign: 'center' }}>Objetivo seleccionado</p>
           <Divider width="90%" style={{ margin: '8px auto 14px' }} />
           <div style={{ display: 'grid', gridTemplateColumns: '86px 1fr', gap: 16, alignItems: 'center' }}>
             <div className="target-portrait" style={portrait ? { backgroundImage: `url(${portrait})` } : { backgroundImage: `url(${plate})`, backgroundSize: '2200% auto', backgroundPosition: '73% 12%' }} />
             <div className="t-body" style={{ fontSize: 20, lineHeight: 1.2 }}>
-              {revealed.length === 0 ? 'Información incompleta' : e.name}
-              <div style={{ fontSize: 16, fontStyle: 'italic', color: 'var(--ivory-dim)', marginTop: 4 }}>{enemyCondition(e)}</div>
+              {e.name}
+              <div style={{ fontSize: 16, fontStyle: 'italic', color: 'var(--ivory-dim)', marginTop: 4 }}>{CONDITION[e.condition]}</div>
             </div>
           </div>
-          {revealed.length > 0 && (
-            <div style={{ marginTop: 12, fontSize: 16, color: 'var(--ivory-dim)' }}>Le conoces {new Intl.ListFormat('es', { type: 'conjunction' }).format(revealed.map(skillLabel))}.</div>
-          )}
+          <div style={{ marginTop: 12, fontSize: 16, color: 'var(--ivory-dim)' }}>
+            {known.length > 0
+              ? <>Le conoces {new Intl.ListFormat('es', { type: 'conjunction' }).format(known.map((k) => k.name.toLowerCase()))}.</>
+              : 'Aún no sabes de qué es capaz.'}
+          </div>
         </Panel>
       )}
 
       {p && (
         <div className="vigor" aria-label="Tu estado">
-          <Thread label="Vigor" value={p.currentHp} max={p.maxHp} color="var(--crimson-hi)" />
-          <Thread label="Espiritualidad" value={p.currentSpirituality} max={p.maxSpirituality} color="#9a82d0" />
+          <Thread label="Vigor" value={p.hp} max={p.maxHp} color="var(--crimson-hi)" />
+          <Thread label="Espiritualidad" value={p.spirituality} max={p.maxSpirituality} color="#9a82d0" />
         </div>
       )}
 
@@ -219,7 +240,7 @@ export function Combat() {
         <Panel className="slide-in-right" style={{ right: 40, top: 78, width: 420, padding: '32px 32px 28px' }} label="Encuentro">
           <h2 className="t-display" style={{ margin: 0, fontSize: 30 }}>Una figura en la niebla</h2>
           <Divider style={{ margin: '12px 0 18px' }} />
-          <Prose size={21}>Alguien aguarda al fondo del callejón, entre las cajas y la verja. No se aparta.</Prose>
+          <Prose size={21}>Algo aguarda al fondo del callejón, entre las cajas y la verja. No se aparta.</Prose>
           <div style={{ display: 'grid', gap: 14, marginTop: 10 }}>
             <GoldButton primary busy={busy === 'start'} onClick={start}>Plantarle cara</GoldButton>
             <GoldButton onClick={() => go('cherwood')}>Dar media vuelta</GoldButton>
@@ -227,17 +248,18 @@ export function Combat() {
         </Panel>
       )}
 
-      {over && (
-        <Panel className="slide-in-right" style={{ right: 40, top: 360, width: 460, padding: '32px 32px 28px' }} label="Desenlace">
-          <h2 className="t-display" style={{ margin: 0, fontSize: 30 }}>{over.victory ? 'El callejón es tuyo' : over.status === 'FLED' ? 'La niebla te cubre' : 'La oscuridad te reclama'}</h2>
-          <Divider style={{ margin: '12px 0 18px' }} />
-          <Prose size={21}>{cleanNarration(over.message)}</Prose>
-          <GoldButton primary onClick={() => go(over.victory || over.status === 'FLED' ? 'cherwood' : 'desvan')}>Salir del callejón</GoldButton>
-        </Panel>
-      )}
+      {over && <Outcome res={over} onLeave={() => go(over.status === 'DEFEAT' ? 'desvan' : 'cherwood')} />}
 
-      {mode === 'attack' && battle && (
-        <SkillMenu skills={battle.availableSkills} busy={busy} spirit={p?.currentSpirituality ?? 0} onSkill={(s) => act('SKILL', { skillId: s.id })} onParley={() => act('NEGOTIATE')} />
+      {mode?.kind === 'attack' && battle && p && (
+        <SkillMenu
+          skills={battle.availableSkills}
+          busy={busy}
+          ap={p.ap}
+          spirit={p.spirituality}
+          distance={distance}
+          onSkill={(s) => (s.targetType === 'GRID_CELL' ? setMode({ kind: 'cell', skill: s }) : act('SKILL', { skillId: s.id }))}
+          onParley={() => act('NEGOTIATE')}
+        />
       )}
 
       {battle && !over && (
@@ -246,14 +268,15 @@ export function Combat() {
             <path d="M8 1 H1016 L1023 8 V72 L1016 79 H8 L1 72 V8 Z" fill="rgba(14,11,9,0.9)" stroke="var(--gold)" strokeWidth="1.1" />
             {[258, 514, 770].map((x) => <line key={x} x1={x} y1="12" x2={x} y2="68" stroke="var(--gold)" strokeOpacity="0.45" />)}
           </svg>
-          <ActionButton label="Mover" icon={<IconBoot size={34} />} active={mode === 'move'} disabled={!!busy || (p?.ap ?? 0) < 1} onClick={() => setMode(mode === 'move' ? null : 'move')} />
-          <ActionButton label="Atacar" icon={<IconPistols size={34} />} active={mode === 'attack'} disabled={!!busy} onClick={() => setMode(mode === 'attack' ? null : 'attack')} />
+          <ActionButton label="Mover" icon={<IconBoot size={34} />} active={mode?.kind === 'move'} disabled={!!busy || (p?.ap ?? 0) < 1} onClick={() => setMode(mode?.kind === 'move' ? null : { kind: 'move' })} />
+          <ActionButton label="Atacar" icon={<IconPistols size={34} />} active={mode?.kind === 'attack' || mode?.kind === 'cell'} disabled={!!busy} onClick={() => setMode(mode ? null : { kind: 'attack' })} />
           <ActionButton label="Observar" icon={<IconEye size={34} />} busy={busy === 'SCRUTINIZE'} disabled={!!busy || (p?.ap ?? 0) < 1} onClick={() => act('SCRUTINIZE')} />
           <ActionButton label="Huir" icon={<IconFlee size={34} />} busy={busy === 'FLEE'} disabled={!!busy} onClick={() => act('FLEE')} />
         </nav>
       )}
-      {/* casillas alcanzables para teclado y lector (la rejilla avanza hacia el fondo del callejón: +x) */}
-      {mode === 'move' && battle && (
+
+      {/* casillas elegibles para teclado y lector (la rejilla avanza hacia el fondo del callejón: +x) */}
+      {battle && mode && mode.kind !== 'attack' && (
         <nav className="hotspot-keys" aria-label="Casillas alcanzables">
           {reachable.map(([x, y]) => (
             <button
@@ -261,7 +284,7 @@ export function Combat() {
               type="button"
               onFocus={() => setHoverCell([x, y])}
               onBlur={() => setHoverCell(null)}
-              onClick={() => act('MOVE', { targetPosition: { x, y } })}
+              onClick={() => pickCell(x, y)}
             >
               {stepLabel(x - battle.player.position.x, y - battle.player.position.y)}
             </button>
@@ -280,8 +303,29 @@ export function Combat() {
   );
 }
 
+/** Desenlace: lo que dice el motor y lo que te llevas (cosecha y bolsa, si las hay). */
+function Outcome({ res, onLeave }: { res: CombatActionResult; onLeave: () => void }) {
+  const title = res.status === 'VICTORY' ? 'El callejón es tuyo'
+    : res.status === 'NEGOTIATED' ? 'Se retira entre la niebla'
+    : res.status === 'FLED' ? 'La niebla te cubre'
+    : 'La oscuridad te reclama';
+  const loot = res.outcome;
+  return (
+    <Panel className="slide-in-right" style={{ right: 40, top: 360, width: 460, padding: '32px 32px 28px' }} label="Desenlace">
+      <h2 className="t-display" style={{ margin: 0, fontSize: 30 }}>{title}</h2>
+      <Divider style={{ margin: '12px 0 18px' }} />
+      {res.messages.slice(-1).map((m, i) => <Prose key={i} size={20}>{cleanNarration(m)}</Prose>)}
+      {loot?.harvest && <Prose size={20}>Te llevas {loot.harvest.name.toLowerCase()} ({QUALITY[loot.harvest.quality]}).</Prose>}
+      {!!loot?.pursePence && <Prose size={20}>En sus restos encuentras {formatMoney(loot.pursePence)}.</Prose>}
+      {res.status === 'DEFEAT' && <Prose size={19} dim>Despiertas horas después en tu buhardilla, magullado y con la mente en jirones.</Prose>}
+      <GoldButton primary onClick={onLeave}>{res.status === 'DEFEAT' ? 'Despertar' : 'Salir del callejón'}</GoldButton>
+    </Panel>
+  );
+}
+
 /** paso de una casilla descrito desde el personaje, que mira hacia el fondo del callejón (+x) */
 function stepLabel(dx: number, dy: number): string {
+  if (Math.abs(dx) + Math.abs(dy) > 1) return `Casilla a ${Math.abs(dx) + Math.abs(dy)} pasos`;
   if (dx > 0) return 'Avanzar hacia el fondo del callejón';
   if (dx < 0) return 'Retroceder';
   return dy < 0 ? 'Paso a la izquierda, hacia el muro' : 'Paso a la derecha';
@@ -308,20 +352,38 @@ function ActionButton({ label, icon, active, disabled, busy, onClick }: { label:
   );
 }
 
-function SkillMenu({ skills, busy, spirit, onSkill, onParley }: { skills: CombatSkill[]; busy: string | null; spirit: number; onSkill: (s: CombatSkill) => void; onParley: () => void }) {
+function SkillMenu({ skills, busy, ap, spirit, distance, onSkill, onParley }: {
+  skills: CombatSkill[]; busy: string | null; ap: number; spirit: number; distance: number;
+  onSkill: (s: CombatSkill) => void; onParley: () => void;
+}) {
   return (
-    <Panel className="fade-in" style={{ left: 530, bottom: 118, width: 520, padding: '22px 22px 18px' }} label="Habilidades">
+    <Panel className="fade-in" style={{ left: 530, bottom: 118, width: 560, padding: '22px 22px 18px' }} label="Habilidades">
       <div style={{ display: 'grid', gap: 10 }}>
-        {skills.map((s) => (
-          <GoldButton key={s.id} align="start" busy={busy === 'SKILL' + s.id} disabled={!!busy || s.spiritualityCost > spirit} onClick={() => onSkill(s)} style={{ minHeight: 60, fontSize: 20, padding: '8px 18px' }}>
-            <span style={{ display: 'block', textAlign: 'left' }}>
-              {s.name}
-              <span style={{ display: 'block', fontSize: 15, fontStyle: 'italic', color: 'var(--ivory-dim)' }}>
-                {s.description}{s.spiritualityCost > 0 ? ` · Espiritualidad ${s.spiritualityCost}` : ''}
+        {skills.map((s) => {
+          const outOfRange = s.targetType === 'SINGLE_ENEMY' && distance > s.range;
+          const cost = [
+            s.apCost > 0 ? `${s.apCost} PA` : null,
+            s.spiritualityCost > 0 ? `espiritualidad ${s.spiritualityCost}` : null,
+            s.targetType === 'SELF' ? 'sobre ti' : `alcance ${s.range}`
+          ].filter(Boolean).join(' · ');
+          return (
+            <GoldButton
+              key={s.id}
+              align="start"
+              busy={busy === 'SKILL' + s.id}
+              disabled={!!busy || s.apCost > ap || s.spiritualityCost > spirit || outOfRange}
+              onClick={() => onSkill(s)}
+              style={{ minHeight: 60, fontSize: 20, padding: '8px 18px' }}
+            >
+              <span style={{ display: 'block', textAlign: 'left' }}>
+                {s.name}
+                <span style={{ display: 'block', fontSize: 15, fontStyle: 'italic', color: 'var(--ivory-dim)' }}>
+                  {s.description} · {cost}{outOfRange ? ' · fuera de alcance' : ''}
+                </span>
               </span>
-            </span>
-          </GoldButton>
-        ))}
+            </GoldButton>
+          );
+        })}
         <GoldButton align="start" busy={busy === 'NEGOTIATE'} disabled={!!busy} onClick={onParley} style={{ minHeight: 54, fontSize: 20 }}>
           Parlamentar
         </GoldButton>

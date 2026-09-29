@@ -3,7 +3,6 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DatabaseClient, InventoryItemRow } from '../../infra/database/DatabaseClient.js';
 import { SeededRNG } from '../rng/SeededRNG.js';
-import { generateDeterministicId } from '../rng/IdGenerator.js';
 import { SomaticsEngine } from '../somatics/SomaticsEngine.js';
 import { ConvergenceEngine } from '../convergence/ConvergenceEngine.js';
 import { EconomyEngine } from '../economy/EconomyEngine.js';
@@ -356,7 +355,7 @@ export class AscensionEngine {
       );
 
       // Registrar telemetría de fallo
-      const telemetryId = generateDeterministicId('tel_drink');
+      const telemetryId = db.nextId('tel_drink');
       db.logAscensionTelemetry({
         id: telemetryId,
         character_id: characterId,
@@ -423,7 +422,7 @@ export class AscensionEngine {
       );
 
       // Registrar telemetría de éxito
-      const telemetryId = generateDeterministicId('tel_drink');
+      const telemetryId = db.nextId('tel_drink');
       db.logAscensionTelemetry({
         id: telemetryId,
         character_id: characterId,

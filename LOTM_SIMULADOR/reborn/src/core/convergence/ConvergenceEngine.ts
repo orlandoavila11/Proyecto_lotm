@@ -3,7 +3,6 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
 import { SeededRNG } from '../rng/SeededRNG.js';
-import { generateDeterministicId } from '../rng/IdGenerator.js';
 import { SomaticsEngine } from '../somatics/SomaticsEngine.js';
 import { RuinaTier } from '../types/somatics.js';
 import {
@@ -107,7 +106,7 @@ export class ConvergenceEngine {
     }
 
     const resultingIndex = db.updateDistrictConvergence(districtId, delta, day);
-    const eventId = generateDeterministicId('cve');
+    const eventId = db.nextId('cve');
 
     db.logConvergenceEvent({
       id: eventId,
@@ -272,7 +271,7 @@ export class ConvergenceEngine {
     }
 
     if (persona.church_suspicion > balance.incursion.trigger_church_suspicion_threshold) {
-      const incursionId = generateDeterministicId('inc_nighthawk');
+      const incursionId = db.nextId('inc_nighthawk');
       db.createPendingIncursion({
         id: incursionId,
         character_id: characterId,

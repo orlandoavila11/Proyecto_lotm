@@ -2,7 +2,6 @@ import { DatabaseSync } from 'node:sqlite';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { MigrationRunner } from './MigrationRunner.js';
-import { generateDeterministicId } from '../../core/rng/IdGenerator.js';
 
 export interface BattleRow {
   id: string;
@@ -993,7 +992,11 @@ export class DatabaseClient {
 
   // --- MÉTODOS DE BATALLA Y COMBATE ---
   public createBattle(characterId: string, state: any): BattleRow {
-    const battleId = generateDeterministicId(`battle_${characterId}`);
+    return this.createBattleWithId(this.nextId('battle'), characterId, state);
+  }
+
+  /** el id lo fija quien construye el estado (el motor lo usa como semilla de sus tiradas) */
+  public createBattleWithId(battleId: string, characterId: string, state: any): BattleRow {
     const stateJson = JSON.stringify(state);
     const stmt = this.db.prepare(`
       INSERT INTO battles (id, character_id, state_json, status, created_at, updated_at)

@@ -737,6 +737,12 @@ button { font: inherit; color: inherit; }
   background: rgba(12,10,9,0.6); border: 1px solid rgba(201,164,92,0.35); cursor: pointer;
 }
 .quality-chips button[aria-checked='true'] { color: #fff4da; border-color: var(--gold-hi); box-shadow: inset 0 0 10px rgba(236,202,130,0.18); }
+.harvest-sale__title { margin: 0 0 6px; font-size: 17px; font-style: italic; color: var(--gold-hi); }
+.harvest-sale__row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 4px 0; font-size: 18px; color: var(--ivory); border-bottom: 1px dotted rgba(201,164,92,0.25); }
+.harvest-sale__note { margin: 6px 0 0; font-size: 16px; font-style: italic; color: var(--ivory-dim); }
+.harvest-sale__btn { flex: none; padding: 4px 14px; font-family: var(--body); font-size: 16px; color: var(--ivory); background: rgba(12,10,9,0.6); border: 1px solid var(--gold-line); cursor: pointer; }
+.harvest-sale__btn:hover:not(:disabled) { border-color: var(--gold-hi); color: #fff4da; }
+.harvest-sale__btn:disabled { opacity: 0.4; cursor: default; }
 .qty { display: flex; align-items: center; gap: 20px; }
 .qty button { background: none; border: 0; color: var(--gold-hi); cursor: pointer; display: grid; place-items: center; padding: 2px; }
 .qty button:disabled { opacity: 0.3; cursor: default; }

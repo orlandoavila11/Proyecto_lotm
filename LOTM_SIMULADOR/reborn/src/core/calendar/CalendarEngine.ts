@@ -1,5 +1,4 @@
 import { DatabaseClient, CharacterRow } from '../../infra/database/DatabaseClient.js';
-import { generateDeterministicId } from '../rng/IdGenerator.js';
 import { ActingDilemmaEngine } from '../acting/ActingDilemmaEngine.js';
 import { EconomyEngine } from '../economy/EconomyEngine.js';
 import { ConvergenceEngine } from '../convergence/ConvergenceEngine.js';

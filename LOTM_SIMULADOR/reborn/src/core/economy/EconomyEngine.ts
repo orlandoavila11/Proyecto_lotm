@@ -2,7 +2,6 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DatabaseClient, InventoryItemRow } from '../../infra/database/DatabaseClient.js';
-import { generateDeterministicId } from '../rng/IdGenerator.js';
 import { SomaticsEngine } from '../somatics/SomaticsEngine.js';
 import { RuinaTier } from '../types/somatics.js';
 import {
@@ -217,13 +216,14 @@ export class EconomyEngine {
   }
 
   /**
-   * Venta de excedentes de cosecha (el bucle combate -> cosecha -> venta).
+   * Venta de cosecha (bucle combate -> cosecha -> venta). El grado y la calidad son los que el servidor
+   * registró al cosechar (metadata_json.grade, quality); el cliente sólo dice qué objeto vende.
+   * Sólo se vende cosecha: el resto del inventario no tiene comprador en este mostrador.
    */
   public static sellHarvestItem(
     db: DatabaseClient,
     characterId: string,
     inventoryItemId: string,
-    grade: 'COMMON' | 'UNCOMMON' | 'RARE',
     currentDay: number
   ): {
     success: boolean;
@@ -234,11 +234,23 @@ export class EconomyEngine {
     const balance = this.getEconomyBalance();
     const item = db.getInventoryItemById(inventoryItemId);
     if (!item || item.character_id !== characterId) {
-      return { success: false, penceGained: 0, remainingBalance: 0, error: 'Ítem no encontrado en inventario' };
+      return { success: false, penceGained: 0, remainingBalance: 0, error: 'Ese objeto no está en tu inventario.' };
     }
-
+    let grade: string | undefined;
+    try {
+      grade = JSON.parse(item.metadata_json || '{}').grade;
+    } catch {
+      grade = undefined;
+    }
+    if (!item.item_code.startsWith('HARVEST_') || !grade) {
+      return { success: false, penceGained: 0, remainingBalance: 0, error: 'El boticario sólo compra lo que se cosecha de las criaturas.' };
+    }
     const buyback = balance.harvestBuybacks.find(b => b.grade === grade);
-    const price = buyback ? buyback.buybackPence : 24;
+    if (!buyback) {
+      throw new Error(`Balance incompleto: harvestBuybacks no define el grado '${grade}' (Regla del Hueco).`);
+    }
+    const mult = balance.qualityModifiers[(item.quality ?? 'PRISTINE') as keyof typeof balance.qualityModifiers]?.priceMultiplier ?? 1;
+    const price = Math.round(buyback.buybackPence * mult);
 
     return db.transaction(() => {
       db.removeInventoryItem(inventoryItemId, 1);
@@ -253,7 +265,7 @@ export class EconomyEngine {
         quality: item.quality,
         pence_amount: price,
         day: currentDay,
-        description: `Venta de excedente de cosecha '${item.name}' [${grade}] por ${price}d.`
+        description: `Venta de cosecha '${item.name}' [${grade}] por ${price}d.`
       });
 
       return {

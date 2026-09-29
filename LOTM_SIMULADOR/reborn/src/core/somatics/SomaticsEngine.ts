@@ -15,7 +15,6 @@ import {
 } from '../types/somatics.js';
 import { DatabaseClient, AnchorRow } from '../../infra/database/DatabaseClient.js';
 import { SomaticsBalance, SomaticsBalanceSchema } from '../../infra/content/schemas/somaticsBalance.schema.js';
-import { generateDeterministicId } from '../rng/IdGenerator.js';
 
 export class SomaticsEngine {
   private static balanceData: SomaticsBalance | null = null;
@@ -284,7 +283,7 @@ export class SomaticsEngine {
       return false; // Límite estricto de 8 anclas alcanzado
     }
 
-    const anchorId = generateDeterministicId(`anchor_${characterId}`);
+    const anchorId = db.nextId(`anchor_${characterId}`);
     db.addAnchor({
       id: anchorId,
       character_id: characterId,
@@ -316,7 +315,7 @@ export class SomaticsEngine {
     const candidate = balance.scars_catalog.find(s => !existingCodes.has(s.id));
     if (!candidate) return null;
 
-    const scarId = generateDeterministicId(`scar_${characterId}_${candidate.id.toLowerCase()}`);
+    const scarId = db.nextId(`scar_${characterId}_${candidate.id.toLowerCase()}`);
     const scarObj: CharacterScar = {
       id: scarId,
       characterId,

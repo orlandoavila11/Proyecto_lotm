@@ -1,3 +1,4 @@
+import { CombatContent } from './CombatContent.js';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -217,7 +218,7 @@ export class AtomRuntime {
         const base = params.baseDamage ?? 15;
         let finalDamage = base;
         if (target.statuses.some(s => s.status === 'WEAKENED')) {
-          finalDamage = Math.floor(finalDamage * 1.3);
+          finalDamage = Math.floor(finalDamage * CombatContent.balance().weakenedDamageMultiplier);
         }
         target.hp = Math.max(0, target.hp - finalDamage);
         target.lastDamageSource = { type: 'PHYSICAL', amount: finalDamage };
@@ -231,7 +232,7 @@ export class AtomRuntime {
         const base = params.baseDamage ?? 20;
         let finalDamage = base;
         if (target.statuses.some(s => s.status === 'WEAKENED')) {
-          finalDamage = Math.floor(finalDamage * 1.3);
+          finalDamage = Math.floor(finalDamage * CombatContent.balance().weakenedDamageMultiplier);
         }
         target.hp = Math.max(0, target.hp - finalDamage);
         target.lastDamageSource = { type: 'SPIRITUAL', amount: finalDamage };
@@ -246,7 +247,7 @@ export class AtomRuntime {
         const element = params.element ?? 'fire';
         let finalDamage = base;
         if (target.statuses.some(s => s.status === 'WEAKENED')) {
-          finalDamage = Math.floor(finalDamage * 1.3);
+          finalDamage = Math.floor(finalDamage * CombatContent.balance().weakenedDamageMultiplier);
         }
         target.hp = Math.max(0, target.hp - finalDamage);
         target.lastDamageSource = { type: 'ELEMENTAL', amount: finalDamage };

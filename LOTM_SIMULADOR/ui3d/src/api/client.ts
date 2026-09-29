@@ -107,6 +107,9 @@ export const api = {
   market: (districtId: string) => get<MarketEnvelope>(`/api/economy/market/${enc(districtId)}`),
   buy: (characterId: string, districtId: string, itemCode: string, quality: Quality) =>
     command<BuyResult>('/api/economy/buy', 'buy', { characterId, districtId, itemCode, quality }),
+  /** venta de cosecha: el grado lo fijó el servidor al cosechar */
+  sellHarvest: (characterId: string, inventoryItemId: string) =>
+    command<{ success: boolean; penceGained: number; remainingBalance: number }>('/api/economy/sell', 'sell', { characterId, inventoryItemId }),
 
   // ── combate
   activeBattle: async (characterId: string): Promise<BattleEnvelope | null> => {
@@ -114,8 +117,9 @@ export const api = {
     const res = await get<BattleEnvelope | { active: false }>(`/api/combat/active/${enc(characterId)}?probe=1`);
     return 'active' in res && res.active === false ? null : (res as BattleEnvelope);
   },
-  startBattle: (characterId: string, opts: { enemyName?: string; ambushMode?: 'PLAYER_AMBUSH' | 'ENEMY_AMBUSH' | 'NEUTRAL' } = {}) =>
-    command<BattleEnvelope & { success: boolean; message: string; resumed?: boolean }>('/api/combat/start', 'battle', { characterId, ...opts }),
+  /** el servidor elige el adversario según el lugar y la secuencia; el cliente sólo pide entrar */
+  startBattle: (characterId: string, site = 'CHERWOOD_ALLEY') =>
+    command<BattleEnvelope>('/api/combat/start', 'battle', { characterId, site }),
   combatAction: (characterId: string, actionType: 'SKILL' | 'MOVE' | 'SCRUTINIZE' | 'NEGOTIATE' | 'FLEE' | 'END_TURN', extra: { skillId?: string; targetPosition?: { x: number; y: number } } = {}) =>
     command<CombatActionResult>('/api/combat/action', 'act', { characterId, actionType, ...extra }),
 

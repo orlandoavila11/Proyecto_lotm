@@ -1,7 +1,8 @@
 import { describe, it } from 'node:test';
 import * as assert from 'node:assert';
 import { SeededRNG } from '../src/core/rng/SeededRNG.js';
-import { TacticalCombatEngine, CombatActor } from '../src/core/combat/TacticalCombatEngine.js';
+import { GridCombatEngine } from '../src/core/combat/GridCombatEngine.js';
+import { CombatContent } from '../src/core/combat/CombatContent.js';
 
 describe('PRNG Determinista: Semilla y Reproducibilidad Estricta', () => {
   it('dos instancias con la misma semilla numérica generan exactamente la misma secuencia de números', () => {
@@ -47,65 +48,33 @@ describe('PRNG Determinista: Semilla y Reproducibilidad Estricta', () => {
     assert.strictEqual(differences > 15, true, 'Semillas distintas deben producir resultados divergentes');
   });
 
-  it('Determinismo en combate: misma semilla produce exactamente el mismo resultado y turnLog byte-equivalente', () => {
-    const makePlayer = (): CombatActor => ({
-      id: 'char_test_hunter',
-      name: 'Danitz',
-      isPlayer: true,
-      pathway: 'RED_PRIEST',
-      sequence: 9,
-      currentHp: 80,
-      maxHp: 80,
-      currentSpirituality: 60,
-      maxSpirituality: 60
-    });
+  it('Determinismo en combate: el mismo encuentro produce exactamente el mismo registro de turnos', () => {
+    const engine = GridCombatEngine.getInstance();
+    const catalog = CombatContent.combatants();
+    const simulate = (battleId: string) => {
+      const def = catalog.get('dusk_specter');
+      const battle = engine.createBattle(
+        battleId,
+        { id: 'char_test_seer', name: 'Vidente', pathway: 'FOOL', sequence: 9, hp: 100, maxHp: 100, spirituality: 100, maxSpirituality: 100 },
+        { id: def.id, name: def.name, hp: def.atomStats.hp, maxHp: def.atomStats.maxHp, spirituality: def.atomStats.spirituality, maxSpirituality: def.atomStats.maxSpirituality, speed: def.atomStats.speed, abilities: def.abilities }
+      );
+      for (let turn = 0; turn < 30 && battle.status === 'ONGOING'; turn++) {
+        const player = engine.getPlayer(battle);
+        const enemy = engine.getPrimaryEnemy(battle);
+        if (engine.getDistance(player.position, enemy.position) > 1) {
+          engine.executePlayerAction(battle, { type: 'MOVE', targetPosition: { x: player.position.x + 1, y: player.position.y } });
+        }
+        engine.executePlayerAction(battle, { type: 'SKILL', skillId: 'PLAYER_BASIC_STRIKE' });
+        if (battle.status === 'ONGOING') engine.executeEnemyTurn(battle);
+      }
+      return battle;
+    };
 
-    const makeEnemy = (): CombatActor => ({
-      id: 'enemy_wraith',
-      name: 'Espectro de las Alcantarillas',
-      isPlayer: false,
-      sequence: 9,
-      currentHp: 75,
-      maxHp: 75,
-      currentSpirituality: 30,
-      maxSpirituality: 30
-    });
-
-    const battleSeed = 'battle_backlund_night_10492';
-
-    // Ejecución 1
-    const sim1 = TacticalCombatEngine.simulateDeterministicCombat(
-      makePlayer(),
-      makeEnemy(),
-      battleSeed
-    );
-
-    // Ejecución 2 (con misma semilla)
-    const sim2 = TacticalCombatEngine.simulateDeterministicCombat(
-      makePlayer(),
-      makeEnemy(),
-      battleSeed
-    );
-
-    // Verificación de determinismo estricto
-    assert.strictEqual(sim1.victory, sim2.victory, 'La victoria/derrota debe ser idéntica');
-    assert.strictEqual(sim1.turnsCount, sim2.turnsCount, 'El número de turnos debe ser idéntico');
-    assert.strictEqual(sim1.playerFinalHp, sim2.playerFinalHp, 'La salud final del jugador debe ser idéntica');
-    assert.strictEqual(sim1.enemyFinalHp, sim2.enemyFinalHp, 'La salud final del enemigo debe ser idéntica');
-
-    // Verificación byte-equivalente de toda la traza de combate
-    const json1 = JSON.stringify(sim1.turnLog);
-    const json2 = JSON.stringify(sim2.turnLog);
-    assert.strictEqual(json1, json2, 'El log de turnos completo debe ser byte-equivalente');
-
-    // Verificación contra semilla distinta (debe divergir)
-    const simDivergent = TacticalCombatEngine.simulateDeterministicCombat(
-      makePlayer(),
-      makeEnemy(),
-      'battle_divergent_seed_99999'
-    );
-    const jsonDivergent = JSON.stringify(simDivergent.turnLog);
-    assert.notStrictEqual(json1, jsonDivergent, 'Semillas distintas deben producir simulaciones divergentes');
+    const a = simulate('battle_backlund_night_10492');
+    const b = simulate('battle_backlund_night_10492');
+    assert.strictEqual(a.status, b.status, 'El desenlace debe ser idéntico');
+    assert.strictEqual(JSON.stringify(a.turnLog), JSON.stringify(b.turnLog), 'El registro de turnos debe ser byte-equivalente');
+    assert.ok(a.turnLog.length > 3, 'El combate debe haber durado varios turnos');
   });
 });
 

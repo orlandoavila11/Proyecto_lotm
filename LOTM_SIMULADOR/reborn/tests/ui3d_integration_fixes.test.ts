@@ -56,6 +56,7 @@ describe('ui3d · correcciones de integración del motor', () => {
       assert.strictEqual(started.statusCode, 200);
       const battle = JSON.parse(started.body);
       assert.deepStrictEqual(battle.player.position, { x: 0, y: 2 });
+      if (battle.initiativeWinner === 'ENEMY') assert.ok(battle.messages.length >= 2, 'si el adversario gana la iniciativa, golpea primero');
 
       const tooFar = await app.inject({ method: 'POST', url: '/api/combat/action', payload: { characterId, actionType: 'MOVE', targetPosition: { x: 2, y: 2 } } });
       assert.strictEqual(tooFar.statusCode, 422, 'no se puede saltar dos casillas');
@@ -67,13 +68,12 @@ describe('ui3d · correcciones de integración del motor', () => {
       const end = await app.inject({ method: 'POST', url: '/api/combat/action', payload: { characterId, actionType: 'END_TURN' } });
       assert.strictEqual(end.statusCode, 200);
       const endBody = JSON.parse(end.body);
-      assert.strictEqual(endBody.actionType, 'END_TURN');
-      assert.ok(endBody.enemyResult, 'el adversario actúa al terminar el turno');
+      assert.ok(endBody.messages.length >= 1, 'el adversario actúa al terminar el turno');
       if (!endBody.battleOver) {
         assert.strictEqual(endBody.player.ap, endBody.player.maxAp, 'el nuevo turno restaura los PA');
-        assert.strictEqual(endBody.state.turnCount, 2);
-        const revealed = new Set(endBody.enemy.revealedAbilities ?? []);
-        for (const ab of endBody.enemy.abilities ?? []) assert.ok(revealed.has(ab), 'sólo viajan habilidades reveladas');
+        assert.strictEqual(endBody.turnCount, battle.turnCount + 1);
+        assert.strictEqual(endBody.enemy.hp, undefined, 'los PV del adversario no viajan');
+        assert.strictEqual(endBody.enemy.allAbilities, undefined, 'el repertorio oculto no viaja');
       }
     } finally {
       db.close();

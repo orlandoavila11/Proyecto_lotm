@@ -7,6 +7,7 @@ import { AtomRuntime, RuntimeCombatant, RuntimeStatus, RuntimeDamageSource } fro
 import { StatusType } from '../../infra/content/schemas/statusMatrix.schema.js';
 import { DomainRuleViolationError } from '../errors/DomainError.js';
 import { ActingDilemmaEngine } from '../acting/ActingDilemmaEngine.js';
+import { CombatContent } from './CombatContent.js';
 
 export type HarvestQuality = 'PRISTINE' | 'DAMAGED' | 'CONTAMINADO';
 
@@ -97,6 +98,14 @@ export class GridCombatEngine {
   private constructor() {
     this.atomRuntime = AtomRuntime.getInstance();
     this.loadAbilities();
+  }
+
+  /**
+   * RNG reproducible derivado del propio combate: la misma partida en el mismo punto tira lo mismo, y el
+   * cliente no puede elegir la semilla (nunca Date.now: regla de determinismo).
+   */
+  public static rngFor(battle: GridBattleState, side: 'player' | 'enemy'): SeededRNG {
+    return new SeededRNG(`${battle.battleId}:${battle.turnCount}:${battle.turnLog.length}:${side}`);
   }
 
   public static getInstance(): GridCombatEngine {
@@ -209,20 +218,21 @@ export class GridCombatEngine {
       );
     }
 
+    const B = CombatContent.balance();
     // Cálculo explícito de iniciativa neutral (Directiva d: preparation_score serializado)
-    let preparation_score = 15;
+    let preparation_score = B.initiative.basePreparation;
     if (playerInit.isConcealed) preparation_score += 35;
     if (playerInit.noRecentPowerUse) preparation_score += 20;
     if (playerInit.ambushDeclared) preparation_score += 40;
 
-    const speedVal = enemyInit.speed || 10;
-    const alertness_score = speedVal * 5;
+    const speedVal = enemyInit.speed || B.initiative.defaultEnemySpeed;
+    const alertness_score = speedVal * B.initiative.enemyAlertnessPerSpeed;
 
     let initiativeWinner: 'PLAYER' | 'ENEMY';
-    let playerAp = 3;
+    let playerAp = B.actionPoints.player;
     if (ambushMode === 'PLAYER_AMBUSH') {
       initiativeWinner = 'PLAYER';
-      playerAp = 4; // Ventaja táctica de emboscada (+1 PA)
+      playerAp = B.actionPoints.player + 1; // Ventaja táctica de emboscada (+1 PA)
     } else if (ambushMode === 'ENEMY_AMBUSH') {
       initiativeWinner = 'ENEMY';
     } else {
@@ -230,7 +240,7 @@ export class GridCombatEngine {
     }
 
     // Observación enemiga data-driven
-    let enemyObsChance = 35;
+    let enemyObsChance = B.scrutiny.defaultEnemyObservationChance;
     const monsterDef = this.combatantsCatalog.get(enemyInit.id);
     if (monsterDef?.observationChance !== undefined) {
       enemyObsChance = monsterDef.observationChance;
@@ -249,14 +259,15 @@ export class GridCombatEngine {
       spirituality: playerInit.spirituality,
       maxSpirituality: playerInit.maxSpirituality,
       ap: playerAp,
-      maxAp: 3,
+      maxAp: B.actionPoints.player,
       attention: 1,
-      maxAttention: 2,
-      position: { x: 0, y: 2 }, // Lado izquierdo (x: 0, centro y: 2)
+      maxAttention: B.actionPoints.maxAttention,
+      position: { x: 0, y: Math.floor(B.grid.height / 2) }, // lado izquierdo, fila central
       statuses: playerInit.isConcealed ? [{ status: 'CONCEALED', durationTurns: 2 }] : [],
       revealedAbilities: [], // Inicia opaco hacia el enemigo
-      allAbilities: playerAbilities,
-      observationChance: 50,
+      // el golpe básico siempre está: sin espiritualidad nadie se queda sin acción ofensiva
+      allAbilities: [...playerAbilities, { ...B.playerBasicAttack, attentionCost: 0, targetType: 'SINGLE_ENEMY' as const }],
+      observationChance: B.scrutiny.playerObservationChance,
       hasInstability: !!playerInit.hasInstability
     };
 
@@ -269,11 +280,11 @@ export class GridCombatEngine {
       maxHp: enemyInit.maxHp,
       spirituality: enemyInit.spirituality || 50,
       maxSpirituality: enemyInit.maxSpirituality || 50,
-      ap: 3,
-      maxAp: 3,
+      ap: B.actionPoints.enemy,
+      maxAp: B.actionPoints.enemy,
       attention: 1,
-      maxAttention: 2,
-      position: { x: 6, y: 2 }, // Lado derecho (x: 6, centro y: 2)
+      maxAttention: B.actionPoints.maxAttention,
+      position: { x: B.grid.width - 1, y: Math.floor(B.grid.height / 2) }, // lado derecho, fila central
       statuses: [],
       revealedAbilities: [], // Inicia opaco hacia el jugador
       allAbilities: enemyAbilities,
@@ -343,7 +354,7 @@ export class GridCombatEngine {
       targetPosition?: GridCoord;
       targetActorId?: string;
     },
-    rng: SeededRNG = new SeededRNG(Date.now())
+    rng: SeededRNG = GridCombatEngine.rngFor(battle, 'player')
   ): GridActionResult {
     const player = this.getPlayer(battle);
     const enemy = action.targetActorId
@@ -385,11 +396,22 @@ export class GridCombatEngine {
           return result;
         }
 
-        const targetPos = action.targetPosition || { x: Math.min(6, player.position.x + 1), y: player.position.y };
+        const G = CombatContent.balance().grid;
+        const targetPos = action.targetPosition || { x: Math.min(G.width - 1, player.position.x + 1), y: player.position.y };
         const dist = this.getDistance(player.position, targetPos);
-        if (dist > 1) {
+        if (targetPos.x < 0 || targetPos.y < 0 || targetPos.x >= G.width || targetPos.y >= G.height) {
+          result.success = false;
+          result.message = 'Movimiento inválido: esa casilla queda fuera del callejón.';
+          return result;
+        }
+        if (dist !== 1) {
           result.success = false;
           result.message = 'Movimiento inválido: solo puedes desplazarte a casillas adyacentes (distancia 1).';
+          return result;
+        }
+        if (this.isOccupied(battle, targetPos, player.id)) {
+          result.success = false;
+          result.message = 'Movimiento inválido: la casilla está ocupada.';
           return result;
         }
 
@@ -444,7 +466,7 @@ export class GridCombatEngine {
           return result;
         }
 
-        if (isWeakened || isStunned || isPacified || enemy.hp <= Math.floor(enemy.maxHp * 0.35)) {
+        if (isWeakened || isStunned || isPacified || enemy.hp <= Math.floor(enemy.maxHp * CombatContent.balance().negotiation.hpFractionThreshold)) {
           battle.status = 'NEGOTIATED';
           result.isBattleOver = true;
           result.victory = true;
@@ -462,7 +484,7 @@ export class GridCombatEngine {
 
       case 'FLEE': {
         const dist = this.getDistance(player.position, enemy.position);
-        if (dist >= 3 || enemy.statuses.some(s => s.status === 'STUN' || s.status === 'FEAR')) {
+        if (dist >= CombatContent.balance().flee.minDistance || enemy.statuses.some(s => s.status === 'STUN' || s.status === 'FEAR')) {
           battle.status = 'FLED';
           result.isBattleOver = true;
           result.victory = false;
@@ -501,6 +523,17 @@ export class GridCombatEngine {
           return result;
         }
 
+        if (skill.targetType === 'GRID_CELL') {
+          const dest = action.targetPosition;
+          const G = CombatContent.balance().grid;
+          if (!dest || dest.x < 0 || dest.y < 0 || dest.x >= G.width || dest.y >= G.height
+            || this.getDistance(player.position, dest) > skill.range || this.isOccupied(battle, dest, player.id)) {
+            result.success = false;
+            result.message = `Destino inválido para [${skill.name}].`;
+            return result;
+          }
+        }
+
         const distance = this.getDistance(player.position, enemy.position);
         if (skill.targetType === 'SINGLE_ENEMY' && distance > skill.range) {
           result.success = false;
@@ -534,7 +567,11 @@ export class GridCombatEngine {
 
         const targetActor = skill.targetType === 'SELF' ? pRuntimeActor : eRuntimeActor;
         for (const atomInv of skill.atoms) {
-          const atomRes = this.atomRuntime.executeAtom(pRuntimeActor, targetActor, atomInv.atomId, atomInv.params);
+          // desplazamientos a casilla: el destino lo elige el jugador (validado arriba), nunca el átomo
+          const params = skill.targetType === 'GRID_CELL' && action.targetPosition
+            ? { ...atomInv.params, targetPosition: action.targetPosition }
+            : atomInv.params;
+          const atomRes = this.atomRuntime.executeAtom(pRuntimeActor, targetActor, atomInv.atomId, params);
           totalDamage += atomRes.damageDealt;
           totalHealing += atomRes.healingDone;
         }
@@ -545,7 +582,7 @@ export class GridCombatEngine {
         // Bonificación si el jugador había escudriñado las habilidades del enemigo
         const isScrutinized = player.revealedAbilities.length > 0;
         if (isScrutinized && totalDamage > 0) {
-          const bonus = Math.floor(totalDamage * 0.20);
+          const bonus = Math.floor(totalDamage * CombatContent.balance().scrutiny.damageBonus);
           totalDamage += bonus;
           enemy.hp = Math.max(0, enemy.hp - bonus);
         }
@@ -563,7 +600,7 @@ export class GridCombatEngine {
           result.status = 'VICTORY';
           result.harvestQuality = this.determineHarvestQuality(enemy);
           enemy.harvestQuality = result.harvestQuality;
-          result.message += ` ¡Victoria! [${enemy.name}] ha sido derrotado. Calidad de cosecha: [${result.harvestQuality}].`;
+          result.message += ` [${enemy.name}] cae y ya no se levanta.`;
           battle.turnLog.push(`Encuentro concluido con victoria. Ingrediente recolectado: [${result.harvestQuality}].`);
           return result;
         }
@@ -579,7 +616,7 @@ export class GridCombatEngine {
    */
   public executeEnemyTurn(
     battle: GridBattleState,
-    rng: SeededRNG = new SeededRNG(Date.now() + 1)
+    rng: SeededRNG = GridCombatEngine.rngFor(battle, 'enemy')
   ): {
     message: string;
     damageDealt: number;
@@ -594,6 +631,12 @@ export class GridCombatEngine {
       return { message: 'El combate ya no está activo.', damageDealt: 0, isBattleOver: true };
     }
 
+    const B = CombatContent.balance();
+
+    // Fin del turno del jugador: sus estados avanzan (veneno incluido)
+    const playerTick = this.tickStatuses(player);
+    if (player.hp <= 0) return this.defeat(battle, enemy, playerTick);
+
     // Reset de AP para el turno
     enemy.ap = enemy.maxAp;
 
@@ -603,22 +646,31 @@ export class GridCombatEngine {
       enemy.statuses.splice(stunIdx, 1);
       const msg = `${enemy.name} está aturdido y no puede actuar en este turno.`;
       battle.turnLog.push(msg);
-      return { message: msg, damageDealt: 0, isBattleOver: false };
+      battle.turnCount += 1;
+      player.ap = player.maxAp;
+      return { message: [playerTick, msg].filter(Boolean).join(' '), damageDealt: 0, isBattleOver: false, status: 'ONGOING' };
     }
 
-    // IA Táctica simple con Simetría
-    // 1. Si no tiene al jugador a rango, avanzar hacia él
-    const dist = this.getDistance(enemy.position, player.position);
-    if (dist > 2 && enemy.ap > 0) {
-      const dx = player.position.x < enemy.position.x ? -1 : 1;
-      enemy.position.x = Math.max(0, Math.min(6, enemy.position.x + dx));
+    // IA táctica: técnicas ofensivas o sobre sí mismo (las de desplazamiento a casilla no las usa la IA)
+    const usable = () => enemy.allAbilities.filter(a =>
+      (a.targetType === 'SINGLE_ENEMY' || a.targetType === 'SELF') &&
+      enemy.spirituality >= a.spiritualityCost && enemy.ap >= a.apCost);
+    const inRange = (a: CombatAbility) => a.targetType === 'SELF' || this.getDistance(enemy.position, player.position) <= a.range;
+
+    // Avanza casilla a casilla mientras ninguna técnica ofensiva alcance y le queden PA para avanzar y actuar
+    const offensive = () => usable().filter(a => a.targetType === 'SINGLE_ENEMY');
+    let steps = 0;
+    while (enemy.ap > 1 && offensive().length > 0 && !offensive().some(inRange)) {
+      const next = this.stepToward(battle, enemy, player.position);
+      if (!next) break;
+      enemy.position = next;
       enemy.ap -= 1;
-      battle.turnLog.push(`${enemy.name} acortó distancia desplazándose a (${enemy.position.x}, ${enemy.position.y}).`);
+      steps++;
     }
+    if (steps > 0) battle.turnLog.push(`${enemy.name} acortó distancia hasta (${enemy.position.x}, ${enemy.position.y}).`);
 
-    // 2. Seleccionar una habilidad válida
-    const usableSkills = enemy.allAbilities.filter(a => enemy.spirituality >= a.spiritualityCost && enemy.ap >= a.apCost);
-    let chosenSkill = usableSkills.length > 0 ? usableSkills[rng.nextInt(0, usableSkills.length - 1)] : null;
+    const candidates = usable().filter(inRange);
+    const chosenSkill = candidates.length > 0 ? candidates[rng.nextInt(0, candidates.length - 1)] : null;
 
     let totalDamage = 0;
     let turnMsg = '';
@@ -639,40 +691,48 @@ export class GridCombatEngine {
       this.syncFromRuntime(player, pRuntimeActor);
       this.syncFromRuntime(enemy, eRuntimeActor);
 
-      // Simetría: Si el jugador conoció la habilidad por Escudriñar y tiene Atención disponible, mitiga
-      if (player.revealedAbilities.includes(chosenSkill.id) && player.attention > 0) {
-        const mitigation = Math.floor(totalDamage * 0.35);
+      // Simetría: si el jugador conoce la técnica (Escudriñar) y le queda Atención, la anticipa
+      if (player.revealedAbilities.includes(chosenSkill.id) && player.attention > 0 && totalDamage > 0) {
+        const mitigation = Math.floor(totalDamage * B.scrutiny.mitigation);
         totalDamage = Math.max(0, totalDamage - mitigation);
         player.attention -= 1;
         player.hp = Math.min(player.maxHp, player.hp + mitigation);
-        turnMsg = `${enemy.name} ejecutó [${chosenSkill.name}]. ¡Anticipado por Escudriñar! Mitigaste ${mitigation} de daño. Infligió ${totalDamage} a ${player.name}.`;
+        turnMsg = `${enemy.name} ejecutó [${chosenSkill.name}], pero lo viste venir y esquivaste parte del golpe. Te alcanzó por ${totalDamage}.`;
+      } else if (chosenSkill.targetType === 'SELF') {
+        turnMsg = `${enemy.name} recurrió a [${chosenSkill.name}].`;
       } else {
-        turnMsg = `${enemy.name} atacó con [${chosenSkill.name}] infligiendo ${totalDamage} a ${player.name}.`;
+        turnMsg = totalDamage > 0
+          ? `${enemy.name} atacó con [${chosenSkill.name}] infligiendo ${totalDamage} a ${player.name}.`
+          : `${enemy.name} lanzó [${chosenSkill.name}] contra ${player.name}.`;
       }
-    } else {
-      // Ataque básico de garras
-      totalDamage = 12;
+    } else if (this.getDistance(enemy.position, player.position) <= 1) {
+      // Sin técnica disponible y cuerpo a cuerpo: golpe básico
+      totalDamage = B.enemyBasicAttack.damage;
       player.hp = Math.max(0, player.hp - totalDamage);
       player.lastDamageSource = { type: 'PHYSICAL', amount: totalDamage };
-      turnMsg = `${enemy.name} asestó un zarpazo físico directo infligiendo ${totalDamage} a ${player.name}.`;
+      turnMsg = `${enemy.name} lanzó un ${B.enemyBasicAttack.name} infligiendo ${totalDamage} a ${player.name}.`;
+    } else {
+      turnMsg = steps > 0 ? `${enemy.name} se acerca entre la niebla.` : `${enemy.name} acecha sin atacar.`;
     }
+
+    // Fin del turno del adversario: sus estados avanzan
+    const enemyTick = this.tickStatuses(enemy);
+    if (enemyTick) turnMsg += ` ${enemyTick}`;
+    if (playerTick) turnMsg = `${playerTick} ${turnMsg}`;
 
     battle.turnLog.push(turnMsg);
     battle.turnCount += 1;
     player.ap = player.maxAp; // Restaurar AP del jugador para el próximo turno
 
     // Comprobar si el jugador cayó derrotado
-    if (player.hp <= 0) {
-      battle.status = 'DEFEAT';
-      const defeatMsg = `Has caído en combate contra [${enemy.name}]. La niebla astral consume tu cordura.`;
-      battle.turnLog.push(defeatMsg);
-      return {
-        message: defeatMsg,
-        damageDealt: totalDamage,
-        isBattleOver: true,
-        victory: false,
-        status: 'DEFEAT'
-      };
+    if (player.hp <= 0) return { ...this.defeat(battle, enemy, turnMsg), damageDealt: totalDamage };
+
+    // el veneno puede acabar con el adversario en su propio turno
+    if (enemy.hp <= 0) {
+      battle.status = 'VICTORY';
+      enemy.harvestQuality = this.determineHarvestQuality(enemy);
+      battle.turnLog.push(`[${enemy.name}] se desploma, consumido por sus heridas.`);
+      return { message: `${turnMsg} ${enemy.name} se desploma, consumido por sus heridas.`, damageDealt: totalDamage, isBattleOver: true, victory: true, status: 'VICTORY' };
     }
 
     return {
@@ -681,6 +741,44 @@ export class GridCombatEngine {
       isBattleOver: false,
       status: 'ONGOING'
     };
+  }
+
+  private isOccupied(battle: GridBattleState, pos: GridCoord, exceptId: string): boolean {
+    return battle.actors.some(a => a.id !== exceptId && a.hp > 0 && a.position.x === pos.x && a.position.y === pos.y);
+  }
+
+  /** una casilla hacia el objetivo (la que más reduce la distancia), libre y dentro de la rejilla */
+  private stepToward(battle: GridBattleState, actor: GridActor, target: GridCoord): GridCoord | null {
+    const G = CombatContent.balance().grid;
+    const here = this.getDistance(actor.position, target);
+    const options: GridCoord[] = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+      .map(([dx, dy]) => ({ x: actor.position.x + dx, y: actor.position.y + dy }))
+      .filter(p => p.x >= 0 && p.y >= 0 && p.x < G.width && p.y < G.height && !this.isOccupied(battle, p, actor.id))
+      .filter(p => this.getDistance(p, target) < here && this.getDistance(p, target) >= 1);
+    return options[0] ?? null;
+  }
+
+  /** Fin de turno de un actor: el veneno hiere y las duraciones se descuentan. Devuelve la narración (o ''). */
+  private tickStatuses(actor: GridActor): string {
+    const B = CombatContent.balance();
+    let msg = '';
+    if (actor.statuses.some(s => s.status === 'POISON') && B.poisonDamagePerTurn > 0 && actor.hp > 0) {
+      const dmg = Math.min(actor.hp, B.poisonDamagePerTurn);
+      actor.hp -= dmg;
+      actor.lastDamageSource = { type: 'POISON', amount: dmg };
+      msg = `El veneno quema a ${actor.name} (${dmg}).`;
+    }
+    actor.statuses = actor.statuses
+      .map(s => ({ ...s, durationTurns: s.durationTurns - 1 }))
+      .filter(s => s.durationTurns > 0);
+    return msg;
+  }
+
+  private defeat(battle: GridBattleState, enemy: GridActor, lead: string) {
+    battle.status = 'DEFEAT';
+    const defeatMsg = `Has caído en combate contra [${enemy.name}].`;
+    battle.turnLog.push(defeatMsg);
+    return { message: [lead, defeatMsg].filter(Boolean).join(' '), damageDealt: 0, isBattleOver: true, victory: false, status: 'DEFEAT' };
   }
 
   private toRuntimeActor(actor: GridActor): RuntimeCombatant {

@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "grid": { "width": 7, "height": 5 },
+  "actionPoints": { "player": 3, "enemy": 3, "maxAttention": 2 },
+  "initiative": { "basePreparation": 15, "enemyAlertnessPerSpeed": 5, "defaultEnemySpeed": 10 },
+  "scrutiny": {
+    "damageBonus": 0.2,
+    "mitigation": 0.35,
+    "defaultEnemyObservationChance": 35,
+    "playerObservationChance": 50
+  },
+  "negotiation": { "hpFractionThreshold": 0.35 },
+  "conditionBands": { "woundedBelow": 0.66 },
+  "flee": { "minDistance": 3 },
+  "playerBasicAttack": {
+    "id": "PLAYER_BASIC_STRIKE",
+    "name": "Golpe con el bastón",
+    "description": "Un golpe seco con lo que se tiene a mano. No gasta espiritualidad.",
+    "apCost": 1,
+    "spiritualityCost": 0,
+    "range": 1,
+    "atoms": [{ "atomId": "ATOM_DAMAGE_PHYSICAL", "params": { "baseDamage": 8 } }]
+  },
+  "enemyBasicAttack": { "name": "zarpazo", "damage": 9 },
+  "weakenedDamageMultiplier": 1.3,
+  "poisonDamagePerTurn": 4,
+  "defeat": { "hpLeft": 10, "sanityLoss": 12 },
+  "victoryPurse": { "MINOR": 36, "STANDARD": 72, "DANGEROUS": 180 }
+}

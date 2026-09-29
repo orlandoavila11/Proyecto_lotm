@@ -22,7 +22,9 @@ import {
   ConvergenceBalanceSchema,
   EconomyBalanceSchema,
   EconomyMarketSchema,
-  OriginsCatalogSchema
+  OriginsCatalogSchema,
+  CombatBalanceSchema,
+  EncountersFileSchema
 } from '../src/infra/content/schemas/index.js';
 
 interface SchemaTarget {
@@ -130,6 +132,16 @@ const TARGETS: SchemaTarget[] = [
     name: 'ECONOMY_BALANCE',
     pattern: 'balance/economy.json',
     schema: EconomyBalanceSchema
+  },
+  {
+    name: 'COMBAT_BALANCE',
+    pattern: 'balance/combat.json',
+    schema: CombatBalanceSchema
+  },
+  {
+    name: 'ENCOUNTERS_G',
+    pattern: 'encounters/encounters.json',
+    schema: EncountersFileSchema
   },
   {
     name: 'ECONOMY_MARKET',

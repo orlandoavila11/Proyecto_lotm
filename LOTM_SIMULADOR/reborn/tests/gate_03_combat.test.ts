@@ -126,8 +126,9 @@ describe('GATE 03: Motor Táctico 5x7, Simetría, Recolección y Bots ε-greedy'
     const rng = new SeededRNG(42);
     const enemyRes = engine.executeEnemyTurn(battle, rng);
 
-    // Debe haberse anticipado la habilidad mitigando un 35% de daño
-    assert.ok(enemyRes.message.includes('Anticipado por Escudriñar'), 'El mensaje debe confirmar la mitigación simétrica');
+    // Debe haberse anticipado la habilidad: se gasta la atención y la narración lo cuenta
+    assert.ok(enemyRes.message.includes('lo viste venir'), 'El mensaje debe confirmar la mitigación simétrica: ' + enemyRes.message);
+    assert.strictEqual(player.attention, 0, 'La anticipación consume la atención disponible');
   });
 
   it('3. Acción NEGOTIATE: Condición visible de rendición vs rechazo en Frenesí', () => {

@@ -27,7 +27,8 @@ describe('DomainError y Semantic HTTP Handling', () => {
         method: 'POST',
         url: '/api/combat/action',
         payload: {
-          characterId: 'char_no_battle'
+          characterId: 'char_no_battle',
+          actionType: 'END_TURN'
         }
       });
       assert.strictEqual(res.statusCode, 404);

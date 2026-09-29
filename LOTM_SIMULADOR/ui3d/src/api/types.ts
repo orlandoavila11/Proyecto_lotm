@@ -272,56 +272,66 @@ export interface CombatStatus {
   durationTurns?: number;
 }
 
-export interface BattleActor {
+/** el personaje: sus propias cifras sí las conoce */
+export interface BattlePlayer {
   id: string;
   name: string;
-  isPlayer: boolean;
-  currentHp: number;
+  hp: number;
   maxHp: number;
-  currentSpirituality: number;
+  spirituality: number;
   maxSpirituality: number;
-  position: { x: number; y: number };
   ap: number;
   maxAp: number;
   attention: number;
   maxAttention: number;
-  revealedAbilities: string[];
-  abilities?: string[];
-  statuses: Array<CombatStatus | string>;
+  position: { x: number; y: number };
+  statuses: string[];
+}
+
+/** el adversario tal como lo percibe el personaje: nunca sus cifras ni su repertorio oculto */
+export interface BattleEnemy {
+  id: string;
+  name: string;
+  condition: 'FIRM' | 'WOUNDED' | 'FALTERING';
+  position: { x: number; y: number };
+  statuses: string[];
+  knownAbilities: Array<{ id: string; name: string; description: string; range: number }>;
 }
 
 export interface CombatSkill {
   id: string;
   name: string;
   description: string;
+  apCost: number;
   spiritualityCost: number;
-  damage: number;
-  effect?: 'STUN' | 'SLEEP' | 'DODGE' | 'LIFE_LEECH' | 'DEFENSE_DOWN' | 'DAMAGE_REDUCTION';
+  range: number;
+  targetType: 'SELF' | 'SINGLE_ENEMY' | 'SINGLE_ALLY' | 'AREA' | 'GRID_CELL';
 }
 
 export interface BattleEnvelope {
-  battleId?: string;
-  status?: string;
-  player: BattleActor;
-  enemy: BattleActor;
+  battleId: string;
+  status: 'ONGOING' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'NEGOTIATED' | 'RAMPAGE_TERMINAL';
   grid: { width: number; height: number };
-  turnCount?: number;
-  turnLog?: string[];
+  turnCount: number;
+  initiativeWinner: 'PLAYER' | 'ENEMY';
+  player: BattlePlayer;
+  enemy: BattleEnemy;
   availableSkills: CombatSkill[];
-  initiativeWinner?: 'PLAYER' | 'ENEMY';
+  /** narración de lo ocurrido en esta petición (inicio, acción, turno del adversario) */
+  messages?: string[];
+  resumed?: boolean;
+  outcome?: CombatOutcome | null;
 }
 
-export interface CombatActionResult {
+export interface CombatOutcome {
+  pursePence: number;
+  harvest: { name: string; quality: Quality } | null;
+}
+
+export interface CombatActionResult extends BattleEnvelope {
   battleOver: boolean;
-  victory?: boolean;
-  status?: string;
-  message: string;
-  player?: BattleActor;
-  enemy?: BattleActor;
-  harvestQuality?: string;
-  playerResult?: { message?: string; damageDealt?: number; actionName?: string };
-  enemyResult?: { message?: string; damageDealt?: number; actionName?: string };
-  availableSkills?: CombatSkill[];
+  victory: boolean;
+  messages: string[];
 }
 
 // ── actuación e identidad

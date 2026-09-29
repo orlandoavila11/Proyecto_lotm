@@ -69,11 +69,12 @@ export const economyRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
     });
   });
 
-  // POST /api/economy/sell
+  // POST /api/economy/sell — el grado y la calidad los fija el servidor al cosechar, nunca el cliente
   const SellSchema = z.object({
     characterId: z.string().min(1),
     inventoryItemId: z.string().min(1),
-    grade: z.enum(['COMMON', 'UNCOMMON', 'RARE'])
+    commandId: z.string().optional(),
+    expectedRevision: z.number().int().optional()
   });
 
   app.post('/api/economy/sell', async (req, reply) => {
@@ -82,18 +83,20 @@ export const economyRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
       return reply.status(400).send({ error: 'Payload inválido', details: parsed.error.issues });
     }
 
-    const { characterId, inventoryItemId, grade } = parsed.data;
-    const char = db.getCharacter(characterId);
-    if (!char) {
-      return reply.status(404).send({ error: 'Character no encontrado' });
-    }
+    const { characterId, inventoryItemId, commandId, expectedRevision } = parsed.data;
+    const processed = CommandProcessor.execute(
+      db,
+      { commandId, characterId, commandType: 'ECONOMY_SELL', payload: { inventoryItemId }, expectedRevision },
+      () => {
+        const char = db.getCharacter(characterId);
+        if (!char) throw new EntityNotFoundError('Character no encontrado');
+        const result = EconomyEngine.sellHarvestItem(db, characterId, inventoryItemId, char.current_day);
+        if (!result.success) throw new DomainRuleViolationError(result.error || 'Venta rechazada');
+        return result;
+      }
+    );
 
-    const result = EconomyEngine.sellHarvestItem(db, characterId, inventoryItemId, grade, char.current_day);
-    if (!result.success) {
-      return reply.status(400).send(result);
-    }
-
-    return reply.send(result);
+    return reply.send({ ...processed.response, fromReceipt: processed.fromReceipt, revision: processed.revision });
   });
 
   // POST /api/economy/cure

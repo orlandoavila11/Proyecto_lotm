@@ -51,8 +51,8 @@ describe('Kill -9 Recovery: Persistencia Transaccional y Restauración Byte-Equi
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: 'Lumian Lee',
-          pathway: 'HUNTER',
+          name: 'Ernest Holloway',
+          pathway: 'FOOL',
           startingCity: 'Backlund',
           background: 'Guerrero de Barrio',
           socialClass: 'WORKING_CLASS'
@@ -66,24 +66,21 @@ describe('Kill -9 Recovery: Persistencia Transaccional y Restauración Byte-Equi
       const startRes = await fetch(`${baseUrl}/api/combat/start`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          characterId: charId,
-          enemyName: 'Marioneta de Sombras',
-          enemyHp: 60
-        })
+        body: JSON.stringify({ characterId: charId })
       });
       assert.strictEqual(startRes.status, 200);
       const startData = await startRes.json();
       const battleId = startData.battleId;
       assert.ok(battleId, 'Debe retornar un ID de combate persistido');
 
-      // 5. Ejecutar 1 acción de combate (Tiro de Precisión)
+      // 5. Ejecutar 1 acción de combate (avanzar una casilla)
       const actionRes = await fetch(`${baseUrl}/api/combat/action`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           characterId: charId,
-          skillId: 'SKILL_HUNTER_9_SNIPE'
+          actionType: 'MOVE',
+          targetPosition: { x: startData.player.position.x + 1, y: startData.player.position.y }
         })
       });
       assert.strictEqual(actionRes.status, 200);
@@ -101,8 +98,7 @@ describe('Kill -9 Recovery: Persistencia Transaccional y Restauración Byte-Equi
       });
       assert.strictEqual(scrutinizeRes.status, 200);
       const scrutinizeData = await scrutinizeRes.json();
-      assert.ok(scrutinizeData.player.revealedAbilities.length >= 1, 'Player debe poseer habilidades reveladas');
-      assert.ok(scrutinizeData.enemy.revealedAbilities.length >= 1, 'Enemy debe poseer habilidades observadas del player');
+      assert.ok(scrutinizeData.enemy.knownAbilities.length >= 1, 'El personaje debe conocer al menos una técnica del adversario');
 
       // Snapshot directo de la base de datos antes del kill -9
       const dbInspector = new DatabaseClient(dbPath);
@@ -138,10 +134,9 @@ describe('Kill -9 Recovery: Persistencia Transaccional y Restauración Byte-Equi
       // Verificar campos semánticos y opacidad mutua (Directiva f)
       assert.strictEqual(restoredData.battleId, battleId);
       assert.strictEqual(restoredData.status, 'ONGOING');
-      assert.strictEqual(restoredData.player.currentSpirituality, 90); // 100 - 10
-      assert.strictEqual(restoredData.enemy.currentHp, 35); // 60 - 25
-      assert.deepStrictEqual(restoredData.player.revealedAbilities, scrutinizeData.player.revealedAbilities, 'revealedAbilities de player debe ser idéntico');
-      assert.deepStrictEqual(restoredData.enemy.revealedAbilities, scrutinizeData.enemy.revealedAbilities, 'revealedAbilities de enemy debe ser idéntico');
+      assert.deepStrictEqual(restoredData.player, scrutinizeData.player, 'El personaje restaurado debe ser idéntico');
+      assert.deepStrictEqual(restoredData.enemy, scrutinizeData.enemy, 'Lo que el personaje sabe del adversario debe ser idéntico');
+      assert.strictEqual(restoredData.enemy.hp, undefined, 'Los PV del adversario nunca viajan al cliente');
 
       // 9. VERIFICACIÓN BYTE-EQUIVALENTE de SQLite (incluyendo sets de opacidad)
       const restoredRow = recoveredDb.getBattleById(battleId);

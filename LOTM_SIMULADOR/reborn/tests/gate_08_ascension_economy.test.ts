@@ -155,11 +155,16 @@ describe('GATE 08: Economía Victoriana, Las Cinco Puertas y La Escena del Trago
       item_code: 'HARVEST_SPECTER_DUST',
       name: 'Polvo Espectral Residual',
       category: 'INGREDIENT',
-      quality: 'PRISTINE'
+      quality: 'PRISTINE',
+      metadata_json: JSON.stringify({ grade: 'UNCOMMON' })
     });
 
-    // Venta de excedente al mercado
-    const sellRes = EconomyEngine.sellHarvestItem(db, char.id, harvestItem.id, 'UNCOMMON', 2);
+    // Un objeto que no es cosecha no se vende en este mostrador
+    const refused = EconomyEngine.sellHarvestItem(db, char.id, inv[0].id, 2);
+    assert.strictEqual(refused.success, false, 'sólo se vende cosecha');
+
+    // Venta de excedente al mercado: el grado lo pone el servidor al cosechar
+    const sellRes = EconomyEngine.sellHarvestItem(db, char.id, harvestItem.id, 2);
     assert.strictEqual(sellRes.success, true);
     assert.strictEqual(sellRes.penceGained, 60);
     assert.strictEqual(sellRes.remainingBalance, 860);

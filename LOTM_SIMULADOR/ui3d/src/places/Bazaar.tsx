@@ -40,6 +40,8 @@ export function Bazaar() {
   const [busy, setBusy] = useState(false);
   const [receipt, setReceipt] = useState<string | null>(null);
   const [items, setItems] = useState<CounterItem[]>([]);
+  const [selling, setSelling] = useState<string | null>(null);
+  const [saleNote, setSaleNote] = useState<string | null>(null);
 
   const location = snapshot?.character.current_location ?? 'DIST_CHERWOOD';
 
@@ -125,6 +127,23 @@ export function Bazaar() {
     }
   };
 
+  // cosecha del combate: el boticario la compra; el precio lo fija el servidor según grado y calidad
+  const harvest = (snapshot?.inventory ?? []).filter((i) => i.item_code.startsWith('HARVEST_') && i.quantity > 0);
+  const sell = async (itemId: string, name: string) => {
+    if (!characterId) return;
+    setSelling(itemId);
+    try {
+      const res = await api.sellHarvest(characterId, itemId);
+      setSaleNote(`${name}: ${formatMoney(res.penceGained)}.`);
+      saved();
+      await refresh();
+    } catch (err) {
+      fail(err);
+    } finally {
+      setSelling(null);
+    }
+  };
+
   const thumb = (l: MarketListing) => {
     const url = itemArt(l.id);
     return url ? <img src={url} alt="" /> : <IconBottles size={44} />;
@@ -138,13 +157,13 @@ export function Bazaar() {
 
       <Panel className="slide-in-right" style={{ right: 23, top: 62, width: 499, bottom: 65, padding: '46px 42px 30px', display: 'flex', flexDirection: 'column' }} label="Mercancía">
         <div className="framed-preview" style={{ marginBottom: 26 }}>
-          <div className="framed-preview__img bazaar-preview" style={{ aspectRatio: '415 / 310', backgroundImage: previewBg ? `url(${previewBg})` : undefined }}>
+          <div className="framed-preview__img bazaar-preview" style={{ aspectRatio: harvest.length > 0 || saleNote ? '415 / 170' : '415 / 310', backgroundImage: previewBg ? `url(${previewBg})` : undefined }}>
             {preview ? <img src={preview} alt={current?.name ?? ''} /> : <IconBottles size={80} />}
           </div>
         </div>
         {missing && <Prose>{missing}</Prose>}
         {current && (
-          <div key={current.id} className="fade-in" style={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
+          <div key={current.id} className="fade-in scroll" style={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
             <h2 className="t-body" style={{ margin: 0, fontSize: 38, fontWeight: 500, textAlign: 'center', lineHeight: 1.12, textWrap: 'balance' }}>{current.name}</h2>
             <Divider width="100%" style={{ margin: '14px 0 16px' }} />
             <Prose size={21}>{describe(current)}</Prose>
@@ -169,6 +188,19 @@ export function Bazaar() {
             </div>
             {receipt && <Prose size={18} dim>{receipt}</Prose>}
             <div style={{ flex: 1 }} />
+          </div>
+        )}
+        {(harvest.length > 0 || saleNote) && (
+          <div className="harvest-sale">
+            <Divider width="100%" style={{ margin: '8px 0 10px' }} />
+            {harvest.length > 0 && <p className="harvest-sale__title">El boticario compra lo que traes del callejón</p>}
+            {harvest.map((h) => (
+              <div key={h.id} className="harvest-sale__row">
+                <span>{h.name}{h.quantity > 1 ? ` ×${h.quantity}` : ''}</span>
+                <button type="button" className="harvest-sale__btn" disabled={!!selling} aria-busy={selling === h.id || undefined} onClick={() => sell(h.id, h.name)}>Vender</button>
+              </div>
+            ))}
+            {saleNote && <p className="harvest-sale__note">Vendido — {saleNote}</p>}
           </div>
         )}
         <div style={{ display: 'grid', gap: 26, marginTop: 14 }}>

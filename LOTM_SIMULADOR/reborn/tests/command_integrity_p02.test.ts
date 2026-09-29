@@ -288,7 +288,6 @@ describe('P02: Integridad de Comandos, Idempotencia y Concurrencia Transaccional
         url: '/api/combat/start',
         payload: {
           characterId: char.id,
-          enemyName: 'Espectro de Minsk Street',
           commandId: 'cmd_start_fight_1'
         }
       });

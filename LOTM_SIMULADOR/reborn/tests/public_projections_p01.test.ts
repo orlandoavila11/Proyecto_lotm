@@ -1,73 +1,68 @@
 import { test, describe, it } from 'node:test';
 import * as assert from 'node:assert';
 import { buildApp } from '../src/server/app.js';
-import { projectPublicBattleActor } from '../src/server/routes/combatRoutes.js';
+import { projectPublicBattle } from '../src/server/routes/combatRoutes.js';
+import { GridCombatEngine } from '../src/core/combat/GridCombatEngine.js';
+import { CombatContent } from '../src/core/combat/CombatContent.js';
 
 describe('P01: Proyecciones Públicas Veraces y Ocultamiento de Secretos', () => {
-  it('1. projectPublicBattleActor oculta habilidades no reveladas de enemigos', () => {
-    const rawEnemy: any = {
-      id: 'enemy_specter',
-      name: 'Espectro de Niebla',
-      abilities: ['SKILL_CORRUPTING_TOUCH', 'SKILL_ASTRAL_TERROR', 'SKILL_SHADOW_ESCAPE'],
-      revealedAbilities: ['SKILL_CORRUPTING_TOUCH'],
-      currentHp: 40,
-      maxHp: 40
-    };
+  const battleWith = (combatantId: string) => {
+    const engine = GridCombatEngine.getInstance();
+    const def = CombatContent.combatants().get(combatantId);
+    return engine.createBattle(
+      'battle_projection_test',
+      { id: 'char_proj', name: 'Vidente', pathway: 'FOOL', sequence: 9, hp: 100, maxHp: 100, spirituality: 100, maxSpirituality: 100 },
+      { id: def.id, name: def.name, hp: def.atomStats.hp, maxHp: def.atomStats.maxHp, abilities: def.abilities }
+    );
+  };
 
-    const projected = projectPublicBattleActor(rawEnemy, false);
-    // Solo debe incluir las habilidades en revealedAbilities
-    assert.deepStrictEqual(projected.abilities, ['SKILL_CORRUPTING_TOUCH']);
-    assert.strictEqual(projected.abilities.includes('SKILL_ASTRAL_TERROR'), false);
-    assert.strictEqual(projected.abilities.includes('SKILL_SHADOW_ESCAPE'), false);
+  it('1. el adversario viaja sin cifras ni técnicas no observadas', () => {
+    const battle = battleWith('dusk_specter');
+    const pub: any = projectPublicBattle(battle);
+    assert.strictEqual(pub.enemy.hp, undefined);
+    assert.strictEqual(pub.enemy.maxHp, undefined);
+    assert.strictEqual(pub.enemy.spirituality, undefined);
+    assert.strictEqual(pub.enemy.allAbilities, undefined);
+    assert.deepStrictEqual(pub.enemy.knownAbilities, []);
+    assert.strictEqual(pub.enemy.condition, 'FIRM');
+    assert.ok(!JSON.stringify(pub).includes('Susurro de Letargo'), 'Ninguna técnica oculta en la proyección');
   });
 
-  it('2. projectPublicBattleActor preserva todas las habilidades si es el jugador', () => {
-    const rawPlayer: any = {
-      id: 'player_seer',
-      name: 'Vidente',
-      abilities: ['SKILL_SEER_DIVINATION', 'SKILL_SEER_SPIRIT_VISION'],
-      revealedAbilities: [],
-      currentHp: 100,
-      maxHp: 100
-    };
-
-    const projected = projectPublicBattleActor(rawPlayer, true);
-    assert.deepStrictEqual(projected.abilities, ['SKILL_SEER_DIVINATION', 'SKILL_SEER_SPIRIT_VISION']);
+  it('2. escudriñar revela técnicas con nombre y el estado se percibe por bandas', () => {
+    const engine = GridCombatEngine.getInstance();
+    const battle = battleWith('dusk_specter');
+    engine.executePlayerAction(battle, { type: 'SCRUTINIZE' });
+    const enemy = engine.getPrimaryEnemy(battle);
+    let pub = projectPublicBattle(battle);
+    assert.strictEqual(pub.enemy.knownAbilities.length, 1);
+    assert.ok(pub.enemy.knownAbilities[0].name.length > 3);
+    enemy.hp = Math.floor(enemy.maxHp * 0.5);
+    assert.strictEqual(projectPublicBattle(battle).enemy.condition, 'WOUNDED');
+    enemy.hp = Math.floor(enemy.maxHp * 0.2);
+    pub = projectPublicBattle(battle);
+    assert.strictEqual(pub.enemy.condition, 'FALTERING');
+    assert.ok(pub.player.hp > 0, 'Del personaje sí viajan sus propias cifras');
   });
 
-  it('3. Iniciar combate proyecta al enemigo sin filtrar habilidades secretas', async () => {
+  it('3. iniciar combate: el servidor elige el adversario y no acepta parámetros de resultado', async () => {
     const { app } = await buildApp({ dbPath: ':memory:' });
-
-    // Crear personaje
     const charRes = await app.inject({
-      method: 'POST',
-      url: '/api/character/new',
-      payload: {
-        name: 'Leonard Mitchell',
-        pathway: 'FOOL',
-        startingCity: 'Backlund - Cherwood',
-        background: 'Detective Privado'
-      }
+      method: 'POST', url: '/api/character/new',
+      payload: { name: 'Ernest Holloway', pathway: 'FOOL', startingCity: 'Backlund - Cherwood', background: 'Detective Privado' }
     });
-    const char = JSON.parse(charRes.body);
-    const charId = char.character.id;
-
-    // Iniciar combate
+    const charId = JSON.parse(charRes.body).character.id;
     const startRes = await app.inject({
-      method: 'POST',
-      url: '/api/combat/start',
-      payload: {
-        characterId: charId,
-        enemyName: 'Criatura Sombra'
-      }
+      method: 'POST', url: '/api/combat/start',
+      payload: { characterId: charId, enemyName: 'Criatura Sombra', enemyHp: 1, ambushMode: 'PLAYER_AMBUSH' }
     });
-
     assert.strictEqual(startRes.statusCode, 200);
-    const startData = JSON.parse(startRes.body);
-    assert.ok(startData.enemy);
-    assert.strictEqual(startData.enemy.name, 'Criatura Sombra');
-    // abilities proyectadas deben estar vacías o coincidir con revealedAbilities
-    assert.deepStrictEqual(startData.enemy.abilities, []);
+    const data = JSON.parse(startRes.body);
+    assert.notStrictEqual(data.enemy.name, 'Criatura Sombra', 'El nombre del adversario no lo decide el cliente');
+    const pool = CombatContent.site('CHERWOOD_ALLEY')!.pool.map(p => CombatContent.combatants().get(p.combatantId).name);
+    assert.ok(pool.includes(data.enemy.name), 'El adversario sale de la tabla de encuentros del lugar');
+    assert.strictEqual(data.enemy.hp, undefined);
+    assert.deepStrictEqual(data.enemy.knownAbilities, []);
+    await app.close();
   });
 
   it('4. La activación de un caso no expone truthModel al cliente', async () => {

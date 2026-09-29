@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "sites": [
+    {
+      "id": "CHERWOOD_ALLEY",
+      "districtId": "DIST_CHERWOOD",
+      "label": "el callejón bajo el arco de piedra",
+      "pool": [
+        { "combatantId": "shadow_rat", "weight": 4, "minSequence": 8, "maxSequence": 9, "tier": "MINOR" },
+        { "combatantId": "trickster_crow", "weight": 3, "minSequence": 8, "maxSequence": 9, "tier": "MINOR" },
+        { "combatantId": "astral_moth", "weight": 3, "minSequence": 8, "maxSequence": 9, "tier": "MINOR" },
+        { "combatantId": "hallucination_leech", "weight": 2, "minSequence": 8, "maxSequence": 9, "tier": "STANDARD" },
+        { "combatantId": "dusk_specter", "weight": 2, "minSequence": 8, "maxSequence": 9, "tier": "STANDARD" },
+        { "combatantId": "spirit_paper_wraith", "weight": 2, "minSequence": 8, "maxSequence": 9, "tier": "STANDARD" },
+        { "combatantId": "iron_blood_hound", "weight": 2, "minSequence": 8, "maxSequence": 8, "tier": "DANGEROUS" },
+        { "combatantId": "mutated_black_hound", "weight": 2, "minSequence": 8, "maxSequence": 8, "tier": "DANGEROUS" }
+      ]
+    }
+  ],
+  "harvest": [
+    { "combatantId": "spinal_octopus", "itemCode": "HARVEST_SPINAL_OCTOPUS_EYE", "name": "Ojo auténtico de pulpo espinal", "grade": "RARE", "source": "TIER_L", "derivationNote": "content/bestiary_npcs/low_level_monsters.json: dropItems 'Real Eye of a Spinal Octopus'." },
+    { "combatantId": "fog_wolf", "itemCode": "HARVEST_FOG_WOLF_HEART", "name": "Corazón de lobo de niebla", "grade": "RARE", "source": "TIER_L", "derivationNote": "content/bestiary_npcs/monsters.json: dropItems 'Heart of a Fog Wolf'." },
+    { "combatantId": "faceless_hound", "itemCode": "HARVEST_FACELESS_HOUND_CHARACTERISTIC", "name": "Característica de sabueso sin rostro", "grade": "RARE", "source": "TIER_L", "derivationNote": "content/bestiary_npcs/low_level_monsters.json: dropItems 'Faceless Hound Characteristic'." },
+    { "combatantId": "shadow_rat", "itemCode": "HARVEST_SHADOW_RAT_EYES", "name": "Ojos de rata de sombra", "grade": "COMMON", "source": "GAMEPLAY", "derivationNote": "Parte anatómica del combatiente Tier G; material de reventa, sin uso en fórmulas." },
+    { "combatantId": "trickster_crow", "itemCode": "HARVEST_TRICKSTER_CROW_FEATHER", "name": "Pluma iridiscente de cuervo embaucador", "grade": "COMMON", "source": "GAMEPLAY", "derivationNote": "Parte anatómica del combatiente Tier G; material de reventa, sin uso en fórmulas." },
+    { "combatantId": "astral_moth", "itemCode": "HARVEST_ASTRAL_MOTH_DUST", "name": "Polvo de ala de polilla astral", "grade": "UNCOMMON", "source": "GAMEPLAY", "derivationNote": "Parte anatómica del combatiente Tier G; material de reventa, sin uso en fórmulas." },
+    { "combatantId": "hallucination_leech", "itemCode": "HARVEST_HALLUCINATION_LEECH_GLAND", "name": "Glándula de sanguijuela alucinógena", "grade": "UNCOMMON", "source": "GAMEPLAY", "derivationNote": "Parte anatómica del combatiente Tier G; material de reventa, sin uso en fórmulas." },
+    { "combatantId": "dusk_specter", "itemCode": "HARVEST_DUSK_SPECTER_RESIDUE", "name": "Residuo ectoplásmico crepuscular", "grade": "UNCOMMON", "source": "GAMEPLAY", "derivationNote": "Resto espiritual del combatiente Tier G; material de reventa, sin uso en fórmulas." },
+    { "combatantId": "spirit_paper_wraith", "itemCode": "HARVEST_SPIRIT_PAPER_SCRAP", "name": "Jirón de papel espiritual", "grade": "UNCOMMON", "source": "GAMEPLAY", "derivationNote": "Resto espiritual del combatiente Tier G; material de reventa, sin uso en fórmulas." },
+    { "combatantId": "iron_blood_hound", "itemCode": "HARVEST_IRON_BLOOD_HOUND_FANG", "name": "Colmillo de sabueso de sangre de hierro", "grade": "RARE", "source": "GAMEPLAY", "derivationNote": "Parte anatómica del combatiente Tier G; material de reventa, sin uso en fórmulas." },
+    { "combatantId": "mutated_black_hound", "itemCode": "HARVEST_BLACK_HOUND_SPORES", "name": "Esporas del sabueso negro mutado", "grade": "UNCOMMON", "source": "GAMEPLAY", "derivationNote": "Parte anatómica del combatiente Tier G; material de reventa, sin uso en fórmulas." }
+  ]
+}

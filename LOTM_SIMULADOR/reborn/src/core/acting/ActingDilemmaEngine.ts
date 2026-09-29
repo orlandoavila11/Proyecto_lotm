@@ -7,7 +7,6 @@ import { DilemmaG } from '../../infra/content/schemas/dilemma.schema.js';
 import { ActingBalance } from '../../infra/content/schemas/actingBalance.schema.js';
 import { SomaticsEngine } from '../somatics/SomaticsEngine.js';
 import { WhisperPrice } from '../types/somatics.js';
-import { generateDeterministicId } from '../rng/IdGenerator.js';
 import { EconomyEngine } from '../economy/EconomyEngine.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -1021,7 +1020,7 @@ export class ActingDilemmaEngine {
     // 5. Registrar en acting_records:
     // REGLA 1.c: Transgresión (alignment < 0) SIN entrada en la ventana actoral
     if (alignment >= 0) {
-      const recordId = generateDeterministicId(`act_${characterId}_${dilemmaId}`);
+      const recordId = db.nextId(`act_${characterId}_${dilemmaId}`);
       db.logActing({
         id: recordId,
         character_id: characterId,

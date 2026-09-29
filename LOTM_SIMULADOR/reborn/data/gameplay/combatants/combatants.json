@@ -1,7 +1,7 @@
 [
   {
     "id": "spinal_octopus",
-    "name": "Spinal Octopus",
+    "name": "Pulpo espinal",
     "atomStats": {
       "hp": 45,
       "maxHp": 45,
@@ -69,7 +69,7 @@
   },
   {
     "id": "fog_wolf",
-    "name": "Fog Wolf",
+    "name": "Lobo de niebla",
     "atomStats": {
       "hp": 180,
       "maxHp": 180,
@@ -167,7 +167,7 @@
   },
   {
     "id": "faceless_hound",
-    "name": "Faceless Hound",
+    "name": "Sabueso sin rostro",
     "atomStats": {
       "hp": 85,
       "maxHp": 85,
@@ -236,7 +236,7 @@
   },
   {
     "id": "spirit_paper_wraith",
-    "name": "Spirit Paper Wraith",
+    "name": "Espectro de papel espiritual",
     "atomStats": {
       "hp": 55,
       "maxHp": 55,
@@ -313,7 +313,7 @@
   },
   {
     "id": "shadow_rat",
-    "name": "Shadow Rat",
+    "name": "Rata de sombra",
     "atomStats": {
       "hp": 30,
       "maxHp": 30,
@@ -388,7 +388,7 @@
   },
   {
     "id": "trickster_crow",
-    "name": "Trickster Crow",
+    "name": "Cuervo embaucador",
     "atomStats": {
       "hp": 40,
       "maxHp": 40,
@@ -456,7 +456,7 @@
   },
   {
     "id": "astral_moth",
-    "name": "Astral Moth",
+    "name": "Polilla astral",
     "atomStats": {
       "hp": 35,
       "maxHp": 35,
@@ -524,7 +524,7 @@
   },
   {
     "id": "gatekeeper_beetle",
-    "name": "Gatekeeper Beetle",
+    "name": "Escarabajo guardián",
     "atomStats": {
       "hp": 90,
       "maxHp": 90,
@@ -601,7 +601,7 @@
   },
   {
     "id": "dusk_specter",
-    "name": "Dusk Specter",
+    "name": "Espectro crepuscular",
     "atomStats": {
       "hp": 50,
       "maxHp": 50,
@@ -672,7 +672,7 @@
   },
   {
     "id": "mind_dragon_whelp",
-    "name": "Mind Dragon Whelp",
+    "name": "Cría de dragón mental",
     "atomStats": {
       "hp": 110,
       "maxHp": 110,
@@ -750,7 +750,7 @@
   },
   {
     "id": "hallucination_leech",
-    "name": "Hallucination Leech",
+    "name": "Sanguijuela alucinógena",
     "atomStats": {
       "hp": 40,
       "maxHp": 40,
@@ -825,7 +825,7 @@
   },
   {
     "id": "pure_sun_hound",
-    "name": "Pure Sun Hound",
+    "name": "Sabueso del sol puro",
     "atomStats": {
       "hp": 65,
       "maxHp": 65,
@@ -902,7 +902,7 @@
   },
   {
     "id": "radiant_spirit",
-    "name": "Radiant Spirit",
+    "name": "Espíritu radiante",
     "atomStats": {
       "hp": 75,
       "maxHp": 75,
@@ -973,7 +973,7 @@
   },
   {
     "id": "lightning_vessel",
-    "name": "Lightning Vessel",
+    "name": "Recipiente de relámpago",
     "atomStats": {
       "hp": 80,
       "maxHp": 80,
@@ -1045,7 +1045,7 @@
   },
   {
     "id": "storm_gull",
-    "name": "Storm Gull",
+    "name": "Gaviota de tormenta",
     "atomStats": {
       "hp": 30,
       "maxHp": 30,
@@ -1113,7 +1113,7 @@
   },
   {
     "id": "logic_gargoyle",
-    "name": "Logic Gargoyle",
+    "name": "Gárgola lógica",
     "atomStats": {
       "hp": 95,
       "maxHp": 95,
@@ -1183,7 +1183,7 @@
   },
   {
     "id": "flame_devourer",
-    "name": "Flame Devourer",
+    "name": "Devorador de llamas",
     "atomStats": {
       "hp": 85,
       "maxHp": 85,
@@ -1254,7 +1254,7 @@
   },
   {
     "id": "iron_blood_hound",
-    "name": "Iron Blood Hound",
+    "name": "Sabueso de sangre de hierro",
     "atomStats": {
       "hp": 60,
       "maxHp": 60,
@@ -1329,7 +1329,7 @@
   },
   {
     "id": "frost_witch_shade",
-    "name": "Frost Witch Shade",
+    "name": "Sombra de bruja de escarcha",
     "atomStats": {
       "hp": 70,
       "maxHp": 70,
@@ -1401,7 +1401,7 @@
   },
   {
     "id": "blood_rose_parasite",
-    "name": "Blood Rose Parasite",
+    "name": "Parásito de rosa sangrienta",
     "atomStats": {
       "hp": 55,
       "maxHp": 55,
@@ -1477,7 +1477,7 @@
   },
   {
     "id": "mutated_black_hound",
-    "name": "Mutated Black Hound",
+    "name": "Sabueso negro mutado",
     "atomStats": {
       "hp": 65,
       "maxHp": 65,
@@ -1553,7 +1553,7 @@
   },
   {
     "id": "abyssal_crawler",
-    "name": "Abyssal Crawler",
+    "name": "Reptante abisal",
     "atomStats": {
       "hp": 75,
       "maxHp": 75,
@@ -1630,7 +1630,7 @@
   },
   {
     "id": "chained_ghoul",
-    "name": "Chained Ghoul",
+    "name": "Necrófago encadenado",
     "atomStats": {
       "hp": 90,
       "maxHp": 90,
@@ -1706,7 +1706,7 @@
   },
   {
     "id": "shadow_enforcer",
-    "name": "Shadow Enforcer",
+    "name": "Ejecutor de sombras",
     "atomStats": {
       "hp": 80,
       "maxHp": 80,
@@ -1783,7 +1783,7 @@
   },
   {
     "id": "bribery_specter",
-    "name": "Bribery Specter",
+    "name": "Espectro del soborno",
     "atomStats": {
       "hp": 55,
       "maxHp": 55,
