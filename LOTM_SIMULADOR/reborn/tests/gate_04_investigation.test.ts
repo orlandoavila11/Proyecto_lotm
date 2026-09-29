@@ -590,7 +590,7 @@ describe('GATE 04: Motor de Investigación Sistémico, Verbos de Vía y Bots ε-
     const inv1_2 = ProceduralInvestigationService.investigateClue(db, procCase1.caseId, clues1[1].id, 'FOOL', 'SPIRITUAL_DIVINATION');
     assert.strictEqual(inv1_2.caseReadyForDeduction, true);
 
-    const verd1 = ProceduralInvestigationService.resolveVerdict(db, minorChar1, procCase1.caseId, 'SCOTLAND_YARD');
+    const verd1 = ProceduralInvestigationService.resolveVerdict(db, minorChar1, procCase1.caseId, 'POLICE');
     const c1End = db.getInvestigationCase(procCase1.caseId);
 
     assert.strictEqual(c1End.status, 'SOLVED');
@@ -624,7 +624,7 @@ describe('GATE 04: Motor de Investigación Sistémico, Verbos de Vía y Bots ε-
     const inv2_2 = ProceduralInvestigationService.investigateClue(db, procCase2.caseId, clues2[1].id, 'VISIONARY', 'PSYCHOLOGICAL_ANALYSIS');
     assert.strictEqual(inv2_2.caseReadyForDeduction, true);
 
-    const verd2 = ProceduralInvestigationService.resolveVerdict(db, minorChar2, procCase2.caseId, 'SCOTLAND_YARD');
+    const verd2 = ProceduralInvestigationService.resolveVerdict(db, minorChar2, procCase2.caseId, 'POLICE');
     const c2End = db.getInvestigationCase(procCase2.caseId);
 
     assert.strictEqual(c2End.status, 'SOLVED');

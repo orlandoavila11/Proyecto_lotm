@@ -24,7 +24,8 @@ import {
   EconomyMarketSchema,
   OriginsCatalogSchema,
   CombatBalanceSchema,
-  EncountersFileSchema
+  EncountersFileSchema,
+  CityDistrictsFileSchema
 } from '../src/infra/content/schemas/index.js';
 
 interface SchemaTarget {
@@ -132,6 +133,11 @@ const TARGETS: SchemaTarget[] = [
     name: 'ECONOMY_BALANCE',
     pattern: 'balance/economy.json',
     schema: EconomyBalanceSchema
+  },
+  {
+    name: 'CITY_DISTRICTS_G',
+    pattern: 'city/districts.json',
+    schema: CityDistrictsFileSchema
   },
   {
     name: 'COMBAT_BALANCE',

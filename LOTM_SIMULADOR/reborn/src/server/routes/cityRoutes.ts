@@ -1,3 +1,7 @@
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { CityDistrictsFileSchema, type CityDistrictsFile } from '../../infra/content/schemas/city.schema.js';
 import { FastifyInstance, FastifyPluginAsync } from 'fastify';
 import { z } from 'zod';
 import { DatabaseClient } from '../../infra/database/DatabaseClient.js';
@@ -14,6 +18,15 @@ const TravelSchema = z.object({
   expectedRevision: z.number().int().optional()
 });
 
+let cityCache: CityDistrictsFile | null = null;
+function cityDistricts(): CityDistrictsFile {
+  if (!cityCache) {
+    const file = path.join(fileURLToPath(new URL('../../..', import.meta.url)), 'data', 'gameplay', 'city', 'districts.json');
+    cityCache = CityDistrictsFileSchema.parse(JSON.parse(fs.readFileSync(file, 'utf-8')));
+  }
+  return cityCache;
+}
+
 export const cityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
   fastify: FastifyInstance,
   opts
@@ -22,51 +35,28 @@ export const cityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
 
   // GET /api/city/districts
   fastify.get('/districts', async (req, reply) => {
-    const rawDistricts = db.getDistricts();
-    const enrichedDistricts = rawDistricts.map((d: any) => {
-      const tension = d.tension_level ?? 15;
-      let dangerRank = 'BAJO';
-      if (tension > 40) dangerRank = 'CRÍTICO';
-      else if (tension > 25) dangerRank = 'ALTO';
-      else if (tension > 15) dangerRank = 'MEDIO';
-
-      let landmark = 'Comisaría de Policía de Backlund';
-      let smog = 'Moderado';
-      let desc = 'Callejones victorianos adoquinados bajo farolas de gas.';
-
-      if (d.id === 'DIST_CHERWOOD' || d.district_name?.includes('Cherwood')) {
-        landmark = 'Club de Adivinación (Calle Williams)';
-        smog = 'Smog Amarillo de Carbón';
-        desc = 'Hogar de la clase media, abogados, boticarios y detectives privados.';
-      } else if (d.id === 'DIST_EAST_BOROUGH' || d.district_name?.includes('Este')) {
-        landmark = 'Taberna del Perro Negro & Muelles';
-        smog = 'Hollín Tóxico Asfixiante';
-        desc = 'Bajos fondos, obreros explotados, criminales de poca monta y sectas oscuras.';
-      } else if (d.id === 'DIST_QUEEN' || d.district_name?.includes('Reina')) {
-        landmark = 'Catedral de San Samuel & Palacios Reales';
-        smog = 'Bruma Fina Filtrada';
-        desc = 'Mansiones de la nobleza de Loen custodiadas por los Halcones Nocturnos de la Noche.';
-      } else if (d.id === 'DIST_BRIDGE' || d.district_name?.includes('Puente')) {
-        landmark = 'Mercado Negro del Puente de Backlund';
-        smog = 'Vaho de Calderas y Niebla del Támesis';
-        desc = 'Foco neurálgico de intercambio comercial y artefactos místicos clandestinos.';
-      } else if (d.id === 'DIST_BAYAM' || d.district_name?.includes('Bayam')) {
-        landmark = 'Campanario del Señor de las Tormentas';
-        smog = 'Brisa Salina y Olor a Pólvora';
-        desc = 'Archipiélago colonial de Rorsted; piratas, rebeldes nativos y tabernas portuarias.';
-      }
-
-      return {
-        ...d,
-        name: d.district_name || d.name || 'Distrito de Backlund',
-        district_name: d.district_name || d.name || 'Distrito de Backlund',
-        tension_level: tension,
-        danger_rank: dangerRank,
-        smog_level: smog,
-        landmark,
-        description: desc
-      };
-    });
+    // presentación de cada distrito desde Tier G (city/districts.json); sólo los que allí figuran son destino de carruaje
+    const presentation = new Map(cityDistricts().districts.map(d => [d.id, d]));
+    const enrichedDistricts = db.getDistricts()
+      .filter((d: any) => presentation.has(d.id))
+      .map((d: any) => {
+        const tension = d.tension_level ?? 15;
+        let dangerRank = 'BAJO';
+        if (tension > 40) dangerRank = 'CRÍTICO';
+        else if (tension > 25) dangerRank = 'ALTO';
+        else if (tension > 15) dangerRank = 'MEDIO';
+        const p = presentation.get(d.id)!;
+        return {
+          ...d,
+          name: d.district_name,
+          district_name: d.district_name,
+          tension_level: tension,
+          danger_rank: dangerRank,
+          smog_level: p.ambience,
+          landmark: p.landmark,
+          description: p.description
+        };
+      });
 
     return reply.send({
       districts: enrichedDistricts,
@@ -109,10 +99,10 @@ export const cityRoutes: FastifyPluginAsync<{ db: DatabaseClient }> = async (
                       (norm.includes('este') && d.id === 'DIST_EAST_BOROUGH') ||
                       (norm.includes('reina') && d.id === 'DIST_QUEEN') ||
                       (norm.includes('puente') && d.id === 'DIST_BRIDGE') ||
-                      (norm.includes('bayam') && d.id === 'DIST_BAYAM')
+                      (norm.includes('norte') && d.id === 'DIST_NORTH')
         );
 
-        if (!targetDistrict) {
+        if (!targetDistrict || !cityDistricts().districts.some(x => x.id === targetDistrict.id)) {
           throw new DomainRuleViolationError(`Destino [${destinationDistrict}] no reconocido en las rutas de carruaje de Backlund.`);
         }
 

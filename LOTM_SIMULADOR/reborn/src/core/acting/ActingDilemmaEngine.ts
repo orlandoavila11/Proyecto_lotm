@@ -528,7 +528,7 @@ export class ActingDilemmaEngine {
       sequenceName: 'Criminal',
       principleText: 'El bajo fondo premia la astucia depredadora y el instinto de preservación. Golpea sin piedad a quien intente traicionarte.',
       clientOrContext: 'Callejón de los Ahorcados - Barrio Este',
-      situation: 'Un matón de poca monta que contrataste como informante planea delatarte a Scotland Yard para cobrar una recompensa de 10 libras.',
+      situation: 'Un matón de poca monta que contrataste como informante planea delatarte a la policía para cobrar una recompensa de 10 libras.',
       choices: [
         {
           id: 'CHOICE_CRIMINAL_9_PREEMPT',
@@ -743,7 +743,7 @@ export class ActingDilemmaEngine {
       sequence: 9,
       sequenceName: 'Lawyer',
       principleText: 'Las leyes existen para ser dobladas y explotadas. Encuentra la contradicción en el texto para imponer tu orden.',
-      clientOrContext: 'Tribunal Municipal de Scotland Yard - Backlund',
+      clientOrContext: 'Tribunal Municipal de Backlund',
       situation: 'Un cliente humilde es acusado de infringir las ordenanzas de comercio ambulante por un inspector corrupto.',
       choices: [
         {

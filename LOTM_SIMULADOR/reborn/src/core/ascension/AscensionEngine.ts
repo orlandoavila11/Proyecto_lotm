@@ -489,12 +489,12 @@ export class AscensionEngine {
       });
 
       const narrativeSuccess = char.pathway.toUpperCase() === 'FOOL'
-        ? `[TRANSFORMACIÓN ASTRICA · PAYASO]\n` +
+        ? `[TRANSFORMACIÓN ASTRAL · PAYASO]\n` +
           `Un cosquilleo gélido y efervescente recorre cada terminación nerviosa de tu rostro y tus dedos.\n` +
           `La sonrisa brota sin esfuerzo, una máscara elástica que oculta cualquier angustia o temblor.\n` +
           `Tus articulaciones adquieren una flexibilidad sobrehumana y tus ojos perciben trayectorias invisibles en el aire.\n` +
           `Has ascendido a Secuencia 8: Payaso. Tu digestión recomienza desde el vacío.`
-        : `[TRANSFORMACIÓN ASTRICA · TELÉPATA]\n` +
+        : `[TRANSFORMACIÓN ASTRAL · TELÉPATA]\n` +
           `El sabor dulce y metálico de la poción anestesia tu lengua mientras las barreras de tu mente se expanden.\n` +
           `El murmullo distante de los pensamientos del distrito reverbera como ondas en un estanque de plata.\n` +
           `Distingues el pánico, la codicia y la sospecha de quienes caminan bajo las farolas de gas.\n` +

@@ -49,6 +49,12 @@ test('Integración: prólogo, actuación, semana de calendario con un único cob
     assert.ok(after.digestion_progress >= digestionBefore, 'la digestión sólo la escribe el tick');
     assert.notStrictEqual(after.raw_pence, penceBefore, 'la semana mueve el dinero (alquiler y salario)');
 
+    // 5.a Destinos de carruaje: sólo distritos de Backlund (Bayam está al otro lado del mar)
+    const districts = JSON.parse((await get('/api/city/districts')).body).districts.map((d: any) => d.id);
+    assert.ok(!districts.includes('DIST_BAYAM'), 'Bayam no es un distrito de Backlund');
+    assert.ok(districts.includes('DIST_NORTH'), 'el Distrito Norte es alcanzable (su mercado tiene los ingredientes del Espectador)');
+    assert.strictEqual((await post('/api/city/travel', { characterId, destinationDistrict: 'DIST_BAYAM' })).statusCode, 422);
+
     // 5. Viaje: la ubicación guardada es el id del distrito, no el texto del cliente
     const travel = await post('/api/city/travel', { characterId, destinationDistrict: 'el este de la ciudad' });
     assert.strictEqual(travel.statusCode, 200, travel.body);

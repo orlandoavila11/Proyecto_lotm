@@ -209,7 +209,7 @@ export class DatabaseClient {
         ['DIST_EAST_BOROUGH', 'Backlund', 'Barrio Este (Bajos Fondos & Pobreza)', 45, 25, 20],
         ['DIST_QUEEN', 'Backlund', 'Distrito de la Reina (Palacios & Aristocracia)', 10, 40, 5],
         ['DIST_BRIDGE', 'Backlund', 'Área del Puente de Backlund (Comercio & Niebla)', 30, 15, 15],
-        ['DIST_BAYAM', 'Bayam', 'Ciudad de Bayam (Puerto & Piratería Colonial)', 50, 35, 30]
+        ['DIST_NORTH', 'Backlund', 'Distrito Norte (Bolsa & Comercio)', 20, 20, 10]
       ];
       initialDistricts.forEach(d => insertDist.run(...d));
     }

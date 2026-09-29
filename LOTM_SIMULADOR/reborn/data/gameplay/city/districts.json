@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "derivationNote": "Distritos de Backlund alcanzables en carruaje de alquiler (era 1353). Bayam no figura: es una ciudad del archipiélago de Rorsted, al otro lado del mar.",
+  "districts": [
+    {
+      "id": "DIST_CHERWOOD",
+      "landmark": "Club de Adivinación de la calle Williams",
+      "ambience": "Smog amarillo de carbón",
+      "description": "Hogar de la clase media, abogados, boticarios y detectives privados."
+    },
+    {
+      "id": "DIST_EAST_BOROUGH",
+      "landmark": "Los muelles y las casas de vecinos del Barrio Este",
+      "ambience": "Hollín asfixiante",
+      "description": "Bajos fondos, obreros explotados, criminales de poca monta y sectas oscuras."
+    },
+    {
+      "id": "DIST_QUEEN",
+      "landmark": "Catedral de San Samuel y los palacios",
+      "ambience": "Bruma fina",
+      "description": "Mansiones de la nobleza de Loen, calles limpias y miradas que lo registran todo."
+    },
+    {
+      "id": "DIST_BRIDGE",
+      "landmark": "Mercado negro bajo el gran puente",
+      "ambience": "Vaho de calderas y niebla del Tussock",
+      "description": "Foco de intercambio comercial y de artefactos místicos clandestinos."
+    },
+    {
+      "id": "DIST_NORTH",
+      "landmark": "La Bolsa de Backlund",
+      "ambience": "Humo de chimeneas y papel mojado",
+      "description": "Comercio, casas de cambio y boticas discretas para quien sabe preguntar."
+    }
+  ]
+}

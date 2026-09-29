@@ -146,7 +146,7 @@ Cada pista posee como mínimo dos fuentes independientes (una física/archivo y 
    - *Fuente 2 (Agenda NPC):* Declaración de Evangeline acorralada ante la evidencia médica acumulada.
    - *Efecto:* Invalida y hace colapsar de forma instantánea las hipótesis falsas A, B y C.
 6. **`CLUE_FINANCIAL_BLACKMAIL` (Transferencias a Madame Vivien):**
-   - *Descripción:* Recibos de pago por 450 libras esterlinas autorizados por Sterling a favor de Madame Vivien bajo el concepto de "reliquia de compensación psíquica".
+   - *Descripción:* Recibos de pago por 450 libras autorizados por Sterling a favor de Madame Vivien bajo el concepto de "reliquia de compensación psíquica".
    - *Fuente 1 (Archivo):* Libro mayor de la sucursal de Cherwood del Banco de Backlund.
    - *Fuente 2 (Agenda NPC):* Interrogatorio a Madame Vivien en su salón de té y espiritismo.
 7. **`CLUE_FORGED_LETTERS` (Registros Alterados de Beatrice):**

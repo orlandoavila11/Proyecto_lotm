@@ -240,7 +240,7 @@ export class CalendarEngine {
       });
       return {
         type: 'POLICE_PATROL_PRESSURE',
-        title: 'Vigilancia Redoblada de Scotland Yard',
+        title: 'Vigilancia Redoblada de la Policía Metropolitana',
         description: 'Patrullas de agentes con impermeables negros interrogan a peatones en las esquinas de tu calle. Tus movimientos están siendo observados.'
       };
     }

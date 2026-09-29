@@ -199,7 +199,7 @@ export class ProceduralInvestigationService {
     db: DatabaseClient,
     characterId: string,
     caseId: string,
-    action: 'SCOTLAND_YARD' | 'EXTORT_BLACKMAIL' | 'EXECUTE_SHADOWS' | 'COVER_UP_ALLIANCE'
+    action: 'POLICE' | 'EXTORT_BLACKMAIL' | 'EXECUTE_SHADOWS' | 'COVER_UP_ALLIANCE'
   ): {
     success: boolean;
     verdictMessage: string;
@@ -219,11 +219,11 @@ export class ProceduralInvestigationService {
     const activePersona = db.getActivePersona(characterId);
 
     switch (action) {
-      case 'SCOTLAND_YARD':
+      case 'POLICE':
         db.updateCaseStatus(caseId, 'SOLVED', action);
         policeDelta = -5;
         churchDelta = -2;
-        msg = `Has entregado el expediente con pruebas contundentes al Inspector de Scotland Yard. El culpable [${caseData.culprit_name}] ha sido puesto bajo custodia formal.`;
+        msg = `Has entregado el expediente con pruebas contundentes a la Policía Metropolitana de Backlund. El culpable [${caseData.culprit_name}] ha sido puesto bajo custodia formal.`;
         break;
 
       case 'EXTORT_BLACKMAIL':

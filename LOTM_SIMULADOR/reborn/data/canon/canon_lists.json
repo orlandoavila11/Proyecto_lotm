@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "note": "Listas del lint de canon (scripts/lint_canon.ts). Era POST-LOTM · PRE-COI (AGENTS.md, reglas R1-R5). Añadir aquí cualquier término nuevo que no deba aparecer. Cada término es una expresión regular que se busca como palabra completa, sin distinguir mayúsculas.",
+  "realWorldAnachronisms": [
+    "Scotland Yard",
+    "Lestrade",
+    "Támesis",
+    "Tamesis",
+    "Thames",
+    "Londres",
+    "London",
+    "esterlinas?",
+    "Inglaterra",
+    "England",
+    "británic[oa]s?",
+    "British",
+    "Baker Street",
+    "Whitechapel",
+    "Westminster",
+    "Piccadilly",
+    "Sherlock Holmes",
+    "Victoria Station",
+    "reina Victoria"
+  ],
+  "circleOfInevitabilityTerms": [
+    "Lumian",
+    "Aurore",
+    "Cordu",
+    "Termiboros",
+    "Circle of Inevitability",
+    "Círculo de la Inevitabilidad",
+    "Ciclo de la Inevitabilidad"
+  ],
+  "coiAllowedFiles": [
+    "data/gameplay/world_state.json",
+    "data/gameplay/convergence_forces.json"
+  ]
+}

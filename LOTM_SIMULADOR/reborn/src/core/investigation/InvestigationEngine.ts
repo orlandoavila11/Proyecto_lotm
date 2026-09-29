@@ -1042,7 +1042,7 @@ export class InvestigationEngine {
         db.addAnchor({
           id: `anchor_trait_${state.id}_${suffix}`,
           character_id: char.id,
-          title: 'Trait Permanente: Los Susurros del Nido (-15% Sanity Cap)',
+          title: 'Los Susurros del Nido',
           strength: 40,
           category: 'BOND'
         });

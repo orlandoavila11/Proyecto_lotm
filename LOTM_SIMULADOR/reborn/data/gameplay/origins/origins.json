@@ -224,9 +224,9 @@
       "weeklySalaryPence": 360,
       "originAnchors": [
         {
-          "name": "Inspector Lestrade",
+          "name": "Inspector Jonas Kettle",
           "type": "PERSON",
-          "description": "Inspector de Scotland Yard que tolera a los sabuesos privados siempre que sus hallazgos no comprometan los informes ministeriales.",
+          "description": "Inspector de la comisaría de Cherwood que tolera a los sabuesos privados siempre que sus hallazgos no comprometan los informes ministeriales.",
           "strength": 65
         },
         {
@@ -245,12 +245,12 @@
       "initialContact": {
         "name": "Sargento Briggs",
         "relation": "Contacto policial en Cherwood",
-        "description": "Scotland Yard / División Cherwood, facilita acceso a partes policiales menores a cambio de discreción."
+        "description": "Policía Metropolitana de Backlund, comisaría de Cherwood; facilita acceso a partes policiales menores a cambio de discreción."
       },
       "initialBurden": {
         "type": "SECRET",
         "name": "Licencia de Indagación Condicional",
-        "description": "Amonestado previamente por Scotland Yard por intervenir en un caso de suicidio que involucraba símbolos arcanos sin reportarlo al buró.",
+        "description": "Amonestado previamente por la Policía Metropolitana de Backlund por intervenir en un caso de suicidio que involucraba símbolos arcanos sin reportarlo al buró.",
         "mechanicalEffect": "Mayor escrutinio policial en Cherwood si los casos caducan o se resuelven mal."
       },
       "prologueIntro": "La lluvia golpea con monotonía las persianas de tu modesta oficina en Cherwood. Las tazas de porcelana agrietada huelen a café recalentado y tabaco barato. En Backlund, un detective privado vive de infidelidades burguesas y pagarés extraviados, pero tu instinto sabe que la niebla esconde algo más que ladrones de poca monta. Esta mañana, una carta con lacre negro apareció apoyada contra tu pisapapeles de bronce.",

@@ -73,7 +73,7 @@ describe('GATE 05.ECO: La Constitución de la Digestión y Gate de Economía de 
     assert.strictEqual(char?.digestion_progress, 10.0, 'Pista no altera digestión_progress');
 
     // c. Veredicto no otorga digestión directa, genera entrada actoral
-    const verdRes = ProceduralInvestigationService.resolveVerdict(db, charId, minorCase.caseId, 'SCOTLAND_YARD');
+    const verdRes = ProceduralInvestigationService.resolveVerdict(db, charId, minorCase.caseId, 'POLICE');
     assert.strictEqual(verdRes.digestionBonus, 0);
     char = db.getCharacter(charId);
     assert.strictEqual(char?.digestion_progress, 10.0, 'Veredicto no altera digestión_progress de forma directa');
@@ -151,7 +151,7 @@ describe('GATE 05.ECO: La Constitución de la Digestión y Gate de Economía de 
     ActingDilemmaEngine.resolveDilemma(db, cId, 'DIL_FOOL_9_1', 'CHOICE_FOOL_9_TRUTH');
     ActingDilemmaEngine.resolveDilemma(db, cId, 'DIL_FOOL_9_2', 'CHOICE_FOOL_9_DOWSING_PUBLIC');
     const m1 = ProceduralInvestigationService.generateCaseForCharacter(db, cId, 1);
-    ProceduralInvestigationService.resolveVerdict(db, cId, m1.caseId, 'SCOTLAND_YARD');
+    ProceduralInvestigationService.resolveVerdict(db, cId, m1.caseId, 'POLICE');
     const t1 = ActingDilemmaEngine.processWeeklyTick(db, cId);
 
     // SEMANA 2: 1 dilema FOOL S9 + Veredicto Caso Mayor #1 "El Eco en el Nido Vacío"
@@ -170,7 +170,7 @@ describe('GATE 05.ECO: La Constitución de la Digestión y Gate de Economía de 
     db.advanceCharacterDay(cId, 7); // Día 15
     ActingDilemmaEngine.resolveDilemma(db, cId, 'DIL_FOOL_9_4', 'CHOICE_FOOL_9_CARDS_SOLEMN');
     const m2 = ProceduralInvestigationService.generateCaseForCharacter(db, cId, 2);
-    ProceduralInvestigationService.resolveVerdict(db, cId, m2.caseId, 'SCOTLAND_YARD');
+    ProceduralInvestigationService.resolveVerdict(db, cId, m2.caseId, 'POLICE');
     const t3 = ActingDilemmaEngine.processWeeklyTick(db, cId);
 
     const finalChar = db.getCharacter(cId);
@@ -274,7 +274,7 @@ describe('GATE 05.ECO: La Constitución de la Digestión y Gate de Economía de 
     ActingDilemmaEngine.resolveDilemma(db, lId, 'DIL_FOOL_9_3', 'CHOICE_FOOL_9_SPIRIT_VISION_ACTIVE');
     ActingDilemmaEngine.resolveDilemma(db, lId, 'DIL_FOOL_9_4', 'CHOICE_FOOL_9_CARDS_SOLEMN');
     const lm = ProceduralInvestigationService.generateCaseForCharacter(db, lId, 1);
-    ProceduralInvestigationService.resolveVerdict(db, lId, lm.caseId, 'SCOTLAND_YARD');
+    ProceduralInvestigationService.resolveVerdict(db, lId, lm.caseId, 'POLICE');
     const linearTick = ActingDilemmaEngine.processWeeklyTick(db, lId);
 
     const ratioPercent = Number((farmTick.assimilationGain / linearTick.assimilationGain * 100).toFixed(1));
