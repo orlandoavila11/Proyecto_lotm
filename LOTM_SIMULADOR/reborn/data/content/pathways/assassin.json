@@ -1,0 +1,390 @@
+{
+  "pathway": "ASSASSIN",
+  "displayName": "Demoness Pathway",
+
+  "sequences": {
+
+    "9": {
+      "name": "Assassin",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Concealment",
+        "Enhanced Agility",
+        "Poison Crafting",
+        "Assassination Techniques",
+        "Enhanced Vision",
+        "Weapon Mastery"
+      ],
+
+      "actingMethods": [
+        "Bring sudden death.",
+        "Remain unnoticed.",
+        "Leave no evidence behind."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Roots of a Shadow Venom Flower",
+          "Black Feather of a Snake-Bodied Monster Bird"
+        ],
+        "supplementaryIngredients": [
+          "100ml Concentrated Vinegar",
+          "3 Shadow Venom Flower Petals",
+          "10 Drops Buttercup Essential Oil",
+          "Live Spider"
+        ],
+        "potionAppearance": "A dull inconspicuous liquid that induces inexplicable thirst."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A shadowy mass covered with sharp spikes."
+    },
+
+    "8": {
+      "name": "Instigator",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Conflict Incitement",
+        "Hidden Suggestion",
+        "Desire Amplification",
+        "Verbal Manipulation",
+        "Emotional Agitation"
+      ],
+
+      "actingMethods": [
+        "Create chaos from the shadows.",
+        "Encourage others to follow their darkest impulses.",
+        "Remain unseen while directing conflict."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Demon Throat Honeyguide Heart",
+          "Dark Prowler Poison Sac"
+        ],
+        "supplementaryIngredients": [
+          "100ml Purified Water",
+          "Demon Throat Honeyguide Syrinx",
+          "5 Drops Blue Jimsonweed Juice",
+          "10g Aqua Fern Grass Powder",
+          "Unpeeled Walnut"
+        ],
+        "potionAppearance": "An obsidian potion fizzing with tiny bubbles."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A sculpture of crystal-clear beautiful lips."
+    },
+
+    "7": {
+      "name": "Witch",
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Gender Transformation",
+        "Black Flames",
+        "Ice Magic",
+        "Mirror Substitution",
+        "Disease Curse",
+        "Charm Enhancement"
+      ],
+
+      "actingMethods": [
+        "Accept the transformation.",
+        "Spread temptation.",
+        "Lead others toward ruin."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "All Blood From an Abyss Demonic Fish",
+          "Agate Peacock Egg"
+        ],
+        "supplementaryIngredients": [
+          "80ml Purified Water",
+          "5 Drops Jimsonweed Juice",
+          "3 Shadow Lizard Scales",
+          "10 Drops Daffodil Juice"
+        ],
+        "potionAppearance": "A dreamlike rose-red liquid."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A ghostly blue gem resembling a vertical eye."
+    },
+
+    "6": {
+      "name": "Pleasure",
+      "alternateName": "Demoness of Pleasure",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Pleasure Manipulation",
+        "Enhanced Charm",
+        "Silk Thread Control",
+        "Emotional Feeding",
+        "Sensory Manipulation"
+      ],
+
+      "actingMethods": [
+        "Induce pleasure.",
+        "Hide danger beneath attraction.",
+        "Feed on extreme emotions."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Pair of Succubus Eyes",
+          "Adult Black Widow Spider Silk Gland"
+        ],
+        "supplementaryIngredients": [
+          "100ml Purified Water",
+          "5 Drops Black Jimsonweed Juice",
+          "Succubus Hair Remnants",
+          "10g Feynapotter Fly Powder",
+          "5g Real Mummy Ashes"
+        ],
+        "potionAppearance": "A potion emitting faint pinkish-red streaks."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A pink gemstone filled with tangled threads."
+    },
+
+    "5": {
+      "name": "Affliction",
+      "alternateName": "Demoness of Affliction",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Plague Creation",
+        "Curse Manipulation",
+        "Pain Manifestation",
+        "Disease Propagation",
+        "Sorrow Aura"
+      ],
+
+      "actingMethods": [
+        "Become the source of suffering.",
+        "Spread pain without being consumed by it.",
+        "Remain detached from the misery you create."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Flower-Faced Bat Head",
+          "Two-Tailed Black Snake Gallbladder"
+        ],
+        "supplementaryIngredients": [
+          "30ml Flower-Faced Bat Blood",
+          "50ml Seriously Ill Human Blood",
+          "Two-Tailed Black Snake Tail Tip",
+          "10 Drops Enfinitas Eucalyptus Essential Oil"
+        ],
+        "potionAppearance": "Pitch-black pathogen-like liquid with green bubbles."
+      },
+
+      "ritual": "Be burned at the stake for fifteen minutes and survive without losing control.",
+
+      "characteristicAppearance": "A beautiful eye."
+    },
+
+    "4": {
+      "name": "Despair",
+      "alternateName": "Demoness of Despair",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Despair Domain",
+        "Advanced Plague Control",
+        "Mirror Invisibility",
+        "Black Frost",
+        "Mass Psychological Collapse"
+      ],
+
+      "actingMethods": [
+        "Create despair on a large scale.",
+        "Transform hope into ruin."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Plague Mother Serpent Venom Sac",
+          "Silver Hunter Crystal"
+        ],
+        "supplementaryIngredients": [
+          "10ml Plague Mother Serpent Bile",
+          "3 Silver Hunter Fragments",
+          "Fresh Mistletoe Branch",
+          "10ml Blood From Seven Victims of Different Plagues"
+        ],
+        "potionAppearance": "A dark purple potion shimmering with rosy light."
+      },
+
+      "ritual": "Involve more than thirty thousand people in a severe plague.",
+
+      "characteristicAppearance": "A withered black translucent heart. If combined with an eye it forms a tear-filled transparent eye."
+    },
+
+    "3": {
+      "name": "Unaging",
+      "alternateName": "Demoness of Unaging",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Eternal Youth",
+        "Perfect Regeneration",
+        "Mirror Reconstruction",
+        "Mirror Self Manipulation",
+        "Body Restoration"
+      ],
+
+      "actingMethods": [
+        "Transcend aging.",
+        "Accept and master your reflected self."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Heart of a Mirror God",
+          "Pair of Gorgon Eyes"
+        ],
+        "supplementaryIngredients": [
+          "9 Mirror God Fragments",
+          "80ml Gorgon Blood",
+          "Ancient Mirror Older Than 500 Years",
+          "22 Drops of Water From a Drowned Person's Lungs"
+        ],
+        "potionAppearance": "A gray-white liquid that perfectly reflects its surroundings."
+      },
+
+      "ritual": "Find your mirror self and subjugate, reconcile with, or make them completely devoted to you.",
+
+      "characteristicAppearance": "A fist-sized spring-like crystal or beautiful human skin."
+    },
+
+    "2": {
+      "name": "Catastrophe",
+      "alternateName": "Demoness of Catastrophe",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Continental-Scale Disaster Creation",
+        "Catastrophe Authority",
+        "Mirror World Influence",
+        "Destructive Fate Manipulation",
+        "Natural Disaster Incarnation"
+      ],
+
+      "actingMethods": [
+        "Become the herald of catastrophe.",
+        "Advance through widespread destruction."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Lilith's Hair",
+          "OR Demoness of Catastrophe Characteristic"
+        ],
+        "supplementaryIngredients": [
+          "30g Fertile Soil",
+          "100ml Rainwater From First Annual Flood",
+          "Mirror World Fragment",
+          "Curses From 10000 Catastrophe Victims"
+        ],
+        "potionAppearance": "A bottled storm-filled sky."
+      },
+
+      "ritual": "Participate in creating a catastrophe that engulfs an entire continent and advance during it.",
+
+      "characteristicAppearance": "A transparent crystal sphere displaying scenes of catastrophe."
+    },
+
+    "1": {
+      "name": "Apocalypse",
+      "alternateName": "Demoness of Apocalypse",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Apocalyptic Aura",
+        "Absolute Decay",
+        "Mirror World Mastery",
+        "White Death Fog",
+        "Civilization Collapse Induction"
+      ],
+
+      "actingMethods": [
+        "Stand at the edge of the world's destruction.",
+        "Become the manifestation of endings."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Apocalypse Beyonder Characteristic"
+        ],
+        "supplementaryIngredients": [
+          "Dark Lifeless Area",
+          "81 Self-Obsessed Individuals",
+          "Self-Created Apocalypse Scenario",
+          "60ml Weather Warlock Blood"
+        ],
+        "potionAppearance": "An abyss-black liquid radiating annihilation."
+      },
+
+      "ritual": "Advance at the end of an epoch, during an apocalypse, or through causing the fall of a deity.",
+
+      "characteristicAppearance": "A darkened spherical orb."
+    },
+
+    "0": {
+      "name": "Demoness",
+      "alternateNames": [
+        "Chaos Demoness",
+        "Primordial Demoness"
+      ],
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Primordial Catastrophe Authority",
+        "Mirror World Sovereignty",
+        "Chaos Manifestation",
+        "Global Calamity Creation",
+        "Absolute Seduction Authority",
+        "Return of All Things to Chaos"
+      ],
+
+      "actingMethods": [
+        "Not applicable. Divine state reached."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Demoness Uniqueness",
+          "3 Apocalypse Characteristics"
+        ],
+        "supplementaryIngredients": [
+          "True Love From Oneself",
+          "Half of the Mirror World"
+        ],
+        "potionAppearance": "Exquisitely beautiful female human skin."
+      },
+
+      "ritual": "Endure Chaos Sea corruption without falling, or master a power approaching the Chaos Sea through neighboring pathway traits.",
+
+      "uniquenessAppearance": "A bone-carved female statue."
+    }
+  }
+}

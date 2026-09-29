@@ -1,0 +1,392 @@
+{
+  "pathway": "CHAINED",
+  "displayName": "Prisoner Pathway",
+
+  "mythicalCreatureForm": "Formless; a conglomeration of various curses.",
+
+  "sequences": {
+
+    "9": {
+      "name": "Prisoner",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Enhanced Physical Strength",
+        "Exceptional Damage Control",
+        "Resilience to Heavy Impacts",
+        "Baseline Mind Suppression Resistance",
+        "Hidden Trap Detection"
+      ],
+
+      "actingMethods": [
+        "Enforce strict behavioral restrictions on yourself.",
+        "Endure physical confinement without mental decay.",
+        "Operate calmly under oppressive environments.",
+        "Recognize the body as a structural vessel."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Stone of Silence",
+          "Blood Source of the Fake Person"
+        ],
+
+        "supplementaryIngredients": [
+          "80ml of filthy water",
+          "By-product of the Stone of Silence",
+          "10 strands of Fake Person hair",
+          "10 drops of cedar essential oil"
+        ],
+
+        "potionAppearance": "Blood-colored liquid covered by a black film."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A slowly squirming lump of darkened blood."
+    },
+
+    "8": {
+      "name": "Lunatic",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Explosive Physical Attributes",
+        "Spiritual Intimidation Roar",
+        "Disregard for Bodily Pain",
+        "Irrational Combat Focus",
+        "Direct Emotional Force Impact"
+      ],
+
+      "actingMethods": [
+        "Release repressed volatile outbursts in combat.",
+        "Shatter over-rational behavioral loops.",
+        "Channel raw instinctual madness effectively.",
+        "Overwhelm target reasoning through pure fury."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Brain of a Shapeshifter",
+          "Tongue of a Man-eating Dog"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of your own fresh blood",
+          "Facial skin of the Shapeshifter",
+          "13 drops of saliva from the Man-eating Dog",
+          "1 Entire dried orange peel"
+        ],
+
+        "potionAppearance": "Grey-white liquid with flashing bursts of light inside."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A grey-white glowing mass resembling a miniature brain."
+    },
+
+    "7": {
+      "name": "Werewolf",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Full Lycanthrope Transformation",
+        "Lethal Sharp Claw Attacks",
+        "Rapid Tissue Self-Healing",
+        "Localized Malicious Curse Spells",
+        "Acute Olfactory Tracking"
+      ],
+
+      "actingMethods": [
+        "Balance predatory wilderness traits with civilized life.",
+        "Deploy terrifying physical tracking loops.",
+        "Govern wild physical mutations systematically.",
+        "Inflict deliberate supernatural marks on targets."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Fangs of a Werewolf"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of Werewolf blood",
+          "10 strands of Werewolf black hair",
+          "1 set of human internal organs",
+          "1 cursed item"
+        ],
+
+        "potionAppearance": "Black-green liquid with floating short hairs and blood."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A black-green fang."
+    },
+
+    "6": {
+      "name": "Zombie",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Steel-Like Skin Hardening",
+        "Absolute Immune to Biological Pain",
+        "Corrosive Living Corpse Poison",
+        "Underworld Ice Energy Gathering",
+        "Spiritual Death Command Basics"
+      ],
+
+      "actingMethods": [
+        "Maintain rigid emotional and physical composure.",
+        "Navigate cold structural configurations.",
+        "Operate as an unyielding physical sentinel.",
+        "Dampen natural biological expressions."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Heart of the Zombie"
+        ],
+
+        "supplementaryIngredients": [
+          "90ml of fresh human blood",
+          "30g of Zombie flesh",
+          "1 Zombie eyeball",
+          "3 moonflowers"
+        ],
+
+        "potionAppearance": "Grey-white, icy, lifeless liquid with faint blue mist around it."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A grey-white heart tinged with specks of icy blue."
+    },
+
+    "5": {
+      "name": "Wraith",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Phasing and Material Wall Traversal",
+        "Mirror and Reflection Infiltration",
+        "Target Body Possession and Control",
+        "Mass Cry of Agony Torment",
+        "Advanced Illusion Projection"
+      ],
+
+      "actingMethods": [
+        "Exist as an insubstantial shadow in systems.",
+        "Infiltrate the internal perspectives of others.",
+        "Operate covertly within reflective vectors.",
+        "Lock down target data segments silently."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Consciousness Crystal of the Wraith"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of Wraith blood",
+          "OR 100ml of cold water contaminated by the Wraith",
+          "10g of Wraith remains in powder form",
+          "1 mirror",
+          "9 human or extraordinary souls"
+        ],
+
+        "potionAppearance": "Transparent liquid containing multiple illusory mirrors reflecting the same face, layered with dense blocks of colors."
+      },
+
+      "ritual": "Find a way to enter the Spirit World, locate the information corresponding to yourself, and seal it for at least 3 minutes. Before the seal is lifted, consume the potion.",
+
+      "characteristicAppearance": "A transparent stone with a distorted face protruding from it."
+    },
+
+    "4": {
+      "name": "Puppet",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Advanced Target Destiny Curse Binding",
+        "Physical Mummy Vessel Integration",
+        "Multi-Thread Mechanical Soul Control",
+        "Eradication of Free Will Indicators",
+        "Spatial Blind-Spot Manipulation"
+      ],
+
+      "actingMethods": [
+        "Relinquish outward human identity scripts.",
+        "Possess highly stable structural artifacts.",
+        "Operate multiple complex dummy entities.",
+        "Imprison external variables behind curses."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Eyeball of a Puppet"
+        ],
+
+        "supplementaryIngredients": [
+          "90ml of blood from someone killed by a curse",
+          "13 strands of Puppet hair",
+          "1 piece of clothing worn by the Puppet or a commonly used item",
+          "Shackles used to imprison someone until death"
+        ],
+
+        "potionAppearance": "Semi-illusory liquid with many black eyes opened within it."
+      },
+
+      "ritual": "Prepare a mummy originally belonging to the Chained Path, created through a special ritual and containing divinity. Then possess it and consume the potion.",
+
+      "characteristicAppearance": "A pair of deep black eyes reflecting surrounding silhouettes."
+    },
+
+    "3": {
+      "name": "Disciple of Silence",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Absolute Vocal and Sound Suppression Domain",
+        "Mental Thought Blueprint Capture",
+        "Non-Verbal Concept Delivery",
+        "Imposition of Maddening Internal Silences",
+        "Anchor Representation Stability"
+      ],
+
+      "actingMethods": [
+        "Cultivate a broad network of implicit devotion.",
+        "Guide populations purely through conceptual intent.",
+        "Eliminate redundant audio outputs from environments.",
+        "Establish precise physical representations of your authority."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Throat of a Cursed Object"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of Madness Water contaminated by the Cursed Object",
+          "1 item cursed by the Cursed Object",
+          "1 complete sheepskin or rabbit skin",
+          "A statue of yourself serving as an anchor"
+        ],
+
+        "potionAppearance": "Pale liquid with meaningless symbols, black eyes, and blood-stained mouths floating and rotating within."
+      },
+
+      "ritual": "Establish a cult and cultivate at least 1000 followers who can understand your gaze, grasp your thoughts, uphold your principles, carry out your will, and speak the words you wish to express.",
+
+      "characteristicAppearance": "Pale throat-like object dripping black fluid with traces of blood."
+    },
+
+    "2": {
+      "name": "Ancient Bane",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Localized Angelic Curse Projection",
+        "Lingering Vicious Malice Injection",
+        "Sovereign Imprisonment Field Manifestation",
+        "Macro Structural Bond Manipulation",
+        "Wicked Madness Vector Deployment"
+      ],
+
+      "actingMethods": [
+        "Infiltrate old legendary structural items.",
+        "Enforce deep containment matrices across sectors.",
+        "Harness generational patterns of systemic malice.",
+        "Conceal angelic operations within silent vaults."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "1 Ancient Bane Beyonder characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "1 object frequently used by the Ancient Bane",
+          "9 ancient bones",
+          "1 lingering vicious curse",
+          "1 architecture or sculpture symbolizing imprisonment"
+        ],
+
+        "potionAppearance": "Pale fog-like liquid; every tiny droplet within contains a sense of wicked madness."
+      },
+
+      "ritual": "Locate an ancient anomalous item capable of bearing angelic power.",
+
+"characteristicAppearance": "Head-sized pale mist, stained with blood and black spots."
+},
+"1": {
+"name": "Abomination",
+"formulaStatus": "FULLY_KNOWN",
+"abilities": [
+"Sovereign Divine Spawn Curse Pollution",
+"Total Rupture of Reality Kingdoms",
+"Absolute Corruption of Structural Bloodlines",
+"Mass Environmental Decay Matrix",
+"Maddening Contamination Delivery Field"
+],
+"actingMethods": [
+"Dismantle macro-level pristine divine setups.",
+"Siphon parameters of prematurely failed lifeforces.",
+"Inject systematic distortion into historical realms.",
+"Endure volatile blessings from ultimate architectures."
+],
+"formula": {
+        "mainIngredients": [
+          "1 Abomination Beyonder characteristic"
+],
+"supplementaryIngredients": [
+"9 types of curse pollution caused by the Divine Spawn",
+"Corpus of a God's Child",
+"900ml of blood from prematurely-dead extraordinary creatures",
+"1 item from a shattered or fallen divine kingdom"
+],
+"potionAppearance": "Disgusting sphere made of pitch-black mucus."
+},
+"ritual": "Obtain the blessing of a True God. This is not a simple verbal blessing—the god granting it will suffer maddening curses during the ritual. It is extremely dangerous.",
+"characteristicAppearance": "A strange tree-like humanoid covered in pitch-black mucus."
+},
+"0": {
+"name": "Chained",
+"formulaStatus": "FULLY_KNOWN",
+"abilities": [
+"Authority of Imprisonment, Curses, and Bound Bonds",
+"Universal Thorns and Bandage Concept Materialization",
+"Absolute Suppression of Deific Internal Organs",
+"Permanent Spatial Prison Overwrite of True Gods",
+"Total Domination over Material and Spiritual Constraints"
+],
+"actingMethods": [
+"Anchor the restricted and bound blueprint of reality.",
+"Embody the absolute internal prison of cosmic hearts.",
+"Uphold the eternal unyielding seal across universal cycles."
+],
+"formula": {
+"mainIngredients": [
+"The Chained Uniqueness",
+"3 Abomination characteristics"
+],
+"supplementaryIngredients": [
+"A prison that once confined or sealed a True God"
+],
+"potionAppearance": "Layers of terrifying black thorns, yellow oily bandages, and vivid sharp roses."
+},
+"ritual": "Turn yourself into a mummy while still alive, use the potion to fill and imprison your internal organs, then kill yourself. Your spiritual will must persist without disappearing while sealed as a true mummy inside a sarcophagus and tomb for at least 100 years.",
+"characteristicAppearance": "A small illusory figure wrapped layer upon layer in bandages, thorns, and roses."
+}
+}
+}
+

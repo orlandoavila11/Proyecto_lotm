@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "motor",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "reborn", "run", "dev"],
+      "port": 3456
+    },
+    {
+      "name": "ui3d",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "ui3d", "run", "dev"],
+      "port": 5174
+    }
+  ]
+}

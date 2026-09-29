@@ -1,0 +1,421 @@
+[
+  {
+    "monster_id": "mon_adult_manhal_fish",
+    "name": "Pez Manhal Adulto",
+    "pathway": "SPECTATOR",
+    "sequence": 9,
+    "classification": {
+      "category": "EXTRAORDINARY_CREATURE",
+      "nature": "Pez abisal adaptado a corrientes subterráneas y percepción espectral",
+      "threat_narrative": "Peligro leve si se le perturba en aguas profundas; evasivo ante intrusos."
+    },
+    "lore": {
+      "short_description": "Pez de escamas plateadas y ojos vidriosos desmesurados que nada en silencio en las cuencas fluviales oscuras.",
+      "long_description": "El Pez Manhal es un habitante de las capas frías del río Tass y lagos subterráneos de Backlund y Midseashire. Sus ojos translúcidos poseen una estructura orgánica capaz de percibir las ondulaciones emocionales y los campos áuricos de cualquier ser vivo que se proyecte en la superficie del agua. Es el recurso fundamental para los iniciados de la Vía del Espectador que buscan abrir la visión psíquica sin alterar su propia estabilidad mental.",
+      "pathway_relation": "Representa la agudeza perceptiva y la observación imperturbable de la Secuencia 9 (Espectador). Sus órganos oculares concentran la facultad pasiva de desentrañar el lenguaje corporal y la resonancia anímica ajena.",
+      "historical_origin": "Descrito en los tratados de ictiología esotérica de la Universidad de Backlund durante la Cuarta Época como 'el ojo silente de las aguas'."
+    },
+    "evidence": {
+      "behavior": "Permanece inmóvil suspendido en remolinos profundos, observando fijamente hacia arriba sin parpadear. Huye hacia grietas abisales en cuanto percibe intención predatoria o agitación violenta.",
+      "sensory_traces": "Deja un rastro aceitoso plateado sobre el agua que inhibe temporalmente la turbulencia; tenue olor a lirio de agua y azogue.",
+      "spiritual_footprint": "Ondulación áurica de color índigo pálido con pulsaciones lentas y regulares en el plano astral."
+    }
+  },
+  {
+    "monster_id": "mon_ram_horn_blackfish",
+    "name": "Pez Negro Cuerno de Carnero",
+    "pathway": "SPECTATOR",
+    "sequence": 9,
+    "classification": {
+      "category": "EXTRAORDINARY_CREATURE",
+      "nature": "Depredador bentónico de aguas pantanosas con protuberancias óseas curvadas",
+      "threat_narrative": "Agresivo si se invade su lecho rocoso; sus embestidas pueden astillar botes pequeños."
+    },
+    "lore": {
+      "short_description": "Pez fluvial de piel oscura y coriácea coronado por dos crestas óseas retorcidas en espiral que canalizan espiritualidad densa.",
+      "long_description": "Habitante de los tramos cenagosos y fondos limosos de los canales orientales del río Tass. A diferencia de otras criaturas acuáticas, el Pez Negro Cuerno de Carnero acumula espiritualidad en su flujo sanguíneo espeso, permitiéndole neutralizar la agitación psíquica de las presas antes de asestar su golpe. Los alquimistas valoran su sangre como agente portador que estabiliza el extracto ocular del Pez Manhal.",
+      "pathway_relation": "Aporta la masa anímica y el anclaje somático necesario para que la mente del iniciado soporte la sobrecarga de estímulos perceptivos de la Secuencia 9.",
+      "historical_origin": "Registrado por la marina de Loen en los estuarios del Mar de Niebla como una especie semi-mística de difícil captura."
+    },
+    "evidence": {
+      "behavior": "Caza emboscado en el lodo bentónico, permaneciendo en letargo hasta que un pulso de temor o dolor en el agua detona su ataque directo.",
+      "sensory_traces": "Sedimento negro persistente en la corriente; regusto ferroso y frío en el agua circundante.",
+      "spiritual_footprint": "Aura de tonalidad azul marino oscuro con bordes rígidos y densos."
+    }
+  },
+  {
+    "monster_id": "mon_seven_colored_lizard_dragon",
+    "name": "Lagarto Dragón de Siete Colores",
+    "pathway": "SPECTATOR",
+    "sequence": 8,
+    "classification": {
+      "category": "EXTRAORDINARY_CREATURE",
+      "nature": "Reptil de linaje dracónico menor capaz de mimetismo óptico y proyección mental",
+      "threat_narrative": "Peligro moderado; confunde los sentidos de los exploradores induciendo falsas percepciones."
+    },
+    "lore": {
+      "short_description": "Reptil alargado cuyas escamas iridiscentes refractan la luz en siete tonalidades cambiantes según el estado mental del observador.",
+      "long_description": "Descendiente degenerado de los antiguos dragones psíquicos de la Segunda Época, este reptil habita en bosques antiguos y grutas kársticas del continente norte. Su sistema endocrino secreta compuestos psíquicos que proyectan sugerencias subliminales en los cerebros de animales y humanos cercanos, haciéndoles creer que el camino está despejado o que escuchan voces familiares.",
+      "pathway_relation": "Constituye el núcleo alquímico de la Secuencia 8 (Telépata). Su glándula pituitaria es el catalizador que permite a un Beyonder sintonizar y descifrar los pensamientos conscientes de terceros.",
+      "historical_origin": "Conocido en los mitos folclóricos de Intis como el 'Heraldo de los Sueños de Colores'."
+    },
+    "evidence": {
+      "behavior": "No ataca físicamente de forma primaria; proyecta ondas de apaciguamiento o curiosidad ajena mientras se retira sigilosamente por las copas de los árboles.",
+      "sensory_traces": "Distorsión cromática en el aire similar al calor veraniego; suave fragancia a resina dulce de abeto.",
+      "spiritual_footprint": "Emisión multicolor oscilante que imita los matices emocionales de quien intenta rastrearlo."
+    }
+  },
+  {
+    "monster_id": "mon_falsman_rabbit",
+    "name": "Conejo Falsman",
+    "pathway": "SPECTATOR",
+    "sequence": 8,
+    "classification": {
+      "category": "MUTATED_BEAST",
+      "nature": "Mamífero de madriguera con sistema nervioso hipersensible a ondas mentales",
+      "threat_narrative": "Inofensivo en combate directo, pero extremadamente difícil de acorralar debido a su lectura refleja de intenciones."
+    },
+    "lore": {
+      "short_description": "Pequeño herbívoro de orejas desproporcionadas y pelaje grisáceo capaz de anticipar cada movimiento de su cazador antes de que suceda.",
+      "long_description": "Endémico de las colinas de Falsman y praderas adyacentes a las montañas de Loen. Su médula espinal produce un fluido místico cargado de resonancia receptiva que le permite leer la chispa neural de un depredador fracciones de segundo antes del ataque. Su caza requiere trampas mecánicas pasivas o tiradores desprovistos de emoción hostil.",
+      "pathway_relation": "Otorga el soporte biológico para la lectura de intenciones inmediatas y detección del pensamiento superficial en la Secuencia 8 (Telépata).",
+      "historical_origin": "Bautizado por el naturalista Falsman en el siglo XII tras documentar la imposibilidad de cazarlo mediante métodos convencionales."
+    },
+    "evidence": {
+      "behavior": "Esquiva proyectiles y saltos cambiando de dirección en ángulos imposibles antes del impacto; nunca duerme en presencia de ondas psíquicas activas.",
+      "sensory_traces": "Senderos circulares en el pasto que confunden el olfato; tenue sonido sibilante similar a un suspiro.",
+      "spiritual_footprint": "Puntos de luz celeste vibrante que se dispersan instantáneamente ante el escrutinio espiritual."
+    }
+  },
+  {
+    "monster_id": "mon_mirror_dragon",
+    "name": "Dragón Espejo",
+    "pathway": "SPECTATOR",
+    "sequence": 7,
+    "classification": {
+      "category": "EXTRAORDINARY_CREATURE",
+      "nature": "Ser reptiliano dracónico de superficie vítrea que refracta proyecciones anímicas",
+      "threat_narrative": "Amenaza alta; capaz de proyectar tormentas mentales y frenesí violento en aventureros desprevenidos."
+    },
+    "lore": {
+      "short_description": "Criatura alada de escamas lisas como láminas de plata pulida cuyos ojos actúan como espejos que reflejan los traumas reprimidos del alma.",
+      "long_description": "Criatura mística residual ligada al subconsciente colectivo. Habita en cavernas cristalinas y zonas liminales del Mundo Espiritual. El Dragón Espejo no percibe la carne física, sino el tejido psicológico. Cuando un intruso cruza su mirada, el dragón refleja su propio miedo magnificado, induciendo ataques de pánico incontrolables o parálisis catatónica.",
+      "pathway_relation": "Es la encarnación de la Secuencia 7 (Psiquiatra). Sus ojos son el ingrediente esencial para gobernar las tempestades mentales, curar cicatrices psicológicas o inducir locura en los enemigos.",
+      "historical_origin": "Mencionado en las crónicas de la Segunda Época como guardián de los templos de la Mente del Dragón de la Imaginación Ankewelt."
+    },
+    "evidence": {
+      "behavior": "Planea en círculos silenciosos; antes de atacar, hace vibrar sus escamas vítreas emitiendo un zumbido agudo que debilita las barreras racionales de la mente.",
+      "sensory_traces": "Superficies húmedas circundantes reflejan imágenes que no coinciden con la realidad; olor a ozono frío y vidrio fundido.",
+      "spiritual_footprint": "Aura de plata luminosa con fracturas geométricas que devuelven la mirada del clarividente."
+    }
+  },
+  {
+    "monster_id": "mon_elder_treant",
+    "name": "Espíritu del Árbol Anciano",
+    "pathway": "SPECTATOR",
+    "sequence": 7,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Vegetación mística milenaria fusionada con corrientes de memoria colectiva",
+      "threat_narrative": "Generalmente pacífico; desata tormentas de polen soporífero y alucinatorio si sus raíces son agredidas."
+    },
+    "lore": {
+      "short_description": "Tronco colosal de corteza cenicienta con rostros esculpidos de forma natural que murmuran memorias de épocas extintas.",
+      "long_description": "Árbol sagrado que crece en los límites de bosques primigenios donde la barrera entre el mundo físico y el astral es delgada. Sus frutos acumulan décadas de emociones pacíficas y serenidad vegetal, capaces de calmar el tumulto interno y la histeria. Su corteza y frutos son indispensables en boticas herméticas para tratar la pérdida de control incipiente.",
+      "pathway_relation": "Representa el poder de apaciguamiento ('Placate') y la curación de traumas de la Secuencia 7 (Psiquiatra). Proporciona la resiliencia mental frente a los horrores del ocultismo.",
+      "historical_origin": "Reverenciado por las tribus paganas del continente antes de la Era del Vapor como 'El Guardián del Reposo'."
+    },
+    "evidence": {
+      "behavior": "Inmóvil durante décadas; responde a la violencia exudando savia ambarina y liberando esporas luminosas que sumen a los agresores en un sueño apacible sin pesadillas.",
+      "sensory_traces": "Fragancia a madera de sándalo antigua, hojas secas y té negro tibio; murmullo distante como de multitud en voz baja.",
+      "spiritual_footprint": "Pilar espiritual esmeralda pálido con ramificaciones doradas que se extienden decenas de metros en el plano astral."
+    }
+  },
+  {
+    "monster_id": "mon_young_psychic_dragon",
+    "name": "Cría de Dragón Psíquico",
+    "pathway": "SPECTATOR",
+    "sequence": 6,
+    "classification": {
+      "category": "EXTRAORDINARY_CREATURE",
+      "nature": "Dracónido joven nacido de huevos psíquicos latentes en el Mundo Espiritual",
+      "threat_narrative": "Peligro severo; emplea hipnosis involuntaria e invisibilidad psicológica para aislar a sus objetivos."
+    },
+    "lore": {
+      "short_description": "Dragón esbelto de escamas blanco grisáceo y pupila vertical dorada que flota entre las corrientes de niebla sin proyectar sombra.",
+      "long_description": "A pesar de su juventud, esta entidad posee facultades de alteración de la consciencia ajena. Es capaz de borrar su presencia del campo perceptivo de quienes le rodean, logrando una invisibilidad psicológica total: el cerebro del observador ve al dragón, pero su conciencia descarta el dato considerándolo aire vacío. Su glándula pituitaria concentra el poder de la sugestión profunda.",
+      "pathway_relation": "Núcleo primordial de la Secuencia 6 (Hipnotista). Sus órganos permiten doblegar la voluntad ajena, manipular recuerdos y ordenar el sueño forzado.",
+      "historical_origin": "Especímenes conservados en criocámaras selladas por sociedades secretas como la Orden de los Alquimistas de la Psicología."
+    },
+    "evidence": {
+      "behavior": "Acecha colocándose detrás del punto ciego de la atención consciente; hipnotiza a presas menores para que caminen solas hacia su guarida.",
+      "sensory_traces": "Sensación repentina de haber olvidado lo que se iba a decir; caída abrupta de la temperatura ambiental; aroma a incienso de mirra.",
+      "spiritual_footprint": "Aura grisácea difusa cuyos bordes se disuelven en la nada, dificultando cualquier intento de fijación mística."
+    }
+  },
+  {
+    "monster_id": "mon_black_hunt_giant_lizard",
+    "name": "Lagarto Gigante Cazador Negro",
+    "pathway": "SPECTATOR",
+    "sequence": 6,
+    "classification": {
+      "category": "MUTATED_BEAST",
+      "nature": "Reptil carnívoro de gran porte adaptado a la caza psíquica en la oscuridad",
+      "threat_narrative": "Extremadamente agresivo; proyecta ondas de parálisis somática antes de abalanzarse con mandíbulas trituradoras."
+    },
+    "lore": {
+      "short_description": "Colosal saurio de cinco metros de longitud con piel cubierta de placas negras mate que absorben cualquier destello de luz.",
+      "long_description": "Habitante de las profundidades de túneles mineros abandonados y cañones sin sol en la meseta de Hornacis. Acompaña su fuerza bruta con un fluido cefalorraquídeo densamente psicoactivo: al rugir, no emite sonido ordinario, sino una onda hipnótica de baja frecuencia que bloquea la respuesta motora de sus víctimas durante segundos críticos.",
+      "pathway_relation": "Fuente alternativa de ingrediente principal para la poción de Hipnotista (Secuencia 6). Aporta el componente de supresión de la iniciativa motriz.",
+      "historical_origin": "Descrito por topógrafos militares durante la colonización minera de Loen en las guerras de frontera."
+    },
+    "evidence": {
+      "behavior": "Sigue a su presa a distancia prudencial hasta inducirle fatiga mental extrema mediante micro-ondas psíquicas; ataca cuando la víctima tropieza o titubea.",
+      "sensory_traces": "Huellas de garras pesadas en piedra; olor a brea y sangre fría; silencio repentino de insectos y aves en varios cientos de metros.",
+      "spiritual_footprint": "Vórtice negro azulado con espirales que atraen la espiritualidad circundante hacia su centro."
+    }
+  },
+  {
+    "monster_id": "mon_hallucination_wind_chime_tree",
+    "name": "Árbol Campana de Viento Alucinógeno",
+    "pathway": "SPECTATOR",
+    "sequence": 6,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Planta mística astral cuyos frutos en forma de campana tintinean melodías oníricas",
+      "threat_narrative": "Peligro ambiental letal; sume a expediciones enteras en un trance sonámbulo permanente si no se tapan los oídos."
+    },
+    "lore": {
+      "short_description": "Árbol de ramas arqueadas del que cuelgan frutos huecos translúcidos que emiten repiques cristalinos al menor soplo de brisa espiritual.",
+      "long_description": "Crece exclusivamente en mesetas astrales y claros boscosos embrujados del Mundo Espiritual. Su sonido resuena no en el canal auditivo físico, sino directamente en los receptores del subconsciente. Quien escucha su tintineo experimenta alucinaciones vívidas de sus deseos más íntimos, permaneciendo sentado al pie del tronco hasta morir de inanición mientras sus frutos absorben su consciencia desprendida.",
+      "pathway_relation": "Ingrediente alternativo para la Secuencia 6 (Hipnotista), especializado en la inducción de trances oníricos profundos y sugestiones complejas.",
+      "historical_origin": "Citado en los diarios de viaje de exploradores de la Escuela de Pensamiento de la Vida como 'el carillón de los espectros'."
+    },
+    "evidence": {
+      "behavior": "Pasivo; el tintineo de sus frutos se sincroniza automáticamente con el ritmo cardíaco del intruso para inducir una resonancia hipnótica progresiva.",
+      "sensory_traces": "Melodía de campanas lejanas que parece provenir de todas direcciones; suave neblina violácea en el suelo; olor a violetas marchitas.",
+      "spiritual_footprint": "Campana de luz púrpura etérea que vibra en ondas concéntricas expandiéndose por el plano de los pensamientos."
+    }
+  },
+  {
+    "monster_id": "mon_dreamcatcher",
+    "name": "Atrapasueños del Velo Espiritual",
+    "pathway": "SPECTATOR",
+    "sequence": 5,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Entidad arácnida del plano astral compuesta de filamentos de sueño cristalizado",
+      "threat_narrative": "Amenaza crítica; atrapa las proyecciones astrales de los durmientes y devora su individualidad."
+    },
+    "lore": {
+      "short_description": "Criatura que asemeja una araña de ocho patas filiformes y cuerpo en forma de anillo tejido con hilos de plata que vibran con fragmentos de sueños ajenos.",
+      "long_description": "Mora en las capas medias del Mundo Espiritual, en las corrientes donde flotan los sueños de las poblaciones urbanas. Teje redes invisibles que interceptan las almas que sueñan, filtrando sus fantasías más lúcidas para condensarlas en su corazón místico. Los Caminantes de Sueños utilizan su núcleo para navegar por el mar de la consciencia sin ser absorbidos.",
+      "pathway_relation": "Otorga la capacidad de infiltración en sueños ajenos y navegación astral de la Secuencia 5 (Caminante de Sueños / Dreamwalker).",
+      "historical_origin": "Conocido en los textos esotéricos de la Iglesia de la Noche como un parásito onírico que debe ser purgado por los Guantes Rojos."
+    },
+    "evidence": {
+      "behavior": "Desciende sobre objetivos dormidos conectando un hilo sutil a su frente; si es atacado en el plano físico, huye replegándose en el sueño de un testigo cercano.",
+      "sensory_traces": "Hilos plateados pegajosos que se evaporan al despertar; sensación de déjà vu intenso en el ambiente; leve fragancia a alcanfor y lavanda.",
+      "spiritual_footprint": "Red geométrica centelleante de hilos luminosos que conectan múltiples mentes durmientes a un punto focal."
+    }
+  },
+  {
+    "monster_id": "mon_psychic_phantom",
+    "name": "Fantasma Psíquico",
+    "pathway": "SPECTATOR",
+    "sequence": 5,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Remanente incorpóreo de una mente poderosa disuelta en el plano astral",
+      "threat_narrative": "Peligro severo; ataca mediante choques telequinéticos y desgarros psíquicos directos al cuerpo del alma."
+    },
+    "lore": {
+      "short_description": "Aparición translúcida flotante sin rostro reconocible, cuyo torso encierra un núcleo cristalino brillante que late con memorias obsesivas.",
+      "long_description": "Nacido de la desintegración mental de antiguos Beyonders de secuencias medias que perdieron el control o murieron en estados de intensa obsesión. Carece de materia biológica; su forma es sostenida exclusivamente por la fuerza de sus pensamientos remanentes. Al ser destruido mediante rituales adecuados, su núcleo se condensa en un cristal psíquico puro de alta conductividad mental.",
+      "pathway_relation": "Ingrediente principal para la Secuencia 5 (Caminante de Sueños). Confiere solidez estructural a la proyección psíquica y permite la travesía onírica.",
+      "historical_origin": "Registrado frecuentemente en las ruinas de las antiguas academias de la Cuarta Época en las Tierras Abandonadas de los Dioses."
+    },
+    "evidence": {
+      "behavior": "Vaga por bibliotecas abandonadas y cementerios de eruditos repitiendo en susurros las dudas filosóficas que lo consumieron en vida.",
+      "sensory_traces": "Descenso repentino de temperatura; objetos de vidrio vibran y se quiebran sin impacto físico; olor a papel quemado y tinta seca.",
+      "spiritual_footprint": "Torbellino de fragmentos de memoria azul brillante girando alrededor de una singularidad cristalina."
+    }
+  },
+  {
+    "monster_id": "mon_adult_psychic_dragon",
+    "name": "Dragón Psíquico Adulto",
+    "pathway": "SPECTATOR",
+    "sequence": 5,
+    "classification": {
+      "category": "EXTRAORDINARY_CREATURE",
+      "nature": "Dracónido maduro de porte hercúleo con dominio completo del plano del subconsciente",
+      "threat_narrative": "Amenaza calamitosa; requiere un equipo coordinado de Beyonders para ser abatido sin caer en locura colectiva."
+    },
+    "lore": {
+      "short_description": "Majestuoso dragón de quince metros de envergadura con escamas grisáceas que recuerdan al mármol antiguo y cuernos retorcidos que canalizan rayos de energía mental.",
+      "long_description": "Entidad de linaje superior que conserva casi intacto el legado del Dragón Ankewelt. Habita en las cumbres inaccesibles del Mundo Espiritual o en santuarios ocultos tras barreras ilusorias. Su rugido no mueve el aire, sino que desgarra la coherencia del cuerpo del alma, mientras que su mirada puede sumergir a un enemigo en una pesadilla interminable de la cual el cuerpo físico nunca despierta.",
+      "pathway_relation": "El cerebro de un dragón psíquico adulto es la fuente canónica más pura para ascender a Secuencia 5 (Caminante de Sueños). Proporciona la soberanía sobre el propio mundo onírico.",
+      "historical_origin": "Cazados intensamente durante la Cuarta Época por las familias de ángeles para abastecer las líneas de sangre de la aristocracia de Intis y Loen."
+    },
+    "evidence": {
+      "behavior": "Reposa en letargos que pueden durar décadas, proyectando su mente a través de miles de mentes humanas en las ciudades para alimentarse de emociones complejas.",
+      "sensory_traces": "Viento tibio pero desprovisto de polvo; distorsión del horizonte en ondas de calor azulado; eco de campanas ceremoniales en la mente.",
+      "spiritual_footprint": "Monolito espiritual colosal blanco grisáceo coronado por llamas astrales de color dorado pálido."
+    }
+  },
+  {
+    "monster_id": "mon_elderly_psychic_dragon",
+    "name": "Dragón Psíquico Anciano",
+    "pathway": "SPECTATOR",
+    "sequence": 4,
+    "classification": {
+      "category": "MYTHICAL_FORM",
+      "nature": "Semidiós dracónico en transición hacia la forma mítica completa del dragón mental",
+      "threat_narrative": "Peligro de nivel semidiós; es capaz de manipular el subconsciente colectivo de distritos enteros y crear plagas mentales."
+    },
+    "lore": {
+      "short_description": "Enorme dragón de escamas blancas con incrustaciones cristalinas de las que brotan filamentos invisibles conectados a la red del pensamiento mundial.",
+      "long_description": "Criatura que ha trascendido los límites biológicos ordinarios, alcanzando el estatus de Semidiós de la Secuencia 4. Su presencia física es semitransparente, pues gran parte de su masa existe directamente en el subconsciente colectivo de la humanidad. Es capaz de sembrar ideas en la mente de líderes políticos sin que sospechen manipulación externa y desatar plagas psicológicas donde miles de ciudadanos comparten el mismo delirio suicida.",
+      "pathway_relation": "Su cerebro completo es el ingrediente canónico supremo para elaborar la poción de Manipulador (Secuencia 4). Confiere el poder de dominar las masas desde las sombras.",
+      "historical_origin": "Mencionado en los textos secretos de la Alianza de los Siete como 'Aquel que teje los hilos de los reyes'."
+    },
+    "evidence": {
+      "behavior": "Nunca entra en combate directo si puede evitarlo; manipula a facciones enteras para que se destruyan entre sí antes de revelar su presencia.",
+      "sensory_traces": "Sensación opresiva de ser un títere en un teatro de sombras; súbito cambio de opinión generalizado en la población de la zona; fragancia a incienso imperial.",
+      "spiritual_footprint": "Cerebro colosal flotante proyectado en el plano astral, rodeado de miles de filamentos luminosos que se clavan en el horizonte."
+    }
+  },
+  {
+    "monster_id": "mon_treant_mentor",
+    "name": "Treant Mentor",
+    "pathway": "SPECTATOR",
+    "sequence": 4,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Árbol sabio primigenio convertido en nodo viviente del conocimiento subconsciente",
+      "threat_narrative": "Peligro semidiós; su mente colectiva puede reescribir la psique de un escuadrón entero en segundos si se muestra hostilidad."
+    },
+    "lore": {
+      "short_description": "Árbol titánico de follaje dorado y corteza de aspecto humanoide sereno cuyas raíces se hunden en el mar del subconsciente colectivo.",
+      "long_description": "Entidad ancestral que actuó como custodio de la sabiduría en las épocas míticas. No alberga hostilidad innata, pero su mente posee tal densidad conceptual que cualquier ser que se aproxime sin preparación psíquica sufre una reconfiguración involuntaria de su personalidad, adoptando una devoción absoluta y pacífica hacia la naturaleza del bosque.",
+      "pathway_relation": "Ingrediente alternativo para la poción de Manipulador (Secuencia 4). Su corazón cristalino contiene la estructura matricial de la resonancia colectiva.",
+      "historical_origin": "Descrito en los evangelios apócrifos de la Iglesia de la Tierra como los 'Maestros Silenciosos de los Días del Comienzo'."
+    },
+    "evidence": {
+      "behavior": "Responde a las preguntas formuladas en pensamiento mediante visiones pacíficas y directas; si es herido, transmuta la agresión del atacante en culpa insoportable.",
+      "sensory_traces": "Aroma intenso a hojas de té de oro, tierra húmeda bendita y miel silvestre; sonido de mil voces ancianas hablando en perfecta armonía.",
+      "spiritual_footprint": "Domo dorado brillante que cubre kilómetros en el plano astral, con runas de serenidad grabadas en cada haz de luz."
+    }
+  },
+  {
+    "monster_id": "mon_treant_king",
+    "name": "Rey Treant de los Sueños",
+    "pathway": "SPECTATOR",
+    "sequence": 3,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Soberano astral del plano onírico con autoridad sobre la materialización de pesadillas",
+      "threat_narrative": "Amenaza de rango Santo; sus sueños son capaces de desbordarse sobre el mundo real sustituyendo la materia física."
+    },
+    "lore": {
+      "short_description": "Monstruosa entidad arbórea de madera negra azabache y hojas de cristal que sostienen un dosel donde se proyectan mundos oníricos completos.",
+      "long_description": "Gobernante indiscutible de las regiones profundas del Mundo Espiritual vinculadas a las pesadillas humanas. El Rey Treant no distingue entre el sueño y la vigilia: cuando sueña que una montaña arde, la montaña real en el mundo físico se calcina sin origen térmico aparente. Su corazón cristalino es un condensador de leyes oníricas capaces de reescribir la geografía.",
+      "pathway_relation": "Fuente del ingrediente supremo para la Secuencia 3 (Tejedor de Sueños / Dream Weaver). Otorga el poder de materializar sueños y tejer mundos compartidos.",
+      "historical_origin": "Figura central en la mitología de los elfos antiguos de la Segunda Época, descrita en los Libros del Mar."
+    },
+    "evidence": {
+      "behavior": "Existe en un estado perpetuo de sueño lúcido; cualquier invasor en su territorio es integrado inmediatamente como personaje secundario en la trama onírica que esté soñando.",
+      "sensory_traces": "Niebla oscura que sabe a ceniza dulce; distorsión física del terreno (escaleras que suben hacia el suelo, sombras que se mueven antes que los cuerpos).",
+      "spiritual_footprint": "Corona de zarzas negras incandescentes sobre una silueta que se fusiona con la curvatura del horizonte astral."
+    }
+  },
+  {
+    "monster_id": "mon_dream_dragon",
+    "name": "Dragón de los Sueños",
+    "pathway": "SPECTATOR",
+    "sequence": 3,
+    "classification": {
+      "category": "MYTHICAL_FORM",
+      "nature": "Manifestación pura del dragón psíquico santo capaz de transformar ilusiones en hechos tangibles",
+      "threat_narrative": "Amenaza de rango Santo; borra las fronteras entre lo imaginado y lo existente en un radio de decenas de kilómetros."
+    },
+    "lore": {
+      "short_description": "Ser serpentino colosal hecho de niebla gris plateada y luz estelar que navega por las grietas entre la realidad y la fantasía.",
+      "long_description": "Uno de los últimos linajes directos del Dragón de la Imaginación. No posee órganos internos convencionales; todo su ser es un pensamiento coherente y autoconsciente de inmensa potencia. Si imagina que sus perseguidores carecen de corazón físico, los corazones de estos se desvanecen instantáneamente de sus pechos. Su captura solo es concebible mediante conspiraciones elaboradas y sellos de Ángeles de alta secuencia.",
+      "pathway_relation": "Ingrediente primordial para la Secuencia 3 (Tejedor de Sueños). Su cerebro concentra la autoridad de la Proyección de Sueños y Realidad Tejida.",
+      "historical_origin": "Sellado en los anales arcanos del Vaticano de la Iglesia del Dios del Vapor y la Maquinaria como 'La Ilusión que Mata'."
+    },
+    "evidence": {
+      "behavior": "Se manifiesta únicamente cuando el nivel de convergencia mística en una región alcanza umbrales críticos; combate transformando los ataques del enemigo en flores o mariposas ilusorias.",
+      "sensory_traces": "Cielo diurno que repentinamente muestra constelaciones desconocidas; olor a ozono, jazmín y tinta china fresca.",
+      "spiritual_footprint": "Dragón de humo estelar de cientos de metros que rodea la bóveda astral proyectando pupilas doradas verticales hacia la tierra."
+    }
+  },
+  {
+    "monster_id": "mon_ancient_psychic_dragon",
+    "name": "Dragón Psíquico Primordial",
+    "pathway": "SPECTATOR",
+    "sequence": 2,
+    "classification": {
+      "category": "MYTHICAL_FORM",
+      "nature": "Forma mítica completa del Ángel de la Mente (Secuencia 2: Discernidor)",
+      "threat_narrative": "Peligro de rango Ángel; contemplar su forma mítica induce disolución instantánea de la psique humana y locura dracónica irreversible."
+    },
+    "lore": {
+      "short_description": "Dragón blanco grisáceo de proporciones continentales con pupilas verticales de oro pálido donde arden todas las verdades secretas del universo.",
+      "long_description": "Existencia que roza la divinidad. Es la manifestación de la Secuencia 2 (Discernidor / Discerner). No existe simplemente en el espacio: existe en la totalidad del subconsciente de todas las especies pensantes del planeta. Con solo percibir a un objetivo, discierne cada debilidad conceptual, cada mentira que se ha contado a sí mismo y cada fisura de su alma, destruyéndolo mediante la simple revelación de la verdad.",
+      "pathway_relation": "Su corazón inmortal es el ingrediente fundamental para ascender al rango angélico de Discernidor (Secuencia 2). Permite la Visión de la Verdad y la Identificación Conceptual Absoluta.",
+      "historical_origin": "Lucharon bajo el mando del Dragón Ankewelt en las guerras de la Segunda Época contra los gigantes y los antiguos dioses."
+    },
+    "evidence": {
+      "behavior": "Observa el destino de las civilizaciones desde la cúspide del Mundo Espiritual; sus intervenciones son sutiles y alteran el curso de eras completas.",
+      "sensory_traces": "Todos los espejos en cincuenta kilómetros muestran una pupila vertical dorada; los pensamientos de los seres vivos resuenan en voz alta en sus propias cabezas.",
+      "spiritual_footprint": "Sol pálido compuesto enteramente de ojos abiertos que observan simultáneamente todas las dimensiones del plano espiritual."
+    }
+  },
+  {
+    "monster_id": "mon_erihog_spawn",
+    "name": "Engendro Pálido de Erihog",
+    "pathway": "SPECTATOR",
+    "sequence": 2,
+    "classification": {
+      "category": "ABOMINATION",
+      "nature": "Aberración nacida de la carne corrupta del antiguo dios dragón caída en las profundidades astrales",
+      "threat_narrative": "Peligro de rango Ángel; corrompe el subconsciente colectivo generando locura paranoica y fanatismo nihilista masivo."
+    },
+    "lore": {
+      "short_description": "Masa titánica de carne pálida repleta de bocas que susurran secretos prohibidos y cavidades oculares donde brillan iris de oro pálido.",
+      "long_description": "Erihog fue una de las eminencias dracónicas de la corte de Ankewelt cuya caída durante el cataclismo de la Segunda Época dejó quistes de carne divina latente en el mar de niebla del Mundo Espiritual. Este engendro es un brote de esa carne divina que ha desarrollado consciencia alienígena, alimentándose de las verdades que los seres humanos ocultan en lo más hondo de su ser.",
+      "pathway_relation": "El Corazón Pálido de Erihog es el ingrediente alternativo supremo para la poción de Discernidor (Secuencia 2).",
+      "historical_origin": "Ocultado en los registros prohibidos de la Iglesia de la Noche bajo el epígrafe de 'La Herida Abierta del Dragón'."
+    },
+    "evidence": {
+      "behavior": "Permanece sumergido en fosas astrales emitiendo una atracción irresistible para los Beyonders de la Vía del Espectador que sufren de desbalance mental.",
+      "sensory_traces": "Olor a incienso podrido y salmuera fría; las palabras escritas en libros cercanos se reorganizan espontáneamente en confesiones de crímenes olvidados.",
+      "spiritual_footprint": "Agujero negro en el plano de los pensamientos que devora la luz áurica de todo lo que le rodea."
+    }
+  },
+  {
+    "monster_id": "mon_nightmare_swamp_shadow",
+    "name": "Sombra del Pantano de Pesadillas",
+    "pathway": "SPECTATOR",
+    "sequence": 1,
+    "classification": {
+      "category": "MYTHICAL_FORM",
+      "nature": "Entidad arcangélica nacida de la convergencia de la historia no escrita y las pesadillas primordiales",
+      "threat_narrative": "Peligro de rango Arcángel (Secuencia 1); es capaz de reescribir la historia local y la identidad de los seres vivos como si fueran personajes de una novela."
+    },
+    "lore": {
+      "short_description": "Figura colosal envuelta en velos de tinta translúcida cuyas extremidades se disuelven en páginas escritas con el destino de los mortales.",
+      "long_description": "Manifestación directa de los conceptos de la Secuencia 1 (Autor / Author). Habita en las profundidades del Pantano de Pesadillas en el Mundo Espiritual, donde confluyen todos los futuros descartados y las historias jamás contadas. No combate físicamente: sostiene una pluma imaginaria y escribe en el tejido de la realidad. Si redacta 'Y entonces el héroe cayó fulminado por una dolencia cardíaca congénita', la realidad se adapta inmediatamente al relato.",
+      "pathway_relation": "Custodia y encarna la Característica Beyonder de Autor (Secuencia 1) y proporciona el agua mística del Pantano de Pesadillas indispensable para la apoteosis previa a la divinidad.",
+      "historical_origin": "Entidad legendaria asociada a las conspiraciones de la Tercera Época y a los orígenes arcanos del Crepúsculo de los Dioses."
+    },
+    "evidence": {
+      "behavior": "Diseña tramas cósmicas que involucran a reyes, iglesias y semidioses a lo largo de siglos sin que ninguno perciba que su voluntad ha sido escrita de antemano.",
+      "sensory_traces": "Sonido rítmico de pluma de ganso raspando papel pergamino en medio del silencio absoluto; aroma a tinta de calamar, cuero envejecido y polvo de estrellas.",
+      "spiritual_footprint": "Libro ciclópeo abierto en el plano astral cuyas páginas pasan solas, proyectando hilos dorados que controlan el River of Fate circundante."
+    }
+  }
+]
+

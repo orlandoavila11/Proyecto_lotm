@@ -1,0 +1,408 @@
+[
+  {
+    "id": "KOA_AMON",
+    "identity": {
+      "name": "Amon",
+      "pathway": "ERROR",
+      "sequence": 1,
+      "historical_era": "Multiple Epochs",
+      "primary_faction": "Independent",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "KING_OF_ANGELS"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "CASTLE_OF_SEFIRAH",
+      "conceptual_control_rating": 98,
+      "authority_domains": [
+        "TIME",
+        "PARASITISM",
+        "DECEPTION",
+        "ERROR_EXPLOITATION"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 70,
+      "is_sealed": false,
+      "current_anchor_count": 0
+    },
+    "activity_profile": {
+      "world_presence": 95,
+      "world_activity_rating": 90,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 55,
+      "divination_misdirection_chance": 95,
+      "corruption_leak_multiplier": 1.10
+    },
+    "knowledge_inventory": [
+      "KNOW_PATHWAY_ERROR_TIME_LOOPS",
+      "KNOW_SPACE_TIME_MECHANICS",
+      "KNOW_FORBIDDEN_AVATAR_TIME_STEAL"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_PALLEZ_ZOROAST", "type": "ENEMY", "value": 0 },
+      { "entity_id": "KOA_MEDICI", "type": "RIVAL", "value": 30 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_NORTH",
+      "REG_SPIRIT_WORLD"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 35,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "AMON_AVATARS_SPAWNING": true, "TIME_LOOP_RISK_HIGH": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_NORTH": { "divination_misdirection_chance_modifier": 30 },
+        "REG_SPIRIT_WORLD": { "sanity_drain_per_tick_modifier": 2 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 95
+  },
+  {
+    "id": "KOA_BETHEL_ABRAHAM",
+    "identity": {
+      "name": "Bethel Abraham",
+      "pathway": "APPRENTICE",
+      "sequence": 1,
+      "historical_era": "Fourth Epoch",
+      "primary_faction": "Abraham Family",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "KING_OF_ANGELS"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "CASTLE_OF_SEFIRAH",
+      "conceptual_control_rating": 96,
+      "authority_domains": [
+        "SPACE",
+        "STARS_SEAL",
+        "REPLICATION",
+        "COSMIC_TRAVEL"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 40,
+      "is_sealed": true,
+      "current_anchor_count": 25
+    },
+    "activity_profile": {
+      "world_presence": 20,
+      "world_activity_rating": 15,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 65,
+      "divination_misdirection_chance": 85,
+      "corruption_leak_multiplier": 1.25
+    },
+    "knowledge_inventory": [
+      "KNOW_SPACE_TIME_MECHANICS",
+      "KNOW_FORBIDDEN_COSMIC_INEVITABILITY"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_PALLEZ_ZOROAST", "type": "ALLY", "value": 60 }
+    ],
+    "active_regions": [
+      "REG_SPIRIT_WORLD"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 32,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "SPATIAL_DISTORTION_LATENT": true, "COSMIC_CONTAMINATION_RISK": true },
+      "region_stat_overrides": {
+        "REG_SPIRIT_WORLD": { "exploration_danger_rate_modifier": 1.35 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 92
+  },
+  {
+    "id": "KOA_MEDICI",
+    "identity": {
+      "name": "Medici",
+      "pathway": "HUNTER",
+      "sequence": 1,
+      "historical_era": "Multiple Epochs",
+      "primary_faction": "Iron and Blood Cross Order",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "KING_OF_ANGELS"
+    },
+    "authority": {
+      "has_uniqueness": false,
+      "sephirot_resonance_id": "CITY_OF_CALAMITY",
+      "conceptual_control_rating": 94,
+      "authority_domains": [
+        "WARFARE",
+        "PROVOCATION",
+        "CONQUEST",
+        "PYROMANCY"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 65,
+      "is_sealed": false,
+      "current_anchor_count": 60
+    },
+    "activity_profile": {
+      "world_presence": 85,
+      "world_activity_rating": 80,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 45,
+      "divination_misdirection_chance": 80,
+      "corruption_leak_multiplier": 1.05
+    },
+    "knowledge_inventory": [
+      "KNOW_FOURTH_EPOCH_WARS",
+      "KNOW_MILITARY_HISTORY",
+      "KNOW_PATHWAY_HUNTER_PYROMANIAC"
+    ],
+    "relationship_links": [
+      { "entity_id": "KOA_AMON", "type": "RIVAL", "value": 30 },
+      { "entity_id": "NPC_020", "type": "MASTER", "value": 95 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_EAST"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 25,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "HUNTER_PROVOCATION_MULTIPLIER_UP": true, "WAR_TENSION_GLOBAL_RISE": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_EAST": { "combat_damage_bonus": 20, "crime_encounter_rate": 1.30 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 94
+  },
+  {
+    "id": "KOA_SASRIR",
+    "identity": {
+      "name": "Sasrir",
+      "pathway": "HANGED_MAN",
+      "sequence": 1,
+      "historical_era": "Third Epoch",
+      "primary_faction": "Independent",
+      "covert_affiliation": "Aurora Order Subconscious Nexus"
+    },
+    "classification": {
+      "tier": "KING_OF_ANGELS"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "CHAOS_SEA",
+      "conceptual_control_rating": 97,
+      "authority_domains": [
+        "SHADOWS",
+        "SACRIFICE",
+        "FLESH_MUTATION",
+        "PRIMORDIAL_DEPRIVATION"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 50,
+      "is_sealed": true,
+      "current_anchor_count": 30
+    },
+    "activity_profile": {
+      "world_presence": 30,
+      "world_activity_rating": 20,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 70,
+      "divination_misdirection_chance": 90,
+      "corruption_leak_multiplier": 1.25
+    },
+    "knowledge_inventory": [
+      "KNOW_ORGANIZATION_AURORA_ORDER_FLESH",
+      "KNOW_AURORA_ORDER_FLESH_TITANS"
+    ],
+    "relationship_links": [
+      { "entity_id": "KOA_OUROBOROS", "type": "ALLY", "value": 90 },
+      { "entity_id": "NPC_024", "type": "MASTER", "value": 85 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_SUBURBS"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": false,
+      "knowledge_threshold_required": 35,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "CHAOS_SEA_CORRUPTION_LEAK": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_SUBURBS": { "corruption_gain_rate_multiplier": 1.40 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 93
+  },
+  {
+    "id": "KOA_OUROBOROS",
+    "identity": {
+      "name": "Ouroboros",
+      "pathway": "MONSTER",
+      "sequence": 1,
+      "historical_era": "Multiple Epochs",
+      "primary_faction": "Aurora Order",
+      "covert_affiliation": "NONE"
+    },
+    "classification": {
+      "tier": "KING_OF_ANGELS"
+    },
+    "authority": {
+      "has_uniqueness": true,
+      "sephirot_resonance_id": "KEY_OF_LIGHT",
+      "conceptual_control_rating": 96,
+      "authority_domains": [
+        "FATE_LOOPS",
+        "PROBABILITY_STRIKE",
+        "OUROBOROS_SYMBOLISM",
+        "MISFORTUNE"
+      ]
+    },
+    "current_status": {
+      "vitality_state": "ALIVE",
+      "sanity_index": 60,
+      "is_sealed": false,
+      "current_anchor_count": 65
+    },
+    "activity_profile": {
+      "world_presence": 80,
+      "world_activity_rating": 75,
+      "can_spawn_events": true,
+      "can_spawn_rumors": true,
+      "can_spawn_investigations": true
+    },
+    "world_influence": {
+      "divination_sanity_drain": 50,
+      "divination_misdirection_chance": 90,
+      "corruption_leak_multiplier": 1.08
+    },
+    "knowledge_inventory": [
+      "KNOW_FATE_AND_PROBABILITY",
+      "KNOW_PATHWAY_MONSTER_RECONSTRUCTION"
+    ],
+    "relationship_links": [
+      { "entity_id": "ANGEL_WILL_AUCEPTIN", "type": "ENEMY", "value": 0 },
+      { "entity_id": "KOA_SASRIR", "type": "ALLY", "value": 90 }
+    ],
+    "active_regions": [
+      "REG_BACKLUND_HILLSIDE"
+    ],
+    "interaction_hooks": {
+      "interaction_allowed": true,
+      "knowledge_threshold_required": 28,
+      "quest_trigger_id": "NONE"
+    },
+    "world_state_modifiers": {
+      "global_flags_to_inject": { "GLOBAL_LUCK_INDEX_REVERSAL": true, "FATE_LOOPS_DETECTED": true },
+      "region_stat_overrides": {
+        "REG_BACKLUND_HILLSIDE": { "base_luck_index_bonus": -25 }
+      }
+    },
+    "importance": "LEGENDARY",
+    "influence_score": 96
+  },
+  {
+    "id": "KOA_ANTIGONUS",
+    "identity": {
+      "name": "Antigonus",
+      "pathway": "FOOL",
+      "sequence": 1,
+      "historical_era": "Fourth Epoch",
+      "primary_faction": "Independent",
+      "covert_affiliation": "Secret Order Ancestor"
+    },
+    "classification": {
+      "tier": "KING_OF_ANGELS"
+    },
+    "authority": {
+      "has_uniqueness": false,
+"sephirot_resonance_id": "CASTLE_OF_SEFIRAH",
+"conceptual_control_rating": 91,
+"authority_domains": [
+"MIRACLES",
+"MARIONETTES",
+"CONCEALMENT",
+"DIVINE_FOOLERY"
+]
+},
+"current_status": {
+"vitality_state": "ALIVE",
+"sanity_index": 20,
+"is_sealed": true,
+"current_anchor_count": 10
+},
+"activity_profile": {
+"world_presence": 40,
+"world_activity_rating": 25,
+"can_spawn_events": true,
+"can_spawn_rumors": true,
+"can_spawn_investigations": true
+},
+"world_influence": {
+"divination_sanity_drain": 60,
+"divination_misdirection_chance": 95,
+"corruption_leak_multiplier": 1.15
+},
+"knowledge_inventory": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY",
+"KNOW_DANGEROUS_MOSES_TRANSCRIPTION"
+],
+"relationship_links": [
+{ "entity_id": "ANGEL_KOTAR_DEVIL_WOLF", "type": "ALLY", "value": 50 }
+],
+"active_regions": [
+"REG_SPIRIT_WORLD"
+],
+"interaction_hooks": {
+"interaction_allowed": false,
+"knowledge_threshold_required": 32,
+"quest_trigger_id": "NONE"
+},
+"world_state_modifiers": {
+"global_flags_to_inject": { "ANTIGONUS_MUTATION_ECHO": true, "SEER_DIVINATION_BLOCKED": true },
+"region_stat_overrides": {
+"REG_SPIRIT_WORLD": { "divination_misdirection_chance_modifier": 35 }
+}
+},
+"importance": "LEGENDARY",
+"influence_score": 90
+}
+]
+
+

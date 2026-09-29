@@ -1,0 +1,987 @@
+[
+  {
+    "id": "ART_0_08",
+    "metadata": {
+      "name": "Quill of Alzuhod",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "SPECTATOR",
+      "derived_sequence": 1
+    },
+    "current_state": {
+      "status": "ROAMING",
+      "current_holder_id": "NPC_INCE_ZANGWILL",
+      "last_known_location_id": "REG_BACKLUND_EAST"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 5,
+      "corruption_yield_multiplier": 1.45,
+      "divination_distortion_bonus": 95,
+      "reality_instability_rating": 85
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 12,
+      "breach_event_id": "EVT_018"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_PSYCHOLOGY_ALCHEMISTS_DREAM_WEAVING"
+      ],
+      "active_combat_skill_id": "SKL_EVENT_WRITING",
+      "passive_world_flag_injected": "CAUSALITY_MANIPULATION_ACTIVE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_018",
+        "EVT_053"
+      ],
+      "linked_investigations_pool": [
+        "INV_CASE_039"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "ART_0_02",
+    "metadata": {
+      "name": "Trunsoest Brass Book",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "ARBITER",
+      "derived_sequence": 1
+    },
+    "current_state": {
+      "status": "CONTAINED",
+      "current_holder_id": "CHURCH_EVERNIGHT",
+      "last_known_location_id": "LOC_NIGHTHAWK_HQ_BASEMENT"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 3,
+      "corruption_yield_multiplier": 1.20,
+      "divination_distortion_bonus": 70,
+      "reality_instability_rating": 90
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 24,
+      "breach_event_id": "EVT_032"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_LAW_AND_ORDER_MYSTICISM"
+      ],
+      "active_combat_skill_id": "SKL_ABSOLUTE_PROHIBITION",
+      "passive_world_flag_injected": "LOCAL_TACTICAL_CURFEW"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_032",
+        "EVT_072"
+      ],
+      "linked_investigations_pool": [
+        "INV_CASE_016"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "ART_0_01",
+    "metadata": {
+      "name": "Salinger's Blood Banner",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "HUNTER",
+      "derived_sequence": 1
+    },
+    "current_state": {
+      "status": "MISSING",
+      "current_holder_id": "NONE",
+      "last_known_location_id": "LOC_UNDERWORLD_RIFT_BACKLUND"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 8,
+      "corruption_yield_multiplier": 1.60,
+      "divination_distortion_bonus": 60,
+      "reality_instability_rating": 95
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 6,
+      "breach_event_id": "EVT_019"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_FOURTH_EPOCH_WARS"
+      ],
+      "active_combat_skill_id": "SKL_CONFLAGRATION_WAR",
+      "passive_world_flag_injected": "TAVERN_RIOT_ACTIVE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_019",
+        "EVT_074"
+      ],
+      "linked_investigations_pool": [
+        "INV_CASE_027"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "ART_DADO_PROBABILITY",
+    "metadata": {
+      "name": "Die of Probability",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "MONSTER",
+      "derived_sequence": 1
+    },
+    "current_state": {
+      "status": "EQUIPPED",
+      "current_holder_id": "ANGEL_WILL_AUCEPTIN",
+      "last_known_location_id": "LOC_BACKLUND_SUBURBS"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 2,
+      "corruption_yield_multiplier": 1.25,
+      "divination_distortion_bonus": 95,
+      "reality_instability_rating": 70
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 48,
+      "breach_event_id": "EVT_020"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_FATE_AND_PROBABILITY"
+      ],
+      "active_combat_skill_id": "SKL_PROBABILITY_FLIP",
+      "passive_world_flag_injected": "NONE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_020",
+        "EVT_073"
+      ],
+      "linked_investigations_pool": [
+        "INV_CASE_032"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+    {
+    "id": "ART_0_MAGIC_LAMP",
+    "metadata": {
+      "name": "Magic Wishing Lamp",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "NONE",
+      "derived_sequence": 0
+    },
+    "current_state": {
+      "status": "EQUIPPED",
+      "current_holder_id": "GOD_THE_FOOL_KLEIN",
+      "last_known_location_id": "LOC_SEPHIRAH_CASTLE"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 4,
+      "corruption_yield_multiplier": 1.65,
+      "divination_distortion_bonus": 95,
+      "reality_instability_rating": 90
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 24,
+      "breach_event_id": "EVT_056"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_WISHING_LAMP_CURSE",
+        "KNOW_SEFIROT_MYSTERIES"
+      ],
+      "active_combat_skill_id": "SKL_TWISTED_WISH",
+      "passive_world_flag_injected": "LAMP_PARTIALLY_ACTIVE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_056"
+      ],
+      "linked_investigations_pool": [
+        "INV_CASE_050"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "ART_0_PALE_DEATH",
+    "metadata": {
+      "name": "Pale Death",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "DEATH",
+      "derived_sequence": 1
+    },
+    "current_state": {
+      "status": "CONTAINED",
+      "current_holder_id": "CHURCH_EVERNIGHT",
+      "last_known_location_id": "LOC_SERENITY_CATHEDRAL_CORES"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 6,
+      "corruption_yield_multiplier": 1.50,
+      "divination_distortion_bonus": 80,
+      "reality_instability_rating": 85
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 12,
+      "breach_event_id": "EVT_037"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_DANGEROUS_UNDERWORLD_GATES"
+      ],
+      "active_combat_skill_id": "SKL_WITHERING_PLAGUE",
+      "passive_world_flag_injected": "UNDERWORLD_FLOW_ACTIVE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_037"
+      ],
+      "linked_investigations_pool": [
+        "INV_CASE_061"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "ART_0_STAFF_STARS",
+    "metadata": {
+      "name": "Staff of the Stars",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "DOOR",
+      "derived_sequence": 1
+    },
+    "current_state": {
+      "status": "EQUIPPED",
+      "current_holder_id": "TC_009",
+      "last_known_location_id": "REG_BACKLUND_PORT"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 3,
+      "corruption_yield_multiplier": 1.25,
+      "divination_distortion_bonus": 85,
+      "reality_instability_rating": 90
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 48,
+      "breach_event_id": "EVT_017"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_SPACE_TIME_MECHANICS"
+      ],
+      "active_combat_skill_id": "SKL_ASTRAL_SCENE_RECONSTRUCTION",
+      "passive_world_flag_injected": "SPATIAL_DISTORTION_LATENT"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_017"
+      ],
+      "linked_investigations_pool": [
+        "INV_CASE_029"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "ART_0_BOX_GOO",
+    "metadata": {
+      "name": "Box of the Great Old Ones",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "DOOR",
+      "derived_sequence": 1
+    },
+    "current_state": {
+      "status": "EQUIPPED",
+      "current_holder_id": "TC_006",
+      "last_known_location_id": "REG_BACKLUND_WEST"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 4,
+      "corruption_yield_multiplier": 1.35,
+      "divination_distortion_bonus": 90,
+      "reality_instability_rating": 95
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 24,
+      "breach_event_id": "EVT_015"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_SPACE_TIME_MECHANICS"
+      ],
+      "active_combat_skill_id": "SKL_SPACE_TOY_BOX",
+      "passive_world_flag_injected": "NONE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_015"
+      ],
+      "linked_investigations_pool": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "ART_0_PROOF_GLORY",
+    "metadata": {
+      "name": "Proof of Glory",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "SUN",
+      "derived_sequence": 1
+    },
+    "current_state": {
+      "status": "CONTAINED",
+      "current_holder_id": "CHURCH_SUN",
+      "last_known_location_id": "LOC_SUN_CATHEDRAL"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 4,
+      "corruption_yield_multiplier": 1.15,
+      "divination_distortion_bonus": 50,
+      "reality_instability_rating": 40
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 36,
+      "breach_event_id": "EVT_040"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+      ],
+      "active_combat_skill_id": "SKL_SOLAR_FLARE_STRIKE",
+      "passive_world_flag_injected": "STELLAR_RADIATION_ALERT"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_040"
+      ],
+      "linked_investigations_pool": [
+        "INV_CASE_040"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "ART_0_BLACK_EMPEROR_CROWN",
+    "metadata": {
+      "name": "Black Emperor's Crown",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "LAWYER",
+      "derived_sequence": 1
+    },
+    "current_state": {
+      "status": "SEALED",
+      "current_holder_id": "GOD_ROSELLE_BLACK_EMPEROR",
+      "last_known_location_id": "LOC_MAUSOLEUM_ABYSSAL"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 5,
+      "corruption_yield_multiplier": 1.30,
+      "divination_distortion_bonus": 80,
+      "reality_instability_rating": 80
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 72,
+      "breach_event_id": "EVT_024"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_LAW_AND_ORDER_MYSTICISM"
+      ],
+      "active_combat_skill_id": "SKL_RULE_DISTORTION",
+      "passive_world_flag_injected": "RULE_DISTORTION_ACTIVE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": true,
+      "linked_events_pool": [
+        "EVT_024"
+      ],
+      "linked_investigations_pool": [
+        "INV_CASE_044"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "ART_0_ANGEL_CONCEALMENT",
+    "metadata": {
+      "name": "Angel of Concealment",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "NIGHT",
+      "derived_sequence": 1
+    },
+    "current_state": {
+      "status": "CONTAINED",
+      "current_holder_id": "CHURCH_EVERNIGHT",
+      "last_known_location_id": "LOC_SERENITY_CATHEDRAL_CORES"
+    },
+    "engine_modifiers": {
+      "sanity_drain_per_tick": 3,
+      "corruption_yield_multiplier": 1.10,
+      "divination_distortion_bonus": 100,
+      "reality_instability_rating": 60
+    },
+    "containment_protocol": {
+      "requires_active_containment": true,
+      "containment_item_id_required": "NONE",
+      "ticks_before_breach_if_uncontained": 120,
+      "breach_event_id": "EVT_088"
+    },
+    "combat_and_utility_hooks": {
+      "granted_knowledge_keys": [
+        "KNOW_SAFE_CHURCH_EVERNIGHT_HIDDEN_PSALMS"
+      ],
+      "active_combat_skill_id": "SKL_ABSOLUTE_CONCEALMENT",
+      "passive_world_flag_injected": "PRISON_NIGHT_BARRIER_ACTIVE"
+    },
+    "lifecycle_hooks": {
+      "can_spawn_world_incidents": false,
+      "linked_events_pool": [
+        "EVT_088"
+      ],
+      "linked_investigations_pool": []
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "ART_0_EYE_GOD",
+    "metadata": {
+      "name": "Eye of God",
+      "sealed_grade": "GRADE_0",
+      "pathway_affinity": "READER",
+      "derived_sequence": 1
+    },
+    "current_state": {
+      "status": "CONTAINED",
+"current_holder_id": "CHURCH_WISDOM",
+"last_known_location_id": "LOC_WISDOM_TOWER"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 4,
+"corruption_yield_multiplier": 1.20,
+"divination_distortion_bonus": 90,
+"reality_instability_rating": 55
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 48,
+"breach_event_id": "EVT_090"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_SAFE_FOURTH_EPOCH_HISTORY"
+],
+"active_combat_skill_id": "SKL_OMNISCIENCE_ANALYSIS",
+"passive_world_flag_injected": "WISDOM_ANALYSIS_ACTIVE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_090"
+],
+"linked_investigations_pool": [
+"INV_CASE_049"
+]
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "ART_0_CHEEK_RINGS",
+"metadata": {
+"name": "Cheek's Rings",
+"sealed_grade": "GRADE_0",
+"pathway_affinity": "ASSASSIN",
+"derived_sequence": 1
+},
+"current_state": {
+"status": "CONTAINED",
+"current_holder_id": "GOD_CHEEK_DEMONESS",
+"last_known_location_id": "LOC_MIRROR_PLANE_BACKLUND"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 5,
+"corruption_yield_multiplier": 1.55,
+"divination_distortion_bonus": 85,
+"reality_instability_rating": 80
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 24,
+"breach_event_id": "EVT_026"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_ORGANIZATION_DEMONESS_NETWORKS"
+],
+"active_combat_skill_id": "SKL_PLAGUE_WAVE",
+"passive_world_flag_injected": "FORCED_MADNESS_WAVE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_026",
+"EVT_034"
+],
+"linked_investigations_pool": [
+"INV_CASE_026"
+]
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "ART_0_GIFT_LAND",
+"metadata": {
+"name": "Gift of the Land",
+"sealed_grade": "GRADE_0",
+"pathway_affinity": "PLANTER",
+"derived_sequence": 1
+},
+"current_state": {
+"status": "CONTAINED",
+"current_holder_id": "CHURCH_EARTH_MOTHER",
+"last_known_location_id": "LOC_EARTH_MOTHER_CATHEDRAL"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 3,
+"corruption_yield_multiplier": 1.30,
+"divination_distortion_bonus": 65,
+"reality_instability_rating": 70
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 60,
+"breach_event_id": "EVT_083"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_MYSTICAL_ANATOMY"
+],
+"active_combat_skill_id": "SKL_ORGANIC_MUTATION",
+"passive_world_flag_injected": "WOODS_ORGANIC_MUTATION_MAXIMUM"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_083"
+],
+"linked_investigations_pool": [
+"INV_CASE_010"
+]
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "ART_0_CLOAK_STARS",
+"metadata": {
+"name": "Cloak of Stars",
+"sealed_grade": "GRADE_0",
+"pathway_affinity": "DOOR",
+"derived_sequence": 1
+},
+"current_state": {
+"status": "MISSING",
+"current_holder_id": "NONE",
+"last_known_location_id": "NONE"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 4,
+"corruption_yield_multiplier": 1.25,
+"divination_distortion_bonus": 90,
+"reality_instability_rating": 95
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 24,
+"breach_event_id": "EVT_017"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_SPACE_TIME_MECHANICS"
+],
+"active_combat_skill_id": "SKL_ASTRAL_CLOAKING",
+"passive_world_flag_injected": "NONE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_017"
+],
+"linked_investigations_pool": []
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "ART_0_SAGE_FRONTLET",
+"metadata": {
+"name": "Sage Frontlet",
+"sealed_grade": "GRADE_0",
+"pathway_affinity": "MYSTERY_PRYER",
+"derived_sequence": 1
+},
+"current_state": {
+"status": "CONTAINED",
+"current_holder_id": "GOD_HIDDEN_SAGE",
+"last_known_location_id": "LOC_ASTRAL_SHADOWS"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 5,
+"corruption_yield_multiplier": 1.40,
+"divination_distortion_bonus": 95,
+"reality_instability_rating": 75
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 36,
+"breach_event_id": "EVT_085"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_COSMIC_SUSURRUS"
+],
+"active_combat_skill_id": "SKL_RUNIC_BLAST",
+"passive_world_flag_injected": "FINANCE_COGNITIVE_SHATTER"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_085"
+],
+"linked_investigations_pool": [
+"INV_CASE_044"
+]
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "ART_0_SENECA_SCRIPTURE",
+"metadata": {
+"name": "Post-Apocalyptic Scripture",
+"sealed_grade": "GRADE_0",
+"pathway_affinity": "NONE",
+"derived_sequence": 1
+},
+"current_state": {
+"status": "MISSING",
+"current_holder_id": "NONE",
+"last_known_location_id": "NONE"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 6,
+"corruption_yield_multiplier": 1.70,
+"divination_distortion_bonus": 80,
+"reality_instability_rating": 90
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 12,
+"breach_event_id": "EVT_084"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_COSMIC_HUNGER"
+],
+"active_combat_skill_id": "SKL_CONCEPTUAL_HUNGER",
+"passive_world_flag_injected": "CONCEPTUAL_HUNGER_CRITICAL"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_084"
+],
+"linked_investigations_pool": [
+"INV_CASE_031"
+]
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "ART_0_SOLOMON_MASK",
+"metadata": {
+"name": "Solomon's Mask",
+"sealed_grade": "GRADE_0",
+"pathway_affinity": "LAWYER",
+"derived_sequence": 1
+},
+"current_state": {
+"status": "MISSING",
+"current_holder_id": "NONE",
+"last_known_location_id": "NONE"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 4,
+"corruption_yield_multiplier": 1.30,
+"divination_distortion_bonus": 85,
+"reality_instability_rating": 80
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 48,
+"breach_event_id": "EVT_086"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_LAW_AND_ORDER_MYSTICISM"
+],
+"active_combat_skill_id": "SKL_ORDER_DISTORTION",
+"passive_world_flag_injected": "FISCAL_FRAUD_ACTIVE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_086"
+],
+"linked_investigations_pool": [
+"INV_CASE_042"
+]
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "ART_0_THORNED_CROWN",
+"metadata": {
+"name": "Thorned Crown",
+"sealed_grade": "GRADE_0",
+"pathway_affinity": "HANGED_MAN",
+"derived_sequence": 1
+},
+"current_state": {
+"status": "CONTAINED",
+"current_holder_id": "GOD_ADAM_TRUE_CREATOR",
+"last_known_location_id": "LOC_CORPSE_CATHEDRAL"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 6,
+"corruption_yield_multiplier": 1.50,
+"divination_distortion_bonus": 75,
+"reality_instability_rating": 85
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 24,
+"breach_event_id": "EVT_019"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_ORGANIZATION_AURORA_ORDER_FLESH"
+],
+"active_combat_skill_id": "SKL_FLESH_DEGENERATION",
+"passive_world_flag_injected": "TRUE_CREATOR_WHISPER_RESONANCE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_019"
+],
+"linked_investigations_pool": [
+"INV_CASE_031"
+]
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "ART_0_DIVINE_KINGDOM",
+"metadata": {
+"name": "The Divine Kingdom Without People",
+"sealed_grade": "GRADE_0",
+"pathway_affinity": "SUN",
+"derived_sequence": 1
+},
+"current_state": {
+"status": "CONTAINED",
+"current_holder_id": "CHURCH_SUN",
+"last_known_location_id": "LOC_SUN_CATHEDRAL"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 4,
+"corruption_yield_multiplier": 1.20,
+"divination_distortion_bonus": 60,
+"reality_instability_rating": 75
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 36,
+"breach_event_id": "EVT_069"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+],
+"active_combat_skill_id": "SKL_SOLAR_ISOLATION",
+"passive_world_flag_injected": "NONE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_069"
+],
+"linked_investigations_pool": []
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "ART_0_THE_FOURTH_SUN",
+"metadata": {
+"name": "The Fourth Sun",
+"sealed_grade": "GRADE_0",
+"pathway_affinity": "SUN",
+"derived_sequence": 1
+},
+"current_state": {
+"status": "MISSING",
+"current_holder_id": "NONE",
+"last_known_location_id": "NONE"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 5,
+"corruption_yield_multiplier": 1.40,
+"divination_distortion_bonus": 70,
+"reality_instability_rating": 90
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 12,
+"breach_event_id": "EVT_040"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_CHURCH_SUN_HERETICAL_TEXTS"
+],
+"active_combat_skill_id": "SKL_FALSE_SUN_RADIATION",
+"passive_world_flag_injected": "STELLAR_RADIATION_ALERT"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_040"
+],
+"linked_investigations_pool": [
+"INV_CASE_040"
+]
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "ART_0_THE_LAST_BANQUET",
+"metadata": {
+"name": "The Last Banquet",
+"sealed_grade": "GRADE_0",
+"pathway_affinity": "NONE",
+"derived_sequence": 1
+},
+"current_state": {
+"status": "CONTAINED",
+"current_holder_id": "CHURCH_EVERNIGHT",
+"last_known_location_id": "LOC_SERENITY_CATHEDRAL_CORES"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 4,
+"corruption_yield_multiplier": 1.50,
+"divination_distortion_bonus": 85,
+"reality_instability_rating": 80
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 48,
+"breach_event_id": "EVT_087"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_COSMIC_HUNGER"
+],
+"active_combat_skill_id": "SKL_SOUL_FEAST",
+"passive_world_flag_injected": "VINEYARD_BLOOD_FRENZY"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_087"
+],
+"linked_investigations_pool": [
+"INV_CASE_024"
+]
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "ART_0_THE_SETTING_SUN_ROOSTER",
+"metadata": {
+"name": "The Setting Sun Rooster",
+"sealed_grade": "GRADE_0",
+"pathway_affinity": "HUNTER",
+"derived_sequence": 1
+},
+"current_state": {
+"status": "MISSING",
+"current_holder_id": "NONE",
+"last_known_location_id": "NONE"
+},
+"engine_modifiers": {
+"sanity_drain_per_tick": 4,
+"corruption_yield_multiplier": 1.35,
+"divination_distortion_bonus": 65,
+"reality_instability_rating": 85
+},
+"containment_protocol": {
+"requires_active_containment": true,
+"containment_item_id_required": "NONE",
+"ticks_before_breach_if_uncontained": 24,
+"breach_event_id": "EVT_084"
+},
+"combat_and_utility_hooks": {
+"granted_knowledge_keys": [
+"KNOW_PATHWAY_HUNTER_PYROMANIAC"
+],
+"active_combat_skill_id": "SKL_SUNSET_FLAME",
+"passive_world_flag_injected": "PORT_BAR_BRAWL_ACTIVE"
+},
+"lifecycle_hooks": {
+"can_spawn_world_incidents": true,
+"linked_events_pool": [
+"EVT_084"
+],
+"linked_investigations_pool": []
+},
+"importance": "LEGENDARY"
+}
+]

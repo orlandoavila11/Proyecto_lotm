@@ -1,0 +1,236 @@
+[
+  {
+    "monster_id": "mon_lavos_squid",
+    "district_tags": [
+      "TASS_RIVER",
+      "BACKLUND_SUBTERRANEAN_CANALS",
+      "EAST_DISTRICT_DRAINAGE"
+    ],
+    "environment_types": [
+      "DEEP_WATER",
+      "SUBTERRANEAN_RIVER"
+    ],
+    "fog_density_required": "ANY",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_LOW",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_hornacis_gray_mountain_goat",
+    "district_tags": [
+      "HORNACIS_MOUNTAIN_PASS",
+      "WEST_PEAK_CLIFFS",
+      "DESOLATE_RIDGE_OUTSKIRTS"
+    ],
+    "environment_types": [
+      "MISTY_PEAK",
+      "RUINS"
+    ],
+    "fog_density_required": "MODERATE",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_LOW",
+    "requires_spiritual_vision": false
+  },
+  {
+    "monster_id": "mon_human_faced_rose",
+    "district_tags": [
+      "MAYER_CEMETERY_GROUNDS",
+      "HILLSTON_BOROUGH_BURIAL_VAULT",
+      "SOUTH_SUBURBAN_ABANDONED_CHURCH"
+    ],
+    "environment_types": [
+      "CEMETERY",
+      "RUINS"
+    ],
+    "fog_density_required": "LOW",
+    "lunar_phase_alignment": "NEW_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_LOW",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_mist_treant",
+    "district_tags": [
+      "MIST_FOREST_PRIMORDIAL",
+      "CHERWOOD_NORTH_WOODLANDS",
+      "ISLE_OF_MISTS_COAST"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING",
+      "RUINS"
+    ],
+    "fog_density_required": "HEAVY",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_LOW",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_dark_patterned_black_panther",
+    "district_tags": [
+      "SOUTHERN_CONTINENT_JUNGLE",
+      "HORNACIS_LOW_FORESTS",
+      "ROYAL_HUNTING_WOODS_EAST"
+    ],
+    "environment_types": [
+      "RUINS",
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "MODERATE",
+    "lunar_phase_alignment": "NEW_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_MODERATE",
+    "requires_spiritual_vision": false
+  },
+  {
+    "monster_id": "mon_thousand_faced_hunter",
+    "district_tags": [
+      "BACKLUND_FOURTH_EPOCH_UNDERGROUND",
+      "EAST_DISTRICT_SLUMS_TOMB",
+      "SPIRIT_WORLD_KARST_DEPTHS"
+    ],
+    "environment_types": [
+      "SEWERS",
+      "RUINS",
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "HEAVY",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_MODERATE",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_human_skinned_shadow",
+    "district_tags": [
+      "EAST_DISTRICT_ALLEYWAYS",
+      "DOCK_DISTRICT_WAREHOUSES",
+      "TUDOR_RUINS_SHADOW_WALLS"
+    ],
+    "environment_types": [
+      "SEWERS",
+      "RUINS",
+      "FORGOTTEN_ATTIC"
+    ],
+    "fog_density_required": "MODERATE",
+    "lunar_phase_alignment": "NEW_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_MODERATE",
+    "requires_spiritual_vision": false
+  },
+  {
+    "monster_id": "mon_six_winged_gargoyle",
+    "district_tags": [
+      "ANTIGONUS_FAMILY_CASTLE_RUINS",
+      "ABANDONED_CATHEDRAL_ROOFTOPS",
+      "ZARATUL_MAUSOLEUM_OUTSKIRTS"
+    ],
+    "environment_types": [
+      "RUINS",
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "MODERATE",
+    "lunar_phase_alignment": "FULL_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_HIGH",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_ancient_wraith",
+    "district_tags": [
+      "ABANDONED_NOBLE_ESTATE",
+      "FOURTH_EPOCH_PALACE_MIRROR_HALL",
+      "WEST_BOROUGH_SEALED_MANOR"
+    ],
+    "environment_types": [
+      "FORGOTTEN_ATTIC",
+      "RUINS"
+    ],
+    "fog_density_required": "MODERATE",
+    "lunar_phase_alignment": "BLOOD_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_HIGH",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_bizarro_bane",
+    "district_tags": [
+      "CARNIVAL_OF_THE_FALLEN_ASTRAL",
+      "ANTIGONUS_NATION_OF_THE_NIGHT_RUINS"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING",
+      "RUINS"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "BLOOD_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_CRITICAL",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_spirit_world_plunderer",
+    "district_tags": [
+      "ASTRAL_RIFT_VALLEY",
+      "SPIRIT_WORLD_ABYSSAL_CORRIDOR"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_CRITICAL",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_hound_of_fulgrim",
+    "district_tags": [
+      "FOG_OF_HISTORY_STRATA",
+      "THIRD_EPOCH_TIME_FROST_VALLEY"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING",
+      "RUINS"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "NEW_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_CRITICAL",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_demonic_wolf_of_fog",
+    "district_tags": [
+      "SECOND_EPOCH_DEMONIC_WOLF_LAIR",
+      "CONCEALED_VALLEY_OF_FLEGREA"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING",
+      "MISTY_PEAK"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "BLOOD_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_CRITICAL",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_dark_demonic_wolf",
+    "district_tags": [
+      "TEMPLE_OF_WISHES_RUINS",
+      "FORSAKEN_LAND_OF_THE_GODS_HEAVENS"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "BLOOD_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_DIVINE",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_spirit_worm_manifestation",
+    "district_tags": [
+      "SEFIRAH_CASTLE_THRESHOLD",
+      "PINNACLE_OF_MYSTERIES_FOG"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_DIVINE",
+    "requires_spiritual_vision": true
+  }
+]
+

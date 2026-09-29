@@ -1,0 +1,78 @@
+{
+  "sequence": 9,
+
+  "quests": [
+
+    {
+      "id": "SQ9_001",
+      "title": "Missing Heirloom",
+      "difficulty": "EASY",
+      "objective": "Locate a stolen family heirloom.",
+      "location": "CITY",
+      "tags": ["INVESTIGATION"]
+    },
+
+    {
+      "id": "SQ9_002",
+      "title": "Midnight Investigation",
+      "difficulty": "EASY",
+      "objective": "Investigate strange noises near a cemetery.",
+      "location": "CEMETERY",
+      "tags": ["MYSTERY"]
+    },
+
+    {
+      "id": "SQ9_003",
+      "title": "Cult Activity",
+      "difficulty": "EASY",
+      "objective": "Gather evidence of secret cult gatherings.",
+      "location": "CITY",
+      "tags": ["CULT"]
+    },
+
+    {
+      "id": "SQ9_004",
+      "title": "Protect the Witness",
+      "difficulty": "EASY",
+      "objective": "Keep an important witness alive for three days.",
+      "location": "CITY",
+      "tags": ["ESCORT"]
+    },
+
+    {
+      "id": "SQ9_005",
+      "title": "Suspicious Merchant",
+      "difficulty": "EASY",
+      "objective": "Determine whether a merchant is involved in criminal activity.",
+      "location": "MARKET",
+      "tags": ["SOCIAL"]
+    },
+
+    {
+      "id": "SQ9_006",
+      "title": "Hidden Route",
+      "difficulty": "EASY",
+      "objective": "Discover a smuggling route.",
+      "location": "DOCKS",
+      "tags": ["EXPLORATION"]
+    },
+
+    {
+      "id": "SQ9_007",
+      "title": "Mysterious Letter",
+      "difficulty": "EASY",
+      "objective": "Identify the sender of a coded message.",
+      "location": "CITY",
+      "tags": ["INVESTIGATION"]
+    },
+
+    {
+      "id": "SQ9_008",
+      "title": "Retrieve a Package",
+      "difficulty": "EASY",
+      "objective": "Recover an important package before sunset.",
+      "location": "CITY",
+      "tags": ["RECOVERY"]
+    }
+  ]
+}

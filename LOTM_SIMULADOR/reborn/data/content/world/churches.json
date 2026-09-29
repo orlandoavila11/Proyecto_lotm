@@ -1,0 +1,448 @@
+[
+  {
+    "id": "CHURCH_EVERNIGHT",
+    "metadata": {
+      "name": "Church of the Evernight Goddess",
+      "classification": "ORTHODOX",
+      "founded_epoch": "FOURTH_EPOCH_EARLY",
+      "main_deity_id": "GOD_EVERNIGHT"
+    },
+    "anchor_profile": {
+      "influence_score": 95,
+      "pop_belief_percentage": 0.45,
+      "anchor_stability_contribution": 90,
+      "hq_location_id": "LOC_CATHEDRAL_SERENITY"
+    },
+    "holy_order_profile": {
+      "order_name": "Nighthawks",
+      "deployment_aggression_rating": 75,
+      "average_captain_sequence": 7,
+      "max_active_squads": 24
+    },
+    "pathway_alignment": {
+      "controlled_pathways": [
+        "NIGHT",
+        "DEATH",
+        "COMBAT"
+      ],
+      "monopolized_uniqueness_ids": [
+        "UNI_DARKNESS",
+        "UNI_DEATH",
+        "UNI_TWILIGHT_GIANT"
+      ]
+    },
+    "geopolitical_influence": {
+      "aligned_nations": [
+        "LOEN_KINGDOM"
+      ],
+      "political_leverage_score": 90,
+      "black_market_suppression_multiplier": 1.35
+    },
+    "engine_modifiers": {
+      "regional_sanity_regen_bonus": 5,
+      "regional_corruption_suppression_rating": 85,
+      "spirit_world_distortion_buffer": 20
+    },
+    "faction_relations": [
+      {
+        "target_faction_id": "CHURCH_STORMS",
+        "relation_type": "ALLIED",
+        "diplomatic_value": 70
+      },
+      {
+        "target_faction_id": "CHURCH_STEAM",
+        "relation_type": "ALLIED",
+        "diplomatic_value": 65
+      },
+      {
+        "target_faction_id": "CHURCH_SUN",
+        "relation_type": "NEUTRAL",
+        "diplomatic_value": 20
+      }
+    ],
+    "lifecycle_hooks": {
+      "can_trigger_inquisition_events": true,
+      "linked_investigations_pool": [
+        "INV_CASE_004",
+        "INV_CASE_005",
+        "INV_CASE_017"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "CHURCH_STORMS",
+    "metadata": {
+      "name": "Church of the Lord of Storms",
+      "classification": "ORTHODOX",
+      "founded_epoch": "FOURTH_EPOCH_EARLY",
+      "main_deity_id": "GOD_LORD_STORMS"
+    },
+    "anchor_profile": {
+      "influence_score": 90,
+      "pop_belief_percentage": 0.35,
+      "anchor_stability_contribution": 85,
+      "hq_location_id": "LOC_PASU_ISLAND"
+    },
+    "holy_order_profile": {
+      "order_name": "Mandated Punishers",
+      "deployment_aggression_rating": 95,
+      "average_captain_sequence": 7,
+      "max_active_squads": 30
+    },
+    "pathway_alignment": {
+      "controlled_pathways": [
+        "SAILOR"
+      ],
+      "monopolized_uniqueness_ids": [
+        "UNI_TYRANT"
+      ]
+    },
+    "geopolitical_influence": {
+      "aligned_nations": [
+        "LOEN_KINGDOM"
+      ],
+      "political_leverage_score": 85,
+      "black_market_suppression_multiplier": 1.50
+    },
+    "engine_modifiers": {
+      "regional_sanity_regen_bonus": 2,
+      "regional_corruption_suppression_rating": 70,
+      "spirit_world_distortion_buffer": 10
+    },
+    "faction_relations": [
+      {
+        "target_faction_id": "CHURCH_EVERNIGHT",
+        "relation_type": "ALLIED",
+        "diplomatic_value": 70
+      },
+      {
+        "target_faction_id": "CHURCH_STEAM",
+        "relation_type": "FRIENDLY",
+        "diplomatic_value": 50
+      },
+      {
+        "target_faction_id": "CHURCH_SUN",
+        "relation_type": "HOSTILE",
+        "diplomatic_value": -60
+      }
+    ],
+    "lifecycle_hooks": {
+      "can_trigger_inquisition_events": true,
+      "linked_investigations_pool": [
+        "INV_CASE_001",
+        "INV_CASE_007",
+        "INV_CASE_025"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "CHURCH_STEAM",
+    "metadata": {
+      "name": "Church of the God of Steam and Machinery",
+      "classification": "ORTHODOX",
+      "founded_epoch": "FOURTH_EPOCH_LATE",
+      "main_deity_id": "GOD_STEAM_MACHINERY"
+    },
+    "anchor_profile": {
+      "influence_score": 80,
+      "pop_belief_percentage": 0.20,
+      "anchor_stability_contribution": 75,
+      "hq_location_id": "LOC_MACHINERY_CATHEDRAL"
+    },
+    "holy_order_profile": {
+      "order_name": "Machinery Hivemind",
+      "deployment_aggression_rating": 60,
+      "average_captain_sequence": 7,
+      "max_active_squads": 16
+    },
+    "pathway_alignment": {
+      "controlled_pathways": [
+        "SAVANT"
+      ],
+      "monopolized_uniqueness_ids": [
+        "UNI_PARAGON"
+      ]
+    },
+    "geopolitical_influence": {
+      "aligned_nations": [
+        "LOEN_KINGDOM",
+        "INTIS_REPUBLIC"
+      ],
+      "political_leverage_score": 75,
+      "black_market_suppression_multiplier": 1.15
+    },
+    "engine_modifiers": {
+      "regional_sanity_regen_bonus": 3,
+      "regional_corruption_suppression_rating": 65,
+      "spirit_world_distortion_buffer": 15
+    },
+    "faction_relations": [
+      {
+        "target_faction_id": "CHURCH_EVERNIGHT",
+        "relation_type": "ALLIED",
+        "diplomatic_value": 65
+      },
+      {
+        "target_faction_id": "CHURCH_STORMS",
+        "relation_type": "FRIENDLY",
+        "diplomatic_value": 50
+      },
+      {
+        "target_faction_id": "CHURCH_WISDOM",
+        "relation_type": "HOSTILE",
+        "diplomatic_value": -45
+      }
+    ],
+    "lifecycle_hooks": {
+      "can_trigger_inquisition_events": true,
+      "linked_investigations_pool": [
+        "INV_CASE_015",
+        "INV_CASE_035",
+        "INV_CASE_055"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "CHURCH_SUN",
+    "metadata": {
+      "name": "Church of the Eternal Blazing Sun",
+      "classification": "ORTHODOX",
+      "founded_epoch": "FOURTH_EPOCH_EARLY",
+      "main_deity_id": "GOD_ETERNAL_BLAZING_SUN"
+    },
+    "anchor_profile": {
+      "influence_score": 90,
+      "pop_belief_percentage": 0.60,
+      "anchor_stability_contribution": 85,
+      "hq_location_id": "LOC_SUN_CATHEDRAL"
+    },
+    "holy_order_profile": {
+      "order_name": "Purifiers",
+      "deployment_aggression_rating": 90,
+      "average_captain_sequence": 6,
+      "max_active_squads": 20
+    },
+    "pathway_alignment": {
+      "controlled_pathways": [
+        "SUN"
+      ],
+      "monopolized_uniqueness_ids": [
+        "UNI_SUN"
+      ]
+    },
+    "geopolitical_influence": {
+      "aligned_nations": [
+        "INTIS_REPUBLIC"
+      ],
+      "political_leverage_score": 95,
+      "black_market_suppression_multiplier": 1.40
+    },
+    "engine_modifiers": {
+      "regional_sanity_regen_bonus": 6,
+      "regional_corruption_suppression_rating": 90,
+      "spirit_world_distortion_buffer": 5
+    },
+    "faction_relations": [
+      {
+        "target_faction_id": "CHURCH_STORMS",
+        "relation_type": "HOSTILE",
+        "diplomatic_value": -60
+      },
+      {
+        "target_faction_id": "CHURCH_WISDOM",
+        "relation_type": "WAR_STATE",
+        "diplomatic_value": -90
+      }
+    ],
+    "lifecycle_hooks": {
+      "can_trigger_inquisition_events": true,
+      "linked_investigations_pool": [
+        "INV_CASE_012",
+        "INV_CASE_040"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "CHURCH_WISDOM",
+    "metadata": {
+      "name": "Church of the God of Knowledge and Wisdom",
+      "classification": "ORTHODOX",
+      "founded_epoch": "FOURTH_EPOCH_EARLY",
+      "main_deity_id": "GOD_WISDOM"
+    },
+    "anchor_profile": {
+      "influence_score": 75,
+      "pop_belief_percentage": 0.85,
+      "anchor_stability_contribution": 80,
+      "hq_location_id": "LOC_WISDOM_TOWER"
+    },
+    "holy_order_profile": {
+      "order_name": "Ascetic Knights",
+      "deployment_aggression_rating": 55,
+      "average_captain_sequence": 6,
+      "max_active_squads": 12
+    },
+    "pathway_alignment": {
+      "controlled_pathways": [
+        "READER"
+      ],
+      "monopolized_uniqueness_ids": [
+        "UNI_WHITE_TOWER"
+      ]
+    },
+    "geopolitical_influence": {
+      "aligned_nations": [
+        "LENBURG_PRINCI_PALITY"
+      ],
+      "political_leverage_score": 80,
+      "black_market_suppression_multiplier": 1.10
+    },
+    "engine_modifiers": {
+      "regional_sanity_regen_bonus": 4,
+      "regional_corruption_suppression_rating": 75,
+      "spirit_world_distortion_buffer": 30
+    },
+    "faction_relations": [
+      {
+        "target_faction_id": "CHURCH_SUN",
+        "relation_type": "WAR_STATE",
+        "diplomatic_value": -90
+      },
+      {
+        "target_faction_id": "CHURCH_STEAM",
+        "relation_type": "HOSTILE",
+        "diplomatic_value": -45
+      }
+    ],
+    "lifecycle_hooks": {
+      "can_trigger_inquisition_events": true,
+      "linked_investigations_pool": [
+        "INV_CASE_011",
+        "INV_CASE_049",
+        "INV_CASE_063"
+      ]
+    },
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "CHURCH_EARTH_MOTHER",
+    "metadata": {
+      "name": "Church of the Earth Mother",
+      "classification": "ORTHODOX",
+      "founded_epoch": "FIFTH_EPOCH_EARLY",
+      "main_deity_id": "GOD_EARTH_MOTHER"
+    },
+    "anchor_profile": {
+      "influence_score": 70,
+      "pop_belief_percentage": 0.40,
+      "anchor_stability_contribution": 75,
+      "hq_location_id": "LOC_EARTH_MOTHER_CATHEDRAL"
+    },
+    "holy_order_profile": {
+      "order_name": "Harvest Guardians",
+      "deployment_aggression_rating": 50,
+      "average_captain_sequence": 7,
+      "max_active_squads": 10
+    },
+    "pathway_alignment": {
+      "controlled_pathways": [
+        "PLANTER"
+      ],
+      "monopolized_uniqueness_ids": [
+        "UNI_MOTHER"
+      ]
+    },
+    "geopolitical_influence": {
+      "aligned_nations": [
+        "FEYSAC_EMPIRE"
+      ],
+      "political_leverage_score": 65,
+      "black_market_suppression_multiplier": 1.05
+    },
+    "engine_modifiers": {
+      "regional_sanity_regen_bonus": 5,
+      "regional_corruption_suppression_rating": 80,
+      "spirit_world_distortion_buffer": 10
+    },
+    "faction_relations": [
+      {
+        "target_faction_id": "CHURCH_EVERNIGHT",
+        "relation_type": "NEUTRAL",
+        "diplomatic_value": 15
+      }
+    ],
+    "lifecycle_hooks": {
+"can_trigger_inquisition_events": true,
+"linked_investigations_pool": [
+"INV_CASE_010",
+"INV_CASE_022",
+"INV_CASE_080"
+]
+},
+"importance": "LEGENDARY"
+},
+{
+"id": "CHURCH_FOOL",
+"metadata": {
+"name": "Church of the Fool",
+"classification": "ORTHODOX",
+"founded_epoch": "FIFTH_EPOCH_LATE",
+"main_deity_id": "GOD_THE_FOOL_KLEIN"
+},
+"anchor_profile": {
+"influence_score": 60,
+"pop_belief_percentage": 0.15,
+"anchor_stability_contribution": 95,
+"hq_location_id": "LOC_CHURCH_OF_THE_FOOL_BASE"
+},
+"holy_order_profile": {
+"order_name": "Ghosts of the Fool",
+"deployment_aggression_rating": 70,
+"average_captain_sequence": 5,
+"max_active_squads": 8
+},
+"pathway_alignment": {
+"controlled_pathways": [
+"FOOL",
+"DOOR",
+"ERROR"
+],
+"monopolized_uniqueness_ids": [
+"UNI_FOOL",
+"UNI_DOOR",
+"UNI_ERROR"
+]
+},
+"geopolitical_influence": {
+"aligned_nations": [
+"RORE_CITY"
+],
+"political_leverage_score": 50,
+"black_market_suppression_multiplier": 1.20
+},
+"engine_modifiers": {
+"regional_sanity_regen_bonus": 4,
+"regional_corruption_suppression_rating": 85,
+"spirit_world_distortion_buffer": 40
+},
+"faction_relations": [
+{
+"target_faction_id": "CHURCH_EVERNIGHT",
+"relation_type": "ALLIED",
+"diplomatic_value": 85
+}
+],
+"lifecycle_hooks": {
+"can_trigger_inquisition_events": true,
+"linked_investigations_pool": [
+"INV_CASE_008",
+"INV_CASE_023"
+]
+},
+"importance": "LEGENDARY"
+}
+]

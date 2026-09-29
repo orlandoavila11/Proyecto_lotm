@@ -1,0 +1,78 @@
+{
+  "sequence": 0,
+
+  "quests": [
+
+    {
+      "id": "SQ0_001",
+      "title": "Protect Reality",
+      "difficulty": "DEITY",
+      "objective": "Prevent an Outer Deity from descending.",
+      "location": "WORLD",
+      "tags": ["OUTER_DEITY"]
+    },
+
+    {
+      "id": "SQ0_002",
+      "title": "Divine War",
+      "difficulty": "DEITY",
+      "objective": "Fight a war against another deity.",
+      "location": "DIVINE_DOMAIN",
+      "tags": ["DEITY"]
+    },
+
+    {
+      "id": "SQ0_003",
+      "title": "Spread Faith",
+      "difficulty": "DEITY",
+      "objective": "Expand faith across multiple nations.",
+      "location": "WORLD",
+      "tags": ["FAITH"]
+    },
+
+    {
+      "id": "SQ0_004",
+      "title": "Control a Sefirah",
+      "difficulty": "DEITY",
+      "objective": "Establish dominance over a Sefirah.",
+      "location": "SEFIRAH",
+      "tags": ["SEFIRAH"]
+    },
+
+    {
+      "id": "SQ0_005",
+      "title": "Guide an Epoch",
+      "difficulty": "DEITY",
+      "objective": "Determine the direction of a new era.",
+      "location": "WORLD",
+      "tags": ["HISTORY"]
+    },
+
+    {
+      "id": "SQ0_006",
+      "title": "Seal an Outer Deity",
+      "difficulty": "DEITY",
+      "objective": "Prevent the descent of a Great Old One.",
+      "location": "COSMOS",
+      "tags": ["GOO"]
+    },
+
+    {
+      "id": "SQ0_007",
+      "title": "Challenge a Great Old One",
+      "difficulty": "DEITY",
+      "objective": "Confront a Great Old One and survive.",
+      "location": "COSMOS",
+      "tags": ["GOO"]
+    },
+
+    {
+      "id": "SQ0_008",
+      "title": "Beyond Godhood",
+      "difficulty": "DEITY",
+      "objective": "Advance toward the level of a Great Old One.",
+      "location": "SEFIRAH",
+      "tags": ["ASCENSION"]
+    }
+  ]
+}

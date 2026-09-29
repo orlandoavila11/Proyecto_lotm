@@ -1,0 +1,379 @@
+{
+  "gitAnchored": 0,
+  "sizeJsonAnchored": 34,
+  "total": 34,
+  "mismatchesCount": 33,
+  "mismatches": [
+    {
+      "file": "reborn/data/content/events/events.json",
+      "diskHash": "ee93205a5739dac1af2ac74180ba902d5536bf495e4e590b407d56348e2d8416",
+      "gitHash": "871352d54ecf05eec5d95d6586d8748b2ac4e5c5d08fcd0240122dc2dbc2c45d",
+      "gitPath": "LOTM_SIMULADOR/src/events/events.json"
+    },
+    {
+      "file": "reborn/data/content/world/tarot_club_members.json",
+      "diskHash": "517be0b4e558662f0dcbf50092d687b4a9d57b0f3bdf6995a71d6854302daa6a",
+      "gitHash": "24e84f1d47738fe0c693381598bf63730b0abdf475f8e1188668b557fe4f6b9e",
+      "gitPath": "LOTM_SIMULADOR/src/tarot/tarot_club_members.json"
+    },
+    {
+      "file": "reborn/data/content/world/angels.json",
+      "diskHash": "15422cbdd5599d543de3e61edc784c62d77e8b9b7ef1d043e62734d761bebd54",
+      "gitHash": "873589115e7e828a66854d59da59008ba78cce98b2a9229d22e7c5e52aff235f",
+      "gitPath": "LOTM_SIMULADOR/src/world/angels.json"
+    },
+    {
+      "file": "reborn/data/content/world/churches.json",
+      "diskHash": "36555bf52f6f8b86611393122915d1a89d9f7cf6954e780560cd0b82590a996d",
+      "gitHash": "4a6d5aa22a9b6126fc60846e9136e015afb793747655fca169982bf00cd2f479",
+      "gitPath": "LOTM_SIMULADOR/src/world/churches.json"
+    },
+    {
+      "file": "reborn/data/content/world/cities.json",
+      "diskHash": "681b3f4d93145ce483680382917b36c11a16f6a7a1d87947793fda4fe2b551fa",
+      "gitHash": "3c2f01c82fb71deec3b2e8c7db25a341f9cfc5bf88660415ad7113005084248f",
+      "gitPath": "LOTM_SIMULADOR/src/world/cities.json"
+    },
+    {
+      "file": "reborn/data/content/world/countries.json",
+      "diskHash": "b050c6604906848df2e6aa7bdadf5495c99ae5e58aa664a8517c019f85278b49",
+      "gitHash": "d67a0162e07e4b7768048b9b739d4270fa3de53ba496329c156e08818e710bf0",
+      "gitPath": "LOTM_SIMULADOR/src/world/countries.json"
+    },
+    {
+      "file": "reborn/data/content/world/gods.json",
+      "diskHash": "5dc10a5ac949fd3cc3be58fd67d6a60d53d4c45fb8ed700cca2c87e4b6d16832",
+      "gitHash": "7547b763265a7c1dd15fcae31e313380eb30bef4ae1123efee6091ed6f51f723",
+      "gitPath": "LOTM_SIMULADOR/src/world/gods.json"
+    },
+    {
+      "file": "reborn/data/content/world/governments.json",
+      "diskHash": "b95cff715df7b7284f5b156a9a6d346c331996486d61f7565e675a1a5f579b21",
+      "gitHash": "8d796b37000b80ce81cc6a7ff3deca5e5fdf4f5bfb3c7465d95c58b7a7d6dea4",
+      "gitPath": "LOTM_SIMULADOR/src/world/governments.json"
+    },
+    {
+      "file": "reborn/data/content/world/kings_of_angels.json",
+      "diskHash": "959d1906f81d5345b12193ca6aa1e854a5993113c0bf734877832fa0d3c48a11",
+      "gitHash": "068b7c0f565368341d8432a158edeeebb823c8c07cef85e6d151eb5a4420a3d0",
+      "gitPath": "LOTM_SIMULADOR/src/world/kings_of_angels.json"
+    },
+    {
+      "file": "reborn/data/content/world/regions.json",
+      "diskHash": "edf8932943cc47c8389abeb1a751dd89172e1fb68a3724006b16adfc794123f8",
+      "gitHash": "6982773d616d69e21ef37751edc66faeb802dfcc5600fa1975020ed47204a38e",
+      "gitPath": "LOTM_SIMULADOR/src/world/regions.json"
+    },
+    {
+      "file": "reborn/data/content/world/secret_organizations.json",
+      "diskHash": "8ff3fca4e08d90259996074b5d51570eb8d79c5b856f3cafdc3f54f15e7b9c2b",
+      "gitHash": "9ecf127cb8d48806349f1bb377bed9be06ec0f8d5ff39a9df20e8b02eb12cdd9",
+      "gitPath": "LOTM_SIMULADOR/src/world/secret_organizations.json"
+    },
+    {
+      "file": "reborn/data/content/bestiary_npcs/elite_monsters.json",
+      "diskHash": "dc98641a7eb81692fa082ba43bc558fe40a5f4b0cb461aad4c910f5caa2555da",
+      "gitHash": "303ea27d7635141c49531962ea70ddbabd9ea24cd5d889f5bc3256fa2755343c",
+      "gitPath": "LOTM_SIMULADOR/src/npc/elite_monsters.json"
+    },
+    {
+      "file": "reborn/data/content/bestiary_npcs/low_level_monsters.json",
+      "diskHash": "abcc5cf850cbd9d0be0e675e17f35d7a1bf7daebbb958801f2dd239d7c150325",
+      "gitHash": "24e5f207f5b801ec9a19c69e35fb0d86977008caac68d6e27cbbb8afb7d5d52e",
+      "gitPath": "LOTM_SIMULADOR/src/npc/low_level_monsters.json"
+    },
+    {
+      "file": "reborn/data/content/bestiary_npcs/monsters.json",
+      "diskHash": "774766179073df9b881e24482cbbc701962f5d51da35e834fd3e7f8af0590f1f",
+      "gitHash": "8e03f4328c4b551d361d530561055b4961baf341cccb8baa9787fe13b04a9afb",
+      "gitPath": "LOTM_SIMULADOR/src/npc/monsters.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/apprentice.json",
+      "diskHash": "fbda4a9d732657cda0c890ed00d96db9e64e33be5a7ca5793f6817a40832e15a",
+      "gitHash": "7e466fddd05a781e31dfe2303462e5b4cb1f50c9490fce9d7f82781b23d9e23b",
+      "gitPath": "LOTM_SIMULADOR/src/pathways/apprentice.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/assassin.json",
+      "diskHash": "032db1baac69d58ed2db3e7ef760616e457885751b0a9ffa408bb2356b2c3e5b",
+      "gitHash": "254e1d787ed0a0f3917ea11724b73322aa098bb38c0cfa0845041c74667b7a4d",
+      "gitPath": "LOTM_SIMULADOR/src/pathways/assassin.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/bard.json",
+      "diskHash": "a2e129abc61cdb8acf46a58c93bb2d3fd780c13f4fea53bc6ef45f4d95bac0ff",
+      "gitHash": "551cade51226027114268e15c38bf1cf8a4c1d4ef07f2c11dcb6529e2437f15a",
+      "gitPath": "LOTM_SIMULADOR/src/pathways/bard.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/marauder.json",
+      "diskHash": "e73a4b043fb5ac4eaa2c1e7030ef28c8c05415a906a05caff0f5969e5a8bb305",
+      "gitHash": "4634d8598a9b53c79104cb6bad32e6cba5f58d0c5b542f5a076215d7efcffae1",
+      "gitPath": "LOTM_SIMULADOR/src/pathways/marauder.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/reader.json",
+      "diskHash": "e44d7807c62e18a81434adf94711fa42e9b47f49d7a795e1ed4ce28d0dc6eb93",
+      "gitHash": "5838d807cf8924d26e5eae7e9d582d5296a87cf3ee2976790451e5e166f7b5ae",
+      "gitPath": "LOTM_SIMULADOR/src/pathways/reader.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/sailor.json",
+      "diskHash": "aec20b4494ce5d1fdd4ed20b3b9f7af013fa4d4759f99484f4aad69913a47789",
+      "gitHash": "02c3e5cb90ec0f2696c9c70f4e50c5a1344e6c2d4f7fe8cee5d84fcab76b9e9e",
+      "gitPath": "LOTM_SIMULADOR/src/pathways/sailor.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/secrets_suppliant.json",
+      "diskHash": "518ede62f97bd2c0724ecf9add203108bb05bf5336873c2654a9f976dbf4283c",
+      "gitHash": "d7e5cd5086a5eb8653d91bda722faf6d0cdfd65186154b54220435fabd420dcc",
+      "gitPath": "LOTM_SIMULADOR/src/pathways/secrets_suppliant.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/seer.json",
+      "diskHash": "5e26820ceeba9abe5928a2db9468adecbe542b84f9846bbe2ab4ffd4af44ee12",
+      "gitHash": "e5993388a42005742eb5022fcd637c51ce3d8246783e75259b63acc0a00752e3",
+      "gitPath": "LOTM_SIMULADOR/src/pathways/seer.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/spectator.json",
+      "diskHash": "f30aa35768634b2e77c8c287cd79df6c84b253cb3b5157014bc0367192ed3304",
+      "gitHash": "12bdf328c4604eec88529438dbb7b09991a78c3f2a3c87c13c62cc207b7ff951",
+      "gitPath": "LOTM_SIMULADOR/src/pathways/spectator.json"
+    },
+    {
+      "file": "reborn/data/content/quests/sequence_0_quests.json",
+      "diskHash": "7cefb880d9e720657f4e34d5368cbded59bcdf3c364c2944047cd090471fb9c8",
+      "gitHash": "be0bbafb9a17c732b3fb3ae7d27441a216c1676f8fa330ac747c5262e1dadde1",
+      "gitPath": "LOTM_SIMULADOR/src/quests/sequence_0_quests.json"
+    },
+    {
+      "file": "reborn/data/content/quests/sequence_1_quests.json",
+      "diskHash": "492a6002a83cb1f1e5b16dd8e3f2eaa6bf146b228269b320b2fee2ed9c2f083a",
+      "gitHash": "dbc0787e86d6dff056185796ab70235171f26997e4777e1b31399815dd852d25",
+      "gitPath": "LOTM_SIMULADOR/src/quests/sequence_1_quests.json"
+    },
+    {
+      "file": "reborn/data/content/quests/sequence_2_quests.json",
+      "diskHash": "6f3c8ad5147c0e1d2b1daebe6206385c92eb03cffeb19369142c537ab3a1709a",
+      "gitHash": "e10af4f83897b7bf13d56ee1ad7e66a25a23c18b6455ee2cf1a4da535c03a95e",
+      "gitPath": "LOTM_SIMULADOR/src/quests/sequence_2_quests.json"
+    },
+    {
+      "file": "reborn/data/content/quests/sequence_3_quests.json",
+      "diskHash": "15420face8b0f90bd16c1ec5289ce9f8677a54fe1e83abab3f85a6ee9ad07ff8",
+      "gitHash": "2b35806476bf65432dc1c41871f0d994ea0947739b6daa5fed75d5aa689e1394",
+      "gitPath": "LOTM_SIMULADOR/src/quests/sequence_3_quests.json"
+    },
+    {
+      "file": "reborn/data/content/quests/sequence_4_quests.json",
+      "diskHash": "c36b1ea1971ec9f82bac40830ac6fae2d947cc14df41913dfdcdc592578357c6",
+      "gitHash": "66832b1b193af0dca173d760e5d70a8944e063799a80fa732e628dba138ef330",
+      "gitPath": "LOTM_SIMULADOR/src/quests/sequence_4_quests.json"
+    },
+    {
+      "file": "reborn/data/content/quests/sequence_5_quests.json",
+      "diskHash": "4ee6280a2311de56a73447b67fa39c12e5cf4593dfce803c0192f3f1e6b59720",
+      "gitHash": "298431fd4b26554620a732de26b32e1c0fb0f299acbad3444c814b35fb527eee",
+      "gitPath": "LOTM_SIMULADOR/src/quests/sequence_5_quests.json"
+    },
+    {
+      "file": "reborn/data/content/quests/sequence_6_quests.json",
+      "diskHash": "adf592fda0e92eb1b662fb8a057b31d404b71dd0153b2ee09d67b5f98d3fd7d0",
+      "gitHash": "fd2f0e1cec84ace9817a798f45b786a841addda9d824e95662c88ec7b267296a",
+      "gitPath": "LOTM_SIMULADOR/src/quests/sequence_6_quests.json"
+    },
+    {
+      "file": "reborn/data/content/quests/sequence_7_quests.json",
+      "diskHash": "aaf25e02716479ac47a99ecf910aee6e79e69ad10650fa479d2324c81b4d6626",
+      "gitHash": "8bf44894e69397fb69726c693909f9ec6d2a22017e50cbea0d0a1afbfb55b06f",
+      "gitPath": "LOTM_SIMULADOR/src/quests/sequence_7_quests.json"
+    },
+    {
+      "file": "reborn/data/content/quests/sequence_8_quests.json",
+      "diskHash": "8391630091d94cef388585bb259bb9f57c0f22d1813337d1974c24d90d0dcb72",
+      "gitHash": "0b5a1094b07e7bbc809626fa5f773c2b5215d1c5bddb5ff19fbce044119c351b",
+      "gitPath": "LOTM_SIMULADOR/src/quests/sequence_8_quests.json"
+    },
+    {
+      "file": "reborn/data/content/quests/sequence_9_quests.json",
+      "diskHash": "b2cdd8c548f74b6b9ffd6f80e4bbc85ccfc9f52ea9278c719d6bb21ac3029260",
+      "gitHash": "7de308874adbc72fa7beeee27a8903042cc0125d46476df20578d194f708ec6c",
+      "gitPath": "LOTM_SIMULADOR/src/quests/sequence_9_quests.json"
+    }
+  ],
+  "sizeJsonCount": 34,
+  "sizeJsonFiles": [
+    {
+      "file": "reborn/data/content/artifacts/sefirot.json",
+      "sha256": "936681e85864009d2a2984a92e706dd782040d893447e50e0d784bbbccd904bb",
+      "sourcePath": "src/advancement/sefirot.json"
+    },
+    {
+      "file": "reborn/data/content/artifacts/uniqueness.json",
+      "sha256": "a792de2452f2e4d800499b4939dd8da5ccd92bc166b9205194fdcb235027f082",
+      "sourcePath": "src/advancement/uniqueness.json"
+    },
+    {
+      "file": "reborn/data/content/artifacts/grade_0.json",
+      "sha256": "1875852a6b94305c20e58f5d64568142f8ecdb762cabee8331848be3f45f9b44",
+      "sourcePath": "src/artifacts/grade_0.json"
+    },
+    {
+      "file": "reborn/data/content/artifacts/grade_1.json",
+      "sha256": "104efe93056ec92abf21c6246e7d431a64032f6542eec2c68ace1d3d7a30fda8",
+      "sourcePath": "src/artifacts/grade_1.json"
+    },
+    {
+      "file": "reborn/data/content/artifacts/grade_2.json",
+      "sha256": "f10159700087d84b9de832e570253f97c6d2f6c763fb21f17cb7a334c1aa8b1b",
+      "sourcePath": "src/artifacts/grade_2.json"
+    },
+    {
+      "file": "reborn/data/content/artifacts/grade_3.json",
+      "sha256": "9e3b610846d7698a76d6b6df713031d97e804dd30df4a32cba1e347b9d0c0514",
+      "sourcePath": "src/artifacts/grade_3.json"
+    },
+    {
+      "file": "reborn/data/content/artifacts/sealed_artifacts_expanded.json",
+      "sha256": "96381bf1ca9582c814bcffe8b00e6dd7d0073666c59ac817b827cc5293eae03c",
+      "sourcePath": "src/data/sealed_artifacts_expanded.json"
+    },
+    {
+      "file": "reborn/data/content/lore_knowledge/books.json",
+      "sha256": "2ab4c8df3fa6cbf877e7ea086e9df76dc0559e8b032fd360ec98ee0bb9b4938e",
+      "sourcePath": "src/books/books.json"
+    },
+    {
+      "file": "reborn/data/content/lore_knowledge/forbidden_knowledge.json",
+      "sha256": "a0ec31b088ae9ddfe14594768c29c265f8d5e57f01b0ed0fbfa751da3812acc6",
+      "sourcePath": "src/data/forbidden_knowledge.json"
+    },
+    {
+      "file": "reborn/data/content/lore_knowledge/honorific_names_tables.json",
+      "sha256": "850834a79404394b20bf7a60f6f9fa57f919669bb5c7772e11e14179e5835af5",
+      "sourcePath": "src/data/honorific_names_tables.json"
+    },
+    {
+      "file": "reborn/data/content/lore_knowledge/rumors.json",
+      "sha256": "e4aabbd9c6951aed7b19981ef3d2fb5e741bdef7b5deda363eebac673cbc2aa0",
+      "sourcePath": "src/knowledge/rumors.json"
+    },
+    {
+      "file": "reborn/data/content/investigations/conspiracies.json",
+      "sha256": "198b3ab1a673f17c6ad4ff1910011ac8c8bdc2500401083f74d17a15e2e9c30a",
+      "sourcePath": "src/data/conspiracies.json"
+    },
+    {
+      "file": "reborn/data/content/investigations/investigations_data.json",
+      "sha256": "5860ecd80c10215512e4a68dcbf18b64fb2a6edfe24f5d383925857c97600f49",
+      "sourcePath": "src/investigation/investigations_data.json"
+    },
+    {
+      "file": "reborn/data/content/events/destiny_events.json",
+      "sha256": "f0374abb939a1c61108599cde442bbe526ef6936a3aea5fc3b71f235614f4198",
+      "sourcePath": "src/data/destiny_events.json"
+    },
+    {
+      "file": "reborn/data/content/events/identity_events.json",
+      "sha256": "cf56e831ca0ea575759c1961556d38de0c36a5bf00bc4d4b36fc20f7d952535d",
+      "sourcePath": "src/data/identity_events.json"
+    },
+    {
+      "file": "reborn/data/content/events/pathway_events.json",
+      "sha256": "f5cc78435cd0e40d606bf9ce922a8ca337f1dd0fbb8d2e4efc8f6ae6ee16402c",
+      "sourcePath": "src/data/pathway_events.json"
+    },
+    {
+      "file": "reborn/data/content/events/pathway_life_stories.json",
+      "sha256": "7ad2a3c44e7a99d9d7049edcf003ea8fd194066e33278e48a977dd96174ea34d",
+      "sourcePath": "src/data/pathway_life_stories.json"
+    },
+    {
+      "file": "reborn/data/content/world/organizations_expanded.json",
+      "sha256": "3fa945888dc5177543828fca053cd0835121c7d146902e6541a73d4b8a04cc8d",
+      "sourcePath": "src/data/organizations_expanded.json"
+    },
+    {
+      "file": "reborn/data/content/world/great_old_ones.json",
+      "sha256": "7e5e1a21ee4c73ba72d2cdb54f12ae097239b9b48e43ee536b044ab59ecb466f",
+      "sourcePath": "src/world/great_old_ones.json"
+    },
+    {
+      "file": "reborn/data/content/bestiary_npcs/npc.json",
+      "sha256": "40c250bb77eca2a0ede6ea82469234e2a812a47189a2d4ea0b93e3b113b23ed9",
+      "sourcePath": "src/npc/npc.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/apothecary.json",
+      "sha256": "5b0f68a777f098aab2f2ed603f3520f0e53b0bd9edc3225ab4238839c2c3a140",
+      "sourcePath": "src/pathways/apothecary.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/arbiter.json",
+      "sha256": "e0c6e66c70076e00433448b709de02cbbf41afa68a4fcf4edf69f9260b6e3cba",
+      "sourcePath": "src/pathways/arbiter.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/corpse_collector.json",
+      "sha256": "24584378f2dca9490dfffbae27583e11aefbf808f802d5dbf67d37ce631edd17",
+      "sourcePath": "src/pathways/corpse_collector.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/criminal.json",
+      "sha256": "929a1f764e4c0f7e2322301a2a86502f9a3c8351a524ef5c1fe5179c5d597be1",
+      "sourcePath": "src/pathways/criminal.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/hunter.json",
+      "sha256": "e6dbc55ef3cbac84646d3ab346c10b672a44572f0a4cba2b5f06360bc7a116cf",
+      "sourcePath": "src/pathways/hunter.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/lawyer.json",
+      "sha256": "2303b0b5d8de572b78b2af18161f17a208b09893286e17e67e74fd17449a0e89",
+      "sourcePath": "src/pathways/lawyer.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/monster.json",
+      "sha256": "d33744c99aa0723d657a3ac59bccaef026815adf40b92a48db37c79768dee42f",
+      "sourcePath": "src/pathways/monster.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/mystery_pryer.json",
+      "sha256": "68cb14d2c09d6fa7011e4912d03604784380dbf8625788b06cd01bfe562e88cf",
+      "sourcePath": "src/pathways/mystery_pryer.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/planter.json",
+      "sha256": "31b3ac564b6bd6afe73cf05c6af33932b92715ea7e77c1110541c8a8022df96f",
+      "sourcePath": "src/pathways/planter.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/prisoner.json",
+      "sha256": "1d27723327506d5b74c658996840cb543551c7773cb1f8891ae152eb7e1daf1c",
+      "sourcePath": "src/pathways/prisoner.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/savant.json",
+      "sha256": "8610c1bd1fa185bc5ebeba1871b6ae7966d64ebff756185104078434786ac349",
+      "sourcePath": "src/pathways/savant.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/sleepless.json",
+      "sha256": "79b1e3ca2216e7a5d6abf366f4cf3d0a5b9968c622dcc1b72c70261819cac2cf",
+      "sourcePath": "src/pathways/sleepless.json"
+    },
+    {
+      "file": "reborn/data/content/pathways/warrior.json",
+      "sha256": "45ae3d9c33ada68ae6bc8e6fd9c6ab136ec98068bb2b9dbb6bfd8059cfad5ba9",
+      "sourcePath": "src/pathways/warrior.json"
+    },
+    {
+      "file": "reborn/data/content/samples/test_integrated_save.json",
+      "sha256": "706a8e7706799641c90e48cd7a980f7c8e6e8f55886ddb965a5d3c310a06d98d",
+      "sourcePath": "src/save/test_integrated_save.json"
+    }
+  ]
+}

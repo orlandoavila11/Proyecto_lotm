@@ -1,0 +1,360 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "generated_at": "2026-09-21T11:15:00-06:00",
+  "order_code": "GFX00",
+  "project": "Path to Godhood (LOTM_ENGINE_REBORN)",
+  "phase_state": "FASE_1_ABIERTA",
+  "brief_framework": "BRIEF-10 + BRIEF-10.VISUAL + Lote 0 (GFX00/GFX01)",
+  "summary": {
+    "total_screens": 8,
+    "total_desvan_objects": 11,
+    "total_somatic_states": 17,
+    "total_origins": 6,
+    "total_investigation_clues": 8,
+    "total_investigation_relations": 4,
+    "total_combat_grid_cells": 35,
+    "total_combat_status_marks": 8,
+    "total_ascension_gates": 5,
+    "total_potions_prologue": 2,
+    "total_orders_catalog": 73
+  },
+  "screens_and_stages": [
+    {
+      "id": "STAGE_DESK_WIDE",
+      "name": "El Desván de Backlund (Vista General)",
+      "cameraPreset": "wide",
+      "resolution": "1920x1080 (escala lógica)",
+      "implementation": "SCENE_COMPOSITE",
+      "layers": ["BACKGROUND_CLEAN", "SHELF", "STAIRCASE", "DESK_CLEAN", "OBJECTS_11", "LIGHTING_TIME", "FOREGROUND"],
+      "orderRefs": ["GFX03", "GFX05", "GFX06", "GFX07", "GFX08", "GFX09", "GFX10", "GFX11"]
+    },
+    {
+      "id": "STAGE_DESK_FOCUS",
+      "name": "Enfoque de Mesa de Trabajo",
+      "cameraPreset": "desk-center",
+      "implementation": "CSS_TRANSFORM_2_5D",
+      "orderRefs": ["GFX12", "GFX13", "GFX14", "GFX16", "GFX17", "GFX18", "GFX19", "GFX20", "GFX28", "GFX29"]
+    },
+    {
+      "id": "STAGE_INSPECTION_LAYER",
+      "name": "Capa de Lectura e Inspección",
+      "cameraPreset": "desk-center / wide",
+      "implementation": "MODAL_SURFACE_HTML_PROSE",
+      "orderRefs": ["GFX15", "GFX30", "GFX31", "GFX32"]
+    },
+    {
+      "id": "STAGE_CORKBOARD",
+      "name": "Tablero de Investigación (Cherwood)",
+      "cameraPreset": "wall-board",
+      "implementation": "SVG_GRAPH_CANVAS",
+      "orderRefs": ["GFX21", "GFX33", "GFX34", "GFX35A", "GFX35B", "GFX35C", "GFX35D", "GFX35E", "GFX35F", "GFX35G", "GFX35H"]
+    },
+    {
+      "id": "STAGE_BAZAAR",
+      "name": "Bazar Clandestino",
+      "cameraPreset": "desk-right",
+      "implementation": "SCENE_COMPOSITE_WITH_TRAYS",
+      "orderRefs": ["GFX37", "GFX38", "GFX39", "GFX60"]
+    },
+    {
+      "id": "STAGE_COMBAT",
+      "name": "Teatro Táctico (Umbral/Escalera)",
+      "cameraPreset": "combat",
+      "implementation": "SVG_GRID_5X7_TACTICAL",
+      "orderRefs": ["GFX40", "GFX41", "GFX42", "GFX43", "GFX44", "GFX45", "GFX46"]
+    },
+    {
+      "id": "STAGE_PROLOGUE",
+      "name": "Zaguán de Backlund (Prólogo y Carta)",
+      "cameraPreset": "wide",
+      "implementation": "ATMOSPHERIC_SCENE",
+      "orderRefs": ["GFX47", "GFX48", "GFX49", "GFX50", "GFX51"]
+    },
+    {
+      "id": "STAGE_CEREMONY",
+      "name": "Hornacina Ritual (Ascensión)",
+      "cameraPreset": "ritual",
+      "implementation": "RITUAL_ENCLOSURE",
+      "orderRefs": ["GFX22", "GFX52", "GFX53", "GFX54", "GFX55"]
+    }
+  ],
+  "desvan_eleven_objects": [
+    {
+      "id": "OBJ_CANDLE",
+      "name": "Vela de Sebo",
+      "somaticFunction": "Sanidad y Tensión Espiritual",
+      "basePrompt": "GFX12",
+      "statePrompt": "GFX23",
+      "renderingType": "RASTER_BODY_SVG_CSS_FLAME",
+      "states": [
+        { "codeKey": "BRILLANTE", "bibliaName": "Plena", "visual": "Llama dorada viva, halo cálido suave", "somaticLevel": "ALTO" },
+        { "codeKey": "VACILANTE", "bibliaName": "Vacilante", "visual": "Oscilación naranja, chisporroteo contenido", "somaticLevel": "MEDIO" },
+        { "codeKey": "CREPITANTE", "bibliaName": "Humeante", "visual": "Llama azulada temblorosa, penacho de humo denso", "somaticLevel": "BAJO" },
+        { "codeKey": "AHOGADA_EN_CERA", "bibliaName": "Moribunda", "visual": "Mecha en brasa roja, al borde de la extinción", "somaticLevel": "CRITICO" }
+      ]
+    },
+    {
+      "id": "OBJ_MIRROR",
+      "name": "Espejo de Azogue",
+      "somaticFunction": "Corrupción y Mutación Oculta",
+      "basePrompt": "GFX13",
+      "statePrompts": ["GFX24", "GFX25", "GFX26"],
+      "renderingType": "RASTER_FRAME_INNER_SURFACE_LAYERS",
+      "states": [
+        { "codeKey": "LIMPIO", "bibliaName": "Limpio", "visual": "Plata pulida clara, reflejo ambiental sin rostro", "corruptionLevel": "CERO" },
+        { "codeKey": "TURBIO", "bibliaName": "Turbio", "visual": "Velo grisáceo nebuloso en el azogue, bordes oscurecidos", "corruptionLevel": "LEVE" },
+        { "codeKey": "ONDULANTE", "bibliaName": "Ondulante", "visual": "Superficie líquida distorsionada, reflejo aberrante", "corruptionLevel": "MODERADA" },
+        { "codeKey": "MONSTRUOSO", "bibliaName": "Monstruoso", "visual": "Ojos carmesí y filamentos astrales contenidos dentro del marco", "corruptionLevel": "CRITICA" }
+      ]
+    },
+    {
+      "id": "OBJ_DESK_CRACKS",
+      "name": "Grietas de la Mesa de Caoba",
+      "somaticFunction": "Ruina y Desgaste del Entorno",
+      "basePrompt": "GFX07",
+      "statePrompt": "GFX27",
+      "renderingType": "RASTER_DESK_SVG_OVERLAY_CRACKS",
+      "states": [
+        { "codeKey": "INTEGRO", "level": 0, "visual": "Madera noble pulida sin fisuras" },
+        { "codeKey": "MARCADO", "level": 1, "visual": "Hendidura inicial localizada en la esquina" },
+        { "codeKey": "EROSIONADO", "level": 2, "visual": "Ramificación de grietas siguiendo la veta de caoba" },
+        { "codeKey": "ROTO", "level": 3, "visual": "Fisuras profundas que cruzan hacia el centro" },
+        { "codeKey": "PERDIDO", "level": 4, "visual": "Deterioro extremo de la madera sin perder solidez funcional" }
+      ]
+    },
+    {
+      "id": "OBJ_ACTING_BOOK",
+      "name": "Libro de Actuación",
+      "somaticFunction": "Digestión de Poción y Registro de Principios",
+      "basePrompt": "GFX14",
+      "inspectionPrompt": "GFX15",
+      "renderingType": "RASTER_CLOSED_OPEN_TEXTURE_HTML_PROSE",
+      "states": [
+        { "codeKey": "CLOSED", "visual": "Encuadernación de cuero oscuro con canto gastado sobre la mesa" },
+        { "codeKey": "OPEN", "visual": "Doble página en blanco marfil con texto ceremonial interactivo superpuesto" }
+      ]
+    },
+    {
+      "id": "OBJ_IDENTITY_PAPERS",
+      "name": "Pliegos de Identidad Notarial",
+      "somaticFunction": "Anclas de Humanidad y Carga Civil",
+      "basePrompt": "GFX16",
+      "renderingType": "RASTER_PAPER_STACK_HTML_OVERLAY",
+      "states": [
+        { "codeKey": "REST", "visual": "Pliego timbrado sobrio con sello seco en reposo" },
+        { "codeKey": "INSPECTED", "visual": "Despliegue de las 3 anclas de humanidad y profesión civil del origen activo" }
+      ]
+    },
+    {
+      "id": "OBJ_LEATHER_POUCH",
+      "name": "Bolsa de Cuero (Monedero)",
+      "somaticFunction": "Economía Diegética (£ / s / d)",
+      "basePrompt": "GFX17",
+      "renderingType": "RASTER_POUCH_HTML_DIEGETIC_BALANCE",
+      "states": [
+        { "codeKey": "REST", "visual": "Bolsa cerrada de cuero mate con cordón ajustado" },
+        { "codeKey": "OPEN", "visual": "Apertura con balance diegético sin barras numéricas de HUD" }
+      ]
+    },
+    {
+      "id": "OBJ_ALMANAC",
+      "name": "Almanaque de Fibra",
+      "somaticFunction": "Calendario de la Quinta Época (1353)",
+      "basePrompt": "GFX18",
+      "renderingType": "RASTER_ALMANAC_HTML_CALENDAR",
+      "states": [
+        { "codeKey": "REST", "visual": "Almanaque en soporte con hoja en blanco sin fechas impresas" },
+        { "codeKey": "ACTIVE", "visual": "Día del calendario y agenda de eventos revelados en texto vivo" }
+      ]
+    },
+    {
+      "id": "OBJ_CLOCK",
+      "name": "Reloj de Faltriquera de Latón",
+      "somaticFunction": "Franjas Horarias del Día",
+      "basePrompt": "GFX19",
+      "renderingType": "RASTER_HOUSING_SVG_HANDS_TIME",
+      "states": [
+        { "codeKey": "MORNING", "visual": "Luz clara de mañana, manecilla en primer cuadrante" },
+        { "codeKey": "AFTERNOON", "visual": "Luz dorada cálida de tarde, manecilla en segundo cuadrante" },
+        { "codeKey": "EVENING", "visual": "Luz crepuscular cobriza, manecilla en tercer cuadrante" },
+        { "codeKey": "LATE_NIGHT", "visual": "Sombra profunda de madrugada, manecilla en cuarto cuadrante" }
+      ]
+    },
+    {
+      "id": "OBJ_SEALED_LETTER",
+      "name": "Carta Sellada con Lacre",
+      "somaticFunction": "Comunicaciones del Benefactor y Bazar",
+      "basePrompt": "GFX20",
+      "waxPrompt": "GFX31",
+      "renderingType": "RASTER_LETTER_WAX_HTML_READING",
+      "states": [
+        { "codeKey": "SEALED", "visual": "Sobre de papel vitela cerrado con sello de lacre rojo oscuro liso" },
+        { "codeKey": "UNSEALED", "visual": "Sobre abierto con pliego desplegado para lectura" }
+      ]
+    },
+    {
+      "id": "OBJ_CORKBOARD",
+      "name": "Corcho de Investigación",
+      "somaticFunction": "Grafo de Evidencias e Hipótesis del Caso Cherwood",
+      "basePrompt": "GFX21",
+      "canvasPrompt": "GFX33",
+      "renderingType": "RASTER_BOARD_SVG_NODES_AND_STRINGS",
+      "states": [
+        { "codeKey": "EMPTY", "visual": "Tablero de corcho vacío con marco de madera sobria" },
+        { "codeKey": "ACTIVE_CASE", "visual": "Tarjetas de pistas conectadas con alfileres e hilos de color" }
+      ]
+    },
+    {
+      "id": "OBJ_CHALICE",
+      "name": "Cáliz Ritual de Plata",
+      "somaticFunction": "Receptáculo de Poción y Ceremonia de Ascensión",
+      "basePrompt": "GFX22",
+      "ceremonyPrompt": "GFX52",
+      "renderingType": "RASTER_CHALICE_CSS_LIQUID_HOLD_GESTURE",
+      "states": [
+        { "codeKey": "EMPTY", "visual": "Copa de plata vacía y sobria sobre la hornacina" },
+        { "codeKey": "PREPARED", "visual": "Líquido místico de poción vertido según la vía elegida" },
+        { "codeKey": "DRINKING", "visual": "Gesto sostenido de 3 segundos con vacilación diegética" }
+      ]
+    },
+    {
+      "id": "OBJ_STAIRCASE_DOOR",
+      "name": "Escalera de Caracol y Picaporte",
+      "somaticFunction": "Acceso al Umbral y Amenaza Táctica",
+      "basePrompt": "GFX09",
+      "renderingType": "RASTER_ARCHITECTURE_SVG_THREAT_INDICATOR",
+      "states": [
+        { "codeKey": "CALM", "visual": "Escalera en penumbra sin amenaza visible" },
+        { "codeKey": "THREAT_ALERT", "visual": "Sombra recortada o crujido de pasos hacia el zaguán" }
+      ]
+    }
+  ],
+  "canonical_origins_six": [
+    {
+      "id": "ORIGIN_CLERK",
+      "name": "Escribiente Notarial",
+      "district": "DIST_CHERWOOD",
+      "initialSalaryPence": 360,
+      "startingPence": 720,
+      "burden": "Falsificación del Sello Notarial",
+      "vignettePrompt": "GFX36A",
+      "vignetteProps": ["Papeles en blanco", "Pluma sencilla", "Tintero", "Carpeta de oficio"]
+    },
+    {
+      "id": "ORIGIN_MEDICAL_STUDENT",
+      "name": "Estudiante de Medicina",
+      "district": "DIST_CHERWOOD",
+      "initialSalaryPence": 300,
+      "startingPence": 480,
+      "burden": "Pagaré de Instrumental Quirúrgico (480d)",
+      "vignettePrompt": "GFX36B",
+      "vignetteProps": ["Cuaderno en blanco", "Venda limpia", "Estuche sobrio de instrumental"]
+    },
+    {
+      "id": "ORIGIN_REPORTER",
+      "name": "Corresponsal de Sucesos",
+      "district": "DIST_CHERWOOD",
+      "initialSalaryPence": 384,
+      "startingPence": 600,
+      "burden": "Artículo Censurado de la Mansión Sterling",
+      "vignettePrompt": "GFX36C",
+      "vignetteProps": ["Libreta en blanco", "Lápiz", "Recortes sin texto"]
+    },
+    {
+      "id": "ORIGIN_FRAUDULENT_MEDIUM",
+      "name": "Espiritista de Salón",
+      "district": "DIST_CHERWOOD",
+      "initialSalaryPence": 320,
+      "startingPence": 540,
+      "burden": "Sesión Espiritista con Manifestación Incontrolada",
+      "vignettePrompt": "GFX36D",
+      "vignetteProps": ["Paño de mesa", "Vaso de cristal", "Accesorios de salón sobrios"]
+    },
+    {
+      "id": "ORIGIN_DOCKWORKER",
+      "name": "Estibador de Muelles",
+      "district": "DIST_DOCKS",
+      "initialSalaryPence": 240,
+      "startingPence": 360,
+      "burden": "Contrabando Oculto en el Almacén 4",
+      "vignettePrompt": "GFX36E",
+      "vignetteProps": ["Cabo de cuerda", "Guantes de trabajo", "Tablón de muelle gastado"]
+    },
+    {
+      "id": "ORIGIN_PRIVATE_INVESTIGATOR",
+      "name": "Detective Privado",
+      "district": "DIST_CHERWOOD",
+      "initialSalaryPence": 400,
+      "startingPence": 650,
+      "burden": "Expediente Confidencial sin Resolver",
+      "vignettePrompt": "GFX36F",
+      "vignetteProps": ["Libreta de notas en blanco", "Lupa sencilla de latón", "Sobre sin marcas"]
+    }
+  ],
+  "investigation_cherwood_case": {
+    "case_id": "CASE_CHERWOOD_HEIRLOOM",
+    "case_title": "El Eco en el Nido Vacío",
+    "clues": [
+      { "id": "CLUE_BURNED_TOYS", "name": "Juguetes de Madera Quemados", "promptRef": "GFX35A", "visibility": "PUBLIC_DAY_0" },
+      { "id": "CLUE_WILL_DRAFT", "name": "Borrador de Directivas de Sterling", "promptRef": "GFX35B", "visibility": "INVESTIGATIVE" },
+      { "id": "CLUE_MIND_TRACES", "name": "Microexpresiones de Evangeline", "promptRef": "GFX35C", "visibility": "SPECTATOR_PATHWAY" },
+      { "id": "CLUE_ASTROLOGY_RECORD", "name": "Convergencia de Hilos Espirituales", "promptRef": "GFX35D", "visibility": "SEER_PATHWAY" },
+      { "id": "CLUE_CONCEALED_SAFE", "name": "El Libro de Transferencias de Sterling", "promptRef": "GFX35E", "visibility": "CONCEALED_TRUTH" },
+      { "id": "CLUE_FORGED_LETTERS", "name": "Correspondencia de Adopción Falsificada", "promptRef": "GFX35F", "visibility": "INVESTIGATIVE" },
+      { "id": "CLUE_FINANCIAL_BLACKMAIL", "name": "Registro de Chantaje Financiero", "promptRef": "GFX35G", "visibility": "INVESTIGATIVE" },
+      { "id": "CLUE_ALCHEMICAL_RESIDUES", "name": "Residuos de Esencia Plateada y Manzanilla", "promptRef": "GFX35H", "visibility": "ALCHEMICAL" }
+    ],
+    "relations": [
+      { "type": "ACUSA", "color": "#8f2f31", "stroke": "solid", "meaning": "Vínculo de imputación o responsabilidad" },
+      { "type": "EXPLICA", "color": "#4a7bb0", "stroke": "dashed", "meaning": "Vínculo causal o motivacional" },
+      { "type": "LOCALIZA", "color": "#4a9c6d", "stroke": "directional", "meaning": "Vínculo espacial o convergencia de presencia" },
+      { "type": "CONTRADICE", "color": "#d4a017", "stroke": "double", "meaning": "Incompatibilidad testimonial o factual" }
+    ]
+  },
+  "combat_system": {
+    "grid_dimensions": { "columns": 7, "rows": 5, "total_cells": 35, "x_range": [0, 6], "y_range": [0, 4] },
+    "status_conditions": [
+      { "id": "STUN", "name": "Aturdimiento", "pictogram": "Estrella angular interrumpida" },
+      { "id": "FEAR", "name": "Miedo", "pictogram": "Ojo retraído" },
+      { "id": "FROZEN", "name": "Congelamiento", "pictogram": "Estructura de cristal" },
+      { "id": "BLEED", "name": "Sangrado", "pictogram": "Gota descendente" },
+      { "id": "CORRUPTED", "name": "Corrupción", "pictogram": "Espiral rota" },
+      { "id": "HYPNOTIZED", "name": "Hipnosis", "pictogram": "Anillos concéntricos" },
+      { "id": "CONCEALED", "name": "Oculto/Sigilo", "pictogram": "Velo sombrío" },
+      { "id": "EMPOWERED", "name": "Espiritualidad Aumentada", "pictogram": "Destello ascendente" }
+    ]
+  },
+  "ascension_and_prologue": {
+    "potions": [
+      { "id": "POTION_COBALT_EYES", "pathway": "FOOL", "sequence": 9, "name": "Vidente (Ojos de Cobalto)", "color": "Cobalto profundo", "promptRef": "GFX50" },
+      { "id": "POTION_AMBER_MIRROR", "pathway": "VISIONARY", "sequence": 9, "name": "Espectador (Espejo de Ámbar)", "color": "Ámbar reflectante", "promptRef": "GFX51" }
+    ],
+    "five_gates": [
+      { "gate": 1, "name": "Conocimiento de Fórmula", "representation": "Fragmento de pergamino ritual verificado" },
+      { "gate": 2, "name": "Ingredientes Principales y Suplementarios", "representation": "2 componentes mayores exactos + reactivos" },
+      { "gate": 3, "name": "Digestión de Secuencia Previa", "representation": "Diario de actuación con digestión al 100%" },
+      { "gate": 4, "name": "Preparación Ritual Cuádruple", "representation": "Lugar + Momento + Materiales + Anclaje" },
+      { "gate": 5, "name": "Consumo de Poción", "representation": "Gesto sostenido de 3 segundos (Hold-to-Drink)" }
+    ]
+  },
+  "canonical_conflicts_resolution": {
+    "candle_keys": {
+      "conflict": "Biblia usa (Plena, Vacilante, Humeante, Moribunda); UI.txt usa (BRILLANTE, VACILANTE, CREPITANTE, AHOGADA_EN_CERA)",
+      "resolution": "En código de dominio y UI se usan las claves tipadas BRILLANTE, VACILANTE, CREPITANTE, AHOGADA_EN_CERA. En prosa diegética ceremonial se utilizan las metáforas visuales de la Biblia."
+    },
+    "mirror_keys": {
+      "resolution": "Claves canónicas ratificadas: LIMPIO, TURBIO, ONDULANTE, MONSTRUOSO."
+    },
+    "ruin_cracks_keys": {
+      "resolution": "Claves canónicas ratificadas: INTEGRO, MARCADO, EROSIONADO, ROTO, PERDIDO."
+    },
+    "time_keys": {
+      "resolution": "Claves canónicas de dominio: MORNING, AFTERNOON, EVENING, LATE_NIGHT. Mapas lumínicos y reloj sincronizados."
+    },
+    "currency_display": {
+      "resolution": "Formato diegético victoriano estricto: Libras (£), Chelines (s), Peniques (d). Cero barras de HUD o stats flotantes."
+    }
+  }
+}
+

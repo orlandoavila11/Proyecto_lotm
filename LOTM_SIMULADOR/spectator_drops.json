@@ -1,0 +1,239 @@
+[
+  {
+    "monster_id": "mon_adult_manhal_fish",
+    "main_ingredient_item_id": "item_adult_manhal_fish_eyes",
+    "harvest_difficulty_bracket": "DELICATE",
+    "secondary_drop_tier": "TIER_COMMON_SUPPLEMENT",
+    "eligible_secondary_item_ids": [
+      "item_manhal_fish_silver_scales",
+      "item_vitreous_eye_fluid"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s9",
+    "requires_spirit_containment": false
+  },
+  {
+    "monster_id": "mon_ram_horn_blackfish",
+    "main_ingredient_item_id": "item_ram_horn_blackfish_blood",
+    "harvest_difficulty_bracket": "STANDARD",
+    "secondary_drop_tier": "TIER_COMMON_SUPPLEMENT",
+    "eligible_secondary_item_ids": [
+      "item_blackfish_spiral_horn",
+      "item_dense_river_bile"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s9",
+    "requires_spirit_containment": false
+  },
+  {
+    "monster_id": "mon_seven_colored_lizard_dragon",
+    "main_ingredient_item_id": "item_seven_colored_lizard_dragon_pituitary",
+    "harvest_difficulty_bracket": "DELICATE",
+    "secondary_drop_tier": "TIER_UNCOMMON_CATALYST",
+    "eligible_secondary_item_ids": [
+      "item_prismatic_lizard_scales",
+      "item_lizard_dragon_tail_filament"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s8",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_falsman_rabbit",
+    "main_ingredient_item_id": "item_falsman_rabbit_spinal_fluid",
+    "harvest_difficulty_bracket": "DELICATE",
+    "secondary_drop_tier": "TIER_UNCOMMON_CATALYST",
+    "eligible_secondary_item_ids": [
+      "item_falsman_rabbit_ear_membrane",
+      "item_falsman_astral_hair"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s8",
+    "requires_spirit_containment": false
+  },
+  {
+    "monster_id": "mon_mirror_dragon",
+    "main_ingredient_item_id": "item_mirror_dragon_eyes",
+    "harvest_difficulty_bracket": "VOLATILE",
+    "secondary_drop_tier": "TIER_RARE_ESSENCE",
+    "eligible_secondary_item_ids": [
+      "item_mirror_dragon_blood",
+      "item_specular_glass_scales"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s7",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_elder_treant",
+    "main_ingredient_item_id": "item_elder_tree_fruit",
+    "harvest_difficulty_bracket": "STANDARD",
+    "secondary_drop_tier": "TIER_RARE_ESSENCE",
+    "eligible_secondary_item_ids": [
+      "item_elder_tree_bark_powder",
+      "item_peaceful_amber_sap"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s7",
+    "requires_spirit_containment": false
+  },
+  {
+    "monster_id": "mon_young_psychic_dragon",
+    "main_ingredient_item_id": "item_young_psychic_dragon_pituitary",
+    "harvest_difficulty_bracket": "VOLATILE",
+    "secondary_drop_tier": "TIER_RARE_ESSENCE",
+    "eligible_secondary_item_ids": [
+      "item_young_psychic_dragon_blood",
+      "item_young_psychic_dragon_scales"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s6",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_black_hunt_giant_lizard",
+    "main_ingredient_item_id": "item_black_hunt_giant_lizard_spinal_fluid",
+    "harvest_difficulty_bracket": "STANDARD",
+    "secondary_drop_tier": "TIER_RARE_ESSENCE",
+    "eligible_secondary_item_ids": [
+      "item_matte_black_armor_plate",
+      "item_paralytic_nerve_tendon"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s6",
+    "requires_spirit_containment": false
+  },
+  {
+    "monster_id": "mon_hallucination_wind_chime_tree",
+    "main_ingredient_item_id": "item_hallucination_wind_chime_tree_fruit",
+    "harvest_difficulty_bracket": "DELICATE",
+    "secondary_drop_tier": "TIER_RARE_ESSENCE",
+    "eligible_secondary_item_ids": [
+      "item_violet_glass_bark",
+      "item_melodic_chime_seed"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s6",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_dreamcatcher",
+    "main_ingredient_item_id": "item_dreamcatcher_heart",
+    "harvest_difficulty_bracket": "VOLATILE",
+    "secondary_drop_tier": "TIER_SUPERIOR_SPIRIT",
+    "eligible_secondary_item_ids": [
+      "item_silver_dream_silk",
+      "item_crystallized_nightmare_web"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s5",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_psychic_phantom",
+    "main_ingredient_item_id": "item_psychic_phantom_crystal",
+    "harvest_difficulty_bracket": "VOLATILE",
+    "secondary_drop_tier": "TIER_SUPERIOR_SPIRIT",
+    "eligible_secondary_item_ids": [
+      "item_astral_scholar_dust",
+      "item_fragmented_memory_scroll"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s5",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_adult_psychic_dragon",
+    "main_ingredient_item_id": "item_adult_psychic_dragon_brain",
+    "harvest_difficulty_bracket": "VOLATILE",
+    "secondary_drop_tier": "TIER_SUPERIOR_SPIRIT",
+    "eligible_secondary_item_ids": [
+      "item_adult_psychic_dragon_blood",
+      "item_adult_psychic_dragon_scales",
+      "item_dragon_breath_flower_seed"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s5",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_elderly_psychic_dragon",
+    "main_ingredient_item_id": "item_elderly_psychic_dragon_brain",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_DEMIGOD_CORE",
+    "eligible_secondary_item_ids": [
+      "item_elderly_psychic_dragon_blood",
+      "item_crystal_spine_filament",
+      "item_subconscious_anchor_shard"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s4",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_treant_mentor",
+    "main_ingredient_item_id": "item_treant_mentor_crystalline_heart",
+    "harvest_difficulty_bracket": "DELICATE",
+    "secondary_drop_tier": "TIER_DEMIGOD_CORE",
+    "eligible_secondary_item_ids": [
+      "item_golden_treant_leaves",
+      "item_mentor_wisdom_sap",
+      "item_collective_resonance_bark"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s4",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_treant_king",
+    "main_ingredient_item_id": "item_treant_king_crystalline_heart",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_SAINT_RELICT",
+    "eligible_secondary_item_ids": [
+      "item_treant_king_sap",
+      "item_nightmare_bark_sliver",
+      "item_ebony_dream_seed"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s3",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_dream_dragon",
+    "main_ingredient_item_id": "item_dream_dragon_brain",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_SAINT_RELICT",
+    "eligible_secondary_item_ids": [
+      "item_starlight_mist_condensation",
+      "item_reality_weaving_horn",
+      "item_dream_astral_scale"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s3",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_ancient_psychic_dragon",
+    "main_ingredient_item_id": "item_ancient_psychic_dragon_heart",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_ANGELIC_RELICT",
+    "eligible_secondary_item_ids": [
+      "item_ancient_psychic_dragon_blood",
+      "item_golden_truth_pupil",
+      "item_mythical_form_crest_fragment"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s2",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_erihog_spawn",
+    "main_ingredient_item_id": "item_pale_heart_of_erihog",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_ANGELIC_RELICT",
+    "eligible_secondary_item_ids": [
+      "item_whispering_flesh_nodule",
+      "item_corrupted_golden_blood",
+      "item_erihog_calcified_bone"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s2",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_nightmare_swamp_shadow",
+    "main_ingredient_item_id": "item_author_beyonder_characteristic",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_ANGELIC_RELICT",
+    "eligible_secondary_item_ids": [
+      "item_nightmare_swamp_water",
+      "item_crystal_quill_fingerbone",
+      "item_scroll_of_unwritten_destiny"
+    ],
+    "beyonder_characteristic_item_id": "char_spectator_s1",
+    "requires_spirit_containment": true
+  }
+]
+

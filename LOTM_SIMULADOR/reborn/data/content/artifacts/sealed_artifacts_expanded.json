@@ -1,0 +1,2482 @@
+[
+  {
+    "id": "CANON_ART_3_0782",
+    "name": "3-0782 (El Emblema del Sagrado Sol Mutado)",
+    "grade": 3,
+    "isCanonical": true,
+    "originPathway": "SUN",
+    "appearance": "Un medallón de oro puro grabado con un disco solar que palpita con calor residual.",
+    "activePowers": [
+      "Purificación extrema de espectros",
+      "Luz solar que disipa niebla e ilusiones"
+    ],
+    "contraindication": {
+      "tabooName": "Compulsión de Prosternación Solar",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El portador debe arrodillarse mirando al sol naciente alabándolo en voz alta durante quince minutos ininterrumpidos.",
+      "sanityDrainPerTrigger": 3,
+      "corruptionRiskPercent": 1,
+      "containmentProtocol": "Guardar en caja de plomo cubierta con paño negroopaco."
+    }
+  },
+  {
+    "id": "CANON_ART_2_049",
+    "name": "2-049 (La Marioneta Antigonus)",
+    "grade": 2,
+    "isCanonical": true,
+    "originPathway": "FOOL",
+    "appearance": "Un títere de madera articulada con rostro pintado que recuerda vagamente a un infante.",
+    "activePowers": [
+      "Control de hilos espirituales en un radio de 10 metros",
+      "Parálisis táctica instantánea"
+    ],
+    "contraindication": {
+      "tabooName": "Asimilación en Marioneta",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cada minuto en su proximidad entumece las articulaciones biológicas transformándolas gradualmente en madera rígida.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 12,
+      "containmentProtocol": "Debe ser transportado por tres personas bailando continuamente a su alrededor."
+    }
+  },
+  {
+    "id": "CANON_ART_1_014",
+    "name": "1-014 (La Campana del Juicio de Feysac)",
+    "grade": 1,
+    "isCanonical": true,
+    "originPathway": "TWILIGHT_GIANT",
+    "appearance": "Una inmensa campana de bronce con inscripciones de gigantes de la Segunda Época.",
+    "activePowers": [
+      "Onda sónica que pudre armaduras y barre regimientos enteros",
+      "Aura de Crepúsculo"
+    ],
+    "contraindication": {
+      "tabooName": "Silencio Fúnebre Absoluto",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Si alguien emite una palabra articulada en su presencia después del ocaso, la campana repica y la laringe del orador sangra.",
+      "sanityDrainPerTrigger": 15,
+      "corruptionRiskPercent": 20,
+      "containmentProtocol": "Sellar en una cámara subterránea insonorizada bajo tres capas de plomo sagrado."
+    }
+  },
+  {
+    "id": "CANON_ART_0_08",
+    "name": "0-08 (La Pluma de Alzuhod)",
+    "grade": 0,
+    "isCanonical": true,
+    "originPathway": "VISIONARY",
+    "appearance": "Una pluma estilográfica clásica de pluma de ganso con una punta metálica que gotea tinta sin secarse.",
+    "activePowers": [
+      "Reescritura de la realidad mediante coincidencias razonables escritas",
+      "Manipulación de la voluntad de Reyes de Ángeles"
+    ],
+    "contraindication": {
+      "tabooName": "El Libreto Ineludible del Autor",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "La pluma escribe por sí sola en cualquier superficie cercana describiendo cómo su poseedor sufrirá una muerte trágica e irónica.",
+      "sanityDrainPerTrigger": 25,
+      "corruptionRiskPercent": 40,
+      "containmentProtocol": "No puede ser contenida permanentemente; requiere un Ángel del Camino del Espectador vigilándola en oración ininterrumpida."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_DOOR_001",
+    "name": "Artefacto 3-101 (DOOR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "DOOR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DOOR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 3,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_ERROR_002",
+    "name": "Artefacto 3-102 (ERROR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "ERROR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía ERROR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 3)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 5,
+      "corruptionRiskPercent": 1,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_VISIONARY_003",
+    "name": "Artefacto 3-103 (VISIONARY Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "VISIONARY",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía VISIONARY.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 2,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_HANGED_MAN_004",
+    "name": "Artefacto 3-104 (HANGED_MAN Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "HANGED_MAN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía HANGED_MAN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 5,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_TYRANT_005",
+    "name": "Artefacto 3-105 (TYRANT Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "TYRANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TYRANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 3)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 3,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_SUN_006",
+    "name": "Artefacto 3-106 (SUN Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "SUN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía SUN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 6,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_WHITE_TOWER_007",
+    "name": "Artefacto 3-107 (WHITE_TOWER Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "WHITE_TOWER",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía WHITE_TOWER.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 12,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_DARKNESS_008",
+    "name": "Artefacto 2-108 (DARKNESS Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "DARKNESS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DARKNESS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 14,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_DEATH_009",
+    "name": "Artefacto 2-109 (DEATH Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "DEATH",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DEATH.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_TWILIGHT_GIANT_010",
+    "name": "Artefacto 2-110 (TWILIGHT_GIANT Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "TWILIGHT_GIANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TWILIGHT_GIANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 2)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_RED_PRIEST_011",
+    "name": "Artefacto 2-111 (RED_PRIEST Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "RED_PRIEST",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía RED_PRIEST.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_DEMONESS_012",
+    "name": "Artefacto 2-112 (DEMONESS Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "DEMONESS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DEMONESS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_MOTHER_013",
+    "name": "Artefacto 2-113 (MOTHER Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "MOTHER",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía MOTHER.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 2)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_MOON_014",
+    "name": "Artefacto 1-114 (MOON Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "MOON",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía MOON.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 1)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 18,
+      "corruptionRiskPercent": 15,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_BLACK_EMPEROR_015",
+    "name": "Artefacto 1-115 (BLACK_EMPEROR Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "BLACK_EMPEROR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía BLACK_EMPEROR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 1)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 24,
+      "corruptionRiskPercent": 9,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_JUSTICIAR_016",
+    "name": "Artefacto 1-116 (JUSTICIAR Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "JUSTICIAR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía JUSTICIAR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 1)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 30,
+      "corruptionRiskPercent": 18,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_HERMIT_017",
+    "name": "Artefacto 1-117 (HERMIT Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "HERMIT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía HERMIT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 1)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 36,
+      "corruptionRiskPercent": 24,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_PARAGON_018",
+    "name": "Artefacto 0-118 (PARAGON Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "PARAGON",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía PARAGON.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 0)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 28,
+      "corruptionRiskPercent": 16,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_WHEEL_OF_FORTUNE_019",
+    "name": "Artefacto 0-119 (WHEEL_OF_FORTUNE Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "WHEEL_OF_FORTUNE",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía WHEEL_OF_FORTUNE.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 0)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 20,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_ABYSS_020",
+    "name": "Artefacto 3-120 (ABYSS Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "ABYSS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía ABYSS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_CHAINED_021",
+    "name": "Artefacto 3-121 (CHAINED Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "CHAINED",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía CHAINED.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 3,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_FOOL_022",
+    "name": "Artefacto 3-122 (FOOL Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "FOOL",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía FOOL.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 3)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 5,
+      "corruptionRiskPercent": 1,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_DOOR_023",
+    "name": "Artefacto 3-123 (DOOR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "DOOR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DOOR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 2,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_ERROR_024",
+    "name": "Artefacto 3-124 (ERROR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "ERROR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía ERROR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 5,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_VISIONARY_025",
+    "name": "Artefacto 3-125 (VISIONARY Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "VISIONARY",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía VISIONARY.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 3)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 3,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_HANGED_MAN_026",
+    "name": "Artefacto 3-126 (HANGED_MAN Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "HANGED_MAN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía HANGED_MAN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 6,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_TYRANT_027",
+    "name": "Artefacto 3-127 (TYRANT Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "TYRANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TYRANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 12,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_SUN_028",
+    "name": "Artefacto 2-128 (SUN Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "SUN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía SUN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 14,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_WHITE_TOWER_029",
+    "name": "Artefacto 2-129 (WHITE_TOWER Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "WHITE_TOWER",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía WHITE_TOWER.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_DARKNESS_030",
+    "name": "Artefacto 2-130 (DARKNESS Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "DARKNESS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DARKNESS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 2)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_DEATH_031",
+    "name": "Artefacto 2-131 (DEATH Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "DEATH",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DEATH.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_TWILIGHT_GIANT_032",
+    "name": "Artefacto 2-132 (TWILIGHT_GIANT Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "TWILIGHT_GIANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TWILIGHT_GIANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_RED_PRIEST_033",
+    "name": "Artefacto 2-133 (RED_PRIEST Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "RED_PRIEST",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía RED_PRIEST.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 2)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_DEMONESS_034",
+    "name": "Artefacto 1-134 (DEMONESS Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "DEMONESS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DEMONESS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 1)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 18,
+      "corruptionRiskPercent": 15,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_MOTHER_035",
+    "name": "Artefacto 1-135 (MOTHER Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "MOTHER",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía MOTHER.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 1)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 24,
+      "corruptionRiskPercent": 9,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_MOON_036",
+    "name": "Artefacto 1-136 (MOON Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "MOON",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía MOON.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 1)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 30,
+      "corruptionRiskPercent": 18,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_BLACK_EMPEROR_037",
+    "name": "Artefacto 1-137 (BLACK_EMPEROR Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "BLACK_EMPEROR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía BLACK_EMPEROR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 1)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 36,
+      "corruptionRiskPercent": 24,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_JUSTICIAR_038",
+    "name": "Artefacto 0-138 (JUSTICIAR Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "JUSTICIAR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía JUSTICIAR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 0)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 28,
+      "corruptionRiskPercent": 16,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_HERMIT_039",
+    "name": "Artefacto 0-139 (HERMIT Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "HERMIT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía HERMIT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 0)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 20,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_PARAGON_040",
+    "name": "Artefacto 3-140 (PARAGON Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "PARAGON",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía PARAGON.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_WHEEL_OF_FORTUNE_041",
+    "name": "Artefacto 3-141 (WHEEL_OF_FORTUNE Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "WHEEL_OF_FORTUNE",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía WHEEL_OF_FORTUNE.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 3,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_ABYSS_042",
+    "name": "Artefacto 3-142 (ABYSS Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "ABYSS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía ABYSS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 3)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 5,
+      "corruptionRiskPercent": 1,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_CHAINED_043",
+    "name": "Artefacto 3-143 (CHAINED Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "CHAINED",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía CHAINED.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 2,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_FOOL_044",
+    "name": "Artefacto 3-144 (FOOL Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "FOOL",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía FOOL.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 5,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_DOOR_045",
+    "name": "Artefacto 3-145 (DOOR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "DOOR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DOOR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 3)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 3,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_ERROR_046",
+    "name": "Artefacto 3-146 (ERROR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "ERROR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía ERROR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 6,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_VISIONARY_047",
+    "name": "Artefacto 3-147 (VISIONARY Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "VISIONARY",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía VISIONARY.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 12,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_HANGED_MAN_048",
+    "name": "Artefacto 2-148 (HANGED_MAN Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "HANGED_MAN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía HANGED_MAN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 14,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_TYRANT_049",
+    "name": "Artefacto 2-149 (TYRANT Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "TYRANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TYRANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_SUN_050",
+    "name": "Artefacto 2-150 (SUN Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "SUN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía SUN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 2)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_WHITE_TOWER_051",
+    "name": "Artefacto 2-151 (WHITE_TOWER Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "WHITE_TOWER",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía WHITE_TOWER.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_DARKNESS_052",
+    "name": "Artefacto 2-152 (DARKNESS Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "DARKNESS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DARKNESS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_DEATH_053",
+    "name": "Artefacto 2-153 (DEATH Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "DEATH",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DEATH.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 2)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_TWILIGHT_GIANT_054",
+    "name": "Artefacto 1-154 (TWILIGHT_GIANT Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "TWILIGHT_GIANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TWILIGHT_GIANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 1)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 18,
+      "corruptionRiskPercent": 15,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_RED_PRIEST_055",
+    "name": "Artefacto 1-155 (RED_PRIEST Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "RED_PRIEST",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía RED_PRIEST.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 1)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 24,
+      "corruptionRiskPercent": 9,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_DEMONESS_056",
+    "name": "Artefacto 1-156 (DEMONESS Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "DEMONESS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DEMONESS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 1)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 30,
+      "corruptionRiskPercent": 18,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_MOTHER_057",
+    "name": "Artefacto 1-157 (MOTHER Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "MOTHER",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía MOTHER.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 1)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 36,
+      "corruptionRiskPercent": 24,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_MOON_058",
+    "name": "Artefacto 0-158 (MOON Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "MOON",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía MOON.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 0)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 28,
+      "corruptionRiskPercent": 16,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_BLACK_EMPEROR_059",
+    "name": "Artefacto 0-159 (BLACK_EMPEROR Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "BLACK_EMPEROR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía BLACK_EMPEROR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 0)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 20,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_JUSTICIAR_060",
+    "name": "Artefacto 3-160 (JUSTICIAR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "JUSTICIAR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía JUSTICIAR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_HERMIT_061",
+    "name": "Artefacto 3-161 (HERMIT Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "HERMIT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía HERMIT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 3,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_PARAGON_062",
+    "name": "Artefacto 3-162 (PARAGON Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "PARAGON",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía PARAGON.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 3)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 5,
+      "corruptionRiskPercent": 1,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_WHEEL_OF_FORTUNE_063",
+    "name": "Artefacto 3-163 (WHEEL_OF_FORTUNE Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "WHEEL_OF_FORTUNE",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía WHEEL_OF_FORTUNE.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 2,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_ABYSS_064",
+    "name": "Artefacto 3-164 (ABYSS Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "ABYSS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía ABYSS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 5,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_CHAINED_065",
+    "name": "Artefacto 3-165 (CHAINED Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "CHAINED",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía CHAINED.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 3)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 3,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_FOOL_066",
+    "name": "Artefacto 3-166 (FOOL Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "FOOL",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía FOOL.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 6,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_DOOR_067",
+    "name": "Artefacto 3-167 (DOOR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "DOOR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DOOR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 12,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_ERROR_068",
+    "name": "Artefacto 2-168 (ERROR Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "ERROR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía ERROR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 14,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_VISIONARY_069",
+    "name": "Artefacto 2-169 (VISIONARY Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "VISIONARY",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía VISIONARY.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_HANGED_MAN_070",
+    "name": "Artefacto 2-170 (HANGED_MAN Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "HANGED_MAN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía HANGED_MAN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 2)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_TYRANT_071",
+    "name": "Artefacto 2-171 (TYRANT Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "TYRANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TYRANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_SUN_072",
+    "name": "Artefacto 2-172 (SUN Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "SUN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía SUN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_WHITE_TOWER_073",
+    "name": "Artefacto 2-173 (WHITE_TOWER Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "WHITE_TOWER",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía WHITE_TOWER.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 2)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_DARKNESS_074",
+    "name": "Artefacto 1-174 (DARKNESS Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "DARKNESS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DARKNESS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 1)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 18,
+      "corruptionRiskPercent": 15,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_DEATH_075",
+    "name": "Artefacto 1-175 (DEATH Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "DEATH",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DEATH.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 1)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 24,
+      "corruptionRiskPercent": 9,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_TWILIGHT_GIANT_076",
+    "name": "Artefacto 1-176 (TWILIGHT_GIANT Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "TWILIGHT_GIANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TWILIGHT_GIANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 1)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 30,
+      "corruptionRiskPercent": 18,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_RED_PRIEST_077",
+    "name": "Artefacto 1-177 (RED_PRIEST Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "RED_PRIEST",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía RED_PRIEST.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 1)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 36,
+      "corruptionRiskPercent": 24,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_DEMONESS_078",
+    "name": "Artefacto 0-178 (DEMONESS Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "DEMONESS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DEMONESS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 0)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 28,
+      "corruptionRiskPercent": 16,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_MOTHER_079",
+    "name": "Artefacto 0-179 (MOTHER Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "MOTHER",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía MOTHER.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 0)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 20,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_MOON_080",
+    "name": "Artefacto 3-180 (MOON Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "MOON",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía MOON.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_BLACK_EMPEROR_081",
+    "name": "Artefacto 3-181 (BLACK_EMPEROR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "BLACK_EMPEROR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía BLACK_EMPEROR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 3,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_JUSTICIAR_082",
+    "name": "Artefacto 3-182 (JUSTICIAR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "JUSTICIAR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía JUSTICIAR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 3)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 5,
+      "corruptionRiskPercent": 1,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_HERMIT_083",
+    "name": "Artefacto 3-183 (HERMIT Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "HERMIT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía HERMIT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 2,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_PARAGON_084",
+    "name": "Artefacto 3-184 (PARAGON Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "PARAGON",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía PARAGON.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 5,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_WHEEL_OF_FORTUNE_085",
+    "name": "Artefacto 3-185 (WHEEL_OF_FORTUNE Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "WHEEL_OF_FORTUNE",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía WHEEL_OF_FORTUNE.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 3)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 3,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_ABYSS_086",
+    "name": "Artefacto 3-186 (ABYSS Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "ABYSS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía ABYSS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 6,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_CHAINED_087",
+    "name": "Artefacto 3-187 (CHAINED Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "CHAINED",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía CHAINED.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 12,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_FOOL_088",
+    "name": "Artefacto 2-188 (FOOL Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "FOOL",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía FOOL.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 14,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_DOOR_089",
+    "name": "Artefacto 2-189 (DOOR Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "DOOR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DOOR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_ERROR_090",
+    "name": "Artefacto 2-190 (ERROR Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "ERROR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía ERROR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 2)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_VISIONARY_091",
+    "name": "Artefacto 2-191 (VISIONARY Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "VISIONARY",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía VISIONARY.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_HANGED_MAN_092",
+    "name": "Artefacto 2-192 (HANGED_MAN Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "HANGED_MAN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía HANGED_MAN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_TYRANT_093",
+    "name": "Artefacto 2-193 (TYRANT Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "TYRANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TYRANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 2)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_SUN_094",
+    "name": "Artefacto 1-194 (SUN Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "SUN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía SUN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 1)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 18,
+      "corruptionRiskPercent": 15,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_WHITE_TOWER_095",
+    "name": "Artefacto 1-195 (WHITE_TOWER Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "WHITE_TOWER",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía WHITE_TOWER.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 1)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 24,
+      "corruptionRiskPercent": 9,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_DARKNESS_096",
+    "name": "Artefacto 1-196 (DARKNESS Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "DARKNESS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DARKNESS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 1)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 30,
+      "corruptionRiskPercent": 18,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_DEATH_097",
+    "name": "Artefacto 1-197 (DEATH Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "DEATH",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DEATH.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 1)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 36,
+      "corruptionRiskPercent": 24,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_TWILIGHT_GIANT_098",
+    "name": "Artefacto 0-198 (TWILIGHT_GIANT Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "TWILIGHT_GIANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TWILIGHT_GIANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 0)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 28,
+      "corruptionRiskPercent": 16,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_RED_PRIEST_099",
+    "name": "Artefacto 0-199 (RED_PRIEST Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "RED_PRIEST",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía RED_PRIEST.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 0)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 20,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_DEMONESS_100",
+    "name": "Artefacto 3-200 (DEMONESS Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "DEMONESS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DEMONESS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_MOTHER_101",
+    "name": "Artefacto 3-201 (MOTHER Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "MOTHER",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía MOTHER.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 3,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_MOON_102",
+    "name": "Artefacto 3-202 (MOON Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "MOON",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía MOON.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 3)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 5,
+      "corruptionRiskPercent": 1,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_BLACK_EMPEROR_103",
+    "name": "Artefacto 3-203 (BLACK_EMPEROR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "BLACK_EMPEROR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía BLACK_EMPEROR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 2,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_JUSTICIAR_104",
+    "name": "Artefacto 3-204 (JUSTICIAR Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "JUSTICIAR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía JUSTICIAR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 3)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 5,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_HERMIT_105",
+    "name": "Artefacto 3-205 (HERMIT Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "HERMIT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía HERMIT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 3)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 3,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_PARAGON_106",
+    "name": "Artefacto 3-206 (PARAGON Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "PARAGON",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía PARAGON.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 6,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_WHEEL_OF_FORTUNE_107",
+    "name": "Artefacto 3-207 (WHEEL_OF_FORTUNE Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "WHEEL_OF_FORTUNE",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía WHEEL_OF_FORTUNE.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 3)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 12,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_ABYSS_108",
+    "name": "Artefacto 2-208 (ABYSS Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "ABYSS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía ABYSS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 14,
+      "corruptionRiskPercent": 8,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_CHAINED_109",
+    "name": "Artefacto 2-209 (CHAINED Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "CHAINED",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía CHAINED.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_FOOL_110",
+    "name": "Artefacto 2-210 (FOOL Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "FOOL",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía FOOL.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 2)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 8,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_DOOR_111",
+    "name": "Artefacto 2-211 (DOOR Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "DOOR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DOOR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Devorador de Plata y Oro (Grado 2)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "El artefacto disuelve £2 en monedas o joyas de la cartera del portador cada amanecer; si no hay dinero, corroe la piel.",
+      "sanityDrainPerTrigger": 6,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Sumergir en una caja llena de limaduras de hierro."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_ERROR_112",
+    "name": "Artefacto 2-212 (ERROR Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "ERROR",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía ERROR.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Congelación de Extremidades (Grado 2)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "Reduce la temperatura corporal a niveles de hipotermia severa; los dedos adquieren un tono azulado y entumecido.",
+      "sanityDrainPerTrigger": 10,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Mantener junto a una llama encendida continuamente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G2_VISIONARY_113",
+    "name": "Artefacto 2-213 (VISIONARY Relic)",
+    "grade": 2,
+    "isCanonical": false,
+    "originPathway": "VISIONARY",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía VISIONARY.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 4-5",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Terror Ciego de los Animales (Grado 2)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Cualquier caballo, perro o gato doméstico a menos de cincuenta metros entra en pánico enloquecido atacando o huyendo.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 0,
+      "containmentProtocol": "Almacenar en un cofre de madera de árbol durmiente."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_HANGED_MAN_114",
+    "name": "Artefacto 1-214 (HANGED_MAN Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "HANGED_MAN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía HANGED_MAN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Envejecimiento Celular Acelerado (Grado 1)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Cada semana de posesión agrega visualmente un año de edad biológica al portador (cabello blanco y arrugas prematuras).",
+      "sanityDrainPerTrigger": 18,
+      "corruptionRiskPercent": 15,
+      "containmentProtocol": "Sellar en una cámara sellada al vacío espiritual con sales purificadas."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_TYRANT_115",
+    "name": "Artefacto 1-215 (TYRANT Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "TYRANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TYRANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Susurros de la Traición Íntima (Grado 1)",
+      "triggerCondition": "ON_REST",
+      "behavioralDescription": "Al intentar conciliar el sueño, el artefacto susurra mentiras convincentes sobre que los aliados planean asesinarte.",
+      "sanityDrainPerTrigger": 24,
+      "corruptionRiskPercent": 9,
+      "containmentProtocol": "Colocar dentro de una campana de plata grabada con salmos del sol."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_SUN_116",
+    "name": "Artefacto 1-216 (SUN Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "SUN",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía SUN.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Desprendimiento de Sombra (Grado 1)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "La sombra del portador cobra autonomía e intenta estrangular a la criatura más cercana (aliada o enemiga).",
+      "sanityDrainPerTrigger": 30,
+      "corruptionRiskPercent": 18,
+      "containmentProtocol": "Iluminar desde cuatro ángulos sin dejar sombra alguna."
+    }
+  },
+  {
+    "id": "ART_SEALED_G1_WHITE_TOWER_117",
+    "name": "Artefacto 1-217 (WHITE_TOWER Relic)",
+    "grade": 1,
+    "isCanonical": false,
+    "originPathway": "WHITE_TOWER",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía WHITE_TOWER.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 2-3",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Sed de Sangre de Pariente (Grado 1)",
+      "triggerCondition": "PASSIVE_CONTINUOUS",
+      "behavioralDescription": "Genera una compulsión neurótica de clavar una aguja en la carne de seres queridos para degustar su esencia vital.",
+      "sanityDrainPerTrigger": 36,
+      "corruptionRiskPercent": 24,
+      "containmentProtocol": "Encadenar con eslabones bendecidos por la Iglesia de la Noche."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_DARKNESS_118",
+    "name": "Artefacto 0-218 (DARKNESS Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "DARKNESS",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DARKNESS.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Atracción de Espectros Errantes (Grado 0)",
+      "triggerCondition": "ON_DAY_START",
+      "behavioralDescription": "Actúa como un faro para espíritus que vagan por el mundo astral, atrayendo 1-3 apariciones hostiles a la casa.",
+      "sanityDrainPerTrigger": 28,
+      "corruptionRiskPercent": 16,
+      "containmentProtocol": "Aislar con un muro de espiritualidad creado con agua sagrada."
+    }
+  },
+  {
+    "id": "ART_SEALED_G0_DEATH_119",
+    "name": "Artefacto 0-219 (DEATH Relic)",
+    "grade": 0,
+    "isCanonical": false,
+    "originPathway": "DEATH",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía DEATH.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 0-1",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Claustrofobia Mística Sofocante (Grado 0)",
+      "triggerCondition": "ON_EQUIP",
+      "behavioralDescription": "El portador siente que las paredes de cualquier habitación se cierran sobre su pecho si permanece bajo techo.",
+      "sanityDrainPerTrigger": 20,
+      "corruptionRiskPercent": 4,
+      "containmentProtocol": "Guardar al aire libre en lo alto de un campanario."
+    }
+  },
+  {
+    "id": "ART_SEALED_G3_TWILIGHT_GIANT_120",
+    "name": "Artefacto 3-220 (TWILIGHT_GIANT Relic)",
+    "grade": 3,
+    "isCanonical": false,
+    "originPathway": "TWILIGHT_GIANT",
+    "appearance": "Un objeto con la forma de un amuleto, daga o sortija victoriana que irradia un tenue resplandor vinculado a la vía TWILIGHT_GIANT.",
+    "activePowers": [
+      "Despliegue extraordinario de nivel Secuencia 6-7",
+      "Resonancia espiritual defensiva y ofensiva"
+    ],
+    "contraindication": {
+      "tabooName": "Risa Involuntaria Desquiciada (Grado 3)",
+      "triggerCondition": "ON_COMBAT_ACTION",
+      "behavioralDescription": "El portador prorrumpe en carcajadas histéricas durante situaciones de peligro mortal, revelando su posición.",
+      "sanityDrainPerTrigger": 4,
+      "corruptionRiskPercent": 2,
+      "containmentProtocol": "Envolver en paño de terciopelo empapado en aceite sedante."
+    }
+  }
+]

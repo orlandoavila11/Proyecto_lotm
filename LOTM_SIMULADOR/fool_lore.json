@@ -1,0 +1,333 @@
+[
+  {
+    "monster_id": "mon_lavos_squid",
+    "name": "Calamar de Lavos",
+    "pathway": "FOOL",
+    "sequence": 9,
+    "classification": {
+      "category": "EXTRAORDINARY_CREATURE",
+      "nature": "Entidad anfibia del Mundo Espiritual y aguas profundas",
+      "threat_narrative": "Peligro bajo si no se le acorrala; sumamente evasivo e intuitivo."
+    },
+    "lore": {
+      "short_description": "Cefalópodo espiritual de tonalidad celeste translúcida y bioluminiscencia fría que habita en confluencias acuáticas aisladas.",
+      "long_description": "El Calamar de Lavos es una criatura biológica nativa del Mundo Espiritual que ocasionalmente se filtra a las aguas profundas del mundo real. Conserva una afinidad innata con el velo astral sin haber caído en la locura frenética de las secuencias superiores. Es la fuente primaria del extracto espiritual necesario para abrir de manera controlada la percepción extrasensorial de los iniciados de la Vía del Loco.",
+      "pathway_relation": "Representa los principios embrionarios de la Secuencia 9 (Vidente): visión espiritual e intuición de peligro. Su organismo canaliza espiritualidad sutil que permite a un ser humano percibir auras y consultar el destino.",
+      "historical_origin": "Documentado desde la Cuarta Época por botánicos arcanos y boticarios clandestinos en las cuencas de Loen."
+    },
+    "evidence": {
+      "behavior": "Extremadamente cauteloso, pasivo y evasivo. Posee una intuición pasiva que le advierte de intenciones hostiles antes de que se manifiesten físicamente, buscando refugio en grietas de roca antes de ser detectado.",
+      "sensory_traces": "Aroma frío similar a la menta silvestre y el ozono en las superficies donde reposa; estelas de vapor celeste sobre el agua que tardan minutos en disiparse.",
+      "spiritual_footprint": "Puntos luminosos azul cobalto en el plano astral con pulsos de advertencia rítmicos."
+    }
+  },
+  {
+    "monster_id": "mon_hornacis_gray_mountain_goat",
+    "name": "Cabra Gris de la Cordillera Hornacis",
+    "pathway": "FOOL",
+    "sequence": 8,
+    "classification": {
+      "category": "MUTATED_BEAST",
+      "nature": "Mamífero adaptado a riscos de alta montaña y niebla mística",
+      "threat_narrative": "Peligro moderado; sus coces y saltos desafían la gravedad normal con precisión acrobática."
+    },
+    "lore": {
+      "short_description": "Ungulado ágil de pelaje ceniciento y cuernos estriados que salta entre precipicios envueltos en la niebla perpetua de las cumbres de Hornacis.",
+      "long_description": "Endémica de los riscos escarpados de la cordillera Hornacis, esta especie ha mutado bajo la influencia residual de la antigua Nación de la Noche y los vestigios del telar del destino. Desarrolló un equilibrio milagroso que le permite posarse sobre superficies del grosor de una moneda y calcular parábolas cinéticas instintivas.",
+      "pathway_relation": "Aporta el núcleo físico de coordinación, agilidad y equilibrio absoluto indispensable para la Secuencia 8 (Payaso / Clown).",
+      "historical_origin": "Conocida por las antiguas tribus de Hornacis como 'La danzarina de los abismos'."
+    },
+    "evidence": {
+      "behavior": "Territorial pero no predatoria; si es perseguida, atrae a sus cazadores hacia desfiladeros inestables donde realiza maniobras de distracción acrobática antes de perderse en la niebla.",
+      "sensory_traces": "Sonido semejante a cascabeles lejanos producido por el choque de sus pezuñas en la roca; pelusa grisácea flotando en corrientes térmicas.",
+      "spiritual_footprint": "Aura elástica con vectores cinéticos visibles que predicen su siguiente salto en el plano de la espiritualidad."
+    }
+  },
+  {
+    "monster_id": "mon_human_faced_rose",
+    "name": "Rosa de Rostro Humano",
+    "pathway": "FOOL",
+    "sequence": 8,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Planta carnívora mística alimentada por emociones y sangre de seres sintientes",
+      "threat_narrative": "Amenaza considerable; sus pétalos proyectan expresiones faciales que desestabilizan el autocontrol anímico."
+    },
+    "lore": {
+      "short_description": "Flor carmesí de tallo grueso cubierto de espinas cuyos pétalos centrales forman la semblanza de una máscara humana en constante mutación de muecas.",
+      "long_description": "Vegetación extraordinaria que brota en antiguos campos de batalla y cementerios donde convergen el dolor y la histeria colectiva. Absorbe las pasiones reprimidas de los muertos, modelando en su corola sonrisas grotescas, llantos desesperados y burlas silenciosas que inducen descontrol emocional en quienes la observan.",
+      "pathway_relation": "Suministra el componente de control de la expresión facial y dominio de las emociones bajo agonía que define la actuación del Payaso (Secuencia 8).",
+      "historical_origin": "Registrada en los grimorios de botánica hermética de la familia Antigonus durante la Cuarta Época."
+    },
+    "evidence": {
+      "behavior": "Seduce a las presas proyectando un rostro familiar sonriente; cuando la víctima se acerca fascinada, dispara sus espinas y exuda polen psicoactivo que provoca risa incontrolable hasta el colapso pulmonar.",
+      "sensory_traces": "Fragancia dulzona sofocante a rosas fermentadas y cobre metálico; eco de risitas sofocadas que parece brotar de entre la hierba.",
+      "spiritual_footprint": "Nube carmesí densa repleta de rostros diminutos que giran en torbellino astral."
+    }
+  },
+  {
+    "monster_id": "mon_mist_treant",
+    "name": "Treant de la Niebla",
+    "pathway": "FOOL",
+    "sequence": 7,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Entidad vegetal astral compuesta de madera hueca y niebla ilusoria densa",
+      "threat_narrative": "Peligro alto; crea laberintos de niebla y proyecta ilusiones de fuego espectral para desorientar."
+    },
+    "lore": {
+      "short_description": "Árbol humanoide de corteza porosa blancuzca de cuyas ramas brota una densa niebla fría que distorsiona la percepción espacial.",
+      "long_description": "Habitante de los bosques liminales entre el mundo real y el Mundo Espiritual. Su estructura interna no es de madera maciza, sino de canales huecos por donde circula savia vaporosa. Es capaz de hacer que los exploradores caminen en círculos durante días, proyectando chispas y luces fatuas que simulan campamentos amigos.",
+      "pathway_relation": "Su raíz verdadera almacena el poder de manipulación de la niebla, sustitución ilusoria y control de ilusiones de la Secuencia 7 (Mago / Magician).",
+      "historical_origin": "Documentado por los exploradores del Mar de Niebla de Loen como la causa primordial de extravíos en islas desiertas."
+    },
+    "evidence": {
+      "behavior": "Se mantiene inmóvil asemejando un roble muerto hasta que el intruso entra en su radio de vapor; entonces cambia de posición mediante sustitución de corteza cuando no es observado directamente.",
+      "sensory_traces": "Descenso repentino de la visibilidad a menos de dos metros; humedad helada con sabor a ceniza húmeda y resina de pino.",
+      "spiritual_footprint": "Pilar de vapor blanco grisáceo giratorio que desvía los péndulos de radiestesia hacia coordenadas falsas."
+    }
+  },
+  {
+    "monster_id": "mon_dark_patterned_black_panther",
+    "name": "Pantera Negra de Patrones Oscuros",
+    "pathway": "FOOL",
+    "sequence": 7,
+    "classification": {
+      "category": "MUTATED_BEAST",
+      "nature": "Félido depredador nocturno con patrones geométricos arcanos en su pelaje",
+      "threat_narrative": "Peligro severo; ataca desde puntos ciegos aprovechando la compresión de aire y el sigilo místico."
+    },
+    "lore": {
+      "short_description": "Gran felino de pelaje negro carbón adornado con tenues patrones espirales que absorben el sonido de sus pasos y el calor de su cuerpo.",
+      "long_description": "Cazador supremo de las selvas del Continente Sur y montañas desoladas. Su sistema nervioso central acumula una espiritualidad densa que le permite comprimir el aire a su alrededor para propulsarse o expulsar ráfagas invisibles de impacto cinético antes de que la presa registre su proximidad.",
+      "pathway_relation": "Su líquido cefalorraquídeo es el catalizador canónico para los conjuros cinéticos de aire ('Air Bullet') y agilidad de la Secuencia 7 (Mago).",
+      "historical_origin": "Reverenciada por las tribus guerreras de las Tierras de los Dioses como la sombra que camina sin pisadas."
+    },
+    "evidence": {
+      "behavior": "Acecha durante horas sin emitir respiración perceptible; ataca disparando ráfagas de aire comprimido desde las ramas altas para paralizar a la víctima antes del zarpazo.",
+      "sensory_traces": "Ráfagas repentinas de viento frío en recintos cerrados; olor a almizcle salvaje y piedra recalentada; silencio total de aves.",
+      "spiritual_footprint": "Silueta felina oscura rodeada de anillos de aire comprimido que distorsionan el flujo espiritual."
+    }
+  },
+  {
+    "monster_id": "mon_thousand_faced_hunter",
+    "name": "Cazador de Mil Caras",
+    "pathway": "FOOL",
+    "sequence": 6,
+    "classification": {
+      "category": "EXTRAORDINARY_CREATURE",
+      "nature": "Entidad mística metamórfica de masa gelatinosa capaz de replicar estructuras biológicas",
+      "threat_narrative": "Amenaza crítica; puede usurpar la identidad de compañeros de equipo sin levantar sospechas inmediatas."
+    },
+    "lore": {
+      "short_description": "Criatura amorfa de superficie semitranslúcida de la que emergen y se sumergen rostros de innumerables especies en constante reorganización celular.",
+      "long_description": "Bestia mística que habita en profundidades cavernarias del Mundo Espiritual. Carece de forma fija: su tejido biológico es maleable hasta el extremo de replicar huesos, cuerdas vocales, huellas dactilares y el patrón áurico exacto de cualquier criatura a la que haya devorado o examinado con detenimiento.",
+      "pathway_relation": "Su glándula pituitaria mutada es el ingrediente fundamental de la Secuencia 6 (Sin Rostro / Faceless), confiriendo la capacidad de transformación anatómica total.",
+      "historical_origin": "Clasificado como peligro de Nivel 2 en los archivos secretos de los Halcones Nocturnos de la Iglesia de la Noche."
+    },
+    "evidence": {
+      "behavior": "Infiltra grupos humanos adoptando la apariencia de uno de sus miembros tras aislarlo; manipula las sospechas internas para que el grupo se desintegre antes de cazar.",
+      "sensory_traces": "Rastro viscoso inodoro que se disuelve en agua sin dejar residuo; sensación de que la voz de un conocido suena sutilmente metálica.",
+      "spiritual_footprint": "Aura caótica que cambia de color y forma cada pocos segundos, emulando identidades superpuestas."
+    }
+  },
+  {
+    "monster_id": "mon_human_skinned_shadow",
+    "name": "Sombra de Piel Humana",
+    "pathway": "FOOL",
+    "sequence": 6,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Entidad planar bidimensional que se adhiere a superficies físicas para desprender identidades",
+      "threat_narrative": "Peligro severo; ataca desde paredes o suelos intentando envolver la piel de la víctima para consumirla."
+    },
+    "lore": {
+      "short_description": "Sombra silente de silueta humana que se desliza por muros y suelos desprovista de cuerpo físico que la proyecte.",
+      "long_description": "Nacida de la muerte trágica de individuos cuya identidad fue borrada o robada en rituales arcanos. Existe como una lámina de oscuridad que busca constantemente envolver un cuerpo tridimensional para recuperar la sensación de existencia táctil, desollando espiritualmente a quien queda atrapado en su abrazo.",
+      "pathway_relation": "Ingrediente alternativo para la poción de Sin Rostro (Secuencia 6). Otorga la capacidad de desprender y portar identidades como ropajes externos.",
+      "historical_origin": "Encontrada con frecuencia en los pasajes subterráneos de la Cuarta Época bajo la ciudad de Backlund."
+    },
+    "evidence": {
+      "behavior": "Permanece pegada a la sombra natural de la presa hasta que esta entra en penumbra; en ese instante se desprende del suelo y asfixia a la víctima bloqueando sus sentidos.",
+      "sensory_traces": "Frío glacial al pisar la zona del suelo donde descansa; olor a cuero húmedo y polvo antiguo; susurros ininteligibles al oído.",
+      "spiritual_footprint": "Mancha oscura bidimensional en el plano astral que absorbe la luz de las auras circundantes."
+    }
+  },
+  {
+    "monster_id": "mon_six_winged_gargoyle",
+    "name": "Gárgola de Seis Alas",
+    "pathway": "FOOL",
+    "sequence": 5,
+    "classification": {
+      "category": "EXTRAORDINARY_CREATURE",
+      "nature": "Constructo biológico de piedra viva dotado de visión sobre los hilos del cuerpo espiritual",
+      "threat_narrative": "Amenaza calamitosa; petrifica y manipula los cuerpos de sus adversarios a distancia mediante filamentos invisibles."
+    },
+    "lore": {
+      "short_description": "Criatura colosal de piedra grisácea con tres pares de alas membranosas y ojos que carecen de pupila, tallada con runas del destino.",
+      "long_description": "Antigua guardiana de templos míticos de la Cuarta Época. Su visión no percibe la luz electromagnética ordinaria, sino los hilos del cuerpo espiritual de los seres vivos. Al batir sus alas, no genera corrientes de aire, sino vibraciones resonantes que entorpecen la conexión entre el alma de su oponente y su sistema nervioso físico.",
+      "pathway_relation": "Su cristal del núcleo es el ingrediente principal de la Secuencia 5 (Marionetista / Marionettist), otorgando la visión y manipulación de los hilos del cuerpo espiritual.",
+      "historical_origin": "Descrita en los registros de la familia Zaratul como la custodia por excelencia de los mausoleos de la nobleza de Loen."
+    },
+    "evidence": {
+      "behavior": "Permanece posada en cornisas góticas como estatua inerte; cuando localiza a un intruso, extiende sus hilos invisibles para ralentizarlo progresivamente hasta convertirlo en su marioneta antes de descender.",
+      "sensory_traces": "Sensación de pesadez en las articulaciones y rigidez muscular repentina; polvo de piedra caliza suspendido; eco de alas pesadas en el cielo.",
+      "spiritual_footprint": "Haz central de líneas luminosas de color negro puro que descienden desde la criatura y se ramifican hacia el suelo."
+    }
+  },
+  {
+    "monster_id": "mon_ancient_wraith",
+    "name": "Espectro Antiguo",
+    "pathway": "FOOL",
+    "sequence": 5,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Entidad espectral incorpórea milenaria capaz de poseer materia y saltar entre espejos",
+      "threat_narrative": "Peligro crítico; inmune al daño físico ordinario, puede congelar el alma y poseer enemigos para volverlos contra sus aliados."
+    },
+    "lore": {
+      "short_description": "Aparición flotante de silueta translúcida vestida con harapos de la nobleza de épocas extintas, cuyo rostro oscila entre una calavera y una máscara burlona.",
+      "long_description": "Remanente de almas de la Tercera o Cuarta Época que rehusaron disolverse en el Inframundo. No posee órganos ni masa; navega a través de superficies reflectantes y puede fundirse con la sombra de objetos inanimados. Su toque transmite un frío metafísico que hiela la espiritualidad y ralentiza los procesos biológicos hasta la parálisis total.",
+      "pathway_relation": "El polvo residual de su núcleo es el ingrediente canónico para la poción de Marionetista (Secuencia 5), confiriendo intangibilidad y afinidad espectral.",
+      "historical_origin": "Frecuente en los castillos derruidos de la familia Tudor en las montañas de Intis."
+    },
+    "evidence": {
+      "behavior": "Acecha desde el interior de espejos antiguos o vidrios de ventanas victorianas; emerge para poseer temporalmente a un blanco y obligarlo a autolesionarse o atacar a sus compañeros.",
+      "sensory_traces": "Escarcha que dibuja patrones de telas de araña sobre cristales; caída violenta de temperatura que hiela el aliento; olor a incienso funerario caduco.",
+      "spiritual_footprint": "Cuerpo espiritual azul blanquecino gélido rodeado de micro-filamentos de posesión astral."
+    }
+  },
+  {
+    "monster_id": "mon_bizarro_bane",
+    "name": "Perdición Bizarra",
+    "pathway": "FOOL",
+    "sequence": 4,
+    "classification": {
+      "category": "MYTHICAL_FORM",
+      "nature": "Entidad semidivina que encarna el caos de la ilusión, el terror y la transformación grotesca",
+      "threat_narrative": "Amenaza de rango Semidiós (Secuencia 4); manipula la física local transformando ataques enemigos en fenómenos absurdos."
+    },
+    "lore": {
+      "short_description": "Monstruosidad de pesadilla compuesta por miembros desarticulados, máscaras teatrales rotas y un ojo ciclópeo central que destella en azul fantasmal.",
+      "long_description": "Aberración nacida de la pérdida de control de semidioses de la Vía del Loco o condensada en las profundidades más caóticas del Mundo Espiritual. Altera la causalidad en su entorno inmediato: las balas pueden convertirse en palomas de papel, el fuego en agua helada, y las sombras de sus atacantes pueden rebelarse para ahorcarlos.",
+      "pathway_relation": "Su ojo principal es el ingrediente canónico supremo de la poción de Hechicero Bizarro (Secuencia 4 / Bizarro Sorcerer).",
+      "historical_origin": "Mencionado en las advertencias secretas de la Iglesia del Dios del Vapor como 'El Arlequín del Desastre'."
+    },
+    "evidence": {
+      "behavior": "No ataca con violencia directa convencional; ejecuta actos teatrales grotescos donde cada gesto distorsiona la realidad de sus oponentes hasta inducirles pánico absoluto y disolución somática.",
+      "sensory_traces": "Sonido de risas histéricas y aplausos desincronizados en el aire vacío; olor a pólvora quemada mezclada con rosas podridas y éter.",
+      "spiritual_footprint": "Vórtice gigantesco de hilos espirituales enredados que conectan decenas de marionetas invisibles en un radio de cientos de metros."
+    }
+  },
+  {
+    "monster_id": "mon_spirit_world_plunderer",
+    "name": "Saqueador del Mundo Espiritual",
+    "pathway": "FOOL",
+    "sequence": 4,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Depredador alfa del plano astral capaz de desgarrar y saquear fragmentos de almas",
+      "threat_narrative": "Peligro semidiós; viaja a través de las corrientes del Mundo Espiritual para emboscar a semidioses y devorar su espiritualidad."
+    },
+    "lore": {
+      "short_description": "Silueta alada envuelta en jirones de niebla negra y tentáculos astrales de cuyas garras gotean fragmentos de memorias arrancadas.",
+      "long_description": "Entidad depredadora nativa del Mundo Espiritual profundo. Caza a los viajeros astrales desgarrando sus cuerpos espirituales y absorbiendo sus capacidades. No puede ser herido por armas ordinarias; cualquier confrontación requiere sellos rituales o magia de alta secuencia capaz de fijar su esencia antes de que se desvanezca en las corrientes astrales.",
+      "pathway_relation": "Su cuerpo del alma verdadera es el ingrediente complementario para la poción de Hechicero Bizarro (Secuencia 4). Confiere el poder de intercambio y saqueo de habilidades.",
+      "historical_origin": "Terror documentado por los antiguos chamanes de la Escuela de Pensamiento de la Vida."
+    },
+    "evidence": {
+      "behavior": "Aparece súbitamente desgarrando el velo espacial detrás de su presa; extiende tentáculos astrales para atrapar el cuerpo espiritual y arrastrarlo hacia su dimensión antes de que pueda reaccionar.",
+      "sensory_traces": "Grietas negras en el aire que tardan segundos en cerrarse; olor a ozono fétido y salitre quemado; distorsión del horizonte visual.",
+      "spiritual_footprint": "Cuerpo espiritual negro azabache con bordes dentados que devora activamente la espiritualidad ambiental."
+    }
+  },
+  {
+    "monster_id": "mon_hound_of_fulgrim",
+    "name": "Sabueso de Fulgrim",
+    "pathway": "FOOL",
+    "sequence": 3,
+    "classification": {
+      "category": "SPIRIT_WORLD_ENTITY",
+      "nature": "Canino místico ancestral capaz de rastrear y atravesar las nieblas de la historia",
+      "threat_narrative": "Amenaza de rango Santo (Secuencia 3); no rastrea por el olfato biológico, sino siguiendo la trayectoria de las almas a través del tiempo y los registros históricos."
+    },
+    "lore": {
+      "short_description": "Cánido monstruoso de pelaje blanco como la escarcha y ojos como brazas de rubí que corre sobre la superficie de los ríos del pasado.",
+      "long_description": "Habitante de la niebla histórica del Mundo Espiritual. Su percepción trasciende el presente: puede ver los ecos de lo que una persona hizo hace siglos y perseguir a un objetivo localizando el momento exacto en que nació su nombre. Si muerde la sombra histórica de una víctima, esta sufre heridas reales en el presente.",
+      "pathway_relation": "Sus ojos son el ingrediente principal supremo para la Secuencia 3 (Erudito del Pasado / Scholar of Yore). Otorgan el Ojo de la Historia y la invocación de proyecciones históricas.",
+      "historical_origin": "Criatura mítica asociada a las cortes de la Tercera Época y a los secretos del Emperador de la Noche."
+    },
+    "evidence": {
+      "behavior": "Rastrea a sus presas corriendo por los vacíos entre las páginas de los libros antiguos; cuando ataca, congela la historia inmediata de su objetivo impidiéndole invocar defensas.",
+      "sensory_traces": "Huellas de patas escarchadas que no tocan el suelo físico; aullido distante que suena como viento soplando en un archivo abandonado; olor a papel milenario y polvo de hielo.",
+      "spiritual_footprint": "Estela luminosa de color rojo carmesí y blanco escarcha que se extiende hacia atrás en el río del tiempo."
+    }
+  },
+  {
+    "monster_id": "mon_demonic_wolf_of_fog",
+    "name": "Lobo Demoníaco de la Niebla",
+    "pathway": "FOOL",
+    "sequence": 3,
+    "classification": {
+      "category": "MYTHICAL_FORM",
+      "nature": "Descendiente directo de la realeza lupina de la Segunda Época con dominio de la niebla de ocultación",
+      "threat_narrative": "Peligro de rango Santo; puede ocultar ejércitos enteros en la niebla y borrar eventos de la memoria del mundo."
+    },
+    "lore": {
+      "short_description": "Lobo colosal de pelaje gris oscuro del que mana niebla perpetua, con garras como dagas de obsidiana y un corazón que late con poder histórico.",
+      "long_description": "Superviviente de los linajes de lobos demoníacos que sirvieron a Flegrea en la Segunda Época. Su cuerpo no es enteramente carnal: gran parte de su masa es niebla condensada capaz de 'ocultar' conceptos físicos como el calor, el peso o la visibilidad de una montaña entera. Su corazón alberga el poder de resucitar en la historia si no es purgado con rituales de alta secuencia.",
+      "pathway_relation": "Su corazón es el ingrediente fundamental de la Secuencia 3 (Erudito del Pasado). Permite la ocultación histórica y el préstamo de fuerza desde el vacío.",
+      "historical_origin": "Enemigo jurado de las iglesias ortodoxas desde las cruzadas de la Tercera Época."
+    },
+    "evidence": {
+      "behavior": "Cubre valles completos con niebla mágica; combate convocando marionetas históricas de héroes que devoró en siglos pasados para abrumar a sus oponentes.",
+      "sensory_traces": "Niebla tan densa que el sonido se apaga a los pocos centímetros; frío cortante en la piel; olor a hierro oxidado, pelo húmedo y tierra de tumba.",
+      "spiritual_footprint": "Lobo titánico de humo que rodea el horizonte astral con ojos rojos ardientes como estrellas moribundas."
+    }
+  },
+  {
+    "monster_id": "mon_dark_demonic_wolf",
+    "name": "Lobo Demoníaco Oscuro",
+    "pathway": "FOOL",
+    "sequence": 2,
+    "classification": {
+      "category": "MYTHICAL_FORM",
+      "nature": "Forma mítica completa del Ángel de los Milagros (Secuencia 2 / Invocador de Milagros)",
+      "threat_narrative": "Amenaza de rango Ángel (Secuencia 2); es capaz de convertir los deseos de sus presas en maldiciones inmediatas y otorgar milagros inversos."
+    },
+    "lore": {
+      "short_description": "Titánico lobo demoníaco de seis patas y pelaje de oscuridad absoluta salpicado de estrellas, con cuernos curvados que canalizan milagros divinos.",
+      "long_description": "Existencia divina que camina en la cúspide de la Segunda Época y los mitos de la creación. Es la encarnación de la Secuencia 2 (Invocador de Milagros / Miracle Invoker). No combate: decreta milagros. Si desea que una ciudad entera sea transportada al fondo del océano, el milagro se consuma. Puede acumular los deseos no cumplidos de millones de seres vivos para desatar cataclismos imposibles.",
+      "pathway_relation": "Su corazón inmortal es el ingrediente primordial para ascender al rango angélico de Invocador de Milagros (Secuencia 2). Permite la concesión de milagros y la resurrección histórica.",
+      "historical_origin": "Descendiente de Kotar y los reyes demoníacos que escaparon del colapso de los antiguos dioses en la Segunda Época."
+    },
+    "evidence": {
+      "behavior": "Se oculta en los rincones olvidados del Continente Abandonado; concede deseos a viajeros incautos para acumular energía de milagro antes de devorarlos.",
+      "sensory_traces": "El cielo nocturno sobre el área muestra auroras boreales oscuras; el tiempo atmosférico cambia radicalmente cada minuto; fragancia a incienso sagrado corrompido.",
+      "spiritual_footprint": "Constelación móvil en forma de lobo cósmico en el plano astral donde orbitan miles de orbes de deseos centelleantes."
+    }
+  },
+  {
+    "monster_id": "mon_spirit_worm_manifestation",
+    "name": "Abominación del Velo de Misterios",
+    "pathway": "FOOL",
+    "sequence": 1,
+    "classification": {
+      "category": "MYTHICAL_FORM",
+      "nature": "Masa titánica de Gusanos del Tiempo, el Destino y el Espíritu interconectados en el castillo de niebla",
+      "threat_narrative": "Peligro de rango Arcángel (Secuencia 1: Asistente de Misterios); contemplar su forma desintegra la coherencia de la mente humana en millones de parásitos espirituales."
+    },
+    "lore": {
+      "short_description": "Colosal vórtice viviente de miles de millones de gusanos transparentes y plateados que sostienen las cortinas de la niebla histórica y el castillo del misterio.",
+      "long_description": "La forma mítica definitiva de la Secuencia 1 (Asistente de Misterios / Attendant of Mysteries). No posee anatomía convencional: está compuesto por innumerables Gusanos del Espíritu que se entrelazan formando cortinas, capas y tentáculos astrales. Cada gusano contiene una fracción de consciencia divina capaz de parasitar a semidioses, manipular marionetas a escala planetaria y ocultar continentes enteros tras el velo del misterio.",
+      "pathway_relation": "Encarna y custodia la Característica Beyonder de Asistente de Misterios (Secuencia 1). Otorga la autoridad suprema de la manipulación de marionetas y la regeneración por gusanos.",
+      "historical_origin": "Manifestación arquetípica vinculada al Castillo de Sefirah y a los orígenes cósmicos del Señor de los Misterios."
+    },
+    "evidence": {
+      "behavior": "Existe simultáneamente en todas sus marionetas y en la niebla sobre la historia; disuelve cualquier ataque en el vacío del misterio y responde transformando a sus adversarios en gusanos del espíritu subordinados.",
+      "sensory_traces": "Sonido semejante a seda deslizándose sobre seda multiplicado por millones de veces; aroma a libros antiguos sellados en cámaras de plomo; sensación de que la propia mente se divide en hilos independientes.",
+      "spiritual_footprint": "Castillo de niebla colosal en el ápice del plano astral cuyos pilares están formados por cascadas de gusanos espirituales plateados en movimiento perpetuo."
+    }
+  }
+]
+

@@ -1,0 +1,78 @@
+{
+  "sequence": 8,
+
+  "quests": [
+
+    {
+      "id": "SQ8_001",
+      "title": "Public Performance",
+      "difficulty": "NORMAL",
+      "objective": "Complete a public task while secretly pursuing another goal.",
+      "location": "CITY",
+      "tags": ["SOCIAL"]
+    },
+
+    {
+      "id": "SQ8_002",
+      "title": "Gang Mediation",
+      "difficulty": "NORMAL",
+      "objective": "Stop a conflict between two gangs.",
+      "location": "CITY",
+      "tags": ["NEGOTIATION"]
+    },
+
+    {
+      "id": "SQ8_003",
+      "title": "The Informant",
+      "difficulty": "NORMAL",
+      "objective": "Obtain information from a reluctant source.",
+      "location": "CITY",
+      "tags": ["INVESTIGATION"]
+    },
+
+    {
+      "id": "SQ8_004",
+      "title": "Counter Surveillance",
+      "difficulty": "NORMAL",
+      "objective": "Identify and evade someone following you.",
+      "location": "CITY",
+      "tags": ["STEALTH"]
+    },
+
+    {
+      "id": "SQ8_005",
+      "title": "Forbidden Library",
+      "difficulty": "NORMAL",
+      "objective": "Acquire a restricted text.",
+      "location": "LIBRARY",
+      "tags": ["KNOWLEDGE"]
+    },
+
+    {
+      "id": "SQ8_006",
+      "title": "Merchant Escort",
+      "difficulty": "NORMAL",
+      "objective": "Escort a merchant safely.",
+      "location": "ROAD",
+      "tags": ["ESCORT"]
+    },
+
+    {
+      "id": "SQ8_007",
+      "title": "Secret Meeting",
+      "difficulty": "NORMAL",
+      "objective": "Observe a hidden gathering.",
+      "location": "SECRET_LOCATION",
+      "tags": ["OBSERVATION"]
+    },
+
+    {
+      "id": "SQ8_008",
+      "title": "False Identity",
+      "difficulty": "NORMAL",
+      "objective": "Maintain a fake identity for one week.",
+      "location": "CITY",
+      "tags": ["INFILTRATION"]
+    }
+  ]
+}

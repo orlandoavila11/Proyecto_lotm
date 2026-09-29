@@ -1,0 +1,378 @@
+{
+  "version": "1.0",
+
+  "monsters": [
+
+    {
+      "id": "sun_divine_bird_king",
+
+      "name": "King of the Sun Divine Birds",
+
+      "recommendedSequence": 2,
+
+      "threatLevel": "ANGEL",
+
+      "pathwayRelated": "SUN",
+
+      "dropItems": [
+        "Black Tail Feather of the Sun Divine Bird King",
+        "Sun Divine Bird Blood",
+        "Sun Divine Core"
+      ],
+
+      "locations": [
+        "ASTRAL_WORLD"
+      ],
+
+      "bossType": "ANGELIC_CREATURE"
+    },
+
+    {
+      "id": "blazing_giant_leader",
+
+      "name": "Leader of the Blazing Giants",
+
+      "recommendedSequence": 2,
+
+      "threatLevel": "ANGEL",
+
+      "pathwayRelated": "SUN",
+
+      "dropItems": [
+        "Blazing Giant Leader Heart",
+        "Blazing Giant Leader Blood",
+        "Blazing Giant Leader Eyes"
+      ],
+
+      "locations": [
+        "FORSAKEN_LAND_OF_THE_GODS"
+      ],
+
+      "bossType": "ANGELIC_CREATURE"
+    },
+
+    {
+      "id": "ancient_psychic_dragon",
+
+      "name": "Ancient Psychic Dragon",
+
+      "recommendedSequence": 2,
+
+      "threatLevel": "ANGEL",
+
+      "pathwayRelated": "VISIONARY",
+
+      "dropItems": [
+        "Ancient Psychic Dragon Heart",
+        "Ancient Psychic Dragon Blood"
+      ],
+
+      "locations": [
+        "DREAM_WORLD",
+        "ASTRAL_WORLD"
+      ],
+
+      "bossType": "ANGELIC_CREATURE"
+    },
+
+    {
+      "id": "dream_dragon",
+
+      "name": "Dream Dragon",
+
+      "recommendedSequence": 3,
+
+      "threatLevel": "HIGH_SAINT",
+
+      "pathwayRelated": "VISIONARY",
+
+      "dropItems": [
+        "Dream Dragon Brain",
+        "Dream Dragon Blood"
+      ],
+
+      "locations": [
+        "DREAM_WORLD"
+      ],
+
+      "bossType": "LEGENDARY_MONSTER"
+    },
+
+    {
+      "id": "treant_king",
+
+      "name": "Treant King",
+
+      "recommendedSequence": 3,
+
+      "threatLevel": "HIGH_SAINT",
+
+      "pathwayRelated": "VISIONARY",
+
+      "dropItems": [
+        "Treant King Crystal Heart",
+        "Treant King Sap"
+      ],
+
+      "locations": [
+        "ANCIENT_FOREST"
+      ],
+
+      "bossType": "LEGENDARY_MONSTER"
+    },
+
+    {
+      "id": "mirror_god",
+
+      "name": "Mirror God",
+
+      "recommendedSequence": 3,
+
+      "threatLevel": "HIGH_SAINT",
+
+      "pathwayRelated": "DEMONESS",
+
+      "dropItems": [
+        "Mirror God Heart",
+        "Mirror God Fragment"
+      ],
+
+      "locations": [
+        "MIRROR_WORLD"
+      ],
+
+      "bossType": "LEGENDARY_MONSTER"
+    },
+
+    {
+      "id": "gorgon_queen",
+
+      "name": "Ancient Gorgon",
+
+      "recommendedSequence": 3,
+
+      "threatLevel": "HIGH_SAINT",
+
+      "pathwayRelated": "DEMONESS",
+
+      "dropItems": [
+        "Gorgon Eyes",
+        "Gorgon Blood"
+      ],
+
+      "locations": [
+        "FORGOTTEN_RUINS"
+      ],
+
+      "bossType": "LEGENDARY_MONSTER"
+    },
+
+    {
+      "id": "flesh_monarch",
+
+      "name": "Flesh Monarch",
+
+      "recommendedSequence": 2,
+
+      "threatLevel": "ANGEL",
+
+      "pathwayRelated": "HANGED_MAN",
+
+      "dropItems": [
+        "Flesh Monarch Crystal",
+        "Flesh Monarch Blood",
+        "Flesh Monarch Flesh"
+      ],
+
+      "locations": [
+        "SHADOW_WORLD"
+      ],
+
+      "bossType": "ANGELIC_CREATURE"
+    },
+
+    {
+      "id": "shadow_king",
+
+      "name": "Shadow King",
+
+      "recommendedSequence": 2,
+
+      "threatLevel": "ANGEL",
+
+      "pathwayRelated": "HANGED_MAN",
+
+      "dropItems": [
+        "Shadow King Pus",
+        "Shadow King Residue"
+      ],
+
+      "locations": [
+        "SHADOW_WORLD"
+      ],
+
+      "bossType": "ANGELIC_CREATURE"
+    },
+
+    {
+      "id": "herd_sovereign",
+
+      "name": "Herd Sovereign",
+
+      "recommendedSequence": 3,
+
+      "threatLevel": "HIGH_SAINT",
+
+      "pathwayRelated": "HANGED_MAN",
+
+      "dropItems": [
+        "Herd Sovereign Skull",
+        "Herd Sovereign Blood"
+      ],
+
+      "locations": [
+        "ABYSS"
+      ],
+
+      "bossType": "LEGENDARY_MONSTER"
+    },
+
+    {
+      "id": "plague_mother_serpent",
+
+      "name": "Plague Mother Serpent",
+
+      "recommendedSequence": 4,
+
+      "threatLevel": "SAINT",
+
+      "pathwayRelated": "DEMONESS",
+
+      "dropItems": [
+        "Venom Sac",
+        "Plague Mother Bile"
+      ],
+
+      "locations": [
+        "SWAMP"
+      ],
+
+      "bossType": "SAINT_MONSTER"
+    },
+
+    {
+      "id": "silver_hunter",
+
+      "name": "Silver Hunter",
+
+      "recommendedSequence": 4,
+
+      "threatLevel": "SAINT",
+
+      "pathwayRelated": "DEMONESS",
+
+      "dropItems": [
+        "Silver Hunter Crystal",
+        "Silver Hunter Fragments"
+      ],
+
+      "locations": [
+        "MIRROR_WORLD"
+      ],
+
+      "bossType": "SAINT_MONSTER"
+    },
+
+    {
+      "id": "punishment_whale",
+
+      "name": "Punishment Whale",
+
+      "recommendedSequence": 4,
+
+      "threatLevel": "SAINT",
+
+      "pathwayRelated": "SAILOR",
+
+      "dropItems": [
+        "Punishment Whale Stomach",
+        "Punishment Whale Gastric Fluid"
+      ],
+
+      "locations": [
+        "SEA_OF_RUINS"
+      ],
+
+      "bossType": "SAINT_MONSTER"
+    },
+
+    {
+      "id": "vortex_terror_beast",
+
+      "name": "Vortex Terror Beast",
+
+      "recommendedSequence": 4,
+
+      "threatLevel": "SAINT",
+
+      "pathwayRelated": "SAILOR",
+
+      "dropItems": [
+        "Vortex Terror Beast Blood Crystal",
+        "Vortex Terror Beast Tentacle"
+      ],
+
+      "locations": [
+        "BERSERK_SEA"
+      ],
+
+      "bossType": "SAINT_MONSTER"
+    },
+
+    {
+      "id": "calamity_tome_tree",
+
+      "name": "Calamity Tome Tree",
+
+      "recommendedSequence": 3,
+
+      "threatLevel": "HIGH_SAINT",
+
+      "pathwayRelated": "WHITE_TOWER",
+
+      "dropItems": [
+        "Calamity Tome Tree Eye",
+        "Calamity Tome Tree Sap"
+      ],
+
+      "locations": [
+        "ANCIENT_LIBRARY"
+      ],
+
+      "bossType": "LEGENDARY_MONSTER"
+    },
+
+    {
+      "id": "ancient_brass_dragon",
+
+      "name": "Ancient Brass Dragon",
+
+      "recommendedSequence": 3,
+
+      "threatLevel": "HIGH_SAINT",
+
+      "pathwayRelated": "WHITE_TOWER",
+
+      "dropItems": [
+        "Ancient Brass Dragon Brain",
+        "Ancient Brass Dragon Blood"
+      ],
+
+      "locations": [
+        "ASTRAL_WORLD"
+      ],
+
+      "bossType": "LEGENDARY_MONSTER"
+    }
+  ]
+}

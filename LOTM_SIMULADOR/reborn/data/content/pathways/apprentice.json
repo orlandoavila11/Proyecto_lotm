@@ -1,0 +1,431 @@
+{
+  "pathway": "APPRENTICE",
+  "displayName": "Door Pathway",
+
+  "mythicalCreatureForm": "A creature composed of countless illusory doors, stars, spatial fissures, and worm-like entities connected to the cosmos.",
+
+  "sequences": {
+
+    "9": {
+      "name": "Apprentice",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Passing Through Walls",
+        "Lock Opening",
+        "Basic Illusion Creation",
+        "Enhanced Spatial Sense",
+        "Weak Spatial Distortion"
+      ],
+
+      "actingMethods": [
+        "Learn constantly.",
+        "Cross boundaries fearlessly.",
+        "Explore the unknown.",
+        "Never lose respect for the path back."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Gem-devouring Worm",
+          "Illusion Crystal"
+        ],
+
+        "supplementaryIngredients": [
+          "10 Drops Goatbeard Grass Hydrosol",
+          "90ml Ancient Well Water",
+          "Corpse Flower",
+          "5g Spirit World-Contaminated Soil"
+        ],
+
+        "potionAppearance": "A black viscous bubbling concoction resembling a traditional herbal preparation."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A yellow-black stone shaped like a key."
+    },
+
+    "8": {
+      "name": "Trickmaster",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Flash Teleportation",
+        "Object Swapping",
+        "Spatial Trickery",
+        "Visual Deception",
+        "Spell Interruption"
+      ],
+
+      "actingMethods": [
+        "Perform convincingly.",
+        "Fool others through clever tricks.",
+        "Allow reality to look like stage magic."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Soul Devourer's Stomach",
+          "20ml Deep-sea Spearfish Blood"
+        ],
+
+        "supplementaryIngredients": [
+          "5ml Hornbeam Essential Oil",
+          "10g Cobweb Grass Powder",
+          "Blooming Red Chestnut Flower",
+          "80ml Pure Water"
+        ],
+
+        "potionAppearance": "A vibrant multicolored liquid resembling poisonous mushrooms."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A transparent crystal refracting rainbow-colored light."
+    },
+
+    "7": {
+      "name": "Astrologer",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Astrological Divination",
+        "Star Chart Interpretation",
+        "Star Light Bullet",
+        "Danger Prediction Through Celestial Observation",
+        "Celestial Navigation"
+      ],
+
+      "actingMethods": [
+        "Study the stars.",
+        "Interpret celestial signs.",
+        "Observe fate through the heavens."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Meteor Crystal",
+          "Lavar Octopus Blood Crystal"
+        ],
+
+        "supplementaryIngredients": [
+          "10g Clematis Powder",
+          "Withered Grapevine Segment",
+          "Pair of Octopus Eyeballs",
+          "80ml Strong Liquor"
+        ],
+
+        "potionAppearance": "Transparent and nearly solidified."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A diamond-like crystal the size of an eye filled with starlight."
+    },
+
+    "6": {
+      "name": "Scribe",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Recording Beyonder Powers",
+        "Spell Storage",
+        "Spell Reproduction",
+        "Knowledge Cataloging",
+        "Mystical Documentation"
+      ],
+
+      "actingMethods": [
+        "Record the world.",
+        "Preserve customs and knowledge.",
+        "Document what others do not understand."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Intact Asman's Brain",
+          "Ancient Wraith's Cursed Object"
+        ],
+
+        "supplementaryIngredients": [
+          "Three Diary Pages Older Than Twenty-Two Years",
+          "10ml Mercury",
+          "10 Drops Honeysuckle Essential Oil",
+          "30ml Seawater",
+          "30ml Lake Water",
+          "30ml Glacier Water"
+        ],
+
+        "potionAppearance": "Transparent and nearly solidified."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A surreal eye covered in gray-white patterns and starlight."
+    },
+
+    "5": {
+      "name": "Traveler",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Long Distance Teleportation",
+        "Spirit World Travel",
+        "Spatial Pocket Storage",
+        "Coordinate Marking",
+        "Dimensional Passage Creation"
+      ],
+
+      "actingMethods": [
+        "Travel the world.",
+        "Experience different cultures.",
+        "Leave footprints everywhere."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Xiscorn Demon Worm",
+          "Shadowless Demon Wolf Heart"
+        ],
+
+        "supplementaryIngredients": [
+          "10g Trapped Ghost Residue",
+          "10g Lemon Balm Powder",
+          "Astral Blood-drawn Star Chart",
+          "80ml Shadowless Demon Wolf Blood"
+        ],
+
+        "potionAppearance": "Whitish transparent liquid resembling partially melted snow with pale green bubbles."
+      },
+
+      "ritual": "Establish four distinct coordinates in the depths of the Spirit World.",
+
+      "characteristicAppearance": "A transparent ethereal crystal."
+    },
+
+    "4": {
+      "name": "Secrets Sorcerer",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Spatial Concealment",
+        "Secret Domain Creation",
+        "Void Exile",
+        "Interstellar Travel",
+        "Hidden Space Manipulation"
+      ],
+
+      "actingMethods": [
+        "Hide secrets.",
+        "Protect dangerous knowledge.",
+        "Conceal what should not be discovered."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Golden Phoenix Eye",
+          "OR Xiscorn Demon Worm Leader",
+          "OR Gate of Anka Base"
+        ],
+
+        "supplementaryIngredients": [
+          "Xiscorn Demon Worm Nest",
+          "OR Golden Phoenix Feather",
+          "Gate of Anka Ashes",
+          "OR Golden Phoenix Feather",
+          "Walnut",
+          "100ml Star-reflecting Lake Water"
+        ],
+
+        "potionAppearance": "A liquid galaxy filled with rippling starlight."
+      },
+
+      "ritual": "Seal a hostile demigod-level creature with minimal outside assistance.",
+
+      "characteristicAppearance": "A crystal sphere containing countless refracted illusory doors."
+    },
+
+    "3": {
+      "name": "Wanderer",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Interstellar Teleportation",
+        "Cosmic Navigation",
+        "Astral Traversal",
+        "Conceptual Travel",
+        "Cross-World Movement",
+        "Deep Cosmos Survival"
+      ],
+
+      "actingMethods": [
+        "Travel beyond worlds.",
+        "Become familiar with the cosmos.",
+        "Never stop exploring."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Wandering Skin",
+          "Mist Watcher's Crystal"
+        ],
+
+        "supplementaryIngredients": [
+          "10ml Wandering Skin Pus",
+          "Mist Watcher's Eyelid",
+          "9 White Mustard Seeds",
+          "90ml Star Water From Ritual Site"
+        ],
+
+        "potionAppearance": "Pitch-black liquid containing countless glittering stars."
+      },
+
+      "ritual": "Locate three Astral World projections inside the Spirit World, enter the resulting dangerous scenarios and record them completely.",
+
+      "characteristicAppearance": "A miniature starlight door."
+    },
+
+    "2": {
+      "name": "Planeswalker",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Dimensional Travel",
+        "Dimensional Folding",
+        "Spatial Copying",
+        "Interplanetary Travel",
+        "World Hopping",
+        "Cosmic Coordinate Authority",
+        "Large Scale Teleportation"
+      ],
+
+      "actingMethods": [
+        "Leave legends across multiple worlds.",
+        "Travel beyond a single reality.",
+        "Expand your influence across the cosmos.",
+        "Become known throughout many planes."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Living Void",
+          "Dimensional Hunter Brain",
+          "OR Purple Phoenix Eye",
+          "OR Planeswalker Beyonder Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "Worm of Star",
+          "Worm of Time",
+          "Worm of Spirit"
+        ],
+
+        "potionAppearance": "Colorless liquid formed from countless illusory doors."
+      },
+
+      "ritual": "Leave legends about yourself in nine locations beyond the planet.",
+
+      "characteristicAppearance": "A brilliant torch emitting cosmic radiance."
+    },
+
+    "1": {
+      "name": "Key of Stars",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Absolute Spatial Mastery",
+        "Universal Lock Opening",
+        "Conceptual Teleportation",
+        "Cosmic Positioning",
+        "Astral Navigation",
+        "Infinite Passage Creation",
+        "Universal Access",
+        "Remote Gateway Creation"
+      ],
+
+      "actingMethods": [
+        "Become the key to all destinations.",
+        "Open paths that should not exist.",
+        "Master every route across existence.",
+        "Treat distance as meaningless."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Key of Stars Beyonder Characteristic",
+          "OR Gregrace Left Claw"
+        ],
+
+        "supplementaryIngredients": [
+          "Star-linked Compass",
+          "Wandering Asteroid Core",
+          "Favorite Food or Drink"
+        ],
+
+        "potionAppearance": "Lightless liquid that naturally attracts starlight."
+      },
+
+      "ritual": "Locate a massive rotating celestial body that continuously emits signals, land upon it, and establish a profound mystical connection.",
+
+      "characteristicAppearance": "A key forged entirely from pure starlight."
+    },
+
+    "0": {
+      "name": "Door",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Absolute Teleportation",
+        "Authority Over Space",
+        "Conceptual Infiltration",
+        "Dimensional Boundary Dissolution",
+        "Infinite Spatial Manipulation",
+        "Universal Access",
+        "Cosmic Travel",
+        "Reality Passage Creation",
+        "Interstellar Gateway Creation",
+        "Spatial Sovereignty",
+        "Authority of Space and Exploration",
+        "Omnipresent Teleportation and Cosmos Traversal",
+        "Absolute Concept Sealing and Exile",
+        "Conceptual Boundary Conceptualization",
+        "Omniscient Coordinate Attunement",
+        "Assimilation and Reproduction of All Beyonder Authorities"
+      ],
+
+      "actingMethods": [
+        "Not applicable. Divine state reached."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Door Uniqueness",
+          "3 Key of Stars Characteristics"
+        ],
+
+        "supplementaryIngredients": [
+          "Mastery of Astronomical Knowledge Across Three Galactic Systems",
+          "Mastery of Geographical Knowledge Across Three Galactic Systems",
+          "Mastery of Folklore Across Three Galactic Systems"
+        ],
+
+        "potionAppearance": "A spherical liquid containing entire worlds."
+      },
+
+      "ritual": "Escape from a True God's seal or banishment.",
+
+      "uniquenessAppearance": "A living cosmic door containing countless worlds and pathways."
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-09-29T13:55:50.837Z",
+  "files": [
+    "plates/atlas_v01.webp",
+    "plates/atlas_v02.webp",
+    "plates/atlas_v03.webp",
+    "plates/atlas_v04.webp",
+    "plates/atlas_v05.webp",
+    "plates/atlas_v06.webp",
+    "plates/atlas_v07.webp",
+    "plates/atlas_v08.webp"
+  ],
+  "provisional": [
+    "provisional/art/clues/clue_CLUE_ASTROLOGY_RECORD.webp",
+    "provisional/art/clues/clue_CLUE_BLOODLINE_TALISMAN.webp",
+    "provisional/art/clues/clue_CLUE_BURNED_TOYS.webp",
+    "provisional/art/clues/clue_CLUE_CONCEALED_SAFE.webp",
+    "provisional/art/clues/clue_CLUE_FINANCIAL_BLACKMAIL.webp",
+    "provisional/art/clues/clue_CLUE_FORGED_LETTERS.webp",
+    "provisional/art/clues/clue_CLUE_MIND_TRACES.webp",
+    "provisional/art/clues/clue_CLUE_WILL_DRAFT.webp",
+    "provisional/art/portraits/portrait_ORIGIN_CLERK.webp",
+    "provisional/art/portraits/portrait_ORIGIN_DOCKWORKER.webp",
+    "provisional/art/portraits/portrait_ORIGIN_FRAUDULENT_MEDIUM.webp",
+    "provisional/art/portraits/portrait_ORIGIN_MEDICAL_STUDENT.webp",
+    "provisional/art/portraits/portrait_ORIGIN_PRIVATE_INVESTIGATOR.webp",
+    "provisional/art/portraits/portrait_ORIGIN_REPORTER.webp",
+    "provisional/art/potionimg_amber.webp",
+    "provisional/art/potionimg_cobalt.webp"
+  ]
+}

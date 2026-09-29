@@ -1,0 +1,197 @@
+{
+  "version": "1.0",
+
+  "governments": [
+
+    {
+      "id": "loen_kingdom",
+
+      "name": "Loen Kingdom",
+
+      "type": "KINGDOM",
+
+      "capital": "Backlund",
+
+      "government": "Monarchy",
+
+      "currency": "Pound",
+
+      "mainChurches": [
+        "church_of_evernight",
+        "church_of_storms",
+        "church_of_steam_and_machinery"
+      ],
+
+      "majorCities": [
+        "Backlund",
+        "Tingen",
+        "Constant City"
+      ],
+
+      "description": "The largest and most influential kingdom of the Northern Continent."
+    },
+
+    {
+      "id": "intis_republic",
+
+      "name": "Intis Republic",
+
+      "type": "REPUBLIC",
+
+      "capital": "Trier",
+
+      "government": "Republic",
+
+      "currency": "Ver d'Or",
+
+      "mainChurches": [
+        "church_of_eternal_blazing_sun"
+      ],
+
+      "majorCities": [
+        "Trier"
+      ],
+
+      "description": "A powerful republic known for culture, politics and the influence of the Sun Church."
+    },
+
+    {
+      "id": "feysac_empire",
+
+      "name": "Feysac Empire",
+
+      "type": "EMPIRE",
+
+      "capital": "Awwa",
+
+      "government": "Imperial Monarchy",
+
+      "currency": "Gold Mark",
+
+      "mainChurches": [
+        "church_of_god_of_combat"
+      ],
+
+      "majorCities": [
+        "Awwa"
+      ],
+
+      "description": "Military empire famous for discipline, conquest and devotion to the God of Combat."
+    },
+
+    {
+      "id": "feynapotter_kingdom",
+
+      "name": "Feynapotter Kingdom",
+
+      "type": "KINGDOM",
+
+      "capital": "Dumur",
+
+      "government": "Monarchy",
+
+      "mainChurches": [
+        "church_of_earth_mother"
+      ],
+
+      "description": "Agricultural kingdom strongly connected to the Earth Mother faith."
+    },
+
+    {
+      "id": "lenburg",
+
+      "name": "Lenburg",
+
+      "type": "KINGDOM",
+
+      "capital": "Lenburg City",
+
+      "government": "Monarchy",
+
+      "mainChurches": [
+        "church_of_knowledge_and_wisdom"
+      ],
+
+      "description": "Nation famous for education, scholarship and the White Tower Pathway."
+    },
+
+    {
+      "id": "masin",
+
+      "name": "Masin Kingdom",
+
+      "type": "KINGDOM",
+
+      "capital": "Masin City",
+
+      "government": "Monarchy",
+
+      "description": "One of the smaller nations allied with neighboring northern countries."
+    },
+
+    {
+      "id": "segar",
+
+      "name": "Segar",
+
+      "type": "KINGDOM",
+
+      "capital": "Segar City",
+
+      "government": "Monarchy",
+
+      "description": "Northern kingdom known through trade and regional politics."
+    },
+
+    {
+      "id": "rorsted_archipelago",
+
+      "name": "Rorsted Archipelago",
+
+      "type": "COLONIAL_REGION",
+
+      "capital": "Bayam",
+
+      "government": "Colonial Administration",
+
+      "mainChurches": [
+        "church_of_storms"
+      ],
+
+      "majorCities": [
+        "Bayam"
+      ],
+
+      "description": "Island region heavily influenced by maritime powers and the Lord of Storms."
+    },
+
+    {
+      "id": "southern_continent",
+
+      "name": "Southern Continent",
+
+      "type": "REGION",
+
+      "government": "Multiple Tribal and Colonial Authorities",
+
+      "description": "Large continent divided among indigenous states and colonial territories."
+    },
+
+    {
+      "id": "forsaken_land_of_the_gods",
+
+      "name": "Forsaken Land of the Gods",
+
+      "type": "ISOLATED_REGION",
+
+      "government": "Independent Settlements",
+
+      "majorCities": [
+        "City of Silver",
+        "Moon City"
+      ],
+
+      "description": "A cursed region isolated from the outside world and filled with ancient dangers."
+    }
+  ]
+}

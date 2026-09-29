@@ -1,0 +1,347 @@
+/* ==========================================================================
+   PATH TO GODHOOD — TOKENS DE DISEÑO VICTORIANO / OCULTISTA (CONTRATO v1.0)
+   ========================================================================== */
+
+:root {
+  /* Paleta Canónica — Tinta (Ink) */
+  --lotm-ebon-void: #090807;
+  --lotm-ink-deep: #120e0a;
+  --lotm-ink-black: #1a1612;
+  --lotm-ink-muted: #5a4b3b;
+  --lotm-ink-light: #8c7b68;
+
+  /* Paleta Canónica — Papel (Paper) */
+  --lotm-paper-parchment: #ede4d1;
+  --lotm-paper-aged: #dcd0b8;
+  --lotm-paper-dark: #1c140e;
+  --lotm-paper-card: #241b13;
+  --lotm-parchment-base: #ede4d1;
+
+  /* Paleta Canónica — Latón y Oro (Brass & Gold) */
+  --lotm-antique-gold: #d4af37;
+  --lotm-brass-bright: #e5c158;
+  --lotm-brass-antique: #8c733e;
+  --lotm-brass-border: #5a4a2a;
+  --lotm-brass-muted: #3d321c;
+  --lotm-gold-glow: rgba(212, 175, 55, 0.4);
+
+  /* Selección y Enfoque (Selection & Focus) */
+  --lotm-selection-glow: rgba(212, 175, 55, 0.45);
+  --lotm-selection-ring: #d4af37;
+  --lotm-selection-bg: rgba(212, 175, 55, 0.12);
+
+  /* Peligro y Advertencia (Danger & Crimson) */
+  --lotm-crimson-blood: #851c22;
+  --lotm-danger-crimson: #991b1b;
+  --lotm-danger-bg: #2a0c0e;
+  --lotm-danger-border: #b91c1c;
+  --lotm-danger-text: #fecaca;
+
+  /* Místico y Espectral */
+  --lotm-spirit-purple: #c084fc;
+  --lotm-cobalt-blue: #0284c7;
+  --lotm-amber-gold: #d97706;
+
+  /* Madera y Mobiliario */
+  --lotm-mahogany-desk: #1c130c;
+  --lotm-mahogany-border: #2b1b10;
+
+  /* Escala de Espaciado (Spacing) */
+  --lotm-space-1: 0.25rem; /* 4px */
+  --lotm-space-2: 0.5rem;  /* 8px */
+  --lotm-space-3: 0.75rem; /* 12px */
+  --lotm-space-4: 1rem;    /* 16px */
+  --lotm-space-6: 1.5rem;  /* 24px */
+  --lotm-space-8: 2rem;    /* 32px */
+  --lotm-space-12: 3rem;   /* 48px */
+
+  /* Tipografía Editorial Canónica */
+  --lotm-font-title: 'Cinzel', serif;
+  --lotm-font-body: 'EB Garamond', Georgia, serif;
+  --lotm-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --lotm-text-xs: 0.75rem;   /* 12px */
+  --lotm-text-sm: 0.875rem;  /* 14px */
+  --lotm-text-base: 1rem;    /* 16px */
+  --lotm-text-lg: 1.125rem;  /* 18px */
+  --lotm-text-xl: 1.25rem;   /* 20px */
+  --lotm-text-2xl: 1.5rem;   /* 24px */
+
+  /* Capas de Elevación y Z-Index */
+  --z-bg: 10;
+  --z-canvas: 10;
+  --z-furniture: 15;
+  --z-objects: 20;
+  --z-hud: 20;
+  --z-lighting: 30;
+  --z-tooltip: 35;
+  --z-inspection: 40;
+  --z-overlay-backdrop: 45;
+  --z-overlay-modal: 50;
+  --z-veil: 50;
+  --z-toast: 60;
+
+  /* Duraciones y Curvas de Movimiento */
+  --motion-fast: 120ms ease-out;
+  --motion-normal: 240ms ease-out;
+  --motion-camera: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-sheet: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Dimensiones del Escenario Lógico */
+  --logical-canvas-width: 1920px;
+  --logical-canvas-height: 1080px;
+  --safe-area-width: 1440px;
+  --safe-area-height: 900px;
+}
+
+/* Soporte Obligatorio de Movimiento Reducido (WCAG 2.1) */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms !important;
+    --motion-normal: 0ms !important;
+    --motion-camera: 0ms !important;
+    --motion-sheet: 0ms !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Indicador de Foco de Latón Victoriano de Alto Contraste */
+.lotm-focus-ring:focus-visible {
+  outline: 2px solid var(--lotm-antique-gold) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 12px var(--lotm-gold-glow) !important;
+}
+
+/* Anillo de foco victoriano accesible para elementos interactivos en escena */
+button.lotm-focus-ring,
+.lotm-focus-ring {
+  cursor: pointer;
+}
+
+/* Utilidades Críticas de Puntero */
+.pointer-events-none {
+  pointer-events: none !important;
+}
+
+.pointer-events-auto {
+  pointer-events: auto !important;
+}
+
+/* ==========================================================================
+   UTILIDADES ESTRUCTURALES Y FLEXBOX (INDEPENDIENTES DE COMPILADOR EXTERNO)
+   ========================================================================== */
+.flex { display: flex !important; }
+.flex-col { flex-direction: column !important; }
+.flex-1 { flex: 1 1 0% !important; }
+.items-center { align-items: center !important; }
+.items-start { align-items: flex-start !important; }
+.items-end { align-items: flex-end !important; }
+.justify-center { justify-content: center !important; }
+.justify-between { justify-content: space-between !important; }
+.justify-end { justify-content: flex-end !important; }
+.relative { position: relative !important; }
+.absolute { position: absolute !important; }
+.fixed { position: fixed !important; }
+.inset-0 { top: 0 !important; right: 0 !important; bottom: 0 !important; left: 0 !important; }
+.w-full { width: 100% !important; }
+.h-full { height: 100% !important; }
+.overflow-hidden { overflow: hidden !important; }
+.overflow-visible { overflow: visible !important; }
+.select-none { user-select: none !important; }
+
+/* Bordes y Esquinas */
+.rounded { border-radius: 4px !important; }
+.rounded-xs { border-radius: 1px !important; }
+.rounded-sm { border-radius: 2px !important; }
+.rounded-md { border-radius: 6px !important; }
+.rounded-lg { border-radius: 8px !important; }
+.rounded-xl { border-radius: 12px !important; }
+.rounded-full { border-radius: 9999px !important; }
+.rounded-t-full { border-top-left-radius: 9999px !important; border-top-right-radius: 9999px !important; }
+.rounded-b-full { border-bottom-left-radius: 9999px !important; border-bottom-right-radius: 9999px !important; }
+.rounded-t-sm { border-top-left-radius: 2px !important; border-top-right-radius: 2px !important; }
+.rounded-t-md { border-top-left-radius: 6px !important; border-top-right-radius: 6px !important; }
+.rounded-b-md { border-bottom-left-radius: 6px !important; border-bottom-right-radius: 6px !important; }
+
+/* Tipografía y Textos */
+.whitespace-nowrap { white-space: nowrap !important; }
+.italic { font-style: italic !important; }
+.font-bold { font-weight: bold !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+.uppercase { text-transform: uppercase !important; }
+.tracking-wider { letter-spacing: 0.05em !important; }
+.tracking-widest { letter-spacing: 0.1em !important; }
+.font-serif { font-family: 'EB Garamond', Georgia, serif !important; }
+.font-mono { font-family: ui-monospace, SFMono-Regular, monospace !important; }
+.line-clamp-3 { display: -webkit-box !important; -webkit-line-clamp: 3 !important; -webkit-box-orient: vertical !important; overflow: hidden !important; }
+
+/* Transiciones y Hover */
+.cursor-pointer { cursor: pointer !important; }
+.transition-all { transition-property: all !important; transition-duration: 250ms !important; }
+.transition-transform { transition-property: transform !important; transition-duration: 250ms !important; }
+.transition-opacity { transition-property: opacity !important; transition-duration: 250ms !important; }
+.transition-colors { transition-property: background-color, border-color, color !important; transition-duration: 250ms !important; }
+
+/* Animaciones y Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 200ms ease-out forwards;
+}
+
+/* ==========================================================================
+   GFX29 — TOKENS Y ESTADOS DE INTERACCIÓN CANÓNICOS
+   ========================================================================== */
+
+/* 1. Estado Reposo (Diegético e integrado) */
+.lotm-state-rest {
+  transition: transform var(--motion-fast), box-shadow var(--motion-fast), filter var(--motion-fast);
+}
+
+/* 2. Estado Hover (Resplandor de borde áureo sutil) */
+.lotm-state-hover:hover {
+  transform: scale(1.015);
+  box-shadow: 0 0 16px var(--lotm-gold-glow);
+}
+
+/* 3. Estado Focus Visible (Anillo de latón victoriano accesible) */
+.lotm-state-focus:focus-visible {
+  outline: 2px solid var(--lotm-antique-gold) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 14px var(--lotm-gold-glow) !important;
+}
+
+/* 4. Estado Pulsado / Activo */
+.lotm-state-active:active {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+}
+
+/* 5. Estado Deshabilitado (Con motivo diegético) */
+.lotm-state-disabled {
+  cursor: not-allowed !important;
+  opacity: 0.55;
+  filter: grayscale(0.6) brightness(0.85);
+}
+
+/* 6. Estado Cambio Reciente (Destello efímero) */
+@keyframes lotmGlowRecent {
+  0% { box-shadow: 0 0 0px rgba(212, 175, 55, 0); }
+  50% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.7); }
+  100% { box-shadow: 0 0 4px rgba(212, 175, 55, 0.2); }
+}
+.lotm-state-recent {
+  animation: lotmGlowRecent 2000ms ease-out;
+}
+
+/* 7. Estado Urgencia / Llamada Prioritaria */
+@keyframes lotmUrgentPulse {
+  0%, 100% { 
+    box-shadow: 0 0 6px rgba(133, 28, 34, 0.4); 
+    border-color: rgba(212, 175, 55, 0.4); 
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(133, 28, 34, 0.85), 0 0 10px rgba(212, 175, 55, 0.6); 
+    border-color: var(--lotm-antique-gold); 
+  }
+}
+.lotm-state-urgent {
+  animation: lotmUrgentPulse 1800ms infinite ease-in-out;
+}
+
+/* ==========================================================================
+   GFX56 — ANIMACIONES ATMOSFÉRICAS LOCALES
+   ========================================================================== */
+@keyframes dustFloat {
+  0% {
+    transform: translate(0px, 0px);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(12px, -18px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-8px, -35px);
+    opacity: 0.15;
+  }
+}
+
+@keyframes smokeRise {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-25px) scaleX(1.4) translateX(4px);
+    opacity: 0.12;
+  }
+  100% {
+    transform: translateY(-50px) scaleX(2) translateX(-6px);
+    opacity: 0;
+  }
+}
+
+@keyframes flameBreath {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.7;
+  }
+}
+
+/* ==========================================================================
+   GFX57 — CURSORES VICTORIANOS VECTORIALES DIEGÉTICOS
+   ========================================================================== */
+.cursor-victorian-pointer {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 2L18 10L11 12L14 20L11 21L8 13L4 16V2Z' fill='%23d4af37' stroke='%231a1612' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, pointer !important;
+}
+
+.cursor-victorian-quill {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 3C18 3 13 6 10 11C8.5 13.5 8 16 7 19L5 22L8 20C11 19 13.5 18.5 16 17C21 14 24 9 24 6C24 4.5 22.5 3 21 3Z' fill='%23e5ded2' stroke='%238c733e' stroke-width='1.2'/%3E%3Cpath d='M7 19L5 22L8 20' stroke='%231a1612' stroke-width='1.5'/%3E%3C/svg%3E") 5 22, text !important;
+}
+
+.cursor-victorian-inspect {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='7' stroke='%23d4af37' stroke-width='2' fill='rgba(212, 175, 55, 0.15)'/%3E%3Cpath d='M15 15L21 21' stroke='%23d4af37' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='8' r='2' fill='%23ffffff' fill-opacity='0.6'/%3E%3C/svg%3E") 10 10, pointer !important;
+}
+
+/* Soporte de Movimiento Reducido */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms !important;
+    --motion-camera: 0ms !important;
+    --motion-sheet: 0ms !important;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .lotm-state-urgent {
+    animation: none !important;
+    box-shadow: 0 0 12px rgba(133, 28, 34, 0.7) !important;
+    border: 2px solid var(--lotm-antique-gold) !important;
+  }
+
+  .dust-mote-particle,
+  .candle-smoke-drift,
+  .flame-breath-pulse {
+    animation: none !important;
+    opacity: 0.3 !important;
+  }
+}
+

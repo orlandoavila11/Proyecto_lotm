@@ -1,0 +1,245 @@
+{
+  "version": "1.0.0",
+  "markets": [
+    {
+      "districtId": "bridge_borough",
+      "districtName": "Distrito del Puente de Backlund",
+      "vendorName": "Círculo Ocultista de la Rosa de Hierro",
+      "specialtyPathway": "FOOL",
+      "inventory": [
+        {
+          "id": "ING_GOAT_HORN_CRYSTAL",
+          "name": "Cristal de Cuerno de Cabra Gris Madura de Hornacis",
+          "pathwayTarget": "FOOL",
+          "category": "MAIN_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 1200,
+          "availableQualities": ["PRISTINE", "DAMAGED"],
+          "stock": 2,
+          "derivationCanon": "Tier L seer.json (Secuencia 8 Clown): Ingrediente principal canónico extraído de las cumbres de Hornacis."
+        },
+        {
+          "id": "ING_HUMAN_FACED_ROSE_STALK",
+          "name": "Tallo Completo de Rosa con Rostro Humano",
+          "pathwayTarget": "FOOL",
+          "category": "MAIN_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 1440,
+          "availableQualities": ["PRISTINE", "DAMAGED", "CONTAMINATED"],
+          "stock": 1,
+          "derivationCanon": "Tier L seer.json (Secuencia 8 Clown): Ingrediente principal canónico con patrones faciales contorsionados."
+        },
+        {
+          "id": "ING_JIMSONWEED_JUICE",
+          "name": "Jugo de Estramonio Purificado",
+          "pathwayTarget": "FOOL",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 72,
+          "availableQualities": ["PRISTINE", "DAMAGED"],
+          "stock": 5,
+          "derivationCanon": "Tier L seer.json (Secuencia 8 Clown): 5 gotas de esencia estabilizadora de estramonio."
+        },
+        {
+          "id": "ING_BLACK_SUNFLOWER_POWDER",
+          "name": "Polvo de Girasol de Borde Negro",
+          "pathwayTarget": "FOOL",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 96,
+          "availableQualities": ["PRISTINE"],
+          "stock": 4,
+          "derivationCanon": "Tier L seer.json (Secuencia 8 Clown): 7 gramos de polvo de girasol de borde negro."
+        },
+        {
+          "id": "ING_GOLDEN_CLOAK_GRASS_POWDER",
+          "name": "Polvo de Hierba Manto Dorado",
+          "pathwayTarget": "FOOL",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 84,
+          "availableQualities": ["PRISTINE", "DAMAGED"],
+          "stock": 3,
+          "derivationCanon": "Tier L seer.json (Secuencia 8 Clown): 10 gramos de hierba manto dorado molida."
+        },
+        {
+          "id": "ING_POISON_HEMLOCK",
+          "name": "Extracto de Cicuta Venenosa",
+          "pathwayTarget": "FOOL",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 60,
+          "availableQualities": ["PRISTINE", "CONTAMINATED"],
+          "stock": 6,
+          "derivationCanon": "Tier L seer.json (Secuencia 8 Clown): 3 gotas de veneno controlado de cicuta."
+        }
+      ]
+    },
+    {
+      "districtId": "backlund_north",
+      "districtName": "Distrito Norte de Backlund",
+      "vendorName": "Colegio Médico y Psicológico de North Backlund",
+      "specialtyPathway": "VISIONARY",
+      "inventory": [
+        {
+          "id": "ING_LIZARD_DRAGON_GLAND",
+          "name": "Glándula Pituitaria Completa de Dragón Lagarto Siete Colores Adulto",
+          "pathwayTarget": "VISIONARY",
+          "category": "MAIN_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 1320,
+          "availableQualities": ["PRISTINE", "DAMAGED"],
+          "stock": 2,
+          "derivationCanon": "Tier L spectator.json (Secuencia 8 Telepathist): Órgano sensitivo de dragón lagarto siete colores."
+        },
+        {
+          "id": "ING_FALSMAN_RABBIT_SPINAL_FLUID",
+          "name": "10ml de Fluido Espinal de Conejo Falsman",
+          "pathwayTarget": "VISIONARY",
+          "category": "MAIN_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 1200,
+          "availableQualities": ["PRISTINE", "DAMAGED", "CONTAMINATED"],
+          "stock": 2,
+          "derivationCanon": "Tier L spectator.json (Secuencia 8 Telepathist): Fluido cerebroespinal de conejo de Falsman."
+        },
+        {
+          "id": "ING_CHESTNUT_BUDS",
+          "name": "Yemas de Castaño Silvestre",
+          "pathwayTarget": "VISIONARY",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 60,
+          "availableQualities": ["PRISTINE"],
+          "stock": 6,
+          "derivationCanon": "Tier L spectator.json (Secuencia 8 Telepathist): 5 gramos de yemas de castaño."
+        },
+        {
+          "id": "ING_DRAGON_TOOTH_GRASS_POWDER",
+          "name": "Polvo de Hierba Diente de Dragón",
+          "pathwayTarget": "VISIONARY",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 108,
+          "availableQualities": ["PRISTINE", "DAMAGED"],
+          "stock": 4,
+          "derivationCanon": "Tier L spectator.json (Secuencia 8 Telepathist): 8 gramos de polvo de hierba diente de dragón."
+        },
+        {
+          "id": "ING_ELVEN_FLOWERS",
+          "name": "Flores Élficas Blancas Puras",
+          "pathwayTarget": "VISIONARY",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 120,
+          "availableQualities": ["PRISTINE"],
+          "stock": 3,
+          "derivationCanon": "Tier L spectator.json (Secuencia 8 Telepathist): 3 flores élficas blancas recolectadas en luna llena."
+        }
+      ]
+    },
+    {
+      "districtId": "cherwood",
+      "districtName": "Distrito de Cherwood",
+      "vendorName": "Botica y Herbolario Central de Cherwood",
+      "specialtyPathway": "UNIVERSAL",
+      "inventory": [
+        {
+          "id": "ING_JIMSONWEED_JUICE",
+          "name": "Jugo de Estramonio Purificado",
+          "pathwayTarget": "FOOL",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 72,
+          "availableQualities": ["PRISTINE"],
+          "stock": 4,
+          "derivationCanon": "Tier L seer.json: Ingrediente suplementario de Clown."
+        },
+        {
+          "id": "ING_CHESTNUT_BUDS",
+          "name": "Yemas de Castaño Silvestre",
+          "pathwayTarget": "VISIONARY",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 60,
+          "availableQualities": ["PRISTINE"],
+          "stock": 5,
+          "derivationCanon": "Tier L spectator.json: Ingrediente suplementario de Telepathist."
+        },
+        {
+          "id": "ING_BLACK_SUNFLOWER_POWDER",
+          "name": "Polvo de Girasol de Borde Negro",
+          "pathwayTarget": "FOOL",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 96,
+          "availableQualities": ["PRISTINE"],
+          "stock": 3,
+          "derivationCanon": "Tier L seer.json: Polvo herbal de girasol negro."
+        },
+        {
+          "id": "ING_ELVEN_FLOWERS",
+          "name": "Flores Élficas Blancas Puras",
+          "pathwayTarget": "VISIONARY",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 120,
+          "availableQualities": ["PRISTINE"],
+          "stock": 2,
+          "derivationCanon": "Tier L spectator.json: Flores élficas para calmantes astrales."
+        },
+        {
+          "id": "RITUAL_PURIFIED_WATER",
+          "name": "Agua Purificada de Manantial Sagrado",
+          "pathwayTarget": "UNIVERSAL",
+          "category": "RITUAL_SUPPLY",
+          "basePricePence": 24,
+          "availableQualities": ["PRISTINE"],
+          "stock": 10,
+          "derivationCanon": "Agua pura requerida como base diluyente en pociones de Secuencia 8."
+        }
+      ]
+    },
+    {
+      "districtId": "east_borough",
+      "districtName": "Distrito Este (East Borough)",
+      "vendorName": "Bazar Clandestino de los Callejones de Niebla",
+      "specialtyPathway": "UNIVERSAL",
+      "inventory": [
+        {
+          "id": "ING_HUMAN_FACED_ROSE_STALK",
+          "name": "Tallo de Rosa con Rostro Humano (Dañado/Marchito)",
+          "pathwayTarget": "FOOL",
+          "category": "MAIN_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 720,
+          "availableQualities": ["DAMAGED", "CONTAMINATED"],
+          "stock": 1,
+          "derivationCanon": "Ingrediente de Clown rescatado de contrabando portuario, parcialmente deteriorado."
+        },
+        {
+          "id": "ING_FALSMAN_RABBIT_SPINAL_FLUID",
+          "name": "Fluido de Conejo Falsman (Contaminado)",
+          "pathwayTarget": "VISIONARY",
+          "category": "MAIN_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 600,
+          "availableQualities": ["CONTAMINATED"],
+          "stock": 1,
+          "derivationCanon": "Fluido extraído sin precauciones herméticas con impurezas espirituales."
+        },
+        {
+          "id": "ING_POISON_HEMLOCK",
+          "name": "Extracto de Cicuta Venenosa (Calidad Media)",
+          "pathwayTarget": "FOOL",
+          "category": "SUPPLEMENTARY_INGREDIENT",
+          "sequence": 8,
+          "basePricePence": 36,
+          "availableQualities": ["DAMAGED"],
+          "stock": 8,
+          "derivationCanon": "Extracto barato de cicuta vendido sin sello de farmacia."
+        }
+      ]
+    }
+  ]
+}

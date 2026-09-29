@@ -1,0 +1,401 @@
+{
+  "pathway": "WHEEL_OF_FORTUNE",
+  "displayName": "Wheel of Fortune Pathway",
+
+  "mythicalCreatureForm": "A Mercury Serpent inscribed with countless looping symbols, where its tail is joined to its mouth to form an eternal cycle.",
+
+  "sequences": {
+
+    "9": {
+      "name": "Monster",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Passive Spiritual Perception",
+        "Murmurs of Fate Hearing",
+        "Premonition of Impending Danger",
+        "Involuntary Illusory Sight",
+        "Basic Luck Manipulation Instinct"
+      ],
+
+      "actingMethods": [
+        "Behave like an eccentric or monster to society.",
+        "Listen to the chaotic whispers of the world.",
+        "Accept terrifying sights without losing focus.",
+        "Observe the unaligned currents of probability."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Tail of a multicolored carp",
+          "1 silver four-leaf clover"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of murky river water",
+          "3 regular four-leaf clovers",
+          "10 drops of groundcherry hydrosol",
+          "1 lucky charm",
+          "9 drops of one's own blood"
+        ],
+
+        "potionAppearance": "A transparent liquid seemingly filled with a seven-colored aurora."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A silver, petal-shaped object covered in scales."
+    },
+
+    "8": {
+      "name": "Robot",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Emotional Calmness Aura",
+        "Mental Illusion Dispensation",
+        "Eradication of Spiritual Murmurs",
+        "Calculation of Physical Trajectories",
+        "Cold Logical Analysis"
+      ],
+
+      "actingMethods": [
+        "Project soothing stability to chaotic minds.",
+        "Analyze situations with unyielding logic.",
+        "Dispel superstitious distortions around you.",
+        "Act as a source of clarity in panic."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "1 sunstone",
+          "Crystal from a juvenile unicorn"
+        ],
+
+        "supplementaryIngredients": [
+          "80ml of juvenile unicorn blood",
+          "10 snake scales",
+          "7 drops of white chestnut flower essential oil",
+          "9 stalks of lemongrass",
+          "13g of rust"
+        ],
+
+        "potionAppearance": "A gray liquid so cold it seems solidified."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A crystalline, translucent, cold-gray stone."
+    },
+
+    "7": {
+      "name": "Lucky One",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Passive High Probability Luck",
+        "Coincidental Event Favorability",
+        "Automatic Danger Avoidance",
+        "Intuitive Guessing Accuracy",
+        "Localized Lucky Environment Manifestation"
+      ],
+
+      "actingMethods": [
+        "Rely entirely on intuitive coincidences.",
+        "Gambling or wagering based on baseline gut traits.",
+        "Allow external currents to guide your path.",
+        "Acknowledge good fortune as a structural flow."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "1 Flower of Fortune",
+          "Eyeball of a silver-eyed serpent monster"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of the serpent's blood",
+          "15g of soil from where the Flower of Fortune grew",
+          "1 gold or silver coin picked up within the last 3 days",
+          "10ml of mercury"
+        ],
+
+        "potionAppearance": "A mercury-colored liquid with floating bubbles, each seeming like an eye slowly opening."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A mercury-colored eyeball that slowly shifts its gaze as if alive."
+    },
+
+    "6": {
+      "name": "Calamity Priest",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Misfortune Infiltration and Delivery",
+        "Passive Calamity Inducement Aura",
+        "Target Disastrous Event Accumulation",
+        "Spiritual Hex Execution",
+        "Environmental Instability Triggering"
+      ],
+
+      "actingMethods": [
+        "Preach or instigate minor local crises.",
+        "Direct natural disasters toward malicious structures.",
+        "Channel shifting patterns of target bad luck.",
+        "Operate as a volatile focal point for problems."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Heart of a blue-spotted firebird",
+          "Tail of a one-eyed white bull-serpent"
+        ],
+
+        "supplementaryIngredients": [
+          "90ml of the bull's blood",
+          "3 feathers of the firebird",
+          "10 drops of gentian hydrosol",
+          "1 obsidian stone stained with another's blood"
+        ],
+
+        "potionAppearance": "A foul-smelling, nauseating liquid covered by a black-green sheen of silver."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A fist-sized heart covered in mercury-like scales."
+    },
+
+    "5": {
+      "name": "Winner",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Active Control of Personal Luck Metrics",
+        "Siphoning of Competitor Probability",
+        "Intuitive Countermeasure Preparation",
+        "Absolute Fortune Weaponization",
+        "Fate Deviation Trait"
+      ],
+
+      "actingMethods": [
+        "Endure intense intentional down periods.",
+        "Harvest luck parameters from surrounding systems.",
+        "Conclude dangerous sequences through perfect timing.",
+        "Celebrate constant strategic micro-victories."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "1 Blessed Crystal",
+          "Heartwood of a Red-Flame Treant"
+        ],
+
+        "supplementaryIngredients": [
+          "80ml of treant sap",
+          "20g of Blessed Crystal residue",
+          "10g of white mustard seed",
+          "9 drops of sweet chestnut flower essential oil",
+          "Luck obtained from another person"
+        ],
+
+        "potionAppearance": "A brilliant golden liquid that fills the heart with joy."
+      },
+
+      "ritual": "For one continuous month, remain in a state of misfortune, without experiencing a single stroke of luck.",
+
+      "characteristicAppearance": "A golden stone emitting blazing red light."
+    },
+
+    "4": {
+      "name": "Misfortune Mage",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Mass Environmental Misfortune Injection",
+        "Calamity Magic Domain Setup",
+        "Destiny Loop Disruption",
+        "Probability Inversion Attacks",
+        "Advanced Hex Transmutation"
+      ],
+
+      "actingMethods": [
+        "Confront high-tier crises under absolute bad luck.",
+        "Survive historical disasters without baseline protection.",
+        "Weave malicious loops across targeted regions.",
+        "Deconstruct hostile blueprints via probability voids."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Brain of a four-eared giant ape",
+          "Horn of an adult unicorn"
+        ],
+
+        "supplementaryIngredients": [
+          "90ml of unicorn blood",
+          "1 ape ear",
+          "1 aquamarine purified by the salt-cleansing method",
+          "1 golden orange"
+        ],
+
+        "potionAppearance": "A black liquid with streaks of gray-white flowing through it."
+      },
+
+      "ritual": "Without preparation or ways to mitigate the effects, confront a great calamity while at the lowest point of one's fortune—and survive.",
+
+      "characteristicAppearance": "A sharp, deep-black horn covered in countless gray-white folds."
+    },
+
+    "3": {
+      "name": "ChaosWalker",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Sovereign Disruption of Universal Probability",
+        "Fate Waypoint Anchor Execution",
+        "Destiny Matrix Splitting",
+        "Annihilation of Predictable Patterns",
+        "Astral Chaos Ray Generation"
+      ],
+
+      "actingMethods": [
+        "Establish an absolute future timeline checkpoint.",
+        "Survive deep multi-layered cosmic anomalies.",
+        "Collect written tokens of target group survival.",
+        "Dismantle linear sequences of structural luck."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Core crystal of a Disaster Phoenix",
+          "Gall of a Misfortune White Serpent"
+        ],
+
+        "supplementaryIngredients": [
+          "40ml of serpent venom",
+          "40ml of phoenix blood",
+          "1 Calming charm made by a high-level Spectator Pathway Angel",
+          "9 written thank-yous from survivors of misfortune or disaster"
+        ],
+
+        "potionAppearance": "A chaotic mixture of swirling silver, gray, black, and green in icy tones."
+      },
+
+      "ritual": "Fix a destiny waypoint that one must inevitably reach within the next 10 years.",
+
+      "characteristicAppearance": "A silvery-gray patterned gel mass that induces mental chaos and interferes with fate."
+    },
+
+    "2": {
+      "name": "Soothsayer",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "River of Fate Macro Investigation",
+        "National Level Structural Prophecy Execution",
+        "Temporal Timeline Redirection",
+        "Absolute Siphoning of Century Long Fortune",
+        "Geopolitical Reality Rewriting"
+      ],
+
+      "actingMethods": [
+        "Peer deep into the streams of regional fate.",
+        "Publish highly precise, macro-level future declarations.",
+        "Ensure the unbroken implementation of foreseen structural outcomes.",
+        "Accumulate parameters of luck over century metrics."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Horn of a Fate Gray Tiger",
+          "OR Heart of an Elder Snakewood Treant",
+          "OR 1 Soothsayer characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of the tiger's blood",
+          "OR 100ml of treant sap",
+"OR 100ml of blood from a corresponding angel",
+"1 important revelation already fulfilled",
+"A blessing from one of the Seven Lights of the Spirit World",
+"Accumulated luck of over a century"
+],
+"potionAppearance": "A pure, viscous cluster of mercury inscribed with countless tiny symbols."
+},
+"ritual": "Peer into the River of Fate, obtain a revelation concerning at least one nation, and ensure it manifests exactly as foreseen.",
+"characteristicAppearance": "Either a scaled horn, a heart with wooden grain, or a cracked tortoiseshell—each silver in color."
+},
+"1": {
+"name": "Snake of Mercury",
+"formulaStatus": "FULLY_KNOWN",
+"abilities": [
+"Complete Memory Extraction and Reinfusion Magic",
+"Reboot of Local Temporal Fields",
+"Fetal State Destiny Regression Execution",
+"Sovereign Extraction of River of Fate Water segments",
+"Sefirah Castle Gray Fog Synchronization Basics"
+],
+"actingMethods": [
+"Execute systematic memory unravelling protocols.",
+"Regress your biological framework into a fetal template safely.",
+"Awaken core cosmic insights inside dream vectors.",
+"Navigate long cycles of identity loops safely."
+],
+"formula": {
+"mainIngredients": [
+"Core crystal of a Mercury Phoenix",
+"OR Core crystal of a Mercury Serpent",
+"OR 1 Snake of Mercury characteristic"
+],
+"supplementaryIngredients": [
+"Umbilical cord or eggshell remnants from one's birth",
+"9 drops of Water of Fate extracted from the River of Fate",
+"1 item tainted by the gray fog of the Sefirah Castle"
+],
+"potionAppearance": "A mercury-colored small serpent joined head to tail, encased in a translucent shell."
+},
+"ritual": "Find a way to completely extract one's memories, consume the potion, then reinfuse them; or during the promotion of a Dreamwalker, while the ritualist regresses to a fetal state and loses all memories, awaken the knowledge buried deep within their soul and spirit.",
+"characteristicAppearance": "A silver ring inscribed with countless looping symbols."
+},
+"0": {
+"name": "Wheel of Fortune",
+"formulaStatus": "FULLY_KNOWN",
+"abilities": [
+"Authority of Probability, Fate, and Absolute Chaos Paths",
+"Sovereign Turning of the Semi-Illusory Roulette of Reality",
+"Infinite Realignment of Cosmic Destiny Waypoints",
+"Absolute Manifestation of Quantum and Statistical Dice Matrices",
+"Total Domination over Material and Spiritual Luck Currents"
+],
+"actingMethods": [
+"Anchor the probabilistic and shifting blueprint of reality.",
+"Embody the absolute eternal loop of universal fates.",
+"Uphold the shifting template of cosmic chances."
+],
+"formula": {
+"mainIngredients": [
+"The Uniqueness of the Wheel of Fortune",
+"3 Characteristic of Snake of mercury"
+],
+"supplementaryIngredients": [
+"9 destiny waypoints from the River of Fate"
+],
+"potionAppearance": "A semi-illusory, semi-material roulette wheel slowly turning, brimming with mystery and symbols."
+},
+"ritual": "Find the correct opportunity within the torrents of fate.",
+"characteristicAppearance": "The materialization of probability, often in the form of dice."
+}
+}
+}
+

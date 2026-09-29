@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "description": "Vocabulario centralizado de perfiles de efecto para DILEMMA_G. Cero números inline en contenido nuevo.",
+  "profiles": {
+    "SEER_TRUTH_RIGOR": {
+      "sanity": 2,
+      "policeSuspicion": 0,
+      "churchSuspicion": 2,
+      "penceReward": 60,
+      "spiritualityCost": 5
+    },
+    "SEER_FALSEHOOD_TRANSGRESSION": {
+      "sanity": -5,
+      "policeSuspicion": 0,
+      "churchSuspicion": 0,
+      "penceReward": 60,
+      "spiritualityCost": 0
+    },
+    "SEER_DIVINE_OMEN_DEEP": {
+      "sanity": 1,
+      "policeSuspicion": 0,
+      "churchSuspicion": 3,
+      "penceReward": 50,
+      "spiritualityCost": 15
+    },
+    "SEER_CAUTIOUS_ABSTAIN": {
+      "sanity": 3,
+      "policeSuspicion": 0,
+      "churchSuspicion": 0,
+      "penceReward": 10,
+      "spiritualityCost": 0
+    },
+    "SEER_PRUDENT_DIVINATION": {
+      "sanity": 3,
+      "policeSuspicion": 0,
+      "churchSuspicion": 1,
+      "penceReward": 40,
+      "spiritualityCost": 10
+    },
+    "SEER_DISCREET_RETREAT": {
+      "sanity": 4,
+      "policeSuspicion": -1,
+      "churchSuspicion": 0,
+      "penceReward": 10,
+      "spiritualityCost": 0
+    },
+    "CLOWN_STAGE_LAUGHTER": {
+      "sanity": 5,
+      "policeSuspicion": 0,
+      "churchSuspicion": 0,
+      "penceReward": 36,
+      "spiritualityCost": 10
+    },
+    "CLOWN_BREAKDOWN_TEARS": {
+      "sanity": -8,
+      "policeSuspicion": 5,
+      "churchSuspicion": 1,
+      "penceReward": 0,
+      "spiritualityCost": 0
+    },
+    "CLOWN_CYNICAL_FLEE": {
+      "sanity": 1,
+      "policeSuspicion": 2,
+      "churchSuspicion": 0,
+      "penceReward": 12,
+      "spiritualityCost": 0
+    },
+    "CLOWN_ACROBATIC_DEFLECTION": {
+      "sanity": 3,
+      "policeSuspicion": 1,
+      "churchSuspicion": 0,
+      "penceReward": 40,
+      "spiritualityCost": 15
+    },
+    "CLOWN_BOLD_PERFORMANCE": {
+      "sanity": -6,
+      "policeSuspicion": 4,
+      "churchSuspicion": 1,
+      "penceReward": 80,
+      "spiritualityCost": 20
+    },
+    "CLOWN_PAIN_ENDURANCE": {
+      "sanity": 2,
+      "policeSuspicion": 0,
+      "churchSuspicion": 0,
+      "penceReward": 30,
+      "spiritualityCost": 12
+    },
+    "SPECTATOR_QUIET_ANALYSIS": {
+      "sanity": 3,
+      "policeSuspicion": -2,
+      "churchSuspicion": 0,
+      "penceReward": 48,
+      "spiritualityCost": 5
+    },
+    "SPECTATOR_IMPULSIVE_ACT": {
+      "sanity": -4,
+      "policeSuspicion": 6,
+      "churchSuspicion": 2,
+      "penceReward": 12,
+      "spiritualityCost": 10
+    },
+    "SPECTATOR_COLD_WITHDRAWAL": {
+      "sanity": 2,
+      "policeSuspicion": 0,
+      "churchSuspicion": 0,
+      "penceReward": 0,
+      "spiritualityCost": 0
+    },
+    "SPECTATOR_DECIPHER_MOTIVE": {
+      "sanity": 2,
+      "policeSuspicion": -1,
+      "churchSuspicion": 1,
+      "penceReward": 50,
+      "spiritualityCost": 8
+    },
+    "SPECTATOR_AUDACIOUS_OBSERVE": {
+      "sanity": -3,
+      "policeSuspicion": 3,
+      "churchSuspicion": 2,
+      "penceReward": 70,
+      "spiritualityCost": 15
+    },
+    "SPECTATOR_COVERT_INQUIRY": {
+      "sanity": 2,
+      "policeSuspicion": 1,
+      "churchSuspicion": 0,
+      "penceReward": 45,
+      "spiritualityCost": 8
+    },
+    "TELEPATH_EMPATHIC_RESONANCE": {
+      "sanity": 4,
+      "policeSuspicion": -1,
+      "churchSuspicion": 0,
+      "penceReward": 80,
+      "spiritualityCost": 15
+    },
+    "TELEPATH_FORCED_PROBE": {
+      "sanity": -6,
+      "policeSuspicion": 8,
+      "churchSuspicion": 4,
+      "penceReward": 120,
+      "spiritualityCost": 25
+    },
+    "TELEPATH_PACIFY_MINDS": {
+      "sanity": 2,
+      "policeSuspicion": 0,
+      "churchSuspicion": 1,
+      "penceReward": 60,
+      "spiritualityCost": 12
+    },
+    "TELEPATH_SHIELD_EGO": {
+      "sanity": 5,
+      "policeSuspicion": -1,
+      "churchSuspicion": 0,
+      "penceReward": 15,
+      "spiritualityCost": 5
+    },
+    "TELEPATH_RISKY_SOUL_TOUCH": {
+      "sanity": -7,
+      "policeSuspicion": 5,
+      "churchSuspicion": 3,
+      "penceReward": 90,
+      "spiritualityCost": 20
+    },
+    "TELEPATH_SACRIFICIAL_SEAL": {
+      "sanity": 4,
+      "policeSuspicion": -2,
+      "churchSuspicion": -1,
+      "penceReward": 0,
+      "spiritualityCost": 10
+    },
+    "SPECTATOR_VULGAR_EXPOSURE": {
+      "sanity": -4,
+      "policeSuspicion": 6,
+      "churchSuspicion": 2,
+      "penceReward": 0,
+      "spiritualityCost": 0
+    },
+    "TELEPATH_INTERROGATION_BLUNDER": {
+      "sanity": -5,
+      "policeSuspicion": 8,
+      "churchSuspicion": 3,
+      "penceReward": 0,
+      "spiritualityCost": 0
+    }
+  }
+}

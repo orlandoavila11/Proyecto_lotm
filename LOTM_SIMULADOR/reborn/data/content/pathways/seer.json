@@ -1,0 +1,418 @@
+{
+  "pathway": "FOOL",
+  "displayName": "Fool Pathway",
+
+  "mythicalCreatureForm": "A mass of Spirit Worms intertwined with history, fate and mystery.",
+
+  "divineKingdom": "Sefirah Castle",
+
+  "sequences": {
+
+    "9": {
+      "name": "Seer",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Spirit Vision",
+        "Astrology Divination",
+        "Pendulum Divination",
+        "Tarot Divination",
+        "Dream Divination",
+        "Danger Intuition",
+        "Enhanced Memory",
+        "Enhanced Comprehension",
+        "Ritualistic Magic"
+      ],
+
+      "actingMethods": [
+        "Respect fate but do not blindly trust it.",
+        "Interpret divination results honestly.",
+        "Remain mysterious and impartial."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "10ml Lavos Squid Blood",
+          "50g Star Crystal",
+          "OR Seer Beyonder Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml Purified Water",
+          "13 Drops Night Vanilla Liquid",
+          "7 Gold Mint Leaves",
+          "3 Drops Poison Hemlock",
+          "9g Dragon Blood Grass Powder"
+        ],
+
+        "potionAppearance": "Dark-blue gelatinous liquid with a faint ethereal smell and cool smooth texture."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "Sky-blue blood producing illusory bubbles linked to the spiritual world."
+    },
+
+    "8": {
+      "name": "Clown",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Enhanced Coordination",
+        "Enhanced Balance",
+        "Enhanced Agility",
+        "Emotion Control",
+        "Facial Expression Control",
+        "Paper Projectile Mastery",
+        "Attack Premonition"
+      ],
+
+      "actingMethods": [
+        "Smile even while suffering.",
+        "Bring joy and laughter to others.",
+        "Maintain perfect control over body and emotions."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Crystal of a Matured Hornacis Gray Mountain Goat Horn",
+          "Human-Faced Rose Complete Stalk",
+          "OR Clown Beyonder Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "80ml Purified Water",
+          "5 Drops Jimsonweed Juice",
+          "7g Black-Rimmed Sunflower Powder",
+          "10g Golden Cloak Grass Powder",
+          "3 Drops Poison Hemlock"
+        ],
+
+        "potionAppearance": "Gold, yellow and red liquid with violently bubbling layers."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A gray-white object filled with gullies and strange folds."
+    },
+
+    "7": {
+      "name": "Magician",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Flame Controlling",
+        "Air Bullet",
+        "Damage Transfer",
+        "Paper Figurine Substitute",
+        "Water Breathing",
+        "Bone Softening",
+        "Flaring Sun Cloak"
+      ],
+
+      "actingMethods": [
+        "Prepare backstage.",
+        "Show only the miracle.",
+        "Never reveal the secret behind the trick."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "True Root of a Mist Treant",
+          "All Spinal Fluid of a Dark Patterned Black Panther",
+          "OR Magician Beyonder Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "60ml Purified Water",
+          "30ml Mist Treant Juice",
+          "3g Droplet Gem Powder",
+          "4 Drops Fantasy Grass Essential Oil"
+        ],
+
+        "potionAppearance": "A liquid resembling endless exploding fireworks."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A gray-white brain-like object capable of becoming liquid."
+    },
+
+    "6": {
+      "name": "Faceless",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Appearance Transformation",
+        "Body Reshaping",
+        "Voice Mimicry",
+        "Aura Alteration",
+        "Identity Simulation",
+        "Habit Imitation"
+      ],
+
+      "actingMethods": [
+        "Become another person completely.",
+        "Never forget who you truly are."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Mutated Pituitary Gland of a Thousand-Faced Hunter",
+          "Human-Skinned Shadow Characteristic",
+          "OR Faceless Beyonder Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "80ml Thousand-Faced Hunter Blood",
+          "5 Drops Black Jimsonweed Juice",
+          "10g Dragon Tooth Grass Powder",
+          "3 Strands of Deep-Sea Naga Hair"
+        ],
+
+        "potionAppearance": "Blackish-green liquid producing bubbles that form countless changing faces."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A dark-green gelatinous object containing ever-changing faces."
+    },
+
+    "5": {
+      "name": "Marionettist",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Spirit Body Thread Vision",
+        "Spirit Body Thread Manipulation",
+        "Marionette Control",
+        "Ability Sharing",
+        "Attribute Sharing",
+        "Remote Marionette Usage"
+      ],
+
+      "actingMethods": [
+        "See fate as threads.",
+        "Control others without being controlled."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Dust of Ancient Wraiths",
+          "Core Crystal of a Six-Winged Gargoyle",
+          "OR Marionettist Beyonder Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "80ml Golden Spring Water of Sonia Island",
+          "10g Drago Bark",
+          "Ancient Wraith Residual Spirituality",
+          "Pair of Six-Winged Gargoyle Eyes"
+        ],
+
+        "potionAppearance": "Completely black liquid containing invisible wriggling worms."
+      },
+
+      "ritual": "Consume the potion amidst the singing of mermaids.",
+
+      "characteristicAppearance": "A completely black eye without a pupil."
+    },
+
+    "4": {
+      "name": "Bizarro Sorcerer",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Bizarro Spells",
+        "Marionette Swap",
+        "Long Distance Thread Control",
+        "Curse of the Puppet",
+        "Bizarro Domain"
+      ],
+
+      "actingMethods": [
+        "Become a living nightmare.",
+        "Create bizarre realities.",
+        "Spread fear and confusion."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Bizarro Bane Main Eye",
+          "True Soul Body of a Spirit World Plunderer",
+          "OR Bizarro Sorcerer Beyonder Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "200ml Bizarro Bane Blood",
+          "30g Spirit World Plunderer Dust",
+          "10g Red-Hair Birch Bark",
+          "Golden Grapevine Segment",
+          "Self-Made Rubber Mask"
+        ],
+
+        "potionAppearance": "Black mist constantly shaping and reshaping human and animal forms."
+      },
+
+      "ritual": "Kill a demigod-level Beyonder creature before a large audience through planning and performance, then consume the potion.",
+
+      "characteristicAppearance": "A ghostly blue eye or palm-sized humanoid figure filled with transparent liquid."
+    },
+
+    "3": {
+      "name": "Scholar of Yore",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Historical Projection Summoning",
+        "Historical Void Retrieval",
+        "Historical Knowledge Recognition",
+        "Historical Concealment",
+        "Borrowing from History"
+      ],
+
+      "actingMethods": [
+        "Become a witness of history.",
+        "Preserve forgotten truths.",
+        "Understand the past without distorting it."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Pair of Eyes from a Hound of Fulgrim",
+          "Heart of a Demonic Wolf of Fog",
+          "OR Scholar of Yore Beyonder Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml Hound of Fulgrim Blood",
+          "30g White Frost Crystal of a Demonic Wolf of Fog",
+          "Large Amount of Genuine Historical Records"
+        ],
+
+        "potionAppearance": "Dark-red substance simultaneously existing as liquid and gas."
+      },
+
+      "ritual": "Remain separated from reality for at least three hundred years and become part of history.",
+
+      "characteristicAppearance": "Dark-red burning eyeballs or a heart formed from white mist."
+    },
+
+    "2": {
+      "name": "Miracle Invoker",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Miracle Granting",
+        "Wish Accumulation",
+        "Wish Fulfillment",
+        "Historical Resurrection",
+        "Reality Alteration Through Miracles"
+      ],
+
+      "actingMethods": [
+        "Accumulate small wishes.",
+        "Create great miracles through preparation."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Heart of a Dark Demonic Wolf",
+          "OR Miracle Invoker Beyonder Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "300ml Dark Demonic Wolf Blood",
+          "Worm of Time",
+          "Worm of Star"
+        ],
+
+        "potionAppearance": "A deep black-red liquid with countless eyes appearing within."
+      },
+
+      "ritual": "Return a forgotten piece of history back to the present era.",
+
+      "characteristicAppearance": "A transparent crystal heart filled with illusion-containing bubbles."
+    },
+
+    "1": {
+      "name": "Attendant of Mysteries",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Realm of Mysteries",
+        "Conceptual Reassembly",
+        "Grafting",
+        "Mystery Authority",
+        "Reality Stitching"
+      ],
+
+      "actingMethods": [
+        "Manipulate mystery itself.",
+        "Guide reality through hidden connections."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Attendant of Mysteries Beyonder Characteristic"
+        ],
+
+        "supplementaryIngredients": [
+          "Nine Spirit World Specialties"
+        ],
+
+        "potionAppearance": "A translucent black velvet curtain absorbing all surrounding light."
+      },
+
+      "ritual": "Create a city entirely composed of marionettes and design complete fates for every inhabitant.",
+
+      "characteristicAppearance": "A black translucent curtain that becomes increasingly invisible."
+    },
+
+    "0": {
+      "name": "The Fool",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Fooling",
+        "History Fooling",
+        "Time Fooling",
+        "Fate Fooling",
+        "Logic Fooling",
+        "Divine Domain Manipulation",
+        "Mystery Sovereignty"
+      ],
+
+      "actingMethods": [
+        "Not applicable. Divine state reached."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Fool Uniqueness",
+          "3 Attendant of Mysteries Characteristics"
+        ],
+
+        "supplementaryIngredients": [
+          "Control of at Least One Quarter of the Fog of History"
+        ],
+
+        "potionAppearance": "STATUS_UNKNOWN"
+      },
+
+      "ritual": "Fool time, history or fate once.",
+
+      "uniquenessAppearance": "STATUS_UNKNOWN"
+    }
+  }
+}

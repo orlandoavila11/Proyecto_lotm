@@ -1,0 +1,1297 @@
+{
+  "$schema": "./schemas/convergence_forces.schema.json",
+  "schema_version": "1.0",
+  "sealedBy": "Director",
+  "generatedAt": "2026-09-10T16:30:00.000Z",
+  "description": "Layer 1 Convergence Forces autorizadas por Séfira (era: POST-LOTM · PRE-COI, ~1353 Quinta Época). Autoridad única de convergencia.",
+  "sefirot": {
+    "sefirah_castle": {
+      "group": "LOTM",
+      "name": "Sefirah Castle",
+      "forces": [
+        {
+          "id": "PATHWAY_FOOL",
+          "pathwayId": "FOOL",
+          "sefirahId": "sefirah_castle",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/fool.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_ERROR",
+          "pathwayId": "ERROR",
+          "sefirahId": "sefirah_castle",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/error.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_DOOR",
+          "pathwayId": "DOOR",
+          "sefirahId": "sefirah_castle",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/door.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "ORG_SECRET_ORDER",
+          "sefirahId": "sefirah_castle",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_TAMARA_REMNANTS",
+          "sefirahId": "sefirah_castle",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
+        },
+        {
+          "id": "FAM_ABRAHAM",
+          "sefirahId": "sefirah_castle",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
+        },
+        {
+          "id": "FAM_ZOROAST",
+          "sefirahId": "sefirah_castle",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
+        },
+        {
+          "id": "FAM_ANTIGONUS",
+          "sefirahId": "sefirah_castle",
+          "type": "lineage",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
+        },
+        {
+          "id": "KOA_AMON",
+          "sefirahId": "sefirah_castle",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "KOA_BETHEL_ABRAHAM",
+          "sefirahId": "sefirah_castle",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "KOA_ANTIGONUS",
+          "sefirahId": "sefirah_castle",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "ENTITY_LORD_OF_MYSTERIES",
+          "sefirahId": "sefirah_castle",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "legend",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "ART_0_STAFF_STARS",
+          "sefirahId": "sefirah_castle",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "LOTM",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
+        }
+      ]
+    },
+    "chaos_sea": {
+      "group": "GOD_ALMIGHTY",
+      "name": "Chaos Sea",
+      "forces": [
+        {
+          "id": "PATHWAY_VISIONARY",
+          "pathwayId": "VISIONARY",
+          "sefirahId": "chaos_sea",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/visionary.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_WHITE_TOWER",
+          "pathwayId": "WHITE_TOWER",
+          "sefirahId": "chaos_sea",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/white_tower.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_HANGED_MAN",
+          "pathwayId": "HANGED_MAN",
+          "sefirahId": "chaos_sea",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/hanged_man.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_SUN",
+          "pathwayId": "SUN",
+          "sefirahId": "chaos_sea",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/sun.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_TYRANT",
+          "pathwayId": "TYRANT",
+          "sefirahId": "chaos_sea",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/tyrant.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "ORG_AURORA_ORDER",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_PSYCHOLOGY_ALCHEMISTS",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "CHURCH_STORMS",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "CHURCH_SUN",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "CHURCH_WISDOM",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_STELLAR_FLAME",
+          "sefirahId": "chaos_sea",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "KOA_SASRIR",
+          "sefirahId": "chaos_sea",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "GOD_ADAM_TRUE_CREATOR",
+          "sefirahId": "chaos_sea",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "GOD_LORD_STORMS",
+          "sefirahId": "chaos_sea",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "ART_0_08",
+          "sefirahId": "chaos_sea",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
+        },
+        {
+          "id": "GOD_ETERNAL_BLAZING_SUN",
+          "sefirahId": "chaos_sea",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "GOD_ALMIGHTY",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        }
+      ]
+    },
+    "river_of_eternal_darkness": {
+      "group": "DEATH_CLUSTER",
+      "name": "River of Eternal Darkness",
+      "forces": [
+        {
+          "id": "PATHWAY_DEATH",
+          "pathwayId": "DEATH",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/death.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_DARKNESS",
+          "pathwayId": "DARKNESS",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/darkness.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_TWILIGHT_GIANT",
+          "pathwayId": "TWILIGHT_GIANT",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/twilight_giant.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "CHURCH_EVERNIGHT",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_NUMIS_EPISCOPATE",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_NIGHT_COLLECTORS",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "FAM_EGGER",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/angels.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
+        },
+        {
+          "id": "GOD_EVERNIGHT",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "ANGEL_AZIK_EGGER",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/angels.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "ART_0_PALE_DEATH",
+          "sefirahId": "river_of_eternal_darkness",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "DEATH_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
+        }
+      ]
+    },
+    "brood_hive": {
+      "group": "MOTHER_CLUSTER",
+      "name": "Brood Hive",
+      "forces": [
+        {
+          "id": "PATHWAY_MOTHER",
+          "pathwayId": "MOTHER",
+          "sefirahId": "brood_hive",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/mother.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_MOON",
+          "pathwayId": "MOON",
+          "sefirahId": "brood_hive",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/moon.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "CHURCH_EARTH_MOTHER",
+          "sefirahId": "brood_hive",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_SANGUINE_COUNCIL",
+          "sefirahId": "brood_hive",
+          "type": "organization",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "case",
+            "telar"
+          ]
+        },
+        {
+          "id": "LINEAGE_SANGUINE",
+          "sefirahId": "brood_hive",
+          "type": "lineage",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "GOD_EARTH_MOTHER",
+          "sefirahId": "brood_hive",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "MOTHER_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        }
+      ]
+    },
+    "nation_of_disorder": {
+      "group": "ORDER_CLUSTER",
+      "name": "Nation of Disorder",
+      "forces": [
+        {
+          "id": "PATHWAY_BLACK_EMPEROR",
+          "pathwayId": "BLACK_EMPEROR",
+          "sefirahId": "nation_of_disorder",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/black_emperor.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_JUSTICIAR",
+          "pathwayId": "JUSTICIAR",
+          "sefirahId": "nation_of_disorder",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/justiciar.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "ORG_MI9",
+          "sefirahId": "nation_of_disorder",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "FAM_AUGUSTUS",
+          "sefirahId": "nation_of_disorder",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/organizations_expanded.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
+        },
+        {
+          "id": "FAM_CASTIYA",
+          "sefirahId": "nation_of_disorder",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
+        },
+        {
+          "id": "GOD_ROSELLE_BLACK_EMPEROR",
+          "sefirahId": "nation_of_disorder",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/great_old_ones.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ],
+          "status": "SEALED_MAUSOLEUM",
+          "nota": "HISTORICAL_EMPEROR_CORRUPTED · vía del Emperador Negro sin características · influye solo por telar_root"
+        },
+        {
+          "id": "ART_0_02",
+          "sefirahId": "nation_of_disorder",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
+        },
+        {
+          "id": "ART_0_BLACK_EMPEROR_CROWN",
+          "sefirahId": "nation_of_disorder",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "ORDER_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
+        }
+      ]
+    },
+    "tenebrous_world": {
+      "group": "ABYSS_CLUSTER",
+      "name": "Tenebrous World",
+      "forces": [
+        {
+          "id": "PATHWAY_CHAINED",
+          "pathwayId": "CHAINED",
+          "sefirahId": "tenebrous_world",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/chained.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_ABYSS",
+          "pathwayId": "ABYSS",
+          "sefirahId": "tenebrous_world",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/abyss.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "ORG_ROSE_SCHOOL",
+          "sefirahId": "tenebrous_world",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_ROSE_TEMPERANCE",
+          "sefirahId": "tenebrous_world",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/organizations_expanded.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "FAM_BERIA",
+          "sefirahId": "tenebrous_world",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
+        },
+        {
+          "id": "GOD_DARK_SIDE_UNIVERSE",
+          "sefirahId": "tenebrous_world",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "ENTITY_CHAINED_GOD",
+          "sefirahId": "tenebrous_world",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "ABYSS_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        }
+      ]
+    },
+    "knowledge_moor": {
+      "group": "HERMIT_CLUSTER",
+      "name": "Knowledge Moor",
+      "forces": [
+        {
+          "id": "PATHWAY_HERMIT",
+          "pathwayId": "HERMIT",
+          "sefirahId": "knowledge_moor",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/hermit.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_PARAGON",
+          "pathwayId": "PARAGON",
+          "sefirahId": "knowledge_moor",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/paragon.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "CHURCH_STEAM",
+          "sefirahId": "knowledge_moor",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/churches.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_MOSES_ORDER",
+          "sefirahId": "knowledge_moor",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_ELEMENT_DAWN",
+          "sefirahId": "knowledge_moor",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_COSMIC_WAVES",
+          "sefirahId": "knowledge_moor",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "GOD_STEAM_MACHINERY",
+          "sefirahId": "knowledge_moor",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "GOD_HIDDEN_SAGE",
+          "sefirahId": "knowledge_moor",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "ART_0_SAGE_FRONTLET",
+          "sefirahId": "knowledge_moor",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "HERMIT_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
+        }
+      ]
+    },
+    "city_of_calamity": {
+      "group": "CALAMITY_CLUSTER",
+      "name": "City of Calamity",
+      "forces": [
+        {
+          "id": "PATHWAY_DEMONESS",
+          "pathwayId": "DEMONESS",
+          "sefirahId": "city_of_calamity",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/demoness.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "PATHWAY_RED_PRIEST",
+          "pathwayId": "RED_PRIEST",
+          "sefirahId": "city_of_calamity",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/red_priest.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "ORG_DEMONESS_SECT",
+          "sefirahId": "city_of_calamity",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_IRON_BLOOD",
+          "sefirahId": "city_of_calamity",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_SAURON_REMNANTS",
+          "sefirahId": "city_of_calamity",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
+        },
+        {
+          "id": "FAM_EINHORN",
+          "sefirahId": "city_of_calamity",
+          "type": "family",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/lore_knowledge/rumors.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "narrative",
+            "telar"
+          ]
+        },
+        {
+          "id": "KOA_MEDICI",
+          "sefirahId": "city_of_calamity",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "GOD_CHEEK_DEMONESS",
+          "sefirahId": "city_of_calamity",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/gods.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "ART_0_CHEEK_RINGS",
+          "sefirahId": "city_of_calamity",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "CALAMITY_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
+        }
+      ]
+    },
+    "key_of_light": {
+      "group": "FATE_CLUSTER",
+      "name": "Key of Light",
+      "forces": [
+        {
+          "id": "PATHWAY_WHEEL_OF_FORTUNE",
+          "pathwayId": "WHEEL_OF_FORTUNE",
+          "sefirahId": "key_of_light",
+          "type": "pathway",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/pathways/wheel_of_fortune.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "event",
+            "narrative"
+          ]
+        },
+        {
+          "id": "ORG_LIFE_SCHOOL",
+          "sefirahId": "key_of_light",
+          "type": "organization",
+          "powerTier": "encounter",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "encounter",
+            "investigation",
+            "event",
+            "case"
+          ]
+        },
+        {
+          "id": "ORG_DANCERS_PRECURSOR",
+          "sefirahId": "key_of_light",
+          "type": "organization",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/secret_organizations.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "investigation",
+            "event",
+            "case",
+            "telar"
+          ],
+          "nota": "semilla pre-CoI (R3); manifestación plena fuera de era"
+        },
+        {
+          "id": "KOA_OUROBOROS",
+          "sefirahId": "key_of_light",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/kings_of_angels.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "ANGEL_WILL_AUCEPTIN",
+          "sefirahId": "key_of_light",
+          "type": "entity",
+          "powerTier": "mythic",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/world/angels.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "narrative",
+            "lore",
+            "telar_root"
+          ]
+        },
+        {
+          "id": "ART_DADO_PROBABILITY",
+          "sefirahId": "key_of_light",
+          "type": "artifact",
+          "powerTier": "telar",
+          "eraVerified": true,
+          "canonRef": "reborn/data/content/artifacts/grade_0.json",
+          "sefiraGroupRef": "FATE_CLUSTER",
+          "interactionModes": [
+            "artifact",
+            "investigation",
+            "telar"
+          ]
+        }
+      ]
+    }
+  }
+}

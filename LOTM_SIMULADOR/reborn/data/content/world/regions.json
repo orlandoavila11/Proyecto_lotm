@@ -1,0 +1,149 @@
+{
+  "version": "1.0",
+
+  "regions": [
+
+    {
+      "id": "northern_continent",
+
+      "name": "Northern Continent",
+
+      "type": "CONTINENT",
+
+      "countries": [
+        "loen_kingdom",
+        "intis_republic",
+        "feysac_empire",
+        "feynapotter_kingdom",
+        "lenburg",
+        "masin",
+        "segar"
+      ]
+    },
+
+    {
+      "id": "southern_continent",
+
+      "name": "Southern Continent",
+
+      "type": "CONTINENT"
+    },
+
+    {
+      "id": "forsaken_land_of_the_gods",
+
+      "name": "Forsaken Land of the Gods",
+
+      "type": "ISOLATED_REGION",
+
+      "majorSettlements": [
+        "city_of_silver",
+        "moon_city"
+      ]
+    },
+
+    {
+      "id": "spirit_world",
+
+      "name": "Spirit World",
+
+      "type": "MYSTICAL_REALM"
+    },
+
+    {
+      "id": "astral_world",
+
+      "name": "Astral World",
+
+      "type": "MYSTICAL_REALM"
+    },
+
+    {
+      "id": "mirror_world",
+
+      "name": "Mirror World",
+
+      "type": "MYSTICAL_REALM"
+    },
+
+    {
+      "id": "shadow_world",
+
+      "name": "Shadow World",
+
+      "type": "MYSTICAL_REALM"
+    },
+
+    {
+      "id": "chaos_sea",
+
+      "name": "Chaos Sea",
+
+      "type": "SEFIRAH"
+    },
+
+    {
+      "id": "sefirah_castle",
+
+      "name": "Sefirah Castle",
+
+      "type": "SEFIRAH"
+    },
+
+    {
+      "id": "river_of_eternal_darkness",
+
+      "name": "River of Eternal Darkness",
+
+      "type": "SEFIRAH"
+    },
+
+    {
+      "id": "nation_of_disorder",
+
+      "name": "Nation of Disorder",
+
+      "type": "SEFIRAH"
+    },
+
+    {
+      "id": "knowledge_moor",
+
+      "name": "Knowledge Moor",
+
+      "type": "SEFIRAH"
+    },
+
+    {
+      "id": "sonia_sea",
+
+      "name": "Sonia Sea",
+
+      "type": "SEA"
+    },
+
+    {
+      "id": "berserk_sea",
+
+      "name": "Berserk Sea",
+
+      "type": "SEA"
+    },
+
+    {
+      "id": "sea_of_ruins",
+
+      "name": "Sea of Ruins",
+
+      "type": "SEA"
+    },
+
+    {
+      "id": "fog_sea",
+
+      "name": "Fog Sea",
+
+      "type": "SEA"
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+[
+  {
+    "monster_id": "mon_lavos_squid",
+    "main_ingredient_item_id": "item_lavos_squid_blood",
+    "harvest_difficulty_bracket": "DELICATE",
+    "secondary_drop_tier": "TIER_COMMON_SUPPLEMENT",
+    "eligible_secondary_item_ids": [
+      "item_ethereal_blue_ink",
+      "item_lavos_squid_tentacle_filament"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s9",
+    "requires_spirit_containment": false
+  },
+  {
+    "monster_id": "mon_hornacis_gray_mountain_goat",
+    "main_ingredient_item_id": "item_hornacis_goat_horn_crystal",
+    "harvest_difficulty_bracket": "STANDARD",
+    "secondary_drop_tier": "TIER_UNCOMMON_CATALYST",
+    "eligible_secondary_item_ids": [
+      "item_gray_mountain_goat_wool",
+      "item_acrobatic_sinew_tendon"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s8",
+    "requires_spirit_containment": false
+  },
+  {
+    "monster_id": "mon_human_faced_rose",
+    "main_ingredient_item_id": "item_human_faced_rose_stalk",
+    "harvest_difficulty_bracket": "VOLATILE",
+    "secondary_drop_tier": "TIER_UNCOMMON_CATALYST",
+    "eligible_secondary_item_ids": [
+      "item_human_faced_rose_petals",
+      "item_hysteria_pollen_sac"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s8",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_mist_treant",
+    "main_ingredient_item_id": "item_mist_treant_true_root",
+    "harvest_difficulty_bracket": "STANDARD",
+    "secondary_drop_tier": "TIER_RARE_ESSENCE",
+    "eligible_secondary_item_ids": [
+      "item_mist_treant_juice",
+      "item_porous_bone_bark"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s7",
+    "requires_spirit_containment": false
+  },
+  {
+    "monster_id": "mon_dark_patterned_black_panther",
+    "main_ingredient_item_id": "item_dark_patterned_panther_spinal_fluid",
+    "harvest_difficulty_bracket": "DELICATE",
+    "secondary_drop_tier": "TIER_RARE_ESSENCE",
+    "eligible_secondary_item_ids": [
+      "item_compressed_air_gland",
+      "item_soundless_panther_pelt"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s7",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_thousand_faced_hunter",
+    "main_ingredient_item_id": "item_thousand_faced_hunter_pituitary",
+    "harvest_difficulty_bracket": "VOLATILE",
+    "secondary_drop_tier": "TIER_RARE_ESSENCE",
+    "eligible_secondary_item_ids": [
+      "item_thousand_faced_hunter_blood",
+      "item_metamorphic_tissue_sample"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s6",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_human_skinned_shadow",
+    "main_ingredient_item_id": "item_human_skinned_shadow_characteristic",
+    "harvest_difficulty_bracket": "VOLATILE",
+    "secondary_drop_tier": "TIER_RARE_ESSENCE",
+    "eligible_secondary_item_ids": [
+      "item_shadow_membrane_sliver",
+      "item_erased_identity_ash"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s6",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_six_winged_gargoyle",
+    "main_ingredient_item_id": "item_six_winged_gargoyle_core_crystal",
+    "harvest_difficulty_bracket": "STANDARD",
+    "secondary_drop_tier": "TIER_SUPERIOR_SPIRIT",
+    "eligible_secondary_item_ids": [
+      "item_six_winged_gargoyle_eyes",
+      "item_runic_limestone_shards"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s5",
+    "requires_spirit_containment": false
+  },
+  {
+    "monster_id": "mon_ancient_wraith",
+    "main_ingredient_item_id": "item_ancient_wraith_dust",
+    "harvest_difficulty_bracket": "VOLATILE",
+    "secondary_drop_tier": "TIER_SUPERIOR_SPIRIT",
+    "eligible_secondary_item_ids": [
+      "item_mirror_jump_residue",
+      "item_ancient_wraith_spirituality"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s5",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_bizarro_bane",
+    "main_ingredient_item_id": "item_bizarro_bane_main_eye",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_DEMIGOD_CORE",
+    "eligible_secondary_item_ids": [
+      "item_bizarro_bane_blood",
+      "item_puppet_curse_fragment",
+      "item_carnival_porcelain_shard"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s4",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_spirit_world_plunderer",
+    "main_ingredient_item_id": "item_spirit_world_plunderer_soul_body",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_DEMIGOD_CORE",
+    "eligible_secondary_item_ids": [
+      "item_spirit_world_plunderer_dust",
+      "item_spatial_rend_claw",
+      "item_devoured_spirit_memory"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s4",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_hound_of_fulgrim",
+    "main_ingredient_item_id": "item_hound_of_fulgrim_eyes",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_SAINT_RELICT",
+    "eligible_secondary_item_ids": [
+      "item_hound_of_fulgrim_blood",
+      "item_historical_void_fang",
+      "item_frost_chronology_crystal"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s3",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_demonic_wolf_of_fog",
+    "main_ingredient_item_id": "item_demonic_wolf_of_fog_heart",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_SAINT_RELICT",
+    "eligible_secondary_item_ids": [
+      "item_demonic_wolf_white_frost_crystal",
+      "item_fog_concealment_pelt",
+      "item_second_epoch_obsidian_claw"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s3",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_dark_demonic_wolf",
+    "main_ingredient_item_id": "item_dark_demonic_wolf_heart",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_ANGELIC_RELICT",
+    "eligible_secondary_item_ids": [
+      "item_dark_demonic_wolf_blood",
+      "item_unfulfilled_wish_orb",
+      "item_miracle_astral_horn"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s2",
+    "requires_spirit_containment": true
+  },
+  {
+    "monster_id": "mon_spirit_worm_manifestation",
+    "main_ingredient_item_id": "item_attendant_of_mysteries_characteristic",
+    "harvest_difficulty_bracket": "MYSTICAL_CORRUPT",
+    "secondary_drop_tier": "TIER_ANGELIC_RELICT",
+    "eligible_secondary_item_ids": [
+      "item_worm_of_spirit_pure",
+      "item_curtain_of_mysteries_veil",
+      "item_sefirah_castle_gray_fog_condensation"
+    ],
+    "beyonder_characteristic_item_id": "char_fool_s1",
+    "requires_spirit_containment": true
+  }
+]
+

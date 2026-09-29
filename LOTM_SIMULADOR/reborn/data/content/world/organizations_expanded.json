@@ -1,0 +1,2210 @@
+[
+  {
+    "id": "CHURCH_EVERNIGHT",
+    "name": "Iglesia de la Noche Eterna (Halcones Nocturnos)",
+    "category": "ORTHODOX_CHURCH",
+    "doctrine": "Serenidad en la oscuridad, custodia de los durmientes y contención de anomalías.",
+    "headquarters": "Catedral de San Samuel, Backlund",
+    "patronEntity": "Diosa de la Noche Eterna",
+    "associatedPathways": [
+      "DARKNESS",
+      "FOOL",
+      "DEATH"
+    ],
+    "ranks": [
+      {
+        "rankLevel": 1,
+        "title": "Creyente & Informante Civil",
+        "minReputation": 0,
+        "weeklySalaryPounds": 2,
+        "unlockedBenefits": [
+          "Refugio nocturno",
+          "Acceso a biblioteca pública parroquial"
+        ]
+      },
+      {
+        "rankLevel": 2,
+        "title": "Miembro Clandestino / Asistente",
+        "minReputation": 25,
+        "weeklySalaryPounds": 5,
+        "unlockedBenefits": [
+          "Entrenamiento en revólver",
+          "Salario formal",
+          "Contacto de emergencia"
+        ]
+      },
+      {
+        "rankLevel": 3,
+        "title": "Halcón Nocturno Oficial",
+        "minReputation": 60,
+        "weeklySalaryPounds": 15,
+        "unlockedBenefits": [
+          "Poción S-9 y S-8 gratuitas",
+          "Uso de balas purificadas de plata",
+          "Acceso al sótano sellado"
+        ]
+      },
+      {
+        "rankLevel": 4,
+        "title": "Capitán de Escuadrón",
+        "minReputation": 120,
+        "weeklySalaryPounds": 35,
+        "unlockedBenefits": [
+          "Custodia de Artefactos Grado 3 y 2",
+          "Comando de 6 operativos",
+          "Veto en investigaciones"
+        ]
+      },
+      {
+        "rankLevel": 5,
+        "title": "Diácono Superior de Diócesis",
+        "minReputation": 250,
+        "weeklySalaryPounds": 80,
+        "unlockedBenefits": [
+          "Fórmulas S-5 y S-4",
+          "Audiencia con el Arzobispo",
+          "Protección de Santa Selena"
+        ]
+      },
+      {
+        "rankLevel": 6,
+        "title": "Arzobispo / Custodio de la Puerta Chanis",
+        "minReputation": 500,
+        "weeklySalaryPounds": 200,
+        "unlockedBenefits": [
+          "Artefactos Grado 1 y 0",
+          "Autoridad eclesiástica nacional",
+          "Petición directa de milagro"
+        ]
+      }
+    ],
+    "missions": [
+      {
+        "id": "MSN_CHURCH_EVERNIGHT_01",
+        "orgId": "CHURCH_EVERNIGHT",
+        "title": "Patrullaje Preventivo en la Niebla (Iglesia de la Noche Eterna (Halcones Nocturnos))",
+        "missionType": "INTERNAL_DUTY",
+        "description": "Completar una guardia nocturna en los puntos sensibles del distrito verificando firmas espirituales extrañas.",
+        "requiredRank": 1,
+        "rewardPounds": 5,
+        "reputationGain": 10,
+        "dangerRating": 2
+      },
+      {
+        "id": "MSN_CHURCH_EVERNIGHT_02",
+        "orgId": "CHURCH_EVERNIGHT",
+        "title": "Vigilancia Encubierta de un Sospechoso (Iglesia de la Noche Eterna (Halcones Nocturnos))",
+        "missionType": "RECON",
+        "description": "Seguir discretamente a un individuo que frecuenta reuniones místicas sin revelar tu afiliación a Iglesia de la Noche Eterna (Halcones Nocturnos).",
+        "requiredRank": 2,
+        "rewardPounds": 12,
+        "reputationGain": 15,
+        "dangerRating": 4
+      },
+      {
+        "id": "MSN_CHURCH_EVERNIGHT_03",
+        "orgId": "CHURCH_EVERNIGHT",
+        "title": "Supresión de una Criatura Extraordinaria (Iglesia de la Noche Eterna (Halcones Nocturnos))",
+        "missionType": "ASSASSINATION",
+        "description": "Eliminar a una bestia salvaje o un Beyonder rebelde que ha comenzado a perder el control en las alcantarillas.",
+        "requiredRank": 3,
+        "rewardPounds": 25,
+        "reputationGain": 25,
+        "dangerRating": 6
+      },
+      {
+        "id": "MSN_CHURCH_EVERNIGHT_04",
+        "orgId": "CHURCH_EVERNIGHT",
+        "title": "Infiltración en un Club Clandestino (Iglesia de la Noche Eterna (Halcones Nocturnos))",
+        "missionType": "COVERT_OPS",
+        "description": "Obtener un libro de cuentas o la lista de miembros de una facción rival utilizando una cobertura civil.",
+        "requiredRank": 3,
+        "rewardPounds": 35,
+        "reputationGain": 30,
+        "dangerRating": 5
+      },
+      {
+        "id": "MSN_CHURCH_EVERNIGHT_05",
+        "orgId": "CHURCH_EVERNIGHT",
+        "title": "Recuperación de un Artefacto Sellado en Fuga (Iglesia de la Noche Eterna (Halcones Nocturnos))",
+        "missionType": "ARTIFACT_RETRIEVAL",
+        "description": "Rastrear y confinar un Artefacto Grado 2 que escapó tras la muerte de su portador en un hotel.",
+        "requiredRank": 4,
+        "rewardPounds": 60,
+        "reputationGain": 40,
+        "dangerRating": 7
+      },
+      {
+        "id": "MSN_CHURCH_EVERNIGHT_06",
+        "orgId": "CHURCH_EVERNIGHT",
+        "title": "Evaluación de Ascenso Jerárquico (Iglesia de la Noche Eterna (Halcones Nocturnos))",
+        "missionType": "PROMOTION_EVAL",
+        "description": "Someterte a una auditoría espiritual y demostrar lealtad inquebrantable ante el consejo disciplinario.",
+        "requiredRank": 4,
+        "rewardPounds": 20,
+        "reputationGain": 50,
+        "dangerRating": 3
+      },
+      {
+        "id": "MSN_CHURCH_EVERNIGHT_07",
+        "orgId": "CHURCH_EVERNIGHT",
+        "title": "Desarticulación de una Célula Hereje (Iglesia de la Noche Eterna (Halcones Nocturnos))",
+        "missionType": "ASSASSINATION",
+        "description": "Asaltar el santuario subterráneo del enemigo jurado, destruyendo el altar y confiscando sus pergaminos.",
+        "requiredRank": 5,
+        "rewardPounds": 120,
+        "reputationGain": 70,
+        "dangerRating": 8
+      },
+      {
+        "id": "MSN_CHURCH_EVERNIGHT_08",
+        "orgId": "CHURCH_EVERNIGHT",
+        "title": "Operación Secreta de Nivel Santo (Iglesia de la Noche Eterna (Halcones Nocturnos))",
+        "missionType": "COVERT_OPS",
+        "description": "Asegurar el perímetro del ritual de apoteosis de un superior o sabotear el plan maestro de un Rey de Ángeles rival.",
+        "requiredRank": 6,
+        "rewardPounds": 300,
+        "reputationGain": 120,
+        "dangerRating": 10
+      }
+    ],
+    "loyaltyDilemmas": [
+      {
+        "id": "DILEMMA_CHURCH_EVERNIGHT_01",
+        "orgId": "CHURCH_EVERNIGHT",
+        "title": "La Orden Contradictoria de un Superior",
+        "dilemmaType": "CONTRADICTORY_ORDERS",
+        "description": "Un líder de alto rango te ordena encubrir el asesinato de un testigo civil 'por el bien mayor de la organización'. Un camarada honesto te ruega denunciarlo.",
+        "options": [
+          {
+            "text": "Obedecer ciegamente la orden del superior jerárquico",
+            "outcome": "Ganas favor con la cúpula pero tu conciencia sufre un severo golpe.",
+            "loyaltyDelta": 20,
+            "sanityDelta": -8
+          },
+          {
+            "text": "Filtrar la verdad anónimamente a los investigadores honestos",
+            "outcome": "Preservas tu humanidad moral, pero te arriesgas a ser considerado poco fiable.",
+            "loyaltyDelta": -25,
+            "sanityDelta": 5
+          }
+        ]
+      },
+      {
+        "id": "DILEMMA_CHURCH_EVERNIGHT_02",
+        "orgId": "CHURCH_EVERNIGHT",
+        "title": "Crisis de Fe y la Purga Interna",
+        "dilemmaType": "INTERNAL_PURGE",
+        "description": "La organización inicia una purga inquisitorial en tu división. Se te exige señalar a un compañero sospechoso de herejía para salvar tu propio pellejo.",
+        "options": [
+          {
+            "text": "Entregar a un colega sospechoso para certificar tu lealtad",
+            "outcome": "Sobrevives a la purga con honores sombríos.",
+            "loyaltyDelta": 25,
+            "sanityDelta": -12
+          },
+          {
+            "text": "Ayudar a tu colega a escapar de la ciudad arriesgando tu cobertura",
+            "outcome": "Te conviertes en sospechoso de simpatizar con rebeldes.",
+            "loyaltyDelta": -35,
+            "sanityDelta": 8
+          }
+        ]
+      }
+    ],
+    "membershipBenefits": {
+      "potionFormulasProvided": [
+        "Fórmula canónica de DARKNESS (S9 a S5)",
+        "Fórmula canónica de FOOL (S9 a S5)",
+        "Fórmula canónica de DEATH (S9 a S5)"
+      ],
+      "sacredSanctuaryProtectionLevel": 85,
+      "monthlyArtifactAccessGrade": 2,
+      "exclusiveKnowledgeArchives": [
+        "Archivos confidenciales de Iglesia de la Noche Eterna (Halcones Nocturnos)",
+        "Tratados teológicos y tácticos"
+      ]
+    }
+  },
+  {
+    "id": "CHURCH_STORMS",
+    "name": "Iglesia del Señor de las Tormentas (Castigadores Mandatarios)",
+    "category": "ORTHODOX_CHURCH",
+    "doctrine": "La furia del mar y el trueno somete a toda herejía. El coraje manda.",
+    "headquarters": "Catedral del Viento Sagrado, Pritz",
+    "patronEntity": "Señor de las Tormentas (Leodero)",
+    "associatedPathways": [
+      "TYRANT",
+      "RED_PRIEST"
+    ],
+    "ranks": [
+      {
+        "rankLevel": 1,
+        "title": "Fiel de los Mares",
+        "minReputation": 0,
+        "weeklySalaryPounds": 3,
+        "unlockedBenefits": [
+          "Bendición náutica",
+          "Pase portuario"
+        ]
+      },
+      {
+        "rankLevel": 2,
+        "title": "Recluta de la Milicia Naval",
+        "minReputation": 30,
+        "weeklySalaryPounds": 8,
+        "unlockedBenefits": [
+          "Entrenamiento marcial marino",
+          "Ración de ron bendecido"
+        ]
+      },
+      {
+        "rankLevel": 3,
+        "title": "Castigador Mandatario",
+        "minReputation": 70,
+        "weeklySalaryPounds": 18,
+        "unlockedBenefits": [
+          "Poción Sailor / Folk of Rage",
+          "Lanzas de relámpago",
+          "Arresto sumario"
+        ]
+      },
+      {
+        "rankLevel": 4,
+        "title": "Comandante de Fragata Sagrada",
+        "minReputation": 140,
+        "weeklySalaryPounds": 45,
+        "unlockedBenefits": [
+          "Artefactos marinos Grado 2",
+          "Invocación de galernas"
+        ]
+      },
+      {
+        "rankLevel": 5,
+        "title": "Prelado de las Tempestades",
+        "minReputation": 280,
+        "weeklySalaryPounds": 100,
+        "unlockedBenefits": [
+          "Fórmula Calamity Priest",
+          "Comando de la flota diocesana"
+        ]
+      },
+      {
+        "rankLevel": 6,
+        "title": "Cardenal del Rayo Supremo",
+        "minReputation": 550,
+        "weeklySalaryPounds": 250,
+        "unlockedBenefits": [
+          "Juicio del Trueno Divino",
+          "Artefacto Grado 1 de tormenta"
+        ]
+      }
+    ],
+    "missions": [
+      {
+        "id": "MSN_CHURCH_STORMS_01",
+        "orgId": "CHURCH_STORMS",
+        "title": "Patrullaje Preventivo en la Niebla (Iglesia del Señor de las Tormentas (Castigadores Mandatarios))",
+        "missionType": "INTERNAL_DUTY",
+        "description": "Completar una guardia nocturna en los puntos sensibles del distrito verificando firmas espirituales extrañas.",
+        "requiredRank": 1,
+        "rewardPounds": 5,
+        "reputationGain": 10,
+        "dangerRating": 2
+      },
+      {
+        "id": "MSN_CHURCH_STORMS_02",
+        "orgId": "CHURCH_STORMS",
+        "title": "Vigilancia Encubierta de un Sospechoso (Iglesia del Señor de las Tormentas (Castigadores Mandatarios))",
+        "missionType": "RECON",
+        "description": "Seguir discretamente a un individuo que frecuenta reuniones místicas sin revelar tu afiliación a Iglesia del Señor de las Tormentas (Castigadores Mandatarios).",
+        "requiredRank": 2,
+        "rewardPounds": 12,
+        "reputationGain": 15,
+        "dangerRating": 4
+      },
+      {
+        "id": "MSN_CHURCH_STORMS_03",
+        "orgId": "CHURCH_STORMS",
+        "title": "Supresión de una Criatura Extraordinaria (Iglesia del Señor de las Tormentas (Castigadores Mandatarios))",
+        "missionType": "ASSASSINATION",
+        "description": "Eliminar a una bestia salvaje o un Beyonder rebelde que ha comenzado a perder el control en las alcantarillas.",
+        "requiredRank": 3,
+        "rewardPounds": 25,
+        "reputationGain": 25,
+        "dangerRating": 6
+      },
+      {
+        "id": "MSN_CHURCH_STORMS_04",
+        "orgId": "CHURCH_STORMS",
+        "title": "Infiltración en un Club Clandestino (Iglesia del Señor de las Tormentas (Castigadores Mandatarios))",
+        "missionType": "COVERT_OPS",
+        "description": "Obtener un libro de cuentas o la lista de miembros de una facción rival utilizando una cobertura civil.",
+        "requiredRank": 3,
+        "rewardPounds": 35,
+        "reputationGain": 30,
+        "dangerRating": 5
+      },
+      {
+        "id": "MSN_CHURCH_STORMS_05",
+        "orgId": "CHURCH_STORMS",
+        "title": "Recuperación de un Artefacto Sellado en Fuga (Iglesia del Señor de las Tormentas (Castigadores Mandatarios))",
+        "missionType": "ARTIFACT_RETRIEVAL",
+        "description": "Rastrear y confinar un Artefacto Grado 2 que escapó tras la muerte de su portador en un hotel.",
+        "requiredRank": 4,
+        "rewardPounds": 60,
+        "reputationGain": 40,
+        "dangerRating": 7
+      },
+      {
+        "id": "MSN_CHURCH_STORMS_06",
+        "orgId": "CHURCH_STORMS",
+        "title": "Evaluación de Ascenso Jerárquico (Iglesia del Señor de las Tormentas (Castigadores Mandatarios))",
+        "missionType": "PROMOTION_EVAL",
+        "description": "Someterte a una auditoría espiritual y demostrar lealtad inquebrantable ante el consejo disciplinario.",
+        "requiredRank": 4,
+        "rewardPounds": 20,
+        "reputationGain": 50,
+        "dangerRating": 3
+      },
+      {
+        "id": "MSN_CHURCH_STORMS_07",
+        "orgId": "CHURCH_STORMS",
+        "title": "Desarticulación de una Célula Hereje (Iglesia del Señor de las Tormentas (Castigadores Mandatarios))",
+        "missionType": "ASSASSINATION",
+        "description": "Asaltar el santuario subterráneo del enemigo jurado, destruyendo el altar y confiscando sus pergaminos.",
+        "requiredRank": 5,
+        "rewardPounds": 120,
+        "reputationGain": 70,
+        "dangerRating": 8
+      },
+      {
+        "id": "MSN_CHURCH_STORMS_08",
+        "orgId": "CHURCH_STORMS",
+        "title": "Operación Secreta de Nivel Santo (Iglesia del Señor de las Tormentas (Castigadores Mandatarios))",
+        "missionType": "COVERT_OPS",
+        "description": "Asegurar el perímetro del ritual de apoteosis de un superior o sabotear el plan maestro de un Rey de Ángeles rival.",
+        "requiredRank": 6,
+        "rewardPounds": 300,
+        "reputationGain": 120,
+        "dangerRating": 10
+      }
+    ],
+    "loyaltyDilemmas": [
+      {
+        "id": "DILEMMA_CHURCH_STORMS_01",
+        "orgId": "CHURCH_STORMS",
+        "title": "La Orden Contradictoria de un Superior",
+        "dilemmaType": "CONTRADICTORY_ORDERS",
+        "description": "Un líder de alto rango te ordena encubrir el asesinato de un testigo civil 'por el bien mayor de la organización'. Un camarada honesto te ruega denunciarlo.",
+        "options": [
+          {
+            "text": "Obedecer ciegamente la orden del superior jerárquico",
+            "outcome": "Ganas favor con la cúpula pero tu conciencia sufre un severo golpe.",
+            "loyaltyDelta": 20,
+            "sanityDelta": -8
+          },
+          {
+            "text": "Filtrar la verdad anónimamente a los investigadores honestos",
+            "outcome": "Preservas tu humanidad moral, pero te arriesgas a ser considerado poco fiable.",
+            "loyaltyDelta": -25,
+            "sanityDelta": 5
+          }
+        ]
+      },
+      {
+        "id": "DILEMMA_CHURCH_STORMS_02",
+        "orgId": "CHURCH_STORMS",
+        "title": "Crisis de Fe y la Purga Interna",
+        "dilemmaType": "INTERNAL_PURGE",
+        "description": "La organización inicia una purga inquisitorial en tu división. Se te exige señalar a un compañero sospechoso de herejía para salvar tu propio pellejo.",
+        "options": [
+          {
+            "text": "Entregar a un colega sospechoso para certificar tu lealtad",
+            "outcome": "Sobrevives a la purga con honores sombríos.",
+            "loyaltyDelta": 25,
+            "sanityDelta": -12
+          },
+          {
+            "text": "Ayudar a tu colega a escapar de la ciudad arriesgando tu cobertura",
+            "outcome": "Te conviertes en sospechoso de simpatizar con rebeldes.",
+            "loyaltyDelta": -35,
+            "sanityDelta": 8
+          }
+        ]
+      }
+    ],
+    "membershipBenefits": {
+      "potionFormulasProvided": [
+        "Fórmula canónica de TYRANT (S9 a S5)",
+        "Fórmula canónica de RED_PRIEST (S9 a S5)"
+      ],
+      "sacredSanctuaryProtectionLevel": 85,
+      "monthlyArtifactAccessGrade": 2,
+      "exclusiveKnowledgeArchives": [
+        "Archivos confidenciales de Iglesia del Señor de las Tormentas (Castigadores Mandatarios)",
+        "Tratados teológicos y tácticos"
+      ]
+    }
+  },
+  {
+    "id": "CHURCH_STEAM",
+    "name": "Iglesia del Dios del Vapor y la Maquinaria (Mente Colmena Mecánica)",
+    "category": "ORTHODOX_CHURCH",
+    "doctrine": "El progreso del engranaje y la alquimia eleva la condición humana hacia el orden perfecto.",
+    "headquarters": "Catedral del Santo Engranaje, Backlund",
+    "patronEntity": "Dios del Vapor y la Maquinaria",
+    "associatedPathways": [
+      "PARAGON",
+      "HERMIT"
+    ],
+    "ranks": [
+      {
+        "rankLevel": 1,
+        "title": "Aprendiz de Taller",
+        "minReputation": 0,
+        "weeklySalaryPounds": 3,
+        "unlockedBenefits": [
+          "Acceso a hornos alquímicos"
+        ]
+      },
+      {
+        "rankLevel": 2,
+        "title": "Mecánico Consagrado",
+        "minReputation": 25,
+        "weeklySalaryPounds": 7,
+        "unlockedBenefits": [
+          "Herramientas de precisión",
+          "Suministro de pólvora"
+        ]
+      },
+      {
+        "rankLevel": 3,
+        "title": "Agente de Mente Colmena",
+        "minReputation": 65,
+        "weeklySalaryPounds": 16,
+        "unlockedBenefits": [
+          "Poción Savant / Archaeologist",
+          "Armamento a vapor portátil"
+        ]
+      },
+      {
+        "rankLevel": 4,
+        "title": "Ingeniero Alquimista Mayor",
+        "minReputation": 130,
+        "weeklySalaryPounds": 40,
+        "unlockedBenefits": [
+          "Diseño de artefactos mecánicos",
+          "Laboratorio privado"
+        ]
+      },
+      {
+        "rankLevel": 5,
+        "title": "Maestro de la Forja Divina",
+        "minReputation": 260,
+        "weeklySalaryPounds": 90,
+        "unlockedBenefits": [
+          "Fórmulas Alchemist / Artisan",
+          "Autómatas centinelas"
+        ]
+      },
+      {
+        "rankLevel": 6,
+        "title": "Gran Patriarca del Latón Sagrado",
+        "minReputation": 520,
+        "weeklySalaryPounds": 220,
+        "unlockedBenefits": [
+          "Construcción de Cañones Divinos",
+          "Artefactos Grado 1"
+        ]
+      }
+    ],
+    "missions": [
+      {
+        "id": "MSN_CHURCH_STEAM_01",
+        "orgId": "CHURCH_STEAM",
+        "title": "Patrullaje Preventivo en la Niebla (Iglesia del Dios del Vapor y la Maquinaria (Mente Colmena Mecánica))",
+        "missionType": "INTERNAL_DUTY",
+        "description": "Completar una guardia nocturna en los puntos sensibles del distrito verificando firmas espirituales extrañas.",
+        "requiredRank": 1,
+        "rewardPounds": 5,
+        "reputationGain": 10,
+        "dangerRating": 2
+      },
+      {
+        "id": "MSN_CHURCH_STEAM_02",
+        "orgId": "CHURCH_STEAM",
+        "title": "Vigilancia Encubierta de un Sospechoso (Iglesia del Dios del Vapor y la Maquinaria (Mente Colmena Mecánica))",
+        "missionType": "RECON",
+        "description": "Seguir discretamente a un individuo que frecuenta reuniones místicas sin revelar tu afiliación a Iglesia del Dios del Vapor y la Maquinaria (Mente Colmena Mecánica).",
+        "requiredRank": 2,
+        "rewardPounds": 12,
+        "reputationGain": 15,
+        "dangerRating": 4
+      },
+      {
+        "id": "MSN_CHURCH_STEAM_03",
+        "orgId": "CHURCH_STEAM",
+        "title": "Supresión de una Criatura Extraordinaria (Iglesia del Dios del Vapor y la Maquinaria (Mente Colmena Mecánica))",
+        "missionType": "ASSASSINATION",
+        "description": "Eliminar a una bestia salvaje o un Beyonder rebelde que ha comenzado a perder el control en las alcantarillas.",
+        "requiredRank": 3,
+        "rewardPounds": 25,
+        "reputationGain": 25,
+        "dangerRating": 6
+      },
+      {
+        "id": "MSN_CHURCH_STEAM_04",
+        "orgId": "CHURCH_STEAM",
+        "title": "Infiltración en un Club Clandestino (Iglesia del Dios del Vapor y la Maquinaria (Mente Colmena Mecánica))",
+        "missionType": "COVERT_OPS",
+        "description": "Obtener un libro de cuentas o la lista de miembros de una facción rival utilizando una cobertura civil.",
+        "requiredRank": 3,
+        "rewardPounds": 35,
+        "reputationGain": 30,
+        "dangerRating": 5
+      },
+      {
+        "id": "MSN_CHURCH_STEAM_05",
+        "orgId": "CHURCH_STEAM",
+        "title": "Recuperación de un Artefacto Sellado en Fuga (Iglesia del Dios del Vapor y la Maquinaria (Mente Colmena Mecánica))",
+        "missionType": "ARTIFACT_RETRIEVAL",
+        "description": "Rastrear y confinar un Artefacto Grado 2 que escapó tras la muerte de su portador en un hotel.",
+        "requiredRank": 4,
+        "rewardPounds": 60,
+        "reputationGain": 40,
+        "dangerRating": 7
+      },
+      {
+        "id": "MSN_CHURCH_STEAM_06",
+        "orgId": "CHURCH_STEAM",
+        "title": "Evaluación de Ascenso Jerárquico (Iglesia del Dios del Vapor y la Maquinaria (Mente Colmena Mecánica))",
+        "missionType": "PROMOTION_EVAL",
+        "description": "Someterte a una auditoría espiritual y demostrar lealtad inquebrantable ante el consejo disciplinario.",
+        "requiredRank": 4,
+        "rewardPounds": 20,
+        "reputationGain": 50,
+        "dangerRating": 3
+      },
+      {
+        "id": "MSN_CHURCH_STEAM_07",
+        "orgId": "CHURCH_STEAM",
+        "title": "Desarticulación de una Célula Hereje (Iglesia del Dios del Vapor y la Maquinaria (Mente Colmena Mecánica))",
+        "missionType": "ASSASSINATION",
+        "description": "Asaltar el santuario subterráneo del enemigo jurado, destruyendo el altar y confiscando sus pergaminos.",
+        "requiredRank": 5,
+        "rewardPounds": 120,
+        "reputationGain": 70,
+        "dangerRating": 8
+      },
+      {
+        "id": "MSN_CHURCH_STEAM_08",
+        "orgId": "CHURCH_STEAM",
+        "title": "Operación Secreta de Nivel Santo (Iglesia del Dios del Vapor y la Maquinaria (Mente Colmena Mecánica))",
+        "missionType": "COVERT_OPS",
+        "description": "Asegurar el perímetro del ritual de apoteosis de un superior o sabotear el plan maestro de un Rey de Ángeles rival.",
+        "requiredRank": 6,
+        "rewardPounds": 300,
+        "reputationGain": 120,
+        "dangerRating": 10
+      }
+    ],
+    "loyaltyDilemmas": [
+      {
+        "id": "DILEMMA_CHURCH_STEAM_01",
+        "orgId": "CHURCH_STEAM",
+        "title": "La Orden Contradictoria de un Superior",
+        "dilemmaType": "CONTRADICTORY_ORDERS",
+        "description": "Un líder de alto rango te ordena encubrir el asesinato de un testigo civil 'por el bien mayor de la organización'. Un camarada honesto te ruega denunciarlo.",
+        "options": [
+          {
+            "text": "Obedecer ciegamente la orden del superior jerárquico",
+            "outcome": "Ganas favor con la cúpula pero tu conciencia sufre un severo golpe.",
+            "loyaltyDelta": 20,
+            "sanityDelta": -8
+          },
+          {
+            "text": "Filtrar la verdad anónimamente a los investigadores honestos",
+            "outcome": "Preservas tu humanidad moral, pero te arriesgas a ser considerado poco fiable.",
+            "loyaltyDelta": -25,
+            "sanityDelta": 5
+          }
+        ]
+      },
+      {
+        "id": "DILEMMA_CHURCH_STEAM_02",
+        "orgId": "CHURCH_STEAM",
+        "title": "Crisis de Fe y la Purga Interna",
+        "dilemmaType": "INTERNAL_PURGE",
+        "description": "La organización inicia una purga inquisitorial en tu división. Se te exige señalar a un compañero sospechoso de herejía para salvar tu propio pellejo.",
+        "options": [
+          {
+            "text": "Entregar a un colega sospechoso para certificar tu lealtad",
+            "outcome": "Sobrevives a la purga con honores sombríos.",
+            "loyaltyDelta": 25,
+            "sanityDelta": -12
+          },
+          {
+            "text": "Ayudar a tu colega a escapar de la ciudad arriesgando tu cobertura",
+            "outcome": "Te conviertes en sospechoso de simpatizar con rebeldes.",
+            "loyaltyDelta": -35,
+            "sanityDelta": 8
+          }
+        ]
+      }
+    ],
+    "membershipBenefits": {
+      "potionFormulasProvided": [
+        "Fórmula canónica de PARAGON (S9 a S5)",
+        "Fórmula canónica de HERMIT (S9 a S5)"
+      ],
+      "sacredSanctuaryProtectionLevel": 85,
+      "monthlyArtifactAccessGrade": 2,
+      "exclusiveKnowledgeArchives": [
+        "Archivos confidenciales de Iglesia del Dios del Vapor y la Maquinaria (Mente Colmena Mecánica)",
+        "Tratados teológicos y tácticos"
+      ]
+    }
+  },
+  {
+    "id": "AURORA_ORDER",
+    "name": "Orden de Aurora (Adoradores del Verdadero Creador)",
+    "category": "SECRET_SOCIETY",
+    "doctrine": "El mundo debe purificarse a través del dolor y el sacrificio supremo para el regreso del Dios Real.",
+    "headquarters": "Catacumbas de Backlund y Meseta de Hornacis",
+    "patronEntity": "El Verdadero Creador (Hanged Giant)",
+    "associatedPathways": [
+      "HANGED_MAN",
+      "ABYSS",
+      "GIANT"
+    ],
+    "ranks": [
+      {
+        "rankLevel": 1,
+        "title": "Converso / Penitente",
+        "minReputation": 0,
+        "weeklySalaryPounds": 1,
+        "unlockedBenefits": [
+          "Refugio en túneles subterráneos"
+        ]
+      },
+      {
+        "rankLevel": 2,
+        "title": "Iniciado de la Cruz Invertida",
+        "minReputation": 20,
+        "weeklySalaryPounds": 6,
+        "unlockedBenefits": [
+          "Poción Secrets Supplicant",
+          "Dagas de hueso sacrificadas"
+        ]
+      },
+      {
+        "rankLevel": 3,
+        "title": "Miembro Clandestino / Asesino",
+        "minReputation": 55,
+        "weeklySalaryPounds": 15,
+        "unlockedBenefits": [
+          "Poción Listener / Shadow Ascetic",
+          "Comunión de sangre"
+        ]
+      },
+      {
+        "rankLevel": 4,
+        "title": "Predicador del Apocalipsis",
+        "minReputation": 120,
+        "weeklySalaryPounds": 35,
+        "unlockedBenefits": [
+          "Capacidad de reclutar células",
+          "Artefactos corruptos Grado 2"
+        ]
+      },
+      {
+        "rankLevel": 5,
+        "title": "Señor del Oráculo (Mr. A / Ince)",
+        "minReputation": 260,
+        "weeklySalaryPounds": 90,
+        "unlockedBenefits": [
+          "Fórmula Shepherd",
+          "Sacrificios masivos de distrito"
+        ]
+      },
+      {
+        "rankLevel": 6,
+        "title": "Santo de las Tinieblas Sagradas",
+        "minReputation": 500,
+        "weeklySalaryPounds": 250,
+        "unlockedBenefits": [
+          "Comunión con el Santo de la Oscuridad",
+          "Artefacto Grado 0"
+        ]
+      }
+    ],
+    "missions": [
+      {
+        "id": "MSN_AURORA_ORDER_01",
+        "orgId": "AURORA_ORDER",
+        "title": "Patrullaje Preventivo en la Niebla (Orden de Aurora (Adoradores del Verdadero Creador))",
+        "missionType": "INTERNAL_DUTY",
+        "description": "Completar una guardia nocturna en los puntos sensibles del distrito verificando firmas espirituales extrañas.",
+        "requiredRank": 1,
+        "rewardPounds": 5,
+        "reputationGain": 10,
+        "dangerRating": 2
+      },
+      {
+        "id": "MSN_AURORA_ORDER_02",
+        "orgId": "AURORA_ORDER",
+        "title": "Vigilancia Encubierta de un Sospechoso (Orden de Aurora (Adoradores del Verdadero Creador))",
+        "missionType": "RECON",
+        "description": "Seguir discretamente a un individuo que frecuenta reuniones místicas sin revelar tu afiliación a Orden de Aurora (Adoradores del Verdadero Creador).",
+        "requiredRank": 2,
+        "rewardPounds": 12,
+        "reputationGain": 15,
+        "dangerRating": 4
+      },
+      {
+        "id": "MSN_AURORA_ORDER_03",
+        "orgId": "AURORA_ORDER",
+        "title": "Supresión de una Criatura Extraordinaria (Orden de Aurora (Adoradores del Verdadero Creador))",
+        "missionType": "ASSASSINATION",
+        "description": "Eliminar a una bestia salvaje o un Beyonder rebelde que ha comenzado a perder el control en las alcantarillas.",
+        "requiredRank": 3,
+        "rewardPounds": 25,
+        "reputationGain": 25,
+        "dangerRating": 6
+      },
+      {
+        "id": "MSN_AURORA_ORDER_04",
+        "orgId": "AURORA_ORDER",
+        "title": "Infiltración en un Club Clandestino (Orden de Aurora (Adoradores del Verdadero Creador))",
+        "missionType": "COVERT_OPS",
+        "description": "Obtener un libro de cuentas o la lista de miembros de una facción rival utilizando una cobertura civil.",
+        "requiredRank": 3,
+        "rewardPounds": 35,
+        "reputationGain": 30,
+        "dangerRating": 5
+      },
+      {
+        "id": "MSN_AURORA_ORDER_05",
+        "orgId": "AURORA_ORDER",
+        "title": "Recuperación de un Artefacto Sellado en Fuga (Orden de Aurora (Adoradores del Verdadero Creador))",
+        "missionType": "ARTIFACT_RETRIEVAL",
+        "description": "Rastrear y confinar un Artefacto Grado 2 que escapó tras la muerte de su portador en un hotel.",
+        "requiredRank": 4,
+        "rewardPounds": 60,
+        "reputationGain": 40,
+        "dangerRating": 7
+      },
+      {
+        "id": "MSN_AURORA_ORDER_06",
+        "orgId": "AURORA_ORDER",
+        "title": "Evaluación de Ascenso Jerárquico (Orden de Aurora (Adoradores del Verdadero Creador))",
+        "missionType": "PROMOTION_EVAL",
+        "description": "Someterte a una auditoría espiritual y demostrar lealtad inquebrantable ante el consejo disciplinario.",
+        "requiredRank": 4,
+        "rewardPounds": 20,
+        "reputationGain": 50,
+        "dangerRating": 3
+      },
+      {
+        "id": "MSN_AURORA_ORDER_07",
+        "orgId": "AURORA_ORDER",
+        "title": "Desarticulación de una Célula Hereje (Orden de Aurora (Adoradores del Verdadero Creador))",
+        "missionType": "ASSASSINATION",
+        "description": "Asaltar el santuario subterráneo del enemigo jurado, destruyendo el altar y confiscando sus pergaminos.",
+        "requiredRank": 5,
+        "rewardPounds": 120,
+        "reputationGain": 70,
+        "dangerRating": 8
+      },
+      {
+        "id": "MSN_AURORA_ORDER_08",
+        "orgId": "AURORA_ORDER",
+        "title": "Operación Secreta de Nivel Santo (Orden de Aurora (Adoradores del Verdadero Creador))",
+        "missionType": "COVERT_OPS",
+        "description": "Asegurar el perímetro del ritual de apoteosis de un superior o sabotear el plan maestro de un Rey de Ángeles rival.",
+        "requiredRank": 6,
+        "rewardPounds": 300,
+        "reputationGain": 120,
+        "dangerRating": 10
+      }
+    ],
+    "loyaltyDilemmas": [
+      {
+        "id": "DILEMMA_AURORA_ORDER_01",
+        "orgId": "AURORA_ORDER",
+        "title": "La Orden Contradictoria de un Superior",
+        "dilemmaType": "CONTRADICTORY_ORDERS",
+        "description": "Un líder de alto rango te ordena encubrir el asesinato de un testigo civil 'por el bien mayor de la organización'. Un camarada honesto te ruega denunciarlo.",
+        "options": [
+          {
+            "text": "Obedecer ciegamente la orden del superior jerárquico",
+            "outcome": "Ganas favor con la cúpula pero tu conciencia sufre un severo golpe.",
+            "loyaltyDelta": 20,
+            "sanityDelta": -8
+          },
+          {
+            "text": "Filtrar la verdad anónimamente a los investigadores honestos",
+            "outcome": "Preservas tu humanidad moral, pero te arriesgas a ser considerado poco fiable.",
+            "loyaltyDelta": -25,
+            "sanityDelta": 5
+          }
+        ]
+      },
+      {
+        "id": "DILEMMA_AURORA_ORDER_02",
+        "orgId": "AURORA_ORDER",
+        "title": "Crisis de Fe y la Purga Interna",
+        "dilemmaType": "INTERNAL_PURGE",
+        "description": "La organización inicia una purga inquisitorial en tu división. Se te exige señalar a un compañero sospechoso de herejía para salvar tu propio pellejo.",
+        "options": [
+          {
+            "text": "Entregar a un colega sospechoso para certificar tu lealtad",
+            "outcome": "Sobrevives a la purga con honores sombríos.",
+            "loyaltyDelta": 25,
+            "sanityDelta": -12
+          },
+          {
+            "text": "Ayudar a tu colega a escapar de la ciudad arriesgando tu cobertura",
+            "outcome": "Te conviertes en sospechoso de simpatizar con rebeldes.",
+            "loyaltyDelta": -35,
+            "sanityDelta": 8
+          }
+        ]
+      }
+    ],
+    "membershipBenefits": {
+      "potionFormulasProvided": [
+        "Fórmula canónica de HANGED_MAN (S9 a S5)",
+        "Fórmula canónica de ABYSS (S9 a S5)",
+        "Fórmula canónica de GIANT (S9 a S5)"
+      ],
+      "sacredSanctuaryProtectionLevel": 85,
+      "monthlyArtifactAccessGrade": 2,
+      "exclusiveKnowledgeArchives": [
+        "Archivos confidenciales de Orden de Aurora (Adoradores del Verdadero Creador)",
+        "Tratados teológicos y tácticos"
+      ]
+    }
+  },
+  {
+    "id": "TAROT_CLUB",
+    "name": "El Club Tarot (Convocatoria sobre la Niebla Gris)",
+    "category": "SECRET_SOCIETY",
+    "doctrine": "Intercambio de inteligencia, salvaguarda de la humanidad y equilibrio del cosmos.",
+    "headquarters": "Castillo de Sefirah sobre la Niebla Gris",
+    "patronEntity": "The Fool (Mr. Fool)",
+    "associatedPathways": [
+      "FOOL",
+      "DOOR",
+      "ERROR",
+      "VISIONARY",
+      "SUN",
+      "JUSTICIAR",
+      "MOON",
+      "HANGED_MAN"
+    ],
+    "ranks": [
+      {
+        "rankLevel": 1,
+        "title": "Invitado Observador",
+        "minReputation": 0,
+        "weeklySalaryPounds": 0,
+        "unlockedBenefits": [
+          "Acceso a reuniones quincenales"
+        ]
+      },
+      {
+        "rankLevel": 2,
+        "title": "Miembro con Carta Menor",
+        "minReputation": 30,
+        "weeklySalaryPounds": 10,
+        "unlockedBenefits": [
+          "Petición de oraciones a Mr. Fool",
+          "Trueque de ingredientes"
+        ]
+      },
+      {
+        "rankLevel": 3,
+        "title": "Portador de Arcano Mayor (Miss Justice, The Sun, The World, etc.)",
+        "minReputation": 80,
+        "weeklySalaryPounds": 25,
+        "unlockedBenefits": [
+          "Canalización del Castillo de Sefirah",
+          "Intercambio de páginas del diario de Roselle"
+        ]
+      },
+      {
+        "rankLevel": 4,
+        "title": "Operativo Clave Continental",
+        "minReputation": 160,
+        "weeklySalaryPounds": 60,
+        "unlockedBenefits": [
+          "Protección contra adivinación suprema",
+          "Préstamo de Artefactos de Grado 1"
+        ]
+      },
+      {
+        "rankLevel": 5,
+        "title": "Pilar del Panteón del Tarot",
+        "minReputation": 320,
+        "weeklySalaryPounds": 150,
+        "unlockedBenefits": [
+          "Petición de Milagros de The Fool",
+          "Acompañamiento en rituales divinos"
+        ]
+      },
+      {
+        "rankLevel": 6,
+        "title": "Lugarteniente de la Niebla Divina",
+        "minReputation": 600,
+        "weeklySalaryPounds": 350,
+        "unlockedBenefits": [
+          "Mando de ejércitos históricos",
+          "Acceso pleno a la Niebla Gris"
+        ]
+      }
+    ],
+    "missions": [
+      {
+        "id": "MSN_TAROT_CLUB_01",
+        "orgId": "TAROT_CLUB",
+        "title": "Patrullaje Preventivo en la Niebla (El Club Tarot (Convocatoria sobre la Niebla Gris))",
+        "missionType": "INTERNAL_DUTY",
+        "description": "Completar una guardia nocturna en los puntos sensibles del distrito verificando firmas espirituales extrañas.",
+        "requiredRank": 1,
+        "rewardPounds": 5,
+        "reputationGain": 10,
+        "dangerRating": 2
+      },
+      {
+        "id": "MSN_TAROT_CLUB_02",
+        "orgId": "TAROT_CLUB",
+        "title": "Vigilancia Encubierta de un Sospechoso (El Club Tarot (Convocatoria sobre la Niebla Gris))",
+        "missionType": "RECON",
+        "description": "Seguir discretamente a un individuo que frecuenta reuniones místicas sin revelar tu afiliación a El Club Tarot (Convocatoria sobre la Niebla Gris).",
+        "requiredRank": 2,
+        "rewardPounds": 12,
+        "reputationGain": 15,
+        "dangerRating": 4
+      },
+      {
+        "id": "MSN_TAROT_CLUB_03",
+        "orgId": "TAROT_CLUB",
+        "title": "Supresión de una Criatura Extraordinaria (El Club Tarot (Convocatoria sobre la Niebla Gris))",
+        "missionType": "ASSASSINATION",
+        "description": "Eliminar a una bestia salvaje o un Beyonder rebelde que ha comenzado a perder el control en las alcantarillas.",
+        "requiredRank": 3,
+        "rewardPounds": 25,
+        "reputationGain": 25,
+        "dangerRating": 6
+      },
+      {
+        "id": "MSN_TAROT_CLUB_04",
+        "orgId": "TAROT_CLUB",
+        "title": "Infiltración en un Club Clandestino (El Club Tarot (Convocatoria sobre la Niebla Gris))",
+        "missionType": "COVERT_OPS",
+        "description": "Obtener un libro de cuentas o la lista de miembros de una facción rival utilizando una cobertura civil.",
+        "requiredRank": 3,
+        "rewardPounds": 35,
+        "reputationGain": 30,
+        "dangerRating": 5
+      },
+      {
+        "id": "MSN_TAROT_CLUB_05",
+        "orgId": "TAROT_CLUB",
+        "title": "Recuperación de un Artefacto Sellado en Fuga (El Club Tarot (Convocatoria sobre la Niebla Gris))",
+        "missionType": "ARTIFACT_RETRIEVAL",
+        "description": "Rastrear y confinar un Artefacto Grado 2 que escapó tras la muerte de su portador en un hotel.",
+        "requiredRank": 4,
+        "rewardPounds": 60,
+        "reputationGain": 40,
+        "dangerRating": 7
+      },
+      {
+        "id": "MSN_TAROT_CLUB_06",
+        "orgId": "TAROT_CLUB",
+        "title": "Evaluación de Ascenso Jerárquico (El Club Tarot (Convocatoria sobre la Niebla Gris))",
+        "missionType": "PROMOTION_EVAL",
+        "description": "Someterte a una auditoría espiritual y demostrar lealtad inquebrantable ante el consejo disciplinario.",
+        "requiredRank": 4,
+        "rewardPounds": 20,
+        "reputationGain": 50,
+        "dangerRating": 3
+      },
+      {
+        "id": "MSN_TAROT_CLUB_07",
+        "orgId": "TAROT_CLUB",
+        "title": "Desarticulación de una Célula Hereje (El Club Tarot (Convocatoria sobre la Niebla Gris))",
+        "missionType": "ASSASSINATION",
+        "description": "Asaltar el santuario subterráneo del enemigo jurado, destruyendo el altar y confiscando sus pergaminos.",
+        "requiredRank": 5,
+        "rewardPounds": 120,
+        "reputationGain": 70,
+        "dangerRating": 8
+      },
+      {
+        "id": "MSN_TAROT_CLUB_08",
+        "orgId": "TAROT_CLUB",
+        "title": "Operación Secreta de Nivel Santo (El Club Tarot (Convocatoria sobre la Niebla Gris))",
+        "missionType": "COVERT_OPS",
+        "description": "Asegurar el perímetro del ritual de apoteosis de un superior o sabotear el plan maestro de un Rey de Ángeles rival.",
+        "requiredRank": 6,
+        "rewardPounds": 300,
+        "reputationGain": 120,
+        "dangerRating": 10
+      }
+    ],
+    "loyaltyDilemmas": [
+      {
+        "id": "DILEMMA_TAROT_CLUB_01",
+        "orgId": "TAROT_CLUB",
+        "title": "La Orden Contradictoria de un Superior",
+        "dilemmaType": "CONTRADICTORY_ORDERS",
+        "description": "Un líder de alto rango te ordena encubrir el asesinato de un testigo civil 'por el bien mayor de la organización'. Un camarada honesto te ruega denunciarlo.",
+        "options": [
+          {
+            "text": "Obedecer ciegamente la orden del superior jerárquico",
+            "outcome": "Ganas favor con la cúpula pero tu conciencia sufre un severo golpe.",
+            "loyaltyDelta": 20,
+            "sanityDelta": -8
+          },
+          {
+            "text": "Filtrar la verdad anónimamente a los investigadores honestos",
+            "outcome": "Preservas tu humanidad moral, pero te arriesgas a ser considerado poco fiable.",
+            "loyaltyDelta": -25,
+            "sanityDelta": 5
+          }
+        ]
+      },
+      {
+        "id": "DILEMMA_TAROT_CLUB_02",
+        "orgId": "TAROT_CLUB",
+        "title": "Crisis de Fe y la Purga Interna",
+        "dilemmaType": "INTERNAL_PURGE",
+        "description": "La organización inicia una purga inquisitorial en tu división. Se te exige señalar a un compañero sospechoso de herejía para salvar tu propio pellejo.",
+        "options": [
+          {
+            "text": "Entregar a un colega sospechoso para certificar tu lealtad",
+            "outcome": "Sobrevives a la purga con honores sombríos.",
+            "loyaltyDelta": 25,
+            "sanityDelta": -12
+          },
+          {
+            "text": "Ayudar a tu colega a escapar de la ciudad arriesgando tu cobertura",
+            "outcome": "Te conviertes en sospechoso de simpatizar con rebeldes.",
+            "loyaltyDelta": -35,
+            "sanityDelta": 8
+          }
+        ]
+      }
+    ],
+    "membershipBenefits": {
+      "potionFormulasProvided": [
+        "Fórmula canónica de FOOL (S9 a S5)",
+        "Fórmula canónica de DOOR (S9 a S5)",
+        "Fórmula canónica de ERROR (S9 a S5)",
+        "Fórmula canónica de VISIONARY (S9 a S5)",
+        "Fórmula canónica de SUN (S9 a S5)",
+        "Fórmula canónica de JUSTICIAR (S9 a S5)",
+        "Fórmula canónica de MOON (S9 a S5)",
+        "Fórmula canónica de HANGED_MAN (S9 a S5)"
+      ],
+      "sacredSanctuaryProtectionLevel": 85,
+      "monthlyArtifactAccessGrade": 2,
+      "exclusiveKnowledgeArchives": [
+        "Archivos confidenciales de El Club Tarot (Convocatoria sobre la Niebla Gris)",
+        "Tratados teológicos y tácticos"
+      ]
+    }
+  },
+  {
+    "id": "SECRET_ORDER",
+    "name": "La Orden Secreta (Familia Zaratul)",
+    "category": "SECRET_SOCIETY",
+    "doctrine": "El destino es una red de hilos que debe ser tejida por los verdaderos magos de las sombras.",
+    "headquarters": "Antiguos Mausoleos de Intis y Tingen",
+    "patronEntity": "Zaratul / Antigonus",
+    "associatedPathways": [
+      "FOOL"
+    ],
+    "ranks": [
+      {
+        "rankLevel": 1,
+        "title": "Acolito de la Máscara",
+        "minReputation": 0,
+        "weeklySalaryPounds": 2,
+        "unlockedBenefits": [
+          "Adivinación básica de cartas"
+        ]
+      },
+      {
+        "rankLevel": 2,
+        "title": "Titiritero Novicio",
+        "minReputation": 25,
+        "weeklySalaryPounds": 6,
+        "unlockedBenefits": [
+          "Muñecos de papel cortados"
+        ]
+      },
+      {
+        "rankLevel": 3,
+        "title": "Mago Ilusionista",
+        "minReputation": 60,
+        "weeklySalaryPounds": 16,
+        "unlockedBenefits": [
+          "Poción Magician",
+          "Trucos de prestidigitación"
+        ]
+      },
+      {
+        "rankLevel": 4,
+        "title": "Maestro Sin Rostro",
+        "minReputation": 120,
+        "weeklySalaryPounds": 38,
+        "unlockedBenefits": [
+          "Fórmula Faceless",
+          "Red de identidades falsas"
+        ]
+      },
+      {
+        "rankLevel": 5,
+        "title": "Comandante Marionettist",
+        "minReputation": 250,
+        "weeklySalaryPounds": 85,
+        "unlockedBenefits": [
+          "Marionetas de nivel Beyonder"
+        ]
+      },
+      {
+        "rankLevel": 6,
+        "title": "Sombra de Zaratul",
+        "minReputation": 500,
+        "weeklySalaryPounds": 210,
+        "unlockedBenefits": [
+          "Pacto con el Ángel de la Familia"
+        ]
+      }
+    ],
+    "missions": [
+      {
+        "id": "MSN_SECRET_ORDER_01",
+        "orgId": "SECRET_ORDER",
+        "title": "Patrullaje Preventivo en la Niebla (La Orden Secreta (Familia Zaratul))",
+        "missionType": "INTERNAL_DUTY",
+        "description": "Completar una guardia nocturna en los puntos sensibles del distrito verificando firmas espirituales extrañas.",
+        "requiredRank": 1,
+        "rewardPounds": 5,
+        "reputationGain": 10,
+        "dangerRating": 2
+      },
+      {
+        "id": "MSN_SECRET_ORDER_02",
+        "orgId": "SECRET_ORDER",
+        "title": "Vigilancia Encubierta de un Sospechoso (La Orden Secreta (Familia Zaratul))",
+        "missionType": "RECON",
+        "description": "Seguir discretamente a un individuo que frecuenta reuniones místicas sin revelar tu afiliación a La Orden Secreta (Familia Zaratul).",
+        "requiredRank": 2,
+        "rewardPounds": 12,
+        "reputationGain": 15,
+        "dangerRating": 4
+      },
+      {
+        "id": "MSN_SECRET_ORDER_03",
+        "orgId": "SECRET_ORDER",
+        "title": "Supresión de una Criatura Extraordinaria (La Orden Secreta (Familia Zaratul))",
+        "missionType": "ASSASSINATION",
+        "description": "Eliminar a una bestia salvaje o un Beyonder rebelde que ha comenzado a perder el control en las alcantarillas.",
+        "requiredRank": 3,
+        "rewardPounds": 25,
+        "reputationGain": 25,
+        "dangerRating": 6
+      },
+      {
+        "id": "MSN_SECRET_ORDER_04",
+        "orgId": "SECRET_ORDER",
+        "title": "Infiltración en un Club Clandestino (La Orden Secreta (Familia Zaratul))",
+        "missionType": "COVERT_OPS",
+        "description": "Obtener un libro de cuentas o la lista de miembros de una facción rival utilizando una cobertura civil.",
+        "requiredRank": 3,
+        "rewardPounds": 35,
+        "reputationGain": 30,
+        "dangerRating": 5
+      },
+      {
+        "id": "MSN_SECRET_ORDER_05",
+        "orgId": "SECRET_ORDER",
+        "title": "Recuperación de un Artefacto Sellado en Fuga (La Orden Secreta (Familia Zaratul))",
+        "missionType": "ARTIFACT_RETRIEVAL",
+        "description": "Rastrear y confinar un Artefacto Grado 2 que escapó tras la muerte de su portador en un hotel.",
+        "requiredRank": 4,
+        "rewardPounds": 60,
+        "reputationGain": 40,
+        "dangerRating": 7
+      },
+      {
+        "id": "MSN_SECRET_ORDER_06",
+        "orgId": "SECRET_ORDER",
+        "title": "Evaluación de Ascenso Jerárquico (La Orden Secreta (Familia Zaratul))",
+        "missionType": "PROMOTION_EVAL",
+        "description": "Someterte a una auditoría espiritual y demostrar lealtad inquebrantable ante el consejo disciplinario.",
+        "requiredRank": 4,
+        "rewardPounds": 20,
+        "reputationGain": 50,
+        "dangerRating": 3
+      },
+      {
+        "id": "MSN_SECRET_ORDER_07",
+        "orgId": "SECRET_ORDER",
+        "title": "Desarticulación de una Célula Hereje (La Orden Secreta (Familia Zaratul))",
+        "missionType": "ASSASSINATION",
+        "description": "Asaltar el santuario subterráneo del enemigo jurado, destruyendo el altar y confiscando sus pergaminos.",
+        "requiredRank": 5,
+        "rewardPounds": 120,
+        "reputationGain": 70,
+        "dangerRating": 8
+      },
+      {
+        "id": "MSN_SECRET_ORDER_08",
+        "orgId": "SECRET_ORDER",
+        "title": "Operación Secreta de Nivel Santo (La Orden Secreta (Familia Zaratul))",
+        "missionType": "COVERT_OPS",
+        "description": "Asegurar el perímetro del ritual de apoteosis de un superior o sabotear el plan maestro de un Rey de Ángeles rival.",
+        "requiredRank": 6,
+        "rewardPounds": 300,
+        "reputationGain": 120,
+        "dangerRating": 10
+      }
+    ],
+    "loyaltyDilemmas": [
+      {
+        "id": "DILEMMA_SECRET_ORDER_01",
+        "orgId": "SECRET_ORDER",
+        "title": "La Orden Contradictoria de un Superior",
+        "dilemmaType": "CONTRADICTORY_ORDERS",
+        "description": "Un líder de alto rango te ordena encubrir el asesinato de un testigo civil 'por el bien mayor de la organización'. Un camarada honesto te ruega denunciarlo.",
+        "options": [
+          {
+            "text": "Obedecer ciegamente la orden del superior jerárquico",
+            "outcome": "Ganas favor con la cúpula pero tu conciencia sufre un severo golpe.",
+            "loyaltyDelta": 20,
+            "sanityDelta": -8
+          },
+          {
+            "text": "Filtrar la verdad anónimamente a los investigadores honestos",
+            "outcome": "Preservas tu humanidad moral, pero te arriesgas a ser considerado poco fiable.",
+            "loyaltyDelta": -25,
+            "sanityDelta": 5
+          }
+        ]
+      },
+      {
+        "id": "DILEMMA_SECRET_ORDER_02",
+        "orgId": "SECRET_ORDER",
+        "title": "Crisis de Fe y la Purga Interna",
+        "dilemmaType": "INTERNAL_PURGE",
+        "description": "La organización inicia una purga inquisitorial en tu división. Se te exige señalar a un compañero sospechoso de herejía para salvar tu propio pellejo.",
+        "options": [
+          {
+            "text": "Entregar a un colega sospechoso para certificar tu lealtad",
+            "outcome": "Sobrevives a la purga con honores sombríos.",
+            "loyaltyDelta": 25,
+            "sanityDelta": -12
+          },
+          {
+            "text": "Ayudar a tu colega a escapar de la ciudad arriesgando tu cobertura",
+            "outcome": "Te conviertes en sospechoso de simpatizar con rebeldes.",
+            "loyaltyDelta": -35,
+            "sanityDelta": 8
+          }
+        ]
+      }
+    ],
+    "membershipBenefits": {
+      "potionFormulasProvided": [
+        "Fórmula canónica de FOOL (S9 a S5)"
+      ],
+      "sacredSanctuaryProtectionLevel": 85,
+      "monthlyArtifactAccessGrade": 2,
+      "exclusiveKnowledgeArchives": [
+        "Archivos confidenciales de La Orden Secreta (Familia Zaratul)",
+        "Tratados teológicos y tácticos"
+      ]
+    }
+  },
+  {
+    "id": "PSYCHOLOGY_ALCHEMISTS",
+    "name": "Alquimistas de la Psicología (Psychology Alchemists)",
+    "category": "ACADEMIC_ORDER",
+    "doctrine": "Explorar el subconsciente colectivo y moldear la psique humana sin recurrir a la violencia.",
+    "headquarters": "Sanatorios y Salones de Backlund y París",
+    "patronEntity": "Dragón de la Imaginación Hermes",
+    "associatedPathways": [
+      "VISIONARY"
+    ],
+    "ranks": [
+      {
+        "rankLevel": 1,
+        "title": "Observador Clínico",
+        "minReputation": 0,
+        "weeklySalaryPounds": 3,
+        "unlockedBenefits": [
+          "Consultorio privado",
+          "Técnicas de hipnosis"
+        ]
+      },
+      {
+        "rankLevel": 2,
+        "title": "Terapeuta Telepático",
+        "minReputation": 30,
+        "weeklySalaryPounds": 8,
+        "unlockedBenefits": [
+          "Poción Telepathist",
+          "Detección de intenciones"
+        ]
+      },
+      {
+        "rankLevel": 3,
+        "title": "Psiquiatra de Salón",
+        "minReputation": 65,
+        "weeklySalaryPounds": 20,
+        "unlockedBenefits": [
+          "Poción Psychiatrist",
+          "Calmar traumas de guerra"
+        ]
+      },
+      {
+        "rankLevel": 4,
+        "title": "Director de Sanatorio Mental",
+        "minReputation": 130,
+        "weeklySalaryPounds": 45,
+        "unlockedBenefits": [
+          "Fórmula Hypnotist",
+          "Infiltración en alta sociedad"
+        ]
+      },
+      {
+        "rankLevel": 5,
+        "title": "Tejedor del Subconsciente",
+        "minReputation": 270,
+        "weeklySalaryPounds": 95,
+        "unlockedBenefits": [
+          "Manipulación de sueños masivos"
+        ]
+      },
+      {
+        "rankLevel": 6,
+        "title": "Gran Arquitecto de Coincidencias",
+        "minReputation": 550,
+        "weeklySalaryPounds": 240,
+        "unlockedBenefits": [
+          "Reescritura de destinos civiles"
+        ]
+      }
+    ],
+    "missions": [
+      {
+        "id": "MSN_PSYCHOLOGY_ALCHEMISTS_01",
+        "orgId": "PSYCHOLOGY_ALCHEMISTS",
+        "title": "Patrullaje Preventivo en la Niebla (Alquimistas de la Psicología (Psychology Alchemists))",
+        "missionType": "INTERNAL_DUTY",
+        "description": "Completar una guardia nocturna en los puntos sensibles del distrito verificando firmas espirituales extrañas.",
+        "requiredRank": 1,
+        "rewardPounds": 5,
+        "reputationGain": 10,
+        "dangerRating": 2
+      },
+      {
+        "id": "MSN_PSYCHOLOGY_ALCHEMISTS_02",
+        "orgId": "PSYCHOLOGY_ALCHEMISTS",
+        "title": "Vigilancia Encubierta de un Sospechoso (Alquimistas de la Psicología (Psychology Alchemists))",
+        "missionType": "RECON",
+        "description": "Seguir discretamente a un individuo que frecuenta reuniones místicas sin revelar tu afiliación a Alquimistas de la Psicología (Psychology Alchemists).",
+        "requiredRank": 2,
+        "rewardPounds": 12,
+        "reputationGain": 15,
+        "dangerRating": 4
+      },
+      {
+        "id": "MSN_PSYCHOLOGY_ALCHEMISTS_03",
+        "orgId": "PSYCHOLOGY_ALCHEMISTS",
+        "title": "Supresión de una Criatura Extraordinaria (Alquimistas de la Psicología (Psychology Alchemists))",
+        "missionType": "ASSASSINATION",
+        "description": "Eliminar a una bestia salvaje o un Beyonder rebelde que ha comenzado a perder el control en las alcantarillas.",
+        "requiredRank": 3,
+        "rewardPounds": 25,
+        "reputationGain": 25,
+        "dangerRating": 6
+      },
+      {
+        "id": "MSN_PSYCHOLOGY_ALCHEMISTS_04",
+        "orgId": "PSYCHOLOGY_ALCHEMISTS",
+        "title": "Infiltración en un Club Clandestino (Alquimistas de la Psicología (Psychology Alchemists))",
+        "missionType": "COVERT_OPS",
+        "description": "Obtener un libro de cuentas o la lista de miembros de una facción rival utilizando una cobertura civil.",
+        "requiredRank": 3,
+        "rewardPounds": 35,
+        "reputationGain": 30,
+        "dangerRating": 5
+      },
+      {
+        "id": "MSN_PSYCHOLOGY_ALCHEMISTS_05",
+        "orgId": "PSYCHOLOGY_ALCHEMISTS",
+        "title": "Recuperación de un Artefacto Sellado en Fuga (Alquimistas de la Psicología (Psychology Alchemists))",
+        "missionType": "ARTIFACT_RETRIEVAL",
+        "description": "Rastrear y confinar un Artefacto Grado 2 que escapó tras la muerte de su portador en un hotel.",
+        "requiredRank": 4,
+        "rewardPounds": 60,
+        "reputationGain": 40,
+        "dangerRating": 7
+      },
+      {
+        "id": "MSN_PSYCHOLOGY_ALCHEMISTS_06",
+        "orgId": "PSYCHOLOGY_ALCHEMISTS",
+        "title": "Evaluación de Ascenso Jerárquico (Alquimistas de la Psicología (Psychology Alchemists))",
+        "missionType": "PROMOTION_EVAL",
+        "description": "Someterte a una auditoría espiritual y demostrar lealtad inquebrantable ante el consejo disciplinario.",
+        "requiredRank": 4,
+        "rewardPounds": 20,
+        "reputationGain": 50,
+        "dangerRating": 3
+      },
+      {
+        "id": "MSN_PSYCHOLOGY_ALCHEMISTS_07",
+        "orgId": "PSYCHOLOGY_ALCHEMISTS",
+        "title": "Desarticulación de una Célula Hereje (Alquimistas de la Psicología (Psychology Alchemists))",
+        "missionType": "ASSASSINATION",
+        "description": "Asaltar el santuario subterráneo del enemigo jurado, destruyendo el altar y confiscando sus pergaminos.",
+        "requiredRank": 5,
+        "rewardPounds": 120,
+        "reputationGain": 70,
+        "dangerRating": 8
+      },
+      {
+        "id": "MSN_PSYCHOLOGY_ALCHEMISTS_08",
+        "orgId": "PSYCHOLOGY_ALCHEMISTS",
+        "title": "Operación Secreta de Nivel Santo (Alquimistas de la Psicología (Psychology Alchemists))",
+        "missionType": "COVERT_OPS",
+        "description": "Asegurar el perímetro del ritual de apoteosis de un superior o sabotear el plan maestro de un Rey de Ángeles rival.",
+        "requiredRank": 6,
+        "rewardPounds": 300,
+        "reputationGain": 120,
+        "dangerRating": 10
+      }
+    ],
+    "loyaltyDilemmas": [
+      {
+        "id": "DILEMMA_PSYCHOLOGY_ALCHEMISTS_01",
+        "orgId": "PSYCHOLOGY_ALCHEMISTS",
+        "title": "La Orden Contradictoria de un Superior",
+        "dilemmaType": "CONTRADICTORY_ORDERS",
+        "description": "Un líder de alto rango te ordena encubrir el asesinato de un testigo civil 'por el bien mayor de la organización'. Un camarada honesto te ruega denunciarlo.",
+        "options": [
+          {
+            "text": "Obedecer ciegamente la orden del superior jerárquico",
+            "outcome": "Ganas favor con la cúpula pero tu conciencia sufre un severo golpe.",
+            "loyaltyDelta": 20,
+            "sanityDelta": -8
+          },
+          {
+            "text": "Filtrar la verdad anónimamente a los investigadores honestos",
+            "outcome": "Preservas tu humanidad moral, pero te arriesgas a ser considerado poco fiable.",
+            "loyaltyDelta": -25,
+            "sanityDelta": 5
+          }
+        ]
+      },
+      {
+        "id": "DILEMMA_PSYCHOLOGY_ALCHEMISTS_02",
+        "orgId": "PSYCHOLOGY_ALCHEMISTS",
+        "title": "Crisis de Fe y la Purga Interna",
+        "dilemmaType": "INTERNAL_PURGE",
+        "description": "La organización inicia una purga inquisitorial en tu división. Se te exige señalar a un compañero sospechoso de herejía para salvar tu propio pellejo.",
+        "options": [
+          {
+            "text": "Entregar a un colega sospechoso para certificar tu lealtad",
+            "outcome": "Sobrevives a la purga con honores sombríos.",
+            "loyaltyDelta": 25,
+            "sanityDelta": -12
+          },
+          {
+            "text": "Ayudar a tu colega a escapar de la ciudad arriesgando tu cobertura",
+            "outcome": "Te conviertes en sospechoso de simpatizar con rebeldes.",
+            "loyaltyDelta": -35,
+            "sanityDelta": 8
+          }
+        ]
+      }
+    ],
+    "membershipBenefits": {
+      "potionFormulasProvided": [
+        "Fórmula canónica de VISIONARY (S9 a S5)"
+      ],
+      "sacredSanctuaryProtectionLevel": 85,
+      "monthlyArtifactAccessGrade": 2,
+      "exclusiveKnowledgeArchives": [
+        "Archivos confidenciales de Alquimistas de la Psicología (Psychology Alchemists)",
+        "Tratados teológicos y tácticos"
+      ]
+    }
+  },
+  {
+    "id": "ROSE_SCHOOL_TEMPERANCE",
+    "name": "Escuela de la Rosa - Facción de la Templanza (Fuegos de la Restricción)",
+    "category": "SECRET_SOCIETY",
+    "doctrine": "Contener las pasiones y apetitos salvajes para no convertirse en bestias del Árbol del Deseo.",
+    "headquarters": "Catacumbas de las Tierras Altas de Balam",
+    "patronEntity": "Reinette Tinekerr / Marionette Messenger",
+    "associatedPathways": [
+      "CHAINED",
+      "ABYSS"
+    ],
+    "ranks": [
+      {
+        "rankLevel": 1,
+        "title": "Hermano Silencioso",
+        "minReputation": 0,
+        "weeklySalaryPounds": 1,
+        "unlockedBenefits": [
+          "Técnicas de meditación ascética"
+        ]
+      },
+      {
+        "rankLevel": 2,
+        "title": "Zombi Disciplinado",
+        "minReputation": 25,
+        "weeklySalaryPounds": 5,
+        "unlockedBenefits": [
+          "Poción Zombie",
+          "Resistencia al dolor físico"
+        ]
+      },
+      {
+        "rankLevel": 3,
+        "title": "Espectro Guardián",
+        "minReputation": 60,
+        "weeklySalaryPounds": 14,
+        "unlockedBenefits": [
+          "Poción Wraith",
+          "Salto en espejos defensivo"
+        ]
+      },
+      {
+        "rankLevel": 4,
+        "title": "Maestro de la Moderación",
+        "minReputation": 125,
+        "weeklySalaryPounds": 35,
+        "unlockedBenefits": [
+          "Fórmulas Puppet / Disciple",
+          "Protección contra posesión"
+        ]
+      },
+      {
+        "rankLevel": 5,
+        "title": "Sumo Sacerdote de las Cadenas",
+        "minReputation": 260,
+        "weeklySalaryPounds": 85,
+        "unlockedBenefits": [
+          "Invocación de muñecas protectoras"
+        ]
+      },
+      {
+        "rankLevel": 6,
+        "title": "Voz del Silencio Primigenio",
+        "minReputation": 500,
+        "weeklySalaryPounds": 200,
+        "unlockedBenefits": [
+          "Inmunidad total a tentaciones cósmicas"
+        ]
+      }
+    ],
+    "missions": [
+      {
+        "id": "MSN_ROSE_SCHOOL_TEMPERANCE_01",
+        "orgId": "ROSE_SCHOOL_TEMPERANCE",
+        "title": "Patrullaje Preventivo en la Niebla (Escuela de la Rosa - Facción de la Templanza (Fuegos de la Restricción))",
+        "missionType": "INTERNAL_DUTY",
+        "description": "Completar una guardia nocturna en los puntos sensibles del distrito verificando firmas espirituales extrañas.",
+        "requiredRank": 1,
+        "rewardPounds": 5,
+        "reputationGain": 10,
+        "dangerRating": 2
+      },
+      {
+        "id": "MSN_ROSE_SCHOOL_TEMPERANCE_02",
+        "orgId": "ROSE_SCHOOL_TEMPERANCE",
+        "title": "Vigilancia Encubierta de un Sospechoso (Escuela de la Rosa - Facción de la Templanza (Fuegos de la Restricción))",
+        "missionType": "RECON",
+        "description": "Seguir discretamente a un individuo que frecuenta reuniones místicas sin revelar tu afiliación a Escuela de la Rosa - Facción de la Templanza (Fuegos de la Restricción).",
+        "requiredRank": 2,
+        "rewardPounds": 12,
+        "reputationGain": 15,
+        "dangerRating": 4
+      },
+      {
+        "id": "MSN_ROSE_SCHOOL_TEMPERANCE_03",
+        "orgId": "ROSE_SCHOOL_TEMPERANCE",
+        "title": "Supresión de una Criatura Extraordinaria (Escuela de la Rosa - Facción de la Templanza (Fuegos de la Restricción))",
+        "missionType": "ASSASSINATION",
+        "description": "Eliminar a una bestia salvaje o un Beyonder rebelde que ha comenzado a perder el control en las alcantarillas.",
+        "requiredRank": 3,
+        "rewardPounds": 25,
+        "reputationGain": 25,
+        "dangerRating": 6
+      },
+      {
+        "id": "MSN_ROSE_SCHOOL_TEMPERANCE_04",
+        "orgId": "ROSE_SCHOOL_TEMPERANCE",
+        "title": "Infiltración en un Club Clandestino (Escuela de la Rosa - Facción de la Templanza (Fuegos de la Restricción))",
+        "missionType": "COVERT_OPS",
+        "description": "Obtener un libro de cuentas o la lista de miembros de una facción rival utilizando una cobertura civil.",
+        "requiredRank": 3,
+        "rewardPounds": 35,
+        "reputationGain": 30,
+        "dangerRating": 5
+      },
+      {
+        "id": "MSN_ROSE_SCHOOL_TEMPERANCE_05",
+        "orgId": "ROSE_SCHOOL_TEMPERANCE",
+        "title": "Recuperación de un Artefacto Sellado en Fuga (Escuela de la Rosa - Facción de la Templanza (Fuegos de la Restricción))",
+        "missionType": "ARTIFACT_RETRIEVAL",
+        "description": "Rastrear y confinar un Artefacto Grado 2 que escapó tras la muerte de su portador en un hotel.",
+        "requiredRank": 4,
+        "rewardPounds": 60,
+        "reputationGain": 40,
+        "dangerRating": 7
+      },
+      {
+        "id": "MSN_ROSE_SCHOOL_TEMPERANCE_06",
+        "orgId": "ROSE_SCHOOL_TEMPERANCE",
+        "title": "Evaluación de Ascenso Jerárquico (Escuela de la Rosa - Facción de la Templanza (Fuegos de la Restricción))",
+        "missionType": "PROMOTION_EVAL",
+        "description": "Someterte a una auditoría espiritual y demostrar lealtad inquebrantable ante el consejo disciplinario.",
+        "requiredRank": 4,
+        "rewardPounds": 20,
+        "reputationGain": 50,
+        "dangerRating": 3
+      },
+      {
+        "id": "MSN_ROSE_SCHOOL_TEMPERANCE_07",
+        "orgId": "ROSE_SCHOOL_TEMPERANCE",
+        "title": "Desarticulación de una Célula Hereje (Escuela de la Rosa - Facción de la Templanza (Fuegos de la Restricción))",
+        "missionType": "ASSASSINATION",
+        "description": "Asaltar el santuario subterráneo del enemigo jurado, destruyendo el altar y confiscando sus pergaminos.",
+        "requiredRank": 5,
+        "rewardPounds": 120,
+        "reputationGain": 70,
+        "dangerRating": 8
+      },
+      {
+        "id": "MSN_ROSE_SCHOOL_TEMPERANCE_08",
+        "orgId": "ROSE_SCHOOL_TEMPERANCE",
+        "title": "Operación Secreta de Nivel Santo (Escuela de la Rosa - Facción de la Templanza (Fuegos de la Restricción))",
+        "missionType": "COVERT_OPS",
+        "description": "Asegurar el perímetro del ritual de apoteosis de un superior o sabotear el plan maestro de un Rey de Ángeles rival.",
+        "requiredRank": 6,
+        "rewardPounds": 300,
+        "reputationGain": 120,
+        "dangerRating": 10
+      }
+    ],
+    "loyaltyDilemmas": [
+      {
+        "id": "DILEMMA_ROSE_SCHOOL_TEMPERANCE_01",
+        "orgId": "ROSE_SCHOOL_TEMPERANCE",
+        "title": "La Orden Contradictoria de un Superior",
+        "dilemmaType": "CONTRADICTORY_ORDERS",
+        "description": "Un líder de alto rango te ordena encubrir el asesinato de un testigo civil 'por el bien mayor de la organización'. Un camarada honesto te ruega denunciarlo.",
+        "options": [
+          {
+            "text": "Obedecer ciegamente la orden del superior jerárquico",
+            "outcome": "Ganas favor con la cúpula pero tu conciencia sufre un severo golpe.",
+            "loyaltyDelta": 20,
+            "sanityDelta": -8
+          },
+          {
+            "text": "Filtrar la verdad anónimamente a los investigadores honestos",
+            "outcome": "Preservas tu humanidad moral, pero te arriesgas a ser considerado poco fiable.",
+            "loyaltyDelta": -25,
+            "sanityDelta": 5
+          }
+        ]
+      },
+      {
+        "id": "DILEMMA_ROSE_SCHOOL_TEMPERANCE_02",
+        "orgId": "ROSE_SCHOOL_TEMPERANCE",
+        "title": "Crisis de Fe y la Purga Interna",
+        "dilemmaType": "INTERNAL_PURGE",
+        "description": "La organización inicia una purga inquisitorial en tu división. Se te exige señalar a un compañero sospechoso de herejía para salvar tu propio pellejo.",
+        "options": [
+          {
+            "text": "Entregar a un colega sospechoso para certificar tu lealtad",
+            "outcome": "Sobrevives a la purga con honores sombríos.",
+            "loyaltyDelta": 25,
+            "sanityDelta": -12
+          },
+          {
+            "text": "Ayudar a tu colega a escapar de la ciudad arriesgando tu cobertura",
+            "outcome": "Te conviertes en sospechoso de simpatizar con rebeldes.",
+            "loyaltyDelta": -35,
+            "sanityDelta": 8
+          }
+        ]
+      }
+    ],
+    "membershipBenefits": {
+      "potionFormulasProvided": [
+        "Fórmula canónica de CHAINED (S9 a S5)",
+        "Fórmula canónica de ABYSS (S9 a S5)"
+      ],
+      "sacredSanctuaryProtectionLevel": 85,
+      "monthlyArtifactAccessGrade": 2,
+      "exclusiveKnowledgeArchives": [
+        "Archivos confidenciales de Escuela de la Rosa - Facción de la Templanza (Fuegos de la Restricción)",
+        "Tratados teológicos y tácticos"
+      ]
+    }
+  },
+  {
+    "id": "MILITARY_INTELLIGENCE_MI9",
+    "name": "Inteligencia Militar de Loen (MI9)",
+    "category": "MILITARY_INTELLIGENCE",
+    "doctrine": "Seguridad del Imperio, contraespionaje imperial y supresión de conspiraciones extranjeras.",
+    "headquarters": "Ministerio de Guerra, Whitehall, Backlund",
+    "patronEntity": "Familia Real Augustus",
+    "associatedPathways": [
+      "ARBITER",
+      "LAWYER",
+      "HUNTER"
+    ],
+    "ranks": [
+      {
+        "rankLevel": 1,
+        "title": "Informante Civil No Fichado",
+        "minReputation": 0,
+        "weeklySalaryPounds": 2,
+        "unlockedBenefits": [
+          "Salvoconducto urbano"
+        ]
+      },
+      {
+        "rankLevel": 2,
+        "title": "Subteniente de Inteligencia",
+        "minReputation": 30,
+        "weeklySalaryPounds": 7,
+        "unlockedBenefits": [
+          "Credencial oficial",
+          "Revólver militar"
+        ]
+      },
+      {
+        "rankLevel": 3,
+        "title": "Capitán de Operaciones Negras",
+        "minReputation": 70,
+        "weeklySalaryPounds": 18,
+        "unlockedBenefits": [
+          "Poción Arbiter / Sheriff",
+          "Acceso a fichas de sospechosos"
+        ]
+      },
+      {
+        "rankLevel": 4,
+        "title": "Mayor de Contrainteligencia",
+        "minReputation": 140,
+        "weeklySalaryPounds": 42,
+        "unlockedBenefits": [
+          "Interrogatorios judiciales sumarios"
+        ]
+      },
+      {
+        "rankLevel": 5,
+        "title": "Coronel Comandante de Distrito",
+        "minReputation": 280,
+        "weeklySalaryPounds": 95,
+        "unlockedBenefits": [
+          "Comando de pelotones de Beyonders"
+        ]
+      },
+      {
+        "rankLevel": 6,
+        "title": "Director General de Inteligencia Imperial",
+        "minReputation": 550,
+        "weeklySalaryPounds": 230,
+        "unlockedBenefits": [
+          "Presupuesto reservado ilimitado"
+        ]
+      }
+    ],
+    "missions": [
+      {
+        "id": "MSN_MILITARY_INTELLIGENCE_MI9_01",
+        "orgId": "MILITARY_INTELLIGENCE_MI9",
+        "title": "Patrullaje Preventivo en la Niebla (Inteligencia Militar de Loen (MI9))",
+        "missionType": "INTERNAL_DUTY",
+        "description": "Completar una guardia nocturna en los puntos sensibles del distrito verificando firmas espirituales extrañas.",
+        "requiredRank": 1,
+        "rewardPounds": 5,
+        "reputationGain": 10,
+        "dangerRating": 2
+      },
+      {
+        "id": "MSN_MILITARY_INTELLIGENCE_MI9_02",
+        "orgId": "MILITARY_INTELLIGENCE_MI9",
+        "title": "Vigilancia Encubierta de un Sospechoso (Inteligencia Militar de Loen (MI9))",
+        "missionType": "RECON",
+        "description": "Seguir discretamente a un individuo que frecuenta reuniones místicas sin revelar tu afiliación a Inteligencia Militar de Loen (MI9).",
+        "requiredRank": 2,
+        "rewardPounds": 12,
+        "reputationGain": 15,
+        "dangerRating": 4
+      },
+      {
+        "id": "MSN_MILITARY_INTELLIGENCE_MI9_03",
+        "orgId": "MILITARY_INTELLIGENCE_MI9",
+        "title": "Supresión de una Criatura Extraordinaria (Inteligencia Militar de Loen (MI9))",
+        "missionType": "ASSASSINATION",
+        "description": "Eliminar a una bestia salvaje o un Beyonder rebelde que ha comenzado a perder el control en las alcantarillas.",
+        "requiredRank": 3,
+        "rewardPounds": 25,
+        "reputationGain": 25,
+        "dangerRating": 6
+      },
+      {
+        "id": "MSN_MILITARY_INTELLIGENCE_MI9_04",
+        "orgId": "MILITARY_INTELLIGENCE_MI9",
+        "title": "Infiltración en un Club Clandestino (Inteligencia Militar de Loen (MI9))",
+        "missionType": "COVERT_OPS",
+        "description": "Obtener un libro de cuentas o la lista de miembros de una facción rival utilizando una cobertura civil.",
+        "requiredRank": 3,
+        "rewardPounds": 35,
+        "reputationGain": 30,
+        "dangerRating": 5
+      },
+      {
+        "id": "MSN_MILITARY_INTELLIGENCE_MI9_05",
+        "orgId": "MILITARY_INTELLIGENCE_MI9",
+        "title": "Recuperación de un Artefacto Sellado en Fuga (Inteligencia Militar de Loen (MI9))",
+        "missionType": "ARTIFACT_RETRIEVAL",
+        "description": "Rastrear y confinar un Artefacto Grado 2 que escapó tras la muerte de su portador en un hotel.",
+        "requiredRank": 4,
+        "rewardPounds": 60,
+        "reputationGain": 40,
+        "dangerRating": 7
+      },
+      {
+        "id": "MSN_MILITARY_INTELLIGENCE_MI9_06",
+        "orgId": "MILITARY_INTELLIGENCE_MI9",
+        "title": "Evaluación de Ascenso Jerárquico (Inteligencia Militar de Loen (MI9))",
+        "missionType": "PROMOTION_EVAL",
+        "description": "Someterte a una auditoría espiritual y demostrar lealtad inquebrantable ante el consejo disciplinario.",
+        "requiredRank": 4,
+        "rewardPounds": 20,
+        "reputationGain": 50,
+        "dangerRating": 3
+      },
+      {
+        "id": "MSN_MILITARY_INTELLIGENCE_MI9_07",
+        "orgId": "MILITARY_INTELLIGENCE_MI9",
+        "title": "Desarticulación de una Célula Hereje (Inteligencia Militar de Loen (MI9))",
+        "missionType": "ASSASSINATION",
+        "description": "Asaltar el santuario subterráneo del enemigo jurado, destruyendo el altar y confiscando sus pergaminos.",
+        "requiredRank": 5,
+        "rewardPounds": 120,
+        "reputationGain": 70,
+        "dangerRating": 8
+      },
+      {
+        "id": "MSN_MILITARY_INTELLIGENCE_MI9_08",
+        "orgId": "MILITARY_INTELLIGENCE_MI9",
+        "title": "Operación Secreta de Nivel Santo (Inteligencia Militar de Loen (MI9))",
+        "missionType": "COVERT_OPS",
+        "description": "Asegurar el perímetro del ritual de apoteosis de un superior o sabotear el plan maestro de un Rey de Ángeles rival.",
+        "requiredRank": 6,
+        "rewardPounds": 300,
+        "reputationGain": 120,
+        "dangerRating": 10
+      }
+    ],
+    "loyaltyDilemmas": [
+      {
+        "id": "DILEMMA_MILITARY_INTELLIGENCE_MI9_01",
+        "orgId": "MILITARY_INTELLIGENCE_MI9",
+        "title": "La Orden Contradictoria de un Superior",
+        "dilemmaType": "CONTRADICTORY_ORDERS",
+        "description": "Un líder de alto rango te ordena encubrir el asesinato de un testigo civil 'por el bien mayor de la organización'. Un camarada honesto te ruega denunciarlo.",
+        "options": [
+          {
+            "text": "Obedecer ciegamente la orden del superior jerárquico",
+            "outcome": "Ganas favor con la cúpula pero tu conciencia sufre un severo golpe.",
+            "loyaltyDelta": 20,
+            "sanityDelta": -8
+          },
+          {
+            "text": "Filtrar la verdad anónimamente a los investigadores honestos",
+            "outcome": "Preservas tu humanidad moral, pero te arriesgas a ser considerado poco fiable.",
+            "loyaltyDelta": -25,
+            "sanityDelta": 5
+          }
+        ]
+      },
+      {
+        "id": "DILEMMA_MILITARY_INTELLIGENCE_MI9_02",
+        "orgId": "MILITARY_INTELLIGENCE_MI9",
+        "title": "Crisis de Fe y la Purga Interna",
+        "dilemmaType": "INTERNAL_PURGE",
+        "description": "La organización inicia una purga inquisitorial en tu división. Se te exige señalar a un compañero sospechoso de herejía para salvar tu propio pellejo.",
+        "options": [
+          {
+            "text": "Entregar a un colega sospechoso para certificar tu lealtad",
+            "outcome": "Sobrevives a la purga con honores sombríos.",
+            "loyaltyDelta": 25,
+            "sanityDelta": -12
+          },
+          {
+            "text": "Ayudar a tu colega a escapar de la ciudad arriesgando tu cobertura",
+            "outcome": "Te conviertes en sospechoso de simpatizar con rebeldes.",
+            "loyaltyDelta": -35,
+            "sanityDelta": 8
+          }
+        ]
+      }
+    ],
+    "membershipBenefits": {
+      "potionFormulasProvided": [
+        "Fórmula canónica de ARBITER (S9 a S5)",
+        "Fórmula canónica de LAWYER (S9 a S5)",
+        "Fórmula canónica de HUNTER (S9 a S5)"
+      ],
+      "sacredSanctuaryProtectionLevel": 85,
+      "monthlyArtifactAccessGrade": 2,
+      "exclusiveKnowledgeArchives": [
+        "Archivos confidenciales de Inteligencia Militar de Loen (MI9)",
+        "Tratados teológicos y tácticos"
+      ]
+    }
+  },
+  {
+    "id": "PIRATE_FLEET_FOUR_KINGS",
+    "name": "Flotas Piratas de los Cinco Mares (Hermandad de los Corsarios)",
+    "category": "PIRATE_FLEET",
+    "doctrine": "Libertad absoluta en el océano, conquista de botines y resistencia a los Imperios del Norte.",
+    "headquarters": "Isla de Oravi, Bahía de Nas y Archipiélago de Rorsted",
+    "patronEntity": "Reyes Piratas (Nast, Reina de la Calamidad, etc.)",
+    "associatedPathways": [
+      "SAILOR",
+      "HUNTER",
+      "CRIMINAL",
+      "MYSTERY_PRYER"
+    ],
+    "ranks": [
+      {
+        "rankLevel": 1,
+        "title": "Marinero de Cubierta",
+        "minReputation": 0,
+        "weeklySalaryPounds": 3,
+        "unlockedBenefits": [
+          "Litera en goleta pirata",
+          "Parte de botín menor"
+        ]
+      },
+      {
+        "rankLevel": 2,
+        "title": "Artillero Corsario",
+        "minReputation": 25,
+        "weeklySalaryPounds": 8,
+        "unlockedBenefits": [
+          "Sable de abordaje",
+          "Pólvora sin impuestos"
+        ]
+      },
+      {
+        "rankLevel": 3,
+        "title": "Oficial de Navegación",
+        "minReputation": 60,
+        "weeklySalaryPounds": 20,
+        "unlockedBenefits": [
+          "Mapas de rutas secretas",
+          "Poción Sailor / Hunter"
+        ]
+      },
+      {
+        "rankLevel": 4,
+        "title": "Capitán de Navío Pirata",
+        "minReputation": 130,
+        "weeklySalaryPounds": 50,
+        "unlockedBenefits": [
+          "Comando de navío propio",
+          "Venta en mercados negros isleños"
+        ]
+      },
+      {
+        "rankLevel": 5,
+        "title": "Comodoro de la Flota Negra",
+        "minReputation": 270,
+        "weeklySalaryPounds": 110,
+        "unlockedBenefits": [
+          "Artefactos marinos de combate",
+          "Tributo de puertos menores"
+        ]
+      },
+      {
+        "rankLevel": 6,
+        "title": "Almirante / Señor del Mar",
+        "minReputation": 550,
+        "weeklySalaryPounds": 260,
+        "unlockedBenefits": [
+          "Título de Rey Pirata",
+          "Dominio de rutas transoceánicas"
+        ]
+      }
+    ],
+    "missions": [
+      {
+        "id": "MSN_PIRATE_FLEET_FOUR_KINGS_01",
+        "orgId": "PIRATE_FLEET_FOUR_KINGS",
+        "title": "Patrullaje Preventivo en la Niebla (Flotas Piratas de los Cinco Mares (Hermandad de los Corsarios))",
+        "missionType": "INTERNAL_DUTY",
+        "description": "Completar una guardia nocturna en los puntos sensibles del distrito verificando firmas espirituales extrañas.",
+        "requiredRank": 1,
+        "rewardPounds": 5,
+        "reputationGain": 10,
+        "dangerRating": 2
+      },
+      {
+        "id": "MSN_PIRATE_FLEET_FOUR_KINGS_02",
+        "orgId": "PIRATE_FLEET_FOUR_KINGS",
+        "title": "Vigilancia Encubierta de un Sospechoso (Flotas Piratas de los Cinco Mares (Hermandad de los Corsarios))",
+        "missionType": "RECON",
+        "description": "Seguir discretamente a un individuo que frecuenta reuniones místicas sin revelar tu afiliación a Flotas Piratas de los Cinco Mares (Hermandad de los Corsarios).",
+        "requiredRank": 2,
+        "rewardPounds": 12,
+        "reputationGain": 15,
+        "dangerRating": 4
+      },
+      {
+        "id": "MSN_PIRATE_FLEET_FOUR_KINGS_03",
+        "orgId": "PIRATE_FLEET_FOUR_KINGS",
+        "title": "Supresión de una Criatura Extraordinaria (Flotas Piratas de los Cinco Mares (Hermandad de los Corsarios))",
+        "missionType": "ASSASSINATION",
+        "description": "Eliminar a una bestia salvaje o un Beyonder rebelde que ha comenzado a perder el control en las alcantarillas.",
+        "requiredRank": 3,
+        "rewardPounds": 25,
+        "reputationGain": 25,
+        "dangerRating": 6
+      },
+      {
+        "id": "MSN_PIRATE_FLEET_FOUR_KINGS_04",
+        "orgId": "PIRATE_FLEET_FOUR_KINGS",
+        "title": "Infiltración en un Club Clandestino (Flotas Piratas de los Cinco Mares (Hermandad de los Corsarios))",
+        "missionType": "COVERT_OPS",
+        "description": "Obtener un libro de cuentas o la lista de miembros de una facción rival utilizando una cobertura civil.",
+        "requiredRank": 3,
+        "rewardPounds": 35,
+        "reputationGain": 30,
+        "dangerRating": 5
+      },
+      {
+        "id": "MSN_PIRATE_FLEET_FOUR_KINGS_05",
+        "orgId": "PIRATE_FLEET_FOUR_KINGS",
+        "title": "Recuperación de un Artefacto Sellado en Fuga (Flotas Piratas de los Cinco Mares (Hermandad de los Corsarios))",
+        "missionType": "ARTIFACT_RETRIEVAL",
+        "description": "Rastrear y confinar un Artefacto Grado 2 que escapó tras la muerte de su portador en un hotel.",
+        "requiredRank": 4,
+        "rewardPounds": 60,
+        "reputationGain": 40,
+        "dangerRating": 7
+      },
+      {
+        "id": "MSN_PIRATE_FLEET_FOUR_KINGS_06",
+        "orgId": "PIRATE_FLEET_FOUR_KINGS",
+        "title": "Evaluación de Ascenso Jerárquico (Flotas Piratas de los Cinco Mares (Hermandad de los Corsarios))",
+        "missionType": "PROMOTION_EVAL",
+        "description": "Someterte a una auditoría espiritual y demostrar lealtad inquebrantable ante el consejo disciplinario.",
+        "requiredRank": 4,
+        "rewardPounds": 20,
+        "reputationGain": 50,
+        "dangerRating": 3
+      },
+      {
+        "id": "MSN_PIRATE_FLEET_FOUR_KINGS_07",
+        "orgId": "PIRATE_FLEET_FOUR_KINGS",
+        "title": "Desarticulación de una Célula Hereje (Flotas Piratas de los Cinco Mares (Hermandad de los Corsarios))",
+        "missionType": "ASSASSINATION",
+        "description": "Asaltar el santuario subterráneo del enemigo jurado, destruyendo el altar y confiscando sus pergaminos.",
+        "requiredRank": 5,
+        "rewardPounds": 120,
+        "reputationGain": 70,
+        "dangerRating": 8
+      },
+      {
+        "id": "MSN_PIRATE_FLEET_FOUR_KINGS_08",
+        "orgId": "PIRATE_FLEET_FOUR_KINGS",
+        "title": "Operación Secreta de Nivel Santo (Flotas Piratas de los Cinco Mares (Hermandad de los Corsarios))",
+        "missionType": "COVERT_OPS",
+        "description": "Asegurar el perímetro del ritual de apoteosis de un superior o sabotear el plan maestro de un Rey de Ángeles rival.",
+        "requiredRank": 6,
+        "rewardPounds": 300,
+        "reputationGain": 120,
+        "dangerRating": 10
+      }
+    ],
+    "loyaltyDilemmas": [
+      {
+        "id": "DILEMMA_PIRATE_FLEET_FOUR_KINGS_01",
+        "orgId": "PIRATE_FLEET_FOUR_KINGS",
+        "title": "La Orden Contradictoria de un Superior",
+        "dilemmaType": "CONTRADICTORY_ORDERS",
+        "description": "Un líder de alto rango te ordena encubrir el asesinato de un testigo civil 'por el bien mayor de la organización'. Un camarada honesto te ruega denunciarlo.",
+        "options": [
+          {
+            "text": "Obedecer ciegamente la orden del superior jerárquico",
+            "outcome": "Ganas favor con la cúpula pero tu conciencia sufre un severo golpe.",
+            "loyaltyDelta": 20,
+            "sanityDelta": -8
+          },
+          {
+            "text": "Filtrar la verdad anónimamente a los investigadores honestos",
+            "outcome": "Preservas tu humanidad moral, pero te arriesgas a ser considerado poco fiable.",
+            "loyaltyDelta": -25,
+            "sanityDelta": 5
+          }
+        ]
+      },
+      {
+        "id": "DILEMMA_PIRATE_FLEET_FOUR_KINGS_02",
+        "orgId": "PIRATE_FLEET_FOUR_KINGS",
+        "title": "Crisis de Fe y la Purga Interna",
+        "dilemmaType": "INTERNAL_PURGE",
+        "description": "La organización inicia una purga inquisitorial en tu división. Se te exige señalar a un compañero sospechoso de herejía para salvar tu propio pellejo.",
+        "options": [
+          {
+            "text": "Entregar a un colega sospechoso para certificar tu lealtad",
+            "outcome": "Sobrevives a la purga con honores sombríos.",
+            "loyaltyDelta": 25,
+            "sanityDelta": -12
+          },
+          {
+            "text": "Ayudar a tu colega a escapar de la ciudad arriesgando tu cobertura",
+            "outcome": "Te conviertes en sospechoso de simpatizar con rebeldes.",
+            "loyaltyDelta": -35,
+            "sanityDelta": 8
+          }
+        ]
+      }
+    ],
+    "membershipBenefits": {
+      "potionFormulasProvided": [
+        "Fórmula canónica de SAILOR (S9 a S5)",
+        "Fórmula canónica de HUNTER (S9 a S5)",
+        "Fórmula canónica de CRIMINAL (S9 a S5)",
+        "Fórmula canónica de MYSTERY_PRYER (S9 a S5)"
+      ],
+      "sacredSanctuaryProtectionLevel": 85,
+      "monthlyArtifactAccessGrade": 2,
+      "exclusiveKnowledgeArchives": [
+        "Archivos confidenciales de Flotas Piratas de los Cinco Mares (Hermandad de los Corsarios)",
+        "Tratados teológicos y tácticos"
+      ]
+    }
+  }
+]

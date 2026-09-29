@@ -1,0 +1,1102 @@
+[
+  {
+    "pathway": "FOOL",
+    "novelTitle": "El Soberano sobre la Niebla Carmesí",
+    "protagonistArchetype": "El Detective Extraordinario & El Erudito de los Misterios",
+    "coreTragedyTheme": "La soledad de vivir bajo identidades falsas mientras tus amigos envejecen o mueren sin conocer jamás tu verdadero rostro.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Amon (Rey de Ángeles del Tiempo) & Ince Zangwill"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Amon (Rey de Ángeles del Tiempo) & Ince Zangwill",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Orden Secreta",
+      "Orden de Aurora",
+      "Familia Antigonus"
+    ],
+    "apotheosisClimax": "El despertar en el Castillo de Sefirah enfrentando la voluntad del Celestial Worthy mientras sostienes las anclas de tus devotos."
+  },
+  {
+    "pathway": "DOOR",
+    "novelTitle": "El Eco de las Estrellas Distantes",
+    "protagonistArchetype": "El Cartógrafo Interdimensional & El Desterrado",
+    "coreTragedyTheme": "La maldición de la luna llena que devora a los familiares directos y el dolor de nunca poder regresar al hogar originario.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Los Brujos de la Secta Estelar & El Observador Cósmico"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Los Brujos de la Secta Estelar & El Observador Cósmico",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Familia Abraham en decadencia",
+      "Círculos de Viajeros Herejes"
+    ],
+    "apotheosisClimax": "El sacrificio en la órbita de la Tierra sellando la fisura de la Barrera Planetaria para evitar la invasión de los Dioses Exteriores."
+  },
+  {
+    "pathway": "ERROR",
+    "novelTitle": "El Hurto de las Eras",
+    "protagonistArchetype": "El Gran Falsificador & El Monóculo Sombrío",
+    "coreTragedyTheme": "La imposibilidad de confiar en nadie, sabiendo que tú mismo has robado las intenciones y recuerdos de aquellos a quienes intentaste amar.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "El Clon Primigenio de Amon"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "El Clon Primigenio de Amon",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Los Ladrones de la Noche",
+      "Consejo de Bancos de Loen"
+    ],
+    "apotheosisClimax": "Hurtar el momento exacto de la muerte para resucitar como el Dios del Engaño en el último segundo del Apocalipsis."
+  },
+  {
+    "pathway": "VISIONARY",
+    "novelTitle": "El Director de la Gran Ilusión",
+    "protagonistArchetype": "El Psiquiatra de la Alta Sociedad & El Autor Secreto",
+    "coreTragedyTheme": "Descubrir que cada emoción, amor o duelo de tu vida fue escrito y orquestado previamente por un Spectator de mayor secuencia.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Adam (Ángel de la Imaginación)"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Adam (Ángel de la Imaginación)",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Alquimistas de la Psicología",
+      "Corte Real de Intis"
+    ],
+    "apotheosisClimax": "Imaginar un mundo donde la humanidad no tema a la locura y materializarlo en la mente de millones de creyentes."
+  },
+  {
+    "pathway": "HANGED_MAN",
+    "novelTitle": "La Pasión del Pastor Penitente",
+    "protagonistArchetype": "El Hereje de los Barrios Bajos & El Santo del Dolor",
+    "coreTragedyTheme": "Cargar en tu cuerpo astral los gritos de las almas que pastoreas hasta que ya no sabes cuál de todas las voces es la tuya.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "El Señor A & Los Apóstoles de la Carne"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "El Señor A & Los Apóstoles de la Carne",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Orden de Aurora",
+      "Inquisición de la Iglesia de las Tormentas"
+    ],
+    "apotheosisClimax": "Soportar los clavos de la Cruz de la Creación para absorber la corrupción de una ciudad entera y convertirte en Redentor."
+  },
+  {
+    "pathway": "TYRANT",
+    "novelTitle": "El Señor de los Cinco Mares",
+    "protagonistArchetype": "El Artillero Corsario & El Tirano del Rayo",
+    "coreTragedyTheme": "La cólera incontrolable que destruye las naves de tus aliados en la tormenta que tú mismo convocaste.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Almirante de la Flota Imperial de Loen & Nast el Rey Pirata"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Almirante de la Flota Imperial de Loen & Nast el Rey Pirata",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Castigadores Mandatarios",
+      "Sindicato de Piratas de Bayam"
+    ],
+    "apotheosisClimax": "Desatar una tormenta que cubre todo el Océano de Sonia para vaporizar la armada enemiga y reclamar el Trono del Trueno."
+  },
+  {
+    "pathway": "SUN",
+    "novelTitle": "La Última Luz de la Ciudad de Plata",
+    "protagonistArchetype": "El Cruzado Solitario & El Juez Sagrado",
+    "coreTragedyTheme": "El fanatismo que exige purificar en la pira a tu propio hermano infectado por un leve murmullo de la noche.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Los Caballeros Caídos del Sol Invertido"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Los Caballeros Caídos del Sol Invertido",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Iglesia del Eterno Sol",
+      "Tribunales de la Pureza"
+    ],
+    "apotheosisClimax": "Convertir tu propio cuerpo en una estrella artificial que disipa la noche eterna de mil años de una tierra olvidada."
+  },
+  {
+    "pathway": "WHITE_TOWER",
+    "novelTitle": "El Ojo de la Biblioteca Prohibida",
+    "protagonistArchetype": "El Catedrático Polímata & El Analista Arcano",
+    "coreTragedyTheme": "Saber exactamente el minuto y la causa de la muerte de todos tus conocidos sin poder alterar el cálculo matemático.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "El Decano de la Herejía de Lenburg"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "El Decano de la Herejía de Lenburg",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Iglesia del Dios del Conocimiento",
+      "Academia de Ciencias Ocultas"
+    ],
+    "apotheosisClimax": "Deconstruir el hechizo divino de una deidad hostil en mitad de la batalla para neutralizar su autoridad conceptual."
+  },
+  {
+    "pathway": "DARKNESS",
+    "novelTitle": "Vigilia en la Calle del Silencio",
+    "protagonistArchetype": "El Centinela Nocturno & La Sombra Fúnebre",
+    "coreTragedyTheme": "Tener que inducir el olvido perpetuo en tu propia madre para protegerla de un conocimiento extraordinario contaminante.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "El Espíritu Rencoroso de Santa Selena"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "El Espíritu Rencoroso de Santa Selena",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Halcones Nocturnos",
+      "Monjas de la Orden del Reposo"
+    ],
+    "apotheosisClimax": "Extender un manto de sueño pacífico sobre un continente en llamas para detener la guerra mundial de los mortales."
+  },
+  {
+    "pathway": "DEATH",
+    "novelTitle": "El Embalsamador de los Dioses",
+    "protagonistArchetype": "El Médico Forense de Balam & El Rey Nigromante",
+    "coreTragedyTheme": "El hedor de la descomposición que te separa de todo contacto humano cálido; los muertos son tus únicos oyentes.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "El Episcopado de Numinis & Los Cazadores de Cadáveres"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "El Episcopado de Numinis & Los Cazadores de Cadáveres",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Familia Real del Inframundo",
+      "Cementerios de Backlund"
+    ],
+    "apotheosisClimax": "Abrir las Nueve Puertas del Inframundo para marchar con los millones de almas de la Cuarta Época contra la tiranía."
+  },
+  {
+    "pathway": "TWILIGHT_GIANT",
+    "novelTitle": "El Escudo del Último Bastión",
+    "protagonistArchetype": "El Caballero Veterano de Feysac & El Campeón del Crepúsculo",
+    "coreTragedyTheme": "Ver a todos tus compañeros de armas caer en la trinchera mientras tu armadura mística se niega a permitirte morir.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "El General de Hierro de Intis"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "El General de Hierro de Intis",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Iglesia del Dios del Combate",
+      "Caballeros de Crepúsculo"
+    ],
+    "apotheosisClimax": "Blandir la Espada de Crepúsculo para hender la montaña que sostenía el templo del invasor y salvar a tu pueblo."
+  },
+  {
+    "pathway": "RED_PRIEST",
+    "novelTitle": "Las Cenizas de la Provocación",
+    "protagonistArchetype": "El Comandante de Guerrilla & El Dios de la Guerra",
+    "coreTragedyTheme": "La adicción al conflicto bélico que te impide vivir en tiempos de paz; cuando la guerra termina, tú dejas de existir.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Medici (El Ángel Rojo de la Guerra)"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Medici (El Ángel Rojo de la Guerra)",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Orden de la Cruz de Sangre",
+      "Ejércitos de Loen e Intis"
+    ],
+    "apotheosisClimax": "Conectar las almas de cien mil soldados en una sola red de combate psíquico para conquistar la Ciudad de la Calamidad."
+  },
+  {
+    "pathway": "DEMONESS",
+    "novelTitle": "La Maldición de la Seda Venenosa",
+    "protagonistArchetype": "La Cortesana de las Sombras & La Dama del Apocalipsis",
+    "coreTragedyTheme": "El horror inicial de perder tu cuerpo y masculinidad originaria, transformado gradualmente en una sed insaciable de venganza.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Panatiya & Las Matriarcas de la Secta"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Panatiya & Las Matriarcas de la Secta",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Secta de la Demonesa",
+      "Salones Nobles de Backlund"
+    ],
+    "apotheosisClimax": "Tejer hilos de calamidad que cubren el palacio real, decapitando a los tiranos que vendieron a tu pueblo a la peste."
+  },
+  {
+    "pathway": "MOTHER",
+    "novelTitle": "El Jardín de la Carne Sagrada",
+    "protagonistArchetype": "El Boticario Rural & El Creador de Vida",
+    "coreTragedyTheme": "La repulsión y fascinación simultánea por la reproducción biológica desenfrenada que brota de tu propia carne.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Los Médicos de la Plaga del Cosmos"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Los Médicos de la Plaga del Cosmos",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Iglesia de la Madre Tierra",
+      "Gremios Botánicos de Feynapotter"
+    ],
+    "apotheosisClimax": "Fertilizar una tierra estéril devorada por armas químicas para hacer brotar cosechas vivientes y alimentar a los huérfanos."
+  },
+  {
+    "pathway": "MOON",
+    "novelTitle": "La Noche del Murciélago Carmesí",
+    "protagonistArchetype": "El Noble Sanguine & El Alquimista de Medianoche",
+    "coreTragedyTheme": "El desprecio de los humanos que te ven como un monstruo chupador de sangre y la opresión de los ancianos vampiros de tu clan.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Los Inquisidores del Sol Radiante"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Los Inquisidores del Sol Radiante",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Clan Vampiro de Backlund",
+      "Hospitales Católicos"
+    ],
+    "apotheosisClimax": "Alzar el vuelo bajo la Luna Llena Carmesí liderando a la raza Sanguine para liberarla de la servidumbre ancestral."
+  },
+  {
+    "pathway": "BLACK_EMPEROR",
+    "novelTitle": "El Monopolio de la Resurrección",
+    "protagonistArchetype": "El Abogado Corrupto & El Magnate del Carbón",
+    "coreTragedyTheme": "Darle forma a un imperio comercial inmenso solo para descubrir que la riqueza material no puede salvar el alma de tus hijos.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Los Jueces de la Corona & El Duque Negan"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Los Jueces de la Corona & El Duque Negan",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Cámara de Comercio de Backlund",
+      "Bajos Fondos de la Usura"
+    ],
+    "apotheosisClimax": "Erigir los Nueve Mausoleos Secretos para desafiar a la muerte y resucitar de entre las sombras como Emperador Negro."
+  },
+  {
+    "pathway": "JUSTICIAR",
+    "novelTitle": "La Balanza del Castigo Inflexible",
+    "protagonistArchetype": "El Inspector de Scotland Yard & El Magistrado Supremo",
+    "coreTragedyTheme": "Estar obligado por tu juramento a ejecutar a un inocente porque la ley escrita, corrupta pero legal, así lo dictamina.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "El Sindicato del Crimen de Williams Street"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "El Sindicato del Crimen de Williams Street",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Policía Metropolitana",
+      "Tribunal Supremo de Su Majestad"
+    ],
+    "apotheosisClimax": "Promulgar el Decreto Sagrado de Prohibición Universal en el campo de batalla, silenciando todas las armas del mundo."
+  },
+  {
+    "pathway": "HERMIT",
+    "novelTitle": "El Murmullo del Sabio Oculto",
+    "protagonistArchetype": "El Astrónomo Hereje & El Tejedor de Pergaminos",
+    "coreTragedyTheme": "El zumbido incesante en tu cerebro que te inyecta verdades cósmicas día y noche hasta hacerte sangrar por los ojos.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "El Sabio Oculto (Hidden Sage)"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "El Sabio Oculto (Hidden Sage)",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Orden Ascética de Moisés",
+      "Ermitaños del Destino"
+    ],
+    "apotheosisClimax": "Encerrar al Sabio Oculto dentro de una constelación de pergaminos sellados, liberando a todos los místicos de la locura."
+  },
+  {
+    "pathway": "PARAGON",
+    "novelTitle": "El Corazón de Latón y Vapor",
+    "protagonistArchetype": "El Inventor de Máquinas & El Forjador Divino",
+    "coreTragedyTheme": "Reemplazar tu corazón biológico por una bomba de relojería para evitar sentir tristeza, volviéndote tan frío como el hierro.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "El Barón del Acero de Berun"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "El Barón del Acero de Berun",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Iglesia del Vapor",
+      "Sindicato de Mecánicos Rebeldes"
+    ],
+    "apotheosisClimax": "Encender el Gran Horno de Alquimia Sagrada para forjar una espada divina capaz de cortar el caparazón de un Dios Antiguo."
+  },
+  {
+    "pathway": "WHEEL_OF_FORTUNE",
+    "novelTitle": "El Giro de la Serpiente de Mercurio",
+    "protagonistArchetype": "El Jugador Callejero & El Niño del Destino",
+    "coreTragedyTheme": "Tener que morir y renacer en un cuerpo de recién nacido una y otra vez, perdiendo tus posesiones y amores de cada vida.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Will Auceptin / Ouroboros (Serpiente del Destino)"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Will Auceptin / Ouroboros (Serpiente del Destino)",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Escuela de Pensamiento de la Vida",
+      "Casinos de Bayam"
+    ],
+    "apotheosisClimax": "Invertir la probabilidad del destino del planeta en un tiro de dados místico, convirtiendo una aniquilación del 99% en victoria."
+  },
+  {
+    "pathway": "ABYSS",
+    "novelTitle": "El Aullido del Fuego Sulfuroso",
+    "protagonistArchetype": "El Asesino por Contrato & El Demonio de Sangre",
+    "coreTragedyTheme": "Luchar cada amanecer contra la urgencia fisiológica de degollar a la primera persona que te sonría en la calle.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Los Diablos Mayores del Abismo Subterráneo"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Los Diablos Mayores del Abismo Subterráneo",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Secta del Fin de los Días",
+      "Banda del Muelle Este"
+    ],
+    "apotheosisClimax": "Volver tu sangre corrosiva contra el propio Señor del Abismo, devorando su trono para imponer silencio en el infierno."
+  },
+  {
+    "pathway": "CHAINED",
+    "novelTitle": "Las Cadenas de la Pureza Espectral",
+    "protagonistArchetype": "El Zombi de Alquiler & El Espectro Vengador",
+    "coreTragedyTheme": "La tortura psicológica constante de reprimir tus apetitos mientras los miembros de la Facción de la Indulgencia disfrutan de la orgía de sangre.",
+    "majorActs": [
+      {
+        "actNumber": 1,
+        "title": "Acto I: El Despertar en las Sombras",
+        "sequenceRange": "S9 - S8",
+        "narrativeFocus": "Primeros pasos en la sociedad victoriana, comprensión del método de actuación y choques con criminales locales.",
+        "pivotalDilemma": "Elegir entre la seguridad de la ignorancia civil o la embriaguez del conocimiento extraordinario.",
+        "canonRivalOrNemesis": "Un Beyonder rebelde de la misma vía al borde de la mutación."
+      },
+      {
+        "actNumber": 2,
+        "title": "Acto II: El Velo de la Conspiración",
+        "sequenceRange": "S7 - S5",
+        "narrativeFocus": "Mudanza a la capital (Backlund), adopción de múltiples coberturas y descubrimiento de la red de conspiración de la Cuarta Época.",
+        "pivotalDilemma": "Sacrificar una identidad querida para no ser capturado por los Halcones Nocturnos o Castigadores.",
+        "canonRivalOrNemesis": "Suah (Abominación de la Rosa)"
+      },
+      {
+        "actNumber": 3,
+        "title": "Acto III: El Descenso de la Divinidad",
+        "sequenceRange": "S4 - S1",
+        "narrativeFocus": "Metamorfosis en Semidiós, gestión de anclas humanas mediante cultos y organizaciones, y guerra de Reyes de Ángeles.",
+        "pivotalDilemma": "Ceder parte de tu humanidad para ganar el poder necesario para salvar a millones de inocentes.",
+        "canonRivalOrNemesis": "Un Ángel ancestral que busca tus características extraordinarias."
+      },
+      {
+        "actNumber": 4,
+        "title": "Acto IV: La Apoteosis y el Cosmos",
+        "sequenceRange": "S0 - ATS",
+        "narrativeFocus": "La gran batalla de los Dioses Verdaderos, sintonización con el Sefirah y defensa de la Tierra frente a los Dioses Exteriores.",
+        "pivotalDilemma": "Asimilar la voluntad del Creador Original sin perder la memoria de quién fuiste como mortal.",
+        "canonRivalOrNemesis": "Un Dios Exterior acechando tras la Barrera Planetaria."
+      }
+    ],
+    "recurringEnemies": [
+      "Suah (Abominación de la Rosa)",
+      "Cazadores de la Inquisición",
+      "Monstruos Mutados de la Vía"
+    ],
+    "rivalOrganizations": [
+      "Escuela de la Rosa - Facción de la Indulgencia"
+    ],
+    "apotheosisClimax": "Romper las cadenas de tu cuerpo mortal para convertirte en el Espectro Primigenio que devora la corrupción del Árbol del Deseo."
+  }
+]

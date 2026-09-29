@@ -1,0 +1,20 @@
+{
+  "scripts/reproduce.mjs": "4229d838eaa6fc95600a3ad1251e7d58a939f7c929c12a7c4d0595fae0646c86",
+  "scripts/restart_probe.mjs": "77fc3df37ba437cf5bd6a4f84206e087ae7fdc72bdbe37123b75d50c549fa01a",
+  "resultados/reproductions.json": "35dd7ba052409291bc03eea219b059e6af7d59ee3ffa0c8f52cefe4650ae70d3",
+  "resultados/restart_results.json": "fb9bc2a4e2aeb9065fb831427cc2052439c22a10a8df74ddd430e23b277d8798",
+  "resultados/assets_and_imports.json": "94d0dff665dfce7dc2971e7fb4b66114611058b870759d927b1625b158c0d1ec",
+  "resultados/ci_verified.json": "09141efa7637a3e8bf08c8f0d16aceec18e689e6b30459ba6b2bb7335d01a9ae",
+  "AUDITORIA.md": "d267f15bce3c8373418ca7f18c222d98f4eae3f1ee33fa6d317ab8090012a564",
+  "logs/audit_install.log": "b4a1cfb6c3d0cf4cf8595e755392a15119c957256bf27cb01f1d8949f85aad77",
+  "logs/audit_build.log": "24629570e67ccc2b7f70bc2a247981150b21bd7a3c216e4fa6418ecc2fc9205f",
+  "logs/audit_start.log": "0a227f9a05673e3e8e8e39680fb199d7933a421a6591aaefdcd3ae66910bca27",
+  "logs/audit_tests_node.log": "e8336c3cbc051cb16da332e269cdacd10bb6924ca64bb74368de21006352cdd7",
+  "logs/audit_tier_l.log": "c84b2f2fc19ae17d9250541869ba2eebd710b55b6814c1914c1c7c7242356706",
+  "logs/audit_check_anti_math_random.ts.log": "ba0a287d5ed7f2185002d0037a00eedf5ac0eb97eb58b396116d75ad9fec7355",
+  "logs/audit_check_diegetic_ui.ts.log": "4bc9e8516ff89090e8cac7e74970d31517ddf27437abbfe1a2b90d7f1f90d910",
+  "logs/audit_lint_tier_g.ts.log": "acc71b20eef579b503b8d5aafad4689253726b8f5e0cafc1392807bd2626c10f",
+  "logs/audit_reproduce.log": "35dd7ba052409291bc03eea219b059e6af7d59ee3ffa0c8f52cefe4650ae70d3",
+  "logs/audit_dev_server.log": "99f870bae12c9e39fecb5e77b3cb8bfb557b08289609dcc311d35397afb49305",
+  "logs/audit_runtime_browser.log": "fbd8fde94d68841c2def25e9e93d69b51396023e73daaa467d171da57ccca497"
+}

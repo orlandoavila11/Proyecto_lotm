@@ -1,0 +1,3037 @@
+{
+  "version": "1.0.0",
+  "savedAt": "2026-09-03T22:14:19.187Z",
+  "player": {
+    "id": "PC_KLEIN",
+    "name": "Klein Moretti",
+    "pathway": "SEER",
+    "sequence": 9,
+    "digestion": 63,
+    "sanity": 100,
+    "maxSanity": 100,
+    "corruption": 0,
+    "humanity": 100,
+    "wallet": {
+      "pounds": 35,
+      "soli": 0,
+      "pence": 0
+    },
+    "currentLocation": "Tingen",
+    "completedQuestIds": [
+      "SQ9_001"
+    ],
+    "actingNotes": [
+      "[S-9] Presidió la Convocatoria #1 del Club Tarot.",
+      "[S-9] Interpretó la adivinación de la carta de la Muerte para un cliente adinerado."
+    ],
+    "anchors": [],
+    "completedRituals": []
+  },
+  "inventory": {
+    "maxWeight": 200,
+    "items": [
+      {
+        "id": "Transcripción de Inteligencia Oculta (Baja Secuencia)",
+        "name": "Transcripción de Inteligencia Oculta (Baja Secuencia)",
+        "type": "INGREDIENT",
+        "weight": 1,
+        "quantity": 1,
+        "description": "Objeto: Transcripción de Inteligencia Oculta (Baja Secuencia)"
+      }
+    ]
+  },
+  "factions": [
+    {
+      "id": "CHURCH_EVERNIGHT",
+      "reputation": 10,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "CHURCH_STORMS",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "CHURCH_STEAM",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "CHURCH_SUN",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "CHURCH_WISDOM",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "CHURCH_EARTH_MOTHER",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "CHURCH_FOOL",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_AURORA_ORDER",
+      "reputation": 0,
+      "suspicion": 60,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_ROSE_SCHOOL",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_SECRET_ORDER",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_MOSES_ORDER",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_IRON_BLOOD",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_PSYCHOLOGY_ALCHEMISTS",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_DEMONESS_SECT",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_ELEMENT_DAWN",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_NUMIS_EPISCOPATE",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_LIFE_SCHOOL",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_MI9",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_TAMARA_REMNANTS",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_COI_DANCERS",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_SANGUINE_COUNCIL",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_NIGHT_COLLECTORS",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_STELLAR_FLAME",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_SAURON_REMNANTS",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_COSMIC_WAVES",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_NUMIS_REMNANTS",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "ORG_PSYCHOLOGY_REMNANTS",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "LOEN_KINGDOM",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "INTIS_REPUBLIC",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "FEYSAC_EMPIRE",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "FEYNAPOTTER_KINGDOM",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "LENBURG",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "MASIN",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "SEGAR",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "RORSTED_ARCHIPELAGO",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "SOUTHERN_CONTINENT",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "FORSAKEN_LAND_OF_THE_GODS",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "CHURCH_OF_EVERNIGHT",
+      "reputation": 10,
+      "suspicion": 75,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "CHURCH_OF_STORMS",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "CHURCH_OF_STEAM_AND_MACHINERY",
+      "reputation": 0,
+      "suspicion": 0,
+      "state": "NEUTRAL"
+    },
+    {
+      "id": "TAROT_CLUB",
+      "reputation": 80,
+      "suspicion": 0,
+      "state": "ALLIED"
+    },
+    {
+      "id": "ROSE_SCHOOL_OF_THOUGHT",
+      "reputation": -60,
+      "suspicion": 60,
+      "state": "HOSTILE"
+    }
+  ],
+  "tarotClub": {
+    "sessionCount": 1,
+    "rosellePagesRead": 1
+  },
+  "world": {
+    "dayCount": 10,
+    "currentCity": "Tingen"
+  },
+  "worldState": {
+    "regions": {
+      "backlund": {
+        "cityName": "Backlund",
+        "regionId": "REG_BACKLUND_WEST",
+        "tensionLevel": 41,
+        "occultDensity": 81,
+        "activeFactionConflict": "Fricción entre la Orden de Aurora y los Halcones Nocturnos",
+        "isMartialLawActive": false,
+        "statOverrides": {
+          "black_market_price_modifier": 1.3,
+          "crime_encounter_rate": 1.45
+        },
+        "activeLocalFlags": {}
+      },
+      "tingen": {
+        "cityName": "Tingen",
+        "regionId": "REG_TINGEN_SUBURBS",
+        "tensionLevel": 27,
+        "occultDensity": 21,
+        "activeFactionConflict": "Investigación activa de reliquias de la Familia Antigonus",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "constant_city": {
+        "cityName": "Constant City",
+        "regionId": "loen_kingdom",
+        "tensionLevel": 22,
+        "occultDensity": 17,
+        "activeFactionConflict": "Fricciones místicas latentes",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "trier": {
+        "cityName": "Trier",
+        "regionId": "REG_INTIS_CAPITAL",
+        "tensionLevel": 47,
+        "occultDensity": 47,
+        "activeFactionConflict": "Intrigas de la Secta de la Demonesa en los salones republicanos",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "bayam": {
+        "cityName": "Bayam",
+        "regionId": "REG_BACKLUND_PORT",
+        "tensionLevel": 52,
+        "occultDensity": 60,
+        "activeFactionConflict": "Piratas de los Cuatro Reyes contra la Iglesia de las Tormentas",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "city_of_silver": {
+        "cityName": "City of Silver",
+        "regionId": "forsaken_land_of_the_gods",
+        "tensionLevel": 15,
+        "occultDensity": 30,
+        "activeFactionConflict": "Fricciones místicas latentes",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "moon_city": {
+        "cityName": "Moon City",
+        "regionId": "forsaken_land_of_the_gods",
+        "tensionLevel": 23,
+        "occultDensity": 30,
+        "activeFactionConflict": "Fricciones místicas latentes",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "awwa": {
+        "cityName": "Awwa",
+        "regionId": "feysac_empire",
+        "tensionLevel": 35,
+        "occultDensity": 21,
+        "activeFactionConflict": "Fricciones místicas latentes",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "lenburg_city": {
+        "cityName": "Lenburg City",
+        "regionId": "lenburg",
+        "tensionLevel": 15,
+        "occultDensity": 19,
+        "activeFactionConflict": "Fricciones místicas latentes",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "durmur": {
+        "cityName": "Durmur",
+        "regionId": "feynapotter_kingdom",
+        "tensionLevel": 12,
+        "occultDensity": 30,
+        "activeFactionConflict": "Fricciones místicas latentes",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "city of silver": {
+        "cityName": "City of Silver",
+        "regionId": "forsaken_land_of_the_gods",
+        "tensionLevel": 82,
+        "occultDensity": 95,
+        "activeFactionConflict": "Supervivencia contra las aberraciones de la oscuridad perpetua",
+        "isMartialLawActive": true,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "intis_republic": {
+        "cityName": "INTIS_REPUBLIC",
+        "tensionLevel": 14,
+        "occultDensity": 18,
+        "activeFactionConflict": "Ambiente aparentemente pacífico",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "lenburg_princi_pality": {
+        "cityName": "LENBURG_PRINCI_PALITY",
+        "tensionLevel": 13,
+        "occultDensity": 15,
+        "activeFactionConflict": "Ambiente aparentemente pacífico",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "rore_city": {
+        "cityName": "RORE_CITY",
+        "tensionLevel": 12,
+        "occultDensity": 15,
+        "activeFactionConflict": "Ambiente aparentemente pacífico",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      },
+      "reg_south_continent": {
+        "cityName": "REG_SOUTH_CONTINENT",
+        "tensionLevel": 8,
+        "occultDensity": 24,
+        "activeFactionConflict": "Ambiente aparentemente pacífico",
+        "isMartialLawActive": false,
+        "statOverrides": {},
+        "activeLocalFlags": {}
+      }
+    },
+    "globalFlags": {
+      "EVT_POLITICAL_BLACKMAIL_CRISIS_ACTIVE": true,
+      "EVT_DISTRICT_MISFORTUNE_PLAGUE": true,
+      "EVT_LOEN_STATE_SECRETS_LEAKED": true,
+      "COSMIC_BARRIER_FLUCTUATION": true,
+      "CAUSALITY_MANIPULATION_ACTIVE": true,
+      "VASCULAR_PARASITISM_ACTIVE": true,
+      "CONCEPTUAL_HUNGER_CRITICAL": true,
+      "NONE": true,
+      "COSMIC_CONTAMINATION_RISK": true,
+      "MUTTERING_SUSURRUS": true,
+      "TEMPORAL_BLUR": true,
+      "MIND_MAZE": true,
+      "EVT_PSYCHOLOGY_COURT_COUP": true,
+      "EVT_BACKLUND_MARTIAL_LAW_RISK": true,
+      "LOCAL_PROHIBITION_ACTIVE": true,
+      "INSPECTOR_GRID_ACTIVE": true,
+      "PATROL_GRID_ACTIVE": true,
+      "EVT_AURORA_FLESH_FESTIN": true,
+      "EVT_ODEL_WORKSHOP_DIMENSIONAL_RIFT": true,
+      "EVT_LOEN_RAILWAY_TRANSPORT_BLOCKED": true,
+      "LOCAL_SPIRIT_VISION_FUZZY": true,
+      "EAST_STREET_BRAWL_ACTIVE": true
+    },
+    "globalCorruptionIndex": 0,
+    "currentWeather": "WEATHER_FOGGY"
+  },
+  "knowledge": {
+    "learnedKnowledgeIds": [],
+    "readBookIds": [],
+    "heardRumorIds": [],
+    "activeRumorData": [
+      {
+        "rumorId": "RUMOR_001",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST",
+          "mirror_world"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_002",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_PORT"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_003",
+        "remainingTicks": 87,
+        "activeRegions": [
+          "REG_BACKLUND_WEST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_004",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_005",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_CHERWOOD",
+          "nation_of_disorder"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_006",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_OUTSKIRTS"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_007",
+        "remainingTicks": 87,
+        "activeRegions": [
+          "REG_BACKLUND_OUTSKIRTS"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_008",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_009",
+        "remainingTicks": 111,
+        "activeRegions": [
+          "REG_BACKLUND_SUBURBS",
+          "spirit_world"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_010",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_011",
+        "remainingTicks": 75,
+        "activeRegions": [
+          "REG_BACKLUND_OUTSKIRTS",
+          "mirror_world"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_012",
+        "remainingTicks": 87,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_013",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_WEST",
+          "berserk_sea"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_014",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_CHERWOOD"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_015",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_016",
+        "remainingTicks": 87,
+        "activeRegions": [
+          "REG_BACKLUND_SUBURBS",
+          "shadow_world"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_017",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_EAST",
+          "chaos_sea"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_018",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_PORT"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_019",
+        "remainingTicks": 75,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH",
+          "chaos_sea"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_020",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_SPIRIT_WORLD",
+          "chaos_sea"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_021",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_PORT"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_022",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_SUBURBS",
+          "river_of_eternal_darkness"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_023",
+        "remainingTicks": 27,
+        "activeRegions": [
+          "REG_BACKLUND_EAST",
+          "northern_continent"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_024",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_SUBURBS"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_025",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH",
+          "astral_world"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_026",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_027",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_WEST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_028",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_PORT"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_029",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_CHERWOOD",
+          "northern_continent"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_030",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_031",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_WEST",
+          "river_of_eternal_darkness"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_032",
+        "remainingTicks": 75,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_033",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_CHERWOOD"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_034",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_OUTSKIRTS",
+          "berserk_sea"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_035",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_036",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_037",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_PORT"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_038",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_SUBURBS"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_039",
+        "remainingTicks": 87,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH",
+          "southern_continent"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_040",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH",
+          "astral_world"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_041",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_SUBURBS",
+          "sea_of_ruins"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_042",
+        "remainingTicks": 27,
+        "activeRegions": [
+          "REG_BACKLUND_CHERWOOD",
+          "nation_of_disorder"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_043",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_WEST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_044",
+        "remainingTicks": 75,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_045",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_CHERWOOD",
+          "chaos_sea"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_046",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_PORT"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_047",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH",
+          "astral_world"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_048",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_PORT"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_049",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_CHERWOOD",
+          "shadow_world"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_050",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_SUBURBS",
+          "river_of_eternal_darkness"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_051",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_052",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_EAST",
+          "sonia_sea"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_053",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_PORT"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_054",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST",
+          "astral_world"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_055",
+        "remainingTicks": 75,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_056",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_SPIRIT_WORLD"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_057",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_OUTSKIRTS",
+          "sea_of_ruins",
+          "astral_world"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_058",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_059",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_PORT"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_060",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_061",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_SUBURBS"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_062",
+        "remainingTicks": 87,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_063",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_064",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_CHERWOOD"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_065",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_PORT",
+          "knowledge_moor"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_066",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_WEST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_067",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_068",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_PORT"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_069",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST",
+          "fog_sea"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_070",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH",
+          "northern_continent"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_071",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_CHERWOOD"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_072",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_CHERWOOD",
+          "mirror_world"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_073",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_WEST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_074",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_075",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_076",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_OUTSKIRTS"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_077",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_OUTSKIRTS"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_078",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_079",
+        "remainingTicks": 75,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_080",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_CHERWOOD"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_081",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST",
+          "fog_sea"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_082",
+        "remainingTicks": 87,
+        "activeRegions": [
+          "REG_BACKLUND_PORT",
+          "fog_sea",
+          "northern_continent"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_083",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_084",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST",
+          "southern_continent"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_085",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_086",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_WEST",
+          "sea_of_ruins"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_087",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_088",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST",
+          "berserk_sea"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_089",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_090",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_091",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_092",
+        "remainingTicks": 75,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH",
+          "shadow_world",
+          "sea_of_ruins"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_093",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_094",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_WEST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_095",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_PORT",
+          "northern_continent"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_096",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_PORT",
+          "chaos_sea"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_097",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_SUBURBS"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_098",
+        "remainingTicks": 39,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_099",
+        "remainingTicks": 51,
+        "activeRegions": [
+          "REG_BACKLUND_EAST"
+        ],
+        "isHeard": false
+      },
+      {
+        "rumorId": "RUMOR_100",
+        "remainingTicks": 63,
+        "activeRegions": [
+          "REG_BACKLUND_NORTH"
+        ],
+        "isHeard": false
+      }
+    ]
+  },
+  "investigation": {
+    "cases": [
+      {
+        "id": "INV_CASE_001",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_001_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_001_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_002",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_002_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_002_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_003",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_003_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_003_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_004",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_004_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_004_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_005",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_005_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_005_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_006",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_006_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_006_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_007",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_007_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_007_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_008",
+        "status": "UNLOCKED",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_008_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_008_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_009",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_009_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_009_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_010",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_010_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_010_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_011",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_011_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_011_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_012",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_012_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_012_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_013",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_013_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_013_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_014",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_014_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_014_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_015",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_015_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_015_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_016",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_016_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_016_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_017",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_017_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_017_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_018",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_018_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_018_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_019",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_019_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_019_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_020",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_020_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_020_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_021",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_021_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_021_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_022",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_022_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_022_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_023",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_023_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_023_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_024",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_024_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_024_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_025",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_025_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_025_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_026",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_026_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_026_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_027",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_027_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_027_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_028",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_028_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_028_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_029",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_029_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_029_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_030",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_030_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_030_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_031",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_031_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_031_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_032",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_032_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_032_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_033",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_033_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_033_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_034",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_034_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_034_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_035",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_035_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_035_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_036",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_036_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_036_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_037",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_037_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_037_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_038",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_038_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_038_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_039",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_039_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_039_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_040",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_040_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_040_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_041",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_041_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_041_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_042",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_042_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_042_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_043",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_043_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_043_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_044",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_044_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_044_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_045",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_045_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_045_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_046",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_046_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_046_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_047",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_047_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_047_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_048",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_048_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_048_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_049",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_049_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_049_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "INV_CASE_050",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_INV_CASE_050_1",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_INV_CASE_050_2",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "CASE_ANTIGONUS_NOTEBOOK",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_01",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_02",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_03",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "CASE_EAST_BOROUGH_CULT",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_EB_01",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_EB_02",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_EB_03",
+            "discovered": false
+          }
+        ]
+      },
+      {
+        "id": "CASE_BAYAM_PIRATE_SMUGGLING",
+        "status": "RUMOR",
+        "clues": [
+          {
+            "id": "CLUE_BY_01",
+            "discovered": false
+          },
+          {
+            "id": "CLUE_BY_02",
+            "discovered": false
+          }
+        ]
+      }
+    ]
+  },
+  "events": {
+    "activeEvents": [
+      {
+        "eventId": "EVT_022",
+        "currentPhase": 1,
+        "ticksActive": 3,
+        "ticksUntilEscalation": 45,
+        "isResolved": false,
+        "isFailed": false
+      },
+      {
+        "eventId": "EVT_042",
+        "currentPhase": 1,
+        "ticksActive": 3,
+        "ticksUntilEscalation": 45,
+        "isResolved": false,
+        "isFailed": false
+      },
+      {
+        "eventId": "EVT_062",
+        "currentPhase": 1,
+        "ticksActive": 3,
+        "ticksUntilEscalation": 45,
+        "isResolved": false,
+        "isFailed": false
+      },
+      {
+        "eventId": "EVT_006",
+        "currentPhase": 1,
+        "ticksActive": 2,
+        "ticksUntilEscalation": 22,
+        "isResolved": false,
+        "isFailed": false
+      },
+      {
+        "eventId": "EVT_049",
+        "currentPhase": 1,
+        "ticksActive": 2,
+        "ticksUntilEscalation": 22,
+        "isResolved": false,
+        "isFailed": false
+      }
+    ]
+  },
+  "npcs": [
+    {
+      "id": "NPC_001",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_VANCE_PRIVATE_STUDIO"
+    },
+    {
+      "id": "NPC_002",
+      "relationship": 10,
+      "isAgendaTriggered": false,
+      "regionId": "REG_SPIRIT_WORLD",
+      "subLocationId": "LOC_MIRROR_PLANE_BACKLUND"
+    },
+    {
+      "id": "NPC_003",
+      "relationship": 50,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_SLUMS_APOTHECARY"
+    },
+    {
+      "id": "NPC_004",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_SUBURBS",
+      "subLocationId": "LOC_ST_BEUVE_ABBEY"
+    },
+    {
+      "id": "NPC_005",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_NIGHTHAWK_HQ_BASEMENT"
+    },
+    {
+      "id": "NPC_006",
+      "relationship": 15,
+      "isAgendaTriggered": true,
+      "regionId": "REG_BACKLUND_CHERWOOD",
+      "subLocationId": "LOC_FINANCIAL_EXCHANGE"
+    },
+    {
+      "id": "NPC_007",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_PORT",
+      "subLocationId": "LOC_MANDATED_PUNISHERS_HQ"
+    },
+    {
+      "id": "NPC_008",
+      "relationship": 30,
+      "isAgendaTriggered": true,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_MUNICIPAL_SLAUGHTERHOUSE"
+    },
+    {
+      "id": "NPC_009",
+      "relationship": 60,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_POST_OFFICE_CENTRAL"
+    },
+    {
+      "id": "NPC_010",
+      "relationship": 45,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_CHERWOOD",
+      "subLocationId": "LOC_LAW_COURTS_CHERWOOD"
+    },
+    {
+      "id": "NPC_011",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_CHERWOOD",
+      "subLocationId": "LOC_LAW_COURTS_CHERWOOD"
+    },
+    {
+      "id": "NPC_012",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_CLANDESTINE_SOUP_KITCHEN"
+    },
+    {
+      "id": "NPC_013",
+      "relationship": 25,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BACKLUND_MUSEUM"
+    },
+    {
+      "id": "NPC_014",
+      "relationship": 50,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_HILLSIDE",
+      "subLocationId": "LOC_CLANDESTINE_CASINO"
+    },
+    {
+      "id": "NPC_015",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_GOVERNMENT_OFFICES"
+    },
+    {
+      "id": "NPC_016",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_CLANDESTINE_SOUP_KITCHEN"
+    },
+    {
+      "id": "NPC_017",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_POST_OFFICE_CENTRAL"
+    },
+    {
+      "id": "NPC_018",
+      "relationship": 50,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_CHERWOOD",
+      "subLocationId": "LOC_FINANCIAL_EXCHANGE"
+    },
+    {
+      "id": "NPC_019",
+      "relationship": 15,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_TINGEN",
+      "subLocationId": "LOC_TINGEN_THEATER"
+    },
+    {
+      "id": "NPC_020",
+      "relationship": 35,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BACKLUND_MUSEUM"
+    },
+    {
+      "id": "NPC_021",
+      "relationship": 35,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BACKLUND_UNIVERSITY"
+    },
+    {
+      "id": "NPC_022",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_CHERWOOD",
+      "subLocationId": "LOC_MEDICAL_FACULTY_BASEMENT"
+    },
+    {
+      "id": "NPC_023",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BANK_OF_LOEN_VAULTS"
+    },
+    {
+      "id": "NPC_024",
+      "relationship": 10,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_CLANDESTINE_SOUP_KITCHEN"
+    },
+    {
+      "id": "NPC_025",
+      "relationship": 55,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_PORT",
+      "subLocationId": "LOC_FISHERMAN_WHARF"
+    },
+    {
+      "id": "NPC_026",
+      "relationship": 25,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_TINGEN",
+      "subLocationId": "LOC_TINGEN_THEATER"
+    },
+    {
+      "id": "NPC_027",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BACKLUND_MUSEUM"
+    },
+    {
+      "id": "NPC_028",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_CHERWOOD",
+      "subLocationId": "LOC_LAW_COURTS_CHERWOOD"
+    },
+    {
+      "id": "NPC_029",
+      "relationship": 45,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_OUTSKIRTS",
+      "subLocationId": "LOC_NORTH_RAILWAY_TRACKS"
+    },
+    {
+      "id": "NPC_030",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_JEWELRY_QUARTER_STREET"
+    },
+    {
+      "id": "NPC_031",
+      "relationship": 15,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_MUNICIPAL_SLAUGHTERHOUSE"
+    },
+    {
+      "id": "NPC_032",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_HILLSIDE",
+      "subLocationId": "LOC_STREET_GAMBLERS"
+    },
+    {
+      "id": "NPC_033",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_PORT",
+      "subLocationId": "LOC_MANDATED_PUNISHERS_HQ"
+    },
+    {
+      "id": "NPC_034",
+      "relationship": 10,
+      "isAgendaTriggered": true,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_LUXURY_BROTHEL"
+    },
+    {
+      "id": "NPC_035",
+      "relationship": 45,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_SIDERURGICA_CENTRAL"
+    },
+    {
+      "id": "NPC_036",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BACKLUND_MUSEUM"
+    },
+    {
+      "id": "NPC_037",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_ROYAL_PRISON"
+    },
+    {
+      "id": "NPC_038",
+      "relationship": 45,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_OUTSKIRTS",
+      "subLocationId": "LOC_NORTH_RAILWAY_TRACKS"
+    },
+    {
+      "id": "NPC_039",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_LUXURY_BOULEVARD"
+    },
+    {
+      "id": "NPC_040",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_SUBURBS",
+      "subLocationId": "LOC_ST_BEUVE_ABBEY"
+    },
+    {
+      "id": "NPC_041",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_PORT",
+      "subLocationId": "LOC_TAVERN_DOCKS"
+    },
+    {
+      "id": "NPC_042",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_TINGEN",
+      "subLocationId": "LOC_TINGEN_THEATER"
+    },
+    {
+      "id": "NPC_043",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BACKLUND_MUSEUM"
+    },
+    {
+      "id": "NPC_044",
+      "relationship": 35,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_HIGH_SOCIETY_SALON"
+    },
+    {
+      "id": "NPC_045",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_CHERWOOD",
+      "subLocationId": "LOC_LAW_COURTS_CHERWOOD"
+    },
+    {
+      "id": "NPC_046",
+      "relationship": 45,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_HILLSIDE",
+      "subLocationId": "LOC_UNDERGROUND_SEWERS_03"
+    },
+    {
+      "id": "NPC_047",
+      "relationship": 50,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_LUXURY_BOULEVARD"
+    },
+    {
+      "id": "NPC_048",
+      "relationship": 25,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_SUBURBS",
+      "subLocationId": "LOC_ST_BEUVE_ABBEY"
+    },
+    {
+      "id": "NPC_049",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_OUTSKIRTS",
+      "subLocationId": "LOC_NORTH_RAILWAY_TRACKS"
+    },
+    {
+      "id": "NPC_050",
+      "relationship": 35,
+      "isAgendaTriggered": true,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_LUXURY_BOULEVARD"
+    },
+    {
+      "id": "NPC_051",
+      "relationship": 50,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_SUBURBS",
+      "subLocationId": "LOC_ASYLUM_WARD_7"
+    },
+    {
+      "id": "NPC_052",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_PORT",
+      "subLocationId": "LOC_FISHERMAN_WHARF"
+    },
+    {
+      "id": "NPC_053",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_SUBURBS",
+      "subLocationId": "LOC_ST_BEUVE_ABBEY"
+    },
+    {
+      "id": "NPC_054",
+      "relationship": 15,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_TINGEN",
+      "subLocationId": "LOC_TINGEN_THEATER"
+    },
+    {
+      "id": "NPC_055",
+      "relationship": 45,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_SIDERURGICA_CENTRAL"
+    },
+    {
+      "id": "NPC_056",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BACKLUND_MUSEUM"
+    },
+    {
+      "id": "NPC_057",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_ROYAL_PRISON"
+    },
+    {
+      "id": "NPC_058",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_LUXURY_BOULEVARD"
+    },
+    {
+      "id": "NPC_059",
+      "relationship": 15,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_MUNICIPAL_SLAUGHTERHOUSE"
+    },
+    {
+      "id": "NPC_060",
+      "relationship": 40,
+      "isAgendaTriggered": true,
+      "regionId": "REG_BACKLUND_HILLSIDE",
+      "subLocationId": "LOC_STREET_GAMBLERS"
+    },
+    {
+      "id": "NPC_061",
+      "relationship": 35,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_CHERWOOD_SLUMS"
+    },
+    {
+      "id": "NPC_062",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_DYE_ALLEY"
+    },
+    {
+      "id": "NPC_063",
+      "relationship": 50,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BACKLUND_UNIVERSITY"
+    },
+    {
+      "id": "NPC_064",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BANK_OF_LOEN_VAULTS"
+    },
+    {
+      "id": "NPC_065",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_HIGH_SOCIETY_SALON"
+    },
+    {
+      "id": "NPC_066",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_HIGH_SOCIETY_SALON"
+    },
+    {
+      "id": "NPC_067",
+      "relationship": 15,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_UNDERGROUND_SEWER_OUTLET"
+    },
+    {
+      "id": "NPC_068",
+      "relationship": 45,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_PORT",
+      "subLocationId": "LOC_TAVERN_DOCKS"
+    },
+    {
+      "id": "NPC_069",
+      "relationship": 40,
+      "isAgendaTriggered": true,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_CENTRAL_LIBRARY_ARCHIVES"
+    },
+    {
+      "id": "NPC_070",
+      "relationship": 10,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_OUTSKIRTS",
+      "subLocationId": "LOC_NORTH_RAILWAY_TRACKS"
+    },
+    {
+      "id": "NPC_071",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_SUBURBS",
+      "subLocationId": "LOC_WEST_CEMENTERY"
+    },
+    {
+      "id": "NPC_072",
+      "relationship": 15,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BACKLUND_MUSEUM"
+    },
+    {
+      "id": "NPC_073",
+      "relationship": 55,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_OUTSKIRTS",
+      "subLocationId": "LOC_NORTH_FARMS"
+    },
+    {
+      "id": "NPC_074",
+      "relationship": 45,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_CATHEDRAL_SERENITY"
+    },
+    {
+      "id": "NPC_075",
+      "relationship": 35,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_HILLSIDE",
+      "subLocationId": "LOC_CLANDESTINE_CASINO"
+    },
+    {
+      "id": "NPC_076",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_GOVERNMENT_OFFICES"
+    },
+    {
+      "id": "NPC_077",
+      "relationship": 30,
+      "isAgendaTriggered": true,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BANK_OF_LOEN_VAULTS"
+    },
+    {
+      "id": "NPC_078",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_UNDERGROUND_SEWER_OUTLET"
+    },
+    {
+      "id": "NPC_079",
+      "relationship": 25,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_DYE_ALLEY"
+    },
+    {
+      "id": "NPC_080",
+      "relationship": 50,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_OUTSKIRTS",
+      "subLocationId": "LOC_NORTH_FARMS"
+    },
+    {
+      "id": "NPC_081",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_UNDERGROUND_SEWER_OUTLET"
+    },
+    {
+      "id": "NPC_082",
+      "relationship": 15,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_DYE_ALLEY"
+    },
+    {
+      "id": "NPC_083",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_CENTRAL_LIBRARY_ARCHIVES"
+    },
+    {
+      "id": "NPC_084",
+      "relationship": 10,
+      "isAgendaTriggered": true,
+      "regionId": "REG_BACKLUND_OUTSKIRTS",
+      "subLocationId": "LOC_NORTH_RAILWAY_TRACKS"
+    },
+    {
+      "id": "NPC_085",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_HIGH_SOCIETY_SALON"
+    },
+    {
+      "id": "NPC_086",
+      "relationship": 50,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_OUTSKIRTS",
+      "subLocationId": "LOC_NORTH_FARMS"
+    },
+    {
+      "id": "NPC_087",
+      "relationship": 45,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_CATHEDRAL_SERENITY"
+    },
+    {
+      "id": "NPC_088",
+      "relationship": 35,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_HILLSIDE",
+      "subLocationId": "LOC_CLANDESTINE_CASINO"
+    },
+    {
+      "id": "NPC_089",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_UNDERGROUND_SEWER_OUTLET"
+    },
+    {
+      "id": "NPC_090",
+      "relationship": 25,
+      "isAgendaTriggered": true,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_DYE_ALLEY"
+    },
+    {
+      "id": "NPC_091",
+      "relationship": 40,
+      "isAgendaTriggered": true,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_CENTRAL_LIBRARY_ARCHIVES"
+    },
+    {
+      "id": "NPC_092",
+      "relationship": 25,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BANK_OF_LOEN_VAULTS"
+    },
+    {
+      "id": "NPC_093",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_HIGH_SOCIETY_SALON"
+    },
+    {
+      "id": "NPC_094",
+      "relationship": 15,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_DYE_ALLEY"
+    },
+    {
+      "id": "NPC_095",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_EAST",
+      "subLocationId": "LOC_UNDERGROUND_SEWER_OUTLET"
+    },
+    {
+      "id": "NPC_096",
+      "relationship": 45,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BACKLUND_UNIVERSITY"
+    },
+    {
+      "id": "NPC_097",
+      "relationship": 30,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_BANK_OF_LOEN_VAULTS"
+    },
+    {
+      "id": "NPC_098",
+      "relationship": 20,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_WEST",
+      "subLocationId": "LOC_HIGH_SOCIETY_SALON"
+    },
+    {
+      "id": "NPC_099",
+      "relationship": 45,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_PORT",
+      "subLocationId": "LOC_TAVERN_DOCKS"
+    },
+    {
+      "id": "NPC_100",
+      "relationship": 40,
+      "isAgendaTriggered": false,
+      "regionId": "REG_BACKLUND_NORTH",
+      "subLocationId": "LOC_CENTRAL_LIBRARY_ARCHIVES"
+    }
+  ],
+  "simulationClock": {
+    "currentHour": 17,
+    "currentDay": 1,
+    "currentDayIndex": 0,
+    "moonPhase": "CRESCENT"
+  },
+  "uniquenesses": [
+    {
+      "id": "UNI_FOOL",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_THE_FOOL_KLEIN",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_DOOR",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_THE_FOOL_KLEIN",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_ERROR",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_THE_FOOL_KLEIN",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_VISIONARY",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_ADAM_TRUE_CREATOR",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_HANGED_MAN",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_ADAM_TRUE_CREATOR",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_SUN",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_ETERNAL_BLAZING_SUN",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_TYRANT",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_LORD_STORMS",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_WHITE_TOWER",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_WISDOM",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_DARKNESS",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_EVERNIGHT",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_DEATH",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_EVERNIGHT",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_TWILIGHT_GIANT",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_EVERNIGHT",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_RED_PRIEST",
+      "status": "UNACCOMMODATED",
+      "holderId": "NONE",
+      "ownershipType": "NOBODY"
+    },
+    {
+      "id": "UNI_DEMONESS",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_CHEEK_DEMONESS",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_PARAGON",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_STEAM_MACHINERY",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_HERMIT",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_HIDDEN_SAGE",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_WHEEL_OF_FORTUNE",
+      "status": "ACCOMMODATED",
+      "holderId": "ANGEL_WILL_AUCEPTIN",
+      "ownershipType": "KOA"
+    },
+    {
+      "id": "UNI_JUSTICIAR",
+      "status": "SEALED",
+      "holderId": "NONE",
+      "ownershipType": "NOBODY"
+    },
+    {
+      "id": "UNI_BLACK_EMPEROR",
+      "status": "SEALED",
+      "holderId": "GOD_ROSELLE_BLACK_EMPEROR",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_MOON",
+      "status": "ACCOMMODATED",
+      "holderId": "OD_MGD",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_MOTHER",
+      "status": "ACCOMMODATED",
+      "holderId": "GOD_EARTH_MOTHER",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_ABYSS",
+      "status": "ACCOMMODATED",
+      "holderId": "GOO_FATHER_OF_DEVILS",
+      "ownershipType": "GOD"
+    },
+    {
+      "id": "UNI_CHAINED",
+      "status": "ACCOMMODATED",
+      "holderId": "ANGEL_SUAH_ABOMINATION",
+      "ownershipType": "KOA"
+    }
+  ],
+  "sefirot": [
+    {
+      "id": "SEPH_SEPHIRAH_CASTLE",
+      "status": "ACTIVE",
+      "ownerId": "GOD_THE_FOOL_KLEIN",
+      "accessLevel": 100,
+      "shieldBarrier": true
+    },
+    {
+      "id": "SEPH_CHAOS_SEA",
+      "status": "ACTIVE",
+      "ownerId": "GOD_ADAM_TRUE_CREATOR",
+      "accessLevel": 90,
+      "shieldBarrier": true
+    },
+    {
+      "id": "SEPH_RIVER_OF_ETERNAL_DARKNESS",
+      "status": "SEALED",
+      "ownerId": "GOD_EVERNIGHT",
+      "accessLevel": 60,
+      "shieldBarrier": true
+    },
+    {
+      "id": "SEPH_CITY_OF_CALAMITY",
+      "status": "SEALED",
+      "ownerId": "NONE",
+      "accessLevel": 0,
+      "shieldBarrier": true
+    },
+    {
+      "id": "SEPH_KNOWLEDGE_MOOR",
+      "status": "SEALED",
+      "ownerId": "NONE",
+      "accessLevel": 0,
+      "shieldBarrier": true
+    },
+    {
+      "id": "SEPH_KEY_OF_LIGHT",
+      "status": "SEALED",
+      "ownerId": "NONE",
+      "accessLevel": 0,
+      "shieldBarrier": true
+    },
+    {
+      "id": "SEPH_NATION_OF_DISORDER",
+      "status": "SEALED",
+      "ownerId": "NONE",
+      "accessLevel": 0,
+      "shieldBarrier": true
+    },
+    {
+      "id": "SEPH_TENEBROUS_WORLD",
+      "status": "SEALED",
+      "ownerId": "NONE",
+      "accessLevel": 0,
+      "shieldBarrier": true
+    },
+    {
+      "id": "SEPH_BROOD_HIVE",
+      "status": "SEALED",
+      "ownerId": "NONE",
+      "accessLevel": 0,
+      "shieldBarrier": true
+    }
+  ]
+}

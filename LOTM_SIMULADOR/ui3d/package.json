@@ -1,0 +1,32 @@
+{
+  "name": "ui3d",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Path to Godhood — cliente Three.js WebGPU fiel al Atlas Visual V01-V08",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b tsconfig.json && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b tsconfig.json",
+    "assets": "node scripts/process-assets.mjs"
+  },
+  "dependencies": {
+    "@fontsource/cinzel": "^5.3.0",
+    "@fontsource/eb-garamond": "^5.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "three": "0.186.1",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@types/three": "0.186.0",
+    "@vitejs/plugin-react": "^6.1.0",
+    "sharp": "^0.35.5",
+    "typescript": "^5.7.3",
+    "vite": "^8.2.2"
+  }
+}

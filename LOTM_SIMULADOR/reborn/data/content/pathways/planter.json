@@ -1,0 +1,405 @@
+{
+  "pathway": "MOTHER",
+  "displayName": "Planter Pathway",
+
+  "mythicalCreatureForm": "A mass of flesh covered with various reproductive organs, golden ears of wheat, mushrooms, vines, and soil.",
+
+  "sequences": {
+
+    "9": {
+      "name": "Planter",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Distinguish Soil Qualities",
+        "Identify Seed Varieties",
+        "Enhanced Physical Strength",
+        "Exceptional Agricultural Intuiton",
+        "Basic Plant Growth Stimulation"
+      ],
+
+      "actingMethods": [
+        "Sow seeds diligently.",
+        "Nurture growing plants.",
+        "Respect the soil and seasonal cycles.",
+        "Find joy in the harvest."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Brain of a Golden-Furred Giant Ape",
+          "Eyeball of a Rain-Summoning Bird"
+        ],
+
+        "supplementaryIngredients": [
+          "90ml of the ape's blood",
+          "3 feathers of the Rain-Summoning Bird",
+          "9 grains of seed",
+          "100g of bread or rice"
+        ],
+
+        "potionAppearance": "Resembles golden porridge made of cereal."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A golden, grain-like object about half the size of a fist."
+    },
+
+    "8": {
+      "name": "Doctor",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Sickness Treatment",
+        "Wound Healing",
+        "Surgical Mastery",
+        "Anatomy Knowledge",
+        "Medicine Brewing",
+        "Aura Sight"
+      ],
+
+      "actingMethods": [
+        "Heal the sick and injured.",
+        "Maintain professional composure.",
+        "Study the structures of living bodies.",
+        "Alleviate suffering impartially."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Green bark of the Blessed Poplar",
+          "Spring core of the Water of Life"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of Water of Life",
+          "5 leaves of the Blessed Poplar",
+          "9 different kinds of herbs",
+          "100ml of oatmeal or a similar food"
+        ],
+
+        "potionAppearance": "Light green and translucent, exuding an alluring aroma."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A branch-like structure of bluish-green hue, covered with crystal-like water droplets."
+    },
+
+    "7": {
+      "name": "Harvest Priest",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Agricultural Bounty Aura",
+        "Weather Optimization for Crops",
+        "Enhanced Healing Capabilities",
+        "Nature Attunement",
+        "Plant Life Multiplication"
+      ],
+
+      "actingMethods": [
+        "Preach the abundance of nature.",
+        "Bless the fields and livestock.",
+        "Act as a bridge between the earth and the people.",
+        "Celebrate fertility and reproduction."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Kidney of a Common Harvest Giant"
+        ],
+
+        "supplementaryIngredients": [
+          "Crystalized root of the Tree of Life",
+          "100ml of milk (cow, goat, or other mammal)",
+          "Reproductive organ of a Harvest Giant",
+          "1 fruit of the Tree of Life",
+          "1 Alingjia plant (an aquatic species)"
+        ],
+
+        "potionAppearance": "Golden liquid with a rich grain fragrance."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "Golden liquid full of white bubbles, resembling beer."
+    },
+
+    "6": {
+      "name": "Biologist",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Hybridization and Crossbreeding",
+        "Biological Mutation Inducement",
+        "Toxin Immunity and Synthesis",
+        "Species Evolution Tracking",
+        "Flesh Manipulation Basics"
+      ],
+
+      "actingMethods": [
+        "Experiment with crossbreeding.",
+        "Observe life alterations and adaptations.",
+        "Catalog biological traits and defects.",
+        "Push the boundaries of natural species."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Brain of a Harvest Giant Scholar",
+          "Stomach sac of a Venom-Eating Bat"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of the bat's blood",
+          "Tip of the giant scholar's tongue",
+          "9 eggs or embryos from different creatures",
+          "3 types of biological toxins"
+        ],
+
+        "potionAppearance": "Brown liquid filled with floating fibrous matter."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "Brownish leather covered in wrinkles and strange patterns."
+    },
+
+    "5": {
+      "name": "Druid",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Animal and Plant Transformation",
+        "Nature Communication",
+        "Forest Territory Domain",
+        "Natural Force Amplification",
+        "Beast Mastery"
+      ],
+
+      "actingMethods": [
+        "Live as part of the wild wilderness.",
+        "Protect natural habitats.",
+        "Listen to the voices of plants and animals.",
+        "Maintain the ecological equilibrium."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Head of a Harvest Giant Guardian",
+          "Spine of a Tree Servant"
+        ],
+
+        "supplementaryIngredients": [
+          "150ml of the guardian's blood",
+          "A patch of the Tree Servant's fur",
+          "1 leaf from a century-old oak",
+          "10 drops of perfume that attracts animals"
+        ],
+
+        "potionAppearance": "Brown liquid containing countless green light particles."
+      },
+
+      "ritual": "Understand the living habits and physical structures of various ordinary animals and three extraordinary creatures.",
+
+      "characteristicAppearance": "Brown, soil-like substance."
+    },
+
+    "4": {
+      "name": "Classical Alchemist",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Creation of Homunculi",
+        "Flesh and Blood Reconstitution",
+        "Life Stone Creation",
+        "Biological Mechanism Rearrangement",
+        "Advanced Material Transmutation"
+      ],
+
+      "actingMethods": [
+        "Synthesize artificial life forms.",
+        "Deconstruct the boundaries of mortality.",
+        "Extract the essence of living matter.",
+        "Refine perfection through impure elements."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Life Crystal of a Desolation Servant",
+          "Heart of a Harvest Giant Priest"
+        ],
+
+        "supplementaryIngredients": [
+          "200ml of the priest's blood",
+          "9 hairs of the Desolation Servant",
+          "1 fragmented and lost soul",
+          "100g of flesh from a berserk, out-of-control Beyonder"
+        ],
+
+        "potionAppearance": "Clear liquid resembling the source of life, tainted with a faint dreamy red hue."
+      },
+
+      "ritual": "Personally refine a Life Stone.",
+
+      "characteristicAppearance": "Bright red crystal shimmering with vitality."
+    },
+
+    "3": {
+      "name": "Pallbearer",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Decay and Wither Radiance",
+        "Forced Rest and Sleep Inducement",
+        "Rotting Gaze",
+        "Spiritual Entombment",
+        "Organic Breakdown Control"
+      ],
+
+      "actingMethods": [
+        "Guide the dead back to the soil.",
+        "Accept death as part of nature's loop.",
+        "Bury old eras and dying structures.",
+        "Comfort those facing physical termination."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Heart of a Dark Treant",
+          "Skin of a Harvest Giant Elder"
+        ],
+
+        "supplementaryIngredients": [
+          "200ml of the elder's blood",
+          "1 fruit of the Dark Treant",
+          "A decayed coffin plank",
+          "An offering food",
+          "OR A bouquet used in a memorial"
+        ],
+
+        "potionAppearance": "Dark liquid filled with countless illusory silhouettes."
+      },
+
+      "ritual": "Personally bury a Sequence 3 Beyonder from the Darkness, Death, or Giant pathways, witnessing their entire process from life to death to returning to the earth. (Alternatively, bury a mythical creature of one of those three pathways.)",
+
+      "characteristicAppearance": "Ethereal, weightless shadowy figure."
+    },
+
+    "2": {
+      "name": "Desolate Matriarch",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Mass Creation of Sub-Races",
+        "Absolute Vitality Aura",
+        "Instant Regeneration Inducement",
+        "Famine and Plentifulness Manipulation",
+        "Conceptual Nurturing"
+      ],
+
+      "actingMethods": [
+        "Act as the origin of a lineage.",
+        "Populate empty terrains with your descendants.",
+        "Govern reproduction cycles across populations.",
+        "Provide sustenance while demanding absolute devotion."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Reproductive organ of a Child of Harvest",
+          "OR Heart of a Daughter of Desolation",
+          "OR The Beyonder Characteristic of a Desolate Matriarch"
+        ],
+
+        "supplementaryIngredients": [
+          "300ml of blood from a Child of Harvest",
+          "OR 300ml of blood from a Daughter of Desolation",
+          "10000 souls of beings who died from hunger",
+          "Residue of a desertified oasis",
+          "A limb from a creature with strong vitality and regenerative power"
+        ],
+
+        "potionAppearance": "Brownish-yellow liquid resembling decayed flesh, extremely nauseating."
+      },
+
+      "ritual": "Conceive, give birth to, and nurture an entire race.",
+
+      "characteristicAppearance": "Lump of brown soil sprouting grass, grain, and vines."
+    },
+
+    "1": {
+      "name": "NatureWalker",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Planetary Eco-System Reconstruction",
+        "Interstellar Biological Seeding",
+"Absolute Control of Natural Elements",
+"Global Concept Assimilation",
+"True Life Origin Manifestation"
+],
+"actingMethods": [
+"Infuse dead planets with ecosystems.",
+"Walk through stellar realms leaving traces of life.",
+"Embody the raw forces of planetary development.",
+"Become the structural template for biomes."
+],
+"formula": {
+"mainIngredients": [
+"1 NatureWalker Beyonder Characteristic"
+],
+"supplementaryIngredients": [
+"A flame from the Earth's core",
+"A branch from a millennium-old oak",
+"10 drops of godly blood",
+"100g of newly created gold",
+"100g of soil blessed by one's mother"
+],
+"potionAppearance": "Dense, grass-green liquid brimming with life."
+},
+"ritual": "Create a world devoid of nature or elements, existing only as a concept; completely encompass it, then use it to enter the Astral Realm and consume the potion.",
+"characteristicAppearance": "Crystal cluster composed of red, green, gold, black, and brown hues."
+},
+"0": {
+"name": "Mother",
+"formulaStatus": "FULLY_KNOWN",
+"abilities": [
+"Authority of Fertility and Creation",
+"Omnipresent Conceptual Nourishment",
+"Manipulation of Global Vitality and Extinction",
+"Divine Cycle Rule Execution",
+"Absolute Domain over Organic Matter"
+],
+"actingMethods": [
+"Anchor the biological cycle of reality.",
+"Embody the feminine principal of the universe.",
+"Ensure the continuation of all sentient existence."
+],
+"formula": {
+"mainIngredients": [
+"The Uniqueness of the Mother",
+"3 NatureWalker Beyonder Characteristics"
+],
+"supplementaryIngredients": [
+"A Divine Kingdom with a simple yet complete cycle"
+],
+"potionAppearance": "A blood-colored, nest-like mass covered by a translucent fetal membrane, within which a phantom infant is being nurtured."
+},
+"ritual": "Truly give birth to a god — or achieve the equivalent through mysticism.",
+"characteristicAppearance": "A brown lump of earth filled with grains, grass, trees, mushrooms, and numerous reproductive organs."
+}
+}
+}
+

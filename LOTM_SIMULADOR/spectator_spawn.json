@@ -1,0 +1,294 @@
+[
+  {
+    "monster_id": "mon_adult_manhal_fish",
+    "district_tags": [
+      "TASS_RIVER",
+      "BACKLUND_BRIDGE",
+      "EAST_DISTRICT_CANALS"
+    ],
+    "environment_types": [
+      "DEEP_WATER",
+      "SUBTERRANEAN_RIVER"
+    ],
+    "fog_density_required": "ANY",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_LOW",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_ram_horn_blackfish",
+    "district_tags": [
+      "TASS_RIVER",
+      "DOCK_DISTRICT",
+      "CHERWOOD_BOROUGH_WATERS"
+    ],
+    "environment_types": [
+      "DEEP_WATER",
+      "SUBTERRANEAN_RIVER"
+    ],
+    "fog_density_required": "MODERATE",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_LOW",
+    "requires_spiritual_vision": false
+  },
+  {
+    "monster_id": "mon_seven_colored_lizard_dragon",
+    "district_tags": [
+      "SUBURBAN_WOODS",
+      "MAYER_CEMETERY_OUTSKIRTS",
+      "NORTH_BOROUGH_PARK"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING",
+      "RUINS"
+    ],
+    "fog_density_required": "LOW",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_LOW",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_falsman_rabbit",
+    "district_tags": [
+      "FALSMAN_MEADOWS",
+      "BACKLUND_SUBURBS",
+      "MIDSEASHIRE_BORDER"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "LOW",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_LOW",
+    "requires_spiritual_vision": false
+  },
+  {
+    "monster_id": "mon_mirror_dragon",
+    "district_tags": [
+      "ABANDONED_CRYSTAL_MINE",
+      "EAST_DISTRICT_SEWERS",
+      "HILLSTON_BOROUGH_CATACOMBS"
+    ],
+    "environment_types": [
+      "RUINS",
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "MODERATE",
+    "lunar_phase_alignment": "FULL_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_MODERATE",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_elder_treant",
+    "district_tags": [
+      "ANCIENT_FOREST_PRIMAEVAL",
+      "HORNACIS_FOOTHILLS",
+      "ROYAL_PRESERVE_FORBIDDEN"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "MODERATE",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_LOW",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_young_psychic_dragon",
+    "district_tags": [
+      "ALCHEMISTS_ACADEMY_RUINS",
+      "SPIRIT_WORLD_BORDER_ZONE",
+      "NORTH_BOROUGH_SECLUDED"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING",
+      "FORGOTTEN_ATTIC"
+    ],
+    "fog_density_required": "HEAVY",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_MODERATE",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_black_hunt_giant_lizard",
+    "district_tags": [
+      "HORNACIS_MINING_TUNNELS",
+      "BACKLUND_DEEP_SEWERS",
+      "UNDERGROUND_RUINS_FOURTH_EPOCH"
+    ],
+    "environment_types": [
+      "SEWERS",
+      "RUINS"
+    ],
+    "fog_density_required": "HEAVY",
+    "lunar_phase_alignment": "NEW_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_MODERATE",
+    "requires_spiritual_vision": false
+  },
+  {
+    "monster_id": "mon_hallucination_wind_chime_tree",
+    "district_tags": [
+      "SPIRIT_WORLD_PLATEAU",
+      "ASTRAL_NIGHT_FOREST",
+      "FORGOTTEN_SANCTUARY"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "HEAVY",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_MODERATE",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_dreamcatcher",
+    "district_tags": [
+      "BACKLUND_SLEEPING_QUARTERS",
+      "CHERWOOD_BOROUGH_ATTICS",
+      "SPIRIT_WORLD_DREAM_STRATA"
+    ],
+    "environment_types": [
+      "FORGOTTEN_ATTIC",
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "MODERATE",
+    "lunar_phase_alignment": "NEW_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_HIGH",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_psychic_phantom",
+    "district_tags": [
+      "ROYAL_LIBRARY_BASEMENT",
+      "SAINT_HIERONYMUS_CATACOMBS",
+      "FOURTH_EPOCH_UNIVERSITY_RUINS"
+    ],
+    "environment_types": [
+      "RUINS",
+      "CEMETERY"
+    ],
+    "fog_density_required": "MODERATE",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_HIGH",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_adult_psychic_dragon",
+    "district_tags": [
+      "SPIRIT_WORLD_HIGH_PEAKS",
+      "SANCTUARY_OF_IMAGINATION",
+      "ASTRAL_SEA_ISLAND"
+    ],
+    "environment_types": [
+      "MISTY_PEAK",
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "HEAVY",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_HIGH",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_elderly_psychic_dragon",
+    "district_tags": [
+      "COLLECTIVE_SUBCONSCIOUS_TRENCH",
+      "THRONE_OF_ANKEWELT_REMNANTS"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING",
+      "RUINS"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "BLOOD_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_CRITICAL",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_treant_mentor",
+    "district_tags": [
+      "GARDEN_OF_SUBCONSCIOUS_THOUGHT",
+      "ASTRAL_COUNCIL_GLADE"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "LOW",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_HIGH",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_treant_king",
+    "district_tags": [
+      "HEART_OF_PERPETUAL_NIGHTMARE",
+      "DEEP_SPIRIT_WORLD_ABYSS"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING",
+      "RUINS"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "BLOOD_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_CRITICAL",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_dream_dragon",
+    "district_tags": [
+      "BORDER_OF_REALITY_AND_FANTASY",
+      "DREAM_WEAVERS_SANCTUM"
+    ],
+    "environment_types": [
+      "MISTY_PEAK",
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_CRITICAL",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_ancient_psychic_dragon",
+    "district_tags": [
+      "PINNACLE_OF_DIVINE_IMAGINATION",
+      "MIND_DRAGON_KINGDOM_HEAVENS"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "ANY",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_DIVINE",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_erihog_spawn",
+    "district_tags": [
+      "FOSS_OF_DIVINE_CORRUPTION",
+      "ASTRAL_GRAVEYARD_OF_FALLEN_GODS"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING",
+      "RUINS"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "BLOOD_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_DIVINE",
+    "requires_spiritual_vision": true
+  },
+  {
+    "monster_id": "mon_nightmare_swamp_shadow",
+    "district_tags": [
+      "NIGHTMARE_SWAMP_CORE",
+      "WELL_OF_UNWRITTEN_HISTORY"
+    ],
+    "environment_types": [
+      "SPIRIT_CROSSING"
+    ],
+    "fog_density_required": "SUPERNATURAL_SMOG",
+    "lunar_phase_alignment": "NEW_MOON",
+    "spawn_weight_profile": "PROFILE_CONVERGENCE_DIVINE",
+    "requires_spiritual_vision": true
+  }
+]
+

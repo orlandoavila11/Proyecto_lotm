@@ -1,0 +1,292 @@
+[
+  {
+    "monster_id": "mon_adult_manhal_fish",
+    "archetype_ref": "ARCH_S9_AQUATIC_OBSERVER",
+    "grid_footprint": "FOOTPRINT_1X1",
+    "tactical_ai_profile": "AMBUSHER_FLEE_ON_LOW_HP",
+    "ability_ids": [
+      "ABILITY_MANHAL_ASTRAL_GAZE",
+      "ABILITY_SUBMERGED_FLEE"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "SPIRIT_VISION_ON"
+    }
+  },
+  {
+    "monster_id": "mon_ram_horn_blackfish",
+    "archetype_ref": "ARCH_S9_ELUSIVE_BEAST",
+    "grid_footprint": "FOOTPRINT_1X1",
+    "tactical_ai_profile": "TERRITORIAL_AGGRESSIVE",
+    "ability_ids": [
+      "ABILITY_BLACKFISH_HORN_RAM",
+      "ABILITY_MUDDY_TURBULENCE"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "ALWAYS_VISIBLE"
+    }
+  },
+  {
+    "monster_id": "mon_seven_colored_lizard_dragon",
+    "archetype_ref": "ARCH_S8_ELUSIVE_TELEPATH",
+    "grid_footprint": "FOOTPRINT_1X1",
+    "tactical_ai_profile": "SPIRITUAL_SNIPER",
+    "ability_ids": [
+      "ABILITY_PRISMATIC_MIND_READ",
+      "ABILITY_CHROMATIC_CAMOUFLAGE",
+      "ABILITY_SUBLIMINAL_SUGGESTION"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "SCRUTINY_PASS"
+    }
+  },
+  {
+    "monster_id": "mon_falsman_rabbit",
+    "archetype_ref": "ARCH_S8_ELUSIVE_TELEPATH",
+    "grid_footprint": "FOOTPRINT_1X1",
+    "tactical_ai_profile": "AMBUSHER_FLEE_ON_LOW_HP",
+    "ability_ids": [
+      "ABILITY_ANTICIPATORY_DODGE",
+      "ABILITY_INTENTION_ECHO"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "ALWAYS_VISIBLE"
+    }
+  },
+  {
+    "monster_id": "mon_mirror_dragon",
+    "archetype_ref": "ARCH_S7_PSYCHIC_DISRUPTOR",
+    "grid_footprint": "FOOTPRINT_2X2",
+    "tactical_ai_profile": "SPIRITUAL_SNIPER",
+    "ability_ids": [
+      "ABILITY_MIRROR_REFLECT_TRAUMA",
+      "ABILITY_PSYCHIC_FRENZY_STORM",
+      "ABILITY_PLACATE_SELF"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "ALWAYS_VISIBLE"
+    }
+  },
+  {
+    "monster_id": "mon_elder_treant",
+    "archetype_ref": "ARCH_S7_ELEMENTAL_TREANT",
+    "grid_footprint": "FOOTPRINT_3X3",
+    "tactical_ai_profile": "PUPPETEER_CONTROLLER",
+    "ability_ids": [
+      "ABILITY_PLACATING_SPORES",
+      "ABILITY_ROOT_BIND_SANCTUARY",
+      "ABILITY_SOOTHING_SAP_HEAL"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "ALWAYS_VISIBLE"
+    }
+  },
+  {
+    "monster_id": "mon_young_psychic_dragon",
+    "archetype_ref": "ARCH_S6_HYPNOTIC_STALKER",
+    "grid_footprint": "FOOTPRINT_1X1",
+    "tactical_ai_profile": "SPIRITUAL_SNIPER",
+    "ability_ids": [
+      "ABILITY_PSYCHOLOGICAL_INVISIBILITY",
+      "ABILITY_DEEP_HYPNOSIS_GAZE",
+      "ABILITY_FORCED_SOMNOLENCE"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "SPIRIT_VISION_ON"
+    }
+  },
+  {
+    "monster_id": "mon_black_hunt_giant_lizard",
+    "archetype_ref": "ARCH_S6_SHADOW_SHIFTER",
+    "grid_footprint": "FOOTPRINT_2X2",
+    "tactical_ai_profile": "TERRITORIAL_AGGRESSIVE",
+    "ability_ids": [
+      "ABILITY_PARALYTIC_SONIC_ROAR",
+      "ABILITY_SHADOW_CRUSH_BITE",
+      "ABILITY_DAMPENED_ARMOR_WALL"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "ALWAYS_VISIBLE"
+    }
+  },
+  {
+    "monster_id": "mon_hallucination_wind_chime_tree",
+    "archetype_ref": "ARCH_S6_HYPNOTIC_STALKER",
+    "grid_footprint": "FOOTPRINT_2X2",
+    "tactical_ai_profile": "PUPPETEER_CONTROLLER",
+    "ability_ids": [
+      "ABILITY_CHIME_HARMONIC_CASCADE",
+      "ABILITY_WAKING_DREAM_DELUSION",
+      "ABILITY_VIOLET_MIST_ENTRAPMENT"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "ALWAYS_VISIBLE"
+    }
+  },
+  {
+    "monster_id": "mon_dreamcatcher",
+    "archetype_ref": "ARCH_S5_DREAM_INFILTRATOR",
+    "grid_footprint": "FOOTPRINT_1X1",
+    "tactical_ai_profile": "SPIRITUAL_SNIPER",
+    "ability_ids": [
+      "ABILITY_ASTRAL_THREAD_INTERCEPT",
+      "ABILITY_DREAM_HARVEST_PULSE",
+      "ABILITY_SILVER_SILK_PARALYSIS"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "SPIRIT_VISION_ON"
+    }
+  },
+  {
+    "monster_id": "mon_psychic_phantom",
+    "archetype_ref": "ARCH_S5_DREAM_INFILTRATOR",
+    "grid_footprint": "FOOTPRINT_1X1",
+    "tactical_ai_profile": "SPIRITUAL_SNIPER",
+    "ability_ids": [
+      "ABILITY_CRYSTALLINE_MIND_BLAST",
+      "ABILITY_TELEKINETIC_SHATTER",
+      "ABILITY_SCHOLARLY_OBSESSION_HOWL"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "SPIRIT_VISION_ON"
+    }
+  },
+  {
+    "monster_id": "mon_adult_psychic_dragon",
+    "archetype_ref": "ARCH_S5_PUPPETEER_CONTROLLER",
+    "grid_footprint": "FOOTPRINT_3X3",
+    "tactical_ai_profile": "PUPPETEER_CONTROLLER",
+    "ability_ids": [
+      "ABILITY_DREAM_TRAVERSAL_STRIKE",
+      "ABILITY_PSYCHIC_SOVEREIGN_ROAR",
+      "ABILITY_NIGHTMARE_IMMERSION",
+      "ABILITY_MARBLE_SCALE_BARRIER"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "ALWAYS_VISIBLE"
+    }
+  },
+  {
+    "monster_id": "mon_elderly_psychic_dragon",
+    "archetype_ref": "ARCH_S4_MIND_MANIPULATOR_DEMIGOD",
+    "grid_footprint": "FOOTPRINT_3X3",
+    "tactical_ai_profile": "PUPPETEER_CONTROLLER",
+    "ability_ids": [
+      "ABILITY_COLLECTIVE_SUGGESTION_PULSE",
+      "ABILITY_MENTAL_PLAGUE_CONTAGION",
+      "ABILITY_SUBCONSCIOUS_PUPPETRY",
+      "ABILITY_MASS_HYPNOSIS_DOMAIN"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "FIRST_BLOOD"
+    }
+  },
+  {
+    "monster_id": "mon_treant_mentor",
+    "archetype_ref": "ARCH_S4_MIND_MANIPULATOR_DEMIGOD",
+    "grid_footprint": "FOOTPRINT_3X3",
+    "tactical_ai_profile": "PUPPETEER_CONTROLLER",
+    "ability_ids": [
+      "ABILITY_COLLECTIVE_RESONANCE_DOME",
+      "ABILITY_GOLDEN_LEAF_CALM",
+      "ABILITY_PSYCHIC_RECONFIGURATION",
+      "ABILITY_ANCIENT_WISDOM_OVERWHELM"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "ALWAYS_VISIBLE"
+    }
+  },
+  {
+    "monster_id": "mon_treant_king",
+    "archetype_ref": "ARCH_S3_REALITY_WEAVER_SAINT",
+    "grid_footprint": "FOOTPRINT_3X3",
+    "tactical_ai_profile": "PUPPETEER_CONTROLLER",
+    "ability_ids": [
+      "ABILITY_MATERIALIZE_NIGHTMARE",
+      "ABILITY_THORNY_DESPAIR_CAGE",
+      "ABILITY_EBONY_HEART_PULSE",
+      "ABILITY_DREAM_WEAVING_REALM"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "ALWAYS_VISIBLE"
+    }
+  },
+  {
+    "monster_id": "mon_dream_dragon",
+    "archetype_ref": "ARCH_S3_REALITY_WEAVER_SAINT",
+    "grid_footprint": "FOOTPRINT_3X3",
+    "tactical_ai_profile": "SPIRITUAL_SNIPER",
+    "ability_ids": [
+      "ABILITY_REALITY_WEAVING_DISSOLUTION",
+      "ABILITY_CONSTELLATION_STARLIGHT_BEAM",
+      "ABILITY_CONCEPTUAL_ILLUSION_SHIELD",
+      "ABILITY_SHARED_DREAM_INVOCATION"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "SPIRIT_VISION_ON"
+    }
+  },
+  {
+    "monster_id": "mon_ancient_psychic_dragon",
+    "archetype_ref": "ARCH_S2_DISCERNER_ANGEL",
+    "grid_footprint": "FOOTPRINT_4X4",
+    "tactical_ai_profile": "PUPPETEER_CONTROLLER",
+    "ability_ids": [
+      "ABILITY_TRUTH_VISION_DISINTEGRATION",
+      "ABILITY_CONCEPTUAL_FLAW_DETECTION",
+      "ABILITY_GOLDEN_PUPIL_ABSOLUTE_GAZE",
+      "ABILITY_DIVINE_IMAGINATION_REALITY"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "SPIRIT_VISION_ON"
+    }
+  },
+  {
+    "monster_id": "mon_erihog_spawn",
+    "archetype_ref": "ARCH_S2_DISCERNER_ANGEL",
+    "grid_footprint": "FOOTPRINT_3X3",
+    "tactical_ai_profile": "BERSERKER_CORRUPTOR",
+    "ability_ids": [
+      "ABILITY_CORRUPT_SUBCONSCIOUS_DEVOUR",
+      "ABILITY_WHISPERING_MOUTHS_MADNESS",
+      "ABILITY_BLEEDING_GOLDEN_MIASMA",
+      "ABILITY_DIVINE_FLESH_SURGE"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "ALWAYS_VISIBLE"
+    }
+  },
+  {
+    "monster_id": "mon_nightmare_swamp_shadow",
+    "archetype_ref": "ARCH_S1_AUTHOR_ARCHANGEL",
+    "grid_footprint": "FOOTPRINT_4X4",
+    "tactical_ai_profile": "PUPPETEER_CONTROLLER",
+    "ability_ids": [
+      "ABILITY_REALITY_WRITING_DICTUM",
+      "ABILITY_FATE_DESIGN_INTERVENTION",
+      "ABILITY_CHARACTER_AUTHORING_SEAL",
+      "ABILITY_NIGHTMARE_SWAMP_DROWNING"
+    ],
+    "innate_statuses": [],
+    "opacity_rule": {
+      "hidden_until": "SPIRIT_VISION_ON"
+    }
+  }
+]

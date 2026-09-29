@@ -1,0 +1,488 @@
+/**
+ * EL ALMANAQUE Y LAS CUATRO FRANJAS — PATH TO GODHOOD (BRIEF-10.VISUAL-R4)
+ * Gestión diegética de tiempo: MAÑANA, TARDE, NOCHE, MADRUGADA.
+ * Acciones de franja conectadas al backend (WORK, INVESTIGATE, SOCIALIZE, OPERATE).
+ * El servidor avanza el tiempo; lectura e inspección consumen 0 tiempo.
+ */
+
+import React, { useState, useEffect } from 'react';
+import { ArrowLeft, Sun, Moon, Sunset, Sunrise, Calendar as CalendarIcon, Clock, Bell, CheckCircle, AlertOctagon } from 'lucide-react';
+import type { TimeSlot, DayOfWeek } from '../types';
+import { apiClient, type SanitizedCalendarOutcome } from '../../services/apiClient';
+
+interface CalendarViewProps {
+  onBackToDesk: () => void;
+  characterId?: string;
+  initialDay?: number;
+  initialSlot?: TimeSlot;
+  onActionCompleted?: (outcome: SanitizedCalendarOutcome) => void;
+}
+
+const SLOT_MAP_TO_NAME: Record<number, TimeSlot> = {
+  0: 'MAÑANA',
+  1: 'TARDE',
+  2: 'NOCHE',
+  3: 'MADRUGADA'
+};
+
+const WEEK_DAYS: DayOfWeek[] = ['LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO', 'DOMINGO'];
+
+export const CalendarView: React.FC<CalendarViewProps> = ({ 
+  onBackToDesk, 
+  characterId = 'char_player',
+  initialDay = 1,
+  initialSlot = 'MAÑANA',
+  onActionCompleted
+}) => {
+  const [currentDay, setCurrentDay] = useState<number>(initialDay);
+  const [currentSlot, setCurrentSlot] = useState<TimeSlot>(initialSlot);
+  const [currentDayName, setCurrentDayName] = useState<DayOfWeek>('LUNES');
+  const [selectedAction, setSelectedAction] = useState<'WORK' | 'INVESTIGATE' | 'SOCIALIZE' | 'OPERATE' | null>(null);
+  const [lastActionOutcome, setLastActionOutcome] = useState<string>(
+    'Cumpliste con tu jornada laboral. Tus superiores civiles no tienen motivos de queja.'
+  );
+  const [datedEvent, setDatedEvent] = useState<{ title: string; description: string } | null>(null);
+  const [weeklyTickSummary, setWeeklyTickSummary] = useState<string | null>(null);
+  const [isPending, setIsPending] = useState<boolean>(false);
+
+  // Sincronizar día y franja iniciales recibidos de App
+  useEffect(() => {
+    setCurrentDay(initialDay);
+    const dayIdx = Math.max(0, (initialDay - 1) % 7);
+    setCurrentDayName(WEEK_DAYS[dayIdx]);
+  }, [initialDay]);
+
+  useEffect(() => {
+    setCurrentSlot(initialSlot);
+  }, [initialSlot]);
+
+  // Escuchar Escape para volver al desván
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onBackToDesk();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onBackToDesk]);
+
+  const SLOTS: { slot: TimeSlot; label: string; icon: React.ReactNode; desc: string; hours: string }[] = [
+    { slot: 'MAÑANA', label: 'Mañana', icon: <Sunrise size={18} className="text-[#f59e0b]" />, desc: 'Deberes civiles, empleo formal y apertura de oficinas en Hillston y Cherwood.', hours: '08:00 - 12:00' },
+    { slot: 'TARDE', label: 'Tarde', icon: <Sun size={18} className="text-[#eab308]" />, desc: 'Rondas por la ciudad, visitas a conocidos y pesquisa discreta entre el gentío.', hours: '12:00 - 18:00' },
+    { slot: 'NOCHE', label: 'Noche', icon: <Sunset size={18} className="text-[#f97316]" />, desc: 'Mercados clandestinos, reuniones ocultas y acting en las sombras de Backlund.', hours: '18:00 - 22:00' },
+    { slot: 'MADRUGADA', label: 'Madrugada', icon: <Moon size={18} className="text-[#6366f1]" />, desc: 'El sueño profundo, pesadillas astrales y asimilación de la poción.', hours: '22:00 - 02:00' }
+  ];
+
+  const handlePerformAction = async (actionType: 'WORK' | 'INVESTIGATE' | 'SOCIALIZE' | 'OPERATE') => {
+    if (isPending) return;
+    setIsPending(true);
+    setDatedEvent(null);
+    setWeeklyTickSummary(null);
+    setSelectedAction(null);
+
+    try {
+      // Llamar al endpoint del servidor
+      const outcome = await apiClient.performCalendarAction(characterId, actionType);
+
+      // El servidor avanza el slot autoritativamente
+      const nextSlot = SLOT_MAP_TO_NAME[outcome.slot] || 'TARDE';
+      setCurrentSlot(nextSlot);
+      setCurrentDay(outcome.day);
+
+      // Actualizar día de la semana
+      const dayIdx = (outcome.day - 1) % 7;
+      setCurrentDayName(WEEK_DAYS[dayIdx]);
+
+      setLastActionOutcome(outcome.narrative);
+
+      if (outcome.datedEventTriggered) {
+        setDatedEvent({
+          title: outcome.datedEventTriggered.title,
+          description: outcome.datedEventTriggered.description
+        });
+      }
+
+      if (outcome.weeklyTickExecuted) {
+        setWeeklyTickSummary(
+          `Semana ${outcome.weeklyTickExecuted.weekNumber} culminada: alquiler liquidado, salario civil percibido y rotación del mercado clandestino efectuada.`
+        );
+      }
+
+      if (onActionCompleted) {
+        onActionCompleted(outcome);
+      }
+    } catch (err: any) {
+      setLastActionOutcome(`Fallo de sincronización: la acción no pudo registrarse en el reloj de Backlund (${err.message || 'Error del servidor'}). Tu tiempo permanece intacto.`);
+    } finally {
+      setIsPending(false);
+    }
+  };
+
+  return (
+    <div 
+      className="calendar-screen p-8 flex flex-col justify-between select-none relative overflow-hidden" 
+      style={{ 
+        width: '1920px', 
+        height: '1080px', 
+        position: 'relative', 
+        background: '#12100d',
+        backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(26, 21, 16, 0.9) 0%, rgba(10, 8, 6, 0.98) 100%)'
+      }}
+    >
+      
+      {/* Cabecera del Almanaque */}
+      <header className="flex justify-between items-center pb-4 border-b border-[#382b1d] mb-6">
+        <div className="flex items-center gap-4">
+          <button
+            onClick={onBackToDesk}
+            type="button"
+            className="px-4 py-2 bg-[#171410] border border-[#383024] hover:border-[#8c733e] text-[#d4af37] rounded flex items-center gap-2 text-sm font-serif transition-all lotm-focus-ring"
+          >
+            <ArrowLeft size={16} />
+            Regresar al Buró (Esc)
+          </button>
+          <div>
+            <h1 className="text-xl font-bold tracking-widest text-[#d4af37]" style={{ fontFamily: 'Cinzel' }}>
+              EL ALMANAQUE Y LAS CUATRO FRANJAS
+            </h1>
+            <p className="text-xs text-[#968c7e] italic">
+              Año 1353 de la Quinta Época · Calendario Civil del Reino de Loen
+            </p>
+          </div>
+        </div>
+
+        {/* Día y Franja Actual */}
+        <div className="flex items-center gap-3 bg-[#191714] px-4 py-2 rounded border border-[#383024]">
+          <CalendarIcon size={16} className="text-[#d4af37]" />
+          <span className="text-sm font-serif text-[#e5ded2]">
+            Día {currentDay} ({currentDayName}) · Franja: <strong className="text-[#d4af37]">{currentSlot}</strong>
+          </span>
+        </div>
+      </header>
+
+      {/* Contenido Central a 1920x1080 (880px de altura disponible) */}
+      <div className="grid grid-cols-12 gap-8 flex-1 h-[880px] mb-4 overflow-hidden">
+        
+        {/* Lado Izquierdo: Las Cuatro Franjas del Día (7 / 12) */}
+        <div 
+          className="col-span-7 p-7 rounded-xl flex flex-col justify-start gap-5 overflow-y-auto"
+          style={{
+            backgroundColor: '#16130f',
+            border: '2px solid #3d2f21',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.85), inset 0 0 40px rgba(0,0,0,0.5)'
+          }}
+        >
+          <div>
+            <div className="flex items-center justify-between mb-5 border-b-2 border-[#3d2f21] pb-3">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <Clock size={20} className="text-[#d4af37]" />
+                  <h2 className="font-serif font-bold text-lg text-[#f5ebd9]" style={{ fontFamily: 'Cinzel' }}>
+                    El Reloj Victoriano de la Jornada
+                  </h2>
+                </div>
+                <p className="text-xs text-[#968c7e] italic font-serif">
+                  Distribución civil de las cuatro franjas horarias de Backlund
+                </p>
+              </div>
+              <img 
+                src="/art/GFX19_pocket_watch.jpg" 
+                alt="Reloj de Faltriquera de Latón" 
+                className="w-16 h-16 object-contain rounded-full border-2 border-[#8c733e] shadow-xl bg-[#0b0907] p-1" 
+              />
+            </div>
+
+            <div className="space-y-3.5 mb-5">
+              {SLOTS.map((s) => {
+                const isCurrent = s.slot === currentSlot;
+                return (
+                  <div
+                    key={s.slot}
+                    className="p-4 rounded-xl border-2 transition-all flex items-start gap-4 shadow-md"
+                    style={{
+                      backgroundColor: isCurrent ? '#281e13' : '#120f0c',
+                      borderColor: isCurrent ? '#d4af37' : '#2d2419',
+                      boxShadow: isCurrent ? '0 0 25px rgba(212,175,55,0.25)' : 'none'
+                    }}
+                  >
+                    <div className="mt-1 p-2 rounded-lg bg-[#1a140f] border border-[#3d2e1d]">{s.icon}</div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="font-serif font-bold text-base text-[#f5ebd9]">
+                          {s.label} <span className="text-xs text-[#8c733e] font-normal font-sans ml-2">({s.hours})</span>
+                        </span>
+                        {isCurrent && (
+                          <span className="text-xs px-2.5 py-0.5 rounded bg-[#3d2e1b] text-[#fef08a] border border-[#d4af37] font-serif font-bold tracking-wider uppercase shadow-sm">
+                            Franja en Curso
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs text-[#b8ab96] leading-relaxed font-serif">
+                        {s.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div 
+            className="p-4 rounded-xl text-[#1f1a14] shadow-lg text-xs italic font-serif leading-relaxed border border-[#8c733e]"
+            style={{
+              backgroundColor: '#ebdcc4',
+              boxShadow: 'inset 0 0 25px rgba(140,115,62,0.2)'
+            }}
+          >
+            "En Backlund, el tiempo no espera a los hombres ni a los monstruos. Cada hora consagrada a lo sobrenatural es una hora robada al deber civil."
+          </div>
+        </div>
+
+        {/* Lado Derecho: Acciones de Coartada y Eventos Fechados (5 / 12) */}
+        <div className="col-span-5 flex flex-col gap-6 overflow-y-auto">
+          
+          {/* Panel de Selección de Acción */}
+          <div 
+            className="p-6 rounded-xl flex flex-col gap-4"
+            style={{
+              backgroundColor: '#16130f',
+              border: '2px solid #3d2f21',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.85), inset 0 0 40px rgba(0,0,0,0.5)'
+            }}
+          >
+            <div>
+              <div className="flex items-center justify-between mb-5 border-b-2 border-[#3d2f21] pb-3">
+                <div>
+                  <h3 className="font-serif font-bold text-base text-[#d4af37]" style={{ fontFamily: 'Cinzel' }}>
+                    Decidir el Empleo de la Franja ({currentSlot})
+                  </h3>
+                  <span className="text-xs text-[#968c7e] italic font-serif">
+                    Construir coartadas y gestionar sospechas
+                  </span>
+                </div>
+                <img 
+                  src="/art/GFX18_victorian_almanac_v2.jpg" 
+                  alt="Almanaque Victoriano de Backlund" 
+                  className="w-16 h-16 object-cover rounded-xl border-2 border-[#8c733e] shadow-xl" 
+                />
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 mb-5">
+                <button
+                  type="button"
+                  disabled={isPending}
+                  onClick={() => setSelectedAction('WORK')}
+                  className={`p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2 cursor-pointer ${
+                    selectedAction === 'WORK'
+                      ? 'bg-[#291e13] border-[#d4af37] shadow-lg'
+                      : 'bg-[#1c1712] border-[#3d2e1d] hover:border-[#8c733e]'
+                  }`}
+                >
+                  <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
+                    Atender el Empleo Civil
+                  </span>
+                  <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
+                    Cumples con el deber legal, aseguras el jornal semanal y disuelves la sospecha pública.
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  disabled={isPending}
+                  onClick={() => setSelectedAction('INVESTIGATE')}
+                  className={`p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2 cursor-pointer ${
+                    selectedAction === 'INVESTIGATE'
+                      ? 'bg-[#291e13] border-[#d4af37] shadow-lg'
+                      : 'bg-[#1c1712] border-[#3d2e1d] hover:border-[#8c733e]'
+                  }`}
+                >
+                  <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
+                    Indagar en los Callejones
+                  </span>
+                  <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
+                    Buscas confidentes y cotejas pistas de tu caso activo bajo la niebla de Backlund.
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  disabled={isPending}
+                  onClick={() => setSelectedAction('SOCIALIZE')}
+                  className={`p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2 cursor-pointer ${
+                    selectedAction === 'SOCIALIZE'
+                      ? 'bg-[#291e13] border-[#d4af37] shadow-lg'
+                      : 'bg-[#1c1712] border-[#3d2e1d] hover:border-[#8c733e]'
+                  }`}
+                >
+                  <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
+                    Vínculos Civiles y Taberna
+                  </span>
+                  <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
+                    Compartes con vecinos o allegados, cuidando las anclas que preservan tu juicio.
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  disabled={isPending}
+                  onClick={() => setSelectedAction('OPERATE')}
+                  className={`p-4 rounded-xl text-left transition-all group lotm-focus-ring border-2 cursor-pointer ${
+                    selectedAction === 'OPERATE'
+                      ? 'bg-[#291e13] border-[#d4af37] shadow-lg'
+                      : 'bg-[#1c1712] border-[#3d2e1d] hover:border-[#8c733e]'
+                  }`}
+                >
+                  <span className="font-serif font-bold text-xs text-[#f5ebd9] group-hover:text-[#d4af37] block mb-1">
+                    Reclusión Arcana en el Desván
+                  </span>
+                  <span className="text-[11px] text-[#968c7e] italic block leading-relaxed font-serif">
+                    Atrancas la puerta, meditas sobre los principios y atiendes asuntos de tu Vía.
+                  </span>
+                </button>
+              </div>
+
+              {/* Previsualización de Costes y Confirmación */}
+              {selectedAction && (
+                <div 
+                  className="p-4 rounded-xl border-2 mb-4 bg-[#1f1811] border-[#8c733e] text-xs font-serif shadow-xl"
+                >
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-bold text-[#d4af37] uppercase tracking-wider text-[11px]">
+                      Previsualización de Compromiso ({selectedAction})
+                    </span>
+                    <span className="text-[#e5ded2] bg-[#2a1d12] px-2 py-0.5 rounded border border-[#5e4326] text-[10px]">
+                      Coste: 1 Franja ({currentSlot})
+                    </span>
+                  </div>
+                  <p className="text-[#ded5c5] italic leading-relaxed mb-4">
+                    {selectedAction === 'WORK' && "Atender el empleo civil consume la franja actual. Consecuencias: coartada legal ante vecinos y autoridades, mitigación de sospechas y cómputo de asistencia para el jornal semanal."}
+                    {selectedAction === 'INVESTIGATE' && "Indagar en los callejones consume la franja actual. Consecuencias: cotejo de informantes, rastreo de huellas y avance de pesquisas bajo la niebla."}
+                    {selectedAction === 'SOCIALIZE' && "Frecuentar a vecinos y conocidos consume la franja actual. Consecuencias: cuidado directo de tus anclas humanas y fortalecimiento del juicio frente a la marea sobrenatural."}
+                    {selectedAction === 'OPERATE' && "Recluirse en soledad consume la franja actual. Consecuencias: tiempo consagrado al estudio de fórmulas, meditación de principios y asuntos del Desván."}
+                  </p>
+                  <div className="flex justify-end gap-3">
+                    <button
+                      type="button"
+                      disabled={isPending}
+                      onClick={() => setSelectedAction(null)}
+                      className="px-4 py-1.5 rounded border border-[#5e4326] text-[#b8a68d] hover:bg-[#2b2116] transition-colors text-xs cursor-pointer"
+                    >
+                      Cancelar
+                    </button>
+                    <button
+                      type="button"
+                      disabled={isPending}
+                      onClick={() => handlePerformAction(selectedAction)}
+                      className="crimson-btn px-5 py-1.5 text-xs uppercase tracking-wider font-bold cursor-pointer"
+                    >
+                      {isPending ? 'Registrando en el Reloj...' : `Confirmar Empleo de Franja (${currentSlot})`}
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Resultado de la Última Acción */}
+              <div 
+                className="p-4 rounded-xl border text-xs text-[#ded5c5] italic font-serif leading-relaxed"
+                style={{
+                  backgroundColor: '#120f0c',
+                  borderColor: '#2e251a'
+                }}
+              >
+                <span className="text-[#d4af37] font-serif font-bold block not-italic mb-1">
+                  Acontecido en la franja:
+                </span>
+                "{lastActionOutcome}"
+              </div>
+
+              {/* Evento Fechado Disparado */}
+              {datedEvent && (
+                <div 
+                  className="mt-4 p-4 border rounded-xl text-xs font-serif leading-relaxed shadow-md"
+                  style={{
+                    backgroundColor: '#261b12',
+                    borderColor: '#8c733e',
+                    color: '#f5ebd9'
+                  }}
+                >
+                  <span className="font-bold text-[#d4af37] block mb-1 flex items-center gap-1.5">
+                    <Bell size={14} />
+                    {datedEvent.title}
+                  </span>
+                  "{datedEvent.description}"
+                </div>
+              )}
+
+              {/* Resumen de Ciclo Semanal */}
+              {weeklyTickSummary && (
+                <div 
+                  className="mt-4 p-4 border rounded-xl text-xs font-serif leading-relaxed shadow-md"
+                  style={{
+                    backgroundColor: '#1b2615',
+                    borderColor: '#4a7238',
+                    color: '#d4ebd0'
+                  }}
+                >
+                  <span className="font-bold text-[#8bc34a] block mb-1 flex items-center gap-1.5">
+                    <CheckCircle size={14} />
+                    Ciclo Semanal Concluido
+                  </span>
+                  "{weeklyTickSummary}"
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Citas y Ciclos Ineludibles */}
+          <div 
+            className="p-6 rounded-xl"
+            style={{
+              backgroundColor: '#16130f',
+              border: '2px solid #3d2f21',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.85)'
+            }}
+          >
+            <h3 className="font-serif font-bold text-xs text-[#8c733e] uppercase tracking-wider mb-3">
+              Citas y Ciclos Ineludibles en Backlund
+            </h3>
+            <div className="space-y-2.5 text-xs text-[#c4b59a] font-serif">
+              <div 
+                className="p-3 rounded-lg border flex justify-between items-center"
+                style={{ backgroundColor: '#13100d', borderColor: '#2b2216' }}
+              >
+                <span className="text-[#e5ded2]">Lunes (Mañana): Cobro del Alquiler Semanal</span>
+                <span className="text-[#8c733e] italic">La casera llamará a tu puerta</span>
+              </div>
+              <div 
+                className="p-3 rounded-lg border flex justify-between items-center"
+                style={{ backgroundColor: '#13100d', borderColor: '#2b2216' }}
+              >
+                <span className="text-[#e5ded2]">Domingo (Mañana): Sermón de la Iglesia Local</span>
+                <span className="text-[#8c733e] italic">Obligación moral del vecindario</span>
+              </div>
+              <div 
+                className="p-3 rounded-lg border flex justify-between items-center"
+                style={{ backgroundColor: '#13100d', borderColor: '#2b2216' }}
+              >
+                <span className="text-[#e5ded2]">Día 15 (Medianoche): Noche de Luna Llena</span>
+                <span className="text-[#e06666] italic flex items-center gap-1">
+                  <AlertOctagon size={12} />
+                  La marea astral agita la sangre
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <footer className="text-xs text-[#6e6353] italic text-center border-t border-[#221c14] pt-3 font-serif">
+        El silbato de las fábricas anuncia el cambio de turno en los muelles de Backlund.
+      </footer>
+
+    </div>
+  );
+};

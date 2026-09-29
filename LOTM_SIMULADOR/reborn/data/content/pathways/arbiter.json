@@ -1,0 +1,395 @@
+{
+  "pathway": "JUSTICIAR",
+  "displayName": "Arbiter Pathway",
+
+  "mythicalCreatureForm": "A gigantic brass pillar inscribed with countless rules.",
+
+  "sequences": {
+
+    "9": {
+      "name": "Arbiter",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Enhanced Physical Combat",
+        "Natural Authority Aura",
+        "Rules Enforcement",
+        "Discipline Maintenance",
+        "Persuasion Amplification"
+      ],
+
+      "actingMethods": [
+        "Uphold order and rules.",
+        "Mediate disputes impartially.",
+        "Establish authority among peers.",
+        "Maintain absolute personal discipline."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Facial skin of a White-Maned Hunter",
+          "3 tail feathers of a Crowned Falcon"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of White-Maned Hunter blood",
+          "1 talon of a Crowned Falcon",
+          "1 green olive",
+          "1g of gold"
+        ],
+
+        "potionAppearance": "A brownish-yellow liquid with black specks rising and sinking within it."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A brownish-yellow stone slab covered in black patterns."
+    },
+
+    "8": {
+      "name": "Sheriff",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Enhanced Danger Perception",
+        "Criminal Investigation Mastery",
+        "Target Locking and Tracking",
+        "Physical Strength Amplification",
+        "Crowd Control Aura"
+      ],
+
+      "actingMethods": [
+        "Enforce official regulations.",
+        "Hunt down lawbreakers.",
+        "Protect local jurisdiction order.",
+        "Exert administrative power responsibly."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "A pair of eyes from a Terror Demon Worm",
+          "Right paw of a Silver-White War Bear"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of Silver-White War Bear blood",
+          "20ml of Terror Demon Worm fluid",
+          "1 appointment document for a Sheriff or similar position",
+          "10 drops of ground-cherry essential oil"
+        ],
+
+        "potionAppearance": "A liquid interwoven with iron-black, dark red, and silver-white colors."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A fist-sized condensed mass composed of 3 colors, with iron-black and dark red entwined around large patches of silver-white."
+    },
+
+    "7": {
+      "name": "Interrogator",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Mental Pressuring and Coercion",
+        "Truth Detection",
+        "Pain Inducement",
+        "Psychological Weakness Exploitation",
+        "Spiritual Interrogation Mastery"
+      ],
+
+      "actingMethods": [
+        "Extract secrets through authority.",
+        "Break the psychological defense of targets.",
+        "Uncover hidden truths relentlessly.",
+        "Apply calculated pressure to induce compliance."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Horn of a Flash-Pattern Black Serpent",
+          "Dust of a Lake Spirit"
+        ],
+
+        "supplementaryIngredients": [
+          "90ml of Flash-Pattern Black Serpent blood",
+          "10g of a Lake Spirit's symbiotic material",
+          "1 piece of wood scorched by lightning",
+          "1 piece of tourmaline"
+        ],
+
+        "potionAppearance": "A light blue semi-transparent liquid occasionally streaked with silver-white flashes."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A light blue translucent hexagonal prism, with faint streaks of light flickering inside like lightning from the depths of consciousness."
+    },
+
+    "6": {
+      "name": "Judge",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Prohibition Announcement",
+        "Verdict Proninement",
+        "Legal Binding Creation",
+        "Punishment Execution Amplification",
+        "Mystical Sentence Imposition"
+      ],
+
+      "actingMethods": [
+        "Pass definitive judgments.",
+        "Define boundaries of lawful behavior.",
+        "Enforce rules without personal bias.",
+        "Preside over structured legal frameworks."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Scalp of a Black Domain Lord",
+          "Tail of a Patterned Giant Tiger"
+        ],
+
+        "supplementaryIngredients": [
+          "120ml of Black Domain Lord blood",
+          "2 teeth of a Patterned Giant Tiger",
+          "1 gavel used in a court for over 10 years",
+          "1 yellow Undying Flower"
+        ],
+
+        "potionAppearance": "A black liquid pierced vertically by pillar-like brass columns."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A transparent branch alternating segment by segment between black and brass."
+    },
+
+    "5": {
+      "name": "Disciplinary Paladin",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Absolute Law Enforcement Domain",
+        "Physical Law Imposition",
+        "Counter-Beyonder Skill Nullification",
+        "Vengeful Aura Generation",
+        "Unyielding Combat Mastery"
+      ],
+
+      "actingMethods": [
+        "Hunt dangerous fugitives solo.",
+        "Execute definitive criminal verdicts.",
+        "Enforce disciplinary actions with physical force.",
+        "Become the ultimate shield of societal order."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Heart of a Metallic Giant Ape",
+          "Forehead spike of a Vengeful Stone Spirit"
+        ],
+
+        "supplementaryIngredients": [
+          "80ml of pus from a Metallic Giant Ape",
+          "20g of fragments shed by a Vengeful Stone Spirit",
+          "1 tail of a black lamb",
+          "13 drops of dill essential oil"
+        ],
+
+        "potionAppearance": "A black liquid that appears frozen into outward-pointing spikes."
+      },
+
+      "ritual": "Select a wanted criminal of at least Sequence 5, confirm their crimes, then track, lock onto, and execute them alone.",
+
+      "characteristicAppearance": "A black stone shaped like a heart, covered in spikes."
+    },
+
+    "4": {
+      "name": "Imperative Mage",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Dictation of Localized Absolute Laws",
+        "Forced Universal Behavioral Restraints",
+        "Spatial Boundary Prohibition",
+        "Edict Magnification",
+        "Temporal Regulation Basics"
+      ],
+
+      "actingMethods": [
+        "Draft systemic societal frameworks.",
+        "Enact innovative codes of conduct.",
+        "Enforce structural penalties upon populations.",
+        "Manifest abstract legal will into reality."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Crystal of a Brass Chronometer Wraith",
+          "Stone tooth of a Masked Elf"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of Masked Elf blood",
+          "10g of rust sediment from a Brass Chronometer Wraith",
+          "The original main legal code of the current nation",
+          "10 drops of mandrake hydrosol"
+        ],
+
+        "potionAppearance": "A crystalline, translucent copper-colored liquid covered with a gray-white upper layer."
+      },
+
+      "ritual": "Establish a law that differs from but does not conflict with existing statutes. Have it passed through the nation's legislative process and officially enacted. Once 10000 violators have suffered punishment under this law, consume the potion.",
+
+      "characteristicAppearance": "A copper rhombohedral crystal marked with faint gray-white blotches."
+    },
+
+    "3": {
+      "name": "Chaos Hunter",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Eradication of Spatial Instability",
+        "Annihilation of Mystical Chaos",
+        "Forced Order Restoration Fields",
+        "Concept Correction Radiance",
+        "Deific Entity Containment"
+      ],
+
+      "actingMethods": [
+        "Neutralize macro-level spiritual hazards.",
+        "Settle chaotic celestial manifestations.",
+        "Enforce balance across volatile regions.",
+        "Minimize systematic damage during containment."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Palm of a Brass Elf",
+          "Tongue of a Nature Guardian"
+        ],
+
+        "supplementaryIngredients": [
+          "120ml of Nature Guardian blood",
+          "10 strands of Brass Elf hair",
+          "1 portion of a demigod corpse personally hunted",
+          "30g of wood shavings from a gallows that has executed at least 1000 criminals"
+        ],
+
+        "potionAppearance": "A brass-colored liquid within which mercury-like characters intertwine into pillar-like forms."
+      },
+
+      "ritual": "Single-handedly resolve a mystical incident involving at least Angel-level forces, restoring normal order to the affected region. The fewer casualties and losses, the better the ritual's effect.",
+
+      "characteristicAppearance": "A fist-sized cubic brass crystal inscribed with numerous mysterious symbols."
+    },
+
+    "2": {
+      "name": "Balancer",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Macro-System Equilibrium Enforcement",
+        "Weight and Value Redistribution",
+        "Counter-Entropy Execution",
+        "Global Order Matrix Alignment",
+        "Symmetrical Reality Restructuring"
+      ],
+
+      "actingMethods": [
+        "Resolve geopolitical structural collapses.",
+        "Broker deep century-long peace treaties.",
+        "Establish global socio-political stability.",
+        "Keep conflicting macro-forces in check."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Beyonder characteristic of the God of Law",
+          "OR Beyonder characteristic of the Island-Bearing Turtle",
+          "OR A Balancer Beyonder characteristic"
+        ],
+
+        "supplementaryIngredients": [
+"150ml of blood from the corresponding Angel or subordinate god",
+"1 object that only praises the Sun",
+"1 strand of aura from the Abyss of the Heart that tempts corruption",
+"150g of contaminant originating from the Duke of Entropy or related entities"
+],
+"potionAppearance": "A perfectly symmetrical liquid, half black and half brass."
+},
+"ritual": "End the turmoil across an entire continent and bring the various factions into a balance capable of lasting at least 100 years. The ritual performer need not dominate events but must play a crucial role.",
+"characteristicAppearance": "A black-and-yellow tortoise shell marked with strange cracks."
+},
+"1": {
+"name": "Hand of Order",
+"formulaStatus": "FULLY_KNOWN",
+"abilities": [
+"Absolute Domination Over Planetary Guidelines",
+"Sovereign Legal Blueprint Instantiation",
+"Eradication of Universal Contradictions",
+"Imposition of Permanent Structural Frameworks",
+"Complete Suppression of Rule Breakers"
+],
+"actingMethods": [
+"Establish complete national sovereign matrices.",
+"Anchor populations under a singular legal will.",
+"Maintain unbroken ancestral institutional rules.",
+"Neutralize historical anomalies across decades."
+],
+"formula": {
+"mainIngredients": [
+"1 Hand of Order Beyonder characteristic"
+],
+"supplementaryIngredients": [
+"A legal code unchanged for over 300 years",
+"9000 portions of blood from Order Breakers",
+"9 abolished laws that violated normal principles",
+"100g of contamination caused by the fall of a True God"
+],
+"potionAppearance": "A pure, clear, flawless brass-colored liquid."
+},
+"ritual": "Establish a nation with a population of at least 10000000, making your will the order of that nation—a strict and complete rule system. Or achieve an equivalent effect by controlling a nation of at least 50000000 people and making your will its order. The more numerous and higher-sequence the Beyonders among the population, the fewer total people required—but never fewer than 1000000.",
+"characteristicAppearance": "A tightly clenched brass fist with distinct knuckles."
+},
+"0": {
+"name": "Justiciar",
+"formulaStatus": "FULLY_KNOWN",
+"abilities": [
+"Authority of Supreme Justice and Order Formulation",
+"Universal Declaration of Omnipotent Laws",
+"Deific Verdict Enforcement and Sentence Execution",
+"Absolute Matrix Overwrite of Alternate Realities",
+"Imposition of Cosmic Order Foundations"
+],
+"actingMethods": [
+"Anchor the ultimate lawful blueprint of reality.",
+"Embody the absolute standard of structural justice.",
+"Ensure the execution of universal deific decrees."
+],
+"formula": {
+"mainIngredients": [
+"The Justiciar Uniqueness",
+"3 Hand of Order Beyonder characteristics"
+],
+"supplementaryIngredients": [
+"An alternate dimension where all original rules have been completely replaced by your own order"
+],
+"potionAppearance": "A spherical illusory world supported by towering brass pillars."
+},
+"ritual": "Pass a sufficiently just judgment on a major incident involving a True God—one that conforms to the rules you previously established—and ensure the verdict is truly carried out. Then consume the potion.",
+"characteristicAppearance": "A book formed from condensed brass."
+}
+}
+}
+

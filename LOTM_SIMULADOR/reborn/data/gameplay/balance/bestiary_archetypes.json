@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BestiaryArchetypes",
+  "description": "Tabla global de balance centralizado para arquetipos de combate de monstruos (Path to Godhood v4.0). Ningún monstruo define estadísticas numéricas individuales.",
+  "archetypes": {
+    "ARCH_S9_AQUATIC_OBSERVER": {
+      "sequence": 9,
+      "base_hp": 35,
+      "base_spirituality": 25,
+      "action_points": 3,
+      "turn_speed": 7,
+      "defense_bracket": "FRAGILE",
+      "mental_resistance_tier": "STABLE"
+    },
+    "ARCH_S9_ELUSIVE_BEAST": {
+      "sequence": 9,
+      "base_hp": 40,
+      "base_spirituality": 20,
+      "action_points": 3,
+      "turn_speed": 8,
+      "defense_bracket": "NORMAL",
+      "mental_resistance_tier": "VULNERABLE"
+    },
+    "ARCH_S8_ELUSIVE_TELEPATH": {
+      "sequence": 8,
+      "base_hp": 65,
+      "base_spirituality": 55,
+      "action_points": 3,
+      "turn_speed": 10,
+      "defense_bracket": "FRAGILE",
+      "mental_resistance_tier": "STABLE"
+    },
+    "ARCH_S8_ACROBATIC_SKIRMISHER": {
+      "sequence": 8,
+      "base_hp": 75,
+      "base_spirituality": 45,
+      "action_points": 4,
+      "turn_speed": 12,
+      "defense_bracket": "NORMAL",
+      "mental_resistance_tier": "VULNERABLE"
+    },
+    "ARCH_S7_PSYCHIC_DISRUPTOR": {
+      "sequence": 7,
+      "base_hp": 110,
+      "base_spirituality": 120,
+      "action_points": 3,
+      "turn_speed": 9,
+      "defense_bracket": "NORMAL",
+      "mental_resistance_tier": "IRONCLAD"
+    },
+    "ARCH_S7_ELEMENTAL_TREANT": {
+      "sequence": 7,
+      "base_hp": 160,
+      "base_spirituality": 80,
+      "action_points": 3,
+      "turn_speed": 6,
+      "defense_bracket": "ARMORED",
+      "mental_resistance_tier": "STABLE"
+    },
+    "ARCH_S6_HYPNOTIC_STALKER": {
+      "sequence": 6,
+      "base_hp": 180,
+      "base_spirituality": 210,
+      "action_points": 4,
+      "turn_speed": 11,
+      "defense_bracket": "ETHEREAL",
+      "mental_resistance_tier": "IRONCLAD"
+    },
+    "ARCH_S6_SHADOW_SHIFTER": {
+      "sequence": 6,
+      "base_hp": 195,
+      "base_spirituality": 180,
+      "action_points": 4,
+      "turn_speed": 13,
+      "defense_bracket": "NORMAL",
+      "mental_resistance_tier": "STABLE"
+    },
+    "ARCH_S5_DREAM_INFILTRATOR": {
+      "sequence": 5,
+      "base_hp": 320,
+      "base_spirituality": 400,
+      "action_points": 4,
+      "turn_speed": 12,
+      "defense_bracket": "ETHEREAL",
+      "mental_resistance_tier": "IRONCLAD"
+    },
+    "ARCH_S5_PUPPETEER_CONTROLLER": {
+      "sequence": 5,
+      "base_hp": 300,
+      "base_spirituality": 420,
+      "action_points": 4,
+      "turn_speed": 10,
+      "defense_bracket": "NORMAL",
+      "mental_resistance_tier": "IRONCLAD"
+    },
+    "ARCH_S4_MIND_MANIPULATOR_DEMIGOD": {
+      "sequence": 4,
+      "base_hp": 650,
+      "base_spirituality": 900,
+      "action_points": 5,
+      "turn_speed": 14,
+      "defense_bracket": "ETHEREAL",
+      "mental_resistance_tier": "INHUMAN"
+    },
+    "ARCH_S4_BIZARRO_SORCERER_DEMIGOD": {
+      "sequence": 4,
+      "base_hp": 580,
+      "base_spirituality": 950,
+      "action_points": 5,
+      "turn_speed": 15,
+      "defense_bracket": "UNTOUCHABLE",
+      "mental_resistance_tier": "INHUMAN"
+    },
+    "ARCH_S3_REALITY_WEAVER_SAINT": {
+      "sequence": 3,
+      "base_hp": 1200,
+      "base_spirituality": 1800,
+      "action_points": 5,
+      "turn_speed": 16,
+      "defense_bracket": "ETHEREAL",
+      "mental_resistance_tier": "INHUMAN"
+    },
+    "ARCH_S3_SCHOLAR_OF_YORE_SAINT": {
+      "sequence": 3,
+      "base_hp": 1100,
+      "base_spirituality": 1900,
+      "action_points": 5,
+      "turn_speed": 15,
+      "defense_bracket": "UNTOUCHABLE",
+      "mental_resistance_tier": "INHUMAN"
+    },
+    "ARCH_S2_DISCERNER_ANGEL": {
+      "sequence": 2,
+      "base_hp": 2500,
+      "base_spirituality": 4000,
+      "action_points": 6,
+      "turn_speed": 18,
+      "defense_bracket": "UNTOUCHABLE",
+      "mental_resistance_tier": "INHUMAN"
+    },
+    "ARCH_S2_MIRACLE_INVOKER_ANGEL": {
+      "sequence": 2,
+      "base_hp": 2400,
+      "base_spirituality": 4200,
+      "action_points": 6,
+      "turn_speed": 18,
+      "defense_bracket": "UNTOUCHABLE",
+      "mental_resistance_tier": "INHUMAN"
+    },
+    "ARCH_S1_AUTHOR_ARCHANGEL": {
+      "sequence": 1,
+      "base_hp": 5500,
+      "base_spirituality": 9000,
+      "action_points": 6,
+      "turn_speed": 20,
+      "defense_bracket": "UNTOUCHABLE",
+      "mental_resistance_tier": "INHUMAN"
+    },
+    "ARCH_S1_ATTENDANT_OF_MYSTERIES_ARCHANGEL": {
+      "sequence": 1,
+      "base_hp": 5200,
+      "base_spirituality": 9500,
+      "action_points": 6,
+      "turn_speed": 20,
+      "defense_bracket": "UNTOUCHABLE",
+      "mental_resistance_tier": "INHUMAN"
+    }
+  }
+}
+

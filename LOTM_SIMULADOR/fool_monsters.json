@@ -1,0 +1,707 @@
+[
+  {
+    "id": "mon_lavos_squid",
+    "name": "Calamar de Lavos",
+    "pathway": "FOOL",
+    "sequence": 9,
+    "classification": {
+      "category": "Criatura Extraordinaria",
+      "nature": "Entidad anfibia del Mundo Espiritual y aguas profundas",
+      "danger_rank": "Peligro Bajo (Rango Secuencia 9)"
+    },
+    "lore": {
+      "short_description": "Cefalópodo espiritual de tonalidad celeste translúcida y bioluminiscencia fría que habita en confluencias acuáticas aisladas.",
+      "long_description": "El Calamar de Lavos es una criatura biológica nativa del Mundo Espiritual que ocasionalmente se filtra a las aguas profundas del mundo real. Conserva una afinidad innata con el velo astral sin haber caído en la locura frenética de las secuencias superiores. Documentado desde la Cuarta Época por botánicos arcanos y boticarios clandestinos, es la fuente primaria del extracto espiritual necesario para abrir de manera controlada la percepción extrasensorial de los iniciados de la Vía del Loco.",
+      "habitat": "Ríos subterráneos bajo cadenas montañosas como la cordillera Hornacis, lagos cavernosos aislados de la luz solar y zonas liminales de niebla densa donde el Mundo Espiritual se superpone a las corrientes acuáticas.",
+      "pathway_relation": "Representa los principios embrionarios de la Secuencia 9 (Vidente): visión espiritual e intuición de peligro. Su organismo canaliza espiritualidad sutil que permite a un ser humano percibir auras y consultar el destino sin que su mente sea desgarrada por los murmullos del plano astral."
+    },
+    "appearance": {
+      "description": "Cuerpo translúcido de consistencia gelatinosa densa, con un manto alargado que oscila entre el blanco lechoso y un azul cielo tenue. Impulsos luminosos azul cobalto recorren su sistema nervioso visible.",
+      "eyes": "Ojos globulares de color índigo profundo con pupilas estrelladas que parecen no enfocar la materia física, sino las auras astrales de los seres vivos.",
+      "tentacles": "Ocho tentáculos prensiles y dos filamentos sensitivos de longitud extendida provistos de ventosas nacaradas de las que gotean diminutas vesículas de líquido brillante.",
+      "scale": "Cincuenta a ochenta centímetros de envergadura total en estado adulto."
+    },
+    "evidence": {
+      "behavior": "Extremadamente cauteloso, pasivo y evasivo. Posee una intuición pasiva que le advierte de intenciones hostiles antes de que se manifiesten físicamente, buscando refugio en grietas de roca antes de ser detectado. Si se siente acorralado, expulsa una nube de tinta azulada cargada de espiritualidad que nubla la visión astral, induce desorientación sensorial y enmascara su rastro místico.",
+      "sensory_traces": "Aroma frío similar a la menta silvestre y el ozono en las superficies donde reposa; estelas de vapor celeste sobre el agua que tardan minutos en disiparse; leve sensación de hormigueo en el entrecejo de quienes se aproximan a su escondite."
+    },
+    "drops": {
+      "main_ingredient": "10 ml de Sangre de Calamar de Lavos (Fluido azul cielo gelatinoso que desprende burbujas ilusorias conectadas al Mundo Espiritual; ingrediente principal para la poción de Vidente)",
+      "secondary_ingredients": [
+        "Vesícula de tinta azul etérea (usada como estabilizador para pociones de adivinación y tinta de ritual)",
+        "Filamentos sensitivos desecados (empleados en péndulos de radiestesia y amuletos de intuición)",
+        "Membrana ocular cristalina (catalizador en ungüentos de visión espiritual)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Vidente (Secuencia 9), en caso de tratarse de un espécimen que haya completado la asimilación natural de la característica."
+    },
+    "art_direction": {
+      "visual_tone": "Etéreo, misterioso, sereno y sutilmente perturbador; evoca un espécimen arcano conservado en frasco de botica o flotando en una gruta subterránea iluminada por gas.",
+      "color_palette": [
+        "Azul celeste translúcido (#60a5fa)",
+        "Cobalto profundo (#1e3a8a)",
+        "Plata fría de azogue (#cbd5e1)",
+        "Blanco lechoso (#f8fafc)",
+        "Púrpura astral tenue (#c084fc)"
+      ],
+      "scene_notes": "Iluminación indirecta tenue; halo bioluminiscente que delinea la silueta sin generar sombras duras; partículas de vapor frío y burbujas ilusorias suspendidas."
+    }
+  },
+  {
+    "id": "mon_hornacis_gray_mountain_goat",
+    "name": "Cabra Gris de la Cordillera Hornacis",
+    "pathway": "FOOL",
+    "sequence": 8,
+    "classification": {
+      "category": "Bestia Extraordinaria",
+      "nature": "Mamífero adaptado a riscos de alta montaña y niebla mística",
+      "danger_rank": "Peligro Moderado (Rango Secuencia 8)"
+    },
+    "lore": {
+      "short_description": "Ágil ungulado de pelaje ceniciento y cuernos estriados que salta entre precipicios envueltos en la niebla perpetua de las cumbres de Hornacis.",
+      "long_description": "Nativa de los picos más escarpados de la cordillera Hornacis, esta especie ha mutado a lo largo de siglos de exposición a los restos místicos de la antigua nación de Flegrea y la niebla de los secretos. Su capacidad para mantener el equilibrio en salientes milimétricos desafía las leyes naturales de la gravedad, y la cornamenta de los machos adultos cristaliza gradualmente acumulando residuos de espiritualidad que inducen una agilidad casi premonitoria.",
+      "habitat": "Riscos escarpados, gargantas profundas y cumbres por encima de los tres mil metros en la cordillera Hornacis, donde la niebla rara vez se disipa.",
+      "pathway_relation": "Vinculada a la Secuencia 8 (Payaso). Proporciona el componente fundamental que transfiere la coordinación motriz sobrehumana, el equilibrio absoluto en cualquier postura y la capacidad de convertir el cuerpo físico en un instrumento de precisión acrobática."
+    },
+    "appearance": {
+      "description": "Cuerpo musculoso y esbelto cubierto por una densa lana áspera de color gris ceniza con vetas plateadas. Sus extremidades son delgadas pero de dureza similar al pedernal.",
+      "horns": "Par de cuernos espirales curvados hacia atrás que en ejemplares maduros desarrollan una textura vidriosa semiopaca, con líneas de fractura internas que refractan la luz en destellos anaranjados y rojizos.",
+      "face": "Hocico estrecho con pupilas horizontales doradas que denotan una atención perpetua; las comisuras de su boca presentan una extraña curvatura natural que remonta una leve sonrisa burlona.",
+      "scale": "Aproximadamente un metro y veinte centímetros de altura a la cruz."
+    },
+    "evidence": {
+      "behavior": "Extremadamente ágil, esquiva y dotada de un sentido innato del momento justo para el salto. No ataca frontalmente; utiliza la verticalidad del terreno para forzar a los cazadores a caer al vacío, burlándose de ellos con relinchos agudos antes de desvanecerse entre la niebla. Puede detener una caída en seco clavando las puntas de sus pezuñas en fisuras casi invisibles.",
+      "sensory_traces": "Huellas de pezuñas hendidas sobre superficies verticales de piedra; fragmentos de cuerno cristalizado caídos en desfiladeros; eco de pisadas ligeras que parecen venir de direcciones contradictorias."
+    },
+    "drops": {
+      "main_ingredient": "Cristal de Cuerno de Cabra Gris de la Cordillera Hornacis madura (Cuerno cristalizado con dureza de gema y reflejos anaranjados; ingrediente principal para la poción de Payaso)",
+      "secondary_ingredients": [
+        "Mechón de lana cenicienta de montaña (usado en vestimentas de equilibrio y talismanes de agilidad)",
+        "Fragmento de pezuña de pedernal (catalizador menor en pociones de balance físico)",
+        "Séquito de médula ósea cristalizada (estabilizador de coordinación motora)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Payaso (Secuencia 8)."
+    },
+    "art_direction": {
+      "visual_tone": "Rústico, tenso, vertical y burlón; silueta recortada contra el abismo de roca húmeda y nubes grises.",
+      "color_palette": [
+        "Gris ceniza (#64748b)",
+        "Pizarra oscura (#334155)",
+        "Ámbar cristalino (#d97706)",
+        "Plata mate (#94a3b8)",
+        "Blanco niebla (#f1f5f9)"
+      ],
+      "scene_notes": "Luz difusa de niebla de altura; gotas de rocío helado sobre la lana; ángulo de cámara contrapicado que enfatiza el riesgo del risco."
+    }
+  },
+  {
+    "id": "mon_human_faced_rose",
+    "name": "Rosa de Rostro Humano",
+    "pathway": "FOOL",
+    "sequence": 8,
+    "classification": {
+      "category": "Planta Extraordinaria / Carnívora",
+      "nature": "Vegetal parasitario del Mundo Espiritual y cementerios antiguos",
+      "danger_rank": "Peligro Moderado (Rango Secuencia 8)"
+    },
+    "lore": {
+      "short_description": "Flor carnívora de pétalos escarlata cuyos capullos se abren revelando una máscara vegetal que imita con perturbadora fidelidad expresiones humanas de dolor y júbilo.",
+      "long_description": "La Rosa de Rostro Humano es una planta mística parasitaria que enraíza en túmulos funerarios antiguos, ruinas olvidadas y bosques del Mundo Espiritual saturados de emociones no resueltas. Se alimenta tanto de nutrientes biológicos como de la turbulencia psicológica de las criaturas que caen en su trampa. Sus pétalos segregan esporas alucinógenas mientras la flor misma modula sus facciones vegetales, simulando sonrisas de bienvenida para atraer a sus presas antes de asfixiarlas con espinas venenosas.",
+      "habitat": "Claroscuros de bosques húmedos cerca de cementerios de la Cuarta Época, grietas sombrías de mausoleos y zonas de superposición espectral.",
+      "pathway_relation": "Complementa la Secuencia 8 (Payaso) en el aspecto del control de expresiones faciales y emociones teatrales. Su tallo y savia concentran la capacidad de enmascarar el dolor auténtico bajo una sonrisa forzada y proyectar fachadas psicológicas inalterables."
+    },
+    "appearance": {
+      "description": "Rosal trepador de tallos gruesos color púrpura oscuro cubiertos de espinas curvas vidriosas. Sus hojas son lustrosas, de un verde negruzco que absorbe la luz.",
+      "blossom": "La flor central alcanza los treinta centímetros de diámetro. Sus pétalos aterciopelados de color rojo sangre rodean un receptáculo central carnoso que se pliega y contrae formando los ojos, nariz y labios de un rostro humano cambiante.",
+      "face_expression": "Alterna suavemente entre una carcajada congelada, una mueca de dolor agónico y una serenidad burlona, emitiendo suspiros apenas audibles.",
+      "scale": "Arbusto o enredadera de uno a tres metros de extensión."
+    },
+    "evidence": {
+      "behavior": "Inmóvil hasta que una criatura entra en su radio olfativo. Libera polen invisible que embota el juicio y hace que la víctima interprete las expresiones de la flor como las de un ser querido sonriente. Una vez que la presa baja la guardia, los zarcillos espinosos se disparan con velocidad constrictora inyectando savia narcótica para consumir su cuerpo y sus fluidos vitales.",
+      "sensory_traces": "Aroma dulzón excesivo que recuerda a rosas secas mezcladas con almizcle y hierro; susurros semejantes a risas infantiles lejanas cuando el viento mueve sus hojas; tierra circundante desprovista de hierba normal y cubierta de un polvo ceniciento."
+    },
+    "drops": {
+      "main_ingredient": "Tallo Completo de Rosa de Rostro Humano (Tallo leñoso carnoso con espinas intactas que preserva la pulsación vegetal; ingrediente principal para la poción de Payaso)",
+      "secondary_ingredients": [
+        "Pétalos aterciopelados de rostro sonriente (utilizados en filtros de persuasión y polvos de ilusión)",
+        "Savia narcótica espesa (base para anestésicos y venenos paralizantes de combate)",
+        "Espinas de cristal purpúreo (proyectiles arcanos para dagas y cerbatanas)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Payaso (Secuencia 8)."
+    },
+    "art_direction": {
+      "visual_tone": "Gótico victoriano, perturbador, seductor y teatral; contraste violento entre la belleza floral y el horror anatómico.",
+      "color_palette": [
+        "Rojo carmesí profundo (#991b1b)",
+        "Púrpura noche (#581c87)",
+        "Verde negruzco (#064e3b)",
+        "Marfil pálido de rostro (#fef3c7)",
+        "Negro carbón (#171717)"
+      ],
+      "scene_notes": "Iluminación de claroscuro; gotas de savia roja goteando lentamente de los pétalos; el rostro vegetal debe sentirse orgánico y creíble, sin parecer una máscara de plástico superpuesta."
+    }
+  },
+  {
+    "id": "mon_mist_treant",
+    "name": "Treant de la Niebla",
+    "pathway": "FOOL",
+    "sequence": 7,
+    "classification": {
+      "category": "Ser Extraordinario Vegetal / Guardián",
+      "nature": "Árbol sensitivo antiguo imbuido en la niebla del Mundo Espiritual",
+      "danger_rank": "Peligro Alto (Rango Secuencia 7)"
+    },
+    "lore": {
+      "short_description": "Coloso vegetal milenario cuya corteza musgosa exhala una niebla blanca perpetua que dobla la trayectoria de la luz y el fuego.",
+      "long_description": "Los Treants de la Niebla son gigantes arbóreos que habitan en los confines más densos y primitivos de los bosques del continente y en las islas periféricas del Mundo Espiritual. Su madera ha absorbido durante siglos la esencia de la niebla y la humedad espiritual, dotándolos de la facultad de manipular el calor, el aire y la refracción lumínica. Son seres de paciencia geológica pero de letalidad contundente cuando se perturba su territorio, capaces de transferir daño a sus raíces secundarias para burlar a sus cazadores.",
+      "habitat": "Bosques antiguos donde la niebla nunca se despeja, valles fluviales del este y regiones profundas del Mundo Espiritual ricas en elementos de ilusión.",
+      "pathway_relation": "Fundamental para la Secuencia 7 (Mago). Su raíz verdadera condensa las habilidades de manipulación elemental menor (control de llamas, balas de aire) y la técnica de transferencia de daño que más tarde evoluciona en el sustituto de figurillas de papel."
+    },
+    "appearance": {
+      "description": "Árbol gigantesco de tronco retorcido y corteza gris pálida cubierta de líquenes blanquecinos. Sus ramas desnudas se entrelazan formando una bóveda de la que penden lianas vaporosas que emiten una neblina densa continua.",
+      "features": "Grietas profundas en el tronco que semejan ojos sabios y una boca hendida por donde exhala ráfagas de aire comprimido; de las ramas superiores brotan esferas de fuego fatuo azulado que flotan a su alrededor.",
+      "roots": "Raíces expuestas colosales que se arrastran por el fango, entre las cuales la raíz verdadera palpita con un resplandor lechoso profundo.",
+      "scale": "De cinco a ocho metros de altura, con una copa que cubre un radio de diez metros."
+    },
+    "evidence": {
+      "behavior": "Suele permanecer camuflado como un árbol muerto en medio de un banco de niebla impenetrable. Si un intruso se aproxima, la niebla circundante se espesa en segundos hasta reducir la visibilidad a cero. Ataca proyectando balas de aire concentrado a través de sus fisuras o manipulando las llamas de las antorchas de los cazadores para volverlas en su contra. Cuando sufre un impacto letal, el tronco se desmorona en madera podrida mientras el verdadero núcleo emerge de una raíz oculta metros más atrás.",
+      "sensory_traces": "Descenso repentino de la temperatura ambiente acompañado de una humedad sofocante; olor a madera húmeda quemada y hojas en descomposición; niebla que desvía la luz de linternas y velas."
+    },
+    "drops": {
+      "main_ingredient": "Raíz Verdadera de un Treant de la Niebla (Raíz cilíndrica de madera blanca que retiene humedad perpetua y desprende vapor frío; ingrediente principal para la poción de Mago)",
+      "secondary_ingredients": [
+        "30 ml de Jugo de Treant de la Niebla (fluido lechoso usado en la poción de Mago)",
+        "Corteza conductora de niebla (usada en capas de ocultamiento e impermeabilidad espiritual)",
+        "Esencia de fuego fatuo estabilizada (catalizador de ignición piromántica)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Mago (Secuencia 7)."
+    },
+    "art_direction": {
+      "visual_tone": "Antiguo, monumental, ilusorio y sofocante; silueta masiva envuelta en velos de neblina con puntos de luz azulada.",
+      "color_palette": [
+        "Gris corteza pálido (#94a3b8)",
+        "Blanco vapor (#f8fafc)",
+        "Azul fuego fatuo (#38bdf8)",
+        "Musgo oscuro (#14532d)",
+        "Pardo tierra (#451a03)"
+      ],
+      "scene_notes": "Atmósfera pesada de niebla volumétrica; luz difusa que hace parecer que el árbol está en varios lugares a la vez; suelo pantanoso con raíces cubiertas de agua."
+    }
+  },
+  {
+    "id": "mon_dark_patterned_black_panther",
+    "name": "Pantera Negra de Patrones Oscuros",
+    "pathway": "FOOL",
+    "sequence": 7,
+    "classification": {
+      "category": "Fiera Extraordinaria / Cazador Sigiloso",
+      "nature": "Félido místico con estructura ósea flexible y afinidad con las sombras",
+      "danger_rank": "Peligro Alto (Rango Secuencia 7)"
+    },
+    "lore": {
+      "short_description": "Félido de pelaje de terciopelo negro noche adornado con patrones concéntricos que absorben los sonidos y permiten que su esqueleto se desarticule a voluntad.",
+      "long_description": "Esta fiera extraordinaria habita en las densas junglas vírgenes del Continente Sur y en zonas pantanosas del Mundo Espiritual. Su evolución le ha conferido una musculatura y un sistema esquelético maleables: sus huesos pueden suavizarse momentáneamente para deslizarse a través de rendijas imposibles o absorber caídas desde alturas colosales sin sufrir daño alguno. Caza en silencio absoluto, acechando desde las copas de los árboles antes de lanzarse como una sombra líquida.",
+      "habitat": "Junglas primitivas de la cuenca del río Paz, bosques de niebla de las tierras altas y páramos sombríos del Mundo Espiritual.",
+      "pathway_relation": "Aporta el principio biológico indispensable para la Secuencia 7 (Mago) respecto al reblandecimiento óseo (*Bone Softening*), la evasión acrobática y la agilidad de escape físico necesaria para ejecutar trucos y sustituciones teatrales."
+    },
+    "appearance": {
+      "description": "Félido de silueta elegante y aerodinámica, cubierto por un pelaje negro azabache de textura aterciopelada. Sobre su lomo y costillas destacan rosetas concéntricas de un negro aún más profundo que parecen absorber la luz de las antorchas.",
+      "eyes": "Ojos rasgados de color ámbar pálido con una membrana nictitante plateada que parpadea horizontalmente.",
+      "motion": "Sus articulaciones no producen chasquidos; su columna vertebral se curva con una fluidez semejante a la de una serpiente, permitiéndole aplanar su cuerpo contra el suelo hasta volverse casi bidimensional.",
+      "scale": "Dos metros de longitud desde el hocico hasta la base de la cola, con un peso aproximado de ochenta kilogramos de músculo puro."
+    },
+    "evidence": {
+      "behavior": "Depredador de emboscada implacable. Se aproxima sin desplazar una sola hoja ni emitir el menor rumor de respiración. Si es herida, no huye en línea recta: disloca deliberadamente sus extremidades para deslizarse por grietas de roca inaccesibles para sus perseguidores, reubicando sus articulaciones en cuestión de segundos.",
+      "sensory_traces": "Arañazos limpios y profundos en la corteza superior de los árboles; ausencia total de sonidos nocturnos (grillos y aves callan a su paso); leves manchas de un líquido espinal transparente que huele a mentol y almizcle en las rocas por donde escapó."
+    },
+    "drops": {
+      "main_ingredient": "Todo el Líquido Cefalorraquídeo de una Pantera Negra de Patrones Oscuros (Fluido cristalino denso que al agitarse genera destellos plateados; ingrediente principal para la poción de Mago)",
+      "secondary_ingredients": [
+        "Piel aterciopelada de patrones oscuros (usada en capas de sigilo absoluto)",
+        "Colmillos huecos flexibles (empleados en dagas arcanas de penetración suave)",
+        "Garras retráctiles de pedernal negro (catalizador de cortes certeros)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Mago (Secuencia 7)."
+    },
+    "art_direction": {
+      "visual_tone": "Sigiloso, felino, letal y maleable; figura negra que casi se confunde con las sombras de la jungla.",
+      "color_palette": [
+        "Negro azabache (#0a0a0a)",
+        "Negro carbón mate (#171717)",
+        "Ámbar pálido (#f59e0b)",
+        "Plata líquida (#e2e8f0)",
+        "Verde jungla umbrío (#064e3b)"
+      ],
+      "scene_notes": "Sombra recortada entre ramas altas; un único ojo ambarino reflejando una luz lejana; sensación de movimiento fluido y silencioso."
+    }
+  },
+  {
+    "id": "mon_thousand_faced_hunter",
+    "name": "Cazador de Mil Caras",
+    "pathway": "FOOL",
+    "sequence": 6,
+    "classification": {
+      "category": "Aberración Mística / Depredador Mimético",
+      "nature": "Entidad mutable capaz de devorar y replicar identidades biológicas completas",
+      "danger_rank": "Peligro Extremo (Rango Secuencia 6)"
+    },
+    "lore": {
+      "short_description": "Horror bípedo de carne amorfa cuya cabeza y torso están compuestos por decenas de rostros humanos superpuestos que gimen con diferentes tonos de voz.",
+      "long_description": "El Cazador de Mil Caras es una criatura pesadillesca que habita en las profundidades del Mundo Espiritual y en ruinas corrompidas de la Segunda y Tercera Época. No posee una identidad biológica fija: su carne, masa muscular y cuerdas vocales se reconfiguran continuamente consumiendo la carne y los recuerdos de sus víctimas. Cada presa devorada se convierte en una nueva máscara que el monstruo puede proyectar con perfecta fidelidad histriónica para infiltrarse en comunidades humanas y sembrar la paranoia.",
+      "habitat": "Zonas de ruinas dimensionales, páramos de niebla espesa en el Mundo Espiritual y túneles subterráneos bajo ciudades antiguas.",
+      "pathway_relation": "Constituye el núcleo biológico de la Secuencia 6 (Sin Rostro). Su glándula pituitaria mutada otorga el poder de transformación corporal absoluta: remodelación ósea, cambio de altura, imitación de timbre de voz, alteración del aura y mimetismo de hábitos personales."
+    },
+    "appearance": {
+      "description": "Humanoide desgarbado de tres metros de altura con extremidades desproporcionadamente largas. Su piel es de una textura gomosa verde negruzca que palpita como arcilla viva.",
+      "head_and_faces": "No tiene un rostro propio definido; su cuello y torso albergan una masa arremolinada de cabezas y rostros de hombres, mujeres y niños que parpadean y mueven los labios simultáneamente. Cuando decide asumir una identidad, la carne fluye cubriendo el cuerpo hasta convertirse en un duplicado exacto del individuo elegido.",
+      "blood": "Su sangre es espesa, de color verde esmeralda oscuro, y al caer al suelo forma pequeñas burbujas que adoptan rostros humanos diminutos antes de estallar.",
+      "scale": "De dos a tres metros en reposo; maleable a cualquier estatura humana ordinaria."
+    },
+    "evidence": {
+      "behavior": "Caza mediante el engaño y la sustitución. Estudia a su objetivo durante días copiando su cadencia al hablar y sus manías cotidianas. Luego asesina a la víctima en secreto, asume su lugar ante su familia o colegas y aprovecha la confianza para alimentarse de los allegados uno a uno. Si es descubierto en combate, cambia rápidamente de semblante y voz entre los seres queridos del atacante para inducir vacilación psicológica.",
+      "sensory_traces": "Rastro de mucosidad gelatinosa inodora que se seca dejando una película similar a piel humana muda; eco de voces conocidas conversando consigo mismas en cuartos cerrados vacíos; incongruencias temporales en las sombras proyectadas por una persona."
+    },
+    "drops": {
+      "main_ingredient": "Glándula Pituitaria Mutada de un Cazador de Mil Caras (Órgano carnoso bulboso de tonalidad verde oscura que cambia de forma continuamente; ingrediente principal para la poción de Sin Rostro)",
+      "secondary_ingredients": [
+        "80 ml de Sangre de Cazador de Mil Caras (líquido negruzco con burbujas faciales para la poción de Sin Rostro)",
+        "Jirones de epidermis mimética (usados en la fabricación de máscaras de látex místico)",
+        "Cuerdas vocales polifónicas intactas (catalizador para imitadores de voz arcanos)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Sin Rostro (Secuencia 6)."
+    },
+    "art_direction": {
+      "visual_tone": "Horror corporal victoriano, psicológico, viscoso y perturbador; debe transmitir la pesadilla de perder la propia identidad.",
+      "color_palette": [
+        "Verde negruzco pantanoso (#14532d)",
+        "Gris carne muerta (#9ca3af)",
+        "Verde esmeralda oscuro (#065f46)",
+        "Púrpura hematoma (#581c87)",
+        "Negro brea (#09090b)"
+      ],
+      "scene_notes": "Luz focal tenue sobre una figura en penumbra cuyos rostros van rotando en la carne; sensación de metamorfosis orgánica inestable."
+    }
+  },
+  {
+    "id": "mon_human_skinned_shadow",
+    "name": "Sombra de Piel Humana",
+    "pathway": "FOOL",
+    "sequence": 6,
+    "classification": {
+      "category": "Entidad Espectral / Asesino de Sombras",
+      "nature": "Aparición incorpórea que viste la silueta y piel de sus presas",
+      "danger_rank": "Peligro Extremo (Rango Secuencia 6)"
+    },
+    "lore": {
+      "short_description": "Silueta bidimensional oscura que se arrastra por muros y suelos, vistiendo una capa transparente de piel humana desollada para proyectar tridimensionalidad ilusoria.",
+      "long_description": "Nacida en las grietas entre el Mundo Espiritual y el plano físico donde han tenido lugar masacres o sacrificios rituales, la Sombra de Piel Humana carece de volumen propio. Su supervivencia depende de acechar a individuos solitarios, desprender su piel con precisión quirúrgica etérea y usarla como un disfraz para interactuar con la luz y caminar entre los vivos.",
+      "habitat": "Callejones ciegos mal iluminados por lámparas de gas en ciudades industriales, catacumbas urbanas y bibliotecas prohibidas del Mundo Espiritual.",
+      "pathway_relation": "Aporta el componente espiritual complementario para la Secuencia 6 (Sin Rostro): la capacidad de alterar el aura visible, desprenderse de la sombra corporal ordinaria y fundir la presencia propia con la oscuridad ambiental."
+    },
+    "appearance": {
+      "description": "En su estado de caza, es una mancha de sombra bidimensional que se desliza por las paredes sin despegarse de las superficies. Cuando se yergue, viste una membrana finísima de piel humana transparente que ondea como una mortaja de seda.",
+      "face": "Dos cortes vacíos en la tela de sombra donde deberían estar los ojos, dentro de los cuales arden chispas frías de luz azulada; la boca es una hendidura sin dientes por donde no entra aire.",
+      "scale": "Adopta exactamente la escala de la sombra de la víctima que ha copiado."
+    },
+    "evidence": {
+      "behavior": "Se adhiere a la sombra real del objetivo sin que éste lo perciba. Conforme avanza la noche, la sombra de la víctima se desfasa de sus pasos reales. Ataca cuando la luz se extingue, envolviendo a la persona en un abrazo frío que disuelve la cohesión entre el cuerpo material y el cuerpo espiritual, dejando atrás un cadáver pálido y marchito sin una sola gota de sangre.",
+      "sensory_traces": "Sombras en las paredes que apuntan en dirección contraria a las velas o farolas de gas; manchas frías en el pavimento que entumecen los pies de quien las pisa; olor a cera fría y pergamino seco."
+    },
+    "drops": {
+      "main_ingredient": "Característica / Núcleo de Sombra de Piel Humana (Sustancia semejante a un velo negro transparente que se desvanece a la luz directa; ingrediente principal para la poción de Sin Rostro)",
+      "secondary_ingredients": [
+        "Velo de piel espectral (usado en túnicas de invisibilidad nocturna)",
+        "Polvo de sombra condensada (catalizador de rituales de ocultamiento)",
+        "Esencia de frío sepulcral (estabilizador para pociones de mimetismo astral)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Sin Rostro (Secuencia 6)."
+    },
+    "art_direction": {
+      "visual_tone": "Nocturno, plano, espectral y frío; horror urbano de siluetas de gas y paredes de ladrillo manchadas de carbón.",
+      "color_palette": [
+        "Negro sombra absoluto (#000000)",
+        "Gris carbón profundo (#18181b)",
+        "Azul espectral tenue (#38bdf8)",
+        "Pálido cadavérico (#e2e8f0)",
+        "Amarillo gas sucio (#ca8a04)"
+      ],
+      "scene_notes": "Pared de ladrillo victoriano húmedo; farola de gas titilando; la sombra de la pared tiene brazos que se estiran hacia el suelo."
+    }
+  },
+  {
+    "id": "mon_six_winged_gargoyle",
+    "name": "Gárgola de Seis Alas",
+    "pathway": "FOOL",
+    "sequence": 5,
+    "classification": {
+      "category": "Constructo Místico / Guardián Alado",
+      "nature": "Entidad pétrea viviente vinculada a ataduras de hilos invisibles del destino",
+      "danger_rank": "Peligro Crítico (Rango Secuencia 5)"
+    },
+    "lore": {
+      "short_description": "Monstruo alado esculpido en granito negro con tres pares de alas membranosas pétreas que vigila catedrales olvidadas desde cornisas vertiginosas.",
+      "long_description": "Creadas originalmente en la Tercera Época como centinelas de templos dedicados a deidades antiguas, las Gárgolas de Seis Alas trascendieron su condición inerte cuando características de marionetismo se fusionaron con su roca. Permanecen inmóviles como estatuas durante décadas hasta que perciben el movimiento de hilos espirituales en su territorio, momento en el cual sus alas de piedra se despliegan con la ligereza de una pluma para descender en picado.",
+      "habitat": "Agujas de catedrales en ruinas, desfiladeros rocosos de islas volcánicas y alturas del Mundo Espiritual donde los vientos astrales son constantes.",
+      "pathway_relation": "Pieza clave de la Secuencia 5 (Marionetista). Su cristal central alberga la capacidad de percibir y manipular los Hilos del Cuerpo Espiritual (*Spirit Body Threads*), permitiendo a quien consuma su esencia tomar el control motor de criaturas vivas y transformarlas en títeres."
+    },
+    "appearance": {
+      "description": "Bestia cuadrúpeda con torso antropomorfo esculpida en basalto oscuro pulido. Su lomo sostiene seis alas de piedra articuladas que desafían el peso de la materia.",
+      "head": "Cabeza de león demoníaco con colmillos de pedernal y cuernos que se curvan sobre las sienes. Sus ojos son dos gemas esmeralda sin parpadeo que emiten rayos delgados de luz plateada.",
+      "chest_core": "En el centro de su pecho de roca, una cavidad abierta aloja un cristal hexagonal que gira suspendido en el aire, irradiando filamentos luminosos invisibles hacia su entorno.",
+      "scale": "Dos metros y medio de altura en posición sedente; envergadura alar de seis metros con las seis alas abiertas."
+    },
+    "evidence": {
+      "behavior": "Aguarda inmóvil hasta que el blanco se encuentra bajo su ángulo de caída. En lugar de atacar con garras, proyecta sus filamentos invisibles hacia el cuerpo espiritual del enemigo: a los diez segundos de combate, la víctima siente sus extremidades entumecidas; a los treinta, su cuerpo se mueve contra su voluntad; al minuto, el enemigo es un títere petrificado que ataca a sus propios aliados.",
+      "sensory_traces": "Lluvia de polvo de basalto fino que cae desde las alturas de los edificios; sensación repentina de que hilos fríos se enredan en las articulaciones al caminar; sonido de alas pesadas cortando el aire sin generar viento físico."
+    },
+    "drops": {
+      "main_ingredient": "Cristal del Núcleo de una Gárgola de Seis Alas (Gema hexagonal de basalto cristalizado atravesada por finísimos hilos plateados; ingrediente principal para la poción de Marionetista)",
+      "secondary_ingredients": [
+        "Par de ojos de Gárgola de Seis Alas (usados en la poción de Marionetista y lentes de visión de hilos)",
+        "Polvo de granito petrificante (empleado en ungüentos de resistencia física extrema)",
+        "Fragmento de membrana alar de piedra (catalizador para levitación controlada)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Marionetista (Secuencia 5)."
+    },
+    "art_direction": {
+      "visual_tone": "Gótico solemne, pétreo, implacable y aéreo; peso monumental de la arquitectura de iglesia victoriana frente al abismo de las alturas.",
+      "color_palette": [
+        "Basalto negro grisáceo (#1e293b)",
+        "Verde esmeralda mineral (#059669)",
+        "Plata de hilos (#cbd5e1)",
+        "Gris granito (#475569)",
+        "Azul cielo tormentoso (#0f172a)"
+      ],
+      "scene_notes": "Cornisa de torre con gárgola posada; lluvia golpeando la piedra; hilos plateados casi invisibles que bajan hacia la niebla de la calle."
+    }
+  },
+  {
+    "id": "mon_ancient_wraith",
+    "name": "Espectro Antiguo",
+    "pathway": "FOOL",
+    "sequence": 5,
+    "classification": {
+      "category": "Espíritu Mayor / No-Muerto Astral",
+      "nature": "Alma condensada de la Cuarta Época que habita la intersección de los mundos",
+      "danger_rank": "Peligro Crítico (Rango Secuencia 5)"
+    },
+    "lore": {
+      "short_description": "Figura incorpórea translúcida de nobleza antigua envuelta en velos funerarios que atraviesa muros de plomo y congela la espiritualidad de los vivos con su sola mirada.",
+      "long_description": "Los Espectros Antiguos son las almas supervivientes de poderosos Beyonders o nobles de la Cuarta Época que rehusaron cruzar al Inframundo tras el cataclismo de sus dinastías. Aislados en criptas selladas o errando en los estratos profundos del Mundo Espiritual, han perdido gran parte de su memoria biográfica, conservando únicamente un resentimiento glacial y un dominio absoluto sobre las ataduras espirituales.",
+      "habitat": "Tumbas reales subterráneas selladas con plomo, castillos en ruinas del Imperio Tudor o Salomón y corrientes profundas del Mundo Espiritual.",
+      "pathway_relation": "Proporciona el polvo espiritual necesario para la Secuencia 5 (Marionetista): la sintonía fina con las vibraciones del alma y la habilidad de transformar un cuerpo viviente en un recipiente vacío manipulable a distancia."
+    },
+    "appearance": {
+      "description": "Silueta humana flotante de aspecto aristocrático vestida con ropajes de corte antiguo deshilachados que flotan como si estuvieran bajo el agua. Su cuerpo es enteramente translúcido, dejando ver objetos a través de su torso.",
+      "face": "Rostro pálido y hermoso pero congelado en una expresión de infinita soberbia y tristeza; cuencas de los ojos de un blanco azulado cegador sin pupilas.",
+      "aura": "El aire a tres metros de su cuerpo se congela instantáneamente en escarcha cristalina hexagonal.",
+      "scale": "Estatura humana ordinaria, flotando de diez a treinta centímetros sobre el suelo."
+    },
+    "evidence": {
+      "behavior": "No utiliza armas físicas. Se desplaza a través de paredes sólidas de piedra y metal. Al detectar un intruso, emite un aullido inaudible que sacude el cuerpo astral de los presentes; acto seguido, extiende sus dedos espectrales para enfriar y tensar los hilos espirituales de la víctima, robándole el calor corporal y la voluntad en cuestión de turnos.",
+      "sensory_traces": "Formación repentina de escarcha blanca en picaportes, cristales y armas metálicas; olor a polvo de siglos y rosas secas; el vaho de la propia respiración se congela en diminutos cristales que caen al suelo."
+    },
+    "drops": {
+      "main_ingredient": "Polvo de Espectro Antiguo (Sustancia semejante a ceniza plateada finísima que emite un frío que quema los dedos; ingrediente principal para la poción de Marionetista)",
+      "secondary_ingredients": [
+        "Espiritualidad residual de Espectro Antiguo (fluido gaseoso embotellado en plata)",
+        "Retales de mortaja de corte de la Cuarta Época (usados en rituales de nigromancia y mediumnidad)",
+        "Cristal de escarcha espectral (estabilizador de frío espiritual)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Marionetista (Secuencia 5)."
+    },
+    "art_direction": {
+      "visual_tone": "Aristocrático, decadente, glacial y fantasmal; elegancia mortuoria victoriana de cripta antigua sellada.",
+      "color_palette": [
+        "Blanco escarcha (#f8fafc)",
+        "Azul hielo espectral (#38bdf8)",
+        "Plata gastada (#94a3b8)",
+        "Púrpura mortaja (#3b0764)",
+        "Negro cripta (#030712)"
+      ],
+      "scene_notes": "Suelo de cripta con escarcha hexagonal creciendo rápidamente; la figura espectral ilumina suavemente los muros de piedra mohosa sin proyectar sombra."
+    }
+  },
+  {
+    "id": "mon_bizarro_bane",
+    "name": "Perdición Bizarra",
+    "pathway": "FOOL",
+    "sequence": 4,
+    "classification": {
+      "category": "Criatura Semidivina / Pesadilla Viviente",
+      "nature": "Entidad de la locura metamórfica del Mundo Espiritual",
+      "danger_rank": "Semidiós (Rango Secuencia 4)"
+    },
+    "lore": {
+      "short_description": "Monstruosidad informe de humo negro, ojos móviles y extremidades grotescas que altera la lógica espacial y material a su alrededor convirtiendo la realidad en un circo demente.",
+      "long_description": "La Perdición Bizarra es una criatura semidivina que habita en las capas más tempestuosas y caóticas del Mundo Espiritual. Surge de la condensación de pesadillas colectivas y características Beyonder descontroladas. A su paso, las leyes de la física pierden consistencia: los objetos inanimados sangran, la gravedad se invierte y los testigos sufren alucinaciones donde sus propios cuerpos se convierten en figuras de trapo y madera.",
+      "habitat": "Torbellinos astrales del Mundo Espiritual profundo, islas flotantes de la locura y zonas de fractura dimensional dejadas por deidades caídas.",
+      "pathway_relation": "Representa el salto cualitativo al rango de Semidiós en la Vía del Loco: la Secuencia 4 (Hechicero Bizarro). Su ojo principal otorga el dominio sobre los hechizos bizarros, el intercambio instantáneo con marionetas a largas distancias y la maldición de convertir a enemigos en títeres grotescos."
+    },
+    "appearance": {
+      "description": "Masa titánica de bruma negra hirviente que adopta y deshace simultáneamente siluetas de animales mutilados, payasos gigantescos y muñecos desarticulados.",
+      "main_eye": "En el centro de la niebla flota un colosal ojo ciclópeo de color azul fantasmal sin esclerótica, en cuyo iris giran espirales hipnóticas que parecen absorber la luz circundante.",
+      "limbs": "De la niebla emergen tentáculos de marioneta hechos de madera podrida articulada con cuerdas rojas que se estiran decenas de metros.",
+      "scale": "Volumen variable que puede comprimirse al tamaño de un hombre o expandirse cubriendo una plaza pública entera."
+    },
+    "evidence": {
+      "behavior": "No combate con agresividad animal ordinaria; actúa como un director teatral de pesadilla. Intercambia constantemente su posición con ilusiones o marionetas en el campo. Maldice a los atacantes haciendo que sus armas se conviertan en palomas de fuego o que sus propios dedos se rebelen contra sus ojos.",
+      "sensory_traces": "Sonido distante de órganos de feria desafinados tocando melodías circenses en medio del silencio absoluto; lluvia de confeti negro que se disuelve en ceniza cáustica; el reflejo en cristales circundantes muestra a los espectadores ahorcados con hilos invisibles."
+    },
+    "drops": {
+      "main_ingredient": "Ojo Principal de Perdición Bizarra (Globo ocular del tamaño de un puño de cristal azul fantasmal que flota ingrávido; ingrediente principal para la poción de Hechicero Bizarro)",
+      "secondary_ingredients": [
+        "200 ml de Sangre de Perdición Bizarra (líquido negro que forma rostros teatrales)",
+        "Filamentos de madera articulada mística (usados en títeres semidivinos)",
+        "Cáscara de niebla bizarra condensada (catalizador de dominios de confusión)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Hechicero Bizarro (Secuencia 4)."
+    },
+    "art_direction": {
+      "visual_tone": "Surrealista, grotesco, teatral, semidivino y pesadillesco; estética de carnaval victoriano corrupto por fuerzas cósmicas.",
+      "color_palette": [
+        "Azul fantasmal hipnótico (#0284c7)",
+        "Negro niebla de pesadilla (#09090b)",
+        "Rojo circo gastado (#b91c1c)",
+        "Pardo madera podrida (#78350f)",
+        "Blanco calavera (#fafaf9)"
+      ],
+      "scene_notes": "Distorsión óptica de lente esférica alrededor del ojo principal; niebla negra con formas cambiantes; sombras de hilos gigantes descendiendo del cielo."
+    }
+  },
+  {
+    "id": "mon_spirit_world_plunderer",
+    "name": "Saqueador del Mundo Espiritual",
+    "pathway": "FOOL",
+    "sequence": 4,
+    "classification": {
+      "category": "Depredador Astral Mayor / Cazador Semidivino",
+      "nature": "Entidad incorpórea que devora conceptos y cuerpos del alma en el Mundo Espiritual",
+      "danger_rank": "Semidiós (Rango Secuencia 4)"
+    },
+    "lore": {
+      "short_description": "Cazador astral de silueta arácnida hecho de vacío y luz estelar fría que viaja a través de conceptos y pensamientos para saquear almas completas.",
+      "long_description": "El Saqueador del Mundo Espiritual es una de las mayores amenazas biológicas que acechan en las corrientes altas del Mundo Espiritual. No consume carne material: devora la espiritualidad consolidada, la memoria y el cuerpo del alma de seres inteligentes y criaturas místicas. Es capaz de rastrear a un Beyonder a través de la conexión entre su nombre y su destino, saltando a través de planos astrales para tender emboscadas fulminantes.",
+      "habitat": "Estratos superiores del Mundo Espiritual, confluencias de las Siete Luces y cercanías de los castillos y reinos divinos astrales.",
+      "pathway_relation": "Aporta el segundo componente indispensable para la Secuencia 4 (Hechicero Bizarro): el cuerpo del alma verdadera que permite al mago fragmentar su consciencia, proyectar sustitutos a distancias continentales y operar dentro de dominios bizarros sin disolverse."
+    },
+    "appearance": {
+      "description": "Entidad arácnida flotante compuesta por una sustancia similar al humo de diamante translúcido. No posee peso ni contacto con el suelo.",
+      "limbs": "Ocho patas largas como estacas de cristal ahumado que terminan en agujas capaces de coser y rasgar el tejido espacial.",
+      "core": "En lugar de cabeza, posee una esfera de vacío estelar dentro de la cual giran constelaciones en miniatura y restos de almas consumidas que intentan escapar.",
+      "scale": "De cuatro a seis metros de envergadura."
+    },
+    "evidence": {
+      "behavior": "Emboscador conceptual. Espera a que un objetivo invoque una adivinación o realice un viaje astral para caer sobre su conexión espiritual. Arrebata el alma de la víctima dejando el cuerpo material intacto pero comatoso. Es inmune al daño físico ordinario; sólo el fuego espiritual denso, la luz solar purificadora o ataques directos a nivel de destino pueden dañarlo.",
+      "sensory_traces": "Cese repentino de todos los ecos y ruidos astrales; sensación de vacío en el pecho de quienes tienen alta percepción espiritual; el cielo nocturno del Mundo Espiritual parece rasgarse como tela vieja."
+    },
+    "drops": {
+      "main_ingredient": "Cuerpo del Alma Verdadera de un Saqueador del Mundo Espiritual (Entidad espiritual condensada semejante a una figura humanoide minúscula llena de líquido transparente; ingrediente principal para la poción de Hechicero Bizarro)",
+      "secondary_ingredients": [
+        "30 g de Polvo de Saqueador del Mundo Espiritual (ceniza de alma estelar para la poción de Hechicero Bizarro)",
+        "Agujas de cristal astral (usadas en costura de marionetas y rituales de atadura de almas)",
+        "Membrana de vacío estelar (catalizador para viajes astrales seguros)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Hechicero Bizarro (Secuencia 4)."
+    },
+    "art_direction": {
+      "visual_tone": "Astral, cósmico, arácnido, transparente y peligroso; belleza fría del espacio profundo cruzada con terror de cazador incorpóreo.",
+      "color_palette": [
+        "Cristal ahumado translúcido (#64748b)",
+        "Azul medianoche profundo (#020617)",
+        "Plata estelar brillante (#f8fafc)",
+        "Púrpura cósmico (#4c1d95)",
+        "Negro vacío (#000000)"
+      ],
+      "scene_notes": "Fondo del Mundo Espiritual con colores saturados y extraños; la criatura es transparente pero refracta las luces astrales como un prisma tallado."
+    }
+  },
+  {
+    "id": "mon_hound_of_fulgrim",
+    "name": "Sabueso de Fulgrim",
+    "pathway": "FOOL",
+    "sequence": 3,
+    "classification": {
+      "category": "Bestia Histórica / Santo Protector",
+      "nature": "Cánido místico que habita y corre dentro de la Niebla de la Historia",
+      "danger_rank": "Santo (Rango Secuencia 3)"
+    },
+    "lore": {
+      "short_description": "Cánido colosal hecho de niebla gris y sombras del pasado cuyos ojos arden como brasas carmesí, capaz de emerger de cualquier punto del tiempo para devorar a quienes manipulan la historia.",
+      "long_description": "Los Sabuesos de Fulgrim son criaturas míticas que no residen en el espacio físico ni en el Mundo Espiritual ordinario, sino en las profundidades de la Niebla de la Historia (*Fog of History*). Guardianes de los eventos pasados y cazadores de paradojas temporales, rastrean a los intrusos que intentan arrastrar proyecciones del vacío histórico hacia el presente. Sus ojos han contemplado milenios de civilizaciones extintas, acumulando un peso conceptual capaz de petrificar la espiritualidad de los santos.",
+      "habitat": "El Río del Tiempo y las capas densas de la Niebla de la Historia previas a la Primera Época.",
+      "pathway_relation": "Ingrediente primordial para la Secuencia 3 (Erudito del Pasado / *Scholar of Yore*). Su par de ojos proporciona la facultad visual de rasgar la niebla del pasado, identificar hechos históricos olvidados y convocar proyecciones históricas exactas de personas, artefactos y lugares del ayer."
+    },
+    "appearance": {
+      "description": "Sabueso gigantesco de proporciones similares a las de un caballo de guerra, cuyo cuerpo no está hecho de carne sólida, sino de una niebla grisácea espesa que fluye constantemente como humo pesado.",
+      "eyes": "Par de ojos gigantescos de color rojo oscuro brillante que arden como brasas eternas en medio del cráneo de niebla, dejando una estela de chispas carmesí al moverse.",
+      "teeth": "Mandíbulas de dientes de marfil milenario que pueden morder y rasgar tanto la carne material como conceptos intangibles y líneas temporales.",
+      "scale": "Tres a cuatro metros de longitud; peso ilusorio que se siente como el peso de siglos al aplastar a una víctima."
+    },
+    "evidence": {
+      "behavior": "Aparece emergiendo directamente del aire como si atravesara una cortina de humo gris que nadie más puede ver. Ladra con un bramido sordo que resuena en la mente de todos los seres inteligentes en varios kilómetros a la redonda, provocando que los recuerdos de los testigos se desvanezcan o se confundan con épocas pasadas. Es capaz de arrastrar a sus presas hacia el interior de la niebla histórica para dejarlas atrapadas en un siglo que ya no existe.",
+      "sensory_traces": "Olor a pergaminos quemados, polvo de bibliotecas antiguas y humedad de siglos; el sonido de un reloj de péndulo gigantesco que hace tic-tac dentro de las cabezas de los presentes; repentina visión momentánea de edificios y ropas de civilizaciones extintas superpuestas a la calle actual."
+    },
+    "drops": {
+      "main_ingredient": "Par de Ojos de un Sabueso de Fulgrim (Globos oculares de cristal rojo sangre que arden con fuego frío interior; ingrediente principal para la poción de Erudito del Pasado)",
+      "secondary_ingredients": [
+        "100 ml de Sangre de Sabueso de Fulgrim (fluido que existe simultáneamente como líquido y gas)",
+        "Garras condensadas de niebla histórica (usadas en armas de rasgado conceptual)",
+        "Colmillo de memoria petrificada (catalizador de recuperación de recuerdos arcanos)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Erudito del Pasado (Secuencia 3)."
+    },
+    "art_direction": {
+      "visual_tone": "Histórico, ancestral, mítico, rojizo y grisáceo; sensación de peso temporal inmenso y polvo de imperios caídos.",
+      "color_palette": [
+        "Rojo carmesí de brasa ardiente (#991b1b)",
+        "Gris niebla histórica (#94a3b8)",
+        "Negro carbón de ceniza (#18181b)",
+        "Blanco pergamino antiguo (#fef3c7)",
+        "Púrpura tiempo (#3b0764)"
+      ],
+      "scene_notes": "Bruma gris espesa abriéndose en remolino; dos ojos rojos encendidos brillando en la niebla; el fondo muestra siluetas fantasmales de columnas de la Cuarta Época."
+    }
+  },
+  {
+    "id": "mon_demonic_wolf_of_fog",
+    "name": "Lobo Demoníaco de la Niebla",
+    "pathway": "FOOL",
+    "sequence": 3,
+    "classification": {
+      "category": "Bestia Sagrada Mítica / Depredador Histórico",
+      "nature": "Canino demoníaco antiguo descendiente de las fuerzas de la Segunda Época",
+      "danger_rank": "Santo (Rango Secuencia 3)"
+    },
+    "lore": {
+      "short_description": "Lobo titánico de seis patas y pelaje blanco cubierto de escarcha mística que respira niebla de ocultamiento y manipula el vacío de los recuerdos.",
+      "long_description": "Descendientes directos de los Lobos Demoníacos de la Oscuridad de la Segunda Época que mutaron hacia las autoridades de la niebla y el destino, los Lobos Demoníacos de la Niebla son bestias sagradas casi extintas. Rara vez pisan el suelo mortal; habitan en fortalezas olvidadas del Mundo Espiritual profundo o en los pliegues de la historia. Su corazón bombea niebla helada capaz de ocultar ciudades enteras de la mirada de los dioses.",
+      "habitat": "Montañas nevadas del Mundo Espiritual, templos en ruinas del Dios Flegrea y valles de niebla eterna.",
+      "pathway_relation": "Complementa la Secuencia 3 (Erudito del Pasado). Su corazón proporciona la autoridad de ocultamiento histórico (*Historical Concealment*): la capacidad de borrar huellas del pasado, ocultar la existencia propia de las adivinaciones divinas y tomar prestado poder de los propios estados históricos."
+    },
+    "appearance": {
+      "description": "Lobo monstruoso de cinco metros de longitud sostenido por seis patas musculosas con garras de hielo negro. Su lomo está cubierto por un pelaje blanco puro que exhala escarcha continua.",
+      "face": "Cráneo alargado con tres pares de ojos carmesí dispuestos en hileras laterales; su boca abierta revela hileras dobles de colmillos y una lengua azulada de la que gotea niebla condensada.",
+      "heart_glow": "A través de su caja torácica translúcida se percibe el latido blanco y rojo de su corazón gigantesco, que late al compás de las mareas del Mundo Espiritual.",
+      "scale": "Cinco metros de largo y dos metros y medio de altura a los hombros."
+    },
+    "evidence": {
+      "behavior": "Cazador metódico y paciente que nunca ataca sin haber ocultado previamente el escenario del combate. Rodea a sus presas con un domo de niebla blanca que anula toda comunicación con el exterior y bloquea la ayuda divina. Utiliza el vacío histórico para desaparecer de los ataques físicos, reapareciendo en la espalda del oponente en un instante.",
+      "sensory_traces": "Escarcha blanca que cubre el suelo incluso en pleno verano; silencio absoluto donde ningún sonido viaja más de dos metros; desvanecimiento gradual de los recuerdos recientes en quienes respiran su niebla."
+    },
+    "drops": {
+      "main_ingredient": "Corazón de un Lobo Demoníaco de la Niebla (Órgano del tamaño de un melón formado de niebla blanca solidificada que palpita con calor frío; ingrediente principal para la poción de Erudito del Pasado)",
+      "secondary_ingredients": [
+        "30 g de Cristal de Escarcha Blanca de Lobo Demoníaco de la Niebla (cristales para la poción de Erudito del Pasado)",
+        "Pelaje blanco de ocultamiento (usado en mantos de protección contra adivinación)",
+        "Colmillo de hielo negro místico (catalizador de cortes que congelan espiritualidad)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Erudito del Pasado (Secuencia 3)."
+    },
+    "art_direction": {
+      "visual_tone": "Ancestral, salvaje, sagrado, helado y temible; el horror de una deidad pagana de la Segunda Época en las montañas de niebla.",
+      "color_palette": [
+        "Blanco escarcha puro (#ffffff)",
+        "Gris niebla densa (#cbd5e1)",
+        "Rojo carmesí de ojos (#b91c1c)",
+        "Negro hielo (#0f172a)",
+        "Azul gélido (#38bdf8)"
+      ],
+      "scene_notes": "Suelo rocoso congelado; el lobo exhala una columna de niebla blanca que cubre media pantalla; los tres pares de ojos rojos brillan con ferocidad ancestral."
+    }
+  },
+  {
+    "id": "mon_dark_demonic_wolf",
+    "name": "Lobo Demoníaco Oscuro",
+    "pathway": "FOOL",
+    "sequence": 2,
+    "classification": {
+      "category": "Entidad Angélica / Dios Menor Antiguo",
+      "nature": "Forma mitológica primordial de la Segunda Época vinculada al Milagro y la Suerte",
+      "danger_rank": "Ángel (Rango Secuencia 2)"
+    },
+    "lore": {
+      "short_description": "Bestia divina ancestral cubierta de pelaje negro noche con ojos que contienen galaxias de deseos y tentáculos astrales que tejen milagros y calamidades.",
+      "long_description": "Los Lobos Demoníacos Oscuros fueron la especie dominante en el Continente Norte durante la Segunda Época bajo el reinado del Dios Demonio Flegrea. Dotados de consciencia angélica completa y poder cuasidivino, son criaturas que no sólo habitan el mundo físico, sino que pueden convertir deseos en realidades milagrosas. Su existencia desafía el orden natural: pueden resucitar a través de la historia, cumplir plegarias para acumular karma espiritual y desatar cataclismos invocando milagros retorcidos.",
+      "habitat": "Reinos divinos desolados, ciudades perdidas bajo la niebla de la historia y el Castillo Sefirah en sus sueños lejanos.",
+      "pathway_relation": "Representa el pináculo angélico de la Secuencia 2 (Invocador de Milagros / *Miracle Invoker*). Su corazón cristalino bombea la autoridad de conceder milagros, resucitar a través de ecos históricos y alterar la causalidad acumulando deseos cumplidos."
+    },
+    "appearance": {
+      "description": "Lobo gigantesco de diez metros de longitud de pelaje negro carbón que absorbe toda la luz estelar. De su lomo y costados no brotan alas normales, sino alas formadas por millones de Gusanos del Espíritu translúcidos que giran en armonía.",
+      "eyes": "Cuatro ojos majestuosos: dos de color violeta místico y dos de oro solar, dentro de los cuales flotan burbujas que muestran escenas de ciudades y civilizaciones vivas.",
+      "mythical_form": "Su sola presencia física desestabiliza la mente de cualquier mortal que no sea semidiós; mirar su silueta sin preparación provoca que el cuerpo del observador brote en gusanos y ojos diminutos.",
+      "scale": "De diez a quince metros de longitud; presencia conceptual que se proyecta como una montaña en el plano espiritual."
+    },
+    "evidence": {
+      "behavior": "No combate directamente como un animal; actúa mediante manipulación causal y deseos acumulados. Puede conceder un milagro a su enemigo sólo para que la consecuencia matemática de ese milagro conduzca a su aniquilación. Si es asesinado, su cuerpo se disuelve en niebla mientras resucita instantáneamente desde un punto de su propia historia pasada.",
+      "sensory_traces": "Sonido de miles de voces susurrando plegarias y deseos simultáneamente en el aire; alteración de la probabilidad local (los objetos caen hacia arriba, las monedas siempre caen de canto); aroma a incienso sacro mezclado con sangre divina de la Segunda Época."
+    },
+    "drops": {
+      "main_ingredient": "Corazón de un Lobo Demoníaco Oscuro (Corazón cristalino transparente lleno de burbujas que contienen ilusiones y deseos vivos; ingrediente principal para la poción de Invocador de Milagros)",
+      "secondary_ingredients": [
+        "300 ml de Sangre de Lobo Demoníaco Oscuro (sangre divina cargada de luz de milagros)",
+        "Gusanos del Tiempo latentes (parásitos simbióticos que habitaban en su pelaje)",
+        "Gusanos de las Estrellas (catalizadores de teleportación cósmica)"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Invocador de Milagros (Secuencia 2)."
+    },
+    "art_direction": {
+      "visual_tone": "Mitológico, divino, cósmico, aterrador y grandioso; la magnificencia de una deidad de la Segunda Época antes del nacimiento de las Iglesias Ortodoxas.",
+      "color_palette": [
+        "Negro carbón devorador de luz (#020617)",
+        "Oro milagroso (#eab308)",
+        "Violeta astral divino (#7c3aed)",
+        "Plata cristalina (#f1f5f9)",
+        "Rojo sangre antigua (#7f1d1d)"
+      ],
+      "scene_notes": "Figura colosal en la penumbra de un templo en ruinas; las alas compuestas de gusanos espirituales emiten una pulsación dorada; la realidad alrededor de la bestia se ondula como agua."
+    }
+  },
+  {
+    "id": "mon_spirit_worm_manifestation",
+    "name": "Abominación del Velo de Misterios",
+    "pathway": "FOOL",
+    "sequence": 1,
+    "classification": {
+      "category": "Manifestación Arcangélica / Forma Mítica Plena",
+      "nature": "Conglomerado viviente de Gusanos del Espíritu interconectados en el Velo de Sefirah",
+      "danger_rank": "Arcángel (Rango Secuencia 1)"
+    },
+    "lore": {
+      "short_description": "Masa titánica de millones de Gusanos del Espíritu transparentes entrelazados con niebla gris y cortinas de terciopelo negro que manipulan el concepto mismo del secreto y la realidad.",
+      "long_description": "Esta entidad representa la forma mítica casi divina de un Asistente de Misterios descontrolado o de una emanación directa del Castillo Sefirah en el Mundo Espiritual. No posee anatomía orgánica en el sentido biológico: es una red colosal de Gusanos del Espíritu (*Worms of Spirit*) que tejen y destejen conceptos de la realidad, cosiendo el espacio y el tiempo mediante la autoridad del Injerto (*Grafting*). Contemplarla sin estar anclado a la divinidad destruye el alma humana de forma fulminante.",
+      "habitat": "El Castillo Sefirah sobre la niebla gris, el estrato supremo del Mundo Espiritual y el Reino de los Misterios.",
+      "pathway_relation": "Representa la cúspide arcangélica de la Secuencia 1 (Asistente de Misterios / *Attendant of Mysteries*). Condensa la autoridad absoluta de gobernar el misterio, el reino secreto, el ensamblaje conceptual y el injerto de realidades dispares."
+    },
+    "appearance": {
+      "description": "Una colosal cortina de terciopelo negro translúcido que absorbe toda la luz del cosmos, dentro de la cual hierven y serpentean incontables millones de gusanos transparentes de tres anillos que brillan con luz estelar.",
+      "grafting_threads": "De los pliegues de la cortina descienden tentáculos de niebla y filamentos translúcidos que cosen conceptos: una herida en el cuerpo de un enemigo puede ser injertada al concepto del sol, o la distancia entre dos planetas puede ser reducida a un solo paso.",
+      "presence": "Su silueta se vuelve progresivamente más invisible conforme se mira fijamente, hasta que el observador se descubre atrapado dentro del propio Reino de los Misterios.",
+      "scale": "Inconmensurable; puede manifestarse como un velo del tamaño de una capa ceremonial o cubrir un continente entero en el plano astral."
+    },
+    "evidence": {
+      "behavior": "No ataca con violencia directa; reensambla los conceptos de la existencia de sus oponentes. Puede injertar la muerte inminente de una estrella en el pecho de un dios, redefinir el concepto de 'enemigo' para que el atacante se destruya a sí mismo, o transformar una ciudad entera con sus millones de habitantes en un teatro de marionetas que representan una obra de teatro eterna.",
+      "sensory_traces": "Desaparición total de todas las leyes físicas locales (la luz no ilumina, el sonido no viaja pero se siente, el tiempo corre en círculos); sensación de que la propia identidad y memoria están siendo deshilachadas hilo por hilo como un tapiz viejo."
+    },
+    "drops": {
+      "main_ingredient": "Característica Beyonder de Asistente de Misterios (Cortina translúcida de terciopelo negro que se vuelve progresivamente invisible; ingrediente principal para la poción de Asistente de Misterios)",
+      "secondary_ingredients": [
+        "Nueve especialidades supremas del Mundo Espiritual (ingredientes suplementarios canónicos)",
+        "Racimo de Gusanos del Espíritu trascendentes cristalizados",
+        "Filamentos de niebla del Castillo Sefirah condensados"
+      ],
+      "beyonder_characteristic": "Característica Beyonder de Asistente de Misterios (Secuencia 1)."
+    },
+    "art_direction": {
+      "visual_tone": "Cósmico primordial, abstracto, absoluto, divino y aterrador; la estética de Sefirah Castle y la niebla gris infinita.",
+      "color_palette": [
+        "Negro terciopelo absorbente (#000000)",
+        "Gris niebla primordial (#64748b)",
+        "Luz estelar pura (#ffffff)",
+        "Púrpura misterio supremo (#2e1065)",
+        "Plata líquida (#e2e8f0)"
+      ],
+      "scene_notes": "Cortina de terciopelo negro ondeando en el vacío; millones de gusanos transparentes con anillos de luz; la textura del espacio detrás del velo parece estar cosida con hilo plateado."
+    }
+  }
+]
+

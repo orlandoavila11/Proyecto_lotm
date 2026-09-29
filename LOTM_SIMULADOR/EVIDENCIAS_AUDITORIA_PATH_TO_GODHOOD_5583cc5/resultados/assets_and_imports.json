@@ -1,0 +1,688 @@
+{
+  "reachable": 47,
+  "unreachable": [
+    "ui/src/App.css",
+    "ui/src/audio/OccultAudioManager.ts",
+    "ui/src/components/apocalypse/ApocalypseCosmicView.tsx",
+    "ui/src/components/apotheosis/ApotheosisTempleView.tsx",
+    "ui/src/components/city/LivingCity.tsx",
+    "ui/src/components/combat/TacticalCombatTheater.tsx",
+    "ui/src/components/common/ArtifactInspectionModal.tsx",
+    "ui/src/components/common/DiegeticStateIndicators.tsx",
+    "ui/src/components/common/NpcDossierModal.tsx",
+    "ui/src/components/common/VictorianIcons.tsx",
+    "ui/src/components/conspiracy/DetectiveCorkboard.tsx",
+    "ui/src/components/desk/ActiveActingStage.tsx",
+    "ui/src/components/desk/ConvergenceAlertBanner.tsx",
+    "ui/src/components/desk/DailyObserver.tsx",
+    "ui/src/components/desk/OccultDesk.tsx",
+    "ui/src/components/desk/PersonaDossierView.tsx",
+    "ui/src/components/desk/SomaticMirror.tsx",
+    "ui/src/components/dreamscape/DreamscapeView.tsx",
+    "ui/src/components/grimoire/CanonicalGrimoire.tsx",
+    "ui/src/components/map/InteractiveWorldMap.tsx",
+    "ui/src/components/market/MysticalMarketStall.tsx",
+    "ui/src/components/organizations/OrganizationView.tsx",
+    "ui/src/components/politics/ContinentalPoliticsView.tsx",
+    "ui/src/components/quests/QuestJournalView.tsx",
+    "ui/src/components/tarot/TarotGatheringView.tsx",
+    "ui/src/harness/ResolutionViewportHarness.tsx"
+  ],
+  "missing": [
+    {
+      "file": "ui/src/components/common/NpcDossierModal.tsx",
+      "asset": "GFX30_flat_paper.png"
+    }
+  ],
+  "assets": [
+    {
+      "file": "GFX26_mirror_monstrous.jpg",
+      "bytes": 1590228,
+      "format": "JPEG",
+      "size": [
+        1380,
+        752
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX21_corkboard.jpg",
+      "bytes": 700783,
+      "format": "JPEG",
+      "size": [
+        1408,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX17_leather_pouch.jpg",
+      "bytes": 331868,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX35H_clue_alchemical_residues.jpg",
+      "bytes": 904470,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX52_ritual_framing.jpg",
+      "bytes": 1571108,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX12_tallow_candle.jpg",
+      "bytes": 233338,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "almanac_gfx18_1790013083610.jpg",
+      "bytes": 423938,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX36E_origin_dockworker.jpg",
+      "bytes": 6114111,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX30_flat_paper.jpg",
+      "bytes": 2046239,
+      "format": "JPEG",
+      "size": [
+        1408,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX18_victorian_almanac_v2.jpg",
+      "bytes": 347899,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX35D_clue_astrology_record.jpg",
+      "bytes": 862366,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX15_acting_book_open.jpg",
+      "bytes": 477925,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX20_sealed_letter.jpg",
+      "bytes": 456532,
+      "format": "JPEG",
+      "size": [
+        1408,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX36A_origin_clerk.jpg",
+      "bytes": 3017485,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "quicksilver_mirror_o0_1790011251771.jpg",
+      "bytes": 315846,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "acting_book_open_gfx15_1790012977157.jpg",
+      "bytes": 477925,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX36C_origin_reporter.jpg",
+      "bytes": 4310565,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX35E_clue_concealed_safe.jpg",
+      "bytes": 661836,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "identity_papers_gfx16_1790013009094.jpg",
+      "bytes": 439713,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX22_ritual_chalice.jpg",
+      "bytes": 506335,
+      "format": "JPEG",
+      "size": [
+        1408,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX40_combat_arena_floor.jpg",
+      "bytes": 677331,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "desvan_background_clean_gfx06_1790012294413.jpg",
+      "bytes": 599961,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "mahogany_desk_clean_gfx07_1790012345898.jpg",
+      "bytes": 367454,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "leather_pouch_gfx17_1790013062447.jpg",
+      "bytes": 331868,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "victorian_almanac_gfx18_v2_1790013629043.jpg",
+      "bytes": 347899,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX36F_origin_detective.jpg",
+      "bytes": 6802961,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX16_identity_papers.jpg",
+      "bytes": 439713,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX49_gas_lamp.jpg",
+      "bytes": 427102,
+      "format": "JPEG",
+      "size": [
+        896,
+        1200
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX06_desvan_background_clean.jpg",
+      "bytes": 599961,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX35G_clue_financial_blackmail.jpg",
+      "bytes": 938791,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX36D_origin_medium.jpg",
+      "bytes": 4983948,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX38_bazaar_tray.jpg",
+      "bytes": 426910,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX59_npc_sharron.jpg",
+      "bytes": 1820430,
+      "format": "JPEG",
+      "size": [
+        896,
+        1200
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX60_artifact_sun_brooch.jpg",
+      "bytes": 1880603,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX36B_origin_medical_student.jpg",
+      "bytes": 3628877,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX19_pocket_watch.jpg",
+      "bytes": 374817,
+      "format": "JPEG",
+      "size": [
+        1408,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "C0_desvan_composition.jpg",
+      "bytes": 700466,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "brass_clock_gfx19_1790013110397.jpg",
+      "bytes": 320605,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX51_potion_amber_mirror.jpg",
+      "bytes": 458564,
+      "format": "JPEG",
+      "size": [
+        896,
+        1200
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX31_wax_seal.jpg",
+      "bytes": 2398190,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX14_acting_book_closed.jpg",
+      "bytes": 499477,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX47_prologue_hallway.jpg",
+      "bytes": 764823,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX50_potion_cobalt_eyes.jpg",
+      "bytes": 400260,
+      "format": "JPEG",
+      "size": [
+        896,
+        1200
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX35B_clue_will_draft.jpg",
+      "bytes": 651650,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX35C_clue_mind_traces.jpg",
+      "bytes": 2233546,
+      "format": "JPEG",
+      "size": [
+        848,
+        1264
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "desvan_composition_c0_1790011200033.jpg",
+      "bytes": 700466,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX61_vignette_backlund_streets.jpg",
+      "bytes": 2221361,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX35A_clue_burned_toys.jpg",
+      "bytes": 513859,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX37_bazaar_counter.jpg",
+      "bytes": 678576,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX07_mahogany_desk_clean.jpg",
+      "bytes": 367454,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX13_quicksilver_mirror.jpg",
+      "bytes": 315846,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX24_mirror_turbid.jpg",
+      "bytes": 622897,
+      "format": "JPEG",
+      "size": [
+        1408,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX25_mirror_undulating.jpg",
+      "bytes": 1031237,
+      "format": "JPEG",
+      "size": [
+        1408,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "materials_sample_s0_1790011140689.jpg",
+      "bytes": 892821,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "S0_materials_sample.jpg",
+      "bytes": 892821,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "GFX35F_clue_forged_letters.jpg",
+      "bytes": 628646,
+      "format": "JPEG",
+      "size": [
+        1200,
+        896
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "tallow_candle_o0_1790011224882.jpg",
+      "bytes": 233338,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "desvan_composition_c0_alt_1790012245840.jpg",
+      "bytes": 618971,
+      "format": "JPEG",
+      "size": [
+        1376,
+        768
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    },
+    {
+      "file": "acting_book_closed_o0_1790011467113.jpg",
+      "bytes": 499477,
+      "format": "JPEG",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null
+    }
+  ]
+}

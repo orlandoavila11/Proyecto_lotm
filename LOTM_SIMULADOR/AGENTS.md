@@ -1,0 +1,115 @@
+# AGENTS.md — MAPA OPERATIVO POST-PURGA (v4.0)
+## Proyecto: Path to Godhood (LOTM_ENGINE_REBORN)
+
+---
+
+## 1. IDENTIDAD Y AUTORIDAD
+
+- **El Producto:** *Path to Godhood* — RPG web sistémico de investigación y doble vida en el universo de *Lord of the Mysteries*.
+- **La Fantasía:** "De día soy un civil con empleo y deudas en Backlund; de noche interpreto un papel sobrenatural que me está digiriendo. El conocimiento es munición y veneno. Cada secreto me hace más poderoso y más visible."
+- **Encuadre de Fases (Ley de Estado):** BRIEF-08 cerró la fase de **SISTEMAS**. La **Fase 1 continúa abierta** y comprende BRIEF-09 (Orígenes/Prólogo/Calendario/Identidad) + BRIEF-10 (El Desván / Dossier UI) + BRIEF-10.VISUAL (El Desván como Lugar) + Gates G1 a G5 + G4 con evaluadores humanos + Demo diegética jugable firmada por el Director. Ningún agente declara cambio de fase sin orden explícita del Director.
+
+---
+
+## 2. TOPOLOGÍA LIMPIA DEL REPOSITORIO
+
+```
+LOTM_SIMULADOR/
+├── package.json              # Workspace root unificado (reborn + ui)
+├── .agentignore              # Rutas ignoradas y código muerto purgado
+├── AGENTS.md                 # Este mapa operativo (orientación obligatoria)
+├── reborn/                   # Backend modular y núcleo del motor de juego
+│   ├── package.json          # Fastify, node:sqlite, zod, tsx
+│   ├── tsconfig.json
+│   ├── docs/
+│   │   └── PATH_TO_GODHOOD_v4.md # Constitución de producto y fases
+│   ├── src/
+│   │   ├── server/           # Fastify server, app.ts, plugins de rutas REST
+│   │   ├── core/             # Motores de dominio puro:
+│   │   │   ├── acting/       # ActingDilemmaEngine (sin fallbacks ni opciones sintéticas)
+│   │   │   ├── combat/       # TacticalCombatEngine (PA, espiritualidad, estados)
+│   │   │   ├── investigation/# ProceduralInvestigationService (sin selector cíclico)
+│   │   │   ├── somatics/     # SomaticsEngine (sanidad, corrupción, anclas)
+│   │   │   └── types/        # Tipos canónicos del dominio
+│   │   └── infra/
+│   │       ├── data/         # CanonicalDataLoader (carga de compendios canónicos)
+│   │       └── database/     # DatabaseClient, schema.sql (SQLite relacional estricto)
+│   ├── data/
+│   │   ├── content/          # TIER L: Biblioteca canónica congelada (hashes SHA-256)
+│   │   │   ├── manifest.json # Índice maestro con metadata de los 67 archivos
+│   │   │   ├── quests/
+│   │   │   ├── events/
+│   │   │   ├── investigations/
+│   │   │   ├── artifacts/
+│   │   │   ├── bestiary_npcs/
+│   │   │   ├── world/
+│   │   │   ├── lore_knowledge/
+│   │   │   └── pathways/
+│   │   └── gameplay/         # TIER G: Contrato jugable compilado (fail-loud por lint)
+│   │       └── balance/      # TABLAS GLOBALES DE BALANCE (todos los números viven aquí)
+│   ├── tests/                # Suites de prueba reales (cero tests tautológicos)
+│   └── scripts/              # Herramientas de compilación, linter y migración
+└── ui/                       # Frontend React (TypeScript + Vite + Lucide)
+    ├── package.json
+    ├── src/
+    │   ├── App.tsx           # Cliente diegético (Escritorio / Velo Ocultista)
+    │   └── index.css         # Paleta victoriana (ébano, oro, Cinzel)
+```
+
+---
+
+## 3. LEYES INVIOLABLES DE OPERACIÓN
+
+1. **Rutas Purgadas Muertas:** El directorio legado `/src` fue purgado por completo tras respaldar sus 67 JSONs en `reborn/data/content/`. Asimismo, el subdirectorio redundante `reborn/data/canonical/` fue eliminado físicamente tras comprobar paridad SHA-256 29/29 contra Tier L. Ningún agente debe buscar, recrear ni referenciar nada en `/src` ni en `reborn/data/canonical/`.
+2. **Prohibición de Métricas Tautológicas:** Se eliminaron `PathwayParityAuditor`, `GameplayValidationGate` y sus reportes de "100% PASS". El avance se mide **exclusivamente por los Gates de Verdad G1 a G7**.
+3. **Doctrina de Dos Capas:**
+   - **Tier L (`reborn/data/content/`):** Biblioteca pasiva de lore. Se lee; jamás se edita directamente.
+   - **Tier G (`reborn/data/gameplay/`):** Contrato con semántica de juego. Si una vía jugable carece de Tier G, el build falla estrepitosamente.
+4. **Balance Centralizado:** Todos los costes, daños, probabilidades y multiplicadores viven en `reborn/data/gameplay/balance/`. Prohibidos números inline en código o en JSONs de contenido.
+5. **Persistencia Transaccional:** El estado de juego (incluidas batallas activas y casos) debe persistir en SQLite. Prohibido estado crítico exclusivamente en `Map` o memoria volátil.
+6. **Resolución de Rutas:** Prohibidas heurísticas de CWD. Las rutas de datos se resuelven desde la raíz del paquete (`import.meta`).
+7. **Regla del Hueco (§3.8):** Un hueco de contenido nunca se rellena en línea por un agente. Hueco → excepción + cola HUMAN_REVIEW.
+8. **Regla del Testigo (§3.9):** Ninguna operación destructiva (borrado masivo, reescritura, migración, purge) se ejecuta sin commit previo del estado actual. Orden sagrada: **COMMIT primero, TAG después, DESTRUCCIÓN al final**.
+9. **Formato Obligatorio de Reporte (§12 ampliado):** Cada sesión o brief concluido debe emitir su reporte con el **campo 0 obligatorio "COMMIT: <hash>"** (acompañado de URL de CI y contador N/20). Todo reporte cita el commit que contiene su trabajo. **Reporte sin Campo 0 = INVÁLIDO**. Fin de sesión = commit + push (commit = testigo; push = notario), sin excepciones. La sección **FALLOS** es obligatoria sin excepción incluso en sesiones limpias ("ninguna incidencia tras búsqueda en logs/tests/CI" + evidencia).
+10. **Regla Permanente de Procedencia de Gates (§3.10 extendido):** Toda re-corrida de un gate tras cambio estructural reporta DELTA contra la corrida anterior + hipótesis causal. Todo umbral declarado en un reporte cita la orden que lo estableció — umbral sin procedencia = métrica inválida. Números sin procedencia = inválidos.
+11. **Erradicación Absoluta de Math.random (Tercera Huelga):** Prohibido el uso de `Math.random` en todo `reborn/src/`. Todo identificador, tirada, selección o evento probabilístico DEBE ser estrictamente determinista vía `SeededRNG` o `generateDeterministicId`. El gate de CI `lint:determinism` valida esto de forma estricta (presencia = build FAIL).
+12. **Orígenes Canónicos (BRIEF-09 / Ratificación del Director):** Mueren los placeholders provisionales. Se aprueban formalmente 6 orígenes canónicos en Tier G (`origins.json`): *Escribiente Notarial, Estudiante de Medicina, Corresponsal de Sucesos, Espiritista de Salón, Estibador de Muelles* y el *Detective Privado* (adoptado oficialmente por la Dirección como sexto origen canónico). Cada origen define sus 3 anclas de humanidad firmadas, profesión civil, contacto inicial, carga (deuda o secreto), distrito y salario formalizado. El prólogo universal tutorial orquesta el onboarding, la primera carta del Benefactor, la elección críptica de vía (Fool / Visionary) y el despertar S9.
+13. **Ley de Prosa Diegética (§0.a BRIEF-10):** Ningún string visible en la interfaz de usuario debe contener términos mecánicos (números explícitos de atributos o stats como "HP: 100", "Sanidad: 85%", "Ruina: 5", modificadores "+15", o nombres de sistemas matemáticos). Todo estado somático, avance o peligro se expresa a través de metáforas diegéticas victorianas y objetos sobre la mesa (la vela, el espejo de azogue, las grietas del marco, notas en papel timbrado). El audit anti-mecánico en CI (`npm run audit:diegetic`) valida esto de forma estricta mediante grep de patrones en las vistas visibles (presencia = build FAIL).
+14. **Ley del Objeto (BRIEF-10.VISUAL — ESTADO = OBJETO. MOMENTO = PROSA):** Todo estado del personaje se renderiza como un OBJETO físico con estado visual perceptible: nadie LEE cómo está su cordura o corrupción — MIRA la llama viva o el azogue. La prosa descriptiva vive exclusivamente en momentos ceremoniales y al interactuar directamente (el objeto "habla" al tocarlo); las etiquetas ambientales en reposo no superan las 7 palabras por objeto. Se prohíben dashboards analíticos, pestañas abstractas o texto explicativo apilado en reposo. El audit extendido en CI valida tanto la pureza anti-mecánica como el umbral estricto de texto en reposo.
+
+---
+
+## 4. ADVERTENCIA DE PROCEDENCIA HISTÓRICA Y TAGS
+
+> [!WARNING]
+> **archive/pre-purga = MISNOMER HISTÓRICO (embrión 31-ago-2026).**
+> El tag `archive/pre-purga` y su alias `archive/embryonic-snapshot-2026-08-31` apuntan al commit inicial `92415a2` del 31 de agosto de 2026.
+> El árbol final de `/src` desarrollado localmente con 67 archivos JSON y 3.10 MB **jamás fue commiteado** y fue purgado.
+> `reborn/data/content/` es la **única instancia superviviente** del estado final y la autoridad canónica de Tier L, congelada bajo `manifest.json` v1.1.
+> El script `export_content_and_generate_manifest.cjs` es exclusivamente evidencia forense histórica: el manifest v1.1 es la autoridad inmutable y **no se regenera jamás**.
+
+---
+
+## 5. REGLAS DE ERA (POST-LOTM · PRE-COI) — BIBLIA CANÓNICA
+
+- **Era Oficial:** **POST-LOTM · PRE-COI** (~1353 Quinta Época, ~1 año post-Guerra de los Dioses, Klein en letargo, previo a CoI 1358). Toda referencia previa a "era pre-novela / ~1339" queda OBSOLETA.
+- **R1 (Historia):** Los eventos canónicos de la novela son **HISTORIA** (world-state utilizable).
+- **R2 (Leyenda):** Los personajes canónicos mayores son **LEYENDA** (mythic/lore/telar_root; jamás NPCs operativos ni líderes visibles). Excepción controlada: personajes canónicos de nivel medio de `npc.json` pueden existir como NPC de fondo SOLO con nota de coherencia de era (edad/secuencia/rango) y firma del Director caso por caso (`HUMAN_REVIEW`). Textura diegética, nunca sustitutos de contenido jugable.
+- **R3 (Semillas Cósmicas):** Nada de *Circle of Inevitability* (CoI) ha ocurrido: su contenido existe únicamente como semillas cósmicas latentes (precursores), no como facciones activas ni poderes jugables.
+- **R4 (El Loco):** Su existencia es un misterio reciente; sus creyentes son pocos; la Iglesia del Loco es embrionaria y LORE-ONLY (rumor distante en el Continente Norte, jamás organización funcional ni NPC operativo); Klein está durmiendo. `ENTITY_LORD_OF_MYSTERIES` existe como historia oculta reciente en mythic/lore, jamás como presencia activa directa.
+
+---
+
+## 6. MANDATO DE ELEVACIÓN PHASER (v4.1 · P00-P15)
+
+1. **Mandato Principal:** Finalizar y elevar el juego existente `LOTM_SIMULADOR` mediante la integración de **Phaser 4.2.1** para escenas, objetos, cámara, animación y efectos tácticos, conservando el frontend **React** para lecturas accesibles, tipografía editorial, formularios y menús HUD. La propuesta de migración externa a Godot queda formalmente descartada.
+2. **Actualización de Reglas de Presentación (§I.11 / §I.14):**
+   - La prohibición histórica absoluta de información mecánica en pantalla queda actualizada: se autoriza la visualización clara de información mecánica conocida por el personaje (puntos de acción, balance de cartera, costes de viaje, turnos, munición y estados tácticos) para garantizar una jugabilidad comprensible y accesible.
+   - Las salvaguardas de secretos narrativos permanecen inviolables: la verdad oculta de casos, atributos reservados de enemigos, y tiradas internas del backend jamás viajan ni se exponen al cliente.
+   - La restricción de 7 palabras por etiqueta se flexibiliza para permitir descripciones claras y accesibles en paneles de inspección y controles interactivos.
+3. **Doctrina de Integración y Transaccionalidad:**
+   - **Renderizado Dual Reversible:** Soporte del parámetro `?renderer=phaser` en `App.tsx` para pruebas y validación comparativa sin romper el renderer actual.
+   - **Autoridad Estricta del Backend:** El cliente es un intérprete de proyecciones públicas; queda estrictamente prohibida la simulación de victorias, huidas, o estados de preparación en bloques `catch` o montajes de vista.
+   - **Idempotencia Transaccional:** Todas las mutaciones de juego (compras, viajes, combate, pistas, ascensión) adoptan el patrón de sobres con `commandId` y `command_receipts` en SQLite.
+
+

@@ -1,0 +1,785 @@
+[
+  {
+    "id": "TC_001",
+    "identity": {
+      "name": "Klein Moretti",
+      "tarot_title": "THE_FOOL",
+      "pathway": "FOOL",
+      "current_sequence": 0,
+      "highest_sequence_reached": 0,
+      "status": "ACTIVE"
+    },
+    "club_profile": {
+      "member_rank": "FOUNDER",
+      "join_epoch": "FIFTH_EPOCH_EARLY",
+      "loyalty_to_fool": 100,
+      "contribution_score": 100
+    },
+    "authority_profile": {
+      "authority_domains": [
+        "FOOLING",
+        "CONCEALMENT",
+        "DIVINE_MIRACLES",
+        "SPIRIT_WORLD"
+      ],
+      "mythical_creature_status": true,
+      "angelic_status": true,
+      "divine_status": true
+    },
+    "knowledge_profile": {
+      "accessible_knowledge_categories": [
+        "FOURTH_EPOCH_HISTORY",
+        "SEFIROT_MYSTERIES",
+        "OUTER_DEITIES"
+      ],
+      "secret_knowledge_categories": [
+        "ORIGINAL_CREATOR_WILL",
+        "COSMIC_PILLARS"
+      ],
+      "knowledge_sharing_level": 50
+    },
+    "gathering_behavior": {
+      "attendance_rate": 100,
+      "can_provide_reports": true,
+      "can_request_help": false,
+      "can_assign_missions": true
+    },
+    "relationship_links": [
+      {
+        "member_id": "TC_002",
+        "relationship_type": "ALLY",
+        "value": 100
+      }
+    ],
+    "investigation_hooks": {
+      "can_generate_investigations": true,
+      "linked_investigations": [
+        "INV_CASE_050"
+      ]
+    },
+    "quest_hooks": {
+      "can_generate_quests": true,
+      "linked_quests": []
+    },
+    "information_network": {
+      "known_organizations": [
+        "TAROT_CLUB",
+        "CHURCH_OF_THE_FOOL"
+      ],
+      "known_entities": [
+        "GOD_ADAM_TRUE_CREATOR",
+        "GOD_EVERNIGHT"
+      ],
+      "known_regions": [
+        "REG_BACKLUND_EAST",
+        "REG_SPIRIT_WORLD"
+      ]
+    },
+    "activity_profile": {
+      "world_presence": 10,
+      "meeting_activity": 100,
+      "can_spawn_rumors": false,
+      "can_spawn_events": true
+    },
+    "active_regions": [
+      "REG_SPIRIT_WORLD"
+    ],
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "TC_002",
+    "identity": {
+      "name": "The World",
+      "tarot_title": "THE_WORLD",
+      "pathway": "FOOL",
+      "current_sequence": 1,
+      "highest_sequence_reached": 1,
+      "status": "ACTIVE"
+    },
+    "club_profile": {
+      "member_rank": "FOUNDER",
+      "join_epoch": "FIFTH_EPOCH_EARLY",
+      "loyalty_to_fool": 100,
+      "contribution_score": 100
+    },
+    "authority_profile": {
+      "authority_domains": [
+        "MARIONETTE_CONTROL",
+        "SPIRIT_TRAVEL",
+        "WISH_GRANTING"
+      ],
+      "mythical_creature_status": true,
+      "angelic_status": true,
+      "divine_status": false
+    },
+    "knowledge_profile": {
+      "accessible_knowledge_categories": [
+        "FOURTH_EPOCH_HISTORY",
+        "OUTER_DEITIES"
+      ],
+      "secret_knowledge_categories": [
+        "SEFIROT_MYSTERIES"
+      ],
+      "knowledge_sharing_level": 80
+    },
+    "gathering_behavior": {
+      "attendance_rate": 100,
+      "can_provide_reports": true,
+      "can_request_help": true,
+      "can_assign_missions": true
+    },
+    "relationship_links": [
+      {
+        "member_id": "TC_001",
+        "relationship_type": "ALLY",
+        "value": 100
+      }
+    ],
+    "investigation_hooks": {
+      "can_generate_investigations": true,
+      "linked_investigations": []
+    },
+    "quest_hooks": {
+      "can_generate_quests": true,
+      "linked_quests": []
+    },
+    "information_network": {
+      "known_organizations": [
+        "TAROT_CLUB"
+      ],
+      "known_entities": [],
+      "known_regions": [
+        "REG_BACKLUND_EAST"
+      ]
+    },
+    "activity_profile": {
+      "world_presence": 5,
+      "meeting_activity": 100,
+      "can_spawn_rumors": true,
+      "can_spawn_events": true
+    },
+    "active_regions": [
+      "REG_SPIRIT_WORLD"
+    ],
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "TC_003",
+    "identity": {
+      "name": "Audrey Hall",
+      "tarot_title": "JUSTICE",
+      "pathway": "SPECTATOR",
+      "current_sequence": 2,
+      "highest_sequence_reached": 2,
+      "status": "ACTIVE"
+    },
+    "club_profile": {
+      "member_rank": "CORE_MEMBER",
+      "join_epoch": "FIFTH_EPOCH_EARLY",
+      "loyalty_to_fool": 95,
+      "contribution_score": 90
+    },
+    "authority_profile": {
+      "authority_domains": [
+        "MIND_MANIPULATION",
+        "DREAM_WALKING",
+        "PSYCHIC_DISCLUSION"
+      ],
+      "mythical_creature_status": true,
+      "angelic_status": true,
+      "divine_status": false
+    },
+    "knowledge_profile": {
+      "accessible_knowledge_categories": [
+        "PSYCHOLOGY",
+        "PSYCHOLOGY_ALCHEMISTS"
+      ],
+      "secret_knowledge_categories": [
+        "MIND_CATACOMBS_SECRET"
+      ],
+      "knowledge_sharing_level": 75
+    },
+    "gathering_behavior": {
+      "attendance_rate": 95,
+      "can_provide_reports": true,
+      "can_request_help": true,
+      "can_assign_missions": true
+    },
+    "relationship_links": [
+      {
+        "member_id": "TC_004",
+        "relationship_type": "FRIEND",
+        "value": 85
+      }
+    ],
+    "investigation_hooks": {
+      "can_generate_investigations": true,
+      "linked_investigations": [
+        "INV_CASE_039"
+      ]
+    },
+    "quest_hooks": {
+      "can_generate_quests": true,
+      "linked_quests": []
+    },
+    "information_network": {
+      "known_organizations": [
+        "TAROT_CLUB",
+        "PSYCHOLOGY_ALCHEMISTS",
+        "LOEN_ARISTOCRACY"
+      ],
+      "known_entities": [],
+      "known_regions": [
+        "REG_BACKLUND_WEST"
+      ]
+    },
+    "activity_profile": {
+      "world_presence": 85,
+      "meeting_activity": 95,
+      "can_spawn_rumors": true,
+      "can_spawn_events": true
+    },
+    "active_regions": [
+      "REG_BACKLUND_WEST"
+    ],
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "TC_004",
+    "identity": {
+      "name": "Alger Wilson",
+      "tarot_title": "THE_HANGED_MAN",
+      "pathway": "SAILOR",
+      "current_sequence": 3,
+      "highest_sequence_reached": 3,
+      "status": "ACTIVE"
+    },
+    "club_profile": {
+      "member_rank": "CORE_MEMBER",
+      "join_epoch": "FIFTH_EPOCH_EARLY",
+      "loyalty_to_fool": 95,
+      "contribution_score": 95
+    },
+    "authority_profile": {
+      "authority_domains": [
+        "OCEAN_TRAVEL",
+        "WEATHER_MANIPULATION",
+        "LIGHTNING_STRIKE"
+      ],
+      "mythical_creature_status": false,
+      "angelic_status": false,
+      "divine_status": false
+    },
+    "knowledge_profile": {
+      "accessible_knowledge_categories": [
+        "SEA_LEGENDS",
+        "CHURCH_OF_STORMS_SECRETS"
+      ],
+      "secret_knowledge_categories": [
+        "WESTERN_CONTINENT_BARRIER"
+      ],
+      "knowledge_sharing_level": 85
+    },
+    "gathering_behavior": {
+      "attendance_rate": 98,
+      "can_provide_reports": true,
+      "can_request_help": true,
+      "can_assign_missions": true
+    },
+    "relationship_links": [
+      {
+        "member_id": "TC_003",
+        "relationship_type": "ALLY",
+        "value": 80
+      }
+    ],
+    "investigation_hooks": {
+      "can_trigger_investigation": true,
+      "linked_investigations": [
+        "INV_CASE_031"
+      ]
+    },
+    "book_unlocks": [],
+    "world_effects": {},
+    "importance": "LEGENDARY",
+    "information_network": {
+      "known_organizations": [
+        "TAROT_CLUB",
+        "CHURCH_OF_THE_LORD_OF_STORMS"
+      ],
+      "known_entities": [],
+      "known_regions": [
+        "REG_BACKLUND_PORT"
+      ]
+    },
+    "activity_profile": {
+      "world_presence": 90,
+      "meeting_activity": 98,
+      "can_spawn_rumors": true,
+      "can_spawn_events": true
+    },
+    "active_regions": [
+      "REG_BACKLUND_PORT"
+    ]
+  },
+  {
+    "id": "TC_005",
+    "identity": {
+      "name": "Derrick Berg",
+      "tarot_title": "THE_SUN",
+      "pathway": "SUN",
+      "current_sequence": 3,
+      "highest_sequence_reached": 3,
+      "status": "ACTIVE"
+    },
+    "club_profile": {
+      "member_rank": "CORE_MEMBER",
+      "join_epoch": "FIFTH_EPOCH_EARLY",
+      "loyalty_to_fool": 98,
+      "contribution_score": 85
+    },
+    "authority_profile": {
+      "authority_domains": [
+        "PURIFICATION",
+        "HOLY_LIGHT",
+        "ANTI_UNDEAD"
+      ],
+      "mythical_creature_status": false,
+      "angelic_status": false,
+      "divine_status": false
+    },
+    "knowledge_profile": {
+      "accessible_knowledge_categories": [
+        "GOD_FORSAKEN_LAND_HISTORY",
+        "CHURCH_OF_THE_SUN_HERESY"
+      ],
+      "secret_knowledge_categories": [
+        "ANCIENT_SUN_GOD_HISTORY"
+      ],
+      "knowledge_sharing_level": 90
+    },
+    "gathering_behavior": {
+      "attendance_rate": 100,
+      "can_provide_reports": true,
+      "can_request_help": true,
+      "can_assign_missions": false
+    },
+    "relationship_links": [],
+    "investigation_hooks": {
+      "can_generate_investigations": true,
+      "linked_investigations": [
+        "INV_CASE_040"
+      ]
+    },
+    "quest_hooks": {
+      "can_generate_quests": true,
+      "linked_quests": []
+    },
+    "information_network": {
+      "known_organizations": [
+        "TAROT_CLUB",
+        "CHURCH_OF_THE_FOOL"
+      ],
+      "known_entities": [],
+      "known_regions": [
+        "REG_BACKLUND_SUBURBS"
+      ]
+    },
+    "activity_profile": {
+      "world_presence": 80,
+      "meeting_activity": 100,
+      "can_spawn_rumors": true,
+      "can_spawn_events": true
+    },
+    "active_regions": [
+      "REG_BACKLUND_SUBURBS"
+    ],
+    "importance": "LEGENDARY"
+  },
+  {
+    "id": "TC_006",
+    "identity": {
+      "name": "Fors Wall",
+      "tarot_title": "THE_MAGICIAN",
+      "pathway": "DOOR",
+      "current_sequence": 2,
+      "highest_sequence_reached": 2,
+      "status": "ACTIVE"
+    },
+    "club_profile": {
+      "member_rank": "SENIOR_MEMBER",
+      "join_epoch": "FIFTH_EPOCH_EARLY",
+      "loyalty_to_fool": 95,
+      "contribution_score": 85
+    },
+    "authority_profile": {
+      "authority_domains": [
+"SPACE_BLINKING",
+"ASTRAL_WANDERING",
+"CONCEPT_RECORDING"
+],
+"mythical_creature_status": true,
+"angelic_status": true,
+"divine_status": false
+},
+"knowledge_profile": {
+"accessible_knowledge_categories": [
+"ABRAHAM_FAMILY_SECRETS",
+"COSMIC_RISKS"
+],
+"secret_knowledge_categories": [
+"OUTER_DEITIES_CONTAMINATION"
+],
+"knowledge_sharing_level": 80
+},
+"gathering_behavior": {
+"attendance_rate": 95,
+"can_provide_reports": true,
+"can_request_help": true,
+"can_assign_missions": true
+},
+"relationship_links": [
+{
+"member_id": "TC_007",
+"relationship_type": "FRIEND",
+"value": 95
+}
+],
+"investigation_hooks": {
+"can_generate_investigations": true,
+"linked_investigations": [
+"INV_CASE_017"
+]
+},
+"quest_hooks": {
+"can_generate_quests": true,
+"linked_quests": []
+},
+"information_network": {
+"known_organizations": [
+"TAROT_CLUB",
+"ABRAHAM_FAMILY"
+],
+"known_entities": [],
+"known_regions": [
+"REG_BACKLUND_WEST"
+]
+},
+"activity_profile": {
+"world_presence": 75,
+"meeting_activity": 95,
+"can_spawn_rumors": true,
+"can_spawn_events": true
+},
+"active_regions": [
+"REG_BACKLUND_WEST",
+"REG_SPIRIT_WORLD"
+],
+"importance": "LEGENDARY"
+},
+{
+"id": "TC_007",
+"identity": {
+"name": "Xio Dere",
+"tarot_title": "JUDGEMENT",
+"pathway": "ARBITER",
+"current_sequence": 4,
+"highest_sequence_reached": 4,
+"status": "ACTIVE"
+},
+"club_profile": {
+"member_rank": "SENIOR_MEMBER",
+"join_epoch": "FIFTH_EPOCH_MID",
+"loyalty_to_fool": 90,
+"contribution_score": 80
+},
+"authority_profile": {
+"authority_domains": [
+"TACTICAL_PROHIBITION",
+"PERIMETER_ENFORCEMENT",
+"LOGICAL_LAW"
+],
+"mythical_creature_status": false,
+"angelic_status": false,
+"divine_status": false
+},
+"knowledge_profile": {
+"accessible_knowledge_categories": [
+"LOEN_MILITARY_TACTICS",
+"MI9_INTERNAL_FILES"
+],
+"secret_knowledge_categories": [
+"ROYAL_FAMILY_CONSPIRACIES"
+],
+"knowledge_sharing_level": 70
+},
+"gathering_behavior": {
+"attendance_rate": 95,
+"can_provide_reports": true,
+"can_request_help": true,
+"can_assign_missions": false
+},
+"relationship_links": [
+{
+"member_id": "TC_006",
+"relationship_type": "FRIEND",
+"value": 95
+}
+],
+"investigation_hooks": {
+"can_generate_investigations": true,
+"linked_investigations": [
+"INV_CASE_016"
+]
+},
+"quest_hooks": {
+"can_generate_quests": true,
+"linked_quests": []
+},
+"information_network": {
+"known_organizations": [
+"TAROT_CLUB",
+"MI9"
+],
+"known_entities": [],
+"known_regions": [
+"REG_BACKLUND_CHERWOOD"
+]
+},
+"activity_profile": {
+"world_presence": 95,
+"meeting_activity": 95,
+"can_spawn_rumors": true,
+"can_spawn_events": true
+},
+"active_regions": [
+"REG_BACKLUND_CHERWOOD"
+],
+"importance": "LEGENDARY"
+},
+{
+"id": "TC_008",
+"identity": {
+"name": "Leonard Mitchell",
+"tarot_title": "THE_STAR",
+"pathway": "NIGHT",
+"current_sequence": 4,
+"highest_sequence_reached": 4,
+"status": "ACTIVE"
+},
+"club_profile": {
+"member_rank": "SENIOR_MEMBER",
+"join_epoch": "FIFTH_EPOCH_MID",
+"loyalty_to_fool": 95,
+"contribution_score": 85
+},
+"authority_profile": {
+"authority_domains": [
+"CHARM_CASTING",
+"SLEEP_INDUCTION",
+"SPIRIT_CONCEALMENT"
+],
+"mythical_creature_status": false,
+"angelic_status": false,
+"divine_status": false
+},
+"knowledge_profile": {
+"accessible_knowledge_categories": [
+"NIGHTHAWK_SECRET_VAULTS",
+"CHURCH_OF_EVERNIGHT_DOGMA"
+],
+"secret_knowledge_categories": [
+"PALLEZ_ZOROAST_HISTORY"
+],
+"knowledge_sharing_level": 75
+},
+"gathering_behavior": {
+"attendance_rate": 96,
+"can_provide_reports": true,
+"can_request_help": true,
+"can_assign_missions": false
+},
+"relationship_links": [],
+"investigation_hooks": {
+"can_generate_investigations": true,
+"linked_investigations": [
+"INV_CASE_004"
+]
+},
+"quest_hooks": {
+"can_generate_quests": true,
+"linked_quests": []
+},
+"information_network": {
+"known_organizations": [
+"TAROT_CLUB",
+"CHURCH_OF_EVERNIGHT"
+],
+"known_entities": [
+"NPC_074"
+],
+"known_regions": [
+"REG_BACKLUND_NORTH"
+]
+},
+"activity_profile": {
+"world_presence": 90,
+"meeting_activity": 96,
+"can_spawn_rumors": true,
+"can_spawn_events": true
+},
+"active_regions": [
+"REG_BACKLUND_NORTH"
+],
+"importance": "LEGENDARY"
+},
+{
+"id": "TC_009",
+"identity": {
+"name": "Cattleya",
+"tarot_title": "THE_HERMIT",
+"pathway": "MYSTERY_PRYER",
+"current_sequence": 3,
+"highest_sequence_reached": 3,
+"status": "ACTIVE"
+},
+"club_profile": {
+"member_rank": "SENIOR_MEMBER",
+"join_epoch": "FIFTH_EPOCH_MID",
+"loyalty_to_fool": 92,
+"contribution_score": 85
+},
+"authority_profile": {
+"authority_domains": [
+"RUNIC_MAGIC",
+"MYSTIC_DECODING",
+"SEA_ASTRAL_NAVIGATION"
+],
+"mythical_creature_status": false,
+"angelic_status": false,
+"divine_status": false
+},
+"knowledge_profile": {
+"accessible_knowledge_categories": [
+"MOSES_ASCETIC_HISTORY",
+"PIRATE_NETWORKS"
+],
+"secret_knowledge_categories": [
+"QUEEN_MYSTIC_SECRET_LOGS"
+],
+"knowledge_sharing_level": 80
+},
+"gathering_behavior": {
+"attendance_rate": 94,
+"can_provide_reports": true,
+"can_request_help": true,
+"can_assign_missions": true
+},
+"relationship_links": [],
+"investigation_hooks": {
+"can_generate_investigations": true,
+"linked_investigations": [
+"INV_CASE_021"
+]
+},
+"quest_hooks": {
+"can_generate_quests": true,
+"linked_quests": []
+},
+"information_network": {
+"known_organizations": [
+"TAROT_CLUB",
+"MOSES_ASCETIC_ORDER"
+],
+"known_entities": [],
+"known_regions": [
+"REG_BACKLUND_PORT"
+]
+},
+"activity_profile": {
+"world_presence": 60,
+"meeting_activity": 94,
+"can_spawn_rumors": true,
+"can_spawn_events": true
+},
+"active_regions": [
+"REG_BACKLUND_PORT"
+],
+"importance": "LEGENDARY"
+},
+{
+"id": "TC_010",
+"identity": {
+"name": "Emlyn White",
+"tarot_title": "THE_MOON",
+"pathway": "APOTHECARY",
+"current_sequence": 4,
+"highest_sequence_reached": 4,
+"status": "ACTIVE"
+},
+"club_profile": {
+"member_rank": "SENIOR_MEMBER",
+"join_epoch": "FIFTH_EPOCH_MID",
+"loyalty_to_fool": 90,
+"contribution_score": 80
+},
+"authority_profile": {
+"authority_domains": [
+"POTION_BREWING",
+"BLOOD_MANIPULATION",
+"BIOLOGICAL_HEALING"
+],
+"mythical_creature_status": false,
+"angelic_status": false,
+"divine_status": false
+},
+"knowledge_profile": {
+"accessible_knowledge_categories": [
+"SANGUINE_HISTORY",
+"HERBAL_TRANSCRIPTIONS"
+],
+"secret_knowledge_categories": [
+"SANGUINE_COUNCIL_SECRETS"
+],
+"knowledge_sharing_level": 70
+},
+"gathering_behavior": {
+"attendance_rate": 92,
+"can_provide_reports": true,
+"can_request_help": true,
+"can_assign_missions": false
+},
+"relationship_links": [],
+"investigation_hooks": {
+"can_generate_investigations": true,
+"linked_investigations": [
+"INV_CASE_022"
+]
+},
+"quest_hooks": {
+"can_generate_quests": true,
+"linked_quests": []
+},
+"information_network": {
+"known_organizations": [
+"TAROT_CLUB",
+"SANGUINE_COUNCIL"
+],
+"known_entities": [],
+"known_regions": [
+"REG_BACKLUND_WEST"
+]
+},
+"activity_profile": {
+"world_presence": 85,
+"meeting_activity": 92,
+"can_spawn_rumors": true,
+"can_spawn_events": true
+},
+"active_regions": [
+"REG_BACKLUND_WEST"
+],
+"importance": "LEGENDARY"
+}
+]
+

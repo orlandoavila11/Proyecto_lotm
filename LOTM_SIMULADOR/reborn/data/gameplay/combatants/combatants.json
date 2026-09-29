@@ -1,0 +1,2071 @@
+[
+  {
+    "id": "spinal_octopus",
+    "name": "Spinal Octopus",
+    "atomStats": {
+      "hp": 45,
+      "maxHp": 45,
+      "spirituality": 30,
+      "maxSpirituality": 30,
+      "ap": 3,
+      "speed": 8
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "FOOL",
+    "sefiraGroupRef": "LOTM",
+    "abilities": [
+      {
+        "id": "ABILITY_SPINAL_TENTACLE_STRIKE",
+        "name": "Latigazo de Tentáculo Astral",
+        "description": "Extiende un tentáculo viscoso que azota al adversario y lo arrastra hacia su radio de apresamiento.",
+        "apCost": 1,
+        "spiritualityCost": 5,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 14
+            }
+          },
+          {
+            "atomId": "ATOM_DISPLACE_PULL",
+            "params": {
+              "distance": 1
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Bestiario Tier L (low_level_monsters.json). Criatura marina ligada a la vía Fool (Real Eye of Spinal Octopus)."
+      },
+      {
+        "id": "ABILITY_SPINAL_ILLUSORY_INK",
+        "name": "Tinta Ilusoria Desconcertante",
+        "description": "Expulsa una nube de tinta psíquica que debilita los sentidos del objetivo.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Capacidad de distorsión sensorial de la vía Fool en monstruos de secuencia baja."
+      }
+    ],
+    "observationChance": 28
+  },
+  {
+    "id": "fog_wolf",
+    "name": "Fog Wolf",
+    "atomStats": {
+      "hp": 180,
+      "maxHp": 180,
+      "spirituality": 140,
+      "maxSpirituality": 140,
+      "ap": 5,
+      "speed": 14
+    },
+    "statuses": [
+      "FOG_CONCEALMENT"
+    ],
+    "opacity": {
+      "oculto_hasta": "SPIRIT_VISION_ACTIVE"
+    },
+    "pathwayTag": "FOOL",
+    "sefiraGroupRef": "LOTM",
+    "abilities": [
+      {
+        "id": "ABILITY_FOG_WOLF_BITE",
+        "name": "Dentellada de Niebla Helada",
+        "description": "Acometida lupina rápida que desgarra la carne y repele al atacante.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 24
+            }
+          },
+          {
+            "atomId": "ATOM_DISPLACE_PUSH",
+            "params": {
+              "distance": 1,
+              "direction": "away"
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Monstruo de niebla ligado a la secuencia de Marionetista / Sin Rostro de la vía Fool."
+      },
+      {
+        "id": "ABILITY_FOG_WOLF_CONCEALMENT",
+        "name": "Velo de Bruma Histórica",
+        "description": "Se envuelve en una densa niebla mágica que oculta su silueta en la rejilla.",
+        "apCost": 1,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 1,
+        "targetType": "SELF",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "CONCEALED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Efecto canónico de FOG_CONCEALMENT documentado en bestiario."
+      },
+      {
+        "id": "ABILITY_FOG_WOLF_HOWL",
+        "name": "Aullido del Vasto Gris",
+        "description": "Un aullido desgarrador que infunde pavor helado y entorpece los reflejos rivales.",
+        "apCost": 2,
+        "spiritualityCost": 20,
+        "attentionCost": 0,
+        "range": 5,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "FEAR",
+              "durationTurns": 2
+            }
+          },
+          {
+            "atomId": "ATOM_DRAIN_AP",
+            "params": {
+              "amount": 1
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Presión mental y ralentización por niebla espiritual."
+      }
+    ],
+    "observationChance": 49
+  },
+  {
+    "id": "faceless_hound",
+    "name": "Faceless Hound",
+    "atomStats": {
+      "hp": 85,
+      "maxHp": 85,
+      "spirituality": 60,
+      "maxSpirituality": 60,
+      "ap": 4,
+      "speed": 11
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "FOOL",
+    "sefiraGroupRef": "LOTM",
+    "abilities": [
+      {
+        "id": "ABILITY_FACELESS_BITE",
+        "name": "Mordisco Maleable",
+        "description": "Modifica la estructura de su mandíbula para asestar un golpe contundente que empuja.",
+        "apCost": 1,
+        "spiritualityCost": 5,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 18
+            }
+          },
+          {
+            "atomId": "ATOM_DISPLACE_PUSH",
+            "params": {
+              "distance": 1,
+              "direction": "away"
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Bestiario Tier L. Canino con rasgos mutantes de Sin Rostro (Fool)."
+      },
+      {
+        "id": "ABILITY_FACELESS_TERROR",
+        "name": "Rictus Inexpresivo",
+        "description": "Muestra una faz desprovista de rasgos provocando un escalofrío de pánico.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "FEAR",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Efecto psicológico de choque visual ante la falta de rostro."
+      }
+    ],
+    "observationChance": 39
+  },
+  {
+    "id": "spirit_paper_wraith",
+    "name": "Spirit Paper Wraith",
+    "atomStats": {
+      "hp": 55,
+      "maxHp": 55,
+      "spirituality": 75,
+      "maxSpirituality": 75,
+      "ap": 3,
+      "speed": 12
+    },
+    "statuses": [
+      "PHYSICAL_RESISTANCE"
+    ],
+    "opacity": {
+      "oculto_hasta": "DIVINATION_IDENTIFY"
+    },
+    "pathwayTag": "FOOL",
+    "sefiraGroupRef": "LOTM",
+    "abilities": [
+      {
+        "id": "ABILITY_WRAITH_PAPER_STORM",
+        "name": "Torbellino de Hojas Cortantes",
+        "description": "Proyecta fragmentos de papel consagrado que cortan la carne a distancia.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 16
+            }
+          },
+          {
+            "atomId": "ATOM_DISPLACE_PUSH",
+            "params": {
+              "distance": 1,
+              "direction": "away"
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Afinidad con la habilidad de Payaso (Paper Projectile Mastery)."
+      },
+      {
+        "id": "ABILITY_WRAITH_SHIFT",
+        "name": "Dispersión Espectral de Papel",
+        "description": "Desintegra su figura en figuras de papiro desplazándose velozmente en la rejilla.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "GRID_CELL",
+        "atoms": [
+          {
+            "atomId": "ATOM_DISPLACE_MOVE",
+            "params": {
+              "maxDistance": 2
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "CONCEALED",
+              "durationTurns": 1
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Maniobra evasiva derivada del sustituto de papel y sigilo de payaso."
+      }
+    ],
+    "observationChance": 42
+  },
+  {
+    "id": "shadow_rat",
+    "name": "Shadow Rat",
+    "atomStats": {
+      "hp": 30,
+      "maxHp": 30,
+      "spirituality": 25,
+      "maxSpirituality": 25,
+      "ap": 3,
+      "speed": 10
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "ERROR",
+    "sefiraGroupRef": "LOTM",
+    "abilities": [
+      {
+        "id": "ABILITY_SHADOW_RAT_BITE",
+        "name": "Mordisco Venenoso de Alcantarilla",
+        "description": "Inocula toxinas infectas con sus incisivos afilados.",
+        "apCost": 1,
+        "spiritualityCost": 5,
+        "attentionCost": 0,
+        "range": 1,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 10
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "POISON",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Bestiario Tier L (low_level_monsters.json). Roedor corrompido de Backlund."
+      },
+      {
+        "id": "ABILITY_SHADOW_RAT_SKULK",
+        "name": "Escabullida Sombría",
+        "description": "Se desliza en las rendijas oscuras del suelo reposicionándose con sigilo.",
+        "apCost": 1,
+        "spiritualityCost": 5,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "GRID_CELL",
+        "atoms": [
+          {
+            "atomId": "ATOM_DISPLACE_MOVE",
+            "params": {
+              "maxDistance": 2
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "CONCEALED",
+              "durationTurns": 1
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Movimiento evasivo menor de roedor astral."
+      }
+    ],
+    "observationChance": 35
+  },
+  {
+    "id": "trickster_crow",
+    "name": "Trickster Crow",
+    "atomStats": {
+      "hp": 40,
+      "maxHp": 40,
+      "spirituality": 45,
+      "maxSpirituality": 45,
+      "ap": 3,
+      "speed": 13
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "ERROR",
+    "sefiraGroupRef": "LOTM",
+    "abilities": [
+      {
+        "id": "ABILITY_CROW_THEFT",
+        "name": "Peculado de Ocasión",
+        "description": "Picotea con astucia hurtando el tiempo de reacción del oponente.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 12
+            }
+          },
+          {
+            "atomId": "ATOM_DRAIN_AP",
+            "params": {
+              "amount": 1
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Marauder/Error. Arrebato de iniciativa y concentración."
+      },
+      {
+        "id": "ABILITY_CROW_CONFUSE",
+        "name": "Graznido Estrafalario",
+        "description": "Emite un graznido disonante que debilita el foco cognitivo del rival.",
+        "apCost": 1,
+        "spiritualityCost": 8,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Distracción auditiva de córvido místico."
+      }
+    ],
+    "observationChance": 46
+  },
+  {
+    "id": "astral_moth",
+    "name": "Astral Moth",
+    "atomStats": {
+      "hp": 35,
+      "maxHp": 35,
+      "spirituality": 50,
+      "maxSpirituality": 50,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SPIRIT_VISION_ACTIVE"
+    },
+    "pathwayTag": "DOOR",
+    "sefiraGroupRef": "LOTM",
+    "abilities": [
+      {
+        "id": "ABILITY_ASTRAL_POWDER",
+        "name": "Polvo de Traspaso Astral",
+        "description": "Esparce escamas relucientes que impactan directamente en el cuerpo espiritual.",
+        "apCost": 1,
+        "spiritualityCost": 12,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 16
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Door / Apprentice. Polvillo astral conductor de espiritualidad."
+      },
+      {
+        "id": "ABILITY_ASTRAL_BLINK",
+        "name": "Salto Dimensional Efímero",
+        "description": "Parpadea a través de los pliegues del mundo espiritual reubicándose al instante.",
+        "apCost": 2,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "GRID_CELL",
+        "atoms": [
+          {
+            "atomId": "ATOM_DISPLACE_TELEPORT",
+            "params": {
+              "maxDistance": 3
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Capacidad de teletransporte menor de la vía Aprendiz."
+      }
+    ],
+    "observationChance": 32
+  },
+  {
+    "id": "gatekeeper_beetle",
+    "name": "Gatekeeper Beetle",
+    "atomStats": {
+      "hp": 90,
+      "maxHp": 90,
+      "spirituality": 40,
+      "maxSpirituality": 40,
+      "ap": 3,
+      "speed": 6
+    },
+    "statuses": [
+      "CARAPACE_ARMOR"
+    ],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "DOOR",
+    "sefiraGroupRef": "LOTM",
+    "abilities": [
+      {
+        "id": "ABILITY_BEETLE_RAM",
+        "name": "Embate de Caparazón Pesado",
+        "description": "Arremete con su coraza quitinosa desplazando violentamente al objetivo.",
+        "apCost": 1,
+        "spiritualityCost": 5,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 20
+            }
+          },
+          {
+            "atomId": "ATOM_DISPLACE_PUSH",
+            "params": {
+              "distance": 1,
+              "direction": "away"
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Bestiario Tier L. Guardián insectoide con resistencia de pórtico."
+      },
+      {
+        "id": "ABILITY_BEETLE_BULWARK",
+        "name": "Fortificación de Umbral",
+        "description": "Cierra sus élitros canalizando bendición protectora y regenerando quitina.",
+        "apCost": 1,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 1,
+        "targetType": "SELF",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "BLESSING",
+              "durationTurns": 2
+            }
+          },
+          {
+            "atomId": "ATOM_HEAL_HP",
+            "params": {
+              "amount": 15
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Blindaje pasivo de insecto de portal."
+      }
+    ],
+    "observationChance": 25
+  },
+  {
+    "id": "dusk_specter",
+    "name": "Dusk Specter",
+    "atomStats": {
+      "hp": 50,
+      "maxHp": 50,
+      "spirituality": 65,
+      "maxSpirituality": 65,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": [
+      "MENTAL_HAZE"
+    ],
+    "opacity": {
+      "oculto_hasta": "TELEPATHIC_PROBE"
+    },
+    "pathwayTag": "VISIONARY",
+    "sefiraGroupRef": "GOD_ALMIGHTY",
+    "abilities": [
+      {
+        "id": "ABILITY_DUSK_SOUL_CHILL",
+        "name": "Toque de Escarcha Nocturna",
+        "description": "Transmite la gélida quietud del anochecer al cuerpo astral del adversario.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 18
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Darkness / Insomne. Afectación espiritual de la noche."
+      },
+      {
+        "id": "ABILITY_DUSK_SLUMBER_CHANT",
+        "name": "Susurro de Letargo Prematuro",
+        "description": "Entona fragmentos del poema de medianoche induciendo parálisis adormecida.",
+        "apCost": 2,
+        "spiritualityCost": 18,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "STUN",
+              "durationTurns": 1
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Efecto de Slumber Poema de Medianoche (Darkness S8)."
+      }
+    ],
+    "observationChance": 32
+  },
+  {
+    "id": "mind_dragon_whelp",
+    "name": "Mind Dragon Whelp",
+    "atomStats": {
+      "hp": 110,
+      "maxHp": 110,
+      "spirituality": 120,
+      "maxSpirituality": 120,
+      "ap": 4,
+      "speed": 10
+    },
+    "statuses": [
+      "PSYCHIC_AURA"
+    ],
+    "opacity": {
+      "oculto_hasta": "TELEPATHIC_PROBE"
+    },
+    "pathwayTag": "VISIONARY",
+    "sefiraGroupRef": "GOD_ALMIGHTY",
+    "abilities": [
+      {
+        "id": "ABILITY_WHELP_MENTAL_ROAR",
+        "name": "Rugido Psíquico Primordial",
+        "description": "Libera una onda expansiva mental de dragón que aterroriza la conciencia enemiga.",
+        "apCost": 2,
+        "spiritualityCost": 20,
+        "attentionCost": 0,
+        "range": 5,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 22
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "FEAR",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Visionary / Espectador. Naturaleza mental dragónica."
+      },
+      {
+        "id": "ABILITY_WHELP_DRAGON_AWE",
+        "name": "Mirada Hipnótica Majestuosa",
+        "description": "Fija sus pupilas reptilianas congelando la motricidad del rival por intimidación.",
+        "apCost": 2,
+        "spiritualityCost": 22,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "STUN",
+              "durationTurns": 1
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Habilidad de Pavor Hipnótico (Awe) de dragón mental."
+      }
+    ],
+    "observationChance": 35
+  },
+  {
+    "id": "hallucination_leech",
+    "name": "Hallucination Leech",
+    "atomStats": {
+      "hp": 40,
+      "maxHp": 40,
+      "spirituality": 50,
+      "maxSpirituality": 50,
+      "ap": 3,
+      "speed": 8
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "VISIONARY",
+    "sefiraGroupRef": "GOD_ALMIGHTY",
+    "abilities": [
+      {
+        "id": "ABILITY_LEECH_PSYCHIC_SIPHON",
+        "name": "Succión del Mar Subconsciente",
+        "description": "Se adhiere espiritualmente drenando fuerza mental y reparando sus tejidos.",
+        "apCost": 1,
+        "spiritualityCost": 12,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 16
+            }
+          },
+          {
+            "atomId": "ATOM_HEAL_HP",
+            "params": {
+              "amount": 12
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Parásito psíquico del bestiario de Espectador."
+      },
+      {
+        "id": "ABILITY_LEECH_MIND_FOG",
+        "name": "Velo de Alucinación Parásita",
+        "description": "Proyecta un espejismo que desvía la atención mientras debilita el raciocinio.",
+        "apCost": 1,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "ILLUSION",
+              "durationTurns": 1
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Distorsión de percepción causada por secreciones alucinógenas."
+      }
+    ],
+    "observationChance": 28
+  },
+  {
+    "id": "pure_sun_hound",
+    "name": "Pure Sun Hound",
+    "atomStats": {
+      "hp": 65,
+      "maxHp": 65,
+      "spirituality": 45,
+      "maxSpirituality": 45,
+      "ap": 4,
+      "speed": 11
+    },
+    "statuses": [
+      "SOLAR_CORONA"
+    ],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "SUN",
+    "sefiraGroupRef": "GOD_ALMIGHTY",
+    "abilities": [
+      {
+        "id": "ABILITY_SUN_HOUND_BITE",
+        "name": "Mordisco Solar Abrasador",
+        "description": "Inyecta luz solar concentrada que abrasa carne e impurezas espirituales.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 15
+            }
+          },
+          {
+            "atomId": "ATOM_DAMAGE_ELEMENTAL",
+            "params": {
+              "baseDamage": 12,
+              "element": "holy"
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Sun / Bardo. Criatura consagrada a la luz solar."
+      },
+      {
+        "id": "ABILITY_SUN_HOUND_RADIANCE",
+        "name": "Resplandor Purificador",
+        "description": "Emana un destello bendito que purifica aflicciones venenosas y fortalece su guardia.",
+        "apCost": 1,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 1,
+        "targetType": "SELF",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "BLESSING",
+              "durationTurns": 2
+            }
+          },
+          {
+            "atomId": "ATOM_REMOVE_STATUS",
+            "params": {
+              "status": "POISON"
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Purificación biológica mediante radiación solar."
+      }
+    ],
+    "observationChance": 39
+  },
+  {
+    "id": "radiant_spirit",
+    "name": "Radiant Spirit",
+    "atomStats": {
+      "hp": 75,
+      "maxHp": 75,
+      "spirituality": 80,
+      "maxSpirituality": 80,
+      "ap": 3,
+      "speed": 10
+    },
+    "statuses": [
+      "HOLY_RADIANCE"
+    ],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "SUN",
+    "sefiraGroupRef": "GOD_ALMIGHTY",
+    "abilities": [
+      {
+        "id": "ABILITY_RADIANT_SOLAR_RAY",
+        "name": "Rayo Solar Llameante",
+        "description": "Canaliza un haz de luz incandescente que calcina espectros y demonios.",
+        "apCost": 2,
+        "spiritualityCost": 18,
+        "attentionCost": 0,
+        "range": 5,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_ELEMENTAL",
+            "params": {
+              "baseDamage": 26,
+              "element": "holy"
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Sun. Proyección de luz solar destructiva."
+      },
+      {
+        "id": "ABILITY_RADIANT_HALO",
+        "name": "Aura de Consagración",
+        "description": "Despliega un halo que sana su energía y bendice su cuerpo espiritual.",
+        "apCost": 1,
+        "spiritualityCost": 14,
+        "attentionCost": 0,
+        "range": 1,
+        "targetType": "SELF",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "BLESSING",
+              "durationTurns": 3
+            }
+          },
+          {
+            "atomId": "ATOM_HEAL_HP",
+            "params": {
+              "amount": 18
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Efecto curativo y fortalecedor de la vía Solar."
+      }
+    ],
+    "observationChance": 35
+  },
+  {
+    "id": "lightning_vessel",
+    "name": "Lightning Vessel",
+    "atomStats": {
+      "hp": 80,
+      "maxHp": 80,
+      "spirituality": 70,
+      "maxSpirituality": 70,
+      "ap": 4,
+      "speed": 13
+    },
+    "statuses": [
+      "SHOCK_CHARGED"
+    ],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "SAILOR",
+    "sefiraGroupRef": "GOD_ALMIGHTY",
+    "abilities": [
+      {
+        "id": "ABILITY_VESSEL_LIGHTNING_STRIKE",
+        "name": "Descarga de Alto Voltaje",
+        "description": "Descarga un arco voltaico violento contra el objetivo en la rejilla.",
+        "apCost": 2,
+        "spiritualityCost": 20,
+        "attentionCost": 0,
+        "range": 5,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_ELEMENTAL",
+            "params": {
+              "baseDamage": 28,
+              "element": "lightning"
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Tyrant / Marinero. Rayo de tempestad celeste."
+      },
+      {
+        "id": "ABILITY_VESSEL_THUNDER_SHOCK",
+        "name": "Onda Sónica de Trueno",
+        "description": "Explosión atronadora que sacude los órganos del adversario y lo empuja.",
+        "apCost": 1,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "STUN",
+              "durationTurns": 1
+            }
+          },
+          {
+            "atomId": "ATOM_DISPLACE_PUSH",
+            "params": {
+              "distance": 1,
+              "direction": "away"
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Conmoción sónica propia de tormentas marítimas."
+      }
+    ],
+    "observationChance": 46
+  },
+  {
+    "id": "storm_gull",
+    "name": "Storm Gull",
+    "atomStats": {
+      "hp": 30,
+      "maxHp": 30,
+      "spirituality": 30,
+      "maxSpirituality": 30,
+      "ap": 3,
+      "speed": 14
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "SAILOR",
+    "sefiraGroupRef": "GOD_ALMIGHTY",
+    "abilities": [
+      {
+        "id": "ABILITY_GULL_GALE_DIVE",
+        "name": "Picado Aéreo con Vendaval",
+        "description": "Baja en picada empujando al enemigo con una ráfaga huracanada.",
+        "apCost": 1,
+        "spiritualityCost": 8,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 14
+            }
+          },
+          {
+            "atomId": "ATOM_DISPLACE_PUSH",
+            "params": {
+              "distance": 1,
+              "direction": "away"
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Bestiario marítimo de la vía Tyrant."
+      },
+      {
+        "id": "ABILITY_GULL_TAILWIND",
+        "name": "Viento a Favor de Tempestad",
+        "description": "Aprovecha las corrientes eólicas para acelerar sus movimientos inmediatamente.",
+        "apCost": 0,
+        "spiritualityCost": 12,
+        "attentionCost": 0,
+        "range": 1,
+        "targetType": "SELF",
+        "atoms": [
+          {
+            "atomId": "ATOM_GAIN_AP",
+            "params": {
+              "amount": 1
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Impulso de viento que concede ritmo de combate adicional."
+      }
+    ],
+    "observationChance": 49
+  },
+  {
+    "id": "logic_gargoyle",
+    "name": "Logic Gargoyle",
+    "atomStats": {
+      "hp": 95,
+      "maxHp": 95,
+      "spirituality": 55,
+      "maxSpirituality": 55,
+      "ap": 3,
+      "speed": 7
+    },
+    "statuses": [
+      "STONE_RIGIDITY"
+    ],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "READER",
+    "sefiraGroupRef": "GOD_ALMIGHTY",
+    "abilities": [
+      {
+        "id": "ABILITY_GARGOYLE_STONE_FIST",
+        "name": "Maza de Granito Racional",
+        "description": "Golpe pesado de extremidad lítica con cálculo geométrico de trayectoria.",
+        "apCost": 1,
+        "spiritualityCost": 5,
+        "attentionCost": 0,
+        "range": 1,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 22
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía White Tower / Lector. Gárgola animada por principios lógicos."
+      },
+      {
+        "id": "ABILITY_GARGOYLE_LOGICAL_PARADOX",
+        "name": "Refutación Paradójica de Guardia",
+        "description": "Calcula la falla en la técnica enemiga, estancando su ritmo y fortaleciendo su armadura.",
+        "apCost": 2,
+        "spiritualityCost": 18,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "BLESSING",
+              "durationTurns": 2
+            }
+          },
+          {
+            "atomId": "ATOM_DRAIN_AP",
+            "params": {
+              "amount": 1
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Deducción silogística que frustra la táctica rival."
+      }
+    ],
+    "observationChance": 25
+  },
+  {
+    "id": "flame_devourer",
+    "name": "Flame Devourer",
+    "atomStats": {
+      "hp": 85,
+      "maxHp": 85,
+      "spirituality": 60,
+      "maxSpirituality": 60,
+      "ap": 4,
+      "speed": 10
+    },
+    "statuses": [
+      "BURNING_AURA"
+    ],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "RED_PRIEST",
+    "sefiraGroupRef": "CALAMITY_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_FLAME_BURST",
+        "name": "Vómito de Fuego Carmesí",
+        "description": "Expulsa una llamarada intensa que quema el cuerpo físico y espiritual.",
+        "apCost": 2,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_ELEMENTAL",
+            "params": {
+              "baseDamage": 24,
+              "element": "fire"
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Red Priest / Cazador. Manipulación de fuego."
+      },
+      {
+        "id": "ABILITY_FLAME_FRENZY",
+        "name": "Exaltación del Incendio",
+        "description": "Se entrega a la furia combativa ganando vigor acelerado a costa de control.",
+        "apCost": 1,
+        "spiritualityCost": 12,
+        "attentionCost": 0,
+        "range": 1,
+        "targetType": "SELF",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "FRENZY",
+              "durationTurns": 2
+            }
+          },
+          {
+            "atomId": "ATOM_GAIN_AP",
+            "params": {
+              "amount": 1
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Provocación e inflamación emocional de combatiente ígneo."
+      }
+    ],
+    "observationChance": 35
+  },
+  {
+    "id": "iron_blood_hound",
+    "name": "Iron Blood Hound",
+    "atomStats": {
+      "hp": 60,
+      "maxHp": 60,
+      "spirituality": 35,
+      "maxSpirituality": 35,
+      "ap": 4,
+      "speed": 11
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "RED_PRIEST",
+    "sefiraGroupRef": "CALAMITY_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_IRON_CRUSH",
+        "name": "Mandíbula de Hierro Colado",
+        "description": "Muerde con potencia de prensa mecánica rompiendo armaduras y quebrando miembros.",
+        "apCost": 1,
+        "spiritualityCost": 8,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 20
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Twilight Giant / Guerrero. Canino de asalto con densidad metálica."
+      },
+      {
+        "id": "ABILITY_IRON_FORTITUDE",
+        "name": "Endurecimiento Crepuscular",
+        "description": "Petrifica sus fibras musculares regenerando salud y adquiriendo resiliencia sagrada.",
+        "apCost": 1,
+        "spiritualityCost": 14,
+        "attentionCost": 0,
+        "range": 1,
+        "targetType": "SELF",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "BLESSING",
+              "durationTurns": 2
+            }
+          },
+          {
+            "atomId": "ATOM_HEAL_HP",
+            "params": {
+              "amount": 16
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Dureza férrea de combatiente crepuscular."
+      }
+    ],
+    "observationChance": 39
+  },
+  {
+    "id": "frost_witch_shade",
+    "name": "Frost Witch Shade",
+    "atomStats": {
+      "hp": 70,
+      "maxHp": 70,
+      "spirituality": 75,
+      "maxSpirituality": 75,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": [
+      "CHILL_VEIL"
+    ],
+    "opacity": {
+      "oculto_hasta": "DIVINATION_IDENTIFY"
+    },
+    "pathwayTag": "DEMONESS",
+    "sefiraGroupRef": "CALAMITY_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_SHADE_FROST_SPIKE",
+        "name": "Estilete de Hielo Negro",
+        "description": "Lanza una aguja congelada que perfora el pecho e inocula entumecimiento ártico.",
+        "apCost": 2,
+        "spiritualityCost": 16,
+        "attentionCost": 0,
+        "range": 5,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_ELEMENTAL",
+            "params": {
+              "baseDamage": 22,
+              "element": "ice"
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Demoness / Bruja. Magia de escarcha helada."
+      },
+      {
+        "id": "ABILITY_SHADE_VANISH",
+        "name": "Ocultación en la Sombra Fría",
+        "description": "Se disuelve en la temperatura bajo cero desapareciendo del campo visual.",
+        "apCost": 1,
+        "spiritualityCost": 12,
+        "attentionCost": 0,
+        "range": 1,
+        "targetType": "SELF",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "CONCEALED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Sigilo de Asesino / Demoness."
+      }
+    ],
+    "observationChance": 32
+  },
+  {
+    "id": "blood_rose_parasite",
+    "name": "Blood Rose Parasite",
+    "atomStats": {
+      "hp": 55,
+      "maxHp": 55,
+      "spirituality": 50,
+      "maxSpirituality": 50,
+      "ap": 3,
+      "speed": 8
+    },
+    "statuses": [
+      "SANGUINE_THORNS"
+    ],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "MOON",
+    "sefiraGroupRef": "MOTHER_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_ROSE_THORN_WHIP",
+        "name": "Látigo de Espinas Carmesí",
+        "description": "Azota con zarcillos espinosos que inyectan toxina paralizante de Luna.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 14
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "POISON",
+              "durationTurns": 3
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Moon / Boticario. Parásito botánico venenoso."
+      },
+      {
+        "id": "ABILITY_ROSE_BLOOD_LEECH",
+        "name": "Succión Vampírica de Savia",
+        "description": "Drena la vitalidad biológica del blanco para restaurar sus propios capullos.",
+        "apCost": 2,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 18
+            }
+          },
+          {
+            "atomId": "ATOM_HEAL_HP",
+            "params": {
+              "amount": 15
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vampirismo biológico de la vía Moon."
+      }
+    ],
+    "observationChance": 28
+  },
+  {
+    "id": "mutated_black_hound",
+    "name": "Mutated Black Hound",
+    "atomStats": {
+      "hp": 65,
+      "maxHp": 65,
+      "spirituality": 30,
+      "maxSpirituality": 30,
+      "ap": 4,
+      "speed": 10
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "MOTHER",
+    "sefiraGroupRef": "MOTHER_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_HOUND_SAVAGE_TEAR",
+        "name": "Desgarro de Mandíbula Necrótica",
+        "description": "Muerde ferozmente infectando las heridas con putrefacción biológica.",
+        "apCost": 1,
+        "spiritualityCost": 8,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 16
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "POISON",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Mother / Sembrador. Bestia corrompida por vitalidad hipertrófica."
+      },
+      {
+        "id": "ABILITY_HOUND_SPORE_BLAST",
+        "name": "Detonación de Esporas Hipertróficas",
+        "description": "Revienta pústulas de esporas fúngicas que aturden y repelen.",
+        "apCost": 1,
+        "spiritualityCost": 12,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          },
+          {
+            "atomId": "ATOM_DISPLACE_PUSH",
+            "params": {
+              "distance": 1,
+              "direction": "away"
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Esporas botánicas asfixiantes de secuencia baja."
+      }
+    ],
+    "observationChance": 35
+  },
+  {
+    "id": "abyssal_crawler",
+    "name": "Abyssal Crawler",
+    "atomStats": {
+      "hp": 75,
+      "maxHp": 75,
+      "spirituality": 45,
+      "maxSpirituality": 45,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": [
+      "CORROSIVE_ICHOR"
+    ],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "ABYSS",
+    "sefiraGroupRef": "ABYSS_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_CRAWLER_ACID_BITE",
+        "name": "Mandíbula de Ácido Abisal",
+        "description": "Segrega ácido infernal que quema carne y blindajes metálicos.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_ELEMENTAL",
+            "params": {
+              "baseDamage": 18,
+              "element": "acid"
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "POISON",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Abyss / Criminal. Secreción corrosiva demoníaca."
+      },
+      {
+        "id": "ABILITY_CRAWLER_CORROSIVE_LEAP",
+        "name": "Salto Depredador de Cloaca",
+        "description": "Se propulsa velozmente por las paredes asestando una cuchillada directa.",
+        "apCost": 2,
+        "spiritualityCost": 12,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DISPLACE_MOVE",
+            "params": {
+              "maxDistance": 2
+            }
+          },
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 15
+            }
+          }
+        ],
+        "canonConfidence": "high_confidence",
+        "derivationNote": "Embestida de reptador del abismo."
+      }
+    ],
+    "observationChance": 32
+  },
+  {
+    "id": "chained_ghoul",
+    "name": "Chained Ghoul",
+    "atomStats": {
+      "hp": 90,
+      "maxHp": 90,
+      "spirituality": 40,
+      "maxSpirituality": 40,
+      "ap": 3,
+      "speed": 6
+    },
+    "statuses": [
+      "IRON_FETTERS"
+    ],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "CHAINED",
+    "sefiraGroupRef": "ABYSS_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_GHOUL_CHAIN_LASH",
+        "name": "Latigazo de Hierro Herrumbroso",
+        "description": "Blande eslabones pesados atados a sus extremidades arrastrando al adversario.",
+        "apCost": 1,
+        "spiritualityCost": 8,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 18
+            }
+          },
+          {
+            "atomId": "ATOM_DISPLACE_PULL",
+            "params": {
+              "distance": 1
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Chained / Prisionero. Grilletes físicos y espirituales."
+      },
+      {
+        "id": "ABILITY_GHOUL_CORPSE_FRENZY",
+        "name": "Estallido de Furia de Prisionero",
+        "description": "Rompe temporalmente sus ataduras en un estallido berserker acelerando su cadencia.",
+        "apCost": 1,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 1,
+        "targetType": "SELF",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "FRENZY",
+              "durationTurns": 2
+            }
+          },
+          {
+            "atomId": "ATOM_GAIN_AP",
+            "params": {
+              "amount": 1
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Deseo de desahogo y locura liberada propia de Mutante/Prisionero."
+      }
+    ],
+    "observationChance": 25
+  },
+  {
+    "id": "shadow_enforcer",
+    "name": "Shadow Enforcer",
+    "atomStats": {
+      "hp": 80,
+      "maxHp": 80,
+      "spirituality": 45,
+      "maxSpirituality": 45,
+      "ap": 4,
+      "speed": 10
+    },
+    "statuses": [
+      "DISCIPLINE_ORDER"
+    ],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "JUSTICIAR",
+    "sefiraGroupRef": "ORDER_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_ENFORCER_BATON",
+        "name": "Golpe Contundente de Porra Arbitral",
+        "description": "Impacta los centros nerviosos del infractor sometiéndolo con fuerza legal.",
+        "apCost": 2,
+        "spiritualityCost": 12,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 18
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "STUN",
+              "durationTurns": 1
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Justiciar / Alguacil. Coerción física y arresto."
+      },
+      {
+        "id": "ABILITY_ENFORCER_PROHIBITION",
+        "name": "Decreto de Prohibición de Asalto",
+        "description": "Proclama que la hostilidad es ilegal, sancionando la iniciativa del blanco.",
+        "apCost": 1,
+        "spiritualityCost": 16,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DRAIN_AP",
+            "params": {
+              "amount": 1
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Mandato de Prohibición canónico de Árbitro."
+      }
+    ],
+    "observationChance": 35
+  },
+  {
+    "id": "bribery_specter",
+    "name": "Bribery Specter",
+    "atomStats": {
+      "hp": 55,
+      "maxHp": 55,
+      "spirituality": 60,
+      "maxSpirituality": 60,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": [
+      "DISTORTION_AURA"
+    ],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "BLACK_EMPEROR",
+    "sefiraGroupRef": "ORDER_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_SPECTER_DISTORTION",
+        "name": "Contacto de Distorsión Jurídica",
+        "description": "Toca el cuerpo astral del oponente tergiversando sus defensas naturales.",
+        "apCost": 1,
+        "spiritualityCost": 10,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 16
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Vía Black Emperor / Abogado. Explotación de vulnerabilidades y vacíos legales."
+      },
+      {
+        "id": "ABILITY_SPECTER_BRIBE_SIPHON",
+        "name": "Soborno de Energía Vital",
+        "description": "Ofrece un pacto corrupto que sustrae el tiempo de acción ajeno para reconstituirse.",
+        "apCost": 2,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DRAIN_AP",
+            "params": {
+              "amount": 1
+            }
+          },
+          {
+            "atomId": "ATOM_HEAL_HP",
+            "params": {
+              "amount": 14
+            }
+          }
+        ],
+        "canonConfidence": "canon",
+        "derivationNote": "Mecánica de Soborno (Bribe) de la vía Abogado."
+      }
+    ],
+    "observationChance": 32
+  },
+  {
+    "id": "nighthawk_sleepless_patrol",
+    "name": "Patrullero Sin Sueño de los Halcones Nocturnos",
+    "atomStats": {
+      "hp": 50,
+      "maxHp": 50,
+      "spirituality": 40,
+      "maxSpirituality": 40,
+      "ap": 3,
+      "speed": 9
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "DARKNESS",
+    "sefiraGroupRef": "DEATH_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_NIGHTHAWK_REVOLVER_PURIFYING",
+        "name": "Disparo Purificador de Plata",
+        "description": "Dispara una bala de plata bendecida con agua sagrada que inflige daño físico contundente a las aberraciones y herejes.",
+        "apCost": 1,
+        "spiritualityCost": 5,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 15
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Armamento reglamentario de los Halcones Nocturnos de Backlund (revólver con munición purificadora de aleación de plata)."
+      },
+      {
+        "id": "ABILITY_NIGHTHAWK_VIGILANT_GLARE",
+        "name": "Mirada Vigilante de Medianoche",
+        "description": "Fija sus ojos insomnes en el sospechoso, disipando el sigilo y debilitando sus reacciones.",
+        "apCost": 1,
+        "spiritualityCost": 8,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_REMOVE_STATUS",
+            "params": {
+              "status": "CONCEALED"
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "WEAKENED",
+              "durationTurns": 2
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Percepción hipervigilante de la Secuencia 9 Sin Sueño que detecta perturbaciones astrales y disipa engaños."
+      }
+    ],
+    "observationChance": 35
+  },
+  {
+    "id": "nighthawk_midnight_poet",
+    "name": "Poeta de Medianoche de los Halcones Nocturnos",
+    "atomStats": {
+      "hp": 55,
+      "maxHp": 55,
+      "spirituality": 65,
+      "maxSpirituality": 65,
+      "ap": 3,
+      "speed": 8
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "DARKNESS",
+    "sefiraGroupRef": "DEATH_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_NIGHTHAWK_POETIC_SOOTHING",
+        "name": "Cántico Somnífero de Medianoche",
+        "description": "Entona versos oscuros que adormecen el espíritu del objetivo, induciendo aturdimiento y letargo espiritual.",
+        "apCost": 2,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "STUN",
+              "durationTurns": 1
+            }
+          },
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 10
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Poema nocturno de Secuencia 8 Poeta de Medianoche que apacigua la mente e induce letargo espiritual."
+      },
+      {
+        "id": "ABILITY_NIGHTHAWK_REQUIEM_PROJECTION",
+        "name": "Réquiem Carmesí",
+        "description": "Proyecta un verso fúnebre cargado de espiritualidad de la Diosa que daña la integridad mágica del transgresor.",
+        "apCost": 1,
+        "spiritualityCost": 12,
+        "attentionCost": 0,
+        "range": 3,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 18
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Verso sacro fúnebre canalizado para purgar aberraciones e infligir daño directo al cuerpo astral."
+      }
+    ],
+    "observationChance": 35
+  },
+  {
+    "id": "nighthawk_squad_captain",
+    "name": "Capitán Ejecutor de los Halcones Nocturnos (Nightmare)",
+    "atomStats": {
+      "hp": 85,
+      "maxHp": 85,
+      "spirituality": 110,
+      "maxSpirituality": 110,
+      "ap": 4,
+      "speed": 12
+    },
+    "statuses": [],
+    "opacity": {
+      "oculto_hasta": "SCRUTINY_PASS"
+    },
+    "pathwayTag": "DARKNESS",
+    "sefiraGroupRef": "DEATH_CLUSTER",
+    "abilities": [
+      {
+        "id": "ABILITY_NIGHTHAWK_NIGHTMARE_TERROR",
+        "name": "Pesadilla Inquisitorial",
+        "description": "Arrastra la mente del objetivo a una pesadilla lúcida claustrofóbica impuesta por la Diosa, induciendo terror paralizante y daño espiritual directo.",
+        "apCost": 2,
+        "spiritualityCost": 25,
+        "attentionCost": 0,
+        "range": 4,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "FEAR",
+              "durationTurns": 2
+            }
+          },
+          {
+            "atomId": "ATOM_APPLY_STATUS",
+            "params": {
+              "status": "STUN",
+              "durationTurns": 1
+            }
+          },
+          {
+            "atomId": "ATOM_DAMAGE_SPIRITUAL",
+            "params": {
+              "baseDamage": 18
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Firma del Director: Habilidad canónica de Secuencia 7 Nightmare (Pesadilla) de la vía Darkness. Arrastra la consciencia del transgresor a una pesadilla forzosa donde es paralizado y aterrorizado."
+      },
+      {
+        "id": "ABILITY_NIGHTHAWK_EXECUTION_STRIKE",
+        "name": "Castigo Penitencial de Medianoche",
+        "description": "Disparo consagrado a quemarropa con revólver cargado de balas de plata purificada que inflige daño físico devastador.",
+        "apCost": 1,
+        "spiritualityCost": 15,
+        "attentionCost": 0,
+        "range": 2,
+        "targetType": "SINGLE_ENEMY",
+        "atoms": [
+          {
+            "atomId": "ATOM_DAMAGE_PHYSICAL",
+            "params": {
+              "baseDamage": 26
+            }
+          }
+        ],
+        "canonConfidence": "library",
+        "derivationNote": "Firma del Director: Procedimiento letal de neutralización armada a quemarropa ejecutado durante allanamientos de alto riesgo."
+      }
+    ],
+    "observationChance": 35
+  }
+]

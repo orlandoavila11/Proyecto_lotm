@@ -1,0 +1,40 @@
+{
+  "name": "lotm-engine-reborn-workspace",
+  "version": "1.0.0",
+  "description": "Path to Godhood — Lord of the Mysteries Systemic RPG",
+  "private": true,
+  "workspaces": [
+    "reborn",
+    "ui",
+    "ui3d"
+  ],
+  "scripts": {
+    "dev:server": "npm --prefix reborn run dev",
+    "dev:ui": "npm --prefix ui run dev",
+    "build:server": "npm --prefix reborn run build",
+    "build:ui": "npm --prefix ui run build",
+    "build": "npm run build:server && npm run build:ui",
+    "start": "npm --prefix reborn run start",
+    "test": "npm --prefix reborn run test",
+    "test:server": "npm --prefix reborn run test",
+    "test:ui": "npm --prefix ui run build",
+    "verify:tier-l": "npm --prefix reborn run verify:tier-l",
+    "lint:determinism": "npm --prefix reborn run lint:determinism",
+    "audit:diegetic": "npm --prefix reborn run audit:diegetic",
+    "lint:tier-g": "npm --prefix reborn run lint:tier-g",
+    "dev:ui3d": "npm --prefix ui3d run dev",
+    "build:ui3d": "npm --prefix ui3d run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "keywords": [
+    "lotm",
+    "lord-of-the-mysteries",
+    "rpg",
+    "fastify",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC"
+}

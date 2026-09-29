@@ -1,0 +1,411 @@
+{
+  "pathway": "GIANT",
+  "displayName": "Warrior Pathway",
+
+  "mythicalCreatureForm": "A one-eyed giant with dark blue-black, knotted skin. Every inch of flesh, every pore, every piece of muscle seems to violate normal human perception, combined in a special way that carries an unimaginable sense of impact.",
+
+  "sequences": {
+
+    "9": {
+      "name": "Warrior",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Tremendous Physical Strength",
+        "Exceptional Weapon Mastery Basics",
+        "Enhanced Fortitude and Constitution",
+        "Acute Combat Reflexes",
+        "Physical Threat Intuition"
+      ],
+
+      "actingMethods": [
+        "Engage in rigorous physical training.",
+        "Face opposition directly with martial force.",
+        "Master the balance of bodily mechanics.",
+        "Thrive within high-intensity combat environments."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Muscle core of a Giant Warrior",
+          "OR Both eyes of a mutated black bear",
+          "OR The horn of a bloodthirsty rhinoceros"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of Giant Warrior blood",
+          "OR 100ml of mutated black bear blood",
+          "Giant Warrior's heart",
+          "OR Bloodthirsty rhinoceros' heart",
+          "10 drops of basil essential oil",
+          "1 onyx"
+        ],
+
+        "potionAppearance": "A bloody liquid with a strong fishy smell."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A mass of tangled, slowly wriggling flesh."
+    },
+
+    "8": {
+      "name": "Pugilist",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Unarmed Combat Mastery",
+        "Internal Energy Control",
+        "Explosive Physical Impact",
+        "Enhanced Pain Tolerance",
+        "Agility and Footwork Amplification"
+      ],
+
+      "actingMethods": [
+        "Rely on bare fists over weapons.",
+        "Channel raw physical energy efficiently.",
+        "Overwhelm adversaries through continuous close striking.",
+        "Embrace the raw hunting instincts of nature."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Palm bone of a Giant Attendant",
+          "OR Heart of a giant black bear",
+          "OR Middle finger of a Forest Wanderer"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of Giant Attendant blood",
+          "OR 100ml of Forest Wanderer blood",
+          "Giant Attendant gallbladder",
+          "OR Giant black bear gallbladder",
+          "1 amethyst",
+          "1 enemy's eyeball"
+        ],
+
+        "potionAppearance": "Pure white pus tainted with streaks of blood."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A clenched white bone fist emitting a glossy sheen."
+    },
+
+    "7": {
+      "name": "Weapon Master",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Absolute Mastery of Every Weapon",
+        "Environmental Combat Adaptation",
+        "Flaw Analysis in Opponent Guards",
+        "Enhanced Tactical Weapon Switching",
+        "Kinetic Energy Redirection"
+      ],
+
+      "actingMethods": [
+        "Familiarize yourself with diverse weapon architectures.",
+        "Analyze the dynamic weight of armaments.",
+        "Collect battlefield memories and martial relics.",
+        "Defeat opponents using specialized tool adjustments."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Spine of a Blue Giant",
+          "OR Left paw of an Iron Giant Bear",
+          "OR Ear of a Six-armed Gray Ape"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of Blue Giant blood",
+          "OR 100ml of Iron Giant Bear blood",
+          "10 Blue Giant hairs",
+          "OR 20 Six-armed Gray Ape hairs",
+          "10 arrowheads dug from a battlefield",
+          "A small bunch of hair from someone personally defeated"
+        ],
+
+        "potionAppearance": "A black liquid with floating rust, tastes like swallowing a handful of fine needles."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A cold spine resembling a longsword stained with blood."
+    },
+
+    "6": {
+      "name": "Dawn Paladin",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Dawn Light Armor Manifestation",
+        "Sword of Dawn Condensation",
+        "Purification Energy Waves",
+        "Mass Morale Amplification",
+        "Sacred Combat Domain"
+      ],
+
+      "actingMethods": [
+        "Bring illumination to dark encounters.",
+        "Operate as a righteous martial vanguard.",
+        "Purify systemic negative impacts directly.",
+        "Maintain absolute battlefield focus during emergencies."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Blood crystal of a Dawn Giant",
+          "OR Sternum of a Dawn Bird",
+          "OR Right paw of a Silver Giant Bear"
+        ],
+
+        "supplementaryIngredients": [
+          "100ml of Dawn Giant brain fluid",
+          "OR 100ml of Silver Giant Bear bile",
+          "3 Dawn Giant nails",
+          "OR 1 Dawn Bird talon",
+          "1 opal",
+          "1 purified item"
+        ],
+
+        "potionAppearance": "Clear liquid illuminated as if by dawn."
+      },
+
+      "ritual": null,
+
+      "characteristicAppearance": "A crystal formed from converging streams of dawn light."
+    },
+
+    "5": {
+      "name": "Guardian",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Absolute Defensive Wall Generation",
+        "Damage Absorption Domain",
+        "Unyielding Vitality Under Pressure",
+        "Mass Protective Barrier Projection",
+        "Counter-Strike Energy Collection"
+      ],
+
+      "actingMethods": [
+        "Establish a precise target to secure.",
+        "Devote personal physical actions to protection protocols.",
+        "Stand as an unbreakable shield against threats.",
+        "Endure incoming strikes to safeguard your community."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Heart of a Gray Giant",
+          "OR Core of a Stone Giant",
+          "OR Ear of a Forest Guardian"
+        ],
+
+        "supplementaryIngredients": [
+          "200ml of Gray Giant blood",
+          "OR 200g of Stone Giant dust mixed with pure water",
+          "1 Gray Giant eye",
+          "OR 1 Forest Guardian eye",
+          "A weapon personally used long-term",
+          "9 drops of pungent essential oil"
+        ],
+
+        "potionAppearance": "Pale blood wrapped in substantial dawn light."
+      },
+
+      "ritual": "Establish a person or group you want to protect, and devote yourself to this for at least 1 year.",
+
+      "characteristicAppearance": "Fist-sized, heart-like, covered in holes, glowing faintly like dawn."
+    },
+
+    "4": {
+      "name": "Demon Hunter",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Vulnerability Vision via Forehead Eye",
+        "Absolute Demon and Monster Countermeasures",
+        "Immunity to Corrosive Biological Toxins",
+        "Advanced Purification Combat Striking",
+        "Tracking of Mythical Creature Aura Profiles"
+      ],
+
+      "actingMethods": [
+        "Hunt down high-level systematic abnormalities.",
+        "Resolve disasters generated by deific evil beings.",
+        "Examine creature attributes to formulate counters.",
+        "Maintain perfect physical purity against corruption."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Eye of a Divine Giant",
+          "OR Heart of a Dragon Eater",
+          "OR Vertical eye of a Demon Hunter"
+        ],
+
+        "supplementaryIngredients": [
+          "200ml of Divine Giant blood",
+          "OR 200ml of Dragon Eater blood",
+          "1 Divine Giant skull",
+          "OR 1 Demon Hunter skull",
+          "49 materials of different properties",
+          "10g of purifying holy ointment"
+        ],
+
+        "potionAppearance": "Deep ink-green liquid with a strong herbal aroma."
+      },
+
+      "ritual": "Resolve a problem or disaster caused by a powerful demon or evil creature.",
+
+      "characteristicAppearance": "A vertical eye-shaped object intertwined with ink-green symbols."
+    },
+
+    "3": {
+      "name": "Silver Knight",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Silver-White Sacred Radiance Manifestation",
+        "Altar Blessing Amplification",
+        "Advanced Underworld Combat Adaptation",
+        "Mercury Separation Attacks",
+        "Absolute Mental Resilience Against Fear"
+      ],
+
+      "actingMethods": [
+        "Erect strategic defensive lines against death forces.",
+        "Execute powerful hunted targets systematically.",
+        "Balance celestial blessings with intense personal effort.",
+        "Anchor high metrics of personal accomplishments."
+      ],
+
+      "formula": {
+        "mainIngredients": [
+          "Blood essence of Aurmir",
+          "OR The heart of a Court Hunter",
+          "OR The heart of a Court Guardian"
+        ],
+
+        "supplementaryIngredients": [
+          "300ml of water polluted by the power of death",
+          "Something worn or used by a Sequence 3 or above Giant-pathway Beyonder",
+          "A piece of amber sealing an ancient insect",
+          "A sheet recording 100 personal kill counts"
+        ],
+
+        "potionAppearance": "Pale liquid segmented by chunks of mercury."
+      },
+
+      "ritual": "Arrange a complex altar, place the remains of 6 powerful creatures you hunted in the correct positions, and receive a god's blessing.",
+
+      "characteristicAppearance": "A silver-white radiance resembling both a heart and a miniature sun."
+    },
+
+    "2": {
+      "name": "Glory",
+
+      "formulaStatus": "FULLY_KNOWN",
+
+      "abilities": [
+        "Pure Sacred Heavy Radiance Aura",
+        "Eradication of Ancient Dark Influences",
+        "Deific Battlefield Command Matrix",
+        "Absolute Kinetic Armor Construction",
+"Vocal Song Shockwave Manifestation"
+],
+"actingMethods": [
+"Confront high-tier angelic anomalies single-handedly.",
+"Praise and anchor your own accomplishments over decades.",
+"Exterminate worthy heretical entities relentlessly.",
+"Embody the heavy glorious authority of structural balance."
+],
+"formula": {
+"mainIngredients": [
+"Crystal of a Glory Giant",
+"OR Aurmir Crown",
+"OR A Glory Beyonder characteristic"
+],
+"supplementaryIngredients": [
+"300ml of Glory Giant blood",
+"1 item eroded by dark power",
+"A corpse buried for over 1000 years",
+"A poem praising oneself"
+],
+"potionAppearance": "A liquid made of pure, sacred, heavy radiance."
+},
+"ritual": "With your own power, battle and kill an angel or equally powerful being, or kill enough worthy enemies or heretics for the god who blessed you.",
+"characteristicAppearance": "A pure square stone flowing with holy light."
+},
+"1": {
+"name": "Hand of God",
+"formulaStatus": "FULLY_KNOWN",
+"abilities": [
+"Dusk Aura Modification Over Physics Matrix",
+"Sovereign Divine Mark Imposition",
+"Submersion of Targets into River of Dead Concepts",
+"Absolute Organic Structure Suppression",
+"Deific Kingdom Blueprint Insertion"
+],
+"actingMethods": [
+"Pledge structural alignment to core ultimate architectures.",
+"Operate as a terminal attendant of abstract rivers.",
+"Inject sovereign scripts into scriptural documentation.",
+"Command macro-level arrays of transparent spiritual forces."
+],
+"formula": {
+"mainIngredients": [
+"1 Hand of God characteristic"
+],
+"supplementaryIngredients": [
+"100ml of true god's blood",
+"9 drops of water from the River of the Dead",
+"A religious scripture recording your legends and loyal deeds",
+"A flower from an opened true god's divine kingdom"
+],
+"potionAppearance": "Blue-black liquid tinted with dusk, containing many trapped transparent faces."
+},
+"ritual": "Swear fealty to a deity or become an attendant of the River of Styx.",
+"characteristicAppearance": "A semi-transparent blue-black giant hand patterned with various divine marks."
+},
+"0": {
+"name": "Twilight Giant",
+"formulaStatus": "FULLY_KNOWN",
+"abilities": [
+"Authority of Dusk, Declination, and Martial Dominance",
+"Sword of Dusk Deific Concept Materialization",
+"Absolute Destruction of Foreign Deific Frameworks",
+"Permanent Terminal Age Imposition Over Planetary Eco-Systems",
+"Omnipresent Sovereign Impact Over Organic Realities"
+],
+"actingMethods": [
+"Anchor the decaying, terminal blueprint of reality.",
+"Embody the absolute twilight phase of cosmic matrices.",
+"Uphold the final unyielding limit across universal civilizations."
+],
+"formula": {
+"mainIngredients": [
+"The Dusk Giant Uniqueness",
+"3 Hand of God characteristics"
+],
+"supplementaryIngredients": [
+"Remains of a true god"
+],
+"potionAppearance": "A huge orange-red phantom trailing dusk as it walks."
+},
+"ritual": "Witness and participate in the full process of a race or a continent's rise, decline, and final extinction.",
+"characteristicAppearance": "A giant longsword covered in orange-red radiance."
+}
+}
+}
+

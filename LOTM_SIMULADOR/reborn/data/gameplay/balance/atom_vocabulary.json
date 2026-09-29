@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "atoms": [
+    {
+      "id": "ATOM_DAMAGE_PHYSICAL",
+      "category": "DAMAGE",
+      "description": "Inflige daño físico directo al objetivo según su potencia base y defensa del blanco.",
+      "allowedParameters": ["baseDamage", "armorPenetration"],
+      "baseCosts": { "ap": 1, "spirituality": 0, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_DAMAGE_SPIRITUAL",
+      "category": "DAMAGE",
+      "description": "Inflige daño espiritual directo ignorando armadura física, afectando el cuerpo astral.",
+      "allowedParameters": ["baseDamage", "bypassPhysicalArmor"],
+      "baseCosts": { "ap": 1, "spirituality": 10, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_DAMAGE_ELEMENTAL",
+      "category": "DAMAGE",
+      "description": "Proyecta daño elemental destructivo (fuego, hielo, relámpago, ácido o sagrado).",
+      "allowedParameters": ["baseDamage", "element"],
+      "baseCosts": { "ap": 1, "spirituality": 15, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_APPLY_STATUS",
+      "category": "STATUS",
+      "description": "Aplica una aflicción o bendición de la matriz de estados al objetivo.",
+      "allowedParameters": ["status", "durationTurns", "intensity"],
+      "baseCosts": { "ap": 1, "spirituality": 10, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_REMOVE_STATUS",
+      "category": "STATUS",
+      "description": "Purga o remueve un estado específico activo sobre el objetivo o sobre sí mismo.",
+      "allowedParameters": ["status"],
+      "baseCosts": { "ap": 1, "spirituality": 10, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_DISPLACE_PUSH",
+      "category": "DISPLACEMENT",
+      "description": "Empuja al objetivo en la rejilla en dirección opuesta al atacante.",
+      "allowedParameters": ["distance", "direction"],
+      "baseCosts": { "ap": 1, "spirituality": 5, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_DISPLACE_PULL",
+      "category": "DISPLACEMENT",
+      "description": "Atrae al objetivo en la rejilla hacia la posición del atacante.",
+      "allowedParameters": ["distance"],
+      "baseCosts": { "ap": 1, "spirituality": 5, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_DISPLACE_MOVE",
+      "category": "DISPLACEMENT",
+      "description": "Desplaza al combatiente a una casilla transitable adyacente dentro del rango.",
+      "allowedParameters": ["maxDistance"],
+      "baseCosts": { "ap": 1, "spirituality": 0, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_DISPLACE_TELEPORT",
+      "category": "DISPLACEMENT",
+      "description": "Traslada instantáneamente al combatiente a cualquier celda válida sorteando obstáculos.",
+      "allowedParameters": ["maxDistance", "lineOfSight"],
+      "baseCosts": { "ap": 2, "spirituality": 20, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_SCRUTINIZE",
+      "category": "REVELATION",
+      "description": "Escudriña el cuerpo astral o lenguaje corporal del adversario revelando habilidades ocultas.",
+      "allowedParameters": ["target", "revealCount", "focusStat"],
+      "baseCosts": { "ap": 1, "spirituality": 5, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_REVEAL",
+      "category": "REVELATION",
+      "description": "Disipa el estado Oculto (CONCEALED) o revela la vía y secuencia completa del blanco.",
+      "allowedParameters": ["revealType"],
+      "baseCosts": { "ap": 1, "spirituality": 10, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_HEAL_HP",
+      "category": "HEALING",
+      "description": "Restaura puntos de vitalidad física celular al objetivo.",
+      "allowedParameters": ["amount"],
+      "baseCosts": { "ap": 1, "spirituality": 15, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_HEAL_SPIRITUALITY",
+      "category": "HEALING",
+      "description": "Canaliza y recupera puntos de espiritualidad mística.",
+      "allowedParameters": ["amount"],
+      "baseCosts": { "ap": 1, "spirituality": 0, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_HEAL_SANITY",
+      "category": "HEALING",
+      "description": "Apacigua el frenesí astral y restaura puntos de sanidad mental.",
+      "allowedParameters": ["amount"],
+      "baseCosts": { "ap": 1, "spirituality": 15, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_DRAIN_AP",
+      "category": "ECONOMY",
+      "description": "Reduce o estanca los Puntos de Acción disponibles del objetivo en su próximo turno.",
+      "allowedParameters": ["amount"],
+      "baseCosts": { "ap": 1, "spirituality": 15, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_GAIN_AP",
+      "category": "ECONOMY",
+      "description": "Concede Puntos de Acción adicionales inmediatos al combatiente mediante sobreesfuerzo.",
+      "allowedParameters": ["amount"],
+      "baseCosts": { "ap": 0, "spirituality": 25, "attention": 0 },
+      "playerOnly": false
+    },
+    {
+      "id": "ATOM_ATTENTION_EXCHANGE",
+      "category": "ECONOMY",
+      "description": "Intercambia concentración y Puntos de Acción por Puntos de Atención reactivos para el turno enemigo.",
+      "allowedParameters": ["apCost", "attentionGained"],
+      "baseCosts": { "ap": 1, "spirituality": 5, "attention": 0 },
+      "playerOnly": true
+    }
+  ]
+}

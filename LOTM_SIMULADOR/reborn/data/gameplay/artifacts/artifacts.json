@@ -1,0 +1,484 @@
+[
+  {
+    "id": "ART_0_08",
+    "name": "Pluma de Alzod (0-08)",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 45
+        },
+        "trigger": "PASSIVE_WRITTEN_FATE",
+        "description": "Las coincidencias letales asestan daño espiritual inevitable."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "WEAKENED",
+          "durationTurns": 3
+        },
+        "trigger": "PASSIVE_AURA",
+        "description": "El aura de fatalidad debilita a todos los seres circundantes."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Los acontecimientos alrededor del portador comienzan a alinearse con coincidencias inverosímiles.",
+      "tabú": "Escribir el verdadero nombre de una deidad ortodoxa o de un Rey de Ángeles.",
+      "mirada": "La tinta parece coagularse como sangre fresca mientras murmullos describen tu muerte prematura."
+    },
+    "grade": "GRADE_0",
+    "canonConfidence": "canon"
+  },
+  {
+    "id": "ART_0_02",
+    "name": "Regla de Trunsoest (0-02)",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_DRAIN_AP",
+        "params": {
+          "amount": 2
+        },
+        "trigger": "PROHIBITION_ZONE",
+        "description": "Cualquier acción no legislada confisca Puntos de Acción."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "STUN",
+          "durationTurns": 1
+        },
+        "trigger": "CRIMINAL_VERDICT",
+        "description": "Inmovilización judicial sumaria ante infracción."
+      }
+    ],
+    "presagio": {
+      "pasivo": "El aire se vuelve denso y rígido; cualquier acción no reglada provoca asfixia espiritual.",
+      "tabú": "Infringir cualquier ley civil o eclesiástica vigente en un radio de 50 metros.",
+      "mirada": "Letras plateadas flotan en tu campo visual dictando condenas sumarias."
+    },
+    "grade": "GRADE_0",
+    "canonConfidence": "canon"
+  },
+  {
+    "id": "ART_0_17",
+    "name": "El Ángel Sellado (0-17)",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "BLESSING",
+          "durationTurns": 5
+        },
+        "trigger": "DIVINE_BARRIER",
+        "description": "Barrera sagrada que purifica la corrupción circundante."
+      },
+      {
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 40
+        },
+        "trigger": "SACRED_PULSE",
+        "description": "Onda expansiva que quema cuerpos astrales impuros."
+      }
+    ],
+    "presagio": {
+      "pasivo": "El espacio espiritual a su alrededor se congela en un mutismo aterrador.",
+      "tabú": "Intentar abrir el sarcófago o rezar ante él.",
+      "mirada": "Un parpadeo de plumas de bronce en la penumbra te hiela la sangre."
+    },
+    "grade": "GRADE_0",
+    "canonConfidence": "canon"
+  },
+  {
+    "id": "ART_1_42",
+    "name": "Cuaderno de la Familia Antigonus",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "FEAR",
+          "durationTurns": 3
+        },
+        "trigger": "ANTIGONUS_TERROR",
+        "description": "La presencia de la Familia Antigonus infunde terror ancestral."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "FRENZY",
+          "durationTurns": 2
+        },
+        "trigger": "PUPPET_MADNESS",
+        "description": "El susurro de los hilos astrales induce frenesí caótico."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Tus extremidades se sienten pesadas, como si hilos invisibles tiraran de tus articulaciones.",
+      "tabú": "Leer más de tres páginas consecutivas a la luz de una vela de sebo.",
+      "mirada": "Las páginas parecen hechas de piel humana tersa que late tenuemente."
+    },
+    "grade": "GRADE_1",
+    "canonConfidence": "canon"
+  },
+  {
+    "id": "ART_1_63",
+    "name": "Espejo Mágico Arrodes",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_SCRUTINIZE",
+        "params": {
+          "revealCount": 3
+        },
+        "trigger": "TRUTH_INQUIRY",
+        "description": "Arranca respuestas veraces del subconsciente revelando habilidades."
+      },
+      {
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 25
+        },
+        "trigger": "FALSEHOOD_RETRIBUTION",
+        "description": "Rayo fulminante de castigo espiritual si se miente al espejo."
+      }
+    ],
+    "presagio": {
+      "pasivo": "El azogue del espejo vibra y refleja palabras rojas que exponen tus pensamientos íntimos.",
+      "tabú": "Mentir al responder a una de sus preguntas íntimas.",
+      "mirada": "El cristal te devuelve la mirada con una reverencia zalamera hacia lo que percibe tras tu espalda."
+    },
+    "grade": "GRADE_1",
+    "canonConfidence": "canon"
+  },
+  {
+    "id": "ART_2_111",
+    "name": "Flauta de Hueso del Cónsul",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "STUN",
+          "durationTurns": 1
+        },
+        "trigger": "NIGHT_TOLL",
+        "description": "El tañido de campana sume la sala en letargo paralizante."
+      },
+      {
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 18
+        },
+        "trigger": "SOUL_ECHO",
+        "description": "Ondas sonoras astrales que reverberan en la mente."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Escarcha cadavérica cubre los objetos cercanos y los perros aúllan sin descanso.",
+      "tabú": "Tocar la flauta durante el mediodía solar.",
+      "mirada": "Los agujeros de la flauta exhalan un hedor a tierra removida y cripta milenaria."
+    },
+    "grade": "GRADE_2",
+    "canonConfidence": "canon"
+  },
+  {
+    "id": "ART_2_049",
+    "name": "Bolsa de Viajero de los Abraham",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_DISPLACE_TELEPORT",
+        "params": {
+          "maxDistance": 3
+        },
+        "trigger": "SPATIAL_POCKET",
+        "description": "Abre un pliegue dimensional permitiendo reubicación instantánea."
+      },
+      {
+        "atomId": "ATOM_GAIN_AP",
+        "params": {
+          "amount": 1
+        },
+        "trigger": "TRAVELER_FLOW",
+        "description": "Concede fluidez de movimiento y ritmo de combate."
+      }
+    ],
+    "presagio": {
+      "pasivo": "El interior del bolso parece un abismo estrellado sin fondo ni gravedad.",
+      "tabú": "Introducir la mano entera en noche de luna llena.",
+      "mirada": "Un rumor distante de campanadas cósmicas resuena cada vez que se abre el broche."
+    },
+    "grade": "GRADE_2",
+    "canonConfidence": "canon"
+  },
+  {
+    "id": "ART_2_077",
+    "name": "Anillo de la Avaricia",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_DRAIN_AP",
+        "params": {
+          "amount": 1
+        },
+        "trigger": "GREED_SIPHON",
+        "description": "Roba 1 Punto de Acción del objetivo."
+      },
+      {
+        "atomId": "ATOM_HEAL_HP",
+        "params": {
+          "amount": 15
+        },
+        "trigger": "AVARICE_RESTORE",
+        "description": "Transmuta la energía robada en regeneración física."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Cualquier moneda de oro cercana parece brillar con un resplandor hipnótico.",
+      "tabú": "Regalar una moneda sin recibir el doble a cambio.",
+      "mirada": "La esmeralda tallada parece una pupila voraz que se dilata al contacto con el metal."
+    },
+    "grade": "GRADE_2",
+    "canonConfidence": "library"
+  },
+  {
+    "id": "ART_2_099",
+    "name": "Muñeca de Trapo con Maldición de Sangre",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 20
+        },
+        "trigger": "BLOOD_NEEDLE",
+        "description": "Alfileres astrales que perforan el alma a través de la muñeca."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "POISON",
+          "durationTurns": 3
+        },
+        "trigger": "MALEDICTION_SEEP",
+        "description": "Maldición de sangre supurante que corroe el organismo."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Pinchazos fantasma en las puntas de tus dedos y manchas rojas en la tela de tus mangas.",
+      "tabú": "Dejar la muñeca frente a un espejo sin cubrirla con un paño negro.",
+      "mirada": "Los botones que forman sus ojos parpadean cuando no la miras de frente."
+    },
+    "grade": "GRADE_2",
+    "canonConfidence": "library"
+  },
+  {
+    "id": "ART_3_ALCOHOL_NEMESIS",
+    "name": "Némesis del Alcohol (3-Alcohol)",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_REMOVE_STATUS",
+        "params": {
+          "status": "POISON"
+        },
+        "trigger": "SOBER_CLEANSE",
+        "description": "Purga de inmediato intoxicaciones etílicas y venenos."
+      },
+      {
+        "atomId": "ATOM_HEAL_SANITY",
+        "params": {
+          "amount": 5
+        },
+        "trigger": "LUCID_MIND",
+        "description": "Despeja la bruma mental restaurando estabilidad."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Cualquier licor en un radio de dos metros se agria y se convierte en vinagre amargo.",
+      "tabú": "Brindar en un banquete oficial mientras se porta el artefacto.",
+      "mirada": "El frasco de cristal emite un olor acre a hierbas maceradas y alcanfor."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "library"
+  },
+  {
+    "id": "ART_3_0214",
+    "name": "Amuleto del Sol Purificador",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_DAMAGE_ELEMENTAL",
+        "params": {
+          "baseDamage": 20,
+          "element": "holy"
+        },
+        "trigger": "SOLAR_BURST",
+        "description": "Destello de luz solar que calcina espectros."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "BLESSING",
+          "durationTurns": 2
+        },
+        "trigger": "HOLY_AURA",
+        "description": "Consagración solar protectora."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Calor agradable en el pecho como un mediodía estival en medio del smog frío.",
+      "tabú": "Entrar a una cripta funeraria con el amuleto visible.",
+      "mirada": "El oro pulido refleja una luz dorada incluso en la oscuridad total de un sótano."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "library"
+  },
+  {
+    "id": "ART_3_0782",
+    "name": "Gafas de Cuarzo de Visión Espiritual",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_SCRUTINIZE",
+        "params": {
+          "revealCount": 2
+        },
+        "trigger": "ASTRAL_OPTICS",
+        "description": "Aumenta la agudeza óptica revelando cartas y estados del oponente."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "WEAKENED",
+          "durationTurns": 1
+        },
+        "trigger": "EXPOSURE",
+        "description": "Revela el punto débil inmediato del adversario."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Los contornos de los seres vivos se desdibujan en halos multicolores pulsantes.",
+      "tabú": "Mirar directamente el sol o lámparas de arco eléctrico con las lentes puestas.",
+      "mirada": "El cuarzo ahumado parece empañarse con formas de rostros agonizantes."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "library"
+  },
+  {
+    "id": "ART_3_0451",
+    "name": "Daga de Escarcha Sombría",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_DAMAGE_ELEMENTAL",
+        "params": {
+          "baseDamage": 18,
+          "element": "ice"
+        },
+        "trigger": "FROST_STAB",
+        "description": "Cuchillada de escarcha helada que muerde la carne."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "WEAKENED",
+          "durationTurns": 2
+        },
+        "trigger": "CHILL_NUMB",
+        "description": "Entumecimiento muscular que ralentiza al objetivo."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Hielo fino se forma sobre la funda de cuero y el aliento del portador se condensa.",
+      "tabú": "Acercar la hoja desenvainada a una fogata encendida.",
+      "mirada": "El acero azulado refleja la luz como hielo milenario de los glaciares del norte."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "library"
+  },
+  {
+    "id": "ART_3_0612",
+    "name": "Moneda del Azar Ciego",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "BLESSING",
+          "durationTurns": 2
+        },
+        "trigger": "LUCKY_FLIP",
+        "description": "La moneda concede fortuna favorable y protección."
+      },
+      {
+        "atomId": "ATOM_GAIN_AP",
+        "params": {
+          "amount": 1
+        },
+        "trigger": "FORTUNE_SURGE",
+        "description": "Un giro de suerte otorga una oportunidad de acción adicional."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Decisiones casuales como cruzar una calle se ven alteradas por accidentes fortuitos.",
+      "tabú": "Lanzar la moneda tres veces consecutivas cayendo en la misma cara.",
+      "mirada": "Las figuras grabadas en sus dos caras parecen guiñar el ojo en la penumbra."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "library"
+  },
+  {
+    "id": "ART_3_0899",
+    "name": "Pluma de Escriba de Leyes",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_DRAIN_AP",
+        "params": {
+          "amount": 1
+        },
+        "trigger": "STATUTORY_RESTRAINT",
+        "description": "Escribe un decreto de embargo restando acción al infractor."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "WEAKENED",
+          "durationTurns": 2
+        },
+        "trigger": "LEGAL_PRESSURE",
+        "description": "Apremio legal que debilita la postura del blanco."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Los documentos firmados con esta pluma emiten una débil pulsación dorada de orden.",
+      "tabú": "Redactar un contrato con términos deliberadamente contradictorios.",
+      "mirada": "La punta de acero no requiere tinta y rasga el papel con una precisión geométrica inhumana."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "library"
+  },
+  {
+    "id": "ARTIFACT_G3_0711",
+    "name": "El Espejo del Huérfano (3-0711)",
+    "pathwayTag": "ERROR",
+    "sefiraGroupRef": "LOTM",
+    "atomEffects": [
+      {
+        "atomId": "ATOM_DAMAGE_SPIRITUAL",
+        "params": {
+          "baseDamage": 24,
+          "bypassPhysicalArmor": true
+        },
+        "trigger": "IDENTITY_EXTRACTION",
+        "description": "Extrae fragmentos del cuerpo espiritual y recuerdos fundamentales mediante reflejo místico."
+      },
+      {
+        "atomId": "ATOM_APPLY_STATUS",
+        "params": {
+          "status": "WEAKENED",
+          "durationTurns": 3
+        },
+        "trigger": "CONCEPTUAL_THEFT",
+        "description": "Despoja al objetivo de su individualidad provocando amnesia y debilitamiento ontológico."
+      }
+    ],
+    "presagio": {
+      "pasivo": "Refleja emociones, temores y conceptos en lugar del rostro físico del observador.",
+      "tabú": "Mirar fijamente el reflejo más de doce segundos en soledad.",
+      "mirada": "Pérdida progresiva e irreversible de recuerdos propios del portador."
+    },
+    "grade": "GRADE_3",
+    "canonConfidence": "library"
+  }
+]

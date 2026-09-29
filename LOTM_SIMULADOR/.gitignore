@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+reborn/node_modules/
+ui/node_modules/
+
+# Builds
+dist/
+reborn/dist/
+ui/dist/
+
+# Runtime & Saves
+saves/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.log
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+
+*.tsbuildinfo
+.playwright-cli/
+
+# ui3d
+ui3d/dist/
+*.db
+*.db-wal
+*.db-shm
+tmp_tests/

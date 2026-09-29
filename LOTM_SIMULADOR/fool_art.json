@@ -1,0 +1,482 @@
+[
+  {
+    "monster_id": "mon_lavos_squid",
+    "visual_tone": "Etéreo, misterioso, sereno y sutilmente perturbador; atmósfera abisal victoriana.",
+    "color_palette": [
+      "#60a5fa",
+      "#1e3a8a",
+      "#cbd5e1",
+      "#f8fafc",
+      "#c084fc"
+    ],
+    "anatomy": {
+      "silhouette": "Cefalópodo alargado con manto estilizado terminado en cono membranoso y diez tentáculos de longitud graduada.",
+      "prominent_features": [
+        "Ojos globulares de color índigo con pupilas estrelladas que parecen no enfocar la materia física",
+        "Manto translúcido de consistencia gelatinosa densa por donde viajan pulsos bioluminiscentes celestes",
+        "Ventosas nacaradas en las caras internas de los tentáculos sensitivos"
+      ],
+      "scale_category": "SMALL",
+      "surface_materials": "Gelatina acuática translúcida de tacto frío, con membranas mucosas reflectantes y vesículas de luz bioluminiscente."
+    },
+    "visual_atmosphere": {
+      "lighting": "Bioluminiscencia azul cobalto fría que nace del interior de los órganos visibles, sin sombras duras externas.",
+      "composition": "Plano medio subacuático con el manto en ángulo diagonal descendente y tentáculos desplegados hacia el primer plano.",
+      "focal_elements": "Las pupilas estrelladas índigo y la burbuja de espiritualidad que palpita en el extremo del cono posterior.",
+      "environmental_setting": "Gruta submarina kárstica en oscuridad perpetua, aguas quietas y frías con cristales minerales sumergidos."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_lavos_squid.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_lavos_squid.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/subterranean_cavern_depths.webp"
+    }
+  },
+  {
+    "monster_id": "mon_hornacis_gray_mountain_goat",
+    "visual_tone": "Rupestre, vertiginoso, dinámico y desafiante; cumbres brumosas victorianas de alta montaña.",
+    "color_palette": [
+      "#475569",
+      "#94a3b8",
+      "#cbd5e1",
+      "#f1f5f9",
+      "#334155"
+    ],
+    "anatomy": {
+      "silhouette": "Ungulado cuadrúpedo compacto y fibroso con pecho ancho, patas musculosas y cuernos estriados arqueados hacia atrás.",
+      "prominent_features": [
+        "Cuernos de espiral pronunciada con vetas cristalinas grisáceas semitransparentes",
+        "Pelaje denso color ceniza que ondea con el viento helado",
+        "Pezuñas hendidas con almohadillas magnéticas de queratina que desafían el deslizamiento"
+      ],
+      "scale_category": "MEDIUM",
+      "surface_materials": "Pelaje áspero lanoso de montaña, queratina ósea facetada en cuernos y pezuñas con bordes cortantes de pedernal."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luz difusa de gran altitud a través de niebla espesa, con destellos especulares fríos en las aristas de los cuernos.",
+      "composition": "Contrapicado dramático al borde de un saliente rocoso estrecho sobre un abismo sin fondo.",
+      "focal_elements": "El arco de los cuernos cristalinos y la pezuña delantera apoyada con precisión milimétrica en la arista.",
+      "environmental_setting": "Picos escarpados de la cordillera Hornacis, riscos cubiertos de líquenes y niebla perpetua en remolinos."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_hornacis_gray_mountain_goat.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_hornacis_gray_mountain_goat.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/hornacis_misty_peaks.webp"
+    }
+  },
+  {
+    "monster_id": "mon_human_faced_rose",
+    "visual_tone": "Gótico, macabro, teatral y sofocante; belleza mórbida de cementerio victoriano.",
+    "color_palette": [
+      "#881337",
+      "#be123c",
+      "#14532d",
+      "#1c1917",
+      "#fda4af"
+    ],
+    "anatomy": {
+      "silhouette": "Planta erecta de tallo sinuoso leñoso con espinas espaciadas y una flor terminal sobredimensionada en forma de cáliz teatral.",
+      "prominent_features": [
+        "Corola central cuyos pétalos aterciopelados se pliegan formando una máscara humana tridimensional con mueca cambiante",
+        "Espinas curvadas de tono obsidiana brillante que supuran néctar denso",
+        "Hojas basales anchas dentadas con nervaduras que simulan vasos sanguíneos carmesíes"
+      ],
+      "scale_category": "SMALL",
+      "surface_materials": "Pétalos de terciopelo vegetal carnoso húmedo, espinas queratinizadas punzantes y madera fibrosa flexible."
+    },
+    "visual_atmosphere": {
+      "lighting": "Claroscuro nocturno tenue con iluminación lateral baja, proyectando sombras largas y retorcidas sobre lápidas.",
+      "composition": "Plano detalle frontal cerrado centrado en la flor, con el rostro de pétalos en foco nítido y fondo de panteón desenfocado.",
+      "focal_elements": "La sonrisa cínica moldeada por los pliegues de los pétalos carmesíes centrales.",
+      "environmental_setting": "Mausoleos victorianos abandonados, tierra húmeda removida entre criptas familiares y vegetación invasiva."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_human_faced_rose.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_human_faced_rose.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/cemetery_crypt_shadows.webp"
+    }
+  },
+  {
+    "monster_id": "mon_mist_treant",
+    "visual_tone": "Espectral, monumental, desolado y frío; bosque fantasmal en penumbra invernal.",
+    "color_palette": [
+      "#e2e8f0",
+      "#94a3b8",
+      "#64748b",
+      "#334155",
+      "#0f172a"
+    ],
+    "anatomy": {
+      "silhouette": "Árbol humanoide robusto de extremidades nudosas con tronco bifurcado y ramas superiores desnudas que simulan brazos alzados.",
+      "prominent_features": [
+        "Corteza gris blanquecina con textura de hueso seco perforada por múltiples orificios exhaladores de vapor",
+        "Ramas superiores que emiten una niebla espesa constante que cubre el tercio superior de su figura",
+        "Raíces aéreas que parecen pies alargados descalzos apoyados sobre roca"
+      ],
+      "scale_category": "LARGE",
+      "surface_materials": "Madera esponjosa y porosa de tacto helado, corteza fibrosa húmeda y velos de condensación de niebla densa."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luz fría cenital monocroma tamizada por el banco de niebla, creando siluetas de alto contraste difuso.",
+      "composition": "Plano general medio en ligera inclinación ascendente, mostrando la entidad emergiendo del mar de niebla.",
+      "focal_elements": "Los orificios porosos de la corteza exhalando chorros horizontales de vapor denso.",
+      "environmental_setting": "Bosque pantanoso liminal, árboles muertos cubiertos de musgo pálido y suelos de turba inundada."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_mist_treant.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_mist_treant.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/mist_shrouded_swamp.webp"
+    }
+  },
+  {
+    "monster_id": "mon_dark_patterned_black_panther",
+    "visual_tone": "Sigiloso, depredador, elegante y letal; atmósfera de jungla sombría victoriana nocturna.",
+    "color_palette": [
+      "#09090b",
+      "#18181b",
+      "#27272a",
+      "#3b82f6",
+      "#60a5fa"
+    ],
+    "anatomy": {
+      "silhouette": "Gran felino de musculatura compacta y flexible con cola larga cilíndrica y garras retráctiles alargadas.",
+      "prominent_features": [
+        "Pelaje negro terciopelo mate con patrones espirales concéntricos de un negro aún más profundo que absorben la luz",
+        "Ojos rasgados de color azul zafiro helado que brillan sutilmente en la oscuridad",
+        "Vaho de aire comprimido tenue rodeando sus fauces y garras"
+      ],
+      "scale_category": "MEDIUM",
+      "surface_materials": "Pelaje denso de pelo corto con textura fonoabsorbente aterciopelada y almohadillas plantares blandas sin sonido."
+    },
+    "visual_atmosphere": {
+      "lighting": "Iluminación de noche sin luna, rota únicamente por el resplandor puntual de los ojos zafiro y el halo del aire comprimido.",
+      "composition": "Plano entero lateral agazapado sobre una rama alta de caoba, listo para el salto vertical.",
+      "focal_elements": "La mirada fija azul zafiro y la distorsión del aire alrededor de las garras delanteras tensadas.",
+      "environmental_setting": "Selva montañosa umbría, lianas colgantes pesadas, helechos arborescentes y oscuridad densa entre el follaje."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_dark_patterned_black_panther.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_dark_patterned_black_panther.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/shadow_canopy_perch.webp"
+    }
+  },
+  {
+    "monster_id": "mon_thousand_faced_hunter",
+    "visual_tone": "Aberrante, amorfo, cambiante e insidioso; horror biológico del subconsciente profundo.",
+    "color_palette": [
+      "#0f172a",
+      "#1e293b",
+      "#052e16",
+      "#15803d",
+      "#86efac"
+    ],
+    "anatomy": {
+      "silhouette": "Masa cuadrúpeda o bípeda semilicuada con extremidades que mutan entre garras, dedos humanos y zarcillos.",
+      "prominent_features": [
+        "Superficie corporal verde negruzca gelatinosa repleta de rostros de múltiples razas y edades que emergen y se hunden",
+        "Mandíbula sin forma fija capaz de articular voces disonantes superpuestas",
+        "Glándula pituitaria central que palpita como una perla oscura en el núcleo del pecho translúcido"
+      ],
+      "scale_category": "LARGE",
+      "surface_materials": "Gel protoplasmático denso con elasticidad biológica extrema, membrana cutánea cambiante y filamentos celulares viscosos."
+    },
+    "visual_atmosphere": {
+      "lighting": "Contraste lúgubre con brillos oleosos sobre la superficie gelatinosa, iluminado por bioluminiscencia verdosa enfermiza.",
+      "composition": "Plano medio en escorzo frontal con la masa expandiéndose hacia los bordes inferiores del marco visual.",
+      "focal_elements": "Los tres rostros humanos en primer término con ojos abiertos que parecen reconocer al espectador.",
+      "environmental_setting": "Galerías kársticas del Mundo Espiritual, estalactitas de roca negra y charcas de agua estancada alcalina."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_thousand_faced_hunter.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_thousand_faced_hunter.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/protoplasmic_cavern.webp"
+    }
+  },
+  {
+    "monster_id": "mon_human_skinned_shadow",
+    "visual_tone": "Bidimensional, plano, claustrofóbico y asfixiante; la oscuridad proyectada que cobra autonomía.",
+    "color_palette": [
+      "#030712",
+      "#111827",
+      "#1f2937",
+      "#374151",
+      "#9ca3af"
+    ],
+    "anatomy": {
+      "silhouette": "Silueta humana delgada bidimensional pegada a superficies verticales u horizontales sin volumen perpendicular.",
+      "prominent_features": [
+        "Bordes afilados que parecen recortados con tijeras sobre la textura del muro de piedra",
+        "Textura superficial que simula piel curtida oscura estirada sobre el suelo",
+        "Cavidades oculares vacías donde la pared posterior parece doblarse hacia adentro"
+      ],
+      "scale_category": "MEDIUM",
+      "surface_materials": "Sombra óptica pura desprovista de grosor tangible pero con resistencia elástica como lámina de goma negra húmeda."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luz rasante de farola de gas victoriana solitaria que genera sombras normales, entre las cuales la entidad destaca por no tener objeto emisor.",
+      "composition": "Perspectiva forzada en un callejón adoquinado estrecho con la sombra extendiéndose desde la base del muro hacia el primer plano.",
+      "focal_elements": "La línea de separación donde la sombra se despega del ladrillo para iniciar su ataque tridimensional.",
+      "environmental_setting": "Callejones del East End de Backlund, muros de ladrillo tiznados de carbón y adoquines mojados por la llovizna."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_human_skinned_shadow.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_human_skinned_shadow.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/gaslit_brick_alley.webp"
+    }
+  },
+  {
+    "monster_id": "mon_six_winged_gargoyle",
+    "visual_tone": "Gótico monumental, pétreo, hierático y opresivo; la severidad del juicio de la Cuarta Época.",
+    "color_palette": [
+      "#1f2937",
+      "#374151",
+      "#4b5563",
+      "#111827",
+      "#000000"
+    ],
+    "anatomy": {
+      "silhouette": "Constructo humanoide de piedra caliza con tres pares de alas membranosas desplegadas en abanico semicircular.",
+      "prominent_features": [
+        "Ojos sin pupila, completamente negros y vacíos como pozos de brea",
+        "Garras pétreas afiladas con runas del destino grabadas en bajo relieve en los antebrazos",
+        "Seis alas simétricas con textura de granito agrietado"
+      ],
+      "scale_category": "LARGE",
+      "surface_materials": "Piedra caliza antigua erosionada con grietas rellenas de polvo astral negro y aristas de basalto duro."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luz de luna fría invernal que ilumina las aristas superiores de las alas, dejando el torso en sombra absoluta.",
+      "composition": "Contrapicado majestuoso sobre la cornisa de una catedral gótica en ruinas, recortada contra un cielo nocturno tormentoso.",
+      "focal_elements": "Los ojos negros sin fondo y los tres pares de alas extendidas en simetría perfecta.",
+      "environmental_setting": "Tejados góticos de la Backlund oculta, agujas de templos de la Cuarta Época y gárgolas ornamentales inertes alrededor."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_six_winged_gargoyle.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_six_winged_gargoyle.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/cathedral_parapet_spires.webp"
+    }
+  },
+  {
+    "monster_id": "mon_ancient_wraith",
+    "visual_tone": "Trágico, aristocrático, gélido y espectral; la decadencia de la nobleza imperial marchita.",
+    "color_palette": [
+      "#f1f5f9",
+      "#cbd5e1",
+      "#64748b",
+      "#38bdf8",
+      "#0f172a"
+    ],
+    "anatomy": {
+      "silhouette": "Figura humanoide etérea flotante con ropajes nobiliarios del siglo pasado que se deshilachan en vapor helado.",
+      "prominent_features": [
+        "Rostro cadavérico aristocrático con sonrisa fija que se desdobla en múltiples reflejos al moverse",
+        "Manos huesudas translúcidas con uñas alargadas como agujas de hielo",
+        "Cuerpo inferior inexistente, reemplazado por volutas de niebla escarchada que giran sobre espejos"
+      ],
+      "scale_category": "MEDIUM",
+      "surface_materials": "Plasma espiritual translúcido gélido con partículas de escarcha y seda espectral descompuesta."
+    },
+    "visual_atmosphere": {
+      "lighting": "Halo azul celeste tenue emanando de su pecho que congela el vapor ambiental formando cristales en suspensión.",
+      "composition": "Figura emergiendo del marco de un espejo de plata victoriano agrietado, cuerpo a medio camino entre el cristal y la habitación.",
+      "focal_elements": "La mano translúcida apoyada en el borde del marco de azogue real y los ojos gélidos.",
+      "environmental_setting": "Salón de baile victoriano abandonado, candelabros cubiertos de telarañas, suelos de parquet cubiertos de polvo y espejos quebrados."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_ancient_wraith.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_ancient_wraith.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/abandoned_ballroom_mirrors.webp"
+    }
+  },
+  {
+    "monster_id": "mon_bizarro_bane",
+    "visual_tone": "Carnavalesco, grotesco, desconcertante y terrorífico; pesadilla teatral en delirio febril.",
+    "color_palette": [
+      "#1e1b4b",
+      "#4338ca",
+      "#be123c",
+      "#fbbf24",
+      "#020617"
+    ],
+    "anatomy": {
+      "silhouette": "Figura monumental asimétrica con extremidades sobredimensionadas conectadas por articulaciones mecánicas imposibles.",
+      "prominent_features": [
+        "Un único ojo ciclópeo azul brillante en el centro del pecho rodeado de máscaras de arlequín de porcelana rota",
+        "Brazos articulados que sostienen crucetas de titiritero de las que penden hilos brillantes transparentes",
+        "Ropajes que alternan patrones de rombos carmesíes y púrpuras sobre jirones de sombras vivas"
+      ],
+      "scale_category": "LARGE",
+      "surface_materials": "Porcelana fracturada esmaltada, terciopelo desgarrado, madera de marioneta barnizada y energía psíquica azulada."
+    },
+    "visual_atmosphere": {
+      "lighting": "Focos teatrales imaginarios con conos de luz azul y carmesí sobre fondo de oscuridad absoluta surrealista.",
+      "composition": "Figura dominante en contrapicado teatral, con las crucetas de marioneta extendidas hacia la cámara.",
+      "focal_elements": "El gran ojo ciclópeo pectoral azul refulgente y la máscara de sonrisa rota superpuesta.",
+      "environmental_setting": "Escenario teatral en ruinas suspendido en un vacío astral, telones rasgados flotando en gravedad cero."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_bizarro_bane.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_bizarro_bane.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/bizarro_carnival_stage.webp"
+    }
+  },
+  {
+    "monster_id": "mon_spirit_world_plunderer",
+    "visual_tone": "Voraz, abisal, cósmico y desgarrador; el predador inclemente del vacío astral.",
+    "color_palette": [
+      "#020617",
+      "#0f172a",
+      "#1e293b",
+      "#38bdf8",
+      "#7dd3fc"
+    ],
+    "anatomy": {
+      "silhouette": "Entidad alada antropomorfa de cuatro extremidades superiores armadas con garras ganchudas y cola vestigial de niebla.",
+      "prominent_features": [
+        "Cuerpo formado por capas de oscuridad que parecen desgajar el espacio físico a su paso",
+        "Alas membranosas como velos negros rasgados con bordes de vapor celeste brillante",
+        "Fauces retráctiles que revelan un abismo interior donde giran fragmentos de almas capturadas"
+      ],
+      "scale_category": "LARGE",
+      "surface_materials": "Sombra hiperdensa intangible que consume la materia circundante y garras de cristal astral azul cobalto."
+    },
+    "visual_atmosphere": {
+      "lighting": "Contraste extremo entre el cuerpo negro absoluto y los filamentos de luz celeste arrancados a los espíritus circundantes.",
+      "composition": "Ángulo dinámico picado en pleno descenso de caza con garras abiertas orientadas al objetivo.",
+      "focal_elements": "Las garras de cristal celeste desgarrando el velo del espacio y las fauces abisales.",
+      "environmental_setting": "Estrato medio del Mundo Espiritual, vórtices de corrientes de colores extraños y grietas espaciales."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_spirit_world_plunderer.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_spirit_world_plunderer.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/astral_rift_void.webp"
+    }
+  },
+  {
+    "monster_id": "mon_hound_of_fulgrim",
+    "visual_tone": "Cronológico, gélido, inexorable y mítico; la persecución a través de los siglos.",
+    "color_palette": [
+      "#ffffff",
+      "#f1f5f9",
+      "#cbd5e1",
+      "#991b1b",
+      "#1e1b4b"
+    ],
+    "anatomy": {
+      "silhouette": "Cánido de proporciones colosales con cuerpo aerodinámico, extremidades musculosas y lomo erizado de púas de escarcha.",
+      "prominent_features": [
+        "Par de ojos cilíndricos carmesíes ardientes como rubíes incandescentes que miran hacia planos temporales distintos",
+        "Pelaje blanco níveo que deja estelas de polvo de hielo en cada zancada",
+        "Mandíbulas dobles con colmillos transparentes que simulan estalagmitas glaciares"
+      ],
+      "scale_category": "LARGE",
+      "surface_materials": "Piel escarchada gruesa impenetrable a proyectiles mundanos y colmillos de hielo milenario petrificado."
+    },
+    "visual_atmosphere": {
+      "lighting": "Reflejos de rubí ardiente proyectados por los ojos sobre el pelaje blanco níveo en medio de una tormenta de nieve astral.",
+      "composition": "Plano general lateral en movimiento a velocidad congelada, con las patas suspendidas sobre una superficie de niebla que refleja fechas históricas.",
+      "focal_elements": "El brillo rubí profundo de los ojos gemelos mirando fijamente más allá de la pantalla.",
+      "environmental_setting": "El río de la niebla histórica, orillas de pergaminos gigantes congelados y ruinas de civilizaciones de la Tercera Época."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_hound_of_fulgrim.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_hound_of_fulgrim.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/fog_of_history_tundra.webp"
+    }
+  },
+  {
+    "monster_id": "mon_demonic_wolf_of_fog",
+    "visual_tone": "Primitivo, regio, ominoso y mitológico; la realeza lupina de la Segunda Época.",
+    "color_palette": [
+      "#18181b",
+      "#27272a",
+      "#52525b",
+      "#7f1d1d",
+      "#e2e8f0"
+    ],
+    "anatomy": {
+      "silhouette": "Lobo gigante de tamaño equivalente a un carruaje de tren con lomo arqueado y patas armadas de garras de obsidiana.",
+      "prominent_features": [
+        "Manto de pelaje gris oscuro que se difumina continuamente en una densa niebla de ocultación",
+        "Corazón visible a través de la caja torácica translúcida: una masa ardiente carmesí que pulsa con luz histórica",
+        "Tres pares de ojos rojos alineados a lo largo del hocico lupino"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Pelaje áspero denso entretejido con hilos de niebla mágica sólida y garras de obsidiana volcánica."
+    },
+    "visual_atmosphere": {
+      "lighting": "Contraste tenebroso entre la niebla gris que apaga toda luz y el fulgor carmesí profundo del corazón descubierto.",
+      "composition": "Contrapicado colosal con el lobo erguido sobre un cúmulo de armaduras y estandartes antiguos olvidados.",
+      "focal_elements": "El corazón ardiente expuesto pulsando entre las costillas de niebla sólida.",
+      "environmental_setting": "Bosque negro de la Segunda Época, árboles petrificados gigantes y mantos de niebla de ocultación impenetrable."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_demonic_wolf_of_fog.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_demonic_wolf_of_fog.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/ancient_wolf_lair.webp"
+    }
+  },
+  {
+    "monster_id": "mon_dark_demonic_wolf",
+    "visual_tone": "Divino, cósmico, aterrador y milagroso; soberanía divina de la calamidad y los deseos.",
+    "color_palette": [
+      "#000000",
+      "#0a0a0a",
+      "#171717",
+      "#f59e0b",
+      "#ef4444"
+    ],
+    "anatomy": {
+      "silhouette": "Lobo titánico de seis extremidades con cornamenta de múltiples ramificaciones que se extienden como constelaciones de deseos rotos.",
+      "prominent_features": [
+        "Pelaje de oscuridad estelar absoluta donde flotan esferas de deseos no cumplidos con aspecto de soles diminutos",
+        "Cuernos negros curvados que sostienen burbujas ilusorias repletas de escenas históricas",
+        "Ojos dorados cósmicos que reflejan los anhelos más profundos de quien los mira"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Materia celestial oscura indestructible con reflectividad nula e incrustaciones de polvo de estrellas sagradas."
+    },
+    "visual_atmosphere": {
+      "lighting": "Soles en miniatura orbitando alrededor del cuerpo que proyectan haces de luz dorada y carmesí sobre la negrura absoluta.",
+      "composition": "Gran plano general cósmico con la silueta de seis patas posada sobre un fragmento de luna rota.",
+      "focal_elements": "La cornamenta cósmica que enmarca el cielo y las esferas de deseos doradas suspendidas.",
+      "environmental_setting": "Plano astral superior sobre el mar de ruinas de la Segunda Época, vacío espacial iluminado por auroras oscuras."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_dark_demonic_wolf.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_dark_demonic_wolf.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/cosmic_wolf_abyss.webp"
+    }
+  },
+  {
+    "monster_id": "mon_spirit_worm_manifestation",
+    "visual_tone": "Apoteósico, inconcebible, trascendental y misterioso; la autoridad del Señor de los Misterios.",
+    "color_palette": [
+      "#ffffff",
+      "#f8fafc",
+      "#cbd5e1",
+      "#64748b",
+      "#1e1b4b"
+    ],
+    "anatomy": {
+      "silhouette": "Columna monumental giratoria en vórtice sin fin compuesta enteramente por millones de gusanos espirituales entrelazados.",
+      "prominent_features": [
+        "Millones de Gusanos del Espíritu translúcidos con patrones concéntricos plateados que se deslizan entre sí en perfecta armonía",
+        "Capas de velos y cortinas de niebla grisácea que caen desde la cúspide del vórtice",
+        "Manos gigantescas que se forman y disuelven continuamente a partir del enjambre de gusanos"
+      ],
+      "scale_category": "COLOSSAL",
+      "surface_materials": "Plasma biológico astral translúcido incorruptible con brillo nacarado plateado que refracta todas las frecuencias mágicas."
+    },
+    "visual_atmosphere": {
+      "lighting": "Luminosidad argéntea celestial cegadora que emana del cuerpo mismo del vórtice, iluminando la niebla histórica circundante.",
+      "composition": "Contrapicado infinito hacia la cima del Castillo de Sefirah donde el vórtice de gusanos sostiene el trono de niebla.",
+      "focal_elements": "Los Gusanos del Espíritu en primer término con sus anillos concéntricos plateados brillando de forma individual.",
+      "environmental_setting": "El Castillo de Sefirah sobre la niebla gris, pilares de piedra flotantes y mesa de bronce milenaria en la lejanía."
+    },
+    "asset_slots": {
+      "portrait_frame": "art/bestiary/fool/portraits/mon_spirit_worm_manifestation.webp",
+      "token_icon": "art/bestiary/fool/tokens/mon_spirit_worm_manifestation.svg",
+      "scene_backdrop": "art/bestiary/fool/backdrops/sefirah_castle_mist.webp"
+    }
+  }
+]
